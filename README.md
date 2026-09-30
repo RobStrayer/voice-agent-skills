@@ -9,7 +9,7 @@ your coding agent, or work through a difficult call. The nine original foundatio
 skills cover engineering problems across providers. Provider collections link
 those ideas to implementation workflows and their original, maintained sources.
 
-**9 foundation skills · 27 provider snapshots · 102 additional skill links · 43 runtime resources**
+**9 foundation skills · 27 provider snapshots · 103 additional skill links · 43 runtime resources**
 
 **Reviewed September 30, 2026 (UTC).** Provider copies are dated snapshots. Original
 source links lead to maintained repositories. Review dates describe when sources

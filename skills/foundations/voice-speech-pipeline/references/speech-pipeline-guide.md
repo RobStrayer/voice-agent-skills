@@ -141,6 +141,27 @@ Inspect actual data and the negotiated contract when the sound is distorted.
 
 ## Test the words that change the task
 
+### Check model and text-transform changes before migrating
+
+Reviewed September 30, 2026. These changes have different ownership boundaries:
+
+| Source and publication | Integration consequence | Regression case |
+| --- | --- | --- |
+| [AssemblyAI Universal-3.6 Pro Realtime](https://www.assemblyai.com/blog/universal-3-6-pro-realtime), September 29 | Select `universal-3-6-pro` on the streaming connection. 3.5 Pro Realtime remains available. | Compare short yes/no answers, identifiers, and turn boundaries on the same audio. Provider benchmarks do not establish your task's accuracy. |
+| [ElevenLabs v4 announcement](https://elevenlabs.io/docs/changelog), September 28 | `eleven_v4_turbo` uses the Text to Dialogue WebSocket. Adopt its message and voice-registration contract. | Test a short phrase, final flush, interruption, and reconnect with the chosen output format. |
+| [Pipecat 1.12.0](https://github.com/pipecat-ai/pipecat/releases/tag/v1.12.0), September 26 | `TTSService.pronunciation_transform_ipa()` produces service-specific markup. Put it last in `text_transforms`. Unsupported hints fall back to the original spelling. | Place a normalizer before the pronunciation transform; confirm the resulting hint survives and is supported by the selected service/model. |
+
+The [ElevenLabs dialogue protocol](https://elevenlabs.io/docs/eleven-api/guides/how-to/websockets/realtime-tdd)
+registers exactly one voice for v4 Turbo and accepts `inputs` frames. It uses a
+different buffering contract from the ordinary TTS WebSocket; use `flush` for a
+short pending phrase. The [v4 model guide](https://elevenlabs.io/docs/overview/capabilities/text-to-speech/eleven-v4)
+also documents changed cross-language accent behavior and no SSML support.
+An old pronunciation or TTS connection example needs review before changing its
+model identifier. Pipecat's transform behavior was confirmed in
+[the 1.12.0 source](https://github.com/pipecat-ai/pipecat/blob/v1.12.0/src/pipecat/services/tts_service.py).
+
+### Build a pronunciation fixture set
+
 Create a small pronunciation fixture set from the domain: product names, people,
 street names, abbreviations, dates, amounts, and identifiers. Include words whose
 meaning changes with stress or a nearby negation. Record the intended spoken form

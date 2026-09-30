@@ -2,7 +2,7 @@
 
 [Handbook](../../../../docs/handbook.md) / [Conversation design skill](../SKILL.md)
 
-Reviewed **2026-09-30 UTC**, using Context7 and current LiveKit documentation.
+Reviewed **2026-09-30 UTC**, using Context7 and current provider documentation.
 The application patterns below are engineering recommendations. Provider behavior
 is cited separately; no live transaction or transfer was executed in this review.
 
@@ -77,6 +77,21 @@ applying either contract.
 | Long-running work | Use a supported background workflow so the caller can continue talking |
 
 Changing the prompt does not make a blocking function non-blocking.
+
+### Defer a speculative tool before dispatch
+
+Deepgram's Voice Agent API offers `defer_until_eot: true` on individual functions
+in `agent.think.functions`. It holds dispatch until the user's turn is confirmed
+and discards the held call if the user continues. The default is `false`; other
+functions remain immediate. This control applies across listen providers.
+[Published September 8, 2026; reviewed September 30](https://developers.deepgram.com/changelog/2026/9/8).
+
+That gate does not replace task authorization or reconciliation after a request
+reaches the business service. For a client-side call already delivered, a
+`FunctionCallCancelled` event identifies the cancelled function ID; the documented
+client behavior is to stop its work and omit its `FunctionCallResponse`. Preserve
+any remote action outcome in the application ledger. Test resumed speech before
+dispatch separately from interruption after a write has started.
 
 Progress must reflect actual state. "Checking available times" can describe a
 lookup. "Almost done" needs a real basis. A repeated filler every few seconds can

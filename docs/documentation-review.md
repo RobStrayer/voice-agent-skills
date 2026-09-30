@@ -12,6 +12,9 @@ Consequential claims were checked against the linked official pages or source
 files. A Context7 result can contain an older example or miss a relevant page;
 use the canonical reference for the version you are implementing.
 
+The [September 30 daily review](reviews/2026-09-30.md) records model releases,
+changed skills, and cases where current primary sources contradict the index.
+
 ## Architecture and runtime sources
 
 All sources in this section were retrieved or reviewed on 2026-09-30 UTC.
@@ -71,7 +74,7 @@ indexed material was checked against the current primary source.
 | NVIDIA speech | [Speech NIM](https://docs.nvidia.com/nim/speech/latest/) | Current documentation prefix replaces an unavailable older Riva NIM URL. Model/container terms remain separate. |
 | Telnyx | [Agent skills documentation](https://developers.telnyx.com/development/agent-skills.md) | The old skills repository alias resolves to `team-telnyx/ai`; canonical paths exclude plugin mirrors. |
 | Deepgram SDKs | [Go Flux example](https://github.com/deepgram/deepgram-go-sdk/blob/main/examples/speech-to-text/websocket/flux_channel/main.go) | A current Go manifest incorrectly says the v2 client/example is absent. That manifest is excluded. Five Java skills reference an unavailable root `reference.md`. |
-| AssemblyAI | [Python registry](https://pypi.org/project/assemblyai/), [JavaScript registry](https://www.npmjs.com/package/assemblyai) | Observed releases `1.6.1` and `4.41.5` supersede the constants in the skill. |
+| AssemblyAI | [Current skill](https://github.com/AssemblyAI/assemblyai-skill/blob/main/skills/assemblyai/SKILL.md), [model announcement](https://www.assemblyai.com/blog/universal-3-6-pro-realtime) | September 30 upstream revision updates the SDK examples to `1.6.1` and `4.41.5` and covers Universal-3.6 Pro Realtime. Context7 still returned 3.5 Pro examples; current primary sources take precedence. |
 | Coval evaluations | [API introduction](https://docs.coval.ai/api-reference/v1/introduction), [accent testing](https://docs.coval.ai/guides/testing-across-accents) | Account-scoped simulations and scoring require bounded runs and authorized usage. |
 | Moonshine | [Current LICENSE](https://github.com/moonshine-ai/moonshine/blob/main/LICENSE) | Current model-license exceptions are narrower than the older Context7 summary. See the resource entry for the distinction. |
 | Synthflow | [Custom evaluations](https://docs.synthflow.ai/create-a-custom-evaluation), [simulations](https://docs.synthflow.ai/simulations) | No matching Context7 library was found; official pages were read directly. Skills include telemetry instructions with opt-outs. |

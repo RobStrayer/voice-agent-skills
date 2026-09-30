@@ -2,7 +2,7 @@
 
 [Home](../README.md) / [Engineering handbook](handbook.md) / [Core skills](catalog.md) / More upstream skills
 
-**102 additional skill files** · **20 original repositories** · **Checked September 30, 2026 UTC**
+**103 additional skill files** · **21 original repositories** · **Checked September 30, 2026 UTC**
 
 Open the original source for current instructions. This index groups voice APIs, client calling, SDK language variants, evaluation, and optional migrations. [Usage notes](usage.md) cover installation and host assumptions; [linked-skills.json](../linked-skills.json) retains exact source metadata.
 
@@ -15,6 +15,7 @@ Open the original source for current instructions. This index groups voice APIs,
 | Use managed cloud voice and speech services | [Cloud voice and speech](#cloud-voice-and-speech) | 10 |
 | Evaluate agents or integrate local speech | [Evaluation and local speech](#evaluation-and-local-speech) | 9 |
 | Build a native .NET audio frontend | [Native .NET audio](#native-net-audio) | 1 |
+| Draft a spoken prompt with worked examples | [Community prompt reference](#community-prompt-reference) | 1 optional |
 
 Counts describe skill files, including language variants, not independent capabilities. Stars describe the whole repository. Optional migration and prerelease entries are marked in their sections.
 
@@ -182,6 +183,13 @@ returned HTTP 404 in this check. Those repositories are not indexed here. The br
 packages documented by the browser-agent skill are available on npm; a broken
 repository link does not establish that a package is unavailable.
 
+Deepgram's [September 18 correction](https://developers.deepgram.com/changelog/2026/9/18)
+withdraws earlier browser documentation about client-side Silero VAD. The microphone
+streams while unmuted; server speech events drive playback interruption. Token
+minting uses `ttl_seconds`, and an unknown `ttl` field can be ignored despite HTTP
+200. The current browser skill reflects these corrections. Check older integrations
+against the [shipped browser contract](https://developers.deepgram.com/docs/browser-agent-javascript).
+
 
 ## AssemblyAI
 
@@ -192,12 +200,39 @@ One comprehensive skill covers prerecorded and streaming transcription, dictatio
 speech analytics, and voice-agent integrations. Keep its reference guides beside
 the manifest and use a supported SDK or REST client.
 
-The skill calls Python 1.5.4 and JavaScript 4.41.1 current. On September 30, 2026,
-the [Python registry](https://pypi.org/project/assemblyai/) reports 1.6.1 and the
-[JavaScript registry](https://www.npmjs.com/package/assemblyai) reports 4.41.5.
-Check the installed version and current API surface before using release-sensitive
-features.
+The September 30 upstream revision updates its SDK examples to Python 1.6.1 and
+JavaScript 4.41.5 and covers
+[Universal-3.6 Pro Realtime](https://www.assemblyai.com/blog/universal-3-6-pro-realtime),
+published September 29. The new model identifier is `universal-3-6-pro`; 3.5 Pro
+Realtime remains available for comparisons. Match the streaming API and installed
+SDK to the example. A realtime model announcement does not establish support in
+the prerecorded or dictation APIs. Context7 still returned older 3.5 Pro examples
+during this review.
 
+
+## Community prompt reference
+
+[Maintainer's collection](https://github.com/mahimailabs/voice-ai-skills) ·
+**2 repository stars, observed September 30, 2026** ·
+[MIT](https://github.com/mahimailabs/voice-ai-skills/blob/main/LICENSE)
+
+| Task | Original skill | Status |
+| --- | --- | --- |
+| Separate spoken output, persona, task flow, and confirmation; draft read-backs for dates and codes | [voice-prompting](https://github.com/mahimailabs/voice-ai-skills/blob/main/skills/voice-prompting/SKILL.md) | Optional reference, includes prompt blocks and provider adapters |
+
+Use the worked prompts as drafts for audio tests. Its twenty-word sentence cap,
+digit spellings, and fixed confirmation wording are the author's conventions,
+not provider requirements. Adapt them to the caller's language and the actual TTS
+normalizer. The adapter notes were checked upstream on September 11 and describe
+LiveKit 1.8.x, Pipecat 1.0, and unversioned Vapi documentation. Recheck current APIs
+before copying an integration. Its claim that prompting is the only normalization
+control is too broad: [Pipecat text transforms](https://docs.pipecat.ai/api-reference/server/utilities/text/voice-formatter)
+also prepare text for synthesis. Prompt instructions need application enforcement
+for authorization, idempotency, and uncertain writes.
+
+The collection contains ten skills; this index selects one. Its broader latency
+ceilings, readiness scores, and full-duplex restrictions need more evidence before
+they can be used as general engineering guidance.
 
 ## Cloud voice and speech
 

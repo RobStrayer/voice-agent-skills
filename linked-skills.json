@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-09-30T03:46:38Z",
+  "checked_at_utc": "2026-09-30T13:24:03.185484+00:00",
   "scope": "Additional voice skills linked to their original maintained repositories. Counts include language variants and explicitly marked optional workflows. No third-party content is copied by this index.",
-  "selected_skill_count": 102,
-  "source_repository_count": 20,
+  "selected_skill_count": 103,
+  "source_repository_count": 21,
   "counts_by_repository": {
     "team-telnyx/ai": 32,
     "AssemblyAI/assemblyai-skill": 1,
@@ -24,13 +24,14 @@
     "moonshine-ai/moonshine": 1,
     "SynthFlowAI/synthflow-skills": 2,
     "voximplant/ai-agent-skills": 2,
-    "shinyorg/skills": 1
+    "shinyorg/skills": 1,
+    "mahimailabs/voice-ai-skills": 1
   },
   "counts_by_selection": {
     "recommended": 92,
     "optional-migration": 4,
     "optional-deployment": 1,
-    "optional-reference": 2,
+    "optional-reference": 3,
     "optional-provider-workflow": 2,
     "optional-prerelease": 1
   },
@@ -61,8 +62,8 @@
     {
       "repo": "AssemblyAI/assemblyai-skill",
       "default_branch": "main",
-      "head": "9f1d8ab3a7cbbf48b341839bb78d71d7e80a1072",
-      "repository_head_committed_at": "2026-09-25T13:17:44+00:00",
+      "head": "fb831c7cae619bc6b84a907feb5076acde054e3b",
+      "repository_head_committed_at": "2026-09-30T05:21:31Z",
       "stars": 15,
       "stars_source": "GitHub HTML repo-stars-counter-star title or starCount/stargazerCount fields",
       "observed_at": "2026-09-30T03:18:38.773050+00:00",
@@ -71,7 +72,7 @@
       "license": null,
       "license_status": "No LICENSE or NOTICE file found in pinned repository archive; link-only.",
       "license_url": null,
-      "retrieved_at": "2026-09-30T03:18:38.773050+00:00",
+      "retrieved_at": "2026-09-30T13:24:03.185484+00:00",
       "license_path": null
     },
     {
@@ -334,6 +335,24 @@
       "license_path": "LICENSE",
       "license_url": "https://github.com/shinyorg/skills/blob/main/LICENSE",
       "license_status": "Root MIT license inspected. Linked instructions refer to prerelease SDK APIs and contain platform qualifications."
+    },
+    {
+      "repo": "mahimailabs/voice-ai-skills",
+      "default_branch": "main",
+      "head": "38a4fedffc59a2302e5d510966932ab8dfab77cb",
+      "repository_head_committed_at": "2026-09-26T15:39:49Z",
+      "stars": 2,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T13:14:06.145584+00:00",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "total_skill_files": 10,
+      "license": "MIT",
+      "license_status": "Root MIT license inspected; no nested LICENSE or NOTICE overrides in the checked archive. Link-only selection.",
+      "license_url": "https://github.com/mahimailabs/voice-ai-skills/blob/main/LICENSE",
+      "retrieved_at": "2026-09-30T13:14:06.145584+00:00",
+      "license_path": "LICENSE"
     }
   ],
   "skills": [
@@ -1639,8 +1658,8 @@
       "path": "skills/assemblyai/SKILL.md",
       "url": "https://github.com/AssemblyAI/assemblyai-skill/blob/main/skills/assemblyai/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "9f1d8ab3a7cbbf48b341839bb78d71d7e80a1072",
-      "verified_manifest_sha256": "adcb71aa302941fa71a4bfb56c3b4879621051f2efa67ece24ce59799c4f168a",
+      "pinned_commit": "fb831c7cae619bc6b84a907feb5076acde054e3b",
+      "verified_manifest_sha256": "b5c4fae4d4550baf2e1c434d22db517a8a1cbace7181cf1d99aec26b5b7dc12b",
       "language": "Python / JavaScript / REST",
       "purpose": "Streaming, prerecorded transcription, dictation, voice-agent integrations, and speech analytics.",
       "selection": "recommended",
@@ -1648,7 +1667,7 @@
       "manifest_license": null,
       "repository_stars": 15,
       "stars_observed_at": "2026-09-30T03:18:38.773050+00:00",
-      "source_repository_commit_at": "2026-09-25T13:17:44+00:00",
+      "source_repository_commit_at": "2026-09-30T05:21:31Z",
       "supporting_file_count": 10,
       "supporting_files": [
         "skills/assemblyai/evals/evals.json",
@@ -1679,7 +1698,7 @@
         "Preserve the nine referenced guide files"
       ],
       "concerns": [
-        "The Sept25 skill calls Python1.5.4 and Node4.41.1 current. Live package registries on Sept30 report Python1.6.1 and Node4.41.5. Check installed version and current docs before using release-sensitive features.",
+        "September 30 upstream revision covers Universal-3.6 Pro Realtime, published September 29, and updates SDK examples to Python 1.6.1 / Node 4.41.5. Context7 still returned older 3.5 Pro examples; verify release-sensitive details against current primary sources.",
         "No repository LICENSE file found; link-only rather than copied content."
       ]
     },
@@ -4019,6 +4038,43 @@
         ],
         "package_api_evidence": "Published Shiny.Audio and Shiny.Speech 3.0.0-beta-0030 package metadata and net10.0 XML members confirm Shiny.Audio.IAudioSource processing/capture overloads, AudioProcessingOptions AEC/NS/AGC, IAudioPlayer StartAsync/PlayAsync, and SpeechRecognitionOptions.AudioProcessing. Package source is shinyorg/speech v3 commit 0ab6bc4f0bf704ea8eae1947723dbb8fa5eefb2f."
       }
+    },
+    {
+      "name": "voice-prompting",
+      "provider": "Mahimai Labs (community)",
+      "repository": "mahimailabs/voice-ai-skills",
+      "path": "skills/voice-prompting/SKILL.md",
+      "url": "https://github.com/mahimailabs/voice-ai-skills/blob/main/skills/voice-prompting/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "38a4fedffc59a2302e5d510966932ab8dfab77cb",
+      "verified_manifest_sha256": "3ff26b3864dfd357072bd2942ab3354554973e58b21f17d19912bbe4fa37b9da",
+      "language": "Provider-neutral prose; Python adapter examples",
+      "purpose": "Worked spoken prompt blocks, persona/task separation, number and code read-backs, and confirmation wording.",
+      "selection": "optional-reference",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 2,
+      "stars_observed_at": "2026-09-30T13:14:06.145584+00:00",
+      "source_repository_commit_at": "2026-09-26T15:39:49Z",
+      "supporting_file_count": 2,
+      "supporting_files": [
+        "skills/voice-prompting/references/adapters.md",
+        "skills/voice-prompting/references/prompt-blocks.md"
+      ],
+      "referenced_repository_paths": [
+        "references/prompt-blocks.md",
+        "references/adapters.md"
+      ],
+      "dependencies": [
+        "Agent host that reads SKILL.md; preserve both references when installing.",
+        "Current provider documentation and audio fixtures before adopting adapter examples."
+      ],
+      "concerns": [
+        "The author prescribes a twenty-word cap and digit spellings; these are conventions to test, not provider requirements.",
+        "Adapter notes were checked upstream September 11, 2026 for LiveKit 1.8.x, Pipecat 1.0, and unversioned Vapi docs; not runtime-tested in this collection.",
+        "The adapter statement that prompting is the only normalization control is too broad: current TTS providers and Pipecat have text transforms. Verify the actual output path.",
+        "Prompt confirmation cannot enforce authorization, idempotency, or reconciliation of uncertain writes."
+      ]
     }
   ],
   "technical_checks": [
@@ -4067,10 +4123,10 @@
     }
   ],
   "verification": {
-    "method": "Pinned public HTTPS archives and current default-branch raw manifests, compared by SHA256. Source code was read selectively; no source code or API calls were executed.",
-    "current_branch_manifest_count": 102,
-    "current_branch_manifest_http_200": 102,
-    "current_branch_manifest_hash_matches": 102,
+    "method": "Pinned public HTTPS archives and current default-branch raw manifests, compared by SHA256. Source code was read selectively as data; no downloaded code or live voice-provider API calls were executed.",
+    "current_branch_manifest_count": 103,
+    "current_branch_manifest_http_200": 103,
+    "current_branch_manifest_hash_matches": 103,
     "sdk_repository_reference_count_checked": 228,
     "sdk_missing_references": [
       {
@@ -4084,7 +4140,8 @@
           "deepgram-java-voice-agent"
         ]
       }
-    ]
+    ],
+    "current_branch_manifest_checked_at_utc": "2026-09-30T13:24:03.185484+00:00"
   },
   "excluded_manifests": [
     {
@@ -4118,7 +4175,8 @@
     "Deepgram management-api and text-intelligence SDK skills excluded from voice selection.",
     "Deepgram Swift, Kotlin, and browser SDK repository URLs advertised by central README returned HTTP404 during this check; not cataloged.",
     "Older team-telnyx/telnyx-toolkit duplicates current Telnyx skill families; preferred maintained team-telnyx/ai source.",
-    "Deepclaw is a narrower older OpenClaw voice integration with no LICENSE found; left out of the recommended index."
+    "Deepclaw is a narrower older OpenClaw voice integration with no LICENSE found; left out of the recommended index.",
+    "Mahimai voice-ai-skills: archive inventories ten manifests. Selected voice-prompting after reading its manifest and both references. Latency/readiness ceilings and full-duplex generalizations in the related material were not adopted as general rules; other skills remain unselected."
   ],
   "limitations": [
     "No live provider calls, installations, or runtime compatibility tests performed.",

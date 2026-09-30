@@ -145,6 +145,24 @@ Model scores need their own calibration; thresholds do not transfer between dete
 
 An address correction cut off early may cost more than waiting through a pause. A long wait after "stop" may cost more than a brief false interruption. Use those task costs when choosing a configuration.
 
+## Recover from an interruption with no transcript
+
+Pipecat 1.12.0 (published September 26, reviewed September 30, 2026) enables
+`LLMUserAggregatorParams.empty_user_turn` by default. When an empty user turn cuts
+the bot off, the aggregator adds a developer message and runs the LLM to recover.
+An empty turn while the bot is idle stays unanswered unless `idle_prompt` is set.
+`max_consecutive_recoveries` defaults to one. Set `interrupted_prompt=None` to
+disable interrupted recovery, or `empty_user_turn=None` to disable both cases.
+This configuration is ignored for realtime LLM services that hear audio directly.
+[Release](https://github.com/pipecat-ai/pipecat/releases/tag/v1.12.0),
+[aggregator contract](https://github.com/pipecat-ai/pipecat/blob/v1.12.0/src/pipecat/processors/aggregators/llm_response_universal.py),
+[recovery configuration](https://github.com/pipecat-ai/pipecat/blob/v1.12.0/src/pipecat/turns/empty_user_turn.py).
+
+Test a cough during speech, a cough while idle, and quiet speech that STT misses.
+Assert whether recovery is expected, that its repetition is bounded, and that an
+empty transcript cannot authorize a write. Record this default during an upgrade:
+an added recovery reply can change behavior even when application code is unchanged.
+
 ## Instrument and exercise the boundaries
 
 Log capture speech boundaries, STT revisions/finals, EOT decisions/timeouts, user-turn commits, interruption candidates/decisions, generation cancellation, output queue depth, played offsets, history edits, and tool state transitions. Record model/SDK versions and active fallback. Missing events remain unknown.
