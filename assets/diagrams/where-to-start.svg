@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 804" width="1080" height="804" role="img" aria-labelledby="t d">
 <title id="t">Where should you start?</title>
-<desc id="d">A decision flowchart with three questions. Question 1: do you want to write code? If no, use a managed platform: build it in a dashboard, pick a voice, write a prompt and attach a phone number, for example Vapi, Retell, ElevenLabs Agents or Synthflow. If yes, question 2: do you need to pick each part yourself, such as your own speech-to-text, model and voice, self-hosting, or fine control of cost and speed? If yes, use an open-source framework such as LiveKit Agents or Pipecat and code the listen, think, speak loop yourself. If no, question 3: is it for a browser or app, or for phone calls? For a browser or app, use a speech-to-speech API such as OpenAI Realtime or Gemini Live, where one model hears and speaks and you add tools and hosting. For phone calls, use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo, where the provider runs speech and your server gets the caller's words as text or the raw audio. Footnote: this is not a one-way door; frameworks can run speech-to-speech models, and every path can call your own tools.</desc>
+<desc id="d">A decision flowchart with three questions. Question 1: do you want to write code? If no, use a managed platform: build it in a dashboard, pick a voice, write a prompt and attach a phone number, for example Vapi, Retell, ElevenLabs Agents or Synthflow. If yes, question 2: do you need to pick each part yourself, such as your own speech-to-text, model and voice, self-hosting, or fine control of cost and speed? If yes, use an open-source framework such as LiveKit Agents or Pipecat and code the listen, think, speak loop yourself. If no, question 3: is it for a browser or app, or for phone calls? For a browser or app, use a speech-to-speech API such as OpenAI Realtime or Gemini Live, where one model hears and speaks and you add tools and hosting. For phone calls, use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo, where the provider handles the call and your server gets the caller's words as text, or the raw audio. Footnote: this is not a one-way door; frameworks can run speech-to-speech models, and every path can call your own tools.</desc>
 <!-- Edit freely. Questions sit in the left column, outcomes in the right; each outcome is one group.
      Chip labels are centred; if you rename a chip, set its width to about characters x 7.1 + 24 and recentre the label. -->
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
@@ -68,8 +68,8 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <g id="path-b">
 <clipPath id="clip-b"><rect x="532" y="278" width="516" height="134" rx="14"/></clipPath>
 <rect class="card" x="532" y="278" width="516" height="134" rx="14"/>
-<rect class="bar-listen" x="532" y="278" width="6" height="134" clip-path="url(#clip-b)"/>
-<text class="eyebrow e-listen" x="556" y="308">OPEN-SOURCE FRAMEWORK</text>
+<rect class="bar-net" x="532" y="278" width="6" height="134" clip-path="url(#clip-b)"/>
+<text class="eyebrow e-net" x="556" y="308">OPEN-SOURCE FRAMEWORK</text>
 <text class="h2" x="556" y="334">Assemble your own pipeline</text>
 <text class="desc" x="556" y="358">Code the listen, think, speak loop and run it where you like.</text>
 <rect class="chip" x="556" y="372" width="123.4" height="26" rx="13"/>
@@ -80,8 +80,8 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <g id="path-c">
 <clipPath id="clip-c"><rect x="532" y="448" width="516" height="134" rx="14"/></clipPath>
 <rect class="card" x="532" y="448" width="516" height="134" rx="14"/>
-<rect class="bar-think" x="532" y="448" width="6" height="134" clip-path="url(#clip-c)"/>
-<text class="eyebrow e-think" x="556" y="478">SPEECH-TO-SPEECH API</text>
+<rect class="bar-net" x="532" y="448" width="6" height="134" clip-path="url(#clip-c)"/>
+<text class="eyebrow e-net" x="556" y="478">SPEECH-TO-SPEECH API</text>
 <text class="h2" x="556" y="504">One model hears and speaks</text>
 <text class="desc" x="556" y="528">The most natural feel for a prototype. You add tools and hosting.</text>
 <rect class="chip" x="556" y="542" width="130.5" height="26" rx="13"/>
@@ -92,9 +92,9 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <g id="path-d">
 <clipPath id="clip-d"><rect x="532" y="596" width="516" height="134" rx="14"/></clipPath>
 <rect class="card" x="532" y="596" width="516" height="134" rx="14"/>
-<rect class="bar-speak" x="532" y="596" width="6" height="134" clip-path="url(#clip-d)"/>
-<text class="eyebrow e-speak" x="556" y="626">PHONE PROVIDER + YOUR CODE</text>
-<text class="h2" x="556" y="652">Let the phone provider run speech</text>
+<rect class="bar-net" x="532" y="596" width="6" height="134" clip-path="url(#clip-d)"/>
+<text class="eyebrow e-net" x="556" y="626">PHONE PROVIDER + YOUR CODE</text>
+<text class="h2" x="556" y="652">Start from a phone provider</text>
 <text class="desc" x="556" y="676">Your server gets the caller's words as text, or the raw audio.</text>
 <rect class="chip" x="556" y="690" width="194.4" height="26" rx="13"/>
 <text class="chipt" x="653.2" y="708" text-anchor="middle">Twilio ConversationRelay</text>

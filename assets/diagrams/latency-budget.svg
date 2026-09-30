@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 628" width="1080" height="628" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 642" width="1080" height="642" role="img" aria-labelledby="t d">
 <title id="t">Where one reply's time goes</title>
 <desc id="d">An illustrative timeline of one reply, not a benchmark. The caller stops talking at 0 milliseconds. The app waits for the end of the turn and commits it at 260 milliseconds. The language model then writes a first speakable phrase, ready at 720 milliseconds, 460 milliseconds later. Text-to-speech makes the first audio chunk by 900 milliseconds and it reaches the caller's device at 950 milliseconds, 230 milliseconds after the phrase. The device buffers it and playback starts at 1,060 milliseconds, 110 milliseconds later. So the caller hears 1,060 milliseconds of silence, then a short filler, and the first useful words at 1,120 milliseconds. Notes: stages can overlap, so measure end to end on real calls; adding each stage's 95th percentile does not give the end-to-end 95th percentile.</desc>
 <!-- Edit freely. Synthetic trace: keep the numbers in <desc> in step with the bars.
      Time maps to x as x = 300 + (ms - (-150)) * 0.51852. Each stage row is one bar plus its duration label. -->
 <style>
-svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--think:#4a3aa7;--speak:#b3441a;--speak-t:#f2c3ad;--grid:#eaeef2}
-@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--think:#a29af0;--speak:#ec7a45;--speak-t:#7a3d22;--grid:#21262d}}
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--think:#4a3aa7;--speak:#b3441a;--speak-2:#d9784c;--grid:#eaeef2}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--think:#a29af0;--speak:#ec7a45;--speak-2:#a4532f;--grid:#21262d}}
 text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
 .mono,.tick{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
 .tick{fill:var(--ink2)}.ink2{fill:var(--ink2)}
@@ -17,16 +17,16 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 .total{font-size:17px;font-weight:700}
 .grid{stroke:var(--grid);stroke-width:1}.axis{stroke:var(--line);stroke-width:1.5}
 .zero{stroke:var(--ink2);stroke-width:1.5;stroke-dasharray:4 4}
-.b-listen{fill:var(--listen)}.b-think{fill:var(--think)}.b-speak{fill:var(--speak)}.b-speak-t{fill:var(--speak-t)}.b-net{fill:var(--net)}
-.wave-caller{fill:var(--ink2)}.wave-filler{fill:var(--speak-t)}.wave-agent{fill:var(--speak)}
+.b-listen{fill:var(--listen)}.b-think{fill:var(--think)}.b-speak{fill:var(--speak)}.b-speak-2{fill:var(--speak-2)}.b-net{fill:var(--net)}
+.wave-caller{fill:var(--ink2)}.wave-filler{fill:var(--speak-2)}.wave-agent{fill:var(--speak)}
 .silence{stroke:var(--line);stroke-width:2;stroke-dasharray:2 6;stroke-linecap:round}
 .pill{fill:var(--card);stroke:var(--line)}
 .brace{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}.brace-tick{stroke:var(--ink2);stroke-width:2}
 </style>
-<rect class="bg" x="0.5" y="0.5" width="1079" height="627" rx="16"/>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="641" rx="16"/>
 <text class="h1" x="32" y="50">Where one reply's time goes</text>
 <text class="sub" x="32" y="78">One turn, from the caller going quiet to hearing a useful answer. An illustrative trace, not a benchmark.</text>
-<rect class="card" x="24" y="104" width="1032" height="500" rx="14"/>
+<rect class="card" x="24" y="104" width="1032" height="514" rx="14"/>
 <path class="grid" d="M377.8 116V420"/>
 <text class="tick" x="377.8" y="442" text-anchor="middle">0</text>
 <path class="grid" d="M481.5 116V420"/>
@@ -79,7 +79,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <text class="eyebrow e-speak" x="56" y="324">SPEAK</text>
 <text class="name" x="56" y="346">Make audio, then send it</text>
 <rect class="b-speak" x="751.1" y="319.0" width="93.3" height="22" rx="4"/>
-<rect class="b-speak-t" x="846.4" y="319.0" width="24.0" height="22" rx="4"/>
+<rect class="b-speak-2" x="846.4" y="319.0" width="24.0" height="22" rx="4"/>
 <text class="mono ink2" x="880.4" y="335.0">+230 ms</text>
 <text class="eyebrow e-net" x="56" y="382">DEVICE</text>
 <text class="name" x="56" y="404">Buffer, then play</text>

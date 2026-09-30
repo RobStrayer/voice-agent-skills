@@ -44,6 +44,11 @@ both modes).
 | `bad` | Failure | `#cf222e` | `#f85149` | `#ffebe9` / `#3a1618` |
 | `good` | Confirmed outcome | `#1a7f37` | `#3fb950` | `#dafbe1` / `#12301a` |
 
+Keep each hue to its job. Use `listen`, `think` and `speak` only for things in
+those stages; categories that are not stages (platforms, problem groups, use cases)
+take `net`. Use `warn` only for risk. `listen` and `good` are both green, so never
+use them in the same figure.
+
 Surfaces and ink follow GitHub's Primer colours: background `#f6f8fa` / `#0d1117`,
 cards `#ffffff` / `#161b22`, borders `#d0d7de` / `#30363d`, text `#1f2328` / `#e6edf3`,
 secondary text `#59636e` / `#9198a1`.
