@@ -13,6 +13,8 @@ A smaller, useful collection beats a larger collection of overlapping prompts.
 4. For upstream material, record the original repository, file path, immutable
    commit, license, and file checksums in `sources.json`. Preserve upstream notices.
    Public visibility and stars alone do not establish redistribution permission.
+   Link the original default-branch source as the primary catalog/README entry;
+   label any bundled copy as a dated snapshot. Skip unverified local-only variants.
 5. Review scripts and hooks before including them. Never include account data,
    recordings, credentials, internal URLs, or project-specific operational notes.
 6. Update the catalog and relevant README entry. Run `python scripts/verify.py`.

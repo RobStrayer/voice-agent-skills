@@ -20,14 +20,17 @@ Different versions and content variants were retained in the private research
 inventory. Some project directories were inaccessible, so project-local coverage
 is incomplete. The research inventory stays outside this publishable repository.
 
-A [sanitized discovery index](local-skills.md) preserves all 80 names and links
-to reviewed public counterparts. It contains no local paths or copied specialist
-prose. Indexed discoveries are separate from the 31 included skills.
-
 The installed collection was a discovery source. Public upstream snapshots supply
 the vendored content. This avoids exporting local execution customizations or
 private project information. Local files were not assumed to be latest or licensed
 for redistribution merely because they were installed.
+
+Original upstream links are primary in the README and skill catalog. All six
+included source collections use `main`; all 27 live upstream `SKILL.md` paths
+returned HTTP 200 and matched the recorded snapshots when checked. Historical
+local names and entries without an established current original source are not
+included in the published catalog. Bundled provider files are explicitly dated
+reference snapshots and do not automatically update with upstream.
 
 ## Inclusion rules
 

@@ -2,6 +2,7 @@
   "schema": 1,
   "snapshot_date": "2026-09-29",
   "snapshot_timezone": "America/New_York",
+  "link_policy": "Original upstream default-branch URLs are primary; bundled files are dated snapshots.",
   "checked_at": "2026-09-30T02:36:23.019087+00:00",
   "skill_count": 31,
   "copied_file_count": 104,
@@ -217,7 +218,9 @@
           "sha256": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
           "bytes": 1067
         }
-      ]
+      ],
+      "default_branch": "main",
+      "live_url": "https://github.com/elevenlabs/skills/tree/main"
     },
     {
       "repo": "livekit/agent-skills",
@@ -315,7 +318,9 @@
           "sha256": "27870700f52055147513fb619162b1c9d30451fdd0846b5215e1bc5898500d89",
           "bytes": 1064
         }
-      ]
+      ],
+      "default_branch": "main",
+      "live_url": "https://github.com/livekit/agent-skills/tree/main"
     },
     {
       "repo": "pipecat-ai/skills",
@@ -361,7 +366,9 @@
           "sha256": "e31a733ecb79cbffafd5474e964e5eca15e0a0876a42b1d7253b51b198eb61aa",
           "bytes": 1301
         }
-      ]
+      ],
+      "default_branch": "main",
+      "live_url": "https://github.com/pipecat-ai/skills/tree/main"
     },
     {
       "repo": "deepgram/skills",
@@ -454,7 +461,9 @@
           "sha256": "2ae26160589ee74c0d45506c96dcb983745592323a0f451be567bd127f5acbef",
           "bytes": 1065
         }
-      ]
+      ],
+      "default_branch": "main",
+      "live_url": "https://github.com/cartesia-ai/skills/tree/main"
     },
     {
       "repo": "twilio/ai",
@@ -629,7 +638,9 @@
           "sha256": "1e0f166dca99875b117f289c0619f1c3f32d6ba9a9c433fca12812977ca15d4f",
           "bytes": 1063
         }
-      ]
+      ],
+      "default_branch": "main",
+      "live_url": "https://github.com/twilio/ai/tree/main"
     },
     {
       "repo": "openai/skills",
@@ -833,7 +844,9 @@
           "sha256": "d623b1fed1491b7ca4b7b5b393089165e3581a83d90d5a57868241f1b2a5d951",
           "bytes": 8684
         }
-      ]
+      ],
+      "default_branch": "main",
+      "live_url": "https://github.com/openai/skills/tree/main"
     },
     {
       "repo": "Generovo/claude-voice-skills",

@@ -22,12 +22,16 @@ def verify(root=ROOT):
     previous, ROOT = ROOT, root.resolve()
     try:
         sources = json.loads((ROOT / 'sources.json').read_text(encoding='utf-8'))
+        catalog = (ROOT / 'docs/catalog.md').read_text(encoding='utf-8')
+        readme = (ROOT / 'README.md').read_text(encoding='utf-8')
         tracked = set()
         for source in sources['collections']:
             if source['decision'] != 'vendored':
                 continue
             assert re.fullmatch(r'[0-9a-f]{40}', source['sha']), source['repo']
             assert source['license'], source['repo']
+            assert source['live_url'] == source['url'] + '/tree/' + source['default_branch']
+            assert f'](skills/{source["provider"]}/' not in readme, 'Provider README links must use original sources'
             for item in source['copied_files']:
                 path = inside(item['copied_path'])
                 data = path.read_bytes()
@@ -35,6 +39,9 @@ def verify(root=ROOT):
                 assert len(data) == item['bytes'], path
                 assert item['copied_path'] not in tracked, path
                 tracked.add(item['copied_path'])
+                if item['upstream_path'].endswith('/SKILL.md') or item['upstream_path'] == 'SKILL.md':
+                    original = source['url'] + '/blob/' + source['default_branch'] + '/' + item['upstream_path']
+                    assert original in catalog, 'Missing original source: ' + original
         names = set()
         skills = sorted((ROOT / 'skills').rglob('SKILL.md'))
         for path in skills:

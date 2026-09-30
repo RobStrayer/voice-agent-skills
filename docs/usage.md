@@ -1,9 +1,13 @@
 # Using the collection
 
+Start with the original upstream links in the [catalog](catalog.md). Those links
+track the source collection's default branch. Follow the upstream installation
+guide for the latest version. Bundled provider folders are dated reference copies;
+they do not refresh automatically. The foundation skills are original to this repo.
+
 Each folder containing `SKILL.md` is a skill unit. Preserve the whole folder when
-copying it. Provider directories organize the catalog; frontmatter names remain
-unchanged from upstream. Select individual skills rather than copying a provider
-parent as though it were one skill.
+copying it. Frontmatter names remain unchanged from upstream. Select individual
+skills rather than copying a provider parent as though it were one skill.
 
 Provider skills describe real products and sometimes assume a vendor CLI or MCP.
 The collection supplies their instructions and supporting files, not those tools,
