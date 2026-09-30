@@ -99,7 +99,13 @@ an audio benchmark or a deployed-agent field trial.
 A separate architecture scenario used a non-idempotent booking API, a regional
 constraint, two channels, uncertain language support, and burst traffic. It led to
 clearer text-checkpoint definitions and an explicit rule for unresolved write
-outcomes. Neither scenario establishes provider compatibility or production capacity.
+outcomes.
+
+A latency scenario combined overlapping stage summaries, different client/server
+clocks, missing playback boundaries, mixed call and turn counts, and a mark returned
+after clear. The instructions rejected the summed p95 without inventing a replacement
+duration or a coverage denominator. These instruction checks do not establish provider
+compatibility, measured latency, or production capacity.
 
 Local checks cover snapshot hashes and licenses, unique bundled names, original
 source URLs, catalog/count consistency, Python syntax, Markdown paths, and bounded

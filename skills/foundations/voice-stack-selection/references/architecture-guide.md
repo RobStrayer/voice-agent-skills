@@ -56,7 +56,7 @@ interaction while delegating backend work, including client delegation to an exi
 workflow. The guide describes a chain as “Control over each speech and text stage.”
 [OpenAI voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
 
-**Recommendation:** Test native speech-to-speech when conversational timing and prosody
+Test native speech-to-speech when conversational timing and prosody
 matter and no text checkpoint is required before each answer. Test a chain when you
 must inspect or transform intermediate text, reuse a mature text agent, or choose
 speech components independently. Consider a delegated conversational layer when
@@ -89,7 +89,7 @@ must be checked across the full data path, including external speech services.
 [Deployment overview](https://docs.pipecat.ai/pipecat/deployment/overview),
 [Cloud and Enterprise](https://docs.pipecat.ai/pipecat-cloud/introduction)
 
-**Recommendation:** Prefer managed hosting if the team cannot support dispatch,
+Prefer managed hosting if the team cannot support dispatch,
 isolation, capacity, and deployment during active calls. Operate the runtime when
 network placement, custom audio, isolation, or existing infrastructure justifies that
 work. Verify export, debugging, regions, tools, and failure handling.
@@ -129,7 +129,7 @@ Phone network <== provider media ==> Application relay <== model stream ==> Spee
                                   tools and durable state
 ```
 
-**Recommendation:** Use direct SIP when its documented controls and media path satisfy
+Use direct SIP when its documented controls and media path satisfy
 the task. Use a relay for audio processing, multiple providers, or existing transport
 logic. The relay owns event translation, necessary codec conversion, queue limits,
 interruptions, and shutdown on both legs. Verify inbound and outbound support separately.
@@ -147,7 +147,7 @@ permissions, reconnects, network changes, and transfers instead of promising the
 
 ## Assign turn ownership
 
-**Recommendation:** Record who detects turn completion, starts a response, interrupts
+Record who detects turn completion, starts a response, interrupts
 speech, cancels generation, stops playback, and reconciles history. Test interacting
 automatic policies before adding another detector.
 
@@ -159,7 +159,7 @@ flow tracks played duration and sends `conversation.item.truncate`; canceling ge
 alone does not clear a local playback queue.
 [Realtime conversations](https://developers.openai.com/api/docs/guides/realtime-conversations#interruption-and-truncation)
 
-**Recommendation:** Keep three states separate:
+Keep three states separate:
 
 | State | Evidence |
 | --- | --- |
@@ -186,7 +186,7 @@ user recovery path when the service cannot establish that outcome.
 
 ## Keep business authority in the application
 
-**Recommendation:** Treat tool arguments, transcripts, and client events as requests.
+Treat tool arguments, transcripts, and client events as requests.
 The application checks identity, permissions, inputs, limits, and prior completion.
 Keep provider and tool credentials in a trusted service. An ephemeral browser credential
 does not authorize access to another account.
@@ -209,7 +209,7 @@ Pipecat's production guidance covers per-session processes and draining old work
 during deployments. Long calls need a different rollout policy from short HTTP requests.
 [Session lifecycle](https://docs.pipecat.ai/pipecat/deployment/running-bots-in-production#session-lifecycle)
 
-**Recommendation:** Size for peak sessions and arrival bursts. Average arrival rate
+Size for peak sessions and arrival bursts. Average arrival rate
 times average duration estimates steady-state concurrency, not peak capacity. Test cold
 startup, warm admission, rejection, quotas, CPU, memory, local models, and connections.
 Decide what the caller hears at capacity.
@@ -272,7 +272,7 @@ fund warm capacity or test a path without that fleet. Count web and phone under 
 
 ## Prove the decision before migration
 
-**Recommendation:** Hold task, input audio, tools, and outcome rubric constant. Change
+Hold task, input audio, tools, and outcome rubric constant. Change
 one architecture at a time. Start with synthetic callers and mocked writes, then provider
 tests within authorized scope. Record versions, configuration, traffic, review date,
 and exact timing boundaries.
