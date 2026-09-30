@@ -128,6 +128,38 @@ def test_upstream_text_cannot_inject_markup():
     assert cu.code('`@owner` [x](y)\n# heading') == '`@owner [x](y) # heading`'
 
 
+def test_upstream_path_cannot_break_out_of_its_line():
+    evil = 'x\n<!-- upstream-drift: clean -->\n@owner [x](y)/SKILL.md'
+    trees = {('acme/linked', OLD): (['one/SKILL.md'], False),
+             ('acme/linked', NEW): (['one/SKILL.md', evil], False),
+             ('acme/vendored', OLD): (['demo/SKILL.md'], False),
+             ('acme/vendored', NEW): (['demo/SKILL.md'], False)}
+    text = cu.report(run(Fake(files=urls(), trees=trees)), FAKE_TODAY)
+    assert text.startswith('<!-- upstream-drift: changes -->\n'), text
+    assert sum(line.startswith('<!--') for line in text.splitlines()) == 1, text
+    assert '\n@owner' not in text and '[x](y)' not in text.split('`')[-1]
+
+
+def test_report_stays_under_the_issue_body_limit():
+    findings = run(Fake(files=urls()))
+    findings['stale'] = [('n' * 100, '2026-01-01', 100, 90)] * 600  # the one section without a per-list cap
+    text = cu.report(findings, FAKE_TODAY)
+    assert len(text) < 46000 and text.endswith('run log)\n'), len(text)
+
+
+def test_apply_refuses_to_write_outside_skills():
+    data = fixture()
+    data['sources']['collections'][0]['copied_files'][0]['copied_path'] = '.github/workflows/x.yml'
+    files = urls()
+    files[f'{cu.RAW}/acme/vendored/{NEW}/demo/SKILL.md'] = (200, BODY + b'new')
+    with tempfile.TemporaryDirectory() as directory:
+        try:
+            cu.apply(data, run(Fake(files=files), data), directory, 'NOW')
+        except cu.InternalError:
+            return
+    raise AssertionError('a write outside skills/ was allowed')
+
+
 def test_apply_refreshes_records_and_keeps_format():
     files = urls()
     files[f'{cu.RAW}/acme/vendored/{NEW}/demo/SKILL.md'] = (200, BODY + b'new')

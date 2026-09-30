@@ -21,6 +21,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import quote
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -32,6 +33,8 @@ FILES = ('sources.json', 'linked-skills.json', 'resources.json')
 STALE_DAYS = {'landscape.md': 90}
 STALE_DEFAULT = 180
 LIST_CAP = 40
+MAX_BYTES = 5_000_000  # largest response read; a bigger one is reported as unreachable
+REPORT_CAP = 45000  # the issue body limit is 65,536 characters; link-checker text is added later
 
 
 class InternalError(Exception):
@@ -74,9 +77,13 @@ class Client:
             try:
                 request = urllib.request.Request(url, data=body, headers=headers)
                 with urllib.request.urlopen(request, timeout=30) as response:
-                    return response.status, response.read()
+                    data = response.read(MAX_BYTES + 1)
+                    if len(data) > MAX_BYTES:
+                        print(f'Response from {url} is larger than {MAX_BYTES} bytes; skipped', file=sys.stderr)
+                        return None, b''
+                    return response.status, data
             except urllib.error.HTTPError as error:
-                result = (error.code, error.read())
+                result = (error.code, error.read(MAX_BYTES))
                 if error.code < 500 and error.code != 429:
                     return result
             except OSError:
@@ -357,7 +364,7 @@ def report(findings, today):
         lines += ['## Candidate new skills (not indexed, not excluded)', '',
                   'Candidates only; nothing is added automatically.', ''] + capped(
             [f"- {code(c['repo'])} {code(c['path'])}: "
-             f"https://github.com/{c['repo']}/blob/{c['head']}/{c['path']}" for c in findings['candidates']]) + ['']
+             f"https://github.com/{c['repo']}/blob/{c['head']}/{quote(c['path'])}" for c in findings['candidates']]) + ['']
     if findings['status']:
         lines += ['## Repository status', ''] + capped(
             [f"- {code(r)} ({where}): {code(what, 200)}" for r, where, what in findings['status']]) + ['']
@@ -381,7 +388,10 @@ def report(findings, today):
         head.append('Mechanical hash and pin refreshes: `python scripts/check_upstream.py --out report.md --apply`, '
                     'then read each changed entry\'s purpose and concerns text.')
     text = '\n'.join(head + [''] + lines).rstrip() + '\n'
-    return text if len(text) < 60000 else text[:60000] + '\n\n(report truncated)\n'
+    if len(text) <= REPORT_CAP:
+        return text
+    return (text[:REPORT_CAP].rsplit('\n', 1)[0]
+            + '\n\n(report truncated; the full text is in the workflow run log)\n')
 
 
 def write_json(path, value):
@@ -399,8 +409,8 @@ def apply(data, findings, root, now):
         collection = next(c for c in sources['collections'] if c['repo'] == result['repo'])
         for change in result['changed']:
             target = (root / change['item']['copied_path']).resolve()
-            if not target.is_relative_to(root.resolve()):
-                raise InternalError('Path escapes repository: ' + change['item']['copied_path'])
+            if not target.is_relative_to((root / 'skills').resolve()):
+                raise InternalError('Path is outside skills/: ' + change['item']['copied_path'])
             target.write_bytes(change['body'])
             change['item']['sha256'], change['item']['bytes'] = change['sha256'], len(change['body'])
             printed.append(f"vendored {result['repo']}: {change['item']['copied_path']}")

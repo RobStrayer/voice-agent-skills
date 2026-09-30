@@ -82,12 +82,19 @@ Most upkeep is automatic, and AI is spent only when something really changed.
   the landscape page, 180 for the rest) and broken external links. Results go to
   one standing issue labelled `upstream-drift`, titled "Upstream changes", which
   the workflow updates in place and closes when nothing is left to report.
-- **Automatic PR review.** Each non-draft pull request gets one review comment
-  from Claude. It checks new links against the rules above, reads scripts and
-  `SKILL.md` files for exfiltration, telemetry, remote installers and disabled
-  TLS, and looks for broken index formatting. It only comments and ends with a
-  verdict line. It cannot approve, merge or push, and it never runs the pull
-  request's code. The verifier still runs separately and must pass.
+- **Automatic PR review.** A non-draft pull request from the owner, a member, a
+  collaborator or an earlier contributor (GitHub's `author_association`) gets one
+  review comment from Claude. A pull request from anyone else is reviewed only
+  after a maintainer with write access adds the label `ai-review`; the workflow
+  checks the labeler's permission, and a later push does not re-run it (remove
+  and re-add the label to review again). This keeps strangers from spending the
+  API budget. The review checks new links against the rules above, reads scripts
+  and `SKILL.md` files for exfiltration, telemetry, remote installers and
+  disabled TLS, and looks for broken index formatting. It ends with a verdict
+  line. Claude has no shell, reads only a saved copy of the pull request and the
+  base checkout, and returns text; a fixed step posts it. It cannot approve,
+  merge, push or run the pull request's code. The verifier still runs
+  separately and must pass.
 - **What a maintainer decides.** Whether to merge pull requests from outside
   contributors, whether a candidate skill belongs in the collection, and every
   reply to a person. The review comment is input, not a decision.
@@ -95,8 +102,15 @@ Most upkeep is automatic, and AI is spent only when something really changed.
   report.md --apply` re-copies changed vendored files, re-pins a linked
   repository whose manifests changed and refreshes docs-hosted hashes. It never
   edits prose, so read the `purpose` and `concerns` text of each changed entry
-  it lists. A pull request that contains only such hash and pin refreshes, with
-  `verify` green, can be merged without further review.
+  it lists. Only changes to hashes, pins and dates in the JSON records may merge
+  without reading, with `verify` green. Any pull request that re-copies vendored
+  files under `skills/` needs its diff read by a maintainer before merge: those
+  files are new upstream content that ships to every installer, so check scripts,
+  hooks, install commands and URLs as you would for an outside pull request.
+- **Repository settings (check once, in the GitHub UI).** Turn off "Allow GitHub
+  Actions to create and approve pull requests", and protect `main` with a
+  required maintainer review, so a workflow token can never produce a mergeable
+  approval.
 - **Quarterly refresh.** Prices and products in [the landscape](landscape.md)
   change quickly. Once a quarter, re-check them against the vendors' own pages.
   The records behind that page live in `data/`: `landscape.json` (products),
