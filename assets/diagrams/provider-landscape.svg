@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 832" width="1080" height="832" role="img" aria-labelledby="t d">
+<title id="t">Who does what in a voice agent</title>
+<desc id="d">The voice agent stack by provider type. Managed platforms (category A: Vapi, Retell, Bland, ElevenLabs Agents, Synthflow, Telnyx AI Assistants) bundle everything behind a dashboard or API, billed per minute. Orchestration frameworks (category C: LiveKit Agents, Pipecat, TEN Framework, jambonz) are open-source code that wires the pieces together. In the middle, turn detection and audio cleanup (category G, turn-taking and audio: Silero VAD, LiveKit turn detector, Pipecat Smart Turn, Krisp, ai-coustics) feeds either a cascade of streaming speech-to-text (D: Deepgram, AssemblyAI, Speechmatics, Soniox), a large language model (I: OpenAI, Anthropic, Google, Groq, Cerebras) and text-to-speech (E: ElevenLabs, Cartesia, Rime, Inworld), or one speech-to-speech model (B: OpenAI Realtime, Gemini Live, Amazon Nova Sonic, Azure Voice Live, xAI Grok). Underneath, phone and transport providers (F: Twilio, Telnyx, Vonage, Plivo, SignalWire, Sinch, and WebRTC from LiveKit, Daily and Agora) carry the call. Alongside, testing and monitoring tools (H: Coval, Hamming, Cekura, Roark, Langfuse, plus framework test tools) cover the whole stack. Names are examples, not rankings; checked September 30, 2026.</desc>
+<!-- Edit freely. Bands (A, C, F, H) are neutral; pipeline cards take their stage colour. Letters match the categories in docs/landscape.md. -->
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--think:#4a3aa7;--speak:#b3441a}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--think:#a29af0;--speak:#ec7a45}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}.ink2{fill:var(--ink2)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}.band{fill:var(--net-t);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.ink{fill:var(--ink)}
+.e-listen{fill:var(--listen)}.e-think{fill:var(--think)}.e-speak{fill:var(--speak)}.e-ink{fill:var(--ink)}
+.bar-listen{fill:var(--listen)}.bar-think{fill:var(--think)}.bar-speak{fill:var(--speak)}
+.desc{font-size:15px;fill:var(--ink2)}.small{font-size:14px}.names{font-size:15px;font-weight:600}.foot{font-size:15px;fill:var(--ink2)}
+.arrow{fill:none;stroke:var(--ink2);stroke-width:2}.head{fill:var(--ink2)}.pill{fill:var(--card);stroke:var(--line)}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="831" rx="16"/>
+<text class="h1" x="32" y="50">Who does what in a voice agent</text>
+<text class="sub" x="32" y="78">Nine kinds of product and where each one fits. The letters match the provider landscape guide.</text>
+<rect class="band" x="32" y="104" width="816" height="96" rx="14"/>
+<text class="eyebrow ink" x="52" y="134">A · MANAGED PLATFORMS</text>
+<text class="desc" x="52" y="160">Bundle everything below behind a dashboard or an API, billed per minute.</text>
+<text class="names" x="52" y="183">Vapi, Retell, Bland, ElevenLabs Agents, Synthflow, Telnyx AI Assistants</text>
+<rect class="band" x="32" y="214" width="816" height="96" rx="14"/>
+<text class="eyebrow ink" x="52" y="244">C · ORCHESTRATION FRAMEWORKS</text>
+<text class="desc" x="52" y="270">Open-source code that wires the pieces together. You run it, or use their cloud.</text>
+<text class="names" x="52" y="293">LiveKit Agents, Pipecat, TEN Framework, jambonz</text>
+<clipPath id="clip-g"><rect x="32" y="334" width="189.0" height="316" rx="14"/></clipPath>
+<rect class="card" x="32" y="334" width="189.0" height="316" rx="14"/>
+<rect class="bar-listen" x="32" y="334" width="189.0" height="5" clip-path="url(#clip-g)"/>
+<text class="eyebrow e-listen" x="50" y="366">G · TURN-TAKING</text>
+<text class="desc" x="50" y="391"><tspan x="50" dy="0">Knows when the caller</tspan><tspan x="50" dy="21">has finished, and</tspan><tspan x="50" dy="21">cleans up the sound.</tspan></text>
+<text class="names" x="50" y="464"><tspan x="50" dy="0">Silero VAD</tspan><tspan x="50" dy="21">LiveKit turn detector</tspan><tspan x="50" dy="21">Pipecat Smart Turn</tspan><tspan x="50" dy="21">Krisp, ai-coustics</tspan></text>
+<clipPath id="clip-d"><rect x="241.0" y="334" width="189.0" height="172" rx="14"/></clipPath>
+<rect class="card" x="241.0" y="334" width="189.0" height="172" rx="14"/>
+<rect class="bar-listen" x="241.0" y="334" width="189.0" height="5" clip-path="url(#clip-d)"/>
+<text class="eyebrow e-listen" x="259.0" y="366">D · SPEECH-TO-TEXT</text>
+<text class="desc" x="259.0" y="391"><tspan x="259.0" dy="0">Turns speech into</tspan><tspan x="259.0" dy="21">words as you talk.</tspan></text>
+<text class="names" x="259.0" y="443"><tspan x="259.0" dy="0">Deepgram, AssemblyAI,</tspan><tspan x="259.0" dy="21">Speechmatics, Soniox</tspan></text>
+<clipPath id="clip-i"><rect x="450.0" y="334" width="189.0" height="172" rx="14"/></clipPath>
+<rect class="card" x="450.0" y="334" width="189.0" height="172" rx="14"/>
+<rect class="bar-think" x="450.0" y="334" width="189.0" height="5" clip-path="url(#clip-i)"/>
+<text class="eyebrow e-think" x="468.0" y="366">I · LLM</text>
+<text class="desc" x="468.0" y="391"><tspan x="468.0" dy="0">The language model:</tspan><tspan x="468.0" dy="21">decides what to say</tspan><tspan x="468.0" dy="21">and which tools to call.</tspan></text>
+<text class="names" x="468.0" y="464"><tspan x="468.0" dy="0">OpenAI, Anthropic,</tspan><tspan x="468.0" dy="21">Google, Groq, Cerebras</tspan></text>
+<clipPath id="clip-e"><rect x="659.0" y="334" width="189.0" height="172" rx="14"/></clipPath>
+<rect class="card" x="659.0" y="334" width="189.0" height="172" rx="14"/>
+<rect class="bar-speak" x="659.0" y="334" width="189.0" height="5" clip-path="url(#clip-e)"/>
+<text class="eyebrow e-speak" x="677.0" y="366">E · TEXT-TO-SPEECH</text>
+<text class="desc" x="677.0" y="391"><tspan x="677.0" dy="0">Speaks the reply,</tspan><tspan x="677.0" dy="21">streaming as it goes.</tspan></text>
+<text class="names" x="677.0" y="443"><tspan x="677.0" dy="0">ElevenLabs, Cartesia,</tspan><tspan x="677.0" dy="21">Rime, Inworld</tspan></text>
+<path class="arrow" d="M223.0 420.0H237.0" marker-end="url(#ah)"/>
+<path class="arrow" d="M432.0 420.0H446.0" marker-end="url(#ah)"/>
+<path class="arrow" d="M641.0 420.0H655.0" marker-end="url(#ah)"/>
+<clipPath id="clip-b"><rect x="241.0" y="546" width="607.0" height="104" rx="14"/></clipPath>
+<rect class="card" x="241.0" y="546" width="607.0" height="104" rx="14"/>
+<rect class="bar-listen" x="241.0" y="546" width="202.33333333333334" height="5" clip-path="url(#clip-b)"/>
+<rect class="bar-think" x="443.33333333333337" y="546" width="202.33333333333334" height="5" clip-path="url(#clip-b)"/>
+<rect class="bar-speak" x="645.6666666666667" y="546" width="202.33333333333334" height="5" clip-path="url(#clip-b)"/>
+<text class="eyebrow e-ink" x="259.0" y="578">B · SPEECH-TO-SPEECH</text>
+<text class="desc" x="259.0" y="603"><tspan x="259.0" dy="0">Or one model hears, thinks and speaks, with no text in between.</tspan></text>
+<text class="names" x="259.0" y="634"><tspan x="259.0" dy="0">OpenAI Realtime, Gemini Live, Amazon Nova Sonic, Azure Voice Live, xAI Grok</tspan></text>
+<path class="arrow" d="M223.0 598.0H237.0" marker-end="url(#ah)"/>
+<text class="desc small" x="50" y="590"><tspan x="50" dy="0">Often built into</tspan><tspan x="50" dy="21">frameworks and</tspan><tspan x="50" dy="21">realtime models.</tspan></text>
+<rect class="pill" x="522.5" y="513.0" width="44" height="26" rx="13"/>
+<text class="mono ink2" x="544.5" y="531.0" text-anchor="middle">or</text>
+<rect class="band" x="32" y="674" width="816" height="96" rx="14"/>
+<text class="eyebrow ink" x="52" y="704">F · PHONE AND TRANSPORT</text>
+<text class="desc" x="52" y="730">Carries the call: phone numbers and SIP trunks, or WebRTC for browsers and apps.</text>
+<text class="names" x="52" y="753">Twilio, Telnyx, Vonage, Plivo, SignalWire, Sinch · WebRTC: LiveKit, Daily, Agora</text>
+<rect class="band" x="868" y="104" width="180" height="666" rx="14"/>
+<text class="eyebrow ink" x="886" y="134"><tspan x="886" dy="0">H · TESTING AND</tspan><tspan x="886" dy="20">MONITORING</tspan></text>
+<text class="desc" x="886" y="194"><tspan x="886" dy="0">Simulates callers,</tspan><tspan x="886" dy="21">scores calls and</tspan><tspan x="886" dy="21">traces what went</tspan><tspan x="886" dy="21">wrong, across the</tspan><tspan x="886" dy="21">whole stack.</tspan></text>
+<text class="names" x="886" y="318"><tspan x="886" dy="0">Coval</tspan><tspan x="886" dy="23">Hamming</tspan><tspan x="886" dy="23">Cekura</tspan><tspan x="886" dy="23">Roark</tspan><tspan x="886" dy="23">Langfuse</tspan><tspan x="886" dy="23"></tspan><tspan x="886" dy="23">Plus the test tools</tspan><tspan x="886" dy="23">built into LiveKit</tspan><tspan x="886" dy="23">and Pipecat.</tspan></text>
+<text class="foot" x="32" y="804">Names are examples in each category, not rankings. Checked September 30, 2026. The guide lists 181 products with prices.</text>
+</svg>
