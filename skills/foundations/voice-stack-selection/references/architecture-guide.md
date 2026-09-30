@@ -270,6 +270,42 @@ alone does not justify migration.
 A self-hosted server also costs money and needs an operator. If callers cannot wait,
 fund warm capacity or test a path without that fleet. Count web and phone under one ceiling.
 
+### Worked comparison: appointments over web and phone
+
+This is a hypothetical design exercise, not a tested provider recommendation.
+Assume an existing booking service, web and inbound phone channels, a required
+text checkpoint before writes, human escalation, and a small operating team.
+The booking API can report operation status but cannot reliably cancel a request
+after dispatch. Language support, regional processing, and peak load remain to
+be measured or verified.
+
+| Decision | A: staged speech pipeline | B: native speech session |
+| --- | --- | --- |
+| Input and response | STT supplies revisions to a text agent; TTS speaks its output. | The speech model handles audio interaction; an auxiliary transcript is evidence only under its documented contract. |
+| Business checkpoint | Application validates text-agent arguments and required confirmation before dispatch. | Application validates proposed tool arguments and confirmation before dispatch. If policy requires inspecting the model's exact recognized text, an auxiliary transcript alone does not satisfy that requirement. |
+| Web and phone | Distinct channel adapters share the action service. Each owns its codec and playback contract. | Supported WebRTC/SIP or bridge paths connect the session. Verify transfer and playback controls for each path. |
+| Uncertain booking | Durable action A remains unresolved while the caller gives corrected intent B. | Same durable action contract; conversational fluency does not remove the reconciliation requirement. |
+| Operational cost | More speech-stage boundaries to observe, plus selected runtime and provider quotas. | Fewer explicit speech stages, with model-session constraints and any bridge/runtime costs still present. |
+| Replacement cost | Stage adapters can be replaced, but segmentation, timing, and cancellation must be retested. | Replacing the speech session may require remapping events, context, voice, tools, and interruption behavior. |
+
+Start the comparison with A because the stated text checkpoint and existing text
+workflow favor that boundary. Keep B as a candidate if the owner confirms that
+validated tool arguments satisfy the checkpoint requirement, or the selected
+native path supplies the necessary text evidence. Neither option passes until
+language, region, transfer, and load requirements have evidence.
+
+Run the same booking, correction, quiet-speech, and transfer-failure fixtures
+against both. Compare correct authoritative outcomes before response speed.
+Measure speech-end to useful playback and interruption-to-stop on compatible
+clocks; report missing coverage. Account for the same connected time, active
+speech, tool calls, warm capacity, and transfer legs under each billing model.
+
+The decision record might read: "Choose A for the initial release if it meets the
+agreed conversation and cost criteria. Reopen the choice if B satisfies the text
+checkpoint, required regions, and failure tests while improving measured caller
+experience enough to justify migration." Fill in actual measurements before
+treating that sentence as an approved project decision.
+
 ## Prove the decision before migration
 
 Hold task, input audio, tools, and outcome rubric constant. Change

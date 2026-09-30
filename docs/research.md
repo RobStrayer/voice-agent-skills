@@ -8,7 +8,7 @@ limits of the review. It is not an inventory of every voice skill on the interne
 
 | Material | Coverage | Treatment |
 | --- | --- | --- |
-| Original NL foundations | 5 skills | Architecture, conversation design, latency, evaluation, and media debugging; maintained here. |
+| Original NL foundations | 9 skills | Architecture, conversation, turn taking, audio frontends, recognition/synthesis, call reliability, latency, evaluation, and media debugging; maintained here. |
 | Core provider skills | 27 skills from 6 repositories | Current original links, plus 104 licensed files preserved at recorded commits. |
 | Additional source links | 102 skills from 20 repositories | Voice-specific provider workflows, SDK language variants, and clearly marked optional entries; no new third-party copies. |
 | Runtime resources | 43 unique projects | Frameworks, models, transport, evaluation, and learning material with dated metadata and license qualifications. |
@@ -124,6 +124,17 @@ verified. Shiny supplies an optional native .NET frontend skill with visible
 prerelease and platform-support qualifications.
 
 ## Remaining limits
+
+The deeper handbook revision added six packaged chapters: turn control, audio
+frontends, speech recognition/synthesis, transactions/handoffs, telephony, and
+production operations. The architecture chapter remains a separate decision
+guide. New chapters include worked cases, failure analysis, and evaluation
+worksheets; they are original engineering guidance with cited provider facts.
+Independent reviewers exercised an interrupted booking with a lost response and
+an echoing laptop that also clips quiet speech. Those reviews exposed overly
+broad interruption and LiveKit enhancement statements, which were corrected
+against the current primary documents. These were instruction exercises, not
+executed calls or audio benchmarks.
 
 No third-party helper, installer, model inference, paid API request, voice call,
 provider account mutation, or deployment was executed. Released package archives

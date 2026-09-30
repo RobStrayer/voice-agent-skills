@@ -48,6 +48,14 @@ the date you fetched a page.
    private data, and unintended scope changes. Do not run installers, embedded
    telemetry commands, paid model requests, or example calls as part of research.
 
+Keep the engineering handbook substantive as it grows. Turn taking, audio
+frontends, recognition, synthesis, tools, telephony, and operations each need
+direct navigation and practical guidance. A new source link does not replace a
+worked case, failure analysis, or test worksheet. Keep a skill's required guides
+inside its folder so installing it preserves those instructions. Check diagrams
+against the revised state and event contracts; update their source and rendered
+form together, with meaningful alternative text and a source-review date.
+
 ## Checks before publication
 
 Run from the repository root:

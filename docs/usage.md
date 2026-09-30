@@ -38,7 +38,7 @@ skill. Markdown format compatibility does not establish runtime compatibility.
 
 Eight upstream skills use the Agent Skills specification's `compatibility` field;
 Twilio's architect skill also uses a provider-specific `tier` field. The bundled
-Codex skill-creator validator rejects these extra fields, although all 32 headers
+Codex skill-creator validator rejects these extra fields, although all 36 headers
 parse as YAML and their required names/descriptions pass the collection checks.
 Upstream content is preserved. If a host requires a narrower schema, adapt a local
 installation copy and retain the original snapshot and attribution here.

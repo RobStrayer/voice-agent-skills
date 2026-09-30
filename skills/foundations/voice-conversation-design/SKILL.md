@@ -12,6 +12,10 @@ prompt, accepted voice identity, and actual tool contracts before rewriting them
 Inspect a few real or representative dialogs to find where callers hesitate,
 correct the agent, repeat themselves, or leave without a resolved task.
 
+For interrupted writes, uncertain outcomes, or agent/human transfers, read the
+packaged [transaction and handoff guide](references/transactions-and-handoffs.md).
+It supplies action states, a worked recovery case, and side-effect test scenarios.
+
 ## Write the conversation contract
 
 Keep identity, allowed work, authoritative knowledge, tool rules, turn behavior,
@@ -50,6 +54,30 @@ define whether the agent follows the caller's language, can switch languages, or
 needs to transfer. Verify the available recognition and synthesis support before
 promising a language or pronunciation. Use the caller's locale for ambiguous dates
 and numbers when known; clarify when it changes the requested action.
+
+## Support different ways of completing the conversation
+
+Define the alternatives the application actually implements: repetition at a
+different pace, captions or text, keypad input, a supported language change, or
+human help. Specify how the caller discovers each option and how to reach it
+without a long spoken menu. Do not infer a person's ability, language fluency, or
+identity from their voice. Ask about the specific communication preference when
+it matters to the task.
+
+Preserve confirmed fields, consent or authorization already recorded, pending
+action IDs, and the unresolved question when changing channel or transferring.
+Carry only information the destination may receive. Verify that captions and
+transcripts reflect corrections, and distinguish generated text from speech
+actually delivered when that distinction affects the next step.
+
+Test slow speech, long pauses, a quiet one-word correction, a request to repeat
+one detail, and completion through each offered alternative. Check that longer
+waits do not become repeated interruptions or accidental hangups. For keypad
+input, verify which leg receives tones and how the input is confirmed without
+reading sensitive values aloud unnecessarily. A voice-only test cannot establish
+that a text or human path works; exercise that path with the same task state.
+These are application design and test requirements, not a certification of
+accessibility or a substitute for applicable product requirements.
 
 ## Keep speech synchronized with actions
 

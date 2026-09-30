@@ -100,6 +100,28 @@ proof. The primary README, license, model card, or released package was used for
 the relevant claim. A successful Context7 query does not certify a source's
 currency or an example's runtime compatibility.
 
+## Engineering handbook source checks
+
+The deeper handbook pass on **2026-09-30 UTC** queried Context7 for the relevant
+provider and media topics, then compared the consequential claims with current
+primary pages. The following distinctions affect implementation:
+
+| Topic | Current primary evidence | Consequence for these guides |
+| --- | --- | --- |
+| LiveKit end-of-turn detection | [Turn detector](https://docs.livekit.io/agents/logic/turns/turn-detector.md) | Current audio detection differs from the deprecated text detector, which is slated for removal in SDK 2.0. Audio detection requires Python 1.6.1+ or Node.js 1.4.7+ and a minimum VAD silence duration of 0.25 seconds. This SDK validation requirement is not a universal endpoint tuning recommendation. |
+| LiveKit audio processing | [Noise cancellation](https://docs.livekit.io/transport/media/noise-cancellation/) | Distinguish frontend BVC from current agent-side Krisp VIVA/VIVA telephony. Cloud-mediated enhancement and direct-auth ai-coustics deployments have different requirements. The frontend guide records the self-hosted exception. |
+| Deepgram streaming recognition | [Finality and endpointing](https://developers.deepgram.com/docs/understand-endpointing-interim-results), [Flux migration](https://developers.deepgram.com/docs/flux/nova-3-migration) | Stable transcript segments and turn completion are separate. Nova and Flux event handling are not interchangeable. |
+| ElevenLabs incremental synthesis | [WebSocket guide](https://elevenlabs.io/docs/eleven-api/guides/how-to/websockets/realtime-tts), [API reference](https://elevenlabs.io/docs/api-reference/text-to-speech/v-1-text-to-speech-voice-id-stream-input) | Text buffering and final flush affect output. The reference qualifies auto mode for full sentences; it is not an unconditional low-latency setting for arbitrary token chunks. The current API contract takes precedence over generated SDK summaries. |
+| LiveKit action lifetime | [Tool definition](https://docs.livekit.io/agents/logic/tools/definition.md), [Async tools](https://docs.livekit.io/agents/logic/tools/async.md) | Interrupted work can continue. Async cancellation is opt-in; duplicate controls are based on tool name, not arguments. Toolset lifetime across an agent handoff does not supply a durable external transaction ledger. |
+| Echo and local enhancement | [WebRTC audio processing](https://webrtc.googlesource.com/src/+/refs/heads/main/modules/audio_processing/include/audio_processing.h), [RNNoise](https://gitlab.xiph.org/xiph/rnnoise), [DeepFilterNet](https://github.com/Rikorose/DeepFilterNet) | Check reference audio, frame/sample contracts, deployment cost, and artifact-specific licensing. Code terms do not establish every model artifact's terms. |
+| Telephone media and completion | [Twilio Media Streams](https://www.twilio.com/docs/voice/media-streams), [message contract](https://www.twilio.com/docs/voice/media-streams/websocket-messages), [Call resource](https://www.twilio.com/docs/voice/api/call-resource) | Direction, DTMF support, clear/mark semantics, and callback event versus final status need explicit handling. |
+| Alternative media bridge | [jambonz listen contract](https://docs.jambonz.org/verbs/verbs/listen.md) | Binary streaming and buffered JSON return paths differ. The canonical Markdown document supplied the source when automated HTML retrieval was restricted. |
+
+The handbook's diagrams, state names, example timings, failure policies, and
+worksheets are original explanatory material. They do not claim to reproduce a
+provider's exact event graph. Source retrieval was read-only; SDK execution,
+audio-quality results, transfers, and capacity remain application-level tests.
+
 ## Snapshot freshness
 
 The 27 bundled provider skills and all 104 copied files were rechecked against
