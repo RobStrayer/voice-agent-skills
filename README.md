@@ -62,6 +62,10 @@ Browse [all 31 skills and their prerequisites](docs/catalog.md). Upstream snapsh
 are pinned to immutable commits; [sources.json](sources.json) records origins,
 licenses, and file checksums.
 
+The [existing skill discovery index](docs/local-skills.md) also covers all 80
+distinct voice-related skill names found during the local inventory, including
+specialist packs and useful operational helpers.
+
 ### More skill packs worth exploring
 
 - [Deepgram skills](https://github.com/deepgram/skills): speech recognition, speech
@@ -152,6 +156,7 @@ skills/
   openai/         Speech and transcription
 docs/
   catalog.md      Every skill and its prerequisites
+  local-skills.md Existing skill names and public counterparts
   resources.md    Frameworks, models, tools, and learning paths
   usage.md        Portability and runtime notes
   research.md     Curation method and coverage

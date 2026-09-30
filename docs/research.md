@@ -20,6 +20,10 @@ Different versions and content variants were retained in the private research
 inventory. Some project directories were inaccessible, so project-local coverage
 is incomplete. The research inventory stays outside this publishable repository.
 
+A [sanitized discovery index](local-skills.md) preserves all 80 names and links
+to reviewed public counterparts. It contains no local paths or copied specialist
+prose. Indexed discoveries are separate from the 31 included skills.
+
 The installed collection was a discovery source. Public upstream snapshots supply
 the vendored content. This avoids exporting local execution customizations or
 private project information. Local files were not assumed to be latest or licensed
