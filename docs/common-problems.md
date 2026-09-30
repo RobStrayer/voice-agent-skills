@@ -223,7 +223,7 @@ fields. Check values against real data with code (calendar, customer list,
 address lookup). Offer the keypad for long digit strings. Keep transcripts
 linked to the audio so a person can check before anything is filed.
 
-**Skill:** [voice-speech-pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md)
+**Skills:** [voice-data-capture](../skills/foundations/voice-data-capture/SKILL.md) · [voice-speech-pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md)
 **Sources:** [HN: transcript errors treated as fact](https://news.ycombinator.com/item?id=49294441) ·
 [Pipecat: number transcription after a default change](https://github.com/pipecat-ai/pipecat/issues/3913)
 

@@ -2,7 +2,7 @@
 
 [Home](../README.md) / Skill catalog
 
-**39 bundled skills** · **12 original foundations** · **27 provider skills**
+**40 bundled skills** · **13 original foundations** · **27 provider skills**
 
 Choose a foundation for the engineering problem, then a provider skill for the implementation. All provider names below open the original maintained source; **Snapshot** opens the dated copy kept here.
 
@@ -15,6 +15,7 @@ Reviewed: **2026-09-30 UTC**. [More upstream skills](more-skills.md) cover addit
 | Choose the stack and ownership boundaries | [voice-stack-selection](../skills/foundations/voice-stack-selection/SKILL.md) |
 | Improve listening, noise handling, or turn taking | [voice-audio-frontends](../skills/foundations/voice-audio-frontends/SKILL.md) · [voice-turn-taking](../skills/foundations/voice-turn-taking/SKILL.md) |
 | Integrate recognition and spoken output | [voice-speech-pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md) |
+| Capture names, numbers and emails correctly | [voice-data-capture](../skills/foundations/voice-data-capture/SKILL.md) |
 | Fix conversation, tool progress, or handoffs | [voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md) · [voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md) |
 | Investigate delay, silence, or stale playback | [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) · [voice-media-debugging](../skills/foundations/voice-media-debugging/SKILL.md) |
 | Test a change before release | [voice-agent-evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md) |
@@ -36,6 +37,7 @@ Original provider-neutral skills. Use with project context and redacted evidence
 | [voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md) | Design and debug telephony, transfers, capacity, shutdown, observability, and incident recovery. | Original NL Voice Skills material |
 | [voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md) | Write and evaluate voice agent prompts for spoken turn taking, concise responses, clarification, tool progress, interruptions, and safe handoffs. | Original NL Voice Skills material |
 | [voice-cost-estimation](../skills/foundations/voice-cost-estimation/SKILL.md) | Estimate cost per minute, per call and per month from your own prices, find what drives the bill, and stress-test the numbers. | Original NL Voice Skills material |
+| [voice-data-capture](../skills/foundations/voice-data-capture/SKILL.md) | Capture phone numbers, emails, names, addresses, dates, amounts and codes by voice: ask, read back, validate in code and confirm before anything is written. Includes a read-back script. | Original NL Voice Skills material |
 | [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) | Investigate voice agent response delay using raw turn events, consistent clocks, component timings, and audio playback evidence; use for latency regressions and benchmark audits. | Original NL Voice Skills material |
 | [voice-media-debugging](../skills/foundations/voice-media-debugging/SKILL.md) | Isolate bad codecs, sample rates, buffering, one-way audio, and stale playback after interruption. | Original NL Voice Skills material |
 | [voice-phone-compliance](../skills/foundations/voice-phone-compliance/SKILL.md) | Keep AI phone agents legal and their numbers deliverable: consent, AI disclosure, do-not-call, calling hours, recording consent, STIR/SHAKEN and spam labels. Not legal advice. | Original NL Voice Skills material |

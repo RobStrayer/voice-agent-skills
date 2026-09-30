@@ -8,7 +8,7 @@ limits of the review. It is not an inventory of every voice skill on the interne
 
 | Material | Coverage | Treatment |
 | --- | --- | --- |
-| Original NL foundations | 9 skills | Architecture, conversation, turn taking, audio frontends, recognition/synthesis, call reliability, latency, evaluation, and media debugging; maintained here. |
+| Original NL foundations | 13 skills | Architecture, conversation, turn taking, audio frontends, recognition/synthesis, call reliability, latency, evaluation, media debugging, cost, compliance, security, and data capture; maintained here. |
 | Core provider skills | 27 skills from 6 repositories | Current original links, plus 104 licensed files preserved at recorded commits. |
 | Additional source links | 297 skills: 279 from 62 repositories and 18 on vendor documentation sites | Voice-specific provider workflows, SDK language variants, and clearly marked optional entries; no new third-party copies. |
 | Runtime resources | 43 unique projects | Frameworks, models, transport, evaluation, and learning material with dated metadata and license qualifications. |

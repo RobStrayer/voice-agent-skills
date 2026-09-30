@@ -8,7 +8,7 @@ a booking line, a browser assistant, or anything else people talk to. It has pla
 guides for beginners, diagrams that show how the parts fit, and **skills** your
 coding agent (Claude Code, Codex and others) can load to do the work properly.
 
-**12 original skills · 27 bundled provider skills · 297 linked skills from 50 providers and authors · 43 runtime resources**
+**13 original skills · 27 bundled provider skills · 297 linked skills from 50 providers and authors · 43 runtime resources**
 
 ## Start here
 
@@ -73,7 +73,7 @@ Then give the agent a real task and the evidence it needs:
 
 ## Find a skill for the job
 
-These twelve skills are original to this repo and work with any provider.
+These thirteen skills are original to this repo and work with any provider.
 
 | What you're working on | Skill |
 | --- | --- |
@@ -82,6 +82,7 @@ These twelve skills are original to this repo and work with any provider.
 | The agent cuts people off, or won't stop when interrupted | [voice-turn-taking](skills/foundations/voice-turn-taking/SKILL.md) |
 | Echo, background noise, or quiet words going missing | [voice-audio-frontends](skills/foundations/voice-audio-frontends/SKILL.md) |
 | Misheard names and numbers, pronunciation, streaming speech | [voice-speech-pipeline](skills/foundations/voice-speech-pipeline/SKILL.md) |
+| Capturing phone numbers, emails, names and addresses correctly | [voice-data-capture](skills/foundations/voice-data-capture/SKILL.md) |
 | Replies feel slow and you need to know where the time goes | [voice-latency-audit](skills/foundations/voice-latency-audit/SKILL.md) |
 | Silent, one-way or garbled audio, codec and sample-rate errors | [voice-media-debugging](skills/foundations/voice-media-debugging/SKILL.md) |
 | Phone numbers, transfers, dropped calls, scaling and deploys | [voice-call-reliability](skills/foundations/voice-call-reliability/SKILL.md) |

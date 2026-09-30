@@ -66,6 +66,7 @@ accepted request, and a completed business action are different evidence.
 
 | Work area | What you'll work through | Open |
 | :--- | :--- | :--- |
+| **Names, numbers, and emails** | Asking, reading back, validating and storing caller details before anything is written | [Skill and read-back script](../skills/foundations/voice-data-capture/SKILL.md) |
 | **Tools, transactions, and handoffs** | Lost responses, idempotency, corrected intent, action ledgers, and ownership | [Guide](../skills/foundations/voice-conversation-design/references/transactions-and-handoffs.md) · [Skill](../skills/foundations/voice-conversation-design/SKILL.md) |
 | **Telephony and call control** | Signaling versus media, codecs, DTMF, transfers, webhook evidence, and cleanup | [Guide](../skills/foundations/voice-call-reliability/references/telephony-guide.md) · [Skill](../skills/foundations/voice-call-reliability/SKILL.md) |
 | **Phone rules** | Consent, AI disclosure, do-not-call lists, calling hours, recording consent, caller ID and spam labels | [Legal guide](../skills/foundations/voice-phone-compliance/references/legal-requirements-guide.md) · [Skill](../skills/foundations/voice-phone-compliance/SKILL.md) |
