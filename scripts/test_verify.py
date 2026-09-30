@@ -56,6 +56,17 @@ if __name__ == '__main__':
         else:
             raise AssertionError('Stale verification count was accepted')
         index.write_bytes(original_index)
+        figure = copy / 'assets/diagrams/hero.svg'
+        original_figure = figure.read_bytes()
+        figure.write_bytes(original_figure.replace(b'<title', b'<image href="https://example.invalid/a.png"/><title', 1))
+        try:
+            verify(copy)
+        except AssertionError as error:
+            assert 'external resource' in str(error), error
+            print('PASS: figures that load external resources are rejected.')
+        else:
+            raise AssertionError('Figure with an external resource was accepted')
+        figure.write_bytes(original_figure)
         (copy / 'accidental-secret.txt').write_text('ghp_' + 'A' * 32, encoding='utf-8')
         try:
             verify(copy)

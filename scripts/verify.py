@@ -3,6 +3,7 @@ import ast
 import hashlib
 import json
 import re
+import xml.etree.ElementTree as ElementTree
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -153,6 +154,15 @@ def verify(root=ROOT):
                 continue
             assert not any(pattern.search(content) for pattern in SENSITIVE), \
                 'Credential or private-path pattern in: ' + str(path)
+        # Figures render through <img> on GitHub: parseable, titled, and self-contained.
+        for path in ROOT.rglob('*.svg'):
+            relative = path.relative_to(ROOT).as_posix()
+            if '.git' in path.parts or relative in tracked:
+                continue
+            figure = ElementTree.parse(path).getroot()
+            assert figure.find('{http://www.w3.org/2000/svg}title') is not None, 'SVG without <title>: ' + relative
+            assert not re.search(r'''<script|@import|(?:href|src)\s*=\s*["']https?:|url\(\s*["']?https?:''',
+                                 path.read_text(encoding='utf-8')), 'SVG loads an external resource: ' + relative
         for path in ROOT.rglob('*.md'):
             if '.git' in path.parts:
                 continue
@@ -167,7 +177,7 @@ def verify(root=ROOT):
                 assert local.is_relative_to(ROOT) and local.exists(), f'{path}: {target}'
         print(f'PASS: {len(skills)} skills, {len(tracked)} upstream files, '
               f'{len(entries)} linked skills, {len(docs)} docs-hosted skills, {len(resources)} resources; '
-              'names, provenance, licenses, syntax, '
+              'names, provenance, licenses, syntax, figures, '
               'local paths, and bounded credential patterns checked.')
     finally:
         ROOT = previous
