@@ -1,12 +1,102 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="recoverable-handoff-title recoverable-handoff-desc" id="recoverable-handoff-root"><title id="recoverable-handoff-title">A handoff succeeds before the bot leaves</title><desc id="recoverable-handoff-desc">The controller preserves the caller leg through human acceptance and verified connection, retires only the bot, and applies fallback when observed call state does not confirm a successful handoff.</desc><defs>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
-      #recoverable-handoff-root { --paper:#b9beb8; --paper-2:#d2d6cf; --ink:#202823; --strong:#18201c; --muted:#3e4a42; --soft:#414e44; --rule:rgba(32,40,35,.18); --rule-solid:#8e9b90; --accent:#2d6358; --accent-tint:#c9d9cf; --link:#3f5f54; }
-      #recoverable-handoff-root { color: var(--ink); font-family: 'Geist',system-ui,sans-serif; }
-      #recoverable-handoff-root .diagram-container { width:100%; overflow-x:auto; }
-      #recoverable-handoff-root .diagram-container { overflow-x:visible; }
-      #recoverable-handoff-root .figure-title { font-family:'Instrument Serif',Georgia,serif; font-size:28px; font-weight:400; fill:var(--strong); }
-      #recoverable-handoff-root .node-name { font-family:'Geist',system-ui,sans-serif; font-size:12px; font-weight:600; fill:var(--ink); }
-      #recoverable-handoff-root .sub { font-family:'Geist Mono',ui-monospace,monospace; font-size:9px; fill:var(--muted); }
-      #recoverable-handoff-root .label { font-family:'Geist Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.04em; fill:var(--soft); }
-      #recoverable-handoff-root .meta { font-family:'Geist Mono',ui-monospace,monospace; font-size:8px; fill:var(--muted); }</style><marker id="recoverable-handoff-rh-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3e4a42"/></marker><marker id="recoverable-handoff-rh-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2d6358"/></marker><marker id="recoverable-handoff-rh-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3f5f54"/></marker></defs><rect width="960" height="600" fill="#b9beb8"/><text x="40" y="68" class="figure-title" text-anchor="start">A handoff succeeds before the bot leaves</text><text x="920" y="64" class="meta" text-anchor="end">REVIEWED 2026-09-30 UTC</text><text x="40" y="88" class="sub" text-anchor="start">CONCEPTUAL POLICY: retain caller; retire only bot. Failure state may have no destination reply.</text><line x1="160" y1="164" x2="160" y2="540" stroke="#8e9b90" stroke-width="1" stroke-dasharray="3,3"/><line x1="480" y1="164" x2="480" y2="540" stroke="#8e9b90" stroke-width="1" stroke-dasharray="3,3"/><line x1="800" y1="164" x2="800" y2="540" stroke="#8e9b90" stroke-width="1" stroke-dasharray="3,3"/><g data-message="HUMAN PLEASE"><line x1="160" y1="184" x2="480" y2="184" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="284" y="160" width="72" height="16" rx="2" fill="#b9beb8"/><text x="320" y="172" class="label" text-anchor="middle">HUMAN PLEASE</text></g><g data-message="EXPLAIN HOLD"><line x1="480" y1="216" x2="160" y2="216" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="284" y="192" width="72" height="16" rx="2" fill="#b9beb8"/><text x="320" y="204" class="label" text-anchor="middle">EXPLAIN HOLD</text></g><g data-message="REQUEST LEG"><line x1="480" y1="248" x2="800" y2="248" stroke="#3f5f54" stroke-width="1.2" marker-end="url(#recoverable-handoff-rh-arrow-link)"/><rect x="606" y="224" width="68" height="16" rx="2" fill="#b9beb8"/><text x="640" y="236" class="label" text-anchor="middle">REQUEST LEG</text></g><rect x="112" y="264" width="736" height="276" rx="4" fill="#202823" fill-opacity=".02" stroke="#8e9b90"/><rect x="112" y="264" width="40" height="16" rx="2" fill="#b9beb8" stroke="#8e9b90"/><text x="132" y="276" class="label" text-anchor="middle">ALT</text><text x="172" y="280" class="meta" text-anchor="start">[accepted; connect and verify]</text><g data-message="ACCEPTED"><line x1="800" y1="304" x2="480" y2="304" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="610" y="280" width="60" height="16" rx="2" fill="#b9beb8"/><text x="640" y="292" class="label" text-anchor="middle">ACCEPTED</text></g><g data-message="PASS CONTEXT"><line x1="480" y1="336" x2="800" y2="336" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="604" y="312" width="72" height="16" rx="2" fill="#b9beb8"/><text x="640" y="324" class="label" text-anchor="middle">PASS CONTEXT</text></g><g data-message="CONNECT"><line x1="480" y1="368" x2="160" y2="368" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="290" y="344" width="60" height="16" rx="2" fill="#b9beb8"/><text x="320" y="356" class="label" text-anchor="middle">CONNECT</text></g><g data-message="PARTIES LIVE"><line x1="800" y1="392" x2="480" y2="392" stroke="#2d6358" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#recoverable-handoff-rh-arrow-accent)"/><rect x="604" y="368" width="72" height="16" rx="2" fill="#b9beb8"/><text x="640" y="380" class="label" text-anchor="middle">PARTIES LIVE</text></g><g data-message="RETIRE BOT"><path d="M 480 416 H 512 Q 520 416 520 424 Q 520 432 512 432 H 480" fill="none" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="528" y="416" width="64" height="16" rx="2" fill="#b9beb8"/><text x="560" y="428" class="label" text-anchor="middle">RETIRE BOT</text></g><line x1="120" y1="448" x2="840" y2="448" stroke="#8e9b90" stroke-dasharray="4,3"/><text x="172" y="464" class="meta" text-anchor="start">[busy, declined, connection failed, timeout, or unresolved]</text><g data-message="NOT CONFIRMED"><path d="M 480 488 H 512 Q 520 488 520 496 Q 520 504 512 504 H 480" fill="none" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="528" y="488" width="80" height="16" rx="2" fill="#b9beb8"/><text x="568" y="500" class="label" text-anchor="middle">NOT CONFIRMED</text></g><g data-message="USE FALLBACK"><line x1="480" y1="528" x2="160" y2="528" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#recoverable-handoff-rh-arrow)"/><rect x="284" y="504" width="72" height="16" rx="2" fill="#b9beb8"/><text x="320" y="516" class="label" text-anchor="middle">USE FALLBACK</text></g><g data-actor="Caller leg"><rect x="80" y="108" width="160" height="56" rx="6" fill="#b9beb8"/><rect x="80" y="108" width="160" height="56" rx="6" fill="#d2d6cf" stroke="#8e9b90"/><text x="96" y="123" class="meta" text-anchor="start">CALLER</text><text x="160" y="139" class="node-name" text-anchor="middle">Caller leg</text><text x="160" y="155" class="sub" text-anchor="middle">preserve connection</text></g><g data-actor="Call controller"><rect x="400" y="108" width="160" height="56" rx="6" fill="#b9beb8"/><rect x="400" y="108" width="160" height="56" rx="6" fill="#d2d6cf" stroke="#8e9b90"/><text x="416" y="123" class="meta" text-anchor="start">APPLICATION</text><text x="480" y="139" class="node-name" text-anchor="middle">Call controller</text><text x="480" y="155" class="sub" text-anchor="middle">handoff state</text></g><g data-actor="Human destination"><rect x="720" y="108" width="160" height="56" rx="6" fill="#b9beb8"/><rect x="720" y="108" width="160" height="56" rx="6" fill="#d2d6cf" stroke="#8e9b90"/><text x="736" y="123" class="meta" text-anchor="start">RECIPIENT</text><text x="800" y="139" class="node-name" text-anchor="middle">Human destination</text><text x="800" y="155" class="sub" text-anchor="middle">acceptance + connection</text></g><line x1="40" y1="548" x2="920" y2="548" stroke="#8e9b90" stroke-width=".8"/><line x1="40" y1="560" x2="64" y2="560" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#recoverable-handoff-rh-arrow)"/><text x="76" y="563" class="meta" text-anchor="start">REQUEST / CONTROL</text><line x1="244" y1="560" x2="268" y2="560" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#recoverable-handoff-rh-arrow)"/><text x="280" y="563" class="meta" text-anchor="start">RETURN / EVIDENCE</text><text x="920" y="563" class="meta" text-anchor="end">CONCEPTUAL POLICY, NOT PROVIDER EVENTS</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 596" width="1080" height="596" role="img" aria-labelledby="t d">
+<title id="t">A handoff succeeds before the bot leaves</title>
+<desc id="d">A timeline of three call legs across six steps: explain the hold, reach the human, human accepts, connect, verify, retire. The caller leg stays connected the whole time. The bot leg stays on the call until both parties are confirmed live, then retires. The human leg rings, is accepted, then goes live with the caller. If any step is not confirmed, because the human was busy, declined, failed to connect, timed out or the outcome is unresolved, the caller is still connected and the agent uses a supported fallback: return to the agent, a bounded wait, contact details or a callback.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--think:#4a3aa7;--think-t:#eae8f8;--warn:#8a5c00;--warn-t:#fff8c5;--good:#1a7f37;--good-t:#dafbe1}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--think:#a29af0;--think-t:#262045;--warn:#d29922;--warn-t:#2e2508;--good:#3fb950;--good-t:#12301a}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}.bt{font-size:15px;font-weight:600}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.lbl{font-weight:700;fill:var(--ink)}.num{font-size:14px;font-weight:700;text-anchor:middle}
+.dash{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}.ahw{fill:var(--warn)}
+.net{fill:var(--net)}.think{fill:var(--think)}.warn{fill:var(--warn)}
+.t-net{fill:var(--net-t)}.t-think{fill:var(--think-t)}.t-warn{fill:var(--warn-t)}
+.s-net{stroke:var(--net)}.s-good{stroke:var(--good)}.s-warn{stroke:var(--warn)}
+.bar-net{fill:var(--net-t);stroke:var(--net);stroke-width:1.5}.bar-think{fill:var(--think-t);stroke:var(--think);stroke-width:1.5}
+.bar-warn{fill:var(--warn-t);stroke:var(--warn);stroke-width:1.5;stroke-dasharray:6 4}.bar-good{fill:var(--good-t);stroke:var(--good);stroke-width:1.5}
+.ghost{fill:var(--bg);stroke:var(--line);stroke-width:1.5}
+.grid{stroke:var(--line);stroke-width:1}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chip{fill:var(--card);stroke:var(--line)}.chipw{fill:var(--warn-t);stroke:var(--warn)}
+</style>
+<defs>
+<marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahw"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="595" rx="16"/>
+<text class="h1" x="32" y="50">A handoff succeeds before the bot leaves</text>
+<text class="sub" x="32" y="78">Keep the caller connected. Retire only the bot, and only once call state shows both parties are live.</text>
+
+<!-- timeline card -->
+<rect class="card" x="32" y="108" width="1016" height="312" rx="14"/>
+
+<!-- step headers -->
+<text class="eyebrow net" x="56" y="146">CALL LEGS</text>
+<circle class="t-net" cx="224" cy="140" r="13"/><text class="num" x="224" y="145">1</text><text class="name" x="246" y="146">Explain</text>
+<text class="desc" x="211" y="172">Bot explains</text><text class="desc" x="211" y="190">the hold</text>
+<circle class="t-net" cx="364" cy="140" r="13"/><text class="num" x="364" y="145">2</text><text class="name" x="386" y="146">Reach</text>
+<text class="desc" x="351" y="172">Request a leg</text><text class="desc" x="351" y="190">to the human</text>
+<circle class="t-net" cx="504" cy="140" r="13"/><text class="num" x="504" y="145">3</text><text class="name" x="526" y="146">Accept</text>
+<text class="desc" x="491" y="172">Human accepts.</text><text class="desc" x="491" y="190">Pass context.</text>
+<circle class="t-net" cx="644" cy="140" r="13"/><text class="num" x="644" y="145">4</text><text class="name" x="666" y="146">Connect</text>
+<text class="desc" x="631" y="172">Join caller</text><text class="desc" x="631" y="190">and human</text>
+<circle class="t-net" cx="784" cy="140" r="13"/><text class="num" x="784" y="145">5</text><text class="name" x="806" y="146">Verify</text>
+<text class="desc" x="771" y="172">Call state shows</text><text class="desc" x="771" y="190">both live</text>
+<circle class="t-net" cx="924" cy="140" r="13"/><text class="num" x="924" y="145">6</text><text class="name" x="946" y="146">Retire</text>
+<text class="desc" x="911" y="172">Only the bot</text><text class="desc" x="911" y="190">leaves</text>
+<path class="grid" d="M56 206H1024"/>
+<path class="grid" d="M340 108V380M480 108V380M620 108V380M760 108V380M900 108V380"/>
+
+<!-- lane labels -->
+<circle class="t-net" cx="68" cy="236" r="16"/>
+<g class="ico s-net" transform="translate(56 224)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="name" x="94" y="242">Caller leg</text>
+<circle class="t-think" cx="68" cy="298" r="16"/>
+<path class="think" transform="translate(56 286)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="name" x="94" y="304">Bot leg</text>
+<circle class="t-net" cx="68" cy="360" r="16"/>
+<g class="ico s-net" transform="translate(56 348)"><path d="M4 14v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19v.5a2.5 2.5 0 0 1-2.5 2.5H13"/></g>
+<text class="name" x="94" y="366">Human leg</text>
+
+<!-- caller leg: never dropped -->
+<rect class="bar-net" x="208" y="219" width="832" height="34" rx="9"/>
+<text class="bt" x="224" y="241">Stays connected the whole time</text>
+
+<!-- bot leg: leaves last, after verification -->
+<rect class="bar-think" x="208" y="281" width="684" height="34" rx="9"/>
+<text class="bt" x="224" y="303">Stays on the call until both parties are confirmed live</text>
+<rect class="ghost" x="908" y="281" width="132" height="34" rx="9"/>
+<text class="desc" x="974" y="303" text-anchor="middle">Retired</text>
+
+<!-- human leg: ringing is not connected -->
+<rect class="bar-warn" x="348" y="343" width="124" height="34" rx="9"/>
+<text class="bt" x="410" y="365" text-anchor="middle">Ringing</text>
+<rect class="bar-net" x="488" y="343" width="264" height="34" rx="9"/>
+<text class="bt" x="620" y="365" text-anchor="middle">Accepted, joining the call</text>
+<rect class="bar-good" x="768" y="343" width="272" height="34" rx="9"/>
+<path class="ico s-good" d="M790 360.5l4 4 8-8.5"/>
+<text class="bt" x="814" y="365">Live with the caller</text>
+
+<!-- not confirmed: any step -->
+<path class="dash" d="M346 398H1040M346 390V398M1040 390V398"/>
+<rect class="chipw" x="587" y="385" width="212" height="26" rx="13"/><text class="mono lbl" x="693" y="403" text-anchor="middle">any step not confirmed</text>
+<path class="dash" d="M693 411V450" marker-end="url(#aw)"/>
+
+<!-- fallback card -->
+<rect class="card" x="32" y="452" width="1016" height="96" rx="14"/>
+<rect class="warn" x="32" y="452" width="1016" height="5" rx="2.5"/>
+<circle class="t-warn" cx="70" cy="504" r="22"/>
+<g class="ico s-warn" transform="translate(58 492)"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></g>
+<text class="eyebrow warn" x="104" y="498">NOT CONFIRMED</text>
+<text class="h2" x="104" y="522">Stay with the caller</text>
+<text class="desc" x="352" y="492">Busy, declined, connection failed, timed out or unresolved.</text>
+<text class="desc" x="352" y="527">Fall back to</text>
+<rect class="chip" x="446" y="508" width="162" height="28" rx="14"/><text class="bt" x="527" y="527" text-anchor="middle">Return to the agent</text>
+<rect class="chip" x="616" y="508" width="118" height="28" rx="14"/><text class="bt" x="675" y="527" text-anchor="middle">Bounded wait</text>
+<rect class="chip" x="742" y="508" width="136" height="28" rx="14"/><text class="bt" x="810" y="527" text-anchor="middle">Contact details</text>
+<rect class="chip" x="886" y="508" width="92" height="28" rx="14"/><text class="bt" x="932" y="527" text-anchor="middle">Callback</text>
+
+<text class="desc" x="32" y="576">Dashed outline: not yet confirmed. A conceptual policy, not a provider event sequence.</text>
+</svg>

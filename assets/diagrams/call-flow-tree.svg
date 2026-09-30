@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 684" width="1080" height="684" role="img" aria-labelledby="t d">
+<title id="t">Design every branch, not just the happy path</title>
+<desc id="d">A call flow tree. An intent router asks what the caller needs and sends the request down one of three branches: a question, an action or a person. Question: answer only from approved sources. If answered, go back to the conversation. If not sure, clarify or offer a person, then go back to the conversation. Action, such as a booking: validate the details, confirm, then do it. If the result is confirmed, report it and finish. If the result is unknown, keep the action and reconcile before any retry, then finish. Person: a warm transfer that keeps the caller until someone accepts. If a person accepts and connects, the bot leaves and the call ends with goodbye. If nobody answers, stay with the caller and offer a callback or message, then say goodbye. Solid arrows are the happy path and dashed arrows are recovery. Every branch ends at a named exit: back to conversation, done or goodbye.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--warn:#8a5c00;--warn-t:#fff8c5;--good:#1a7f37;--good-t:#dafbe1}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--warn:#d29922;--warn-t:#2e2508;--good:#3fb950;--good-t:#12301a}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;fill:var(--ink2)}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}.small{font-size:14px;fill:var(--ink2)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.dash{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}
+.rule{stroke:var(--line)}.ah{fill:var(--ink2)}.ahw{fill:var(--warn)}
+.net{fill:var(--net)}.s-net{stroke:var(--net)}.s-good{stroke:var(--good)}.s-warn{stroke:var(--warn)}.t-net{fill:var(--net-t)}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ok{fill:var(--good-t);stroke:var(--good);stroke-width:1.5}.trouble{fill:var(--warn-t);stroke:var(--warn);stroke-width:1.5}
+.cb{fill:var(--card)}.exit{fill:var(--card);stroke:var(--ink2);stroke-width:2}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahw"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="683" rx="16"/>
+<text class="h1" x="32" y="50">Design every branch, not just the happy path</text>
+<text class="sub" x="32" y="78">Plan the good outcome, the trouble outcome and the exit for each request. Dashed arrows mark recovery.</text>
+
+<text class="eyebrow" x="244" y="118">WHAT THE CALLER NEEDS</text>
+<text class="eyebrow" x="562" y="118">WHAT CAN HAPPEN</text>
+<text class="eyebrow" x="906" y="118">HOW IT ENDS</text>
+
+<!-- router -->
+<rect class="card" x="32" y="302" width="168" height="156" rx="14"/>
+<rect class="net" x="32" y="302" width="168" height="5" rx="2.5"/>
+<circle class="t-net" cx="116" cy="346" r="22"/>
+<g class="ico s-net" transform="translate(104 334)"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h10M6.8 10.8C11 10.2 13.5 6.6 17.2 5.7M6.8 13.2C11 13.8 13.5 17.4 17.2 18.3"/></g>
+<text class="h2" x="116" y="394" text-anchor="middle">Intent router</text>
+<text class="desc" x="116" y="417" text-anchor="middle">What does the</text>
+<text class="desc" x="116" y="436" text-anchor="middle">caller need?</text>
+<path class="flow" d="M218 210V550"/>
+<path class="flow" d="M218 210H241" marker-end="url(#a)"/>
+<path class="flow" d="M200 380H241" marker-end="url(#a)"/>
+<path class="flow" d="M218 550H241" marker-end="url(#a)"/>
+
+<!-- branch 1: question -->
+<rect class="card" x="244" y="132" width="272" height="156" rx="14"/>
+<rect class="net" x="244" y="132" width="272" height="5" rx="2.5"/>
+<circle class="t-net" cx="282" cy="176" r="22"/>
+<g class="ico s-net" transform="translate(270 164)"><path d="M4.5 4.5h15a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H13l-4 3.5V16.5H4.5A1.5 1.5 0 0 1 3 15V6a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M10.3 9.3a1.8 1.8 0 0 1 3.5.5c0 1.2-1.8 1.4-1.8 2.5M12 14h.01"/></g>
+<text class="h2" x="316" y="172">Question</text>
+<text class="desc" x="316" y="194">“Are you open Monday?”</text>
+<path class="rule" d="M264 212H496"/>
+<text class="name" x="264" y="238">Answer only from</text>
+<text class="name" x="264" y="260">approved sources</text>
+<path class="flow" d="M516 210H534V168H559" marker-end="url(#a)"/>
+<path class="dash" d="M534 210V252H559" marker-end="url(#aw)"/>
+<rect class="ok" x="562" y="132" width="298" height="72" rx="12"/>
+<circle class="cb" cx="592" cy="168" r="16"/>
+<g class="ico s-good" transform="translate(582 158) scale(.8333)"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.8 2.8L16.3 9.6"/></g>
+<text class="name" x="620" y="161">Answered</text>
+<text class="small" x="620" y="181">Say it plainly and carry on.</text>
+<rect class="trouble" x="562" y="216" width="298" height="72" rx="12"/>
+<circle class="cb" cx="592" cy="252" r="16"/>
+<g class="ico s-warn" transform="translate(582 242) scale(.8333)"><path d="M12 4l9 16H3z"/><path d="M12 10v4.5M12 17.6h.01"/></g>
+<text class="name" x="620" y="245">Not sure</text>
+<text class="small" x="620" y="265">Clarify, or offer a person.</text>
+<path class="flow" d="M860 168H878V210H903" marker-end="url(#a)"/>
+<path class="dash" d="M860 252H878V210"/>
+<rect class="exit" x="906" y="182" width="142" height="56" rx="28"/>
+<text class="name" x="977" y="208" text-anchor="middle">Back to</text>
+<text class="name" x="977" y="227" text-anchor="middle">conversation</text>
+
+<!-- branch 2: action -->
+<rect class="card" x="244" y="302" width="272" height="156" rx="14"/>
+<rect class="net" x="244" y="302" width="272" height="5" rx="2.5"/>
+<circle class="t-net" cx="282" cy="346" r="22"/>
+<g class="ico s-net" transform="translate(270 334)"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M9.2 15.2l2 2 4-4"/></g>
+<text class="h2" x="316" y="342">Action</text>
+<text class="desc" x="316" y="364">“Book me in for Friday.”</text>
+<path class="rule" d="M264 382H496"/>
+<text class="name" x="264" y="408">Validate the details,</text>
+<text class="name" x="264" y="430">confirm, then do it.</text>
+<path class="flow" d="M516 380H534V338H559" marker-end="url(#a)"/>
+<path class="dash" d="M534 380V422H559" marker-end="url(#aw)"/>
+<rect class="ok" x="562" y="302" width="298" height="72" rx="12"/>
+<circle class="cb" cx="592" cy="338" r="16"/>
+<g class="ico s-good" transform="translate(582 328) scale(.8333)"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.8 2.8L16.3 9.6"/></g>
+<text class="name" x="620" y="331">Confirmed</text>
+<text class="small" x="620" y="351">Report the confirmed result.</text>
+<rect class="trouble" x="562" y="386" width="298" height="72" rx="12"/>
+<circle class="cb" cx="592" cy="422" r="16"/>
+<g class="ico s-warn" transform="translate(582 412) scale(.8333)"><path d="M12 4l9 16H3z"/><path d="M12 10v4.5M12 17.6h.01"/></g>
+<text class="name" x="620" y="408">Unknown result</text>
+<text class="small" x="620" y="427">Keep the action and reconcile</text>
+<text class="small" x="620" y="444">before any retry.</text>
+<path class="flow" d="M860 338H878V380H903" marker-end="url(#a)"/>
+<path class="dash" d="M860 422H878V380"/>
+<rect class="exit" x="906" y="352" width="142" height="56" rx="28"/>
+<text class="name" x="977" y="386" text-anchor="middle">Done</text>
+
+<!-- branch 3: person -->
+<rect class="card" x="244" y="472" width="272" height="156" rx="14"/>
+<rect class="net" x="244" y="472" width="272" height="5" rx="2.5"/>
+<circle class="t-net" cx="282" cy="516" r="22"/>
+<g class="ico s-net" transform="translate(270 504)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="h2" x="316" y="512">Person</text>
+<text class="desc" x="316" y="534">“Can I talk to someone?”</text>
+<path class="rule" d="M264 552H496"/>
+<text class="name" x="264" y="578">Warm transfer: keep the</text>
+<text class="name" x="264" y="600">caller until it’s accepted</text>
+<path class="flow" d="M516 550H534V508H559" marker-end="url(#a)"/>
+<path class="dash" d="M534 550V592H559" marker-end="url(#aw)"/>
+<rect class="ok" x="562" y="472" width="298" height="72" rx="12"/>
+<circle class="cb" cx="592" cy="508" r="16"/>
+<g class="ico s-good" transform="translate(582 498) scale(.8333)"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.8 2.8L16.3 9.6"/></g>
+<text class="name" x="620" y="494">Accepted and connected</text>
+<text class="small" x="620" y="513">A person has the call.</text>
+<text class="small" x="620" y="530">The bot leaves.</text>
+<rect class="trouble" x="562" y="556" width="298" height="72" rx="12"/>
+<circle class="cb" cx="592" cy="592" r="16"/>
+<g class="ico s-warn" transform="translate(582 582) scale(.8333)"><path d="M12 4l9 16H3z"/><path d="M12 10v4.5M12 17.6h.01"/></g>
+<text class="name" x="620" y="578">Nobody answers</text>
+<text class="small" x="620" y="597">Stay with the caller. Offer a</text>
+<text class="small" x="620" y="614">callback or message.</text>
+<path class="flow" d="M860 508H878V550H903" marker-end="url(#a)"/>
+<path class="dash" d="M860 592H878V550"/>
+<rect class="exit" x="906" y="522" width="142" height="56" rx="28"/>
+<text class="name" x="977" y="556" text-anchor="middle">Goodbye</text>
+
+<!-- key -->
+<path class="flow" d="M32 657H64" marker-end="url(#a)"/><text class="small" x="76" y="662">Happy path</text>
+<path class="dash" d="M190 657H222" marker-end="url(#aw)"/><text class="small" x="234" y="662">Recovery path</text>
+</svg>

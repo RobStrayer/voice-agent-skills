@@ -44,9 +44,9 @@ Preserve pauses after unfinished phrases, spelled identifiers, numbers, self-cor
 
 Give one component authority to commit user turns and release assistant responses. Other detectors supply evidence. Two independent committers can produce duplicate replies or stack their waits.
 
-![One controller owns turn commitment; tool actions keep an independent lifetime.](../assets/turn-controller.svg)
+![State diagram of one turn controller: Listening, CandidateEnd, Responding and Yielding, with the transitions between them. A separate action ledger keeps tool actions independent of these states.](../assets/turn-controller.svg)
 
-[Editable diagram](../assets/turn-controller.html). One controller owns turn commitment; tool actions keep an independent lifetime.
+[Editable diagram](../assets/turn-controller.svg). One controller owns turn commitment; tool actions keep an independent lifetime.
 
 | State | Responsibility |
 | --- | --- |

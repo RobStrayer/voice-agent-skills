@@ -1,66 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="620" viewBox="0 0 960 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="speech-architectures-title speech-architectures-desc" id="speech-architectures-root">
-  <title id="speech-architectures-title">Where does the conversation happen?</title>
-  <desc id="speech-architectures-desc">Three conceptual voice paths: speech-to-text, text agent and text-to-speech; a single speech model session; and a spoken interface delegating work to a backend and receiving results. Incoming and outgoing audio cross each path boundary. These paths do not rank latency or specify transport, authorization or durable records.</desc>
-  <defs>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
-      #speech-architectures-root { --paper:#b9beb8; --paper-2:#d2d6cf; --ink:#202823; --muted:#3e4a42; --soft:#414e44; --rule:#8e9b90; --accent:#2d6358; --tint:#c9d9cf; }
-      #speech-architectures-root { color: var(--ink); font-family: 'Geist',Arial,sans-serif; }
-      #speech-architectures-root .diagram-container { width:100%; overflow-x:auto; }
-      #speech-architectures-root text { fill:var(--ink); }
-      #speech-architectures-root .title { font:400 40px 'Instrument Serif',Georgia,serif; }
-      #speech-architectures-root .node-name { font:600 16px 'Geist',Arial,sans-serif; }
-      #speech-architectures-root .row-title { font:600 14px 'Geist',Arial,sans-serif; }
-      #speech-architectures-root .sub { font:400 12px 'Geist Mono',Consolas,monospace; fill:var(--muted); }
-      #speech-architectures-root .note { font:400 11px 'Geist',Arial,sans-serif; fill:var(--muted); }
-      #speech-architectures-root .meta { font:500 8px 'Geist Mono',Consolas,monospace; letter-spacing:1.4px; fill:var(--soft); }
-      #speech-architectures-root .diagram-container { overflow-x:visible; }</style><marker id="speech-architectures-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 8 4 L 0 8 Z" fill="#3e4a42"/></marker></defs>
-  <rect width="960" height="620" fill="#b9beb8"/>
-  <text x="40" y="44" class="meta" >ARCHITECTURE / THREE COMMON PATTERNS</text>
-<text x="40" y="96" class="title" >Where does the conversation happen?</text>
-<text x="40" y="126" class="sub" >The speech path changes. Application ownership still matters.</text>
-<text x="40" y="192" class="row-title" >01  Chained</text>
-<text x="40" y="216" class="note" >Text checkpoints</text>
-<line x1="228" y1="208" x2="264" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<line x1="448" y1="208" x2="488" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<line x1="672" y1="208" x2="712" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<line x1="896" y1="208" x2="920" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<rect x="264" y="176" width="184" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
-<text x="280" y="203" class="node-name" >Speech to text</text>
-<text x="280" y="224" class="sub" >recognition</text>
-<rect x="488" y="176" width="184" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
-<text x="504" y="203" class="node-name" >Text agent</text>
-<text x="504" y="224" class="sub" >reasoning + tools</text>
-<rect x="712" y="176" width="184" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
-<text x="728" y="203" class="node-name" >Text to speech</text>
-<text x="728" y="224" class="sub" >synthesis</text>
-<line x1="40" y1="268" x2="920" y2="268" stroke="#8e9b90"/>
-<text x="40" y="316" class="row-title" >02  Speech to speech</text>
-<text x="40" y="340" class="note" >One voice session</text>
-<line x1="228" y1="332" x2="264" y2="332" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<line x1="896" y1="332" x2="920" y2="332" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<rect x="264" y="300" width="632" height="64" rx="6" fill="#c9d9cf" stroke="#2d6358"/>
-<text x="280" y="327" class="node-name" >Speech model session</text>
-<text x="280" y="348" class="sub" >audio interpretation, reasoning, tools, speech</text>
-<line x1="40" y1="392" x2="920" y2="392" stroke="#8e9b90"/>
-<text x="40" y="448" class="row-title" >03  Delegated</text>
-<text x="40" y="472" class="note" >Separate backend</text>
-<line x1="228" y1="448" x2="264" y2="448" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<line x1="264" y1="472" x2="228" y2="472" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<line x1="520" y1="440" x2="640" y2="440" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#speech-architectures-arrow)"/>
-<line x1="640" y1="480" x2="520" y2="480" stroke="#3e4a42" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#speech-architectures-arrow)"/>
-<rect x="548" y="416" width="64" height="16" fill="#b9beb8"/>
-<rect x="548" y="488" width="64" height="16" fill="#b9beb8"/>
-<text x="580" y="430" class="sub" text-anchor="middle">WORK</text>
-<text x="580" y="500" class="sub" text-anchor="middle">RESULT</text>
-<rect x="264" y="424" width="256" height="64" rx="6" fill="#c9d9cf" stroke="#2d6358"/>
-<text x="280" y="451" class="node-name" >Spoken interface</text>
-<text x="280" y="472" class="sub" >continuous conversation</text>
-<rect x="640" y="424" width="256" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
-<text x="656" y="451" class="node-name" >Backend workflow</text>
-<text x="656" y="472" class="sub" >reasoning + tools</text>
-<line x1="40" y1="532" x2="920" y2="532" stroke="#8e9b90"/>
-<text x="40" y="556" class="note" >Boundary arrows: audio. Solid backend arrow: work. Dashed arrow: returned result.</text>
-<text x="40" y="576" class="note" >Conceptual paths, not a latency ranking. Transport, permissions and durable records need separate design.</text>
-<text x="40" y="596" class="meta" >SOURCE REVIEW 2026-09-30 UTC / OPENAI VOICE AGENTS / SEE THE LINKED ARCHITECTURE GUIDE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 552" width="1080" height="552" role="img" aria-labelledby="t d">
+<title id="t">Where does the conversation happen?</title>
+<desc id="d">Three common speech paths, one per row. Chained: audio goes into speech-to-text (listen), the text goes to a text agent that reasons and uses tools (think), and its text goes to text-to-speech (speak), which produces audio. Text is available between the stages. Speech-to-speech: audio goes into one speech model session that does all three jobs, listening, thinking and speaking, and audio comes out. Delegated: audio goes both ways through a spoken interface that listens and speaks; it sends work to a backend workflow, which holds the existing reasoning and tools, and receives results back. The figure does not rank latency or specify transport, permissions or durable records.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--listen:#0b7a53;--listen-x:#0e8659;--listen-t:#dff3ea;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--listen:#2fb784;--listen-x:#2fb784;--listen-t:#12301f;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.dashn{fill:none;stroke:var(--ink2);stroke-width:2;stroke-dasharray:6 5}.ah{fill:var(--ink2)}
+.listen{fill:var(--listen)}.think{fill:var(--think)}.speak{fill:var(--speak)}
+.eyebrow.listen{fill:var(--listen-x)}
+.s-listen{stroke:var(--listen)}.s-speak{stroke:var(--speak)}
+.t-listen{fill:var(--listen-t)}.t-think{fill:var(--think-t)}.t-speak{fill:var(--speak-t)}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rule{stroke:var(--line);stroke-width:1}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="551" rx="16"/>
+<text class="h1" x="32" y="50">Where does the conversation happen?</text>
+<text class="sub" x="32" y="78">Three common speech paths. The path changes; your application still owns turns, actions and records.</text>
+
+<!-- row 1: chained, text between the stages -->
+<text class="h2" x="56" y="158">Chained</text>
+<text class="desc" x="56" y="182">Inspect or reuse the text</text><text class="desc" x="56" y="200">between stages</text>
+<path class="flow" d="M286 164H332" marker-end="url(#a)"/><text class="mono" x="310" y="154" text-anchor="middle">audio</text>
+<rect class="card" x="334" y="116" width="176" height="96" rx="12"/><rect class="listen" x="334" y="116" width="176" height="5" rx="2.5"/>
+<circle class="t-listen" cx="366" cy="148" r="16"/><g class="ico s-listen" transform="translate(356 138) scale(.85)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="eyebrow listen" x="392" y="153">LISTEN</text>
+<text class="name" x="350" y="178">Speech-to-text</text><text class="desc" x="350" y="198">recognition</text>
+<path class="flow" d="M510 164H564" marker-end="url(#a)"/><text class="mono" x="537" y="154" text-anchor="middle">text</text>
+<rect class="card" x="566" y="116" width="176" height="96" rx="12"/><rect class="think" x="566" y="116" width="176" height="5" rx="2.5"/>
+<circle class="t-think" cx="598" cy="148" r="16"/><path class="think" transform="translate(588 138) scale(.85)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="eyebrow think" x="624" y="153">THINK</text>
+<text class="name" x="582" y="178">Text agent</text><text class="desc" x="582" y="198">reasoning + tools</text>
+<path class="flow" d="M742 164H796" marker-end="url(#a)"/><text class="mono" x="769" y="154" text-anchor="middle">text</text>
+<rect class="card" x="798" y="116" width="176" height="96" rx="12"/><rect class="speak" x="798" y="116" width="176" height="5" rx="2.5"/>
+<circle class="t-speak" cx="830" cy="148" r="16"/><g class="ico s-speak" transform="translate(820 138) scale(.85)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="eyebrow speak" x="856" y="153">SPEAK</text>
+<text class="name" x="814" y="178">Text-to-speech</text><text class="desc" x="814" y="198">synthesis</text>
+<path class="flow" d="M974 164H1020" marker-end="url(#a)"/><text class="mono" x="998" y="154" text-anchor="middle">audio</text>
+<path class="rule" d="M56 232H1024"/>
+
+<!-- row 2: one session does all three jobs -->
+<text class="h2" x="56" y="294">Speech-to-speech</text>
+<text class="desc" x="56" y="318">No text step before</text><text class="desc" x="56" y="336">each answer</text>
+<path class="flow" d="M286 300H332" marker-end="url(#a)"/><text class="mono" x="310" y="290" text-anchor="middle">audio</text>
+<rect class="card" x="334" y="252" width="640" height="96" rx="12"/>
+<rect class="listen" x="334" y="252" width="210" height="5" rx="2.5"/><rect class="think" x="548" y="252" width="212" height="5" rx="2.5"/><rect class="speak" x="764" y="252" width="210" height="5" rx="2.5"/>
+<circle class="t-listen" cx="366" cy="284" r="16"/><g class="ico s-listen" transform="translate(356 274) scale(.85)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="eyebrow listen" x="392" y="289">LISTEN</text>
+<circle class="t-think" cx="580" cy="284" r="16"/><path class="think" transform="translate(570 274) scale(.85)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="eyebrow think" x="606" y="289">THINK</text>
+<circle class="t-speak" cx="796" cy="284" r="16"/><g class="ico s-speak" transform="translate(786 274) scale(.85)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="eyebrow speak" x="822" y="289">SPEAK</text>
+<text class="name" x="350" y="314">One speech model session</text><text class="desc" x="350" y="334">Audio interpretation, reasoning, tools and speech</text>
+<path class="flow" d="M974 300H1020" marker-end="url(#a)"/><text class="mono" x="998" y="290" text-anchor="middle">audio</text>
+<path class="rule" d="M56 368H1024"/>
+
+<!-- row 3: a spoken interface delegates work -->
+<text class="h2" x="56" y="430">Delegated</text>
+<text class="desc" x="56" y="454">Keep your existing</text><text class="desc" x="56" y="472">backend workflow</text>
+<path class="flow" d="M286 416H332" marker-end="url(#a)"/><text class="mono" x="310" y="406" text-anchor="middle">audio</text>
+<path class="flow" d="M332 450H288" marker-end="url(#a)"/><text class="mono" x="310" y="470" text-anchor="middle">audio</text>
+<rect class="card" x="334" y="388" width="264" height="96" rx="12"/>
+<rect class="listen" x="334" y="388" width="132" height="5" rx="2.5"/><rect class="speak" x="470" y="388" width="128" height="5" rx="2.5"/>
+<circle class="t-listen" cx="366" cy="420" r="16"/><g class="ico s-listen" transform="translate(356 410) scale(.85)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="eyebrow listen" x="392" y="425">LISTEN</text>
+<circle class="t-speak" cx="486" cy="420" r="16"/><g class="ico s-speak" transform="translate(476 410) scale(.85)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="eyebrow speak" x="512" y="425">SPEAK</text>
+<text class="name" x="350" y="450">Spoken interface</text><text class="desc" x="350" y="470">Continuous conversation</text>
+<path class="flow" d="M598 416H692" marker-end="url(#a)"/><text class="mono" x="645" y="406" text-anchor="middle">work</text>
+<path class="dashn" d="M692 450H600" marker-end="url(#a)"/><text class="mono" x="645" y="470" text-anchor="middle">result</text>
+<rect class="card" x="694" y="388" width="280" height="96" rx="12"/><rect class="think" x="694" y="388" width="280" height="5" rx="2.5"/>
+<circle class="t-think" cx="726" cy="420" r="16"/><path class="think" transform="translate(716 410) scale(.85)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="eyebrow think" x="752" y="425">THINK</text>
+<text class="name" x="710" y="450">Backend workflow</text><text class="desc" x="710" y="470">Your existing reasoning and tools</text>
+
+<text class="desc" x="32" y="522">Conceptual paths, not a latency ranking. Transport, permissions and durable records need separate design.</text>
 </svg>

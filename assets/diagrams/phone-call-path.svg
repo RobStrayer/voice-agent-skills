@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 774" width="1080" height="774" role="img" aria-labelledby="t d">
+<title id="t">How a phone call reaches your agent</title>
+<desc id="d">A caller dials a phone number. The phone network (PSTN) hands the call to a telephony provider such as Twilio, Telnyx, Vonage or Plivo. From the provider there are three ways to reach your agent, from least to most control. One: the provider runs speech-to-text and text-to-speech and your app exchanges text with it over a WebSocket, so you run the language model and tools. Two: the provider streams raw call audio to your server over a WebSocket (Twilio sends base64 mu-law at 8 kHz) and your server runs speech-to-text, the language model and text-to-speech. Three: a SIP trunk sends the call into your own media stack, such as LiveKit, Pipecat or your own SIP server, and you run everything. Separately from the audio, a thin control path carries webhooks and call control API requests to answer, transfer and hang up. Phone audio is narrowband (8 kHz), so test with real phone audio.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--listen-t:#dff3ea;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--listen-t:#12301f;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}.strip{fill:var(--net-t);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}.small{font-size:14px;fill:var(--ink2)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.ctl{fill:none;stroke:var(--net);stroke-width:2;stroke-linecap:round;stroke-dasharray:.1 6}
+.rule{stroke:var(--line)}.ah{fill:var(--ink2)}.ahc{fill:var(--net)}
+.listen{fill:var(--listen)}.think{fill:var(--think)}.speak{fill:var(--speak)}.net{fill:var(--net)}.warn{fill:var(--warn)}
+.s-net{stroke:var(--net)}.s-warn{stroke:var(--warn)}.t-net{fill:var(--net-t)}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<marker id="c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahc"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="773" rx="16"/>
+<text class="h1" x="32" y="50">How a phone call reaches your agent</text>
+<text class="sub" x="32" y="78">The audio takes one path and call control another. You choose how much of the audio path you run yourself.</text>
+
+<!-- the call: caller, phone network, provider -->
+<circle class="t-net" cx="72" cy="146" r="26"/>
+<g class="ico s-net" transform="translate(56 130) scale(1.333)"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></g>
+<text class="name" x="72" y="196" text-anchor="middle">Caller</text>
+<text class="desc" x="72" y="216" text-anchor="middle">any phone</text>
+<path class="flow" d="M104 146H148" marker-start="url(#a)" marker-end="url(#a)"/>
+<circle class="t-net" cx="180" cy="146" r="26"/>
+<g class="ico s-net" transform="translate(164 130) scale(1.333)"><path d="M12 12.5V21M8.5 21h7"/><circle cx="12" cy="10" r="1.6"/><path d="M8.6 6.6a5 5 0 0 0 0 6.8M15.4 6.6a5 5 0 0 1 0 6.8M5.6 3.6a9 9 0 0 0 0 12.8M18.4 3.6a9 9 0 0 1 0 12.8"/></g>
+<text class="name" x="180" y="196" text-anchor="middle">Phone network</text>
+<text class="desc" x="180" y="216" text-anchor="middle">PSTN</text>
+<path class="flow" d="M212 146H264" marker-start="url(#a)" marker-end="url(#a)"/>
+
+<!-- provider and you: two tall cards -->
+<rect class="card" x="268" y="104" width="260" height="516" rx="14"/>
+<rect class="net" x="268" y="104" width="260" height="5" rx="2.5"/>
+<circle class="t-net" cx="398" cy="146" r="26"/>
+<g class="ico s-net" transform="translate(382 130) scale(1.333)"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7.5 7.25h.01M7.5 16.75h.01"/></g>
+<text class="h2" x="398" y="200" text-anchor="middle">Telephony provider</text>
+<text class="desc" x="398" y="221" text-anchor="middle">Twilio, Telnyx, Vonage, Plivo</text>
+
+<rect class="card" x="768" y="104" width="280" height="516" rx="14"/>
+<rect class="listen" x="768" y="104" width="92" height="5" rx="2.5"/><rect class="think" x="862" y="104" width="92" height="5" rx="2.5"/><rect class="speak" x="956" y="104" width="92" height="5" rx="2.5"/>
+<circle class="t-net" cx="908" cy="146" r="26"/>
+<g class="ico s-net" transform="translate(892 130) scale(1.333)"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></g>
+<text class="h2" x="908" y="200" text-anchor="middle">Your agent</text>
+<text class="desc" x="908" y="221" text-anchor="middle">Code and services you run</text>
+
+<!-- media path header -->
+<g class="net"><rect x="616" y="124" width="4" height="10" rx="2"/><rect x="626" y="119" width="4" height="20" rx="2"/><rect x="636" y="114" width="4" height="30" rx="2"/><rect x="646" y="121" width="4" height="16" rx="2"/><rect x="656" y="116" width="4" height="26" rx="2"/><rect x="666" y="122" width="4" height="14" rx="2"/><rect x="676" y="126" width="4" height="6" rx="2"/></g>
+<text class="eyebrow net" x="648" y="172" text-anchor="middle">MEDIA PATH</text>
+<text class="desc" x="648" y="194" text-anchor="middle">Pick one way to carry</text>
+<text class="desc" x="648" y="214" text-anchor="middle">the audio to your agent</text>
+
+<!-- row rules -->
+<path class="rule" d="M32 236H1048M32 364H1048M32 492H1048M32 620H256"/>
+
+<!-- row 1: provider handles speech -->
+<text class="eyebrow net" x="32" y="262">1 · LEAST CONTROL</text>
+<text class="h2" x="32" y="288">The provider</text><text class="h2" x="32" y="311">handles speech</text>
+<text class="small" x="32" y="336">Twilio ConversationRelay, or a</text><text class="small" x="32" y="354">managed voice-agent platform</text>
+<circle class="listen" cx="292" cy="285" r="4"/><text class="name" x="306" y="290">Speech-to-text</text>
+<circle class="speak" cx="292" cy="315" r="4"/><text class="name" x="306" y="320">Text-to-speech</text>
+<path class="flow" d="M538 300H758" marker-start="url(#a)" marker-end="url(#a)"/>
+<text class="mono" x="648" y="288" text-anchor="middle">text over WebSocket</text>
+<text class="small" x="648" y="326" text-anchor="middle">transcripts in, text out</text>
+<circle class="net" cx="792" cy="285" r="4"/><text class="name" x="806" y="290">WebSocket server</text>
+<circle class="think" cx="792" cy="315" r="4"/><text class="name" x="806" y="320">Language model + tools</text>
+
+<!-- row 2: raw audio -->
+<text class="eyebrow net" x="32" y="390">2 · MORE CONTROL</text>
+<text class="h2" x="32" y="416">You get raw audio</text>
+<text class="small" x="32" y="444">Twilio Media Streams, or another</text><text class="small" x="32" y="462">provider's audio stream</text>
+<circle class="net" cx="292" cy="428" r="4"/><text class="name" x="306" y="433">Streams the call audio</text>
+<path class="flow" d="M538 428H758" marker-start="url(#a)" marker-end="url(#a)"/>
+<text class="mono" x="648" y="416" text-anchor="middle">audio over WebSocket</text>
+<text class="small" x="648" y="454" text-anchor="middle">Twilio: 8 kHz mu-law</text>
+<circle class="net" cx="792" cy="389" r="4"/><text class="name" x="806" y="394">WebSocket server</text>
+<circle class="listen" cx="792" cy="415" r="4"/><text class="name" x="806" y="420">Speech-to-text</text>
+<circle class="think" cx="792" cy="441" r="4"/><text class="name" x="806" y="446">Language model + tools</text>
+<circle class="speak" cx="792" cy="467" r="4"/><text class="name" x="806" y="472">Text-to-speech</text>
+
+<!-- row 3: SIP -->
+<text class="eyebrow net" x="32" y="518">3 · MOST CONTROL</text>
+<text class="h2" x="32" y="544">SIP into your own</text><text class="h2" x="32" y="567">media stack</text>
+<text class="small" x="32" y="592">LiveKit, Pipecat (via Daily) or</text><text class="small" x="32" y="610">your own SIP server</text>
+<circle class="net" cx="292" cy="556" r="4"/><text class="name" x="306" y="561">SIP trunk</text>
+<path class="flow" d="M538 556H758" marker-start="url(#a)" marker-end="url(#a)"/>
+<text class="mono" x="648" y="544" text-anchor="middle">SIP + RTP audio</text>
+<text class="small" x="648" y="582" text-anchor="middle">SIP sets up, RTP carries audio</text>
+<circle class="net" cx="792" cy="517" r="4"/><text class="name" x="806" y="522">SIP endpoint</text>
+<circle class="listen" cx="792" cy="543" r="4"/><text class="name" x="806" y="548">Speech-to-text</text>
+<circle class="think" cx="792" cy="569" r="4"/><text class="name" x="806" y="574">Language model + tools</text>
+<circle class="speak" cx="792" cy="595" r="4"/><text class="name" x="806" y="600">Text-to-speech</text>
+
+<!-- control path: thin and separate -->
+<text class="eyebrow net" x="32" y="658">CONTROL PATH</text>
+<text class="h2" x="32" y="684">Call control</text>
+<text class="small" x="32" y="706">Answer, transfer, hang up</text>
+<rect class="strip" x="268" y="636" width="780" height="76" rx="14"/>
+<circle class="net" cx="292" cy="674" r="4"/><text class="name" x="306" y="679">Call control API</text>
+<path class="ctl" d="M544 674H752" marker-start="url(#c)" marker-end="url(#c)"/>
+<text class="mono" x="648" y="662" text-anchor="middle">webhooks and API calls</text>
+<text class="small" x="648" y="698" text-anchor="middle">no audio on this path</text>
+<circle class="net" cx="792" cy="674" r="4"/><text class="name" x="806" y="679">Webhook endpoint</text>
+
+<!-- narrowband note -->
+<g class="ico s-warn" transform="translate(32 731)"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></g>
+<text x="64" y="749"><tspan class="name">Phone audio is narrowband (8 kHz).</tspan><tspan class="desc" dx="8">Test with real phone audio, not studio recordings.</tspan></text>
+</svg>

@@ -1,15 +1,64 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="voice-system-map-title voice-system-map-desc" id="voice-system-map-root"><title id="voice-system-map-title">One conversation, several owners</title><desc id="voice-system-map-desc">Capture flows through media transport to a voice runtime and playback. A separate call controller routes and ends telephone legs. The runtime requests authorized business actions whose results are reconciled against durable records. The media and business paths have separate evidence. </desc><defs>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
-      #voice-system-map-root { color: var(--ink); font-family: 'Geist',Arial,sans-serif; }
-      #voice-system-map-root { --paper:#b9beb8; --node:#d2d6cf; --ink:#202823; --muted:#3e4a42; --soft:#414e44; --rule:#8e9b90; --accent:#2d6358; --tint:#c9d9cf; }
-      #voice-system-map-root .diagram-container { width:100%; overflow-x:auto; }
-      #voice-system-map-root text { fill:var(--ink); }
-      #voice-system-map-root .figure-title { font-family:'Instrument Serif',Georgia,serif; font-size:28px; font-weight:400; }
-      #voice-system-map-root .node-name { font-family:'Geist',Arial,sans-serif; font-size:12px; font-weight:600; }
-      #voice-system-map-root .sub { font-family:'Geist Mono',Consolas,monospace; font-size:9px; fill:var(--muted); }
-      #voice-system-map-root .tag { font-family:'Geist Mono',Consolas,monospace; font-size:8px; font-weight:500; letter-spacing:1.4px; fill:var(--muted); }
-      #voice-system-map-root .edge-label { font-family:'Geist Mono',Consolas,monospace; font-size:8px; letter-spacing:.5px; fill:var(--muted); }
-      #voice-system-map-root .note { font-family:'Geist',Arial,sans-serif; font-size:11px; font-weight:400; fill:var(--muted); }
-      #voice-system-map-root .source { font-family:'Geist Mono',Consolas,monospace; font-size:8px; fill:var(--soft); }
-      #voice-system-map-root .diagram-container { overflow-x:visible; }</style><marker id="voice-system-map-voice-system-map-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#3e4a42"/></marker><marker id="voice-system-map-voice-system-map-open" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6" fill="none" stroke="#3e4a42" stroke-width="1.2"/></marker></defs><rect width="960" height="600" fill="#b9beb8"/><text x="40" y="44" class="tag" text-anchor="start">NL VOICE SKILLS / ENGINEERING HANDBOOK</text><text x="40" y="88" class="figure-title" text-anchor="start">One conversation, several owners</text><text x="40" y="116" class="note" text-anchor="start">Trace audio, call control, and business actions without collapsing their state.</text><path d="M216 248 H280" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#voice-system-map-voice-system-map-arrow)"/><path d="M440 248 H504" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#voice-system-map-voice-system-map-arrow)"/><path d="M664 248 H728" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#voice-system-map-voice-system-map-arrow)"/><path d="M360 384 V284" fill="none" stroke="#3e4a42" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#voice-system-map-voice-system-map-arrow)"/><path d="M564 284 V384" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#voice-system-map-voice-system-map-arrow)"/><path d="M604 384 V284" fill="none" stroke="#3e4a42" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#voice-system-map-voice-system-map-arrow)"/><path d="M664 424 H728" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#voice-system-map-voice-system-map-arrow)"/><rect x="226.0" y="216" width="44" height="16" fill="#b9beb8"/><text x="248" y="227" class="edge-label" text-anchor="middle">FRAMES</text><rect x="452.0" y="216" width="40" height="16" fill="#b9beb8"/><text x="472" y="227" class="edge-label" text-anchor="middle">AUDIO</text><rect x="674.0" y="216" width="44" height="16" fill="#b9beb8"/><text x="696" y="227" class="edge-label" text-anchor="middle">OUTPUT</text><rect x="278.0" y="326" width="64" height="16" fill="#b9beb8"/><text x="310" y="337" class="edge-label" text-anchor="middle">CALL STATE</text><rect x="510.0" y="326" width="44" height="16" fill="#b9beb8"/><text x="532" y="337" class="edge-label" text-anchor="middle">ACTION</text><rect x="610.0" y="342" width="44" height="16" fill="#b9beb8"/><text x="632" y="353" class="edge-label" text-anchor="middle">RESULT</text><rect x="674.0" y="392" width="44" height="16" fill="#b9beb8"/><text x="696" y="403" class="edge-label" text-anchor="middle">COMMIT</text><g class="node"><rect x="56" y="212" width="160" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="72" y="232" class="tag" text-anchor="start">INPUT</text><text x="72" y="252" class="node-name" text-anchor="start">Capture</text><text x="72" y="270" class="sub" text-anchor="start">device processing</text></g><g class="node"><rect x="280" y="212" width="160" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="296" y="232" class="tag" text-anchor="start">MEDIA</text><text x="296" y="252" class="node-name" text-anchor="start">Transport</text><text x="296" y="270" class="sub" text-anchor="start">codec + media path</text></g><g class="node"><rect x="504" y="212" width="160" height="72" rx="6" fill="#c9d9cf" stroke="#2d6358" stroke-width="1.2"/><text x="520" y="232" class="tag" text-anchor="start">ORCHESTRATION</text><text x="520" y="252" class="node-name" text-anchor="start">Voice runtime</text><text x="520" y="270" class="sub" text-anchor="start">turns + model + tools</text></g><g class="node"><rect x="728" y="212" width="176" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="744" y="232" class="tag" text-anchor="start">OUTPUT</text><text x="744" y="252" class="node-name" text-anchor="start">Playback</text><text x="744" y="270" class="sub" text-anchor="start">queue + device</text></g><g class="node"><rect x="280" y="384" width="160" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="296" y="404" class="tag" text-anchor="start">TELEPHONY</text><text x="296" y="424" class="node-name" text-anchor="start">Call controller</text><text x="296" y="442" class="sub" text-anchor="start">route + transfer + end</text></g><g class="node"><rect x="504" y="384" width="160" height="72" rx="6" fill="#c9d9cf" stroke="#2d6358" stroke-width="1.2"/><text x="520" y="404" class="tag" text-anchor="start">BUSINESS</text><text x="520" y="424" class="node-name" text-anchor="start">Action service</text><text x="520" y="442" class="sub" text-anchor="start">authorize + reconcile</text></g><g class="node"><rect x="728" y="384" width="176" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="744" y="404" class="tag" text-anchor="start">DURABLE STATE</text><text x="744" y="424" class="node-name" text-anchor="start">Business records</text><text x="744" y="442" class="sub" text-anchor="start">authoritative outcome</text></g><text x="56" y="180" class="tag" text-anchor="start">AUDIO PATH</text><text x="56" y="414" class="note" text-anchor="start">Observe each</text><text x="56" y="432" class="note" text-anchor="start">boundary.</text><text x="56" y="500" class="note" text-anchor="start">Logical paths: output also traverses its media transport. Played speech and committed actions stay distinct.</text><line x1="40" y1="536" x2="920" y2="536" stroke="#8e9b90"/><text x="40" y="560" class="note" text-anchor="start">Conceptual model. Provider contracts and failure policies need separate verification.</text><text x="40" y="581" class="source" text-anchor="start">REVIEWED 2026-09-30 UTC / ORIGINAL NL VOICE SKILLS MATERIAL</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 566" width="1080" height="566" role="img" aria-labelledby="t d">
+<title id="t">One conversation, several owners</title>
+<desc id="d">Three paths, each with its own owner and its own evidence. Call control, at the top: a call controller routes, transfers and ends calls, sends control to the media transport and receives call state back. Its evidence is call state. Audio path, in the middle: capture feeds transport, which feeds the voice runtime, which feeds playback. Its evidence is played audio. Business actions, at the bottom: the voice runtime sends an action to the action service, which authorizes and reconciles it, commits to business records, and returns a result to the runtime. Its evidence is the committed record.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--think:#4a3aa7;--speak:#b3441a}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--think:#a29af0;--speak:#ec7a45}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.dashn{fill:none;stroke:var(--ink2);stroke-width:2;stroke-dasharray:6 5}.ah{fill:var(--ink2)}
+.listen{fill:var(--listen)}.think{fill:var(--think)}.speak{fill:var(--speak)}.net{fill:var(--net)}
+.band{fill:var(--net-t);stroke:var(--line)}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="565" rx="16"/>
+<text class="h1" x="32" y="50">One conversation, several owners</text>
+<text class="sub" x="32" y="78">Audio, call control and business actions each have their own owner and their own evidence.</text>
+
+<!-- lane: call control -->
+<rect class="band" x="32" y="110" width="1016" height="116" rx="14"/>
+<text class="eyebrow net" x="48" y="142">CALL</text><text class="eyebrow net" x="48" y="160">CONTROL</text>
+<text class="desc" x="48" y="182">Evidence</text><text class="name" x="48" y="202">Call state</text>
+<rect class="card" x="432" y="124" width="176" height="88" rx="12"/><rect class="net" x="432" y="124" width="176" height="5" rx="2.5"/>
+<text class="name" x="448" y="158">Call controller</text><text class="desc" x="448" y="181">Route, transfer,</text><text class="desc" x="448" y="199">end calls</text>
+
+<!-- lane: audio path -->
+<rect class="band" x="32" y="254" width="1016" height="116" rx="14"/>
+<text class="eyebrow net" x="48" y="286">AUDIO</text><text class="eyebrow net" x="48" y="304">PATH</text>
+<text class="desc" x="48" y="326">Evidence</text><text class="name" x="48" y="346">Played audio</text>
+<rect class="card" x="216" y="268" width="176" height="88" rx="12"/><rect class="listen" x="216" y="268" width="176" height="5" rx="2.5"/>
+<text class="name" x="232" y="302">Capture</text><text class="desc" x="232" y="325">Device audio</text><text class="desc" x="232" y="343">processing</text>
+<path class="flow" d="M394 312H430" marker-end="url(#a)"/>
+<rect class="card" x="432" y="268" width="176" height="88" rx="12"/><rect class="net" x="432" y="268" width="176" height="5" rx="2.5"/>
+<text class="name" x="448" y="302">Transport</text><text class="desc" x="448" y="325">Codec and</text><text class="desc" x="448" y="343">media path</text>
+<path class="flow" d="M610 312H646" marker-end="url(#a)"/>
+<rect class="card" x="648" y="268" width="176" height="88" rx="12"/><rect class="think" x="648" y="268" width="176" height="5" rx="2.5"/>
+<text class="name" x="664" y="302">Voice runtime</text><text class="desc" x="664" y="325">Turns, model,</text><text class="desc" x="664" y="343">tools</text>
+<path class="flow" d="M826 312H862" marker-end="url(#a)"/>
+<rect class="card" x="864" y="268" width="176" height="88" rx="12"/><rect class="speak" x="864" y="268" width="176" height="5" rx="2.5"/>
+<text class="name" x="880" y="302">Playback</text><text class="desc" x="880" y="325">Queue and</text><text class="desc" x="880" y="343">device</text>
+
+<!-- lane: business actions -->
+<rect class="band" x="32" y="398" width="1016" height="116" rx="14"/>
+<text class="eyebrow net" x="48" y="430">BUSINESS</text><text class="eyebrow net" x="48" y="448">ACTIONS</text>
+<text class="desc" x="48" y="470">Evidence</text><text class="name" x="48" y="490">Committed record</text>
+<rect class="card" x="648" y="412" width="176" height="88" rx="12"/><rect class="think" x="648" y="412" width="176" height="5" rx="2.5"/>
+<text class="name" x="664" y="446">Action service</text><text class="desc" x="664" y="469">Authorize and</text><text class="desc" x="664" y="487">reconcile</text>
+<path class="flow" d="M826 456H862" marker-end="url(#a)"/>
+<rect class="card" x="864" y="412" width="176" height="88" rx="12"/><rect class="net" x="864" y="412" width="176" height="5" rx="2.5"/>
+<text class="name" x="880" y="446">Business records</text><text class="desc" x="880" y="469">Authoritative</text><text class="desc" x="880" y="487">outcome</text>
+
+<!-- links between lanes -->
+<path class="flow" d="M506 214V266" marker-end="url(#a)"/><text class="mono" x="494" y="244" text-anchor="end">control</text>
+<path class="dashn" d="M534 266V214" marker-end="url(#a)"/><text class="mono" x="546" y="244">call state</text>
+<path class="flow" d="M722 358V410" marker-end="url(#a)"/><text class="mono" x="710" y="388" text-anchor="end">action</text>
+<path class="dashn" d="M750 410V358" marker-end="url(#a)"/><text class="mono" x="762" y="388">result</text>
+
+<text class="desc" x="32" y="542">Logical paths: output also travels through the media transport. Played speech and committed actions are different evidence.</text>
+</svg>

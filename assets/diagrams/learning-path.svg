@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 663" width="1080" height="663" role="img" aria-labelledby="t d">
+<title id="t">Level up, one step at a time</title>
+<desc id="d">Four levels of learning to build voice agents, drawn as a staircase that rises from left to right, each with skills from this repository. Level 1, Talk to it: get an agent talking in your browser on a managed platform or a quickstart, and learn the listen, think, speak loop. Skill: voice-stack-selection. Level 2, Put it to work: give it a phone number, tools and APIs and a real task such as booking, and learn prompts for voice, turn taking, interruptions and phone rules. Skills: voice-conversation-design, voice-turn-taking, voice-phone-compliance. Level 3, Own the pipeline: build on a framework like LiveKit Agents or Pipecat and pick your own speech-to-text, language model and text-to-speech, and learn latency, audio quality and telephony. Skills: voice-speech-pipeline, voice-latency-audit, voice-audio-frontends, voice-media-debugging. Level 4, Run it for real: test it with evals, watch it with monitoring and keep it reliable when real callers depend on it, and learn reliability, security and cost at scale. Skills: voice-agent-evaluation, voice-call-reliability, voice-agent-security, voice-cost-estimation.</desc>
+<!-- Edit freely. Each level is one group: card, level badge, text, then skill chips pinned to the floor.
+     Chip text uses textLength so every chip is the same width in any monospace font. If you rename a skill, set textLength to its character count times 7.9 and the chip width to that plus 20.
+     To add a chip, make that card taller (move its top edge up) and keep the floor where it is. -->
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net-t:#eaeef2;--off:#c2cad2;--r1:#aeb8c3;--r2:#858f9b;--r3:#57606a;--r4:#1f2328;--listen:#0b7a53;--think:#4a3aa7;--speak:#b3441a}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net-t:#21262d;--off:#484f58;--r1:#3d444d;--r2:#626b77;--r3:#8b949e;--r4:#e6edf3;--listen:#2fb784;--think:#a29af0;--speak:#ec7a45}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;fill:var(--ink2)}.h2{font-size:20px;font-weight:700}
+.body{font-size:15px}.body2{font-size:15px;fill:var(--ink2)}
+.div{fill:none;stroke:var(--line)}
+.on{fill:var(--ink)}.off{fill:var(--off)}.badge{fill:var(--net-t)}
+.r1{fill:var(--r1)}.r2{fill:var(--r2)}.r3{fill:var(--r3)}.r4{fill:var(--r4)}
+.d-listen{fill:var(--listen)}.d-think{fill:var(--think)}.d-speak{fill:var(--speak)}
+.chip{fill:var(--net-t);stroke:var(--line)}
+.floor{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="662" rx="16"/>
+<text class="h1" x="32" y="50">Level up, one step at a time</text>
+<text class="sub" x="32" y="78">Start at the level that fits you. Each one lists the skills in this repo that help.</text>
+
+<g id="level-1">
+<path class="card" d="M32 633V322a14 14 0 0 1 14 -14H266a14 14 0 0 1 14 14V633z"/>
+<rect class="r1" x="32" y="308" width="248" height="5" rx="2.5"/>
+<circle class="badge" cx="245" cy="348" r="21"/>
+<rect class="on" x="230.5" y="350" width="5" height="8" rx="2.5"/>
+<rect class="off" x="238.0" y="346" width="5" height="12" rx="2.5"/>
+<rect class="off" x="245.5" y="342" width="5" height="16" rx="2.5"/>
+<rect class="off" x="253.0" y="338" width="5" height="20" rx="2.5"/>
+<text class="eyebrow" x="46" y="344">LEVEL 1</text>
+<text class="h2" x="46" y="372">Talk to it</text>
+<path class="div" d="M46 390H266"/>
+<text class="body" x="46" y="416"><tspan x="46" dy="0">Get an agent talking in your</tspan><tspan x="46" dy="21">browser, on a managed</tspan><tspan x="46" dy="21">platform or a quickstart.</tspan></text>
+<text class="eyebrow" x="46" y="490">LEARN</text>
+<text class="body2" x="46" y="513"><tspan x="46" dy="0">The loop behind every turn:</tspan></text>
+<circle class="d-listen" cx="50" cy="529" r="4"/>
+<text class="body2" x="60" y="534">listen</text>
+<circle class="d-think" cx="116.1" cy="529" r="4"/>
+<text class="body2" x="126.1" y="534">think</text>
+<circle class="d-speak" cx="179.89999999999998" cy="529" r="4"/>
+<text class="body2" x="189.89999999999998" y="534">speak</text>
+<path class="div" d="M46 551H266"/>
+<text class="eyebrow" x="46" y="576">SKILLS</text>
+<rect class="chip" x="46" y="589" width="185.9" height="28" rx="14"/>
+<text class="mono" x="56" y="608" textLength="165.9" lengthAdjust="spacing">voice-stack-selection</text>
+</g>
+<g id="level-2">
+<path class="card" d="M288 633V254a14 14 0 0 1 14 -14H522a14 14 0 0 1 14 14V633z"/>
+<rect class="r2" x="288" y="240" width="248" height="5" rx="2.5"/>
+<circle class="badge" cx="501" cy="280" r="21"/>
+<rect class="on" x="486.5" y="282" width="5" height="8" rx="2.5"/>
+<rect class="on" x="494.0" y="278" width="5" height="12" rx="2.5"/>
+<rect class="off" x="501.5" y="274" width="5" height="16" rx="2.5"/>
+<rect class="off" x="509.0" y="270" width="5" height="20" rx="2.5"/>
+<text class="eyebrow" x="302" y="276">LEVEL 2</text>
+<text class="h2" x="302" y="304">Put it to work</text>
+<path class="div" d="M302 322H522"/>
+<text class="body" x="302" y="348"><tspan x="302" dy="0">Give it a phone number,</tspan><tspan x="302" dy="21">tools and APIs, and a real</tspan><tspan x="302" dy="21">task such as booking.</tspan></text>
+<text class="eyebrow" x="302" y="422">LEARN</text>
+<text class="body2" x="302" y="445"><tspan x="302" dy="0">Prompts for voice, turn taking,</tspan><tspan x="302" dy="21">interruptions, phone rules.</tspan></text>
+<path class="div" d="M302 483H522"/>
+<text class="eyebrow" x="302" y="508">SKILLS</text>
+<rect class="chip" x="302" y="521" width="217.5" height="28" rx="14"/>
+<text class="mono" x="312" y="540" textLength="197.5" lengthAdjust="spacing">voice-conversation-design</text>
+<rect class="chip" x="302" y="555" width="154.3" height="28" rx="14"/>
+<text class="mono" x="312" y="574" textLength="134.3" lengthAdjust="spacing">voice-turn-taking</text>
+<rect class="chip" x="302" y="589" width="193.8" height="28" rx="14"/>
+<text class="mono" x="312" y="608" textLength="173.8" lengthAdjust="spacing">voice-phone-compliance</text>
+</g>
+<g id="level-3">
+<path class="card" d="M544 633V186a14 14 0 0 1 14 -14H778a14 14 0 0 1 14 14V633z"/>
+<rect class="r3" x="544" y="172" width="248" height="5" rx="2.5"/>
+<circle class="badge" cx="757" cy="212" r="21"/>
+<rect class="on" x="742.5" y="214" width="5" height="8" rx="2.5"/>
+<rect class="on" x="750.0" y="210" width="5" height="12" rx="2.5"/>
+<rect class="on" x="757.5" y="206" width="5" height="16" rx="2.5"/>
+<rect class="off" x="765.0" y="202" width="5" height="20" rx="2.5"/>
+<text class="eyebrow" x="558" y="208">LEVEL 3</text>
+<text class="h2" x="558" y="236">Own the pipeline</text>
+<path class="div" d="M558 254H778"/>
+<text class="body" x="558" y="280"><tspan x="558" dy="0">Build on a framework like</tspan><tspan x="558" dy="21">LiveKit Agents or Pipecat.</tspan></text>
+<text class="body" x="558" y="322">Pick</text>
+<circle class="d-listen" cx="600" cy="317" r="4"/>
+<text class="body" x="610" y="322">STT</text>
+<circle class="d-think" cx="653.1" cy="317" r="4"/>
+<text class="body" x="663.1" y="322">LLM</text>
+<circle class="d-speak" cx="710.4" cy="317" r="4"/>
+<text class="body" x="720.4" y="322">TTS</text>
+<text class="eyebrow" x="558" y="371">LEARN</text>
+<text class="body2" x="558" y="394"><tspan x="558" dy="0">Latency, audio quality,</tspan><tspan x="558" dy="21">telephony.</tspan></text>
+<path class="div" d="M558 449H778"/>
+<text class="eyebrow" x="558" y="474">SKILLS</text>
+<rect class="chip" x="558" y="487" width="185.9" height="28" rx="14"/>
+<text class="mono" x="568" y="506" textLength="165.9" lengthAdjust="spacing">voice-speech-pipeline</text>
+<rect class="chip" x="558" y="521" width="170.1" height="28" rx="14"/>
+<text class="mono" x="568" y="540" textLength="150.1" lengthAdjust="spacing">voice-latency-audit</text>
+<rect class="chip" x="558" y="555" width="185.9" height="28" rx="14"/>
+<text class="mono" x="568" y="574" textLength="165.9" lengthAdjust="spacing">voice-audio-frontends</text>
+<rect class="chip" x="558" y="589" width="185.9" height="28" rx="14"/>
+<text class="mono" x="568" y="608" textLength="165.9" lengthAdjust="spacing">voice-media-debugging</text>
+</g>
+<g id="level-4">
+<path class="card" d="M800 633V118a14 14 0 0 1 14 -14H1034a14 14 0 0 1 14 14V633z"/>
+<rect class="r4" x="800" y="104" width="248" height="5" rx="2.5"/>
+<circle class="badge" cx="1013" cy="144" r="21"/>
+<rect class="on" x="998.5" y="146" width="5" height="8" rx="2.5"/>
+<rect class="on" x="1006.0" y="142" width="5" height="12" rx="2.5"/>
+<rect class="on" x="1013.5" y="138" width="5" height="16" rx="2.5"/>
+<rect class="on" x="1021.0" y="134" width="5" height="20" rx="2.5"/>
+<text class="eyebrow" x="814" y="140">LEVEL 4</text>
+<text class="h2" x="814" y="168">Run it for real</text>
+<path class="div" d="M814 186H1034"/>
+<text class="body" x="814" y="212"><tspan x="814" dy="0">Test it with evals, watch it</tspan><tspan x="814" dy="21">with monitoring, and keep it</tspan><tspan x="814" dy="21">reliable when real callers</tspan><tspan x="814" dy="21">depend on it.</tspan></text>
+<text class="eyebrow" x="814" y="347">LEARN</text>
+<text class="body2" x="814" y="370"><tspan x="814" dy="0">Reliability, security</tspan><tspan x="814" dy="21">and cost at scale.</tspan></text>
+<path class="div" d="M814 449H1034"/>
+<text class="eyebrow" x="814" y="474">SKILLS</text>
+<rect class="chip" x="814" y="487" width="193.8" height="28" rx="14"/>
+<text class="mono" x="824" y="506" textLength="173.8" lengthAdjust="spacing">voice-agent-evaluation</text>
+<rect class="chip" x="814" y="521" width="193.8" height="28" rx="14"/>
+<text class="mono" x="824" y="540" textLength="173.8" lengthAdjust="spacing">voice-call-reliability</text>
+<rect class="chip" x="814" y="555" width="178" height="28" rx="14"/>
+<text class="mono" x="824" y="574" textLength="158" lengthAdjust="spacing">voice-agent-security</text>
+<rect class="chip" x="814" y="589" width="185.9" height="28" rx="14"/>
+<text class="mono" x="824" y="608" textLength="165.9" lengthAdjust="spacing">voice-cost-estimation</text>
+</g>
+
+<path class="floor" d="M24 634H1056"/>
+</svg>

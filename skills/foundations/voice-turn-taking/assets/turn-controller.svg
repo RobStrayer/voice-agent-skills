@@ -1,105 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="turn-controller-title turn-controller-desc" id="turn-controller-root">
-        <title id="turn-controller-title">A turn controller that can yield and safely resume</title>
-        <desc id="turn-controller-desc">Four conceptual speaking states separate a possible end of turn from a committed response, yield to eligible interruptions, allow safe false-alarm recovery, and keep tool actions in an independent ledger.</desc>
-        <defs>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
-      #turn-controller-root { --paper: #b9beb8;
-      --paper2: #d2d6cf;
-      --ink: #202823;
-      --strong: #18201c;
-      --muted: #3e4a42;
-      --soft: #414e44;
-      --rule: rgba(32,40,35,.18);
-      --rule-solid: #8e9b90;
-      --accent: #2d6358;
-      --accent-tint: #c9d9cf;
-      --link: #3f5f54; }
-      #turn-controller-root { color: var(--ink); font-family: 'Geist', system-ui, sans-serif; }
-      #turn-controller-root .diagram-container { width: 100%; overflow-x: auto; }
-      #turn-controller-root .title { font-family: 'Instrument Serif', Georgia, serif; font-size: 28px; font-weight: 400; fill: #18201c; }
-      #turn-controller-root .name { font-family: 'Geist', system-ui, sans-serif; font-size: 12px; font-weight: 600; fill: #18201c; }
-      #turn-controller-root .sub { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #3e4a42; }
-      #turn-controller-root .tag { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; fill: #3e4a42; letter-spacing: 0.5px; }
-      #turn-controller-root .edge-label { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; font-weight: 500; fill: #202823; text-anchor: middle; }
-      #turn-controller-root .annotation { font-family: 'Geist', system-ui, sans-serif; font-size: 10px; font-weight: 400; fill: #3e4a42; }
-      #turn-controller-root .source { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #3e4a42; }
-      #turn-controller-root .diagram-container { overflow-x: visible; }</style>
-          <marker id="turn-controller-turn-controller-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#3e4a42"/></marker>
-          <marker id="turn-controller-turn-controller-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2d6358"/></marker>
-        </defs>
-        <rect x="0" y="0" width="960" height="600" fill="#b9beb8"/>
-        <text x="40" y="48" class="tag">NL VOICE SKILLS / TURN TAKING</text>
-        <text x="40" y="80" class="title">Listen, commit, respond, yield</text>
-        <text x="40" y="104" class="annotation">One controller commits user turns and releases assistant output.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 624" width="1080" height="624" role="img" aria-labelledby="t d">
+<title id="t">Listen, commit, respond, yield</title>
+<desc id="d">A state diagram of one turn controller with four states, and a separate action ledger below it. Listening captures input, even while work is pending. When speech stops it moves to CandidateEnd, which holds a possible end of turn and waits for evidence. If the caller resumes, it returns to Listening. When the turn is committed it moves to Responding, which generates and plays output. When the response finishes it returns to Listening. An eligible interruption moves Responding to Yielding, which invalidates the old response and stops its output. When the output has stopped, Yielding returns to Listening. If the interruption was a false alarm and it is safe to resume, Yielding returns to Responding; that path needs a response that is still valid and safe output recovery. The action ledger is separate: pending and committed tool actions persist independently and can be pending in any state, so stopped speech does not undo an action.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--listen-t:#dff3ea;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00;--warn-t:#fff8c5}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--listen-t:#12301f;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922;--warn-t:#2e2508}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}.band{fill:var(--net-t);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.desc{font-size:15px;fill:var(--ink2)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.lbl{font-weight:700;fill:var(--ink)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.dash{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}.ah{fill:var(--ink2)}.ahw{fill:var(--warn)}
+.listen{fill:var(--listen)}.think{fill:var(--think)}.speak{fill:var(--speak)}.warn{fill:var(--warn)}.net{fill:var(--net)}
+.t-listen{fill:var(--listen-t)}.t-think{fill:var(--think-t)}.t-speak{fill:var(--speak-t)}.t-warn{fill:var(--warn-t)}.t-net{fill:var(--net-t)}
+.s-listen{stroke:var(--listen)}.s-think{stroke:var(--think)}.s-speak{stroke:var(--speak)}.s-warn{stroke:var(--warn)}.s-net{stroke:var(--net)}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dot{fill:var(--ink)}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahw"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="623" rx="16"/>
+<text class="h1" x="32" y="50">Listen, commit, respond, yield</text>
+<text class="sub" x="32" y="78">One controller commits the caller’s turn and releases the assistant’s output.</text>
 
-        <!-- Eight transitions, including the initial entry; connectors precede nodes. -->
-        <g fill="none" stroke="#3e4a42" stroke-width="1.4" stroke-linejoin="round">
-          <path id="turn-controller-initial-entry" d="M64 264 H96" marker-end="url(#turn-controller-turn-controller-arrow)"/>
-          <path id="turn-controller-speech-stops" d="M280 264 H384" marker-end="url(#turn-controller-turn-controller-arrow)"/>
-          <path id="turn-controller-caller-resumes" d="M432 228 V200 Q432 192 424 192 H240 Q232 192 232 200 V228" marker-end="url(#turn-controller-turn-controller-arrow)"/>
-          <path id="turn-controller-completion-accepted" d="M568 264 H672" marker-end="url(#turn-controller-turn-controller-arrow)"/>
-          <path id="turn-controller-response-finishes" d="M744 228 V156 Q744 148 736 148 H152 Q144 148 144 156 V228" marker-end="url(#turn-controller-turn-controller-arrow)"/>
-          <path id="turn-controller-output-stopped" d="M384 440 H192 Q184 440 184 432 V300" marker-end="url(#turn-controller-turn-controller-arrow)"/>
-          <path id="turn-controller-false-safe-resume" d="M568 440 H880 Q888 440 888 432 V288 Q888 280 880 280 H856" marker-end="url(#turn-controller-turn-controller-arrow)"/>
-        </g>
-        <path id="turn-controller-eligible-interruption" d="M744 300 V344 Q744 352 736 352 H524 Q516 352 516 360 V404" fill="none" stroke="#2d6358" stroke-width="1.7" stroke-linejoin="round" marker-end="url(#turn-controller-turn-controller-arrow-accent)"/>
+<!-- the controller: four states -->
+<rect class="band" x="32" y="108" width="1016" height="368" rx="14"/>
+<text class="eyebrow net" x="48" y="134">TURN CONTROLLER</text>
 
-        <!-- Label masks have an 8px gap from the connector stroke. -->
-        <g>
-          <rect x="292" y="240" width="80" height="16" fill="#b9beb8"/>
-          <text x="332" y="251" class="edge-label">SPEECH STOPS</text>
-          <rect x="288" y="168" width="88" height="16" fill="#b9beb8"/>
-          <text x="332" y="179" class="edge-label">CALLER RESUMES</text>
-          <rect x="580" y="240" width="80" height="16" fill="#b9beb8"/>
-          <text x="620" y="251" class="edge-label">TURN COMMIT</text>
-          <rect x="408" y="124" width="64" height="16" fill="#b9beb8"/>
-          <text x="440" y="135" class="edge-label">FINISHED</text>
-          <rect x="584" y="328" width="96" height="16" fill="#b9beb8"/>
-          <text x="632" y="339" class="edge-label">ELIGIBLE INPUT</text>
-          <rect x="232" y="416" width="96" height="16" fill="#b9beb8"/>
-          <text x="280" y="427" class="edge-label">OUTPUT STOPPED</text>
-          <rect x="692" y="416" width="104" height="16" fill="#b9beb8"/>
-          <text x="744" y="427" class="edge-label">FALSE + SAFE</text>
-        </g>
+<!-- transitions first, so the state cards sit on top of the line ends -->
+<circle class="dot" cx="64" cy="220" r="6"/><path class="flow" d="M72 220H94" marker-end="url(#a)"/><text class="mono" x="64" y="244" text-anchor="middle">start</text>
+<path class="flow" d="M304 202H454" marker-end="url(#a)"/><text class="mono" x="380" y="192" text-anchor="middle">speech stops</text>
+<path class="flow" d="M456 238H306" marker-end="url(#a)"/><text class="mono" x="380" y="260" text-anchor="middle">caller resumes</text>
+<path class="flow" d="M664 220H814" marker-end="url(#a)"/><text class="mono lbl" x="740" y="210" text-anchor="middle">turn committed</text>
+<path class="flow" d="M920 168V154Q920 146 912 146H208Q200 146 200 154V166" marker-end="url(#a)"/><text class="mono" x="560" y="137" text-anchor="middle">response finishes</text>
+<path class="flow" d="M968 272V420Q968 428 960 428H666" marker-end="url(#a)"/><text class="mono" x="813" y="450" text-anchor="middle">eligible interruption</text>
+<path class="dash" d="M664 380H872Q880 380 880 372V274" marker-end="url(#aw)"/><text class="mono" x="768" y="352" text-anchor="middle">false alarm,</text><text class="mono" x="768" y="370" text-anchor="middle">safe to resume</text>
+<path class="flow" d="M456 404H208Q200 404 200 396V274" marker-end="url(#a)"/><text class="mono" x="332" y="396" text-anchor="middle">output stopped</text>
 
-        <circle cx="56" cy="264" r="6" fill="#202823"/>
+<!-- Listening -->
+<rect class="card" x="96" y="168" width="208" height="104" rx="12"/><rect class="listen" x="96" y="168" width="208" height="5" rx="2.5"/>
+<circle class="t-listen" cx="128" cy="202" r="16"/><g class="ico s-listen" transform="translate(118 192) scale(.85)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="h2" x="154" y="209">Listening</text>
+<text class="desc" x="112" y="240">Capture input, even</text><text class="desc" x="112" y="258">while work is pending</text>
 
-        <g id="turn-controller-listening">
-          <rect x="96" y="228" width="184" height="72" rx="8" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1"/>
-          <rect x="108" y="240" width="44" height="12" rx="2" fill="#b9beb8"/>
-          <text x="114" y="249" class="tag">STATE</text>
-          <text x="108" y="268" class="name">Listening</text>
-          <text x="108" y="286" class="sub">capture user audio</text>
-        </g>
-        <g id="turn-controller-candidate-end">
-          <rect x="384" y="228" width="184" height="72" rx="8" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1"/>
-          <rect x="396" y="240" width="44" height="12" rx="2" fill="#b9beb8"/>
-          <text x="402" y="249" class="tag">STATE</text>
-          <text x="396" y="268" class="name">CandidateEnd</text>
-          <text x="396" y="286" class="sub">await completion evidence</text>
-        </g>
-        <g id="turn-controller-responding">
-          <rect x="672" y="228" width="184" height="72" rx="8" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1"/>
-          <rect x="684" y="240" width="44" height="12" rx="2" fill="#b9beb8"/>
-          <text x="690" y="249" class="tag">STATE</text>
-          <text x="684" y="268" class="name">Responding</text>
-          <text x="684" y="286" class="sub">generate and play output</text>
-        </g>
-        <g id="turn-controller-yielding">
-          <rect x="384" y="404" width="184" height="72" rx="8" fill="#c9d9cf" stroke="#2d6358" stroke-width="1.5"/>
-          <rect x="396" y="416" width="44" height="12" rx="2" fill="#b9beb8"/>
-          <text x="402" y="425" class="tag">STATE</text>
-          <text x="396" y="444" class="name">Yielding</text>
-          <text x="396" y="462" class="sub">invalidate / stop old output</text>
-        </g>
+<!-- CandidateEnd -->
+<rect class="card" x="456" y="168" width="208" height="104" rx="12"/><rect class="think" x="456" y="168" width="208" height="5" rx="2.5"/>
+<circle class="t-think" cx="488" cy="202" r="16"/><g class="ico s-think" transform="translate(478 192) scale(.85)"><rect x="6" y="5" width="4" height="14" rx="1.5"/><rect x="14" y="5" width="4" height="14" rx="1.5"/></g>
+<text class="h2" x="514" y="209">CandidateEnd</text>
+<text class="desc" x="472" y="240">Hold a possible end,</text><text class="desc" x="472" y="258">wait for evidence</text>
 
-        <!-- The tool ledger is an annotation, not a fifth speaking state. -->
-        <rect x="96" y="492" width="760" height="40" rx="6" fill="#b9beb8" stroke="#8e9b90" stroke-width="1" stroke-dasharray="4,3"/>
-        <text x="108" y="507" class="tag">SEPARATE ACTION LEDGER</text>
-        <text x="108" y="523" class="annotation">Pending and committed tool actions persist independently. Stopped speech does not undo an external action.</text>
+<!-- Responding -->
+<rect class="card" x="816" y="168" width="208" height="104" rx="12"/><rect class="speak" x="816" y="168" width="208" height="5" rx="2.5"/>
+<circle class="t-speak" cx="848" cy="202" r="16"/><g class="ico s-speak" transform="translate(838 192) scale(.85)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="h2" x="874" y="209">Responding</text>
+<text class="desc" x="832" y="240">Generate and play</text><text class="desc" x="832" y="258">output (can overlap)</text>
 
-        <line x1="40" y1="536" x2="920" y2="536" stroke="#8e9b90" stroke-width="1"/>
-        <text x="40" y="548" class="source">Conceptual engineering model / reviewed 2026-09-30 UTC</text>
-        <text x="40" y="560" class="annotation">False-alarm resume requires a still-valid response and safe output recovery. Provider APIs differ.</text>
-      </svg>
+<!-- Yielding -->
+<rect class="card" x="456" y="352" width="208" height="104" rx="12"/><rect class="warn" x="456" y="352" width="208" height="5" rx="2.5"/>
+<circle class="t-warn" cx="488" cy="386" r="16"/><g class="ico s-warn" transform="translate(478 376) scale(.85)"><rect x="5.5" y="5.5" width="13" height="13" rx="2.5"/></g>
+<text class="h2" x="514" y="393">Yielding</text>
+<text class="desc" x="472" y="424">Invalidate the old</text><text class="desc" x="472" y="442">response, stop output</text>
+
+<!-- the ledger: outside the controller -->
+<rect class="card" x="32" y="500" width="1016" height="76" rx="14"/><rect class="net" x="32" y="500" width="1016" height="5" rx="2.5"/>
+<circle class="t-net" cx="70" cy="540" r="22"/><g class="ico s-net" transform="translate(58 528)"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M9 8.5h6M9 12h6M9 15.5h4"/></g>
+<text class="eyebrow net" x="104" y="530">SEPARATE ACTION LEDGER</text>
+<text class="h2" x="104" y="556">Stopped speech does not undo an action.</text>
+<text class="desc" x="600" y="531">Pending and committed tool actions</text><text class="desc" x="600" y="551">persist independently, in any state.</text>
+
+<text class="desc" x="32" y="606">Dashed: resume only if the response is still valid and output recovery is safe. Conceptual model; provider APIs differ.</text>
+</svg>

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 708" width="1080" height="708" role="img" aria-labelledby="t d">
+<title id="t">When the caller changes their mind mid-action</title>
+<desc id="d">Scenario: the agent submitted a booking for Friday at 2pm with an idempotency key, the response was lost, and the caller then says "Actually, make it Monday." The agent stops talking, keeps Friday's action record, and holds Monday as corrected intent. It says "Let me check whether Friday went through before I change it" and checks what happened to Friday. Three outcomes follow. Committed: change or cancel it through the booking system, then book Monday. Not committed: submit Monday as a new action with its own key. Unknown: keep both records, tell the caller you are checking, then reconcile or hand to a person. Principle: stopping speech does not stop an action.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00;--warn-t:#fff8c5;--good:#1a7f37;--good-t:#dafbe1}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922;--warn-t:#2e2508;--good:#3fb950;--good-t:#12301a}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}.strip{fill:var(--net-t);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}.quote{font-size:16px}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
+.chiptxt{font-size:14px;font-weight:600}.warnlbl{font-size:14px;font-weight:600;fill:var(--warn)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.dash{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}
+.rule{stroke:var(--line)}.ah{fill:var(--ink2)}.ahw{fill:var(--warn)}
+.think{fill:var(--think)}.speak{fill:var(--speak)}.net{fill:var(--net)}.good{fill:var(--good)}.warn{fill:var(--warn)}
+.s-think{stroke:var(--think)}.s-speak{stroke:var(--speak)}.s-net{stroke:var(--net)}.s-good{stroke:var(--good)}.s-warn{stroke:var(--warn)}.s-ink{stroke:var(--ink)}
+.t-think{fill:var(--think-t)}.t-net{fill:var(--net-t)}.t-good{fill:var(--good-t)}.t-warn{fill:var(--warn-t)}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chip{fill:var(--net-t);stroke:var(--line)}.chipw{fill:var(--warn-t);stroke:var(--warn)}.bubble{fill:var(--speak-t);stroke:var(--speak);stroke-width:1.5}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahw"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="707" rx="16"/>
+<text class="h1" x="32" y="50">When the caller changes their mind mid-action</text>
+<text class="sub" x="32" y="78">Check what happened to the first action before you act on the change. The answer decides the next step.</text>
+
+<!-- 1 · the Friday action record -->
+<rect class="card" x="32" y="104" width="494" height="132" rx="14"/>
+<rect class="think" x="32" y="104" width="494" height="5" rx="2.5"/>
+<circle class="t-think" cx="70" cy="148" r="22"/>
+<g class="ico s-think" transform="translate(58 136)"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 8h6M9 12h6M9 16h3.5"/></g>
+<text class="eyebrow think" x="104" y="142">1 · THE AGENT SUBMITTED</text>
+<text class="h2" x="104" y="165">Book Friday 2pm</text>
+<path class="rule" d="M52 184H506"/>
+<rect class="chip" x="52" y="198" width="186" height="26" rx="13"/><text class="mono" x="145" y="216" text-anchor="middle">idempotency key K</text>
+<rect class="chipw" x="254" y="198" width="138" height="26" rx="13"/><text class="warnlbl" x="323" y="216" text-anchor="middle">response lost</text>
+
+<!-- 2 · the caller changes their mind -->
+<rect class="card" x="554" y="104" width="494" height="132" rx="14"/>
+<rect class="net" x="554" y="104" width="494" height="5" rx="2.5"/>
+<circle class="t-net" cx="592" cy="148" r="22"/>
+<g class="ico s-net" transform="translate(580 136)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="eyebrow net" x="626" y="142">2 · THE CALLER CHANGES THEIR MIND</text>
+<text class="h2" x="626" y="165">“Actually, make it Monday.”</text>
+<path class="rule" d="M574 184H1028"/>
+<rect class="chip" x="574" y="198" width="182" height="26" rx="13"/><text class="chiptxt" x="665" y="216" text-anchor="middle">agent stops talking</text>
+<rect class="chip" x="772" y="198" width="210" height="26" rx="13"/><text class="chiptxt" x="877" y="216" text-anchor="middle">Monday waits, not sent</text>
+
+<path class="flow" d="M279 240V263" marker-end="url(#a)"/>
+<path class="flow" d="M801 240V263" marker-end="url(#a)"/>
+
+<!-- 3 · check what happened to Friday, and what the agent says meanwhile -->
+<rect class="card" x="32" y="266" width="1016" height="118" rx="14"/>
+<rect class="think" x="32" y="266" width="1016" height="5" rx="2.5"/>
+<circle class="t-think" cx="70" cy="308" r="22"/>
+<g class="ico s-think" transform="translate(58 296)"><circle cx="10.5" cy="10.5" r="6"/><path d="M15.2 15.2L20 20"/></g>
+<text class="eyebrow think" x="104" y="300">3 · CHECK BEFORE ACTING</text>
+<text class="h2" x="104" y="324">Check what happened to Friday</text>
+<text class="desc" x="104" y="348">Ask the booking system about action A and its key K.</text>
+<text class="desc" x="104" y="367">Only a clear answer counts. An empty lookup can be stale.</text>
+<path class="rule" d="M584 290V364"/>
+<rect class="bubble" x="604" y="286" width="420" height="80" rx="14"/>
+<g class="ico s-speak" transform="translate(620 298)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="eyebrow speak" x="656" y="312">THE AGENT SAYS</text>
+<text class="quote" x="656" y="335">“Let me check whether Friday went</text>
+<text class="quote" x="656" y="355">through before I change it.”</text>
+
+<path class="flow" d="M192 388V417" marker-end="url(#a)"/>
+<path class="flow" d="M540 388V417" marker-end="url(#a)"/>
+<path class="dash" d="M888 388V417" marker-end="url(#aw)"/>
+
+<!-- outcome: committed -->
+<rect class="card" x="32" y="420" width="320" height="176" rx="14"/>
+<rect class="good" x="32" y="420" width="320" height="5" rx="2.5"/>
+<circle class="t-good" cx="70" cy="464" r="22"/>
+<g class="ico s-good" transform="translate(58 452)"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.8 2.8L16.3 9.6"/></g>
+<text class="eyebrow good" x="104" y="458">COMMITTED</text>
+<text class="h2" x="104" y="481">Friday is booked</text>
+<path class="rule" d="M52 500H332"/>
+<text class="name" x="52" y="527">Change or cancel it through</text>
+<text class="name" x="52" y="549">the booking system, then</text>
+<text class="name" x="52" y="571">book Monday.</text>
+
+<!-- outcome: not committed -->
+<rect class="card" x="380" y="420" width="320" height="176" rx="14"/>
+<rect class="net" x="380" y="420" width="320" height="5" rx="2.5"/>
+<circle class="t-net" cx="418" cy="464" r="22"/>
+<g class="ico s-net" transform="translate(406 452)"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></g>
+<text class="eyebrow net" x="452" y="458">NOT COMMITTED</text>
+<text class="h2" x="452" y="481">Friday is not booked</text>
+<path class="rule" d="M400 500H680"/>
+<text class="name" x="400" y="527">Submit Monday as a new</text>
+<text class="name" x="400" y="549">action with its own key.</text>
+
+<!-- outcome: unknown -->
+<rect class="card" x="728" y="420" width="320" height="176" rx="14"/>
+<rect class="warn" x="728" y="420" width="320" height="5" rx="2.5"/>
+<circle class="t-warn" cx="766" cy="464" r="22"/>
+<g class="ico s-warn" transform="translate(754 452)"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.6a2.5 2.5 0 0 1 4.8.9c0 1.6-2.4 2-2.4 3.4M12 17h.01"/></g>
+<text class="eyebrow warn" x="800" y="458">UNKNOWN</text>
+<text class="h2" x="800" y="481">No clear answer yet</text>
+<path class="rule" d="M748 500H1028"/>
+<text class="name" x="748" y="527">Keep both records. Tell the</text>
+<text class="name" x="748" y="549">caller you’re checking. Then</text>
+<text class="name" x="748" y="571">reconcile, or hand to a person.</text>
+
+<!-- principle -->
+<rect class="strip" x="32" y="620" width="1016" height="62" rx="14"/>
+<g class="ico s-ink" transform="translate(56 639)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9.5l5 5M22 9.5l-5 5"/></g>
+<text class="h2" x="96" y="648">Stopping speech doesn’t stop an action.</text>
+<text class="desc" x="96" y="669">Barge-in silences the agent. The request it already sent keeps going.</text>
+</svg>

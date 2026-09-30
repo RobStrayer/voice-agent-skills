@@ -1,15 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="echo-processing-title echo-processing-desc" id="echo-processing-root"><title id="echo-processing-title">Remove the echo. Preserve the caller.</title><desc id="echo-processing-desc">Microphone samples enter endpoint capture processing. Render PCM supplies both the speaker and the local acoustic echo cancellation reference. Sound returning from speaker to microphone is a physical echo path. Capture audio is encoded, transported, decoded and optionally enhanced before VAD and the speech model. The server does not automatically receive the endpoint reference.</desc><defs>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
-      #echo-processing-root { color: var(--ink); font-family: 'Geist',Arial,sans-serif; }
-      #echo-processing-root { --paper:#b9beb8; --node:#d2d6cf; --ink:#202823; --muted:#3e4a42; --soft:#414e44; --rule:#8e9b90; --accent:#2d6358; --tint:#c9d9cf; }
-      #echo-processing-root .diagram-container { width:100%; overflow-x:auto; }
-      #echo-processing-root text { fill:var(--ink); }
-      #echo-processing-root .figure-title { font-family:'Instrument Serif',Georgia,serif; font-size:28px; font-weight:400; }
-      #echo-processing-root .node-name { font-family:'Geist',Arial,sans-serif; font-size:12px; font-weight:600; }
-      #echo-processing-root .sub { font-family:'Geist Mono',Consolas,monospace; font-size:9px; fill:var(--muted); }
-      #echo-processing-root .tag { font-family:'Geist Mono',Consolas,monospace; font-size:8px; font-weight:500; letter-spacing:1.4px; fill:var(--muted); }
-      #echo-processing-root .edge-label { font-family:'Geist Mono',Consolas,monospace; font-size:8px; letter-spacing:.5px; fill:var(--muted); }
-      #echo-processing-root .note { font-family:'Geist',Arial,sans-serif; font-size:11px; font-weight:400; fill:var(--muted); }
-      #echo-processing-root .source { font-family:'Geist Mono',Consolas,monospace; font-size:8px; fill:var(--soft); }
-      #echo-processing-root .diagram-container { overflow-x:visible; }</style><marker id="echo-processing-echo-processing-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#3e4a42"/></marker><marker id="echo-processing-echo-processing-open" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6" fill="none" stroke="#3e4a42" stroke-width="1.2"/></marker></defs><rect width="960" height="600" fill="#b9beb8"/><text x="40" y="44" class="tag" text-anchor="start">NL VOICE SKILLS / ENGINEERING HANDBOOK</text><text x="40" y="88" class="figure-title" text-anchor="start">Remove the echo. Preserve the caller.</text><text x="40" y="116" class="note" text-anchor="start">A device reference and a server noise filter solve different problems.</text><rect x="40" y="152" width="432" height="332" rx="8" fill="#202823" fill-opacity="0.025" stroke="#8e9b90" stroke-dasharray="4,4"/><text x="56" y="176" class="tag" text-anchor="start">RENDERING ENDPOINT</text><text x="520" y="176" class="tag" text-anchor="start">MEDIA / AGENT PATH</text><path d="M200 252 H280" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#echo-processing-echo-processing-arrow)"/><path d="M448 252 H520" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#echo-processing-echo-processing-arrow)"/><path d="M680 252 H752" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#echo-processing-echo-processing-arrow)"/><path d="M828 288 V368" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#echo-processing-echo-processing-arrow)"/><path d="M280 408 H200" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#echo-processing-echo-processing-arrow)"/><path d="M364 372 V288" fill="none" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#echo-processing-echo-processing-arrow)"/><path d="M120 372 V288" fill="none" stroke="#3e4a42" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#echo-processing-echo-processing-open)"/><rect x="216.0" y="220" width="48" height="16" fill="#b9beb8"/><text x="240" y="231" class="edge-label" text-anchor="middle">SAMPLES</text><rect x="462.0" y="220" width="44" height="16" fill="#b9beb8"/><text x="484" y="231" class="edge-label" text-anchor="middle">ENCODE</text><rect x="694.0" y="220" width="44" height="16" fill="#b9beb8"/><text x="716" y="231" class="edge-label" text-anchor="middle">DECODE</text><rect x="370.0" y="320" width="80" height="16" fill="#b9beb8"/><text x="410" y="331" class="edge-label" text-anchor="middle">AEC REFERENCE</text><rect x="126.0" y="320" width="80" height="16" fill="#b9beb8"/><text x="166" y="331" class="edge-label" text-anchor="middle">ACOUSTIC ECHO</text><rect x="218.0" y="376" width="44" height="16" fill="#b9beb8"/><text x="240" y="387" class="edge-label" text-anchor="middle">RENDER</text><g class="node"><rect x="56" y="216" width="144" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="72" y="236" class="tag" text-anchor="start">DEVICE</text><text x="72" y="256" class="node-name" text-anchor="start">Microphone</text><text x="72" y="274" class="sub" text-anchor="start">capture samples</text></g><g class="node"><rect x="280" y="216" width="168" height="72" rx="6" fill="#c9d9cf" stroke="#2d6358" stroke-width="1.2"/><text x="296" y="236" class="tag" text-anchor="start">ENDPOINT APM</text><text x="296" y="256" class="node-name" text-anchor="start">Capture processing</text><text x="296" y="274" class="sub" text-anchor="start">AEC / NS / AGC</text></g><g class="node"><rect x="520" y="216" width="160" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="536" y="236" class="tag" text-anchor="start">NETWORK</text><text x="536" y="256" class="node-name" text-anchor="start">Transport</text><text x="536" y="274" class="sub" text-anchor="start">encoded media</text></g><g class="node"><rect x="752" y="216" width="168" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="768" y="236" class="tag" text-anchor="start">OPTIONAL</text><text x="768" y="256" class="node-name" text-anchor="start">Enhancement</text><text x="768" y="274" class="sub" text-anchor="start">decoded input</text></g><g class="node"><rect x="752" y="368" width="168" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="768" y="388" class="tag" text-anchor="start">CONSUMER</text><text x="768" y="408" class="node-name" text-anchor="start">VAD + speech</text><text x="768" y="426" class="sub" text-anchor="start">preserve quiet words</text></g><g class="node"><rect x="280" y="372" width="168" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="296" y="392" class="tag" text-anchor="start">REFERENCE SOURCE</text><text x="296" y="412" class="node-name" text-anchor="start">Render PCM</text><text x="296" y="430" class="sub" text-anchor="start">timed playback</text></g><g class="node"><rect x="56" y="372" width="144" height="72" rx="6" fill="#d2d6cf" stroke="#8e9b90" stroke-width="1.2"/><text x="72" y="392" class="tag" text-anchor="start">DEVICE</text><text x="72" y="412" class="node-name" text-anchor="start">Speaker</text><text x="72" y="430" class="sub" text-anchor="start">acoustic output</text></g><text x="520" y="464" class="note" text-anchor="start">The endpoint owns the echo reference.</text><text x="520" y="482" class="note" text-anchor="start">The server does not receive it automatically.</text><text x="56" y="512" class="source" text-anchor="start">Solid: digital audio/reference     Dashed: sound returning through the room</text><line x1="40" y1="536" x2="920" y2="536" stroke="#8e9b90"/><text x="40" y="560" class="note" text-anchor="start">Conceptual model. Provider contracts and failure policies need separate verification.</text><text x="40" y="581" class="source" text-anchor="start">REVIEWED 2026-09-30 UTC / ORIGINAL NL VOICE SKILLS MATERIAL</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 556" width="1080" height="556" role="img" aria-labelledby="t d">
+<title id="t">Echo is removed where the sound is played</title>
+<desc id="d">Two panels. On the caller's device, the microphone feeds capture processing, which does echo cancellation, noise suppression and gain. The device's playback audio goes to the speaker and, as a timed copy called the echo reference, into capture processing. Sound from the speaker also leaks back into the microphone through the room. Processed audio crosses the network to the agent server, where optional enhancement feeds voice activity detection and the speech model. The echo reference is not sent to the server automatically, so a server-side filter cannot replace echo cancellation on the device.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--listen-t:#dff3ea;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00;--warn-t:#fff8c5}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--listen-t:#12301f;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922;--warn-t:#2e2508}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.lbl{font-weight:700;fill:var(--ink)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.ref{fill:none;stroke:var(--speak);stroke-width:3}
+.dash{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}
+.ah{fill:var(--ink2)}.ahw{fill:var(--warn)}.ahs{fill:var(--speak)}
+.net{fill:var(--net)}.t-net{fill:var(--net-t)}.s-net{stroke:var(--net)}
+.n-listen{fill:var(--listen-t);stroke:var(--listen);stroke-width:1.5}.n-speak{fill:var(--speak-t);stroke:var(--speak);stroke-width:1.5}
+.opt{stroke-dasharray:6 4}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tag{fill:var(--card);stroke:var(--line)}.tagw{fill:var(--warn-t);stroke:var(--warn)}.tags{fill:var(--card);stroke:var(--speak);stroke-width:1.5}
+.x{fill:none;stroke:var(--warn);stroke-width:2;stroke-linecap:round}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahw"/></marker>
+<marker id="as" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahs"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="555" rx="16"/>
+<text class="h1" x="32" y="50">Echo is removed where the sound is played</text>
+<text class="sub" x="32" y="78">The device keeps a copy of what it plays and uses it to remove echo. The server does not receive that copy automatically.</text>
+
+<!-- panel: caller's device -->
+<rect class="card" x="32" y="112" width="536" height="392" rx="14"/>
+<circle class="t-net" cx="70" cy="158" r="22"/>
+<g class="ico s-net" transform="translate(58 146)"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></g>
+<text class="eyebrow net" x="104" y="152">CALLER'S DEVICE</text>
+<text class="h2" x="104" y="175">Holds the reference</text>
+<path d="M52 200H548" stroke="var(--line)"/>
+
+<!-- panel: agent server -->
+<rect class="card" x="728" y="112" width="320" height="392" rx="14"/>
+<circle class="t-net" cx="766" cy="158" r="22"/>
+<g class="ico s-net" transform="translate(754 146)"><rect x="3.5" y="4" width="17" height="7" rx="2"/><rect x="3.5" y="13" width="17" height="7" rx="2"/><path d="M7.5 7.5h.01M7.5 16.5h.01"/></g>
+<text class="eyebrow net" x="800" y="152">AGENT SERVER</text>
+<text class="h2" x="800" y="175">No reference by default</text>
+<path d="M748 200H1028" stroke="var(--line)"/>
+
+<!-- device, top row: what is captured -->
+<rect class="n-listen" x="56" y="224" width="184" height="88" rx="12"/>
+<text class="name" x="72" y="254">Microphone</text>
+<text class="desc" x="72" y="276">Hears the caller</text>
+<text class="desc" x="72" y="294">and the echo</text>
+
+<rect class="n-listen" x="320" y="224" width="224" height="88" rx="12"/>
+<text class="name" x="336" y="254">Capture processing</text>
+<text class="desc" x="336" y="276">Echo cancellation (AEC),</text>
+<text class="desc" x="336" y="294">noise suppression, gain</text>
+
+<!-- device, bottom row: what is played -->
+<rect class="n-speak" x="56" y="392" width="184" height="88" rx="12"/>
+<text class="name" x="72" y="422">Speaker</text>
+<text class="desc" x="72" y="444">Plays the agent's</text>
+<text class="desc" x="72" y="462">voice into the room</text>
+
+<rect class="n-speak" x="320" y="392" width="224" height="88" rx="12"/>
+<text class="name" x="336" y="422">Playback audio</text>
+<text class="desc" x="336" y="444">A timed copy of what</text>
+<text class="desc" x="336" y="462">is being played</text>
+
+<!-- server nodes -->
+<rect class="n-listen opt" x="752" y="224" width="272" height="88" rx="12"/>
+<text class="name" x="768" y="254">Server enhancement</text>
+<rect class="tag" x="926" y="238" width="86" height="22" rx="11"/><text class="mono" x="969" y="254" text-anchor="middle">optional</text>
+<text class="desc" x="768" y="276">Typically gets audio the</text>
+<text class="desc" x="768" y="294">device already processed</text>
+
+<rect class="n-listen" x="752" y="392" width="272" height="88" rx="12"/>
+<text class="name" x="768" y="422">VAD + speech model</text>
+<text class="desc" x="768" y="444">Quiet words must survive</text>
+<text class="desc" x="768" y="462">the earlier stages</text>
+
+<!-- flows -->
+<path class="flow" d="M240 268H318" marker-end="url(#a)"/><text class="mono" x="279" y="258" text-anchor="middle">samples</text>
+<path class="flow" d="M544 268H750" marker-end="url(#a)"/><text class="mono" x="648" y="258" text-anchor="middle">processed audio</text>
+<path class="flow" d="M888 312V390" marker-end="url(#a)"/>
+<path class="flow" d="M320 436H242" marker-end="url(#a)"/><text class="mono" x="281" y="426" text-anchor="middle">play</text>
+
+<!-- the reference: copy of playback audio into capture processing -->
+<path class="ref" d="M432 392V314" marker-end="url(#as)"/>
+<rect class="tags" x="362" y="339" width="140" height="26" rx="13"/><text class="mono lbl" x="432" y="357" text-anchor="middle">echo reference</text>
+
+<!-- the problem: sound leaks from speaker back into the microphone -->
+<path class="dash" d="M148 392V314" marker-end="url(#aw)"/>
+<rect class="tagw" x="66" y="339" width="164" height="26" rx="13"/><text class="mono lbl" x="148" y="357" text-anchor="middle">echo via the room</text>
+
+<!-- the gap: the reference is not sent to the server automatically -->
+<path class="dash" d="M544 436H634"/>
+<circle cx="656" cy="436" r="11" fill="var(--card)" stroke="var(--warn)" stroke-width="2"/><path class="x" d="M651.5 431.5l9 9M660.5 431.5l-9 9"/>
+<text class="mono lbl" x="648" y="472" text-anchor="middle">not sent</text>
+<text class="mono lbl" x="648" y="490" text-anchor="middle">automatically</text>
+
+<text class="desc" x="32" y="534">Conceptual model of one signal path. Devices, browsers and providers differ in what they process.</text>
+</svg>

@@ -1,12 +1,93 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="interrupted-action-title interrupted-action-desc" id="interrupted-action-root"><title id="interrupted-action-title">Interrupted speech, pending action</title><desc id="interrupted-action-desc">The controller stops obsolete playback after a caller correction while preserving the original booking action for authoritative reconciliation.</desc><defs>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
-      #interrupted-action-root { --paper:#b9beb8; --paper-2:#d2d6cf; --ink:#202823; --strong:#18201c; --muted:#3e4a42; --soft:#414e44; --rule:rgba(32,40,35,.18); --rule-solid:#8e9b90; --accent:#2d6358; --accent-tint:#c9d9cf; --link:#3f5f54; }
-      #interrupted-action-root { color: var(--ink); font-family: 'Geist',system-ui,sans-serif; }
-      #interrupted-action-root .diagram-container { width:100%; overflow-x:auto; }
-      #interrupted-action-root .diagram-container { overflow-x:visible; }
-      #interrupted-action-root .figure-title { font-family:'Instrument Serif',Georgia,serif; font-size:28px; font-weight:400; fill:var(--strong); }
-      #interrupted-action-root .node-name { font-family:'Geist',system-ui,sans-serif; font-size:12px; font-weight:600; fill:var(--ink); }
-      #interrupted-action-root .sub { font-family:'Geist Mono',ui-monospace,monospace; font-size:9px; fill:var(--muted); }
-      #interrupted-action-root .label { font-family:'Geist Mono',ui-monospace,monospace; font-size:8px; letter-spacing:.04em; fill:var(--soft); }
-      #interrupted-action-root .meta { font-family:'Geist Mono',ui-monospace,monospace; font-size:8px; fill:var(--muted); }</style><marker id="interrupted-action-ia-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3e4a42"/></marker><marker id="interrupted-action-ia-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2d6358"/></marker><marker id="interrupted-action-ia-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#3f5f54"/></marker></defs><rect width="960" height="600" fill="#b9beb8"/><text x="40" y="68" class="figure-title" text-anchor="start">Interrupted speech, pending action</text><text x="920" y="64" class="meta" text-anchor="end">REVIEWED 2026-09-30 UTC</text><text x="40" y="88" class="sub" text-anchor="start">CONCEPTUAL EXAMPLE: B7 may commit; reconcile its outcome before writing the corrected booking.</text><line x1="128" y1="164" x2="128" y2="508" stroke="#8e9b90" stroke-width="1" stroke-dasharray="3,3"/><line x1="352" y1="164" x2="352" y2="508" stroke="#8e9b90" stroke-width="1" stroke-dasharray="3,3"/><line x1="576" y1="164" x2="576" y2="508" stroke="#8e9b90" stroke-width="1" stroke-dasharray="3,3"/><line x1="800" y1="164" x2="800" y2="508" stroke="#8e9b90" stroke-width="1" stroke-dasharray="3,3"/><g data-message="BOOK TUESDAY"><line x1="128" y1="196" x2="352" y2="196" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#interrupted-action-ia-arrow)"/><rect x="204" y="172" width="72" height="16" rx="2" fill="#b9beb8"/><text x="240" y="184" class="label" text-anchor="middle">BOOK TUESDAY</text></g><g data-message="SUBMIT B7"><line x1="352" y1="228" x2="800" y2="228" stroke="#3f5f54" stroke-width="1.2" marker-end="url(#interrupted-action-ia-arrow-link)"/><rect x="658" y="204" width="60" height="16" rx="2" fill="#b9beb8"/><text x="688" y="216" class="label" text-anchor="middle">SUBMIT B7</text></g><g data-message="START R4"><line x1="352" y1="260" x2="576" y2="260" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#interrupted-action-ia-arrow)"/><rect x="434" y="236" width="60" height="16" rx="2" fill="#b9beb8"/><text x="464" y="248" class="label" text-anchor="middle">START R4</text></g><g data-message="PLAY R4"><line x1="576" y1="292" x2="128" y2="292" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#interrupted-action-ia-arrow)"/><rect x="210" y="268" width="60" height="16" rx="2" fill="#b9beb8"/><text x="240" y="280" class="label" text-anchor="middle">PLAY R4</text></g><g data-message="USE THURSDAY"><line x1="128" y1="324" x2="352" y2="324" stroke="#2d6358" stroke-width="1.2" marker-end="url(#interrupted-action-ia-arrow-accent)"/><rect x="204" y="300" width="72" height="16" rx="2" fill="#b9beb8"/><text x="240" y="312" class="label" text-anchor="middle">USE THURSDAY</text></g><g data-message="STOP + CLEAR"><line x1="352" y1="356" x2="576" y2="356" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#interrupted-action-ia-arrow)"/><rect x="428" y="332" width="72" height="16" rx="2" fill="#b9beb8"/><text x="464" y="344" class="label" text-anchor="middle">STOP + CLEAR</text></g><g data-message="PLAYED STATE"><line x1="576" y1="388" x2="352" y2="388" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#interrupted-action-ia-arrow)"/><rect x="428" y="364" width="72" height="16" rx="2" fill="#b9beb8"/><text x="464" y="376" class="label" text-anchor="middle">PLAYED STATE</text></g><g data-message="LATE B7 RESULT"><line x1="800" y1="444" x2="352" y2="444" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#interrupted-action-ia-arrow)"/><rect x="646" y="420" width="84" height="16" rx="2" fill="#b9beb8"/><text x="688" y="432" class="label" text-anchor="middle">LATE B7 RESULT</text></g><g data-message="VERIFIED ONLY"><line x1="352" y1="480" x2="128" y2="480" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#interrupted-action-ia-arrow)"/><rect x="200" y="456" width="80" height="16" rx="2" fill="#b9beb8"/><text x="240" y="468" class="label" text-anchor="middle">VERIFIED ONLY</text></g><rect x="40" y="512" width="880" height="24" rx="4" fill="#c9d9cf" stroke="#2d6358" stroke-width=".8"/><text x="52" y="528" class="sub" text-anchor="start">STATE: Thursday intent stays separate from B7. Interruption or timeout does not roll back a write.</text><g data-actor="Caller"><rect x="48" y="108" width="160" height="56" rx="6" fill="#b9beb8"/><rect x="48" y="108" width="160" height="56" rx="6" fill="#d2d6cf" stroke="#8e9b90"/><text x="64" y="123" class="meta" text-anchor="start">PERSON</text><text x="128" y="139" class="node-name" text-anchor="middle">Caller</text><text x="128" y="155" class="sub" text-anchor="middle">latest intent</text></g><g data-actor="Turn controller"><rect x="272" y="108" width="160" height="56" rx="6" fill="#b9beb8"/><rect x="272" y="108" width="160" height="56" rx="6" fill="#d2d6cf" stroke="#8e9b90"/><text x="288" y="123" class="meta" text-anchor="start">APPLICATION</text><text x="352" y="139" class="node-name" text-anchor="middle">Turn controller</text><text x="352" y="155" class="sub" text-anchor="middle">intent + action ledger</text></g><g data-actor="Playback"><rect x="496" y="108" width="160" height="56" rx="6" fill="#b9beb8"/><rect x="496" y="108" width="160" height="56" rx="6" fill="#d2d6cf" stroke="#8e9b90"/><text x="512" y="123" class="meta" text-anchor="start">AUDIO</text><text x="576" y="139" class="node-name" text-anchor="middle">Playback</text><text x="576" y="155" class="sub" text-anchor="middle">response R4</text></g><g data-actor="Booking API"><rect x="720" y="108" width="160" height="56" rx="6" fill="#b9beb8"/><rect x="720" y="108" width="160" height="56" rx="6" fill="#d2d6cf" stroke="#8e9b90"/><text x="736" y="123" class="meta" text-anchor="start">BUSINESS</text><text x="800" y="139" class="node-name" text-anchor="middle">Booking API</text><text x="800" y="155" class="sub" text-anchor="middle">original action B7</text></g><line x1="40" y1="548" x2="920" y2="548" stroke="#8e9b90" stroke-width=".8"/><line x1="40" y1="560" x2="64" y2="560" stroke="#3e4a42" stroke-width="1.2" marker-end="url(#interrupted-action-ia-arrow)"/><text x="76" y="563" class="meta" text-anchor="start">REQUEST / CONTROL</text><line x1="244" y1="560" x2="268" y2="560" stroke="#3e4a42" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#interrupted-action-ia-arrow)"/><text x="280" y="563" class="meta" text-anchor="start">RETURN / EVIDENCE</text><text x="920" y="563" class="meta" text-anchor="end">CONCEPTUAL POLICY, NOT PROVIDER EVENTS</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 592" width="1080" height="592" role="img" aria-labelledby="t d">
+<title id="t">Stopping speech does not stop the booking</title>
+<desc id="d">A timeline with three events and three lanes. First, the caller authorizes Tuesday: booking action B7 is sent and spoken reply R4, "Working on Tuesday", starts playing. Second, the caller says "Thursday instead": R4 is stopped and cleared, but B7 keeps running at the booking API and its outcome is not yet known. The turn controller's ledger keeps B7 as pending and records Thursday as the latest intent, separately. Third, B7's result arrives late, reporting that Tuesday was committed. It updates B7's record only. The controller must reconcile B7 before writing the Thursday change.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00;--warn-t:#fff8c5;--good:#1a7f37;--good-t:#dafbe1}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922;--warn-t:#2e2508;--good:#3fb950;--good-t:#12301a}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}.bt{font-size:15px;font-weight:600}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.num{font-size:14px;font-weight:700;text-anchor:middle}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.ah{fill:var(--ink2)}
+.mk{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}.mk2{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:4 4}
+.think{fill:var(--think)}.speak{fill:var(--speak)}.net{fill:var(--net)}.warn{fill:var(--warn)}
+.t-net{fill:var(--net-t)}.t-think{fill:var(--think-t)}.t-speak{fill:var(--speak-t)}
+.s-net{stroke:var(--net)}.s-speak{stroke:var(--speak)}.s-good{stroke:var(--good)}.s-think{stroke:var(--think)}
+.bar-speak{fill:var(--speak-t);stroke:var(--speak);stroke-width:1.5}.bar-think{fill:var(--think-t);stroke:var(--think);stroke-width:1.5}
+.bar-warn{fill:var(--warn-t);stroke:var(--warn);stroke-width:1.5;stroke-dasharray:6 4}.bar-good{fill:var(--good-t);stroke:var(--good);stroke-width:1.5}
+.grid{stroke:var(--line);stroke-width:1}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="591" rx="16"/>
+<text class="h1" x="32" y="50">Stopping speech does not stop the booking</text>
+<text class="sub" x="32" y="78">The caller books Tuesday, then says Thursday instead. B7 is the booking action. R4 is the spoken reply.</text>
+
+<!-- timeline card -->
+<rect class="card" x="32" y="108" width="1016" height="340" rx="14"/>
+
+<!-- event markers sit behind the bars -->
+<path class="mk" d="M507 108V446"/>
+<path class="mk2" d="M773 108V446"/>
+
+<!-- event headers -->
+<circle class="t-net" cx="262" cy="138" r="13"/><text class="num" x="262" y="143">1</text><text class="name" x="284" y="144">Tuesday authorized</text>
+<text class="desc" x="251" y="170">B7 is sent.</text><text class="desc" x="251" y="188">R4 starts playing.</text>
+<circle class="t-net" cx="529" cy="138" r="13"/><text class="num" x="529" y="143">2</text><text class="name" x="551" y="144">Caller corrects</text>
+<text class="desc" x="518" y="170">“Thursday instead.”</text><text class="desc" x="518" y="188">R4 is stopped and cleared.</text>
+<circle class="t-net" cx="795" cy="138" r="13"/><text class="num" x="795" y="143">3</text><text class="name" x="817" y="144">B7 result arrives</text>
+<text class="desc" x="784" y="170">Late. Tuesday was</text><text class="desc" x="784" y="188">committed.</text>
+<path class="grid" d="M56 204H1024"/>
+
+<!-- lane labels -->
+<circle class="t-speak" cx="66" cy="236" r="16"/>
+<g class="ico s-speak" transform="translate(54 224)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="name" x="92" y="236">Playback</text><text class="desc" x="92" y="256">what is heard</text>
+<circle class="t-net" cx="66" cy="300" r="16"/>
+<g class="ico s-net" transform="translate(54 288)"><rect x="3.5" y="4" width="17" height="7" rx="2"/><rect x="3.5" y="13" width="17" height="7" rx="2"/><path d="M7.5 7.5h.01M7.5 16.5h.01"/></g>
+<text class="name" x="92" y="300">Booking API</text><text class="desc" x="92" y="320">business system</text>
+<circle class="t-think" cx="66" cy="387" r="16"/>
+<path class="think" transform="translate(54 375)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="name" x="92" y="387">Turn controller</text><text class="desc" x="92" y="407">keeps the ledger</text>
+
+<!-- playback: R4 is cut off -->
+<rect class="bar-speak" x="248" y="219" width="287" height="34" rx="9"/>
+<text class="bt" x="264" y="241">R4 · “Working on Tuesday…”</text>
+<rect class="warn" x="549" y="230" width="12" height="12" rx="2"/>
+<text class="bt" x="569" y="241">Stopped and cleared</text>
+
+<!-- booking API: B7 keeps going -->
+<rect class="bar-warn" x="248" y="283" width="509" height="34" rx="9"/>
+<text class="bt" x="264" y="305">B7 · booking Tuesday, outcome not yet known</text>
+<rect class="bar-good" x="781" y="283" width="259" height="34" rx="9"/>
+<path class="ico s-good" d="M799 300.5l4 4 8-8.5"/>
+<text class="bt" x="823" y="305">Tuesday committed</text>
+<path class="flow" d="M850 317V344" marker-end="url(#a)"/>
+<text class="mono" x="864" y="336">updates B7’s record</text>
+
+<!-- controller ledger: two separate records -->
+<rect class="bar-warn" x="248" y="346" width="509" height="34" rx="9"/>
+<text class="bt" x="264" y="368">B7 · pending</text>
+<rect class="bar-good" x="781" y="346" width="259" height="34" rx="9"/>
+<path class="ico s-good" d="M799 363.5l4 4 8-8.5"/>
+<text class="bt" x="823" y="368">B7 · committed</text>
+<rect class="bar-think" x="248" y="394" width="251" height="34" rx="9"/>
+<text class="bt" x="264" y="416">Intent · Tuesday</text>
+<rect class="bar-think" x="515" y="394" width="525" height="34" rx="9"/>
+<text class="bt" x="531" y="416">Intent · Thursday (latest), kept apart from B7</text>
+
+<!-- rule -->
+<rect class="card" x="32" y="470" width="1016" height="72" rx="14"/>
+<rect class="think" x="32" y="470" width="1016" height="5" rx="2.5"/>
+<circle class="t-think" cx="70" cy="512" r="22"/>
+<g class="ico s-think" transform="translate(58 500)"><path d="M12 20V11M12 11L6 5M12 11l6-6M6 5h4M6 5v4M18 5h-4M18 5v4"/></g>
+<text class="h2" x="104" y="505">A stopped sentence is not a canceled booking.</text>
+<text class="desc" x="104" y="528">Keep B7 and the Thursday intent separate. Reconcile B7 before writing Thursday.</text>
+
+<text class="desc" x="32" y="572">Conceptual example, not a provider event sequence.</text>
+</svg>

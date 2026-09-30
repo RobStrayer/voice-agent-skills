@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 750" width="1080" height="750" role="img" aria-labelledby="t d">
+<title id="t">Three ways to build the voice loop</title>
+<desc id="d">Three designs for the same voice loop, side by side, each showing caller audio going in and reply audio coming out. Cascade: speech-to-text, then a language model, then text-to-speech, joined by text. Good for choosing each component yourself and inspecting the text between steps. Watch out for more steps to connect, and a text model that sees words but not tone. Speech-to-speech: one realtime model hears the caller, decides what to say and speaks the reply, for example OpenAI Realtime or Gemini Live. Good for hearing tone and pace, with fewer moving parts. Watch out for less control over each stage, and it is harder to inspect what the model heard. Hybrid: one speech model handles the conversation and sends requests to your existing text workflow, which returns results. Good for reusing that workflow and keeping natural speech. Watch out for more moving parts, and delegated work that can stall or fail. Colour key: green is listen, purple is think, orange is speak.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--listen-t:#dff3ea;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--listen-t:#12301f;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.h2{font-size:20px;font-weight:700}.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;fill:var(--ink2)}
+.name{font-size:16px;font-weight:600}.body{font-size:15px}.desc{font-size:15px;fill:var(--ink2)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.ah{fill:var(--ink2)}.rule{fill:none;stroke:var(--line)}
+.listen{fill:var(--listen)}.think{fill:var(--think)}.speak{fill:var(--speak)}.warn{fill:var(--warn)}.dot{fill:var(--ink2)}.fnet{fill:var(--net)}
+.s-listen{stroke:var(--listen)}.s-think{stroke:var(--think)}.s-speak{stroke:var(--speak)}.s-net{stroke:var(--net)}
+.t-listen{fill:var(--listen-t)}.t-think{fill:var(--think-t)}.t-speak{fill:var(--speak-t)}.t-net{fill:var(--net-t)}
+.blk{stroke-width:1.5}.gap{fill:var(--card)}.one{fill:none;stroke:var(--ink2);stroke-width:1.5}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chip{fill:var(--net-t);stroke:var(--line)}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<clipPath id="cs"><rect x="20" y="164" width="250" height="192" rx="12"/></clipPath>
+<clipPath id="ch"><rect x="20" y="164" width="250" height="122" rx="12"/></clipPath>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="749" rx="16"/>
+<text class="h1" x="32" y="50">Three ways to build the voice loop</text>
+<text class="sub" x="32" y="78">Every voice agent listens, thinks and speaks. The designs differ in how many separate pieces do those jobs.</text>
+
+<!-- colour key -->
+<circle class="listen" cx="842" cy="44" r="5"/><text class="desc" x="855" y="49">Listen</text>
+<circle class="think" cx="919" cy="44" r="5"/><text class="desc" x="932" y="49">Think</text>
+<circle class="speak" cx="992" cy="44" r="5"/><text class="desc" x="1005" y="49">Speak</text>
+
+<!-- ============ 1. CASCADE ============ -->
+<g transform="translate(32 104)">
+<rect class="card" x="0.5" y="0.5" width="323" height="595" rx="14"/>
+<circle class="t-net" cx="42" cy="44" r="22"/>
+<g class="fnet" transform="translate(30 32)"><rect x="2" y="4" width="10" height="4" rx="2"/><rect x="7" y="10" width="10" height="4" rx="2"/><rect x="12" y="16" width="10" height="4" rx="2"/></g>
+<text class="h2" x="76" y="41">Cascade</text>
+<text class="desc" x="76" y="63">Three steps, joined by text</text>
+<path class="rule" d="M20 88.5H304"/>
+
+<rect class="chip" x="112" y="102" width="100" height="30" rx="15"/>
+<g class="ico s-net" transform="translate(124 108) scale(.75)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="name" x="148" y="122">Caller</text>
+<path class="flow" d="M112 117H44V161" marker-end="url(#a)"/>
+<text class="mono" x="54" y="148">audio in</text>
+<path class="flow" d="M270 336H290V117H215" marker-end="url(#a)"/>
+<text class="mono" x="280" y="148" text-anchor="end">audio out</text>
+
+<rect class="t-listen s-listen blk" x="20" y="164" width="250" height="40" rx="10"/>
+<g class="ico s-listen" transform="translate(30 174) scale(.83)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="name" x="62" y="190">Speech-to-text</text><text class="mono" x="258" y="189" text-anchor="end">STT</text>
+<path class="flow" d="M44 206V237" marker-end="url(#a)"/><text class="mono" x="56" y="227">transcript</text>
+
+<rect class="t-think s-think blk" x="20" y="240" width="250" height="40" rx="10"/>
+<path class="think" transform="translate(30 250) scale(.83)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="name" x="62" y="266">Language model</text><text class="mono" x="258" y="265" text-anchor="end">LLM</text>
+<path class="flow" d="M44 282V313" marker-end="url(#a)"/><text class="mono" x="56" y="303">reply text</text>
+
+<rect class="t-speak s-speak blk" x="20" y="316" width="250" height="40" rx="10"/>
+<g class="ico s-speak" transform="translate(30 326) scale(.83)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="name" x="62" y="342">Text-to-speech</text><text class="mono" x="258" y="341" text-anchor="end">TTS</text>
+
+<text class="desc" x="20" y="382">Mix and match providers per step</text>
+<path class="rule" d="M20 402.5H304"/>
+<text class="eyebrow" x="24" y="428">GOOD FOR</text>
+<circle class="dot" cx="28" cy="449" r="3"/><text class="body" x="40" y="454">Choosing each component yourself</text>
+<circle class="dot" cx="28" cy="475" r="3"/><text class="body" x="40" y="480">Inspecting the text between steps</text>
+<text class="eyebrow warn" x="24" y="516">WATCH OUT FOR</text>
+<path class="warn" d="M28 537l5 9h-10z"/><text class="body" x="40" y="545">More steps to connect and tune</text>
+<path class="warn" d="M28 563l5 9h-10z"/><text class="body" x="40" y="571">The text model sees words, not tone</text>
+</g>
+
+<!-- ============ 2. SPEECH-TO-SPEECH ============ -->
+<g transform="translate(378 104)">
+<rect class="card" x="0.5" y="0.5" width="323" height="595" rx="14"/>
+<circle class="t-net" cx="42" cy="44" r="22"/>
+<g class="ico s-net" transform="translate(30 32)"><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></g>
+<text class="h2" x="76" y="41">Speech-to-speech</text>
+<text class="desc" x="76" y="63">One model, audio in and out</text>
+<path class="rule" d="M20 88.5H304"/>
+
+<rect class="chip" x="112" y="102" width="100" height="30" rx="15"/>
+<g class="ico s-net" transform="translate(124 108) scale(.75)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="name" x="148" y="122">Caller</text>
+<path class="flow" d="M112 117H44V161" marker-end="url(#a)"/>
+<text class="mono" x="54" y="148">audio in</text>
+<path class="flow" d="M270 328H290V117H215" marker-end="url(#a)"/>
+<text class="mono" x="280" y="148" text-anchor="end">audio out</text>
+
+<g clip-path="url(#cs)">
+<rect class="t-listen" x="20" y="190" width="250" height="55"/>
+<rect class="t-think" x="20" y="245" width="250" height="55"/>
+<rect class="t-speak" x="20" y="300" width="250" height="56"/>
+<rect class="gap" x="20" y="244" width="250" height="2"/>
+<rect class="gap" x="20" y="299" width="250" height="2"/>
+</g>
+<rect class="one" x="20" y="164" width="250" height="192" rx="12"/>
+<text class="mono" x="34" y="182">one realtime model</text>
+<g class="ico s-listen" transform="translate(30 207.5) scale(.83)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="name" x="62" y="223">Hears the caller</text>
+<path class="think" transform="translate(30 262.5) scale(.83)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="name" x="62" y="278">Decides what to say</text>
+<g class="ico s-speak" transform="translate(30 318) scale(.83)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="name" x="62" y="334">Speaks the reply</text>
+
+<text class="desc" x="20" y="382">e.g. OpenAI Realtime, Gemini Live</text>
+<path class="rule" d="M20 402.5H304"/>
+<text class="eyebrow" x="24" y="428">GOOD FOR</text>
+<circle class="dot" cx="28" cy="449" r="3"/><text class="body" x="40" y="454">Hears tone and pace, not just words</text>
+<circle class="dot" cx="28" cy="475" r="3"/><text class="body" x="40" y="480">Fewer moving parts to wire up</text>
+<text class="eyebrow warn" x="24" y="516">WATCH OUT FOR</text>
+<path class="warn" d="M28 537l5 9h-10z"/><text class="body" x="40" y="545">Less control over each stage</text>
+<path class="warn" d="M28 563l5 9h-10z"/><text class="body" x="40" y="571">Harder to inspect what it heard</text>
+</g>
+
+<!-- ============ 3. HYBRID ============ -->
+<g transform="translate(724 104)">
+<rect class="card" x="0.5" y="0.5" width="323" height="595" rx="14"/>
+<circle class="t-net" cx="42" cy="44" r="22"/>
+<g class="ico s-net" transform="translate(30 32)"><circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/></g>
+<text class="h2" x="76" y="41">Hybrid</text>
+<text class="desc" x="76" y="63">Speech front, text back end</text>
+<path class="rule" d="M20 88.5H304"/>
+
+<rect class="chip" x="112" y="102" width="100" height="30" rx="15"/>
+<g class="ico s-net" transform="translate(124 108) scale(.75)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="name" x="148" y="122">Caller</text>
+<path class="flow" d="M112 117H44V161" marker-end="url(#a)"/>
+<text class="mono" x="54" y="148">audio in</text>
+<path class="flow" d="M270 270H290V117H215" marker-end="url(#a)"/>
+<text class="mono" x="280" y="148" text-anchor="end">audio out</text>
+
+<g clip-path="url(#ch)">
+<rect class="t-listen" x="20" y="190" width="250" height="32"/>
+<rect class="t-think" x="20" y="222" width="250" height="32"/>
+<rect class="t-speak" x="20" y="254" width="250" height="32"/>
+<rect class="gap" x="20" y="221" width="250" height="2"/>
+<rect class="gap" x="20" y="253" width="250" height="2"/>
+</g>
+<rect class="one" x="20" y="164" width="250" height="122" rx="12"/>
+<text class="mono" x="34" y="182">one speech model</text>
+<g class="ico s-listen" transform="translate(30 196) scale(.83)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="name" x="62" y="212">Hears the caller</text>
+<path class="think" transform="translate(30 228) scale(.83)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="name" x="62" y="244">Decides what to say</text>
+<g class="ico s-speak" transform="translate(30 260) scale(.83)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="name" x="62" y="276">Speaks the reply</text>
+
+<path class="flow" d="M44 288V313" marker-end="url(#a)"/><text class="mono" x="56" y="306">request</text>
+<path class="flow" d="M150 314V289" marker-end="url(#a)"/><text class="mono" x="162" y="306">result</text>
+
+<rect class="t-think s-think blk" x="20" y="316" width="250" height="40" rx="10"/>
+<path class="think" transform="translate(30 326) scale(.83)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="name" x="62" y="342">Your text workflow</text>
+
+<text class="desc" x="20" y="382">Realtime voice in front of your agent</text>
+<path class="rule" d="M20 402.5H304"/>
+<text class="eyebrow" x="24" y="428">GOOD FOR</text>
+<circle class="dot" cx="28" cy="449" r="3"/><text class="body" x="40" y="454">Reusing your existing text workflow</text>
+<circle class="dot" cx="28" cy="475" r="3"/><text class="body" x="40" y="480">Natural speech for the conversation</text>
+<text class="eyebrow warn" x="24" y="516">WATCH OUT FOR</text>
+<path class="warn" d="M28 537l5 9h-10z"/><text class="body" x="40" y="545">More moving parts to connect</text>
+<path class="warn" d="M28 563l5 9h-10z"/><text class="body" x="40" y="571">Delegated work can stall or fail</text>
+</g>
+
+<text class="desc" x="32" y="724">Starting points, not a ranking. None guarantees the lowest delay: endpointing, streaming and network placement still matter.</text>
+</svg>

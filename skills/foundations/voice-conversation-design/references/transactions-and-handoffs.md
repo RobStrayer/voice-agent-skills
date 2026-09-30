@@ -50,9 +50,9 @@ Do not use the last spoken sentence as the transaction ledger.
 
 ## Decide what interruption can cancel
 
-![Sequence showing a caller correction stopping old playback while the original booking action remains pending until an authoritative result arrives.](../assets/interrupted-action.svg)
+![Timeline with playback, booking API and turn-controller lanes: a caller correction stops the old spoken reply, but the original booking action keeps running and is recorded separately from the new intent until its result arrives.](../assets/interrupted-action.svg)
 
-[Editable diagram](../assets/interrupted-action.html). This is a conceptual
+[Editable diagram](../assets/interrupted-action.svg). This is a conceptual
 application sequence, not a provider event specification.
 
 Cancellation has several boundaries: the response generator, queued speech, local

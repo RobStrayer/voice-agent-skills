@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 548" width="1080" height="548" role="img" aria-labelledby="t d">
+<title id="t">How a voice agent works</title>
+<desc id="d">A caller's audio travels over a phone line, browser or app to three stages. Listen: voice activity, turn detection and speech-to-text. Think: a language model, tools and APIs, and conversation state. Speak: text-to-speech, streaming playback and barge-in handling. Reply audio streams back to the caller. If the caller interrupts, the agent stops speaking and cancels the reply.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--listen-t:#dff3ea;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--listen-t:#12301f;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:20px;font-weight:700}
+.name{font-size:16px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.dash{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}
+.ah{fill:var(--ink2)}.ahw{fill:var(--warn)}
+.listen{fill:var(--listen)}.think{fill:var(--think)}.speak{fill:var(--speak)}.net{fill:var(--net)}
+.s-listen{stroke:var(--listen)}.s-think{stroke:var(--think)}.s-speak{stroke:var(--speak)}.s-net{stroke:var(--net)}
+.t-listen{fill:var(--listen-t)}.t-think{fill:var(--think-t)}.t-speak{fill:var(--speak-t)}.t-net{fill:var(--net-t)}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chip{fill:var(--net-t);stroke:var(--line)}.warnlbl{font-size:14px;font-weight:600;fill:var(--warn)}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<marker id="aw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ahw"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="547" rx="16"/>
+<text class="h1" x="32" y="50">How a voice agent works</text>
+<text class="sub" x="32" y="78">One turn of conversation. Each stage streams into the next, so the agent can start answering before it has finished thinking.</text>
+
+<!-- barge-in path -->
+<path class="dash" d="M342 144V118H926V140" marker-end="url(#aw)"/>
+<rect x="516" y="106" width="236" height="24" rx="12" class="bg" style="stroke:none"/>
+<text class="warnlbl" x="634" y="123" text-anchor="middle">Caller interrupts: stop and listen</text>
+
+<!-- caller -->
+<rect class="card" x="32" y="144" width="140" height="300" rx="14"/>
+<circle class="t-net" cx="102" cy="198" r="32"/>
+<g class="ico s-net" transform="translate(86 182) scale(1.33)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="h2" x="102" y="262" text-anchor="middle">Caller</text>
+<text class="desc" x="102" y="286" text-anchor="middle">phone, browser</text>
+<text class="desc" x="102" y="306" text-anchor="middle">or app</text>
+<rect class="chip" x="47" y="330" width="110" height="28" rx="14"/><text class="mono" x="102" y="349" text-anchor="middle">SIP / PSTN</text>
+<rect class="chip" x="47" y="366" width="110" height="28" rx="14"/><text class="mono" x="102" y="385" text-anchor="middle">WebRTC</text>
+<rect class="chip" x="47" y="402" width="110" height="28" rx="14"/><text class="mono" x="102" y="421" text-anchor="middle">WebSocket</text>
+
+<!-- arrows between stages -->
+<path class="flow" d="M176 294H214" marker-end="url(#a)"/><text class="mono" x="196" y="284" text-anchor="middle">audio</text>
+<path class="flow" d="M468 294H506" marker-end="url(#a)"/><text class="mono" x="488" y="284" text-anchor="middle">text</text>
+<path class="flow" d="M760 294H798" marker-end="url(#a)"/><text class="mono" x="780" y="284" text-anchor="middle">text</text>
+
+<!-- LISTEN -->
+<rect class="card" x="220" y="144" width="244" height="300" rx="14"/>
+<rect class="listen" x="220" y="144" width="244" height="5" rx="2.5"/>
+<circle class="t-listen" cx="258" cy="190" r="22"/>
+<g class="ico s-listen" transform="translate(246 178)"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></g>
+<text class="eyebrow listen" x="292" y="184">1 · LISTEN</text>
+<text class="h2" x="292" y="207">Hear the caller</text>
+<path d="M240 232H444" stroke="var(--line)"/>
+<circle class="listen" cx="246" cy="262" r="4"/><text class="name" x="260" y="268">Voice activity</text><text class="desc" x="260" y="289">Is someone talking?</text>
+<circle class="listen" cx="246" cy="322" r="4"/><text class="name" x="260" y="328">Turn detection</text><text class="desc" x="260" y="349">Are they finished?</text>
+<circle class="listen" cx="246" cy="382" r="4"/><text class="name" x="260" y="388">Speech-to-text</text><text class="desc" x="260" y="409">What did they say?</text>
+
+<!-- THINK -->
+<rect class="card" x="512" y="144" width="244" height="300" rx="14"/>
+<rect class="think" x="512" y="144" width="244" height="5" rx="2.5"/>
+<circle class="t-think" cx="550" cy="190" r="22"/>
+<path class="think" transform="translate(538 178)" d="M12 2.5l2 7.5 7.5 2-7.5 2-2 7.5-2-7.5-7.5-2 7.5-2z"/>
+<text class="eyebrow think" x="584" y="184">2 · THINK</text>
+<text class="h2" x="584" y="207">Decide and act</text>
+<path d="M532 232H736" stroke="var(--line)"/>
+<circle class="think" cx="538" cy="262" r="4"/><text class="name" x="552" y="268">Language model</text><text class="desc" x="552" y="289">What should I say?</text>
+<circle class="think" cx="538" cy="322" r="4"/><text class="name" x="552" y="328">Tools and APIs</text><text class="desc" x="552" y="349">Look it up, book it</text>
+<circle class="think" cx="538" cy="382" r="4"/><text class="name" x="552" y="388">Conversation state</text><text class="desc" x="552" y="409">What has happened so far?</text>
+
+<!-- SPEAK -->
+<rect class="card" x="804" y="144" width="244" height="300" rx="14"/>
+<rect class="speak" x="804" y="144" width="244" height="5" rx="2.5"/>
+<circle class="t-speak" cx="842" cy="190" r="22"/>
+<g class="ico s-speak" transform="translate(830 178)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="eyebrow speak" x="876" y="184">3 · SPEAK</text>
+<text class="h2" x="876" y="207">Answer out loud</text>
+<path d="M824 232H1028" stroke="var(--line)"/>
+<circle class="speak" cx="830" cy="262" r="4"/><text class="name" x="844" y="268">Text-to-speech</text><text class="desc" x="844" y="289">Words become audio</text>
+<circle class="speak" cx="830" cy="322" r="4"/><text class="name" x="844" y="328">Streaming playback</text><text class="desc" x="844" y="349">Start talking early</text>
+<circle class="speak" cx="830" cy="382" r="4"/><text class="name" x="844" y="388">Barge-in handling</text><text class="desc" x="844" y="409">Stop when cut off</text>
+
+<!-- return path -->
+<path class="flow" d="M926 448V490H102V450" marker-end="url(#a)"/>
+<rect x="452" y="474" width="124" height="32" rx="16" class="card"/>
+<g class="speak"><rect x="470" y="485" width="4" height="10" rx="2"/><rect x="480" y="481" width="4" height="18" rx="2"/><rect x="490" y="477" width="4" height="26" rx="2"/><rect x="500" y="483" width="4" height="14" rx="2"/><rect x="510" y="479" width="4" height="22" rx="2"/><rect x="520" y="485" width="4" height="10" rx="2"/><rect x="530" y="481" width="4" height="18" rx="2"/><rect x="540" y="486" width="4" height="8" rx="2"/><rect x="550" y="483" width="4" height="14" rx="2"/></g>
+<text class="desc" x="514" y="530" text-anchor="middle">Reply audio streams back to the caller over the same connection</text>
+</svg>

@@ -56,7 +56,7 @@ not require operating its runtime yourself.
 
 ![A speech chain separates recognition, text reasoning, and synthesis; speech-to-speech uses one audio session; a delegated conversational layer calls an existing backend workflow.](../assets/speech-architectures.svg)
 
-[Editable comparison](../assets/speech-architectures.html). These are architectural boundaries, not model-version or performance claims.
+[Editable comparison](../assets/speech-architectures.svg). These are architectural boundaries, not model-version or performance claims.
 
 OpenAI's current guide distinguishes three paths:
 
@@ -119,9 +119,9 @@ not establish a deployment plan.
 
 ## Draw media and control paths
 
-![Conceptual audio, call-control, and durable-action responsibilities.](../assets/voice-system-map.svg)
+![Three owners, each with its own evidence: call control (call state), the audio path (played audio) and business actions (committed record).](../assets/voice-system-map.svg)
 
-[Editable diagram](../assets/voice-system-map.html). Arrows show logical
+[Editable diagram](../assets/voice-system-map.svg). Arrows show logical
 responsibilities; output still traverses the deployment's actual media transport.
 
 For OpenAI Realtime, browser initialization can pass through a backend or use a

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 634" width="1080" height="634" role="img" aria-labelledby="t d">
+<title id="t">Knowing when to talk</title>
+<desc id="d">A timeline with two lanes, Caller and Agent, showing events in order, not to scale. The caller says "Book me for Tuesday", then pauses. The pause is hatched and labelled: not done yet, so the agent waits. The caller continues "at 2pm". The system detects the end of the turn, and the agent starts replying "Tuesday at 2, got it. And your name?". The caller barges in with "Actually, Thursday". The agent stops mid-sentence; the rest of its reply, "your name?", is drawn dashed because it was never heard. Below, five steps when the caller interrupts. One: stop playback now. Two: clear queued audio and ignore late chunks. Three: cancel the reply being generated. Four: trim the conversation history to what the caller actually heard. Five: pending actions such as a booking keep running and are checked separately.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--listen-t:#dff3ea;--think:#4a3aa7;--think-t:#eae8f8;--speak:#b3441a;--speak-t:#fbe9e0;--warn:#8a5c00;--warn-t:#fff8c5}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--listen-t:#12301f;--think:#a29af0;--think-t:#262045;--speak:#ec7a45;--speak-t:#3a2014;--warn:#d29922;--warn-t:#2e2508}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.h2{font-size:20px;font-weight:700}.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}
+.name{font-size:16px;font-weight:600}.say{font-size:16px}.say2{font-size:16px;fill:var(--ink2)}.body{font-size:15px}.desc{font-size:15px;fill:var(--ink2)}
+.lbl{font-size:14px;font-weight:600}.warnlbl{font-size:14px;font-weight:600;fill:var(--warn)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;fill:var(--ink2)}
+.flow{fill:none;stroke:var(--ink2);stroke-width:2}.ah{fill:var(--ink2)}.lead{fill:none;stroke:var(--ink2);stroke-width:1.5}
+.speak{fill:var(--speak)}.think{fill:var(--think)}.warn{fill:var(--warn)}
+.s-speak{stroke:var(--speak)}.s-think{stroke:var(--think)}.s-net{stroke:var(--net)}.s-warn{stroke:var(--warn)}
+.t-speak{fill:var(--speak-t)}.t-net{fill:var(--net-t)}.t-warn{fill:var(--warn-t)}
+.blk{stroke-width:1.5}.track{fill:var(--bg)}
+.pz{fill:url(#hatch);stroke:var(--net);stroke-width:1.5}.hl{stroke:var(--net);stroke-width:1.5;opacity:.55}
+.rem{fill:none;stroke:var(--speak);stroke-width:1.5;stroke-dasharray:6 5}
+.eot{fill:none;stroke:var(--listen);stroke-width:2}.pl{fill:var(--listen-t);stroke:var(--listen);stroke-width:1.5}
+.bdash{fill:none;stroke:var(--warn);stroke-width:2;stroke-dasharray:6 5}.plw{fill:var(--warn-t);stroke:var(--warn);stroke-width:1.5}
+.stop{fill:none;stroke:var(--warn);stroke-width:3;stroke-linecap:round}
+.cp{fill:var(--bg);stroke:var(--line)}.acc{fill:none;stroke-width:3}
+.ico{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ah"/></marker>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path class="hl" d="M0 0V8"/></pattern>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="633" rx="16"/>
+<text class="h1" x="32" y="50">Knowing when to talk</text>
+<text class="sub" x="32" y="78">One call, in order. The agent waits through a pause, replies at the end of the turn, and yields when the caller cuts in.</text>
+
+<!-- ===== timeline ===== -->
+<rect class="card" x="32.5" y="104.5" width="1015" height="268" rx="14"/>
+<circle class="t-net" cx="62" cy="184" r="14"/>
+<g class="ico s-net" transform="translate(53.6 175.6) scale(.7)"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 7 0 0 1 16 0"/></g>
+<text class="name" x="84" y="190">Caller</text>
+<circle class="t-speak" cx="62" cy="272" r="14"/>
+<g class="ico s-speak" transform="translate(53.6 263.6) scale(.7)"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></g>
+<text class="name" x="84" y="278">Agent</text>
+<rect class="track" x="140" y="152" width="896" height="64" rx="12"/>
+<rect class="track" x="140" y="240" width="896" height="64" rx="12"/>
+
+<!-- caller lane -->
+<rect class="t-net s-net blk" x="150" y="160" width="200" height="48" rx="10"/>
+<text class="say" x="164" y="190">Book me for Tuesday…</text>
+<rect class="pz" x="358" y="160" width="140" height="48" rx="10"/>
+<rect class="t-net s-net blk" x="506" y="160" width="100" height="48" rx="10"/>
+<text class="say" x="520" y="190">…at 2pm</text>
+<path class="lead" d="M428 142V158"/>
+<text class="mono" x="428" y="136" text-anchor="middle">pause: not done yet</text>
+<text class="mono" x="428" y="278" text-anchor="middle">agent waits</text>
+<text class="mono" x="735" y="190" text-anchor="middle">caller listens</text>
+
+<!-- end of turn -->
+<path class="eot" d="M622 144V304"/>
+<rect class="pl" x="610" y="118" width="170" height="26" rx="13"/>
+<text class="lbl" x="695" y="136" text-anchor="middle">End of turn detected</text>
+
+<!-- agent lane -->
+<path class="t-speak s-speak blk" d="M648 248H866V296H648a10 10 0 0 1-10-10V258a10 10 0 0 1 10-10z"/>
+<text class="say" x="652" y="278">Tuesday at 2, got it. And</text>
+<path class="rem" d="M866 248H980a10 10 0 0 1 10 10V286a10 10 0 0 1-10 10H866"/>
+<text class="say2" x="880" y="278">your name?</text>
+<path class="stop" d="M866 243V301"/>
+<path class="lead s-warn" d="M866 306V330" style="stroke:var(--warn)"/>
+<text class="warnlbl" x="858" y="322" text-anchor="end">Agent stops mid-sentence</text>
+<text class="mono" x="878" y="322">unheard remainder</text>
+
+<!-- barge-in -->
+<rect class="t-warn s-warn blk" x="848" y="160" width="176" height="48" rx="10"/>
+<text class="say" x="862" y="190">Actually, Thursday</text>
+<path class="bdash" d="M848 144V304"/>
+<rect class="plw" x="834" y="118" width="136" height="26" rx="13"/>
+<text class="lbl" x="902" y="136" text-anchor="middle">Caller barges in</text>
+
+<path class="flow" d="M150 352H740" marker-end="url(#a)"/>
+<text class="mono" x="756" y="357">Ordering only, not to scale</text>
+
+<!-- ===== what to do ===== -->
+<rect class="card" x="32.5" y="392.5" width="1015" height="209" rx="14"/>
+<text class="h2" x="56" y="430">When the caller interrupts</text>
+<text class="desc" x="1024" y="430" text-anchor="end">Stopping the sound is only the first step.</text>
+
+<rect class="cp" x="56.5" y="446.5" width="183" height="130" rx="12"/>
+<path class="acc s-speak" d="M56.5 458.5a12 12 0 0 1 12-12h159a12 12 0 0 1 12 12"/>
+<text class="eyebrow speak" x="72" y="474">1 · SPEAK</text>
+<text class="name" x="72" y="498">Stop playback</text>
+<text class="desc" x="72" y="522">Silence the speaker</text><text class="desc" x="72" y="541">right away.</text>
+
+<rect class="cp" x="252.5" y="446.5" width="183" height="130" rx="12"/>
+<path class="acc s-speak" d="M252.5 458.5a12 12 0 0 1 12-12h159a12 12 0 0 1 12 12"/>
+<text class="eyebrow speak" x="268" y="474">2 · SPEAK</text>
+<text class="name" x="268" y="498">Clear the queue</text>
+<text class="desc" x="268" y="522">Drop buffered audio</text><text class="desc" x="268" y="541">and ignore late</text><text class="desc" x="268" y="560">chunks.</text>
+
+<rect class="cp" x="448.5" y="446.5" width="183" height="130" rx="12"/>
+<path class="acc s-think" d="M448.5 458.5a12 12 0 0 1 12-12h159a12 12 0 0 1 12 12"/>
+<text class="eyebrow think" x="464" y="474">3 · THINK</text>
+<text class="name" x="464" y="498">Cancel the reply</text>
+<text class="desc" x="464" y="522">Stop generating words</text><text class="desc" x="464" y="541">nobody will hear.</text>
+
+<rect class="cp" x="644.5" y="446.5" width="183" height="130" rx="12"/>
+<path class="acc s-think" d="M644.5 458.5a12 12 0 0 1 12-12h159a12 12 0 0 1 12 12"/>
+<text class="eyebrow think" x="660" y="474">4 · THINK</text>
+<text class="name" x="660" y="498">Trim the history</text>
+<text class="desc" x="660" y="522">Keep only what the</text><text class="desc" x="660" y="541">caller actually heard.</text>
+
+<rect class="cp" x="840.5" y="446.5" width="183" height="130" rx="12"/>
+<path class="acc s-warn" d="M840.5 458.5a12 12 0 0 1 12-12h159a12 12 0 0 1 12 12"/>
+<text class="eyebrow warn" x="856" y="474">5 · ACTIONS</text>
+<text class="name" x="856" y="498">Pending actions</text>
+<text class="desc" x="856" y="522">A booking keeps</text><text class="desc" x="856" y="541">running. Check it</text><text class="desc" x="856" y="560">separately.</text>
+</svg>

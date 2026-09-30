@@ -117,9 +117,9 @@ Assign the speaker during each transition.
 
 This conceptual sequence is an application policy, not an API recipe.
 
-![Warm handoff retains the caller leg while acceptance and connection are checked; failure returns to a supported fallback.](../assets/recoverable-handoff.svg)
+![Call-leg timeline: the caller stays connected throughout and the bot retires only after both parties are confirmed live. Any unconfirmed step leaves the caller with the agent and a supported fallback.](../assets/recoverable-handoff.svg)
 
-[Editable diagram](../assets/recoverable-handoff.html). Warm handoff retains the caller leg while acceptance and connection are checked; failure returns to a supported fallback.
+[Editable diagram](../assets/recoverable-handoff.svg). Warm handoff retains the caller leg while acceptance and connection are checked; failure returns to a supported fallback.
 
 LiveKit's current cold-transfer guide documents a `ringing_timeout`: unsuccessful timeout leaves the caller in the room. Verify that behavior in the installed integration. Do not generalize it to another carrier's REFER or bridge. A request acknowledgement can leave downstream progress unresolved, and some transfer mechanisms relinquish the original bot's control. [LiveKit cold transfer](https://docs.livekit.io/telephony/features/transfers/cold/).
 
