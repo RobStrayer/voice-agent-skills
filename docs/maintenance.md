@@ -68,10 +68,12 @@ Inspect the changed text for credentials, private account data, local usernames,
 internal URLs, recordings, and copied project instructions. Pattern matching is
 only part of that review. Keep private research artifacts outside the repository.
 
-Publish validated, task-owned changes with a descriptive commit. Reconcile a
-concurrent remote update before pushing; never force-push over other work. After
-publication, read back the remote commit and private visibility. Record any
-unverified source or blocked operation precisely.
+Publish validated, task-owned changes with a descriptive commit based on reconciled
+`origin/main`. Use `git push origin HEAD:refs/heads/main` so a local branch or
+`push.default` setting cannot silently choose another destination. Preserve unrelated
+branches and edits. Reconcile a concurrent remote update before pushing; never
+force-push over other work. After publication, read back the remote commit and
+private visibility. Record any unverified source or blocked operation precisely.
 
 ## Autonomous daily maintenance
 

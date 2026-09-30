@@ -104,8 +104,8 @@ outcomes. Neither scenario establishes provider compatibility or production capa
 Local checks cover snapshot hashes and licenses, unique bundled names, original
 source URLs, catalog/count consistency, Python syntax, Markdown paths, and bounded
 credential/private-path patterns. Negative checks reject modified upstream files,
-substituted mirror URLs, and a synthetic credential pattern. A separate review
-checks first-party heading anchors and publication text.
+substituted mirror URLs, stale verification counters, and a synthetic credential
+pattern. A separate review checks first-party heading anchors and publication text.
 
 All bundled frontmatter is checked as YAML. The narrower Codex skill-creator
 validator rejects nine preserved upstream metadata extensions: eight

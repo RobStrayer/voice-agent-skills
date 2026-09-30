@@ -7,6 +7,13 @@ Check current documentation and installed versions when using this guide.
 Sourced paragraphs describe documented behavior. Recommendations and conditional
 examples are engineering guidance to test, not verified compatibility or performance.
 
+[Speech and hosting](#separate-five-decisions) ·
+[Media paths](#draw-media-and-control-paths) ·
+[Turns and actions](#assign-turn-ownership) ·
+[Capacity and cost](#size-capacity-and-cost-together) ·
+[Decision worksheet](#compare-two-or-three-complete-options) ·
+[Migration tests](#prove-the-decision-before-migration)
+
 ## Begin with the task
 
 A question-answering agent and an agent that changes bookings have different needs.
