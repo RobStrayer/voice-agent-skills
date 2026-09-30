@@ -10,7 +10,7 @@ limits of the review. It is not an inventory of every voice skill on the interne
 | --- | --- | --- |
 | Original NL foundations | 13 skills | Architecture, conversation, turn taking, audio frontends, recognition/synthesis, call reliability, latency, evaluation, media debugging, cost, compliance, security, and data capture; maintained here. |
 | Core provider skills | 27 skills from 6 repositories | Current original links, plus 104 licensed files preserved at recorded commits. |
-| Additional source links | 297 skills: 279 from 62 repositories and 18 on vendor documentation sites | Voice-specific provider workflows, SDK language variants, and clearly marked optional entries; no new third-party copies. |
+| Additional source links | 345 skills: 314 from 69 repositories and 31 on vendor documentation sites | Voice-specific provider workflows, SDK language variants, and clearly marked optional entries; no new third-party copies. |
 | Runtime resources | 43 unique projects | Frameworks, models, transport, evaluation, and learning material with dated metadata and license qualifications. |
 
 A language variant counts as another skill file, not a new engineering capability.
@@ -74,6 +74,7 @@ collection's purpose.
 | [Community Retell pack](https://github.com/bachhao-tech/RETELL-AI) | Discovery record retained; limited evidence that it improves on current provider documentation. No official endorsement inferred. |
 | Cloudflare and Strands general agent skills | Voice documentation linked as a learning resource. No dedicated realtime voice skill was established in the bounded trees/searches examined. This is not a claim that none exists anywhere. |
 | Older Coval specialist launch workflows | Newer bounded evaluation workflows selected. Whole-set defaults and less bounded watch/relaunch behavior require additional care. |
+| Coverage pass, September 30, 2026 | Found but not linked. Unsafe: the Dograh setup skill, whose health check turns off TLS certificate checks. Not voice work: Bland setup, issue-triage and SMS skills, AWS messaging skills, the Zhipu and StepFun platform guides, Inworld's LLM router, the Zero Runtime avatar skill, Google CX Agent Studio analytics tooling, and Google's general agent-development and Gemini API skills. Superseded or too narrow: a deprecated Azure CallingServer skill, an archived Bland skills repository, and maintainer or repository-specific skills from TEN and the OpenAI cookbook. Pointer-only skills from Regal and Play.ht (the Play.ht one was not fetched). Gemini media voiceover skills. The Speechify skills are outside the coverage list and a candidate for a later pass. Each reason is in [linked-skills.json](../linked-skills.json). |
 
 ## Checks performed
 

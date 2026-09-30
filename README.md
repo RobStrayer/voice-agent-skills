@@ -8,7 +8,7 @@ a booking line, a browser assistant, or anything else people talk to. It has pla
 guides for beginners, diagrams that show how the parts fit, and **skills** your
 coding agent (Claude Code, Codex and others) can load to do the work properly.
 
-**13 original skills · 27 bundled provider skills · 297 linked skills from 50 providers and authors · 43 runtime resources**
+**13 original skills · 27 bundled provider skills · 345 linked skills from 59 providers and authors · 43 runtime resources**
 
 ## Start here
 
@@ -115,12 +115,58 @@ maintained original:
 | [Cartesia](https://github.com/cartesia-ai/skills) | Speech API integration and Line agent workflows |
 | [OpenAI](https://github.com/openai/skills) | Speech generation and transcription from files (not a realtime agent runtime) |
 
-The [linked skills index](docs/more-skills.md) points to 297 more skills from
-50 providers and other authors, including Telnyx, Vapi, Retell, Deepgram,
-AssemblyAI, Plivo, Sinch, SignalWire, AWS, Azure and testing platforms. Most come
-from the provider itself; community and third-party ones are marked. Every entry
-is pinned to a commit or file hash and was checked against it. The [resource library](docs/resources.md)
-lists frameworks, turn detectors, speech models and evaluation tools.
+The [linked skills index](docs/more-skills.md) points to 345 more skills from
+59 providers and other authors. Most come from the provider itself; community and
+third-party ones are marked. Every entry is pinned to a commit or file hash and
+was checked against it. The [resource library](docs/resources.md) lists
+frameworks, turn detectors, speech models and evaluation tools.
+
+Here is where the major providers stand. Each number counts skills, with language
+variants counted separately, and links to that provider in the index. Bundled
+skills are copied here with their licenses. Linked skills stay with their
+maintainer. None yet means no official voice-agent skill was found on September 30, 2026; the
+index then names the core skills here that cover the same job. Smaller providers
+are in the index's [A to Z list](docs/more-skills.md#find-your-provider).
+
+| Job | Provider | Skills |
+| --- | --- | --- |
+| Phone and calling | Twilio | [6 bundled](docs/catalog.md#twilio) and [16 linked](docs/more-skills.md#twilio) |
+| Phone and calling | Telnyx | [39](docs/more-skills.md#telnyx) |
+| Phone and calling | Plivo | [6](docs/more-skills.md#plivo) |
+| Phone and calling | Sinch | [6](docs/more-skills.md#sinch) |
+| Phone and calling | SignalWire | [1](docs/more-skills.md#signalwire) |
+| Phone and calling | Voximplant | [2](docs/more-skills.md#voximplant) |
+| Browser and app audio | Agora and Daily | [1](docs/more-skills.md#agora) and [1](docs/more-skills.md#daily) |
+| Phone and calling | Vonage, Bandwidth, LiveKit SIP | [none yet](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026) |
+| Agent platform | Vapi | [10](docs/more-skills.md#vapi) |
+| Agent platform | Retell | [2](docs/more-skills.md#retell-ai) |
+| Agent platform | Bland | [22](docs/more-skills.md#bland-ai) |
+| Agent platform | ElevenAgents | [7 bundled](docs/catalog.md#elevenlabs) and [22 linked](docs/more-skills.md#elevenlabs) |
+| Agent platform | Synthflow | [7](docs/more-skills.md#synthflow) |
+| Agent platform | PolyAI | [6](docs/more-skills.md#polyai) |
+| Agent platform | Ultravox | [1](docs/more-skills.md#ultravox) |
+| Agent platform | Hume EVI, Microsoft Copilot Studio, Dialogflow CX | [none yet](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026) |
+| Speech-to-text | Deepgram | [39](docs/more-skills.md#deepgram) |
+| Speech-to-text | AssemblyAI | [3](docs/more-skills.md#assemblyai) |
+| Speech-to-text | Gladia | [6](docs/more-skills.md#gladia) |
+| Speech-to-text | Speechmatics, Soniox, Google Cloud Speech-to-Text | [none yet](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026) |
+| Text-to-speech | Cartesia | [2 bundled](docs/catalog.md#cartesia) |
+| Text-to-speech | Rime | [1](docs/more-skills.md#rime) |
+| Text-to-speech | Inworld | [3](docs/more-skills.md#inworld) |
+| Text-to-speech | Murf, Hume Octave, Google Cloud Text-to-Speech | [none yet](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026) |
+| Speech-to-speech | OpenAI GPT-Live and Realtime, xAI Grok voice | [none yet](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026) (Gemini Live, Nova Sonic and Azure Voice Live are in the cloud rows) |
+| Framework | LiveKit Agents | [7 bundled](docs/catalog.md#livekit) |
+| Framework | Pipecat | [3 bundled](docs/catalog.md#pipecat) and [1 linked](docs/more-skills.md#pipecat) |
+| Framework | jambonz | [3](docs/more-skills.md#jambonz) |
+| Framework | Vision Agents and Zero Runtime | [1](docs/more-skills.md#vision-agents) and [3](docs/more-skills.md#zero-runtime) |
+| Framework | TEN, OpenAI Agents SDK | [none yet](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026) |
+| Testing | Coval | [13](docs/more-skills.md#coval) |
+| Testing | Cekura | [9](docs/more-skills.md#cekura) |
+| Testing | Roark and Bluejay | [7](docs/more-skills.md#roark) and [7](docs/more-skills.md#bluejay) |
+| Testing | Hamming | [none yet](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026) |
+| Cloud | AWS (Connect, Chime, Lex, Polly, Transcribe, Nova Sonic) | [15](docs/more-skills.md#aws) |
+| Cloud | Azure (Voice Live, Speech, Communication Services) | [10](docs/more-skills.md#azure) |
+| Cloud | Google (Gemini Live, CX Agent Studio, ADK) | [11](docs/more-skills.md#google) |
 
 ## Go deeper
 

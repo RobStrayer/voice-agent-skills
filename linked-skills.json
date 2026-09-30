@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-09-30T19:38:44.110009+00:00",
+  "checked_at_utc": "2026-09-30T23:22:09.402188+00:00",
   "scope": "Additional voice skills linked to their original maintained repositories or, for vendors that publish only on their documentation sites, to the published skill file. Counts include language variants and explicitly marked optional workflows. No third-party content is copied by this index.",
-  "selected_skill_count": 279,
-  "docs_hosted_skill_count": 18,
-  "source_repository_count": 62,
+  "selected_skill_count": 314,
+  "docs_hosted_skill_count": 31,
+  "source_repository_count": 69,
   "counts_by_repository": {
     "team-telnyx/ai": 38,
     "AssemblyAI/assemblyai-skill": 1,
@@ -43,7 +43,7 @@
     "elevenlabs/plugin": 21,
     "fishaudio/docs": 2,
     "gladiaio/skills": 5,
-    "GoogleCloudPlatform/cxas-scrapi": 4,
+    "GoogleCloudPlatform/cxas-scrapi": 5,
     "hookdeck/webhook-skills": 7,
     "iflytek/iFly-Skills": 2,
     "jambonz/skills": 3,
@@ -67,28 +67,35 @@
     "twilio/ai": 16,
     "veniceai/skills": 2,
     "voicetestdev/voicetest": 1,
-    "zavudev/zavu-skills": 1
+    "zavudev/zavu-skills": 1,
+    "polyai/adk": 5,
+    "CINTELLILABS/bland-plugins": 21,
+    "ai-coustics/skills": 3,
+    "GoogleCloudPlatform/ccaas-observability": 2,
+    "dograh-hq/skills": 1,
+    "AssemblyAI/cli": 1,
+    "google/agents-cli": 1
   },
   "counts_by_selection": {
-    "recommended": 118,
-    "optional-migration": 9,
+    "recommended": 125,
+    "optional-migration": 11,
     "optional-client-sdk": 2,
-    "optional-provider-workflow": 54,
-    "optional-reference": 23,
+    "optional-provider-workflow": 65,
+    "optional-reference": 27,
     "optional-deployment": 1,
-    "optional-evaluation": 35,
+    "optional-evaluation": 44,
     "optional-prerelease": 7,
     "optional-security": 4,
-    "optional-speech-api": 19,
+    "optional-speech-api": 21,
     "optional-webhooks": 7
   },
   "docs_hosted_counts_by_selection": {
-    "optional-speech-api": 4,
-    "recommended": 4,
+    "optional-speech-api": 5,
+    "recommended": 9,
     "optional-evaluation": 4,
-    "optional-provider-workflow": 4,
+    "optional-provider-workflow": 8,
     "optional-client-sdk": 1,
-    "optional-reference": 1
+    "optional-reference": 4
   },
   "selection_definitions": {
     "recommended": "Provider-owned or clearly maintained source; directly useful for building or operating voice agents; substantive, not a thin wrapper.",
@@ -1214,6 +1221,137 @@
       "license_status": "Root Apache-2.0 license found; selected skill folders have no nested overrides.",
       "license_url": "https://github.com/zavudev/zavu-skills/blob/main/LICENSE",
       "retrieved_at": "2026-09-30T18:25:41.195497+00:00",
+      "license_path": "LICENSE",
+      "publisher_relation": "provider-org"
+    },
+    {
+      "repo": "polyai/adk",
+      "default_branch": "main",
+      "head": "0c0412eb3c32fa70693a7f8a60d0fa012bb2ebce",
+      "repository_head_committed_at": "2026-09-28T13:48:13Z",
+      "stars": 83,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "total_skill_files": 5,
+      "license": "Apache-2.0",
+      "license_status": "Root Apache-2.0 license found; selected skill folders have no nested overrides.",
+      "license_url": "https://github.com/polyai/adk/blob/main/LICENSE",
+      "retrieved_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_path": "LICENSE",
+      "publisher_relation": "provider-org"
+    },
+    {
+      "repo": "CINTELLILABS/bland-plugins",
+      "default_branch": "main",
+      "head": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "repository_head_committed_at": "2026-09-30T16:16:54Z",
+      "stars": 0,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "total_skill_files": 24,
+      "license": "MIT",
+      "license_status": "Root MIT license found; selected skill folders have no nested overrides.",
+      "license_url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/LICENSE",
+      "retrieved_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_path": "LICENSE",
+      "publisher_relation": "provider-org"
+    },
+    {
+      "repo": "ai-coustics/skills",
+      "default_branch": "main",
+      "head": "685048a9e409d45f23ae09048c45ac8e4fcc4a98",
+      "repository_head_committed_at": "2026-09-23T09:36:38Z",
+      "stars": 1,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "total_skill_files": 3,
+      "license": "MIT",
+      "license_status": "Root MIT license found; selected skill folders have no nested overrides.",
+      "license_url": "https://github.com/ai-coustics/skills/blob/main/LICENSE",
+      "retrieved_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_path": "LICENSE",
+      "publisher_relation": "provider-org"
+    },
+    {
+      "repo": "GoogleCloudPlatform/ccaas-observability",
+      "default_branch": "main",
+      "head": "1f0e208dd642449d8ee33e0b7426284a1b364351",
+      "repository_head_committed_at": "2026-09-29T09:50:14Z",
+      "stars": 6,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "total_skill_files": 2,
+      "license": "Apache-2.0",
+      "license_status": "Root Apache-2.0 license found; selected skill folders have no nested overrides.",
+      "license_url": "https://github.com/GoogleCloudPlatform/ccaas-observability/blob/main/LICENSE",
+      "retrieved_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_path": "LICENSE",
+      "publisher_relation": "provider-org"
+    },
+    {
+      "repo": "dograh-hq/skills",
+      "default_branch": "main",
+      "head": "47d5dfa0a6e880cb024224f520ddfd98782ab592",
+      "repository_head_committed_at": "2026-04-01T12:14:14Z",
+      "stars": 9,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_paths": [],
+      "total_skill_files": 1,
+      "license": null,
+      "license_status": "No LICENSE file at the pinned commit; linked only, not copied.",
+      "license_url": null,
+      "retrieved_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_path": null,
+      "publisher_relation": "provider-org"
+    },
+    {
+      "repo": "AssemblyAI/cli",
+      "default_branch": "main",
+      "head": "90f7d7c7a8d833e7883d93ae82320c43c8fbb946",
+      "repository_head_committed_at": "2026-08-17T23:55:31Z",
+      "stars": 4,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "total_skill_files": 4,
+      "license": "MIT",
+      "license_status": "Root MIT license found; selected skill folders have no nested overrides.",
+      "license_url": "https://github.com/AssemblyAI/cli/blob/main/LICENSE",
+      "retrieved_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_path": "LICENSE",
+      "publisher_relation": "provider-org"
+    },
+    {
+      "repo": "google/agents-cli",
+      "default_branch": "main",
+      "head": "2c3945901e8e5cc933fa94fa44d1d4aaf644b596",
+      "repository_head_committed_at": "2026-09-30T11:14:13Z",
+      "stars": 6035,
+      "stars_source": "GitHub public repository API stargazers_count",
+      "observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "total_skill_files": 15,
+      "license": "Apache-2.0",
+      "license_status": "Root Apache-2.0 license found; selected skill folders have no nested overrides.",
+      "license_url": "https://github.com/google/agents-cli/blob/main/LICENSE",
+      "retrieved_at": "2026-09-30T23:22:09.402188+00:00",
       "license_path": "LICENSE",
       "publisher_relation": "provider-org"
     }
@@ -8932,6 +9070,73 @@
       ]
     },
     {
+      "name": "cxas-dfcx-migration",
+      "provider": "Google Cloud",
+      "repository": "GoogleCloudPlatform/cxas-scrapi",
+      "path": ".agents/skills/cxas-dfcx-migration/SKILL.md",
+      "url": "https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-dfcx-migration/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "158f19610c553660300c0acca0f8389a4cce81e6",
+      "verified_manifest_sha256": "1237733b6a01112f0b64aed5c6ca8d8a0ae3ca40afcfb5ecaf45f207bd21c310",
+      "language": "Python",
+      "purpose": "Migrate a Dialogflow CX agent to a CX Agent Studio app with resumable scripts for 1:1 conversion, agent consolidation, instruction rewrites with tool mocks, and topology rewiring.",
+      "selection": "optional-migration",
+      "license": "Apache-2.0",
+      "manifest_license": null,
+      "repository_stars": 104,
+      "stars_observed_at": "2026-09-30T18:40:24.917247+00:00",
+      "source_repository_commit_at": "2026-09-25T13:54:32Z",
+      "supporting_file_count": 9,
+      "supporting_files": [
+        ".agents/skills/cxas-dfcx-migration/references/migration-options.md",
+        ".agents/skills/cxas-dfcx-migration/scripts/_prompts.py",
+        ".agents/skills/cxas-dfcx-migration/scripts/_shared.py",
+        ".agents/skills/cxas-dfcx-migration/scripts/convert_dfcx_tests.py",
+        ".agents/skills/cxas-dfcx-migration/scripts/migrate.py",
+        ".agents/skills/cxas-dfcx-migration/scripts/run_simulations.py",
+        ".agents/skills/cxas-dfcx-migration/scripts/stage_1.py",
+        ".agents/skills/cxas-dfcx-migration/scripts/stage_2.py",
+        ".agents/skills/cxas-dfcx-migration/scripts/stage_3.py"
+      ],
+      "referenced_repository_paths": [
+        "cli/grouping_review.py",
+        "core/versions.py",
+        "migration/cxas_topology_linker.py",
+        "migration/data_models.py",
+        "migration/dfcx_exporter.py",
+        "migration/dfcx_migration_reporter.py",
+        "migration/eval_generator.py",
+        "migration/flow_visualizer.py",
+        "migration/graph_visualizer.py",
+        "migration/html_preview.py",
+        "migration/integrity_checks.py",
+        "migration/optimization_reporter.py",
+        "migration/optimizer.py",
+        "migration/playbook_visualizer.py",
+        "migration/post_deploy_lint.py",
+        "migration/service.py",
+        "migration/structural_consolidator.py",
+        "migration/topology_wirer.py",
+        "references/migration-options.md"
+      ],
+      "dependencies": [
+        "cxas-scrapi installed editable from the repository (pip install -e .) plus InquirerPy and rich; the scripts import cxas_scrapi.migration from the repository source",
+        "gcloud application-default credentials with read access to the source Dialogflow CX agent (or a local export .zip) and admin rights on the target project",
+        "A target Google Cloud project and location (default us; the skill says global does not work for CX Agent Studio apps in most projects)",
+        "Gemini on Vertex AI for consolidation, instruction rewriting and descriptions (model picker; default gemini-2.5-flash-001)",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "migrate.py creates a CX Agent Studio app with variables and tools in the target project, stage_1.py makes the first push of the consolidated agents, and stage_2.py and stage_3.py update the deployed app and create version checkpoints. Failed runs can leave apps behind, and a rerun hits AlreadyExists.",
+        "migrate.py defers the agent push by default, so its 'Migration complete' message does not mean the agents are live; --no-consolidate pushes every agent 1:1, which the script warns will exceed the 100-agent cap for sources with more than 100 flows or playbooks.",
+        "Source instructions, flows and tool definitions go to Gemini on Vertex AI and are also saved locally in <target>_ir.json, reports and unit-test JSON; there is no PII or retention guidance.",
+        "--yes skips confirmation and accepts the Gemini-proposed agent grouping; grouping is model-dependent, so review it before it is pushed.",
+        "Not voice-specific: voice appears only as a model choice (pick an audio-capable model when the source agent handles voice) and as a DTMF-as-text count in the test converter. Speech, telephony and voice settings are not covered.",
+        "The migration logic lives in cxas_scrapi.migration inside the repository, not in the skill folder. SKILL.md lists four scripts, but convert_dfcx_tests.py and run_simulations.py (which runs converted tests against a deployed app) ship too and are not described.",
+        "Hard-coded .agents/skills/cxas-dfcx-migration/scripts/ paths assume a repository checkout."
+      ]
+    },
+    {
       "name": "deepgram-webhooks",
       "provider": "Hookdeck",
       "repository": "hookdeck/webhook-skills",
@@ -12565,9 +12770,1313 @@
         "Stores call transcripts and handles caller PII (calls get returns the conversation) with no mention of recording consent, AI disclosure or retention.",
         "Vendor-specific to Zavu Cloud; example model ids such as openai/gpt-5.6-luna cannot be checked from the files."
       ]
+    },
+    {
+      "name": "poly-adk-workflow",
+      "provider": "PolyAI",
+      "repository": "polyai/adk",
+      "path": "skills/poly-adk-workflow/SKILL.md",
+      "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-workflow/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "0c0412eb3c32fa70693a7f8a60d0fa012bb2ebce",
+      "verified_manifest_sha256": "d1c79e3c531527b7c0197739aec93cb21b3f8c61881ea9dece59d5c9f4545146",
+      "language": "PolyAI ADK CLI",
+      "purpose": "Build, validate, push, test and merge PolyAI Agent Studio voice agents from the command line with the ADK, and route to the testing, branching, conversations and RTC skills.",
+      "selection": "recommended",
+      "license": "Apache-2.0",
+      "manifest_license": "Apache-2.0",
+      "repository_stars": 83,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-28T13:48:13Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "agent_settings/rules.txt"
+      ],
+      "dependencies": [
+        "poly CLI from uv tool install polyai-adk (the skill assumes it is already installed)",
+        "PolyAI account signed in with poly login (the user completes the browser sign-in), or POLY_ADK_KEY or a region key such as POLY_ADK_KEY_US, POLY_ADK_KEY_EUW, POLY_ADK_KEY_UK or POLY_ADK_KEY_STUDIO",
+        "An Agent Studio project pulled to a local folder with poly init or poly project create; commands run from the project directory"
+      ],
+      "concerns": [
+        "If poly is missing, the install step tells the agent to install uv with curl -LsSf https://astral.sh/uv/install.sh | sh, which pipes a remote script into a shell without asking; install uv yourself first.",
+        "poly push, poly chat --push and poly branch merge write to the remote Agent Studio project, and merging into main deploys to sandbox automatically. The skill says never to promote to pre-release or live unless the user asks, and to use --dry-run first.",
+        "Disagrees with the docs-hosted PolyAI skill: this skill says merging into main deploys to sandbox and promotion is a separate step, while the docs skill says poly branch merge on main publishes to Live. Its project layout (agent_settings/, flows/, topics/) also differs from the docs skill (config/, src/). Check poly docs for the installed version.",
+        "Edits prompts, rules and Python functions that run on live calls; functions the model can call need @func_description and @func_parameter decorators or the platform creates them without parameters.",
+        "Declares version 0.64.0 and defers to poly docs for exact schemas, so it is tied to the installed CLI version."
+      ]
+    },
+    {
+      "name": "poly-adk-testing",
+      "provider": "PolyAI",
+      "repository": "polyai/adk",
+      "path": "skills/poly-adk-testing/SKILL.md",
+      "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-testing/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "0c0412eb3c32fa70693a7f8a60d0fa012bb2ebce",
+      "verified_manifest_sha256": "d19a1cf925a8bab80232aaed705457ddfd4ba95a4384c368d3e3081924db9a34",
+      "language": "PolyAI ADK CLI",
+      "purpose": "Test a PolyAI agent with poly validate, scripted poly chat, the test_suite simulated conversation tests and isolated function execution.",
+      "selection": "optional-evaluation",
+      "license": "Apache-2.0",
+      "manifest_license": "Apache-2.0",
+      "repository_stars": 83,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-28T13:48:13Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "test_suite/greeting_flow_test.yaml"
+      ],
+      "dependencies": [
+        "poly CLI from uv tool install polyai-adk (the skill assumes it is already installed)",
+        "PolyAI account signed in with poly login (the user completes the browser sign-in), or POLY_ADK_KEY or a region key such as POLY_ADK_KEY_US, POLY_ADK_KEY_EUW, POLY_ADK_KEY_UK or POLY_ADK_KEY_STUDIO",
+        "An Agent Studio project pulled to a local folder with poly init or poly project create; commands run from the project directory",
+        "Optional --region, --project_id and --branch_id flags to run function checks without a local checkout"
+      ],
+      "concerns": [
+        "poly chat and poly test run execute against the last pushed state, so the --push flag writes your local edits to the remote branch before each test.",
+        "The skill tells the agent it cannot use poly call, the live WebRTC voice call, so speech, timing and barge-in are not tested; chat and the simulated tests are text-level, and isolated function runs have no live caller, empty state and no say or handoff behavior.",
+        "Chat and test runs can target a deployed environment with -e, including live, and the skill gives no warning about that."
+      ]
+    },
+    {
+      "name": "poly-adk-branching",
+      "provider": "PolyAI",
+      "repository": "polyai/adk",
+      "path": "skills/poly-adk-branching/SKILL.md",
+      "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-branching/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "0c0412eb3c32fa70693a7f8a60d0fa012bb2ebce",
+      "verified_manifest_sha256": "11657066ef49bc30699a9f489182beb5d9dd11732a18715d38fe8a9d1f762853",
+      "language": "PolyAI ADK CLI",
+      "purpose": "Manage PolyAI ADK branches, resolve three-way merge conflicts without prompts, create hotfix branches from a deployed environment and share review gists.",
+      "selection": "optional-provider-workflow",
+      "license": "Apache-2.0",
+      "manifest_license": "Apache-2.0",
+      "repository_stars": 83,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-28T13:48:13Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "poly CLI from uv tool install polyai-adk (the skill assumes it is already installed)",
+        "PolyAI account signed in with poly login (the user completes the browser sign-in), or POLY_ADK_KEY or a region key such as POLY_ADK_KEY_US, POLY_ADK_KEY_EUW, POLY_ADK_KEY_UK or POLY_ADK_KEY_STUDIO",
+        "An Agent Studio project pulled to a local folder with poly init or poly project create; commands run from the project directory",
+        "GitHub token in the environment for the review commands"
+      ],
+      "concerns": [
+        "poly branch create --env live overwrites the local project with the deployed state, and merging that branch can roll back later changes on main; poly pull -f discards all local work and deletes local resources missing from the remote.",
+        "Merging into main deploys to sandbox. Conflict resolutions passed with --resolutions overwrite real work from one side, and the skill says to confirm the choice with the user when the right answer is not obvious.",
+        "poly branch review and poly review create publish a private GitHub Gist of the diffs, which sends project content to GitHub.",
+        "Unlabelled conflict markers block status, diff, validate and push until they are removed."
+      ]
+    },
+    {
+      "name": "poly-adk-conversations",
+      "provider": "PolyAI",
+      "repository": "polyai/adk",
+      "path": "skills/poly-adk-conversations/SKILL.md",
+      "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-conversations/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "0c0412eb3c32fa70693a7f8a60d0fa012bb2ebce",
+      "verified_manifest_sha256": "60dbe99a3bc77ccadaa9d2c53c7908ca167a6795a1345d54b2112f5f48954e42",
+      "language": "PolyAI ADK CLI",
+      "purpose": "Review real PolyAI conversations from the command line (transcripts, recordings, summaries) and instrument functions with logs and metrics.",
+      "selection": "optional-evaluation",
+      "license": "Apache-2.0",
+      "manifest_license": "Apache-2.0",
+      "repository_stars": 83,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-28T13:48:13Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "poly CLI from uv tool install polyai-adk (the skill assumes it is already installed)",
+        "PolyAI account signed in with poly login (the user completes the browser sign-in), or POLY_ADK_KEY or a region key such as POLY_ADK_KEY_US, POLY_ADK_KEY_EUW, POLY_ADK_KEY_UK or POLY_ADK_KEY_STUDIO",
+        "An Agent Studio project pulled to a local folder with poly init or poly project create; commands run from the project directory"
+      ],
+      "concerns": [
+        "Downloads real caller transcripts and call recordings (poly conversations get and get-audio, with --redacted for a redacted copy) and gives no consent, PII or retention guidance.",
+        "Logs and metrics are not available retroactively, so they must be added while building; containment, CSAT and handle-time views exist only in Agent Studio, not in the CLI."
+      ]
+    },
+    {
+      "name": "poly-adk-rtc",
+      "provider": "PolyAI",
+      "repository": "polyai/adk",
+      "path": "skills/poly-adk-rtc/SKILL.md",
+      "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-rtc/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "0c0412eb3c32fa70693a7f8a60d0fa012bb2ebce",
+      "verified_manifest_sha256": "32bb78c25a90f103f334469d1b7849453f538cab9049fcab2a977b08faeb6ab5",
+      "language": "PolyAI ADK CLI",
+      "purpose": "Pull, edit, validate and push PolyAI per-environment real-time configuration with drift protection.",
+      "selection": "optional-provider-workflow",
+      "license": "Apache-2.0",
+      "manifest_license": "Apache-2.0",
+      "repository_stars": 83,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-28T13:48:13Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "poly CLI from uv tool install polyai-adk (the skill assumes it is already installed)",
+        "PolyAI account signed in with poly login (the user completes the browser sign-in), or POLY_ADK_KEY or a region key such as POLY_ADK_KEY_US, POLY_ADK_KEY_EUW, POLY_ADK_KEY_UK or POLY_ADK_KEY_STUDIO",
+        "An Agent Studio project pulled to a local folder with poly init or poly project create; commands run from the project directory"
+      ],
+      "concerns": [
+        "poly rtc push --env live writes straight to production with no branch, review or promotion step; real-time configuration takes effect without a deployment and is not promoted between environments.",
+        "Drift protection only works if you pulled first: a push without a prior pull silently skips the check, and --force overwrites edits someone made in the Agent Studio UI.",
+        "poly rtc edit is interactive ($EDITOR, no --json), so an agent should use the pull, edit, push cycle instead."
+      ]
+    },
+    {
+      "name": "calls",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/calls/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/calls/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "2601b3a81d2aaee1f1e9fdd6bb657c85a90fe18b55644d9dd6674d45d9e99fef",
+      "language": "Provider workflow",
+      "purpose": "Place, follow and stop Bland outbound phone calls, with guidance on voice, caller ID, voicemail handling, keywords, recording and noise cancellation, and on reading transcripts and recordings afterwards.",
+      "selection": "recommended",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 1,
+      "supporting_files": [
+        "skills/calls/references/sounding-human.md"
+      ],
+      "referenced_repository_paths": [
+        "references/sounding-human.md"
+      ],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server",
+        "Optional websocat and sox (installed with brew) for live listening, and live listen enabled for the organization",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Places real outbound calls that ring real people and can cost money; the skill says to confirm the number and goal first. stop_call and the stop-all-calls endpoint hang up on the person being called.",
+        "The calls skill and its sounding-human reference coach the agent to write ums, uhs, false starts and back-channels into prompts so calls sound human. Neither mentions telling callers they are speaking to an AI, recording consent or do-not-call checks; the Bland pathways references and v2 skills cover disclosure, so add your own compliance steps.",
+        "Suggests buying credits with a payment token from the user's agent wallet when a buy_credits tool is available, which spends money; keep confirmation on for it.",
+        "Agent Phone Plan limits apply: US and Canada numbers only, one call at a time, 60 minutes per call, 20 calls an hour, 50 a day and 1,000 minutes a day. Blocked calls return codes such as CALL_PLAN_DESTINATION_BLOCKED and CALL_UNPAID_INTL_BLOCK.",
+        "create_call accepts only six fields, so voicemail, keywords, recording, persona, transfer and scheduling need POST /v1/calls. A recording exists only if record was set when the call was placed, and the noise_cancellation default has drifted between the API docs and the server, so the skill says to send it explicitly.",
+        "Live transcript and live audio are given as curl and websocat commands for the user's own terminal and key, not run by the agent."
+      ]
+    },
+    {
+      "name": "pathways",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/pathways/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/pathways/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "d817812b9490d0f67222d93b2fc2f02364aa961fbf27ce9cdc3bb914e77f148e",
+      "language": "Provider workflow",
+      "purpose": "Author, validate, test and publish Bland conversational pathways as a local file workspace of nodes, edges, prompts, variables, tools and unit tests that is committed back to the platform.",
+      "selection": "recommended",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 6,
+      "supporting_files": [
+        "skills/pathways/references/README.md",
+        "skills/pathways/references/global-prompts/inbound-direct-support.md",
+        "skills/pathways/references/global-prompts/outbound-conversational-sales.md",
+        "skills/pathways/references/knowledge-bases/refund-preference-kb.md",
+        "skills/pathways/references/pathways/golden-service-scheduling.json",
+        "skills/pathways/references/pathways/golden-service-scheduling.md"
+      ],
+      "referenced_repository_paths": [
+        "references/README.md",
+        "references/global-prompts/inbound-direct-support.md",
+        "references/global-prompts/outbound-conversational-sales.md",
+        "references/knowledge-bases/refund-preference-kb.md",
+        "references/pathways/golden-service-scheduling.md"
+      ],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server",
+        "Plugin commands /bland:clone, /bland:validate, /bland:test, /bland:commit and /bland:status and the offline codec bin/norm-sync.cjs (Node.js), which ship with the plugin and not in the skill folder",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Depends on plugin commands and a bundled codec that are not in the skill folder, so the workflow does not run from this folder alone. The plugin that supplies these commands also installs hooks and Node scripts (session status, a Bash pre-approval for its own norm-sync, norm-loop and norm-config scripts, a lint hook on file writes, Stop-time loop hooks and a credentials helper that can read the Bland key from settings files and the macOS keychain); read them before installing the plugin.",
+        "Tells the agent to commit in the same run after clean validation and never to ask 'should I save it?', while another section says every server write is confirm-gated. New-pathway commits are promoted to production (update then publish, which is not atomic, so a failure can leave a pathway saved but not promoted).",
+        "Works on a local clone of the pathway: if the live version moved, the skill says to re-clone before editing, and saves must go to /v1/convo_pathway/* because POST /v1/pathway/<id> is the SMS router.",
+        "The references folder holds sanitized production prompts and knowledge bases (the skill says to imitate their techniques, not copy their facts) and a golden pathway JSON of about 200 KB that the skill says to grep, not read whole.",
+        "Records platform runtime gotchas as verified live, for example that webhook responseData variables are not substituted into the same node's dialogue on the turn the webhook fires and that extraction runs in parallel with routing."
+      ]
+    },
+    {
+      "name": "call-review",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/call-review/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/call-review/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "6b446df9dc40eab0423931d7d6ddfd8741d02807ae8150cd08a53df56fc564b1",
+      "language": "Provider workflow",
+      "purpose": "Find and review real Bland calls: fetch call logs, classify pathway and decision log entries, compare them with the pathway's runtime contract and deliver an evidence-quoted verdict without changing anything.",
+      "selection": "recommended",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server",
+        "get_call_log and get_pathway_context from the plugin's MCP server; fixes are handed to /bland:norm, /bland:loop and a triage skill that are not in this folder"
+      ],
+      "concerns": [
+        "Reads real call transcripts, recordings, variables and costs. For heavy calls it writes full logs to a local call_logs/ folder with no redaction or retention guidance.",
+        "The verdict is the agent's own reasoning over fetched data; the skill says there is no server-side analyzer, and the corrected-transcript endpoint it points to is rate-limited to about 10 requests in 10 minutes.",
+        "Read-only by design: it cannot place calls, resend webhooks or rerun analysis, and hands those to other commands. The skill also says some root causes are dial-time settings on the call, not the pathway."
+      ]
+    },
+    {
+      "name": "automations",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/automations/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/automations/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "9ef3a6fad249b26e6ecfb47a0bda5d35f5fac9ed24cdbdfb7117c711ebf0bd5b",
+      "language": "Provider workflow",
+      "purpose": "Inspect, monitor and diagnose Bland automations: event triggers, pipelines and their executions that place calls or send texts.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server"
+      ],
+      "concerns": [
+        "A misconfigured trigger dials real people. A trigger test with dryRun set to false starts the real pipeline with real calls and texts, toggling a trigger on can start firing at once, and deleting a pipeline cascades to its triggers and executions.",
+        "Documents a verified known gap: POST writes to /v1/automation/* fail with INVALID_JSON through the passthrough, so creates, updates, toggles and trigger tests must be done in the dashboard and only reads and diagnosis work. The gap may be fixed by now, so check before relying on it.",
+        "Endpoint and body shapes are looked up in the Bland docs at run time, not stored in this file, and the skill says to read an existing pipeline first to learn the node config shape."
+      ]
+    },
+    {
+      "name": "analytics",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/analytics/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/analytics/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "ce21e1efc083b0ba045d03dfeb5a506e2fa7d203e47ead05bd8fd3ad9326b8fb",
+      "language": "Provider workflow",
+      "purpose": "Query Bland call analytics (volume, outcomes, durations, costs, trends) and build the measurement layer: extraction schemas, backfills, dispositions and dashboards.",
+      "selection": "optional-evaluation",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server"
+      ],
+      "concerns": [
+        "Says everything in the domain is read-only and needs no confirmation, then describes creating and deleting schemas, dispositions and dashboards and running backfills, which it marks confirm-gated. Keep confirmation on for those writes.",
+        "Backfills are billed per extraction, and dashboards, backfills and some analytics queries are enterprise-gated (the skill says to expect 403 on other plans).",
+        "The curated query_analytics tool drops time-bucket (trunc) dimensions, so the skill sends trend queries with POST /v2/analytics/query, which it describes as a semantically read-only POST.",
+        "Dispositions are sandboxed JavaScript run against calls; extraction schemas are LLM extraction over transcripts, so extracted fields can hold caller personal data."
+      ]
+    },
+    {
+      "name": "evals",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/evals/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/evals/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "f5b30440df82d8b6eff6bb2c75bd01946fb0b1072bfc83e1b74b99efa1345329",
+      "language": "Provider workflow",
+      "purpose": "Build, calibrate and run LLM-judge evaluations of real Bland calls: judge agents and rubrics, workbench panels, call cohorts, cost estimates, runs and per-call evidence.",
+      "selection": "optional-evaluation",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server"
+      ],
+      "concerns": [
+        "Eval runs are billed per call and judge. The skill says to estimate first (POST /v1/evals/runs/estimates charges nothing) and to confirm before create_eval_run.",
+        "Attaching post_call_evals to POST /v1/calls makes every call a billed run, turns recording on and merges each judge's verdict into the call's pathway_tags. Applying a run writes verdict tags onto production calls and pathways.",
+        "AI-drafted judges default to opposite passing targets by source: prompt-sourced drafts pass when the behavior is observed, triage- or call-sourced drafts pass when the issue is absent. The skill says to confirm the direction before saving.",
+        "Verdicts come from LLM judges, and the skill says a judge is not to be trusted until it has been calibrated on calls with known outcomes."
+      ]
+    },
+    {
+      "name": "knowledge",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/knowledge/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/knowledge/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "4eabc3ba1375cd6690dab5bc7a517000bb907a7e226d71698a24b6bc4c5cd259",
+      "language": "Provider workflow",
+      "purpose": "Ingest text or web content into Bland knowledge bases, test that mid-call retrieval returns the right passage, and attach knowledge bases to personas or pathways.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server"
+      ],
+      "concerns": [
+        "Uploads pasted text and crawled web pages (up to 100 URLs per ingest) to Bland's hosted knowledge base. Nothing in the skill covers personal data, consent or retention in the uploaded content.",
+        "File uploads are multipart and cannot go through the JSON passthrough, so the skill sends the user to the dashboard for them.",
+        "Deleting a knowledge base is high-impact and the skill requires confirmation. A COMPLETED status only means the content was processed; the skill requires test questions to show that the right passage is returned."
+      ]
+    },
+    {
+      "name": "persona",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/persona/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/persona/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "4bf72b808656e0112355754918bbb23d99becf5e1f2e5def8158790691e8d4e9",
+      "language": "Provider workflow",
+      "purpose": "Create and edit Bland personas (voice, call settings, knowledge bases, default tools, pathway routing) on the draft version and promote drafts to production.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "references/sounding-human.md"
+      ],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server"
+      ],
+      "concerns": [
+        "Promoting a draft archives the previous production version, and deleting a persona is a high-impact call. The skill requires confirmation naming the persona before either.",
+        "Says every edit lands on the draft and production changes only on promotion, but also says that removing a pathway_conditions entry changes live routing on the draft; check which version an edit affects before relying on either statement.",
+        "Points to the calls skill's sounding-human guidance for prompt style, which coaches filler words and has no AI-disclosure or recording-consent guidance."
+      ]
+    },
+    {
+      "name": "tools",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/tools/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/tools/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "d18228e50df6cdc6ca7597524a81e000b92f0eca2e1767f80658784fe591ea47",
+      "language": "Provider workflow",
+      "purpose": "Build, test and manage Bland custom tools and integrations (REST tools, webhooks, CRM calls) and the secrets they reference, through the raw REST API.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server"
+      ],
+      "concerns": [
+        "Creates, overwrites and deletes live tools that agents call during real calls. POST /v1/tools with an empty or partial body still creates a record, and deletes on v2 tools are hard deletes.",
+        "Covers the older Custom Tools (Legacy) API together with v2 integration tools and resources. There is no REST endpoint to create secret values, so new secrets are made in the dashboard and referenced by id or name.",
+        "Testing a tool against a real endpoint can trigger side effects such as writes, sends or charges; the skill says to exercise only side-effect-free GET requests and to confirm before anything else.",
+        "Tool calls run on a live phone line, so the skill says to keep timeouts in seconds and to set speech so the agent talks while the request runs."
+      ]
+    },
+    {
+      "name": "debug",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/debug/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/debug/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "2d62f90518ee033da7cb92daadc83ff3a567313c33b45f99a364fc39a7f41af1",
+      "language": "Provider workflow",
+      "purpose": "Root-cause debugging for Bland pathways, tools and agents: reproduce with a scripted chat simulation or call log, diff versions, test one hypothesis at a time and package an escalation.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server",
+        "Plugin script bin/norm-config.cjs (Node.js) for checking which server URL the connection points at, and the pathways workspace commands"
+      ],
+      "concerns": [
+        "Runs plugin scripts (node bin/norm-config.cjs) and writes repro files to .norm/repro/ in the working directory.",
+        "May edit a local server codebase when one is in the working tree (it says never to commit or push unless asked) and follows that repository's own instructions. Server writes stay confirm-gated.",
+        "Escalates to a triage skill that is not indexed here, and leans on plugin commands such as /bland:loop and /bland:commit that are not in the skill folder."
+      ]
+    },
+    {
+      "name": "api",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/api/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/api/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "e3488b85e1b45e2820eba5caec13450aa982a7cdfafd6bbe758139a7558e0e82",
+      "language": "REST",
+      "purpose": "Call the Bland REST API directly and docs first, through one docs search tool, one read tool and one write tool.",
+      "selection": "optional-reference",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [],
+      "dependencies": [
+        "Bland account and API key from app.bland.ai/settings/api-keys, stored through the host's plugin configuration and never typed into chat",
+        "The bland plugin (bland@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server at api.bland.ai/v1/mcp; the tools these skills name (bland_api_get, call_bland_api and others) come from that server"
+      ],
+      "concerns": [
+        "Reaches every endpoint the key can use, including placing calls, sending texts, buying numbers and deleting resources. The skill requires explicit confirmation before each state-changing call and a read-back after it.",
+        "Names its docs tools search_bland and query_docs_filesystem_bland, while other Bland skills say search_bland_docs and get_bland_doc; use the names present in your session.",
+        "Its error playbook says to correct the request and retry on 4xx or 5xx responses, which for a POST can repeat a side effect such as a call; check state before retrying a write."
+      ]
+    },
+    {
+      "name": "v2-authoring",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/v2-authoring/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-authoring/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "d3b696b22a7b5b4d7b9458fc1420a45d773c6b1ab37b93661c4e611267564ed1",
+      "language": "Provider workflow",
+      "purpose": "Design and build a new Bland v2 agent: scenario architecture, hub and entry authoring, step, edge and tool design, a standard set of conduct rules, and how v2 building differs from v1.",
+      "selection": "recommended",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "../v2-runtime/references/builder-runtime-map.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server"
+      ],
+      "concerns": [
+        "Covers v2 agents only and tells the agent to ask whether the user means v1 or v2 before applying it; the two disciplines do not mix.",
+        "Its conduct rules include AI disclosure, never inventing phone numbers or bookings and gating write tools on the caller's last turn. They are the skill's own doctrine from production testing, not platform guarantees.",
+        "Says a new agent is not built until /norm:simulate passes on one head, and that command lives in the plugin, not in the skill folder. Simulations run the real agent, so read the testing skill's safety rules first."
+      ]
+    },
+    {
+      "name": "v2-lifecycle",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/v2-lifecycle/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-lifecycle/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "0c3d27fad6027b3ee6d7f438735d647b361a91b56c4c3d7f4a838cfdd1a36495",
+      "language": "Provider workflow",
+      "purpose": "Ship and operate Bland v2 agents: dev, staging and production environments, publish, promote and rollback, branches, A/B experiments, environment variables, pre-deploy checks and inbound number binding.",
+      "selection": "recommended",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 2,
+      "supporting_files": [
+        "v2/skills/v2-lifecycle/references/api.md",
+        "v2/skills/v2-lifecycle/references/resources.md"
+      ],
+      "referenced_repository_paths": [
+        "references/api.md",
+        "references/resources.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Promote and rollback change which version answers live calls, and attaching or rebinding a number changes where inbound calls and texts go. The skill treats publish (staging only), check runs and promote (production) as separate operations and says a request to deploy does not authorize bypassing a known safety gate.",
+        "Inbound calls use a 2-second fail-open resolver: any error, timeout, unpinned production or unresolved variable silently drops the call to a stored twin pathway that is refreshed only on attach and on promote or rollback, so it can be stale.",
+        "Production promotion enforces the saved staging check policy. The skill says never to add force:true, the audited bypass, or to remove required judges just to make a promotion pass.",
+        "Branded calling (BCID) submissions write to carrier review with T-Mobile and Verizon, and the skill says to treat that as an action that needs customer approval.",
+        "A call to an agent with no production pin fails, and a semver, branch or dev selector resolves dev variables even when that version is the production pin, so a test by semver does not prove production variables.",
+        "Older servers may differ: the skill says to check the connected API before using newer modes."
+      ]
+    },
+    {
+      "name": "v2-maintenance",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/v2-maintenance/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-maintenance/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "6e14628f347265d8d7d3db3117e31143a810815944ae4fd6bf98fa775f612066",
+      "language": "Provider workflow",
+      "purpose": "Update, repair and debug an existing Bland v2 agent without overwriting other editors' work: prompt, routing, tool and settings edits, versions, environment values and regression tests.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "../api-workspace/SKILL.md",
+        "../api-workspace/references/debugging.md",
+        "../api-workspace/references/workspace.md",
+        "../call-analysis/SKILL.md",
+        "../evaluations/SKILL.md",
+        "../v2-lifecycle/SKILL.md",
+        "../v2-lifecycle/references/api.md",
+        "../v2-runtime/SKILL.md",
+        "../v2-snapshot/SKILL.md",
+        "../v2-testing/SKILL.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server"
+      ],
+      "concerns": [
+        "Edits and saves agent versions through the API. It requires proving the target organization and agent first, keeping the concurrency fence on saves and never overwriting an unsaved draft, but API state cannot reveal another editor's unsaved page changes.",
+        "Says simulations can execute real integrations and to classify side effects before testing, and never to infer a publication from a request to fix a prompt.",
+        "A thin routing skill: the detail lives in the snapshot, runtime, testing, evaluations and lifecycle skills it links to, most of which are indexed separately."
+      ]
+    },
+    {
+      "name": "v2-migration",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/v2-migration/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-migration/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "3037ca1b8c781388adb7c7b3c2d977c74348a8899d72666f1358c9dab0973b47",
+      "language": "Platform migration",
+      "purpose": "Hand-migrate a Bland v1 pathway or persona export into a v2 agent snapshot, with architecture rules, verbatim-carriage discipline, a trap catalog and a verification bar.",
+      "selection": "optional-migration",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 1,
+      "supporting_files": [
+        "v2/skills/v2-migration/references/traps.md"
+      ],
+      "referenced_repository_paths": [
+        "references/traps.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "Raw JSON export of the v1 pathway or persona, and commands /norm:validate, /norm:simulate and /norm:migrate from the plugin",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "v1 exports contain real credentials and point at real systems. The skill says never to print the secrets, to flag them for rotation, and to treat every v1 resource as read-only and live.",
+        "Pushes a new agent version into the owning organization, which must be the right one because ids, snippet pins and secret references resolve only in the org that owns them. Number cutover is explicitly out of scope and one way.",
+        "Migration tests fire real webhooks, code snippets and transfers: its trap catalog says CRM lookups, schedulers and gate-openers run for real in chat simulations. Classify every integration and keep write branches out of routine tests.",
+        "Hand migration is the plugin's own doctrine; Bland's platform migration endpoints are separate converters that this skill does not use. The norm plugin also installs a Stop hook and Node migration scripts; read them before installing the plugin."
+      ]
+    },
+    {
+      "name": "v2-runtime",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/v2-runtime/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-runtime/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "27472a24d2e0b7c9b98054d87d5a811e6d2238e1adb315c95194388067b1f387",
+      "language": "Provider workflow",
+      "purpose": "Explain and debug Bland v2 runtime behavior: routing decision order, interruptions, hub and scenario semantics, and how edited snapshot JSON maps to the builder canvas.",
+      "selection": "optional-reference",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 4,
+      "supporting_files": [
+        "v2/skills/v2-runtime/references/builder-runtime-map.md",
+        "v2/skills/v2-runtime/references/execution-order.md",
+        "v2/skills/v2-runtime/references/interruptions.md",
+        "v2/skills/v2-runtime/references/tools-and-handoffs.md"
+      ],
+      "referenced_repository_paths": [
+        "references/builder-runtime-map.md",
+        "references/execution-order.md",
+        "references/interruptions.md",
+        "references/tools-and-handoffs.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Reference and diagnosis only. It says its routing order is not an exhaustive universal priority and tells the reader to use the actual decision trace.",
+        "States that a route step with no matching rule and no fallback hard-fails the call for that caller, and that the builder canvas does not show generated or inspector-level routes, so routing cannot be diagnosed from the canvas alone.",
+        "The skill folder ships four reference files that carry most of the detail; install them together."
+      ]
+    },
+    {
+      "name": "v2-snapshot",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/v2-snapshot/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-snapshot/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "0ae25b74824a03ad61a405f84197efc9b6ca35cace516772da94197877dba022",
+      "language": "REST / JSON",
+      "purpose": "Author and debug Bland v2 agent version snapshots by hand: the JSON shape of the behavior graph, hub, scenarios, steps, edges, tools and settings.",
+      "selection": "optional-reference",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 2,
+      "supporting_files": [
+        "v2/skills/v2-snapshot/references/knobs.md",
+        "v2/skills/v2-snapshot/references/node-catalog.md"
+      ],
+      "referenced_repository_paths": [
+        "../../commands/validate.md",
+        "../api-workspace/references/api.md",
+        "../v2-maintenance/SKILL.md",
+        "../v2-runtime/references/builder-runtime-map.md",
+        "../v2-runtime/references/interruptions.md",
+        "references/knobs.md",
+        "references/node-catalog.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Pushing a snapshot with POST /v2/agents/:id/versions creates a version, and the skill says to keep the documented concurrency fence when editing an existing head. Unknown snapshot keys can be rejected or silently ignored depending on the server.",
+        "The responsePathways field names on attached tools are deliberately skewed (label is the trigger variable, variable is the operator, condition is the compared value); authoring them as they read silently never matches.",
+        "toolType supports only custom_tool and track, so a snippet-executing tool must be written as a customCode step followed by a route step, and a customCode step with no snippetId is inert.",
+        "References hold per-knob tables, including timed compliance rails such as tcpa:ai_disclosure and tcpa:opt_out, which are platform settings to check against your own legal requirements."
+      ]
+    },
+    {
+      "name": "v2-testing",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/v2-testing/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-testing/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "25ec98cd5b568ab931b124ac0f02d806ba43de4a109cd4fe1d4b78934f0d061a",
+      "language": "Provider workflow",
+      "purpose": "Verify Bland v2 agents with platform simulations, test-chat probes and speech-to-speech tests, with safety rules for tests that fire real integrations.",
+      "selection": "optional-evaluation",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 1,
+      "supporting_files": [
+        "v2/skills/v2-testing/references/voice.md"
+      ],
+      "referenced_repository_paths": [
+        "../evaluations/SKILL.md",
+        "references/voice.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "For direct test-chat probes: a host-supplied test-chat WebSocket URL and a short-lived session token from GET /v1/pathway/session; none is bundled",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Simulations and test chats run the real agent with real integrations: webhooks, CRM writes, schedulers and gate openers fire for real, and transfers are inert in chat but dial real phone lines on voice calls. The skill tells the reader to classify every integration as read or write first and never to complete write branches in routine testing.",
+        "Text tests do not prove audible behavior, interruptions or latency, and lanes gated on customer data stay unreachable without a customer-created test record; the skill says to list uncovered lanes in every report.",
+        "Direct test-chat probes need a host-approved WebSocket target and use a short-lived token that must stay out of chat and reports; without that target the skill says to report the missing coverage, not to guess a host.",
+        "Suites drain write-side artifacts with the customer's own cleanup scenarios, and sample fixtures use synthetic caller data so no real personal data enters transcripts."
+      ]
+    },
+    {
+      "name": "api-workspace",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/api-workspace/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/api-workspace/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "5c98a471411531415d0f29cba040e69696af109b37264a51147568f318f1b12d",
+      "language": "REST",
+      "purpose": "Work with the Bland v2 API from a coding workspace: find documentation, edit agent JSON in files, reconcile unsaved page state with saved versions and debug failed operations.",
+      "selection": "optional-reference",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 7,
+      "supporting_files": [
+        "v2/skills/api-workspace/references/api.md",
+        "v2/skills/api-workspace/references/debugging.md",
+        "v2/skills/api-workspace/references/execution.md",
+        "v2/skills/api-workspace/references/index.md",
+        "v2/skills/api-workspace/references/options.md",
+        "v2/skills/api-workspace/references/surface-map.md",
+        "v2/skills/api-workspace/references/workspace.md"
+      ],
+      "referenced_repository_paths": [
+        "references/api.md",
+        "references/debugging.md",
+        "references/index.md",
+        "references/surface-map.md",
+        "references/workspace.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Keeps transcripts, snapshots and call data in workspace files and says to redact secrets and minimize personal information, but sets no retention period.",
+        "Says it grants no permissions: read-only investigation is not permission to publish, place calls or change external systems, and the agent must not fall back to another installed Bland server or click around missing API access.",
+        "A routing skill; the depth is in seven reference files (surface map, API contract, workspace state and debugging) that need to be installed with it."
+      ]
+    },
+    {
+      "name": "call-analysis",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/call-analysis/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/call-analysis/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "c1a0532fbe3ec8392027b570cb9d4878382550d39a6c39575cc2aebe76d36b93",
+      "language": "Provider workflow",
+      "purpose": "Find, categorize and analyze Bland calls in bulk with paginated API retrieval and code-based analysis, producing reproducible workspace reports without pasting datasets into chat.",
+      "selection": "optional-evaluation",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 2,
+      "supporting_files": [
+        "v2/skills/call-analysis/references/analysis.md",
+        "v2/skills/call-analysis/references/retrieval.md"
+      ],
+      "referenced_repository_paths": [
+        "../api-workspace/references/api.md",
+        "../api-workspace/references/debugging.md",
+        "../evaluations/SKILL.md",
+        "references/analysis.md",
+        "references/retrieval.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Pulls hundreds or thousands of real call records into local workspace files. The retrieval reference says to minimize personal information and retention and never to commit fetched customer data, and the skill says not to send call content to an unconfigured external service.",
+        "Its own categorization is not a platform evaluation result, and it says completion status alone is not quality; semantic labels need evidence and an inconclusive state.",
+        "Writes and runs task-specific analysis scripts in the workspace, so review them before running them on customer data."
+      ]
+    },
+    {
+      "name": "evaluations",
+      "provider": "Bland AI",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "v2/skills/evaluations/SKILL.md",
+      "url": "https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/evaluations/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1ae77b38ff0268de38d52491983091922aabe3f0",
+      "verified_manifest_sha256": "39747d03886fb5959a283dc9c6a4421d67f99f41336d87b675786e0dc3c00fb8",
+      "language": "Provider workflow",
+      "purpose": "Create and calibrate Bland v2 evaluation judges, attach them to test cases, run evaluations and simulations and interpret failed, partial or inconclusive scores.",
+      "selection": "optional-evaluation",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 0,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T16:16:54Z",
+      "supporting_file_count": 3,
+      "supporting_files": [
+        "v2/skills/evaluations/references/api.md",
+        "v2/skills/evaluations/references/dispositions.md",
+        "v2/skills/evaluations/references/workflows.md"
+      ],
+      "referenced_repository_paths": [
+        "../api-workspace/references/api.md",
+        "../v2-testing/SKILL.md",
+        "../v2-testing/references/voice.md",
+        "references/api.md",
+        "references/dispositions.md",
+        "references/workflows.md"
+      ],
+      "dependencies": [
+        "Bland account and API key for the organization that owns the agents, entered with /plugin configure norm@bland and never typed into chat",
+        "The norm plugin (norm@bland from the CINTELLILABS/bland-plugins marketplace), which connects the hosted Bland MCP server as plugin_norm_bland; the v2 skills tell the agent to use only that server",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Runs are billed and asynchronous. The skill says to estimate supported billed operations, stay within the user's scope and not claim a pass from a 202, a finished spinner or COMPLETE alone.",
+        "Simulations can execute real integrations, and text evaluations cannot establish audible interruption timing; the skill sends voice evidence questions to the v2-testing references.",
+        "Judges, test scenarios, call cohorts and runs are separate objects with their own status names and request fields, and the skill warns not to substitute one surface's fields for another's."
+      ]
+    },
+    {
+      "name": "ai-coustics-speech-enhancement",
+      "provider": "ai-coustics",
+      "repository": "ai-coustics/skills",
+      "path": "skills/ai-coustics-speech-enhancement/SKILL.md",
+      "url": "https://github.com/ai-coustics/skills/blob/main/skills/ai-coustics-speech-enhancement/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "685048a9e409d45f23ae09048c45ac8e4fcc4a98",
+      "verified_manifest_sha256": "22a57d05f3e7442b7cd4ef72b4ee6260e55d85f42e18be9c7fafd89aa0e5ca92",
+      "language": "Python",
+      "purpose": "Enhance speech recordings offline with ai-coustics Quail Voice Focus, Quail Multi Speaker or Rook models through the AIC SDK, one file or a folder.",
+      "selection": "optional-speech-api",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 1,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-23T09:36:38Z",
+      "supporting_file_count": 5,
+      "supporting_files": [
+        "skills/ai-coustics-speech-enhancement/evals/evals.json",
+        "skills/ai-coustics-speech-enhancement/references/sdk_api.md",
+        "skills/ai-coustics-speech-enhancement/scripts/_aic_models.py",
+        "skills/ai-coustics-speech-enhancement/scripts/enhance.py",
+        "skills/ai-coustics-speech-enhancement/skill-card.md"
+      ],
+      "referenced_repository_paths": [
+        "references/sdk_api.md",
+        "scripts/_aic_models.py"
+      ],
+      "dependencies": [
+        "uv and Python 3.11 or newer; the script declares aic-sdk>=3.1.0, numpy, soundfile, certifi and tqdm inline, and uv installs them on first run",
+        "AIC SDK license key in AIC_SDK_LICENSE_KEY, AIC_LICENSE_KEY or AIC_SDK_LICENSE (self-service key from the vendor developer site)",
+        "Network access to artifacts.ai-coustics.io for the model catalog and the first-run model download (cached in ~/.cache/aic-models); offline use needs a pre-downloaded .aicmodel passed with --model-path",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "The skill is MIT, but the AIC SDK and the model files need a license key and are governed by separate ai-coustics terms (skill card); check them before shipping.",
+        "Writes enhanced audio to the output path you name (mono, at the input sample rate; multi-channel input is downmixed) and creates the ~/.cache/aic-models directory. It refuses to overwrite the input file.",
+        "Model ids resolve at run time to the newest build the installed SDK can load, and the default falls back to a hard-coded id if the catalog is unreachable, so output can change between runs or SDK versions.",
+        "Folder mode runs 8 parallel workers by default and walks subfolders; SKILL.md says to raise --workers to the file count (capped at 16) while the script help says 8.",
+        "Processes call recordings locally (the skill card says audio does not leave the machine) but gives no consent or retention guidance."
+      ]
+    },
+    {
+      "name": "ai-coustics-voice-activity-detection",
+      "provider": "ai-coustics",
+      "repository": "ai-coustics/skills",
+      "path": "skills/ai-coustics-voice-activity-detection/SKILL.md",
+      "url": "https://github.com/ai-coustics/skills/blob/main/skills/ai-coustics-voice-activity-detection/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "685048a9e409d45f23ae09048c45ac8e4fcc4a98",
+      "verified_manifest_sha256": "65ebdc372000009acf019318f44bad6f94ecdebe7b44d8608c02565d08c4d1c6",
+      "language": "Python",
+      "purpose": "Detect speech in audio files with the ai-coustics VAD Multi Speaker or Voice Focus models and report segments, onsets and per-block probabilities.",
+      "selection": "optional-speech-api",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 1,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-23T09:36:38Z",
+      "supporting_file_count": 4,
+      "supporting_files": [
+        "skills/ai-coustics-voice-activity-detection/evals/evals.json",
+        "skills/ai-coustics-voice-activity-detection/scripts/_aic_models.py",
+        "skills/ai-coustics-voice-activity-detection/scripts/detect.py",
+        "skills/ai-coustics-voice-activity-detection/skill-card.md"
+      ],
+      "referenced_repository_paths": [
+        "scripts/_aic_models.py"
+      ],
+      "dependencies": [
+        "uv and Python 3.11 or newer; the script declares aic-sdk>=3.1.0, numpy, soundfile and certifi inline, and uv installs them on first run",
+        "AIC SDK license key in AIC_SDK_LICENSE_KEY, AIC_LICENSE_KEY or AIC_SDK_LICENSE (self-service key from the vendor developer site)",
+        "Network access to artifacts.ai-coustics.io for the model catalog and the first-run model download (cached in ~/.cache/aic-models); offline use needs a pre-downloaded .aicmodel passed with --model-path",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Offline files only: the real-time pattern (aic.Vad beside the enhancement processor, fed the original input, not the enhanced output) is described but not scripted.",
+        "Sensitivity is a probability threshold where higher means fewer detections, the opposite of the retired energy VAD; with the model default of 0 s minimum speech, breaths and clicks can show up as micro-segments (the skill suggests --min-speech 0.1).",
+        "The description says the skill can compare the VAD with Silero or WebRTC VAD, but the body has no comparison procedure.",
+        "The skill is MIT, but the AIC SDK and the model files need a license key and are governed by separate ai-coustics terms (skill card).",
+        "Reads call audio and writes optional JSON or CSV with file names and segment times; the audio is not modified or uploaded, and there is no consent or retention guidance."
+      ]
+    },
+    {
+      "name": "ai-coustics-audio-insight",
+      "provider": "ai-coustics",
+      "repository": "ai-coustics/skills",
+      "path": "skills/ai-coustics-audio-insight/SKILL.md",
+      "url": "https://github.com/ai-coustics/skills/blob/main/skills/ai-coustics-audio-insight/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "685048a9e409d45f23ae09048c45ac8e4fcc4a98",
+      "verified_manifest_sha256": "e336f4fca5e7801348aaa6d5a31159b4b34768365e35abd5bfad444008f82af1",
+      "language": "Python",
+      "purpose": "Score call audio with the ai-coustics Tyto model for a risk score and noise, reverb, interfering-speech, codec and packet-loss dimensions, and produce context for an LLM judge.",
+      "selection": "optional-evaluation",
+      "license": "MIT",
+      "manifest_license": "MIT",
+      "repository_stars": 1,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-23T09:36:38Z",
+      "supporting_file_count": 4,
+      "supporting_files": [
+        "skills/ai-coustics-audio-insight/evals/evals.json",
+        "skills/ai-coustics-audio-insight/scripts/_aic_models.py",
+        "skills/ai-coustics-audio-insight/scripts/score.py",
+        "skills/ai-coustics-audio-insight/skill-card.md"
+      ],
+      "referenced_repository_paths": [
+        "scripts/_aic_models.py"
+      ],
+      "dependencies": [
+        "uv and Python 3.11 or newer; the script declares aic-sdk>=3.1.0, numpy, soundfile and certifi inline, and uv installs them on first run",
+        "AIC SDK license key in AIC_SDK_LICENSE_KEY, AIC_LICENSE_KEY or AIC_SDK_LICENSE (self-service key from the vendor developer site)",
+        "Network access to artifacts.ai-coustics.io for the model catalog and the first-run model download (cached in ~/.cache/aic-models); offline use needs a pre-downloaded .aicmodel passed with --model-path",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "risk_score measures machine impact on VAD, speech-to-text and speech-to-speech, not how the call sounded to a person; the 0.30 and 0.50 band cut-offs are indicative defaults that the skill says to calibrate on your own traffic.",
+        "Scores the caller-to-agent audio only, in 5-second windows; clips shorter than one window produce no score, and the skill says Tyto was built on English speech so thresholds may differ in other languages.",
+        "--out-json writes the file names and per-window scores that the skill tells you to upload to the vendor dashboard (call-analysis.ai-coustics.com); no audio is written into it.",
+        "Suggests pasting the --out-judge block next to call transcripts in an LLM-judge prompt and names a third-party typed-judgment API (TypeSafe Jev) as a consumer; there is no consent, redaction or retention guidance for recordings or transcripts.",
+        "The skill is MIT, but the AIC SDK and the model files need a license key and are governed by separate ai-coustics terms (skill card). Live scoring (aic.analyzer_pair) is mentioned but not covered."
+      ]
+    },
+    {
+      "name": "query-gecx-logs",
+      "provider": "Google Cloud",
+      "repository": "GoogleCloudPlatform/ccaas-observability",
+      "path": "skills/query-gecx-logs/SKILL.md",
+      "url": "https://github.com/GoogleCloudPlatform/ccaas-observability/blob/main/skills/query-gecx-logs/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1f0e208dd642449d8ee33e0b7426284a1b364351",
+      "verified_manifest_sha256": "5c176bab690deffaf9871c81d8bb5c6da475a0425b59331f2f321cd1b0149642",
+      "language": "Shell (gcloud)",
+      "purpose": "Query Google Cloud Logging for contact center, Dialogflow CX and CX Agent Studio sessions, including Phone Gateway and SIP call logs, tool failures and Insights uploads.",
+      "selection": "optional-evaluation",
+      "license": "Apache-2.0",
+      "manifest_license": null,
+      "repository_stars": 6,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-29T09:50:14Z",
+      "supporting_file_count": 1,
+      "supporting_files": [
+        "skills/query-gecx-logs/references/logging_queries.md"
+      ],
+      "referenced_repository_paths": [
+        "../../gecx_environments.yaml",
+        "references/logging_queries.md",
+        "skills/discover-gecx-environments/scripts/discover_environments.py"
+      ],
+      "dependencies": [
+        "gcloud CLI signed in with permission to read Cloud Logging in the logs project; curl with gcloud auth print-access-token for the Contact Center Insights REST recipes; jq for some recipes in the cookbook",
+        "gecx_environments.yaml at the repository root, created by the discover-gecx-environments skill (the skill links to ../../gecx_environments.yaml, outside its own folder)",
+        "Conversation logging on the Dialogflow agent or CX Agent Studio app, and Data Access audit logs, for transcripts, tool calls and audio URIs to appear",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "Reads production conversation logs: transcripts, tool outputs, model latencies and token counts, user-audio storage URIs, Insights summaries and CRM ticket ids. Nothing in the skill covers PII, consent or retention.",
+        "Recipes pass gcloud access tokens to curl and run with the signed-in user's permissions; use an account limited to read-only logging access.",
+        "When gecx_environments.yaml is missing the skill says it MUST run the discovery script first, so a first log query can write a config file and call several Google APIs.",
+        "Depends on the repository layout (../../gecx_environments.yaml and skills/discover-gecx-environments/scripts/), so it does not work if only this folder is installed.",
+        "Covers CCaaS, Dialogflow CX and ES, CX Agent Studio and Contact Center Insights together, chat as well as voice; the telephony parts are the incoming_call (Phone Gateway and SIP) logs and the audio URIs.",
+        "Warns that many CCaaS failures are logged at INFO or DEFAULT severity, so a severity>=ERROR filter can look healthy; the keyword and tracker-id recipes are the workaround. Some recipes rely on alpha and beta Google APIs (for example Dialogflow v2beta1 Conversation Profiles) that can change."
+      ]
+    },
+    {
+      "name": "discover-gecx-environments",
+      "provider": "Google Cloud",
+      "repository": "GoogleCloudPlatform/ccaas-observability",
+      "path": "skills/discover-gecx-environments/SKILL.md",
+      "url": "https://github.com/GoogleCloudPlatform/ccaas-observability/blob/main/skills/discover-gecx-environments/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "1f0e208dd642449d8ee33e0b7426284a1b364351",
+      "verified_manifest_sha256": "67e2f31eb0763e3bffc8193d77cc8bb7e62324901d9be065fa798c7fce4cf8e5",
+      "language": "Python / REST",
+      "purpose": "Discover a Google Cloud project's contact center, Dialogflow CX, CX Agent Studio and Insights resources and save them to gecx_environments.yaml for the log-query skill.",
+      "selection": "optional-provider-workflow",
+      "license": "Apache-2.0",
+      "manifest_license": null,
+      "repository_stars": 6,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-29T09:50:14Z",
+      "supporting_file_count": 2,
+      "supporting_files": [
+        "skills/discover-gecx-environments/references/gecx_overview.md",
+        "skills/discover-gecx-environments/scripts/discover_environments.py"
+      ],
+      "referenced_repository_paths": [
+        "../../gecx_environments.yaml",
+        "../../gecx_environments.yaml.sample",
+        "../query-gecx-logs/SKILL.md",
+        "references/gecx_overview.md",
+        "scripts/discover_environments.py",
+        "skills/discover-gecx-environments/scripts/discover_environments.py"
+      ],
+      "dependencies": [
+        "Python 3 with PyYAML and a signed-in gcloud CLI (the script runs gcloud auth print-access-token, then the application-default variant)",
+        "A Google Cloud project id with read access to the contact center, Dialogflow, CX Agent Studio, Contact Center Insights and Cloud Logging APIs",
+        "gecx_environments.yaml.sample at the repository root (not packaged in the skill folder); the config path defaults to the working directory",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "scripts/discover_environments.py sends your gcloud OAuth token to contactcenteraiplatform.googleapis.com (v1alpha1), dialogflow.googleapis.com (v2, v3, v2beta1), ces.googleapis.com and contactcenterinsights.googleapis.com with read-only requests and lists Cloud Logging sinks. Without --dry-run it then writes or updates gecx_environments.yaml in the working directory.",
+        "The YAML can hold project ids, audio export bucket names, Conversation Profile targets and Insights settings; keep it out of public repositories.",
+        "It lists one Insights conversation per location to test whether the location is active, so it touches conversation metadata.",
+        "403 and 404 responses are ignored silently across many regions, so an empty result can mean missing permission rather than no resources. The environment name is guessed from the project id when --env-name is not given.",
+        "Depends on repository-root files (gecx_environments.yaml and its .sample) that sit outside the skill folder."
+      ]
+    },
+    {
+      "name": "dograh",
+      "provider": "Dograh",
+      "repository": "dograh-hq/skills",
+      "path": "skills/dograh/SKILL.md",
+      "url": "https://github.com/dograh-hq/skills/blob/main/skills/dograh/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "47d5dfa0a6e880cb024224f520ddfd98782ab592",
+      "verified_manifest_sha256": "f300086970a360f11ba2247f44dc8107e37b7ac9f2ef025c2fa7d801a84853a9",
+      "language": "REST",
+      "purpose": "Trigger outbound calls, route inbound calls, create agents from workflow definitions, run bulk campaigns and process call results through webhooks with the Dograh REST API.",
+      "selection": "recommended",
+      "license": null,
+      "manifest_license": null,
+      "repository_stars": 9,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-04-01T12:14:14Z",
+      "supporting_file_count": 5,
+      "supporting_files": [
+        "skills/dograh/references/campaigns.md",
+        "skills/dograh/references/inbound-calls.md",
+        "skills/dograh/references/triggering-outbound-calls.md",
+        "skills/dograh/references/webhooks.md",
+        "skills/dograh/references/workflow-schema.md"
+      ],
+      "referenced_repository_paths": [
+        "references/campaigns.md",
+        "references/inbound-calls.md",
+        "references/triggering-outbound-calls.md",
+        "references/webhooks.md",
+        "references/workflow-schema.md"
+      ],
+      "dependencies": [
+        "Dograh API key (dg_...) sent as X-API-Key to api.dograh.com/api/v1 or to a self-hosted instance",
+        "A telephony provider configured in Dograh for real calls, with phone numbers in E.164 format",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "API triggers and bulk campaigns place real outbound calls (a CSV of contacts with concurrency and retry settings); the skill gives no consent, TCPA or do-not-call guidance.",
+        "Overlaps the docs-hosted Dograh skill. This repository's latest commit is from April 1, 2026, so check its endpoints and workflow schema against the current docs.",
+        "Run records and webhook payloads carry transcripts, recordings, gathered data and cost, with no retention guidance."
+      ]
+    },
+    {
+      "name": "aai-cli",
+      "provider": "AssemblyAI",
+      "repository": "AssemblyAI/cli",
+      "path": "aai_cli/skills/aai-cli/SKILL.md",
+      "url": "https://github.com/AssemblyAI/cli/blob/main/aai_cli/skills/aai-cli/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "90f7d7c7a8d833e7883d93ae82320c43c8fbb946",
+      "verified_manifest_sha256": "75fa6a5939f4c6d4f9543ff73f490423391fbd2837a41e58f3238fc3c2d3f83d",
+      "language": "Shell / CLI",
+      "purpose": "Use the assembly command line to transcribe files and URLs, stream live transcription, hold a terminal conversation with the Voice Agent, query the LLM Gateway, and scaffold starter apps including a voice-agent app.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT",
+      "manifest_license": null,
+      "repository_stars": 4,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-08-17T23:55:31Z",
+      "supporting_file_count": 4,
+      "supporting_files": [
+        "aai_cli/skills/aai-cli/references/account.md",
+        "aai_cli/skills/aai-cli/references/history.md",
+        "aai_cli/skills/aai-cli/references/setup.md",
+        "aai_cli/skills/aai-cli/references/transcription.md"
+      ],
+      "referenced_repository_paths": [
+        "references/account.md",
+        "references/history.md",
+        "references/setup.md",
+        "references/transcription.md"
+      ],
+      "dependencies": [
+        "assembly CLI installed from the project's official install path (the skill does not name it and warns that the PyPI name assemblyai-cli belongs to an unrelated third party)",
+        "AssemblyAI API key from assembly login (browser sign-in, stored in the OS keyring) or the ASSEMBLYAI_API_KEY environment variable; a key only works against the environment that issued it (--env or --sandbox)",
+        "Optional: ffmpeg for clip and caption, yt-dlp for media-page URLs, a microphone for stream and agent, npx and claude for assembly setup",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "The CI example assembly login --api-key puts the key on the command line, where it lands in shell history and process listings; the skill avoids that for run commands on purpose, so use the ASSEMBLYAI_API_KEY environment variable instead.",
+        "assembly keys create prints the full key once and assembly init writes the key to a .env file in the new project and starts a local server; the account commands (balance, usage, limits, audit) read billing and account data.",
+        "assembly setup install changes your coding agent's setup: it registers the assemblyai-docs MCP server with claude mcp add and downloads the assemblyai skill with npx skills add.",
+        "Transcribe, stream, llm, clip and caption send audio and transcripts to AssemblyAI and its LLM Gateway, and media-page URLs are downloaded with yt-dlp; redaction flags exist, but there is no consent, retention or phone-call guidance.",
+        "Command-line only: assembly agent is a live terminal conversation that produces no code, and there is no telephony, SIP or phone-number handling; the skill sends app builders to assembly init voice-agent.",
+        "Overlaps the AssemblyAI SDK and API skill in AssemblyAI/assemblyai-skill (same vendor); this one covers only the CLI."
+      ]
+    },
+    {
+      "name": "google-agents-cli-adk-code",
+      "provider": "Google Cloud",
+      "repository": "google/agents-cli",
+      "path": "skills/google-agents-cli-adk-code/SKILL.md",
+      "url": "https://github.com/google/agents-cli/blob/main/skills/google-agents-cli-adk-code/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "2c3945901e8e5cc933fa94fa44d1d4aaf644b596",
+      "verified_manifest_sha256": "654e04bb5c670b557b8c86c36c327bbc5117bc80c5bd061902bd5e22504bda85",
+      "language": "Python",
+      "purpose": "Build Google ADK voice agents on the Gemini Live API: Runner.run_live and LiveRequestQueue streaming, Live model and region choice, voice and turn-taking settings, non-blocking tools, session limits, and serving and testing /run_live; the skill also covers general ADK agent code in Python and Go.",
+      "selection": "optional-provider-workflow",
+      "license": "Apache-2.0",
+      "manifest_license": "Apache-2.0",
+      "repository_stars": 6035,
+      "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
+      "source_repository_commit_at": "2026-09-30T11:14:13Z",
+      "supporting_file_count": 6,
+      "supporting_files": [
+        "skills/google-agents-cli-adk-code/references/adk-go-workflows.md",
+        "skills/google-agents-cli-adk-code/references/adk-go.md",
+        "skills/google-agents-cli-adk-code/references/adk-python-live.md",
+        "skills/google-agents-cli-adk-code/references/adk-python-workflows.md",
+        "skills/google-agents-cli-adk-code/references/adk-python.md",
+        "skills/google-agents-cli-adk-code/references/samples.md"
+      ],
+      "referenced_repository_paths": [
+        "references/adk-go-workflows.md",
+        "references/adk-go.md",
+        "references/adk-python-live.md",
+        "references/adk-python-workflows.md",
+        "references/adk-python.md",
+        "references/samples.md"
+      ],
+      "dependencies": [
+        "agents-cli installed with uv tool install google-agents-cli, and a scaffolded project: the skill says not to write agent code until agents-cli scaffold create (or scaffold enhance) has produced one",
+        "Google ADK for Python with the Gemini Live API toolkit (Runner.run_live, LiveRequestQueue); the Live reference is Python only",
+        "Gemini Live model access: Vertex AI in a regional location such as us-central1 (not global), or a Gemini API key from AI Studio",
+        "Preserve supporting references when installing"
+      ],
+      "concerns": [
+        "General ADK code reference for Python and Go: voice is one Python-only reference (references/adk-python-live.md); the Go reference has no Live or voice section.",
+        "Names specific Live model IDs (gemini-3.8-live, gemini-3.8-live-extended-thinking and the legacy gemini-live-2.5-flash-native-audio) and says IDs change often, so check Google's Live API model pages before shipping.",
+        "The conversion checklist edits a scaffolded project: it deletes the A2A routes and the a2a-sdk dependency, drops the Gemini Enterprise publish step and rewrites the scaffolded integration tests, so review the diff before accepting it.",
+        "Live agents stream caller audio and video frames to Google's Live API. Transcription is on by default and save_live_blob can persist audio and video artifacts, with no consent, PII or retention guidance.",
+        "Live agents cannot be served over A2A or published to Gemini Enterprise, and sessions are capped (15 minutes audio-only on the Gemini Live API, 10 on Agent Runtime) unless session resumption and context window compression are enabled; compression summarizes older turns.",
+        "No telephony guidance: phone assistants appear only as a use case and as a phone bridge client, with no SIP or phone-number setup.",
+        "Evaluating a live agent (agents-cli eval run --mode adk_live) is in the sibling google-agents-cli-eval skill, which is not indexed here because it is a general agent-evaluation skill."
+      ]
     }
   ],
   "docs_hosted_skills": [
+    {
+      "name": "ai",
+      "provider": "ai-coustics",
+      "host": "docs.ai-coustics.com",
+      "index_url": "https://docs.ai-coustics.com/.well-known/agent-skills/index.json",
+      "url": "https://docs.ai-coustics.com/.well-known/agent-skills/ai/skill.md",
+      "sha256": "e40d4fe10bf76f0b872a8368873573535bf07b794b89ba7b0b9afce12633ea4e",
+      "bytes": 13494,
+      "retrieved_at": "2026-09-30T23:22:20.465994+00:00",
+      "selection": "optional-speech-api",
+      "language": "Cross-language",
+      "purpose": "Integrate the ai-coustics SDK for speech enhancement, voice activity detection and Tyto audio-quality analysis in voice agents and transcription pipelines.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:25 GMT",
+      "dependencies": [
+        "AIC SDK license key (AIC_SDK_LICENSE on servers, or short-lived JWTs minted by your backend for clients)",
+        "ai-coustics SDK for Python, Node.js, C, C++, Rust or WebAssembly, plus .aicmodel files from the vendor model catalog",
+        "Network access for activation, usage reporting and token refresh",
+        "Paired original and enhanced recordings with a human reference transcript for the WER comparison workflow"
+      ],
+      "concerns": [
+        "Processing is local but the SDK needs online authorization and usage reporting, so downloading a model does not make disconnected operation possible.",
+        "Client-side use needs a backend that mints short-lived tokens; the skill says never to embed keys in client bundles or URLs.",
+        "Examples pin model ids such as quail-vf-2.2-l-16khz, and the skill says deprecated ids are not aliases for current models, so examples can go stale.",
+        "The generic skill name ai can collide with other installed skills.",
+        "Covers call audio and WER checks on recordings with no consent or retention guidance.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
     {
       "name": "assemblyai",
       "provider": "AssemblyAI",
@@ -12783,6 +14292,65 @@
       ]
     },
     {
+      "name": "blackbox",
+      "provider": "Dasha",
+      "host": "docs.blackbox.dasha.ai",
+      "index_url": "https://docs.blackbox.dasha.ai/.well-known/agent-skills/index.json",
+      "url": "https://docs.blackbox.dasha.ai/.well-known/agent-skills/blackbox/skill.md",
+      "sha256": "e69db249075591c9c2fc9a23d65745e87c7efdfb4b01368c5da08143c70adbac",
+      "bytes": 11358,
+      "retrieved_at": "2026-09-30T23:22:21.560454+00:00",
+      "selection": "recommended",
+      "language": "REST",
+      "purpose": "Build, test and deploy Dasha BlackBox voice agents for phone and web calls: agent configuration (LLM, TTS, STT), tools and webhooks, SIP phone numbers, call monitoring and troubleshooting.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 22:11:37 GMT",
+      "dependencies": [
+        "Dasha BlackBox account and API key, sent as Authorization: Bearer against https://blackbox.dasha.ai/api/v1",
+        "HTTPS webhook endpoints that answer within 30 seconds for tools and transfers, and a SIP trunk or phone number for telephony",
+        "Accounts for the LLM, TTS and STT vendors configured on the agent (the file names OpenAI, Groq, DeepSeek, ElevenLabs, Cartesia and Dasha voices)"
+      ],
+      "concerns": [
+        "Configuration changes apply immediately to active calls. New agents start disabled, and the skill says to disable an enabled agent before major changes.",
+        "Creating calls and linking phone numbers places real calls and changes inbound routing; linking a number to a new agent unlinks it from the previous one.",
+        "Tool and transfer webhooks send call arguments and ids to your endpoints and may be retried, so the skill says to make them idempotent.",
+        "Vendor, model and latency figures (targets under 2 seconds and under 5 percent errors, disable above 10 percent) are the file's own point-in-time rules of thumb and cannot be verified from it.",
+        "Covers outbound calls, transcripts and recordings with no consent or retention guidance. The skill says not to use it for account creation, billing or dashboard-only operations.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
+      "name": "dograhai",
+      "provider": "Dograh",
+      "host": "docs.dograh.com",
+      "index_url": "https://docs.dograh.com/.well-known/agent-skills/index.json",
+      "url": "https://docs.dograh.com/.well-known/agent-skills/dograhai/skill.md",
+      "sha256": "e6c47c90bea93685b47b2bb6ca4d248a6f57ba46542609e42a82ccf08086befc",
+      "bytes": 13098,
+      "retrieved_at": "2026-09-30T23:22:21.238722+00:00",
+      "selection": "recommended",
+      "language": "REST",
+      "purpose": "Build, deploy and run Dograh open-source voice agents: workflow graphs, telephony configuration, API-triggered calls and campaigns, call data extraction, webhooks and tools.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:25 GMT",
+      "dependencies": [
+        "Dograh account on app.dograh.com or a self-hosted Docker deployment, and an organization-scoped API key sent as X-API-Key (shown once when created)",
+        "A telephony provider for real calls (Twilio, Vonage, Exotel and others) configured in the dashboard, with phone numbers in E.164 format",
+        "LLM, TTS and STT provider accounts selected in the workflow settings"
+      ],
+      "concerns": [
+        "API triggers and campaigns place real outbound calls. Campaigns dial continuously when no time slots are set, and the skill gives no consent or do-not-call guidance.",
+        "Production calls run only the last published workflow, so edits do nothing until published and publishing changes live call handling; the test URL runs the latest draft.",
+        "A template variable missing from initial_context is spoken aloud as the literal placeholder, and gathered_context is available only to webhooks and run records, not to prompts.",
+        "Webhooks fire after each call with extracted data; non-200 responses are logged and do not retry unless retry_config is set. Run records hold transcripts and recordings, with no retention guidance.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
       "name": "gladia",
       "provider": "Gladia",
       "host": "docs.gladia.io",
@@ -12808,6 +14376,115 @@
         "Processes audio and transcripts, including speaker identification and PII redaction options, without stating consent or retention duties.",
         "Usage is metered and concurrency-limited (two-channel audio is billed at twice the duration); figures cannot be verified from the file.",
         "Suggests ngrok-style public tunnels for local callback testing, which exposes a local endpoint to the internet.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
+      "name": "realtime-api",
+      "provider": "Inworld",
+      "host": "inworld.ai",
+      "index_url": "https://inworld.ai/.well-known/agent-skills/index.json",
+      "url": "https://inworld.ai/.well-known/agent-skills/realtime-api.md",
+      "sha256": "22e28b4e25f92263b69232490be748bb2541f67b2bac5bf57535f86286ff1498",
+      "bytes": 533,
+      "retrieved_at": "2026-09-30T23:22:23.983699+00:00",
+      "selection": "optional-reference",
+      "language": "REST",
+      "purpose": "Pointer to the Inworld Realtime API for speech-to-speech voice sessions: the realtime session WebSocket, the realtime calls endpoint, Basic authentication and links to the realtime docs.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 20:49:09 GMT",
+      "dependencies": [
+        "Inworld API key, sent as Authorization: Basic <key> for HTTP requests",
+        "Network access to wss://api.inworld.ai/api/v1/realtime/session or POST /v1/realtime/calls"
+      ],
+      "concerns": [
+        "About 500 bytes: two endpoints, an auth line and two links, then 'see the product docs' for session setup and transport. It does not explain events, audio formats or client-side authentication.",
+        "Inworld's current docs say direct Realtime clients use session tokens, which the docs mark deprecated, while other clients use backend-minted one-time tokens; use the docs for browser and device clients.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
+      "name": "stt-api",
+      "provider": "Inworld",
+      "host": "inworld.ai",
+      "index_url": "https://inworld.ai/.well-known/agent-skills/index.json",
+      "url": "https://inworld.ai/.well-known/agent-skills/stt-api.md",
+      "sha256": "238c6f6552bc0eda53b77b04f1f9905e6202c641fe87f10a5ca135d3147d337e",
+      "bytes": 404,
+      "retrieved_at": "2026-09-30T23:22:23.658152+00:00",
+      "selection": "optional-reference",
+      "language": "REST",
+      "purpose": "Pointer to the Inworld speech-to-text API: the transcription endpoint, Basic authentication with an API key and links to the STT docs.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 20:49:09 GMT",
+      "dependencies": [
+        "Inworld API key, sent as Authorization: Basic <key> to api.inworld.ai",
+        "Network access to api.inworld.ai/stt/v1/transcribe"
+      ],
+      "concerns": [
+        "About 400 bytes: one endpoint, the auth header and two links. It does not say what audio formats or options the endpoint takes.",
+        "Covers only the batch transcription endpoint; Inworld's current llms.txt also lists a bidirectional streaming WebSocket (/stt/v1/transcribe:streamBidirectional) that the skill does not mention.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
+      "name": "tts-api",
+      "provider": "Inworld",
+      "host": "inworld.ai",
+      "index_url": "https://inworld.ai/.well-known/agent-skills/index.json",
+      "url": "https://inworld.ai/.well-known/agent-skills/tts-api.md",
+      "sha256": "f18279d6c4ff70b0ac2848b06e525f517393b403782727c97c826389e17f9d0d",
+      "bytes": 610,
+      "retrieved_at": "2026-09-30T23:22:23.331645+00:00",
+      "selection": "optional-reference",
+      "language": "REST",
+      "purpose": "Pointer to the Inworld text-to-speech API: the two synthesis endpoints, Basic authentication with an API key, the required text input and links to the TTS docs.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 20:49:09 GMT",
+      "dependencies": [
+        "Inworld API key, sent as Authorization: Basic <key> to api.inworld.ai",
+        "Network access to api.inworld.ai/tts/v1/voice or /tts/v1/voice:stream"
+      ],
+      "concerns": [
+        "About 600 bytes: two endpoints, the auth header, one required and two optional inputs and two links. It does not cover voice choice, streaming handling, limits or errors.",
+        "Its example model id inworld-tts-1.5-max is marked deprecated in Inworld's current llms.txt, which names inworld-tts-2 and inworld-tts-2-flash as the current models.",
+        "The skill shows only API-key Basic authentication; Inworld's docs say clients that must not hold the key use backend-minted one-time tokens.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
+      "name": "millisai",
+      "provider": "Millis AI",
+      "host": "docs.millis.ai",
+      "index_url": "https://docs.millis.ai/.well-known/agent-skills/index.json",
+      "url": "https://docs.millis.ai/.well-known/agent-skills/millisai/skill.md",
+      "sha256": "4fd1e2eac51a25e34d70ae977778412073a1dd055a29bae1f99d1ba61b8e702b",
+      "bytes": 10751,
+      "retrieved_at": "2026-09-30T23:22:21.983786+00:00",
+      "selection": "optional-provider-workflow",
+      "language": "REST",
+      "purpose": "Build Millis AI voice agents and reach them from phone, web or custom integrations: agent configuration, webhooks, the Web SDK, outbound calls, Twilio inbound, campaigns and metadata.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:27 GMT",
+      "dependencies": [
+        "Millis account with a private API key for the backend and a public key for web clients (app.millis.ai/settings/keys), and the US (api-west.millis.ai) or EU (api-eu-west.millis.ai) endpoint",
+        "Optional @millisai/web-sdk from npm for browser use, and Twilio or Vonage for phone numbers",
+        "HTTPS webhook endpoints for prefetch data and end-of-call data"
+      ],
+      "concerns": [
+        "The provider landscape guide lists Millis AI with its status unverified; confirm the service is current before building on it.",
+        "Outbound call and campaign APIs place real calls, and the file says outbound supports US numbers only. There is no consent or do-not-call guidance.",
+        "Web clients and the Twilio inbound URL carry the public key, which the file says requires public key exposure; keep the private key on the backend.",
+        "Latency and price claims (600 ms, about $0.004 per minute for GPT-4o, about $0.00018 per minute for Llama-3) are point-in-time figures that cannot be verified from the file.",
+        "The end-of-call webhook receives the full chat history, function calls and costs. With Data Opt-Out on, history is not retained and session continuation fails.",
         "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
         "No license is stated in the file or by a repository; link-only."
       ]
@@ -12871,6 +14548,35 @@
         "Covered actions can place calls, send messages, rent numbers, change routing and spend money; the file requires showing the change first, using --dry-run, and getting user agreement before --yes.",
         "Regulatory guidance is limited to India (accepted compliance application, both call legs in India, no cold calling) and two-way SMS sender rules; no TCPA or recording-consent guidance.",
         "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256."
+      ]
+    },
+    {
+      "name": "polyai",
+      "provider": "PolyAI",
+      "host": "docs.poly.ai",
+      "index_url": "https://docs.poly.ai/.well-known/agent-skills/index.json",
+      "url": "https://docs.poly.ai/.well-known/agent-skills/polyai/skill.md",
+      "sha256": "f895aded90464a145bc24dc214d0f197b68d6047424f7d29d1198720dd2221bf",
+      "bytes": 10130,
+      "retrieved_at": "2026-09-30T23:22:20.152128+00:00",
+      "selection": "recommended",
+      "language": "Cross-language",
+      "purpose": "Build, deploy and maintain PolyAI voice and chat agents across Agent Studio, the ADK command line and the REST APIs.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": null,
+      "dependencies": [
+        "PolyAI account and region-specific API keys (us, uk, eu or studio); Agents API at api.{region}.poly.ai, Conversations and Messaging APIs at api.{region}-1.platform.polyai.app",
+        "poly CLI (polyai-adk) for the ADK workflow",
+        "Optional integrations named in the skill: Salesforce, Zendesk, Twilio, Five9, NICE and MCP servers"
+      ],
+      "concerns": [
+        "Publishing steps act on production: it says poly branch merge on main publishes to Live and mentions rollback, with no confirmation step.",
+        "Conflicts with the ADK repository skills on publishing (they say merging into main deploys to sandbox and promotion is separate) and on project layout (config/ and src/ here, agent_settings/, flows/ and topics/ there).",
+        "Product claims (Raven model, sub-300ms latency, 24+ languages) are stated without sources.",
+        "Covers Conversations API transcripts and audio with no consent or retention guidance; wrong region or base URL for a key is a listed gotcha.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
       ]
     },
     {
@@ -13092,6 +14798,66 @@
       ]
     },
     {
+      "name": "agent",
+      "provider": "Vision Agents",
+      "host": "visionagents.ai",
+      "index_url": "https://visionagents.ai/.well-known/agent-skills/index.json",
+      "url": "https://visionagents.ai/.well-known/agent-skills/agent/skill.md",
+      "sha256": "e26440d715ee9eb8ec22c64b277008578ae6fc176b2d27549b331366e5c7ab70",
+      "bytes": 11282,
+      "retrieved_at": "2026-09-30T23:22:20.821321+00:00",
+      "selection": "recommended",
+      "language": "Python",
+      "purpose": "Build real-time voice and video AI agents with the open-source Vision Agents Python framework: edge transport, swappable LLM, speech and vision plugins, function calling, MCP, RAG, testing and deployment.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:24 GMT",
+      "dependencies": [
+        "Python with uv and the vision-agents package (uvx vision-agents init scaffolds a project)",
+        "STREAM_API_KEY and STREAM_API_SECRET for the default Stream Video edge transport, plus a key for each chosen plugin (for example GOOGLE_API_KEY, OPENAI_API_KEY, DEEPGRAM_API_KEY, ELEVENLABS_API_KEY)",
+        "Docker for container deployment, and Redis, Helm and Kubernetes for scaled deployments"
+      ],
+      "concerns": [
+        "Covers voice and video agents together. The voice path is a custom STT, LLM and TTS pipeline or a realtime model; phone integration with Twilio or Telnyx is listed as a use but not walked through.",
+        "Realtime mode disables STT, TTS and turn detection, and an STT with built-in turn detection (Deepgram, ElevenLabs) makes a separate turn_detection plugin ignored. Each call needs a new Agent instance, and registered functions must be async.",
+        "Audio and video go to the Stream edge and to whichever plugin providers you choose; nothing in the file covers consent or retention.",
+        "The HTTP server mode needs session limits (max_concurrent_sessions, max_sessions_per_call, agent_idle_timeout) to avoid resource exhaustion, and remote MCP servers default to a 10-second timeout.",
+        "The generic skill name agent can collide with other installed skills.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
+      "name": "elto",
+      "provider": "Vogent",
+      "host": "docs.vogent.ai",
+      "index_url": "https://docs.vogent.ai/.well-known/agent-skills/index.json",
+      "url": "https://docs.vogent.ai/.well-known/agent-skills/elto/skill.md",
+      "sha256": "96090d5ae5b95e01425ef5aa4761eb27e698bccf72956778caa7ce3be04fa501",
+      "bytes": 11495,
+      "retrieved_at": "2026-09-30T23:22:22.294881+00:00",
+      "selection": "optional-provider-workflow",
+      "language": "REST",
+      "purpose": "Build Vogent voice agents: prompted or Flow Builder agents, phone numbers, dials and batch dial jobs, extractors, function calls, IVR handling and counterfactual tests on past calls.",
+      "license": null,
+      "license_status": "No license is stated in the file; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:28 GMT",
+      "dependencies": [
+        "Vogent account and API key, sent as Authorization: api_key against https://api.vogent.ai/api",
+        "Phone numbers bought in the dashboard or imported over SIP from Twilio, Vonage or Telnyx, with carrier routing to sip.vogent.ai",
+        "Optional webhook endpoint with a stored signing secret for dial and extractor events"
+      ],
+      "concerns": [
+        "The provider landscape guide lists Vogent as acquired by Aircall on May 6, 2026; check the product and API status before building on it.",
+        "Dials and batch dial jobs place real calls. A batch job is created idle and starts only when it is unpaused, and the skill gives no consent or do-not-call guidance.",
+        "Prompt keywords let the agent press phone keys and hang up (<|press:1|>, <|hangup|>), and IVR detection lets it work through phone menus.",
+        "Counterfactuals replay a past transcript up to each line, so they do not show how the conversation would have gone with a new prompt.",
+        "Voice cloning advice (10 to 20 seconds of conversational audio) has no consent or rights guidance.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
+        "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
       "name": "voiceflow",
       "provider": "Voiceflow",
       "host": "voiceflow.com",
@@ -13120,6 +14886,96 @@
         "Interact turns consume pooled organization credits, and transcript and analytics queries return end-user conversation data with no PII or retention guidance.",
         "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
         "No license is stated in the file or by a repository; link-only."
+      ]
+    },
+    {
+      "name": "agent-creation",
+      "provider": "Zero Runtime",
+      "host": "docs.zeroruntime.ai",
+      "index_url": "https://docs.zeroruntime.ai/.well-known/agent-skills/index.json",
+      "url": "https://docs.zeroruntime.ai/.well-known/agent-skills/agent-creation/skill.md",
+      "sha256": "f5ae41d8c067d1477f6730d53cd5736e39047d77305aa2ceaf5d78d14d957777",
+      "bytes": 22360,
+      "retrieved_at": "2026-09-30T23:22:22.667320+00:00",
+      "selection": "recommended",
+      "language": "Multiple languages",
+      "purpose": "Create, register, run and deploy Zero Runtime voice agents: agent class, agent id registration, lifecycle hooks, session control, serve, invoke and Dispatch startup, environment auth and Agent Cloud deployment.",
+      "license": null,
+      "license_status": "No repository license exists for a docs-hosted file. The manifest declares Proprietary, which is not independently confirmed; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:28 GMT",
+      "dependencies": [
+        "Zero Runtime account with ZERORUNTIME_AUTH_TOKEN (a JWT from app.zeroruntime.ai) and ZERORUNTIME_TARGET (for example us1.rt.zeroruntime.ai:443)",
+        "Python 3.11 or newer (zeroruntime), Node.js 20.11 or newer (@zeroruntime/js-sdk) or Go 1.26 or newer (zrt-golang-sdk)",
+        "One <PROVIDER>_API_KEY per direct provider plugin, or the Inference Gateway, which needs only the Zero Runtime token",
+        "Docker running locally for zrt up (Agent Cloud deployment)"
+      ],
+      "concerns": [
+        "The file declares license: Proprietary, so check Zero Runtime's terms before reusing or redistributing it.",
+        "The Dispatch API example posts to api.videosdk.live, the vendor's former VideoSDK domain, with the Zero Runtime token as the Authorization header; confirm the endpoint in the vendor docs before sending a token there.",
+        "zrt up builds and uploads the project and, with --env .env, its keys to the vendor's Agent Cloud and creates an immutable version; zrt down stops versions, and --force stops active sessions. The skill says never to bake keys into the image or commit .env.",
+        "The agent id comes from ZERORUNTIME_AGENT_ID (default zeroruntime_agent). Leaving it unset silently registers the default id, the skill's usual cause of a session never reaching a worker.",
+        "Python 3.13 and later break on the missing implicit event loop, some session calls (say with audio_data, warm_transfer) are marked reserved and not implemented, and gateway realtime (Gemini Live) is not available in the Go SDK.",
+        "Refers to sibling skills (conversation management, telephony, audio experience, multimodal, analytics) that are not in the vendor's published skill index.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256."
+      ]
+    },
+    {
+      "name": "pipeline-configuration",
+      "provider": "Zero Runtime",
+      "host": "docs.zeroruntime.ai",
+      "index_url": "https://docs.zeroruntime.ai/.well-known/agent-skills/index.json",
+      "url": "https://docs.zeroruntime.ai/.well-known/agent-skills/pipeline-configuration/skill.md",
+      "sha256": "f91e2e1fa38c6f6ba4712604b36f290c8a8a957e81d3389cd91b06336a4809d7",
+      "bytes": 20395,
+      "retrieved_at": "2026-09-30T23:22:22.893798+00:00",
+      "selection": "optional-provider-workflow",
+      "language": "Multiple languages",
+      "purpose": "Configure the Zero Runtime Pipeline: choose cascade, realtime or hybrid mode, wire STT, LLM, TTS, VAD, turn detection and denoise, add runtime and metrics hooks, provider fallback, wake-up nudges and mid-session swaps.",
+      "license": null,
+      "license_status": "No repository license exists for a docs-hosted file. The manifest declares Proprietary, which is not independently confirmed; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:29 GMT",
+      "dependencies": [
+        "Zero Runtime account with ZERORUNTIME_AUTH_TOKEN (a JWT from app.zeroruntime.ai) and ZERORUNTIME_TARGET (for example us1.rt.zeroruntime.ai:443)",
+        "One <PROVIDER>_API_KEY per direct provider plugin, or the Inference Gateway, which needs only the Zero Runtime token",
+        "Accounts for the chosen STT, LLM, TTS or realtime providers (the file lists Deepgram, Cartesia, AssemblyAI, Google, OpenAI, ElevenLabs, Gemini Live, AWS Nova Sonic, xAI, Azure and others)"
+      ],
+      "concerns": [
+        "The file declares license: Proprietary, so check Zero Runtime's terms before reusing or redistributing it.",
+        "Tells the agent to ask the user to pick cascade, realtime or hybrid mode before writing code, and to default to cascade if they decline.",
+        "The mode is derived from the components passed, so adding a tts next to a realtime model silently gives hybrid TTS. The file says a realtime model goes in the llm slot in one place and the realtime slot in another; check the current SDK reference.",
+        "Runtime hooks for stt and tts fully replace built-in processing, and a handler that does not yield the component's output silently kills that stage.",
+        "Latency thresholds (off unless set, about 1.5 to 2 times the observed median suggested) and wake-up intervals of 8 to 10 seconds or more are the file's rules of thumb without sources, and swapping components mid-call causes a brief gap.",
+        "Says Sarvam AI as the LLM does not support function tools or MCP tools.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256."
+      ]
+    },
+    {
+      "name": "tools-and-agent-extensions",
+      "provider": "Zero Runtime",
+      "host": "docs.zeroruntime.ai",
+      "index_url": "https://docs.zeroruntime.ai/.well-known/agent-skills/index.json",
+      "url": "https://docs.zeroruntime.ai/.well-known/agent-skills/tools-and-agent-extensions/skill.md",
+      "sha256": "f7e73301203057e9560dadfa72b3962db4fafcad6486f1d8c611b16d1e10ce55",
+      "bytes": 15276,
+      "retrieved_at": "2026-09-30T23:22:23.093673+00:00",
+      "selection": "optional-provider-workflow",
+      "language": "Multiple languages",
+      "purpose": "Add function tools and MCP servers to a Zero Runtime agent: decorator and factory tool definitions, tool-call limits, runtime tool updates, STDIO and HTTP MCP servers and RAG.",
+      "license": null,
+      "license_status": "No repository license exists for a docs-hosted file. The manifest declares Proprietary, which is not independently confirmed; link-only.",
+      "http_last_modified": "Wed, 30 Sep 2026 21:58:29 GMT",
+      "dependencies": [
+        "Zero Runtime account with ZERORUNTIME_AUTH_TOKEN (a JWT from app.zeroruntime.ai) and ZERORUNTIME_TARGET (for example us1.rt.zeroruntime.ai:443)",
+        "A tool-capable LLM (any supported LLM except Sarvam AI), and for MCP either a local command the worker can run (STDIO) or a reachable HTTP endpoint with auth headers",
+        "An explicit JSON parameter schema for every Node.js and Go tool (Python infers it from type hints and the docstring)"
+      ],
+      "concerns": [
+        "The file declares license: Proprietary, so check Zero Runtime's terms before reusing or redistributing it.",
+        "Tools run with the worker's credentials and MCP discovery has no allowlist, so anything a connected server exposes becomes callable. The skill says to treat every tool as an authenticated action surface.",
+        "STDIO MCP servers run as local subprocesses of the worker and must exist in the deployed image. Secrets go through env or headers, and the skill says never to put secrets in tool descriptions, which are sent to the model.",
+        "Tool calls per turn are capped at 10 by default (ContextWindow.max_tool_calls_per_turn), and a chain can stop silently at the cap. Parallel tool calls depend on the model (Claude and GPT-4o yes, Gemini one at a time).",
+        "Slow tools cause dead air, so the skill says to speak a holding line first and keep handlers fast; retries and interrupted turns make non-idempotent tools risky.",
+        "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256."
       ]
     }
   ],
@@ -13166,13 +15022,83 @@
         "https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/voicelive/azure-ai-voicelive/azure/ai/voicelive/aio/_patch.py"
       ],
       "result": "Transcription manifest excluded for absent streaming/batch methods. Retained VoiceLive languages have explicit Java preview-version, TypeScript handler and .NET hierarchy qualifications. Python central workflow present. This is source inspection, not runtime compatibility certification."
+    },
+    {
+      "topic": "Major-provider coverage check",
+      "evidence": [
+        "https://github.com/polyai/adk/tree/main/skills",
+        "https://github.com/CINTELLILABS/bland-plugins",
+        "https://github.com/ai-coustics/skills",
+        "https://github.com/GoogleCloudPlatform/ccaas-observability",
+        "https://github.com/dograh-hq/skills",
+        "https://github.com/AssemblyAI/cli",
+        "https://github.com/google/agents-cli",
+        "https://docs.poly.ai/.well-known/agent-skills/index.json",
+        "https://visionagents.ai/.well-known/agent-skills/index.json",
+        "https://docs.dograh.com/.well-known/agent-skills/index.json",
+        "https://docs.ai-coustics.com/.well-known/agent-skills/index.json",
+        "https://docs.blackbox.dasha.ai/.well-known/agent-skills/index.json",
+        "https://docs.millis.ai/.well-known/agent-skills/index.json",
+        "https://docs.vogent.ai/.well-known/agent-skills/index.json",
+        "https://docs.zeroruntime.ai/.well-known/agent-skills/index.json",
+        "https://inworld.ai/.well-known/agent-skills/index.json"
+      ],
+      "result": "Checked each provider on the coverage list (phone and transport platforms, managed voice-agent platforms, speech-to-text, text-to-speech, speech-to-speech, frameworks and testing tools) for an official skill: GitHub code search for SKILL.md in each vendor organization, repository searches by vendor name, and /.well-known/agent-skills/index.json probes on vendor documentation hosts. Added 35 repository skills from 7 repositories and 13 docs-hosted skills. The other providers were already indexed or bundled, or no official skill was found; docs/more-skills.md lists those under Major providers without an official skill yet. GitHub code search returns at most 300 results per query and some hosts could not be reached, so a missing skill is not proof that none exists."
+    },
+    {
+      "topic": "PolyAI publish path disagreement",
+      "evidence": [
+        "https://github.com/polyai/adk/blob/main/skills/poly-adk-workflow/SKILL.md",
+        "https://docs.poly.ai/.well-known/agent-skills/polyai/skill.md"
+      ],
+      "result": "The repository skill says merging into main deploys to sandbox and promotion to pre-release or live is a separate step; the docs-hosted skill says poly branch merge on main publishes to Live. Their project layouts also differ (agent_settings, flows and topics in one, config and src in the other). Not reconciled against a live project; both concerns are recorded."
+    },
+    {
+      "topic": "Bland plugin ownership and scripts",
+      "evidence": [
+        "https://github.com/CINTELLILABS/bland-skills/blob/master/README.md",
+        "https://github.com/CINTELLILABS/bland-plugins/blob/main/hooks/hooks.json",
+        "https://github.com/CINTELLILABS/bland-plugins/blob/main/bin/_credentials.cjs",
+        "https://github.com/CINTELLILABS/bland-plugins/blob/main/bin/engine.bundle.cjs"
+      ],
+      "result": "CINTELLILABS/bland-plugins is treated as Bland's own repository: the GitHub organization is named Bland AI, and the archived CINTELLILABS/bland-skills README says to use the official Bland plugin, linking to bland-plugins. Ownership was not otherwise confirmed. The plugin also installs hooks and Node scripts: a session status hook, a PreToolUse hook that pre-approves only its own norm-sync, norm-loop and norm-config scripts, a lint hook, Stop loop hooks, a credentials helper that looks for the Bland key in the environment, Claude Code settings, the Claude credentials file and the macOS keychain, and a v2 migration Stop hook. They were read in part or pattern-scanned; bin/engine.bundle.cjs (479 KB) was not read, and nothing was installed or run."
+    },
+    {
+      "topic": "Inworld TTS example model status",
+      "evidence": [
+        "https://docs.inworld.ai/llms.txt",
+        "https://inworld.ai/.well-known/agent-skills/tts-api.md"
+      ],
+      "result": "The tts-api skill's example model inworld-tts-1.5-max is marked deprecated in Inworld's own llms.txt; recorded as a concern on the skill."
+    },
+    {
+      "topic": "Major providers with no official skill found",
+      "reviewed_at": "2026-09-30T23:22:09.402188+00:00",
+      "evidence": [
+        "https://github.com/Vonage",
+        "https://github.com/Bandwidth",
+        "https://github.com/HumeAI",
+        "https://github.com/speechmatics",
+        "https://github.com/soniox",
+        "https://github.com/murf-ai",
+        "https://github.com/xai-org",
+        "https://github.com/TEN-framework",
+        "https://github.com/openai/openai-agents-python",
+        "https://github.com/aws",
+        "https://github.com/awslabs",
+        "https://github.com/livekit",
+        "https://github.com/microsoft/skills-for-copilot-studio",
+        "https://github.com/GoogleCloudPlatform/genmedia-creative-studio/blob/main/experiments/mcp-genmedia/skills/genmedia-voice-director/SKILL.md",
+        "https://github.com/google-gemini/gemini-skills/blob/main/skills/gemini-api-dev/SKILL.md"
+      ],
+      "result": "No official agent skill found on 2026-09-30 for: Vonage (its organization has only skills for maintaining its Go and .NET SDK repositories), Bandwidth, LiveKit SIP (LiveKit's agent skills are bundled here, but none covers SIP), Google Cloud Speech-to-Text and Text-to-Speech (the only matches were Gemini TTS skills for media voiceover, which are not voice-agent skills), Hume (EVI and text-to-speech), Microsoft Copilot Studio (its skill repository authors agents as YAML and has no voice skill), Dialogflow CX (skills exist for CX Agent Studio and for migrating from Dialogflow CX), Speechmatics, Soniox, Murf, xAI voice, OpenAI Realtime (the bundled OpenAI skills cover speech and transcription only), TEN (a maintainer review skill only), the OpenAI Agents SDK (maintainer skills only) and Hamming. Amazon Connect, Amazon Chime SDK, Amazon Lex, Amazon Polly, Amazon Transcribe and Nova Sonic have skills only in AWS sample repositories, which are linked under AWS. Not finding a skill is not proof that none exists: GitHub code search is capped and some documentation hosts could not be reached."
     }
   ],
   "verification": {
-    "method": "Pinned public HTTPS archives and current default-branch raw manifests, compared by SHA256. Source code was read selectively as data; no downloaded code or live voice-provider API calls were executed. The 2026-09-30 expansion fetched every new manifest at its pinned commit, rechecked that each source repository was still at that commit, re-hashed the manifests of the indexed repositories whose HEAD had moved (see head_updates), and confirmed that the other indexed repositories were still at their recorded commits. Star counts were refreshed for every indexed repository whose count had changed.",
-    "current_branch_manifest_count": 279,
-    "current_branch_manifest_http_200": 279,
-    "current_branch_manifest_hash_matches": 279,
+    "method": "Pinned public HTTPS archives and current default-branch raw manifests, compared by SHA256. Source code was read selectively as data; no downloaded code or live voice-provider API calls were executed. The 2026-09-30 expansion fetched every new manifest at its pinned commit, rechecked that each source repository was still at that commit, re-hashed the manifests of the indexed repositories whose HEAD had moved (see head_updates), and confirmed that the other indexed repositories were still at their recorded commits. Star counts were refreshed for every indexed repository whose count had changed. The provider coverage pass (2026-09-30, later the same day) fetched each of its 35 new repository manifests at the pinned commit, hashed it with SHA-256 and compared it with the Git blob hash from the repository tree, and fetched each of its 13 docs-hosted files from the vendor site and compared its SHA-256 with the digest in the vendor's skill index. The counters below include those entries; the manifests indexed earlier were not fetched again in that pass.",
+    "current_branch_manifest_count": 314,
+    "current_branch_manifest_http_200": 314,
+    "current_branch_manifest_hash_matches": 314,
     "sdk_repository_reference_count_checked": 228,
     "sdk_missing_references": [
       {
@@ -13188,9 +15114,9 @@
       }
     ],
     "current_branch_manifest_checked_at_utc": "2026-09-30T19:31:06.291964+00:00",
-    "docs_hosted_count": 18,
-    "docs_hosted_http_200": 18,
-    "docs_hosted_digest_matches": 18,
+    "docs_hosted_count": 31,
+    "docs_hosted_http_200": 31,
+    "docs_hosted_digest_matches": 31,
     "head_updates": [
       {
         "repository": "deepgram/deepgram-dotnet-sdk",
@@ -13300,6 +15226,111 @@
       "repository": "caffeinelabs/skills",
       "path": "*",
       "reason": "Twilio connector skill that states it is experimental, not yet verified against live Twilio and that it spends real money."
+    },
+    {
+      "name": "setup",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/setup/SKILL.md",
+      "reason": "Plugin connection and API-key setup helper, not a separate voice capability.",
+      "verified_manifest_sha256": "06e6fa661bf6cf4555143d24569afe8933b3ddf6fb77f232b0d9e5f4a21ff508"
+    },
+    {
+      "name": "triage",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/triage/SKILL.md",
+      "reason": "Files and tracks issues in Bland's triage tracker through the REST passthrough: issue bookkeeping, not a voice-agent workflow.",
+      "verified_manifest_sha256": "6302b87dbf50e6c5ac929b9ab5540bc2626c0eb38c1a749313ce4ab47205320b"
+    },
+    {
+      "name": "messaging",
+      "repository": "CINTELLILABS/bland-plugins",
+      "path": "skills/messaging/SKILL.md",
+      "reason": "Two-way SMS through POST /v1/sms/send: text messaging, not voice.",
+      "verified_manifest_sha256": "d82157407402ae3621f4ba75efa855139567fc8358b2f7398fcddfbf1a0eb2f8"
+    },
+    {
+      "name": "bland-skills (8 manifests)",
+      "repository": "CINTELLILABS/bland-skills",
+      "path": "*",
+      "reason": "Archived repository whose README says it is retired and replaced by CINTELLILABS/bland-plugins. Its eight manifests (a root SKILL.md, create-call, knowledge-base, live-listen, monitor-call, personas, send-sms and setup-api-key) overlap plugin skills that are indexed."
+    },
+    {
+      "name": "dograh-setup",
+      "repository": "dograh-hq/dograh-plugins",
+      "path": "plugins/dograh/skills/dograh-setup/SKILL.md",
+      "reason": "Its doctor.sh health probe runs curl with TLS certificate verification turned off (-k, set through a variable), and the skill tells the agent to run that script.",
+      "verified_manifest_sha256": "a8707034be28d3b089488b208f017e594271257cb93ebfcf29bda8d5fc567569"
+    },
+    {
+      "name": "aws-sms-voice",
+      "repository": "aws/agent-toolkit-for-aws",
+      "path": "skills/specialized-skills/messaging-and-streaming-skills/aws-sms-voice/SKILL.md",
+      "reason": "Covers RCS Business Messaging, Notify one-time passcodes and messaging registration in AWS End User Messaging. It is about text messaging; voice calls are not covered.",
+      "verified_manifest_sha256": "2f786a5ba20e45c082567ad92150b49217b9432db45a162bc0772e479b941ea0"
+    },
+    {
+      "name": "aws-messaging-and-streaming",
+      "repository": "aws/agent-toolkit-for-aws",
+      "path": "skills/core-skills/aws-messaging-and-streaming/SKILL.md",
+      "reason": "General SQS, SNS, EventBridge, Kinesis and Kafka guidance that routes channel questions to other skills; not a voice skill.",
+      "verified_manifest_sha256": "b96708d32b0090fd86a14d5a20812a6aac7002b4500d7745531f9a734a926bfe"
+    },
+    {
+      "name": "azure-communication-callingserver-java",
+      "repository": "microsoft/skills",
+      "path": ".github/plugins/azure-sdk-java/skills/azure-communication-callingserver-java/SKILL.md",
+      "reason": "Deprecated CallingServer SDK skill, for maintaining legacy code only; it tells readers to use azure-communication-callautomation for new projects.",
+      "verified_manifest_sha256": "15e43981fbfcc9b9da3ca63e55a6953a5201626c7135fee578fc3224825440ea"
+    },
+    {
+      "name": "cxas-scrapi analytics and report skills (10 manifests)",
+      "repository": "GoogleCloudPlatform/cxas-scrapi",
+      "path": "*",
+      "reason": "cxas-autolabel-rules and cxas-configurable-dashboards manage Contact Center Insights autolabel rules and dashboards, and cxas-cuj-report-generator (with its seven nested ingestor and protocol skills) turns requirement documents into Critical User Journey reports. They are analytics and documentation tooling, not voice-agent build or test workflows."
+    },
+    {
+      "name": "ten-tts-review",
+      "repository": "TEN-framework/ten-framework",
+      "path": ".agents/skills/ten-tts-review/SKILL.md",
+      "reason": "Maintainer skill for reviewing pull requests that change TEN text-to-speech extensions; it is not guidance for building a voice agent.",
+      "verified_manifest_sha256": "d7b77200f6f515564aa00456b99c6d8abf8cc5c0ed0013d536578750141ca499"
+    },
+    {
+      "name": "bootstrap-realtime-eval",
+      "repository": "openai/openai-cookbook",
+      "path": "examples/evals/realtime_evals/skills/bootstrap-realtime-eval/SKILL.md",
+      "reason": "Scaffold that only works inside a clone of the cookbook's realtime evals example and runs billed Realtime API evals; too repository-specific to link.",
+      "verified_manifest_sha256": "c7861252c75e67dd321a7552453ff58ad35476e98ab181df771fefc4ea1aa36c"
+    },
+    {
+      "name": "read-the-docs",
+      "url": "https://developer.regal.ai/.well-known/agent-skills/read-the-docs/SKILL.md",
+      "reason": "Pointer-only skill that tells the agent to fetch an llms.txt file.",
+      "verified_manifest_sha256": "d7ebd57ded4d82a98867a51bd52dbcd8a612edec700e89b276db8fcba0e531e1"
+    },
+    {
+      "name": "router-api",
+      "url": "https://inworld.ai/.well-known/agent-skills/router-api.md",
+      "reason": "Describes Inworld's OpenAI-compatible LLM routing endpoint, not a voice task.",
+      "verified_manifest_sha256": "001403fa4b56940629a4376c64d92d568b30e3b39edc0e6cd7c1c0ad6cc89405"
+    },
+    {
+      "name": "avatar-integration",
+      "url": "https://docs.zeroruntime.ai/.well-known/agent-skills/avatar-integration/skill.md",
+      "reason": "Adds a lip-synced video avatar to a Zero Runtime agent: visual, not voice.",
+      "verified_manifest_sha256": "af412a17450afb7f164ab67d26d803d91818b9da091eef6b9570356fb8f9f707"
+    },
+    {
+      "name": "zhipu",
+      "url": "https://docs.bigmodel.cn/.well-known/agent-skills/zhipu/skill.md",
+      "reason": "General large-language-model platform guide (chat, vision, image and video generation, tools, batch); speech is not its focus.",
+      "verified_manifest_sha256": "aa04104a2db9e42c980b77b705a82b3f8c55c788b77a5e4254d07c95471b184b"
+    },
+    {
+      "name": "stepfun",
+      "url": "https://platform.stepfun.com/docs/.well-known/agent-skills/stepfun/skill.md",
+      "reason": "Broad multimodal platform guide; StepFun's voice skills are already linked from stepfun-ai/StepAudio-Skills.",
+      "verified_manifest_sha256": "afa1eef3c881fbfb5c7a914b69ebe1eb6e7d3083f5975de3dfbaffcd7d9fdff0"
     }
   ],
   "research_exclusions": [
@@ -13308,7 +15339,14 @@
     "Deepgram Swift, Kotlin, and browser SDK repository URLs advertised by central README returned HTTP404 during this check; not cataloged.",
     "Older team-telnyx/telnyx-toolkit duplicates current Telnyx skill families; preferred maintained team-telnyx/ai source.",
     "Deepclaw is a narrower older OpenClaw voice integration with no LICENSE found; left out of the recommended index.",
-    "Mahimai voice-ai-skills: archive inventories ten manifests. Selected voice-prompting after reading its manifest and both references. Latency/readiness ceilings and full-duplex generalizations in the related material were not adopted as general rules; other skills remain unselected."
+    "Mahimai voice-ai-skills: archive inventories ten manifests. Selected voice-prompting after reading its manifest and both references. Latency/readiness ceilings and full-duplex generalizations in the related material were not adopted as general rules; other skills remain unselected.",
+    "Play.ht: its documentation host lists a read-the-docs pointer skill. Not fetched, because it is pointer-only and docs/landscape.md lists PlayHT as shut down.",
+    "AssemblyAI/cli: the three .claude/skills entries (check, plan-feature, release-prep) are maintainer workflows for developing the CLI itself; only the bundled aai-cli skill is linked.",
+    "google/agents-cli: only google-agents-cli-adk-code is linked. The workflow, scaffold, deploy, eval, observability and publish skills are general agent-development skills whose voice content is a few routing notes plus the live-eval reference, and the repository also ships packaged copies of the skills under src/.",
+    "GoogleCloudPlatform/vertex-ai-samples: skills/genai-sdk carries a nested Gemini Live API skill. Not added, because Gemini Live API skills from google-gemini/gemini-skills and google/skills are already linked.",
+    "Speechify-AI/skills: 17 skills (MIT, Speechify's own organization, created in September 2026, no stars) for the Speechify text-to-speech API. It is outside the coverage list and was not added; it is a candidate for a later pass.",
+    "GoogleCloudPlatform/genmedia-creative-studio and google-gemini/gemini-managed-agents-templates: Gemini TTS skills for media voiceover (genmedia-voice-director in an experiments folder, and the ai-radio tts-generation step of a radio-show template). They are media production skills, not voice-agent skills, so they were not added.",
+    "google-gemini/gemini-skills: gemini-api-dev is a general Gemini API skill. Speech appears in its description, a model list, documentation links and a pointer to the linked Live skill, so it was not added; gemini-live-api-dev is the linked voice skill."
   ],
   "limitations": [
     "No live provider calls, installations, or runtime compatibility tests performed.",
@@ -13318,6 +15356,8 @@
     "Docs-hosted skills have no commit or tag. Each is pinned by the sha256 of the file and the retrieval time, and the vendor can change the content without notice.",
     "publisher_relation is recorded only for repositories added or rechecked on 2026-09-30. It is judged from organization names and documentation links; ownership was not independently confirmed.",
     "SDK reference-path checks and the Context7 and Azure SDK comparisons above date from the earlier pinned commits. Deepgram Java, Rust and .NET moved HEAD afterwards, and only their manifests were re-hashed.",
-    "Some provider documentation hosts could not be reached and GitHub code search returns at most 300 results per query, so not finding a skill is not evidence that none exists."
+    "Some provider documentation hosts could not be reached and GitHub code search returns at most 300 results per query, so not finding a skill is not evidence that none exists.",
+    "The 2026-09-30 provider coverage pass (35 repository skills from 7 repositories and 13 docs-hosted skills) was written by one reviewing agent that read each manifest in full and read or pattern-scanned the scripts they ship. Nothing was installed or run, the Bland plugin's 479 KB bin/engine.bundle.cjs was not read, supporting reference files were mostly not read, and no second-model review was done.",
+    "GoogleCloudPlatform/cxas-scrapi has a newer commit (467f02a7a3, committed 2026-09-30T20:28:40Z) than the head recorded for it (158f196). Its five indexed manifests, including the cxas-dfcx-migration skill added on 2026-09-30, were hashed at the newer commit on 2026-09-30 and match the recorded hashes. The recorded commit was left unchanged."
   ]
 }
