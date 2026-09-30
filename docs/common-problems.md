@@ -405,9 +405,9 @@ them to mobile phones and homes generally need the person's prior consent, and
 prior written consent for telemarketing. An artificial-voice message must name
 the business at the start. Telemarketing must also honour do-not-call requests
 and calling hours (8 a.m. to 9 p.m. the called person's time under federal rules;
-some states are stricter). Courts and the FCC are still changing parts of the
+some states are stricter, for example Florida ends at 8 p.m. and Texas starts at 9 a.m.). Courts and the FCC are still changing parts of the
 consent rules, so check the current state before you dial.
-Wiretap lawsuits over recording and AI transcription are moving fast. In the
+Wiretap lawsuits over recording and AI transcription are moving fast, and courts are split on whether an AI vendor in the audio path counts as a third-party eavesdropper. In the
 EU, the AI Act's rule that people must be told they're talking to an AI applies from
 August 2, 2026, and the
 Commission's guidelines use a spoken statement at the start of the call as the

@@ -8,7 +8,7 @@ license: MIT
 
 > **Not legal advice.** Rules differ by country, state, call type and industry, and some points here are unsettled. Confirm the plan with counsel for every place you call, call from, or record. This skill builds safeguards. It does not clear a launch.
 
-An AI phone agent can break calling, recording, disclosure and privacy rules in its first minute. The price is private lawsuits (US federal law allows $500 per call, tripled if willful), regulator fines, and numbers labelled "Spam Likely" or blocked. Put the checks in code, in front of the dialer, so a bad list, a missing consent or a stop request cannot reach a call.
+An AI phone agent can break calling, recording, disclosure and privacy rules in its first minute. The price is private lawsuits (US federal law allows $500 per violation, and a court may triple it for willful or knowing violations), regulator fines, and numbers labelled "Spam Likely" or blocked. Put the checks in code, in front of the dialer, so a bad list, a missing consent or a stop request cannot reach a call.
 
 Read these with the skill and keep them together:
 
@@ -39,13 +39,13 @@ No tools are required. Ask these in one message before you write dialer or recor
 
 | Situation | Build rule | Read |
 | --- | --- | --- |
-| Outbound AI call, sales or marketing, to consumers | Signed written consent that names your company and AI or automated voice. National and internal do-not-call scrub. Recipient-local 8 a.m. to 9 p.m. (8 p.m. in Florida, Oklahoma and Maryland). AI, company name and a stop option in the first seconds. First word within 2 seconds of "hello" | [Federal law](references/legal-requirements-guide.md#us-federal-law) |
+| Outbound AI call, sales or marketing, to consumers | Signed written consent that names your company and AI or automated voice. National and internal do-not-call scrub. Recipient-local calling window: 8 a.m. to 9 p.m. under federal rules. States can be stricter: Florida, Oklahoma and Maryland end at 8 p.m.; Texas allows 9 a.m. to 9 p.m. Monday to Saturday and noon to 9 p.m. on Sunday. Apply the strictest window for each state on the list, and treat unlisted states as unchecked. AI, company name and a stop option in the first seconds. First word within 2 seconds of "hello" | [Federal law](references/legal-requirements-guide.md#us-federal-law) |
 | Outbound AI call, not sales (reminder, service) | Prior express consent for mobile numbers. Landline exemptions are narrow. Same identification and stop handling | [Consent](references/legal-requirements-guide.md#consent-which-kind-do-you-need) |
 | Outbound to business numbers | The registry does not cover them, but the consent rule still applies to mobile numbers. Treat as consumer calls unless counsel says otherwise | [Consent](references/legal-requirements-guide.md#consent-which-kind-do-you-need) |
 | Inbound calls to you | The federal calling rules cover calls you place. Disclose AI, handle recording consent and data rules | [AI disclosure](references/legal-requirements-guide.md#ai-disclosure) |
 | Recording or transcribing | Announce at the start of every call. All-party states need consent. Vendors need contracts that bar their own use of the audio | [Recording](references/legal-requirements-guide.md#recording-and-transcripts) |
 | Health information | Signed BAA with every vendor that stores or processes it. No detail in greetings or voicemail | [HIPAA](references/numbers-data-and-call-behavior-guide.md#hipaa) |
-| Card numbers | Digits never reach the LLM, transcript, logs or recording. Keypad capture by a payment provider, or pause and verify | [PCI](references/numbers-data-and-call-behavior-guide.md#pci-payment-cards) |
+| Card numbers | Digits never reach speech-to-text, the LLM, transcripts, logs or the recording. Collect them only by keypad into a payment provider that captures the tones itself. Pausing the recording is not a substitute | [PCI](references/numbers-data-and-call-behavior-guide.md#pci-payment-cards) |
 | People or numbers in the EU, UK or Canada | Separate rules. EU AI Act Article 50 applies from 2 August 2026. Ask counsel | [Outside the US](references/legal-requirements-guide.md#outside-the-us) |
 | Numbers flagged or blocked | Check attestation, registration, pacing, consent and call length. Do not rotate or spoof | [Why numbers get flagged](references/numbers-data-and-call-behavior-guide.md#why-numbers-get-flagged) |
 
@@ -63,7 +63,7 @@ No tools are required. Ask these in one message before you write dialer or recor
 3. **During the call.** Honor "stop" at once: write the suppression, then confirm, then end the call. Answer "are you a robot?" truthfully, every time. Transfer on request, and never say "connected" before a human accepts. Keep card and health data out of prompts, logs and transcripts.
 4. **Voicemail.** It is an artificial-voice call, so consent rules apply. Keep it short and non-sensitive. Telemarketing voicemail needs a toll-free opt-out number. Do not guess on answering-machine detection; see the [call reliability skill](../voice-call-reliability/SKILL.md).
 5. **Numbers.** Use numbers your provider can verify (attestation A). Register them with the analytics vendors where allowed. Ramp volume slowly. Log attestation, answer rate, call length and block codes per number. Fix causes instead of rotating numbers.
-6. **Evidence.** Keep consent, suppression and call records in a separate store from audio. Keep do-not-call records 5 years and consent evidence at least 4. Fields: [evidence and retention](references/numbers-data-and-call-behavior-guide.md#evidence-and-retention).
+6. **Evidence.** Keep consent, suppression and call records in a separate store from audio. Keep do-not-call records at least 5 years. Keep telemarketing consent records, scripts and call records 5 years (16 CFR 310.5). Keep other consent evidence at least 4 years after the last call. Fields: [evidence and retention](references/numbers-data-and-call-behavior-guide.md#evidence-and-retention).
 7. **Test.** Dry-run mode, fail-closed tests, stop and truthfulness tests, with numbers the user owns: [test plan](references/numbers-data-and-call-behavior-guide.md#test-plan).
 
 ## Do not
@@ -91,5 +91,5 @@ No tools are required. Ask these in one message before you write dialer or recor
 - The FCC's AI-disclosure rule is only proposed.
 - The FCC adopted a new stop-request order on September 30, 2026. Its text and dates were not public when checked. Until then, honor stop requests broadly.
 - Whether an LLM agent counts as a "live sales representative", a "prerecorded message" or an "automated calling system" under older rules.
-- Whether AI vendors in the audio path can be treated as wiretappers in California (*Ambriz*, pleading stage).
+- Whether AI vendors in the audio path count as third-party eavesdroppers under California law. Courts are split between a "capability" test and an "extension" test, and every AI-voice ruling so far is at the pleading stage (*Ambriz*, *Taylor v. ConverseNow*).
 - New state AI laws (Colorado, January 2027) and whether they reach private phone agents.

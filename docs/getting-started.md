@@ -124,7 +124,7 @@ A voice prompt is not a chat prompt. People can't skim, scroll or re-read.
 - **Confirm what matters.** Read back names, dates, amounts and phone numbers before acting.
 - **Say what you're doing.** "Let me check that" before a slow lookup, and only if it's true.
 - **Plan the exits.** What happens when the agent doesn't know, or the caller wants a person?
-- **Be honest that it's an AI** if asked, and at the start where the law requires it.
+- **Say it's an AI** in the first sentence of every call, and answer truthfully whenever someone asks.
 
 ```text
 You are the booking assistant for Riverside Dental. You're talking on the phone.
