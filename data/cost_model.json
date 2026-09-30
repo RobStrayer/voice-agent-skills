@@ -1,0 +1,343 @@
+{
+ "cascade": {
+  "low": {
+   "lines": [
+    {
+     "label": "STT: AssemblyAI Universal-Streaming English",
+     "entry": "assemblyai-streaming",
+     "as_displayed": "$0.15/hr",
+     "item": "Universal-Streaming English (universal-streaming-english)",
+     "url": "https://www.assemblyai.com/pricing",
+     "usd_per_min": 0.0025,
+     "how": "$0.15/hr / 60"
+    },
+    {
+     "label": "LLM: gpt-oss-120b on GroqCloud",
+     "entry": "groq-groqcloud",
+     "as_displayed": "$0.15 input / $0.075 cached input / $0.60 output",
+     "item": "openai/gpt-oss-120b",
+     "url": "https://console.groq.com/docs/models",
+     "usd_per_min": 0.000555,
+     "how": "3000 x $0.15/1M + 175 x $0.60/1M"
+    },
+    {
+     "label": "TTS: Deepgram Aura-1 (Pay As You Go)",
+     "entry": "deepgram-tts",
+     "as_displayed": "$0.0150 per 1k characters",
+     "item": "Aura-1, Pay As You Go",
+     "url": "https://deepgram.com/pricing",
+     "usd_per_min": 0.009,
+     "how": "600 chars x $0.015/1K"
+    },
+    {
+     "label": "Telephony: Telnyx SIP trunk, inbound US local",
+     "entry": "telnyx-sip-trunking",
+     "as_displayed": "Starting at $0.0032 per minute",
+     "item": "Receive inbound calls: local",
+     "url": "https://telnyx.com/pricing/elastic-sip",
+     "usd_per_min": 0.0032,
+     "how": "as displayed (starting at)"
+    }
+   ],
+   "total": 0.0153,
+   "note": "Runtime not priced (self-hosted compute excluded); all other lines are list prices."
+  },
+  "mid": {
+   "lines": [
+    {
+     "label": "STT: Deepgram Nova-3 monolingual streaming, regular price",
+     "entry": "deepgram-nova-3",
+     "as_displayed": "Current price $0.0048/min; regular price $0.0077/min",
+     "item": "Nova-3 Monolingual, streaming",
+     "url": "https://deepgram.com/pricing",
+     "usd_per_min": 0.0077,
+     "how": "regular price $0.0077/min (promotional $0.0048 not used)"
+    },
+    {
+     "label": "LLM: OpenAI gpt-4.1-mini",
+     "entry": "openai-small-tiers",
+     "as_displayed": "$0.40 input / $0.10 cached input / $1.60 output",
+     "item": "gpt-4.1-mini",
+     "url": "https://developers.openai.com/api/docs/pricing.md",
+     "usd_per_min": 0.00148,
+     "how": "3000 x $0.40/1M + 175 x $1.60/1M"
+    },
+    {
+     "label": "TTS: ElevenLabs Flash v2.5 / Turbo row",
+     "entry": "elevenlabs-tts",
+     "as_displayed": "$0.04 per 1K characters",
+     "item": "Flash / Turbo row (Flash v2.5, eleven_flash_v2_5)",
+     "url": "https://elevenlabs.io/pricing/api",
+     "usd_per_min": 0.024,
+     "how": "600 chars x $0.04/1K"
+    },
+    {
+     "label": "Telephony: Twilio inbound US local",
+     "entry": "twilio-programmable-voice",
+     "as_displayed": "$0.0085 / min",
+     "item": "Local calls: receive",
+     "url": "https://www.twilio.com/en-us/voice/pricing/us",
+     "usd_per_min": 0.0085,
+     "how": "as displayed"
+    },
+    {
+     "label": "Telephony: Twilio Media Streams (audio over WebSocket)",
+     "entry": "twilio-programmable-voice",
+     "as_displayed": "$0.0044 / min",
+     "item": "Media Streams",
+     "url": "https://www.twilio.com/en-us/voice/pricing/us",
+     "usd_per_min": 0.0044,
+     "how": "as displayed"
+    },
+    {
+     "label": "Runtime: LiveKit Cloud agent session (beyond included minutes)",
+     "entry": "livekit-agents",
+     "as_displayed": "$0.01 per min",
+     "item": "Agent session minutes beyond included",
+     "url": "https://livekit.com/pricing",
+     "usd_per_min": 0.01,
+     "how": "as displayed"
+    }
+   ],
+   "total": 0.0561
+  },
+  "high": {
+   "lines": [
+    {
+     "label": "STT: Azure Speech real-time standard",
+     "entry": "azure-speech-stt",
+     "as_displayed": "$1 per hour",
+     "item": "Standard real-time transcription",
+     "url": "https://azure.microsoft.com/en-us/pricing/details/speech/",
+     "usd_per_min": 0.016667,
+     "how": "$1/hr / 60"
+    },
+    {
+     "label": "LLM: OpenAI gpt-6-astra",
+     "entry": "openai-gpt-6",
+     "as_displayed": "$10.00 input / $1.00 cached input / $12.50 cache writes / $50.00 output",
+     "item": "gpt-6-astra, Standard",
+     "url": "https://developers.openai.com/api/docs/pricing",
+     "usd_per_min": 0.03875,
+     "how": "3000 x $10/1M + 175 x $50/1M"
+    },
+    {
+     "label": "TTS: ElevenLabs Eleven v4, list price",
+     "entry": "elevenlabs-tts",
+     "as_displayed": "$0.08 per 1K characters",
+     "item": "Eleven v4 (eleven_v4), list price",
+     "url": "https://elevenlabs.io/pricing/api",
+     "usd_per_min": 0.048,
+     "how": "600 chars x $0.08/1K (promotional $0.022 not used)"
+    },
+    {
+     "label": "Telephony: Twilio outbound US local",
+     "entry": "twilio-programmable-voice",
+     "as_displayed": "$0.0140 / min",
+     "item": "Local calls: make",
+     "url": "https://www.twilio.com/en-us/voice/pricing/us",
+     "usd_per_min": 0.014,
+     "how": "as displayed"
+    },
+    {
+     "label": "Telephony: Twilio Media Streams",
+     "entry": "twilio-programmable-voice",
+     "as_displayed": "$0.0044 / min",
+     "item": "Media Streams",
+     "url": "https://www.twilio.com/en-us/voice/pricing/us",
+     "usd_per_min": 0.0044,
+     "how": "as displayed"
+    },
+    {
+     "label": "Runtime: LiveKit Cloud agent session",
+     "entry": "livekit-agents",
+     "as_displayed": "$0.01 per min",
+     "item": "Agent session minutes beyond included",
+     "url": "https://livekit.com/pricing",
+     "usd_per_min": 0.01,
+     "how": "as displayed"
+    }
+   ],
+   "total": 0.1318
+  }
+ },
+ "cascade_llm_sensitivity": {
+  "gpt-oss-120b (Groq)": [
+   0.000555,
+   0.004605
+  ],
+  "gpt-4.1-mini": [
+   0.00148,
+   0.01228
+  ],
+  "gpt-6-astra": [
+   0.03875,
+   0.30875
+  ]
+ },
+ "managed": [
+  {
+   "name": "Telnyx AI Assistants",
+   "entry": "telnyx-ai-assistants",
+   "figure": "$0.0596/min (vendor example: voice engine $0.05 + telephony $0.0032 + LLM $0.0064 on Telnyx GPUs, local inbound US)",
+   "low": 0.0596,
+   "high": 0.0596,
+   "includes": "voice engine (orchestration, STT, TTS), telephony, LLM on Telnyx-hosted model",
+   "url": "https://telnyx.com/pricing/voice-ai-agents"
+  },
+  {
+   "name": "Deepgram Voice Agent API",
+   "entry": "deepgram-voice-agent-api",
+   "figure": "$0.050 (BYO LLM+TTS) to $0.163 (Advanced tier) per minute, Pay As You Go; Standard $0.075",
+   "low": 0.05,
+   "high": 0.163,
+   "includes": "STT + orchestration (+ LLM/TTS depending on tier); telephony not listed",
+   "url": "https://deepgram.com/pricing"
+  },
+  {
+   "name": "Twilio ConversationRelay",
+   "entry": "twilio-conversationrelay",
+   "figure": "$0.07/min + $0.0085/min inbound US local voice = $0.0785/min before your LLM and hosting",
+   "low": 0.0785,
+   "high": 0.0785,
+   "includes": "relay with STT/TTS (itemisation not published); voice billed separately; LLM and app hosting are yours",
+   "url": "https://www.twilio.com/en-us/products/conversational-ai/pricing"
+  },
+  {
+   "name": "Vapi",
+   "entry": "vapi",
+   "figure": "$0.05/min hosting fee; vendor calculator example (Deepgram + OpenAI + ElevenLabs, Vapi telephony/SIP) $0.082-$0.129/min",
+   "low": 0.082,
+   "high": 0.129,
+   "includes": "hosting fee + pass-through STT/LLM/TTS; PSTN carrier not included in the example",
+   "url": "https://vapi.ai/pricing"
+  },
+  {
+   "name": "ElevenLabs Agents",
+   "entry": "elevenlabs-agents",
+   "figure": "$0.080/min beyond plan-included minutes (+ LLM passed through, telephony at cost)",
+   "low": 0.08,
+   "high": 0.08,
+   "includes": "agent platform minutes; LLM and telephony extra",
+   "url": "https://elevenlabs.io/pricing/agents"
+  },
+  {
+   "name": "Bland AI",
+   "entry": "bland-ai",
+   "figure": "$0.14/min (Start) or $0.12/min (Build, plus $299/month); telephony billed separately",
+   "low": 0.12,
+   "high": 0.14,
+   "includes": "LLM, STT and TTS included; telephony billed separately",
+   "url": "https://www.bland.ai/pricing"
+  },
+  {
+   "name": "Retell AI",
+   "entry": "retell-ai",
+   "figure": "$0.07-$0.31/min vendor-stated range; vendor example $0.230/min (LLM $0.160 + infra $0.055 + TTS $0.015); telephony $0.015/min extra on Retell numbers",
+   "low": 0.07,
+   "high": 0.31,
+   "includes": "voice infra + TTS + LLM; telephony extra",
+   "url": "https://www.retellai.com/pricing"
+  },
+  {
+   "name": "Bolna",
+   "entry": "bolna",
+   "figure": "from 6.00 cents/min (standard volume-based rate); pilot packs about 4.2-4.6 cents/min",
+   "low": 0.06,
+   "high": 0.06,
+   "includes": "platform rate; the recorded entry does not itemise what it includes (BYOK supported, credits billed on tokens)",
+   "url": "https://www.bolna.ai/pricing"
+  },
+  {
+   "name": "Dasha",
+   "entry": "dasha",
+   "figure": "Growth plan starting at $0.08/min (page: all-inclusive except VoIP and LLM tokens; 'Contact Us' button)",
+   "low": 0.08,
+   "high": 0.08,
+   "includes": "platform; VoIP and LLM tokens extra",
+   "url": "https://dasha.ai/pricing"
+  },
+  {
+   "name": "AssemblyAI Voice Agent API",
+   "entry": "(market-changes file)",
+   "figure": "$4.50/hr all-in (launched 2026-04-25) = $0.075/min (DERIVED: $4.50 / 60)",
+   "low": 0.075,
+   "high": 0.075,
+   "includes": "speech understanding, LLM reasoning and voice generation on AssemblyAI's own models; telephony not stated",
+   "url": "https://www.assemblyai.com/changelog"
+  }
+ ],
+ "managed_range": [
+  0.05,
+  0.31
+ ],
+ "s2s": [
+  {
+   "name": "Gemini Live gemini-3.8-live (audio in + audio out)",
+   "entry": "google-gemini-live",
+   "as_displayed": "$3.00 per 1M tokens or $0.005/min",
+   "url": "https://ai.google.dev/gemini-api/docs/pricing.md.txt",
+   "usd_per_min": 0.023,
+   "how": "$0.005/min in + $0.018/min out, both as displayed",
+   "kind": "vendor-stated per-minute figures"
+  },
+  {
+   "name": "OpenAI GPT-Live-1",
+   "entry": "openai-gpt-live",
+   "as_displayed": "$0.05 per minute, billed per second",
+   "url": "https://developers.openai.com/api/docs/pricing.md",
+   "usd_per_min": 0.05,
+   "how": "flat per-minute, billed per second; backend model and tool usage extra",
+   "kind": "vendor-stated per-minute price"
+  },
+  {
+   "name": "xAI Grok Speech to Speech",
+   "entry": "xai-grok-voice",
+   "as_displayed": "$0.08 / min ($4.80 / hr)",
+   "url": "https://docs.x.ai/developers/pricing.md",
+   "usd_per_min": 0.08,
+   "how": "flat per-minute",
+   "kind": "vendor-stated per-minute price"
+  },
+  {
+   "name": "OpenAI gpt-realtime-2.1-mini (audio tokens only)",
+   "entry": "openai-realtime",
+   "as_displayed": "input $10.00; cached input $0.30; output $20.00",
+   "url": "https://developers.openai.com/api/docs/pricing.md",
+   "usd_per_min": 0.03,
+   "how": "600 user tokens/min x $10/1M + 1,200 assistant tokens/min x $20/1M (OpenAI-stated 10 and 20 tokens/s)",
+   "kind": "DERIVED lower bound"
+  },
+  {
+   "name": "OpenAI gpt-realtime-2.1 (audio tokens only)",
+   "entry": "openai-realtime",
+   "as_displayed": "$32.00 / 1M tokens",
+   "url": "https://developers.openai.com/api/docs/pricing.md",
+   "usd_per_min": 0.096,
+   "how": "600 x $32/1M + 1,200 x $64/1M",
+   "kind": "DERIVED lower bound"
+  },
+  {
+   "name": "Azure Voice Live Pro, native audio (audio tokens only)",
+   "entry": "azure-voice-live",
+   "as_displayed": "$32 / 1M tokens",
+   "url": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/",
+   "usd_per_min": 0.096,
+   "how": "600 x $32/1M + 1,200 x $64/1M (same token rates as OpenAI)",
+   "kind": "DERIVED lower bound"
+  }
+ ],
+ "s2s_range_derived_and_stated": [
+  0.023,
+  0.096
+ ],
+ "telephony_add_range": [
+  0.0032,
+  0.0184
+ ],
+ "assumptions": {
+  "llm_input_tokens_per_min": 3000,
+  "llm_output_tokens_per_min": 175,
+  "tts_chars_per_min": 600
+ }
+}

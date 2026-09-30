@@ -69,6 +69,41 @@ tree for routing, an audio cutaway for echo. Review changed pages at their rende
 reading width. Synthetic traces must say that their values are illustrative, not
 measurements or targets.
 
+## How upkeep works
+
+Most upkeep is automatic, and AI is spent only when something really changed.
+
+- **Weekly check.** Every Monday a workflow runs `scripts/check_upstream.py`. It
+  batches one GitHub query for every indexed repository, then compares content
+  hashes of the tracked files. A repository whose head moved but whose tracked
+  files did not change is not drift. It also flags renamed, archived or
+  relicensed repositories, changed docs-hosted skills, new `SKILL.md` files that
+  are not indexed (candidates only), pages past their review window (90 days for
+  the landscape page, 180 for the rest) and broken external links. Results go to
+  one standing issue labelled `upstream-drift`, titled "Upstream changes", which
+  the workflow updates in place and closes when nothing is left to report.
+- **Automatic PR review.** Each non-draft pull request gets one review comment
+  from Claude. It checks new links against the rules above, reads scripts and
+  `SKILL.md` files for exfiltration, telemetry, remote installers and disabled
+  TLS, and looks for broken index formatting. It only comments and ends with a
+  verdict line. It cannot approve, merge or push, and it never runs the pull
+  request's code. The verifier still runs separately and must pass.
+- **What a maintainer decides.** Whether to merge pull requests from outside
+  contributors, whether a candidate skill belongs in the collection, and every
+  reply to a person. The review comment is input, not a decision.
+- **Mechanical update pull requests.** `python scripts/check_upstream.py --out
+  report.md --apply` re-copies changed vendored files, re-pins a linked
+  repository whose manifests changed and refreshes docs-hosted hashes. It never
+  edits prose, so read the `purpose` and `concerns` text of each changed entry
+  it lists. A pull request that contains only such hash and pin refreshes, with
+  `verify` green, can be merged without further review.
+- **Quarterly refresh.** Prices and products in [the landscape](landscape.md)
+  change quickly. Once a quarter, re-check them against the vendors' own pages.
+  The records behind that page live in `data/`: `landscape.json` (products),
+  `landscape-market-changes.json` (market changes) and `cost_model.json` (inputs
+  to the cost comparison). Edit the data first, then bring the page into line.
+  The page generator is not part of this repository.
+
 ## Checks before publication
 
 Run from the repository root:
@@ -76,6 +111,7 @@ Run from the repository root:
 ```sh
 python scripts/verify.py
 python scripts/test_verify.py
+python scripts/test_check_upstream.py
 git diff --check
 ```
 

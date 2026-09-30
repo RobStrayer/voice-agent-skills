@@ -1,0 +1,87 @@
+name: upstream
+
+# Weekly upkeep check. Detection is free: scripts/check_upstream.py compares
+# content hashes (a moved upstream head with unchanged tracked files is not
+# drift) and this job keeps ONE standing issue, "Upstream changes", up to date.
+# It closes that issue when everything is clean. No AI runs here and nothing is
+# committed; a maintainer decides what to do with the report.
+#
+# Report and link-checker text is written to files and posted with --body-file.
+# No run step interpolates workflow expressions, so upstream text can never
+# become shell code.
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays 13:00 UTC
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: upstream
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.repository == 'RBStrayer/nl-voice-skills'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read # check out the repository
+      issues: write # create the label, open, update and close the standing issue
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Compare tracked upstream content
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/check_upstream.py --out "$RUNNER_TEMP/report.md"
+      - name: Check external links
+        id: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          # Skip hosts that block bots and our own issues URLs until they exist.
+          # 429 means rate limited, not broken.
+          args: >-
+            --no-progress
+            --max-retries 2
+            --timeout 20
+            --accept '200..=299,429'
+            --exclude '^https?://([a-z0-9-]+\.)*(pnas\.org|sec\.gov|gartner\.com|bloomberg\.com)(/|$)'
+            --exclude '^https://github\.com/RBStrayer/nl-voice-skills/issues'
+            './*.md' './docs/**/*.md'
+          fail: false
+          jobSummary: false
+          output: lychee/out.md
+      - name: Update the standing issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          LYCHEE_EXIT: ${{ steps.lychee.outputs.exit_code }}
+        run: |
+          set -eu
+          body="$RUNNER_TEMP/body.md"
+          cp "$RUNNER_TEMP/report.md" "$body"
+          if [ "$LYCHEE_EXIT" != "0" ]; then
+            {
+              printf '\n## Broken external links\n\n'
+              if [ -f lychee/out.md ]; then head -c 15000 lychee/out.md; else echo 'The link checker produced no output.'; fi
+            } >> "$body"
+          fi
+          gh label create upstream-drift --force --color FBCA04 \
+            --description "Weekly upstream and link check" > /dev/null
+          number=$(gh issue list --label upstream-drift --state open --limit 1 \
+            --json number --jq '.[0].number // empty')
+          if grep -q '^<!-- upstream-drift: clean -->' "$RUNNER_TEMP/report.md" && [ "$LYCHEE_EXIT" = "0" ]; then
+            if [ -n "$number" ]; then
+              gh issue close "$number" --comment "Nothing to report this week: no upstream content changes and no broken external links."
+            fi
+          elif [ -n "$number" ]; then
+            gh issue edit "$number" --title "Upstream changes" --body-file "$body"
+          else
+            gh issue create --title "Upstream changes" --label upstream-drift --body-file "$body"
+          fi

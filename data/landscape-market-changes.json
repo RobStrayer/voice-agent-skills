@@ -1,0 +1,1610 @@
+[
+ {
+  "id": "j1-deepgram-nova-3",
+  "date": "2025-02",
+  "vendors": [
+   "Deepgram"
+  ],
+  "event_type": "model_release",
+  "headline": "Deepgram releases Nova-3 speech-to-text with real-time multilingual code-switching and keyterm prompting",
+  "detail": "Deepgram's changelog entry dated 12 February 2025 and launch post describe Nova-3 with Keyterm Prompting (up to 100 terms, no retraining) and real-time transcription across 10 languages with code-switching. Deepgram states 54.3% lower streaming word error rate than competitors (median 6.84%).",
+  "why_it_matters_for_builders": "Adds multilingual streaming STT and self-serve vocabulary adaptation for agents that handle mixed-language calls.",
+  "sources": [
+   "https://developers.deepgram.com/changelog/2025/2/12.md",
+   "https://deepgram.com/learn/introducing-nova-3-speech-to-text-api"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-agents-self-serve-price-cut",
+  "date": "2025-02-10",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "pricing_change",
+  "headline": "ElevenLabs lowers self-serve pricing for its agents product and enlarges the free tier",
+  "detail": "ElevenLabs changelog, week of 10 February 2025: updated self-serve pricing for its agents product (Conversational AI at the time, Agents Platform in current docs) with reduced cost and a larger free tier. The entry gives no figures and links to a pricing-tiers section.",
+  "why_it_matters_for_builders": "Hosted-agent cost comparisons made before February 2025 are out of date; check the current pricing tiers.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog/2025/2/10.md",
+   "https://elevenlabs.io/blog/conversational-ai-2-0"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-scribe-v1",
+  "date": "2025-02-26",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "model_release",
+  "headline": "ElevenLabs releases Scribe, its first speech-to-text model, through a Speech to Text API",
+  "detail": "ElevenLabs' blog post (shows 'Published Feb 26, 2025') introduces Scribe, which it says transcribes 99 languages with word-level timestamps, speaker diarization and non-speech event markers. ElevenLabs states it outperforms Gemini 2.0 Flash, Whisper Large V3 and Deepgram Nova-3 on FLEURS and Common Voice; a low-latency version was described as coming.",
+  "why_it_matters_for_builders": "A TTS vendor entered STT, offering a single-vendor option for both directions of a voice agent.",
+  "sources": [
+   "https://elevenlabs.io/blog/meet-scribe"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-hume-octave-tts",
+  "date": "2025-02-26",
+  "vendors": [
+   "Hume AI"
+  ],
+  "event_type": "model_release",
+  "headline": "Hume AI launches Octave, a speech-language-model TTS with prompt-based voice design, available through its API",
+  "detail": "Hume's 26 February 2025 post launches Octave, which Hume describes as an LLM for text-to-speech that interprets context. It is available on platform.hume.ai and through an API with Python and TypeScript SDKs, including Voice Design from text prompts. Voice cloning was listed as coming in the following weeks.",
+  "why_it_matters_for_builders": "Adds a TTS option where voices are created from descriptions rather than recordings.",
+  "sources": [
+   "https://www.hume.ai/blog/octave-the-first-text-to-speech-model-that-understands-what-its-saying"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-scribe-price-cut",
+  "date": "2025-03-10",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "pricing_change",
+  "headline": "ElevenLabs cuts Scribe speech-to-text pricing two weeks after launch, listing rates from $0.22 per hour on Business",
+  "detail": "ElevenLabs changelog, week of 10 March 2025: Scribe pricing updated to be cheaper, 'as low as $0.22 per hour for the Business tier'. The week-of-17-March entry records a further reduction in Scribe pricing. Scribe launched on 26 February 2025.",
+  "why_it_matters_for_builders": "Lowers STT cost for transcription and agent workloads; rates depend on plan tier and were changed again within weeks.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog/2025/3/10.md",
+   "https://elevenlabs.io/docs/changelog/2025/3/17.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-sesame-csm-open-weights",
+  "date": "2025-03-13",
+  "vendors": [
+   "Sesame"
+  ],
+  "event_type": "model_release",
+  "headline": "Sesame releases the 1B Conversational Speech Model (CSM) checkpoint on Hugging Face",
+  "detail": "The SesameAILabs/csm README states 'We are releasing the 1B CSM variant' on 2025/03/13, hosted on Hugging Face, and notes it is a base generation model not fine-tuned on any specific voice. GitHub lists the repository license as Apache-2.0. The README adds that CSM became available in Hugging Face Transformers on 2025/05/20.",
+  "why_it_matters_for_builders": "Open weights for a conversational speech generator let teams self-host and fine-tune instead of calling a hosted API.",
+  "sources": [
+   "https://github.com/SesameAILabs/csm"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-openai-audio-models-2025-03",
+  "date": "2025-03-20",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "model_release",
+  "headline": "OpenAI releases gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-mini-tts, plus Agents SDK voice integration",
+  "detail": "OpenAI's 20 March 2025 post introduces new speech-to-text models and a steerable text-to-speech model in the API, with an Agents SDK integration for chained voice agents. OpenAI states the transcription models have lower word error rate than Whisper; the TTS models offer preset synthetic voices only.",
+  "why_it_matters_for_builders": "Adds steerable TTS and newer STT options for chained STT-LLM-TTS pipelines, alongside the speech-to-speech Realtime API.",
+  "sources": [
+   "https://openai.com/index/introducing-our-next-generation-audio-models/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-amazon-nova-sonic-launch",
+  "date": "2025-04-08",
+  "vendors": [
+   "Amazon Web Services"
+  ],
+  "event_type": "model_release",
+  "headline": "Amazon launches Nova Sonic, a speech-to-speech model on Bedrock with a bidirectional streaming API",
+  "detail": "AWS blog post dated 8 April 2025. Nova Sonic handles speech understanding and generation in one model through Bedrock's InvokeModelWithBidirectionalStream API. At launch: US East (N. Virginia) only, American and British English; the same post records Spanish added 12 June 2025 and French, Italian and German on 16 July 2025.",
+  "why_it_matters_for_builders": "Gives AWS-based teams a native speech-to-speech option with tool use, outside the OpenAI and Google APIs.",
+  "sources": [
+   "https://aws.amazon.com/blogs/aws/introducing-amazon-nova-sonic-human-like-voice-conversations-for-generative-ai-applications/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-livekit-agents-1-0",
+  "date": "2025-04-10",
+  "vendors": [
+   "LiveKit"
+  ],
+  "event_type": "deprecation",
+  "headline": "LiveKit Agents 1.0 replaces VoicePipelineAgent and MultimodalAgent with AgentSession; 0.x stops receiving updates",
+  "detail": "PyPI lists livekit-agents 1.0.0 uploaded 2025-04-10 UTC; LiveKit's migration guide says Python 1.0 was released in April 2025. The guide lists changes to agent classes, tool decorators, events and transcription delivery. Per the guide, 0.x agents keep running on LiveKit Cloud but get no further updates or support.",
+  "why_it_matters_for_builders": "Code and tutorials written for 0.x need rewriting to receive fixes and new features.",
+  "sources": [
+   "https://pypi.org/pypi/livekit-agents/json",
+   "https://docs.livekit.io/agents/start/v0-migration"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-cartesia-sonic2-embeddings-removal",
+  "date": "2025-04-16",
+  "vendors": [
+   "Cartesia"
+  ],
+  "event_type": "deprecation",
+  "headline": "Cartesia drops voice embeddings and experimental speed/emotion controls starting with sonic-2-2025-04-16",
+  "detail": "Cartesia's April 2025 changelog says snapshots from sonic-2-2025-04-16 remove embeddings, the stability cloning mode and experimental speed and emotion controls, and deprecates the /voices/create and /voices/mix endpoints. Older behaviour stays available with API version 2024-11-13 and model sonic-2-2025-03-07.",
+  "why_it_matters_for_builders": "Integrations that stored embeddings or relied on experimental controls must pin the older API version or re-clone voices.",
+  "sources": [
+   "https://docs.cartesia.ai/changelog/2025"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-deepgram-aura-2",
+  "date": "2025-05",
+  "vendors": [
+   "Deepgram"
+  ],
+  "event_type": "model_release",
+  "headline": "Deepgram announces Aura-2 text-to-speech availability in its API",
+  "detail": "Deepgram's changelog entry dated 14 May 2025 announces Aura-2 for real-time use, listing 40+ voices and, as vendor claims, sub-200 ms time to first byte. Spanish voices followed on 25 June 2025. An earlier launch post may pre-date this entry; its date was not confirmed.",
+  "why_it_matters_for_builders": "Adds a second TTS family from an STT-first vendor, relevant to single-vendor voice agent stacks.",
+  "sources": [
+   "https://developers.deepgram.com/changelog/2025/5/14.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-twilio-conversationrelay-ga",
+  "date": "2025-05-14",
+  "vendors": [
+   "Twilio",
+   "ElevenLabs"
+  ],
+  "event_type": "launch",
+  "headline": "Twilio makes ConversationRelay generally available and sets ElevenLabs as its default TTS provider",
+  "detail": "Twilio's changelog, 14 May 2025: ConversationRelay, a TwiML noun and service provider interface that connects a bring-your-own LLM to Twilio voice calls over a websocket with managed speech-to-text and text-to-speech, is GA. Changes include ElevenLabs as default TTS provider and new TwiML parameters elevenlabsTextNormalization, reportInputDuringAgentSpeech and debug.",
+  "why_it_matters_for_builders": "Moves Twilio's managed voice-AI layer out of beta; setups that name no TTS provider now default to ElevenLabs.",
+  "sources": [
+   "https://www.twilio.com/en-us/changelog/conversationrelay-is-now-available-in-ga"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-twilio-microsoft-partnership",
+  "date": "2025-05-14",
+  "vendors": [
+   "Twilio",
+   "Microsoft"
+  ],
+  "event_type": "partnership",
+  "headline": "Twilio announces a multi-year strategic partnership with Microsoft on conversational AI at SIGNAL 2025",
+  "detail": "Twilio's SIGNAL 2025 blog post (14 May 2025) says Twilio announced a new multi-year strategic partnership with Microsoft to help make conversational AI experiences feel natural. The post gives no terms, products or pricing for the partnership. The same post lists ConversationRelay integrations with ElevenLabs, Deepgram, Google and Amazon.",
+  "why_it_matters_for_builders": "Signals vendor alignment only; no concrete product or pricing change for builders is stated in the post.",
+  "sources": [
+   "https://www.twilio.com/en-us/blog/signal-2025-product-announcements"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-retell-token-based-llm-pricing",
+  "date": "2025-05-16",
+  "vendors": [
+   "Retell AI"
+  ],
+  "event_type": "pricing_change",
+  "headline": "Retell AI moves to token-based LLM billing and a 10-second minimum for dynamic first sentences, effective 1 June 2025",
+  "detail": "Retell's changelog entry of 16 May 2025: prompts up to 3,500 tokens keep the flat rate, while longer prompts scale in cost in proportion to length, and calls opening with a Dynamic AI First Sentence have a 10-second minimum billable duration. Retell's own example: GPT-4.1 with a 4,500-token prompt costs $0.1279 per minute.",
+  "why_it_matters_for_builders": "Agents with long prompts cost more per minute on Retell; cost models now need prompt length as an input.",
+  "sources": [
+   "https://www.retellai.com/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-gemini-live-native-audio-preview",
+  "date": "2025-05-20",
+  "vendors": [
+   "Google"
+  ],
+  "event_type": "model_release",
+  "headline": "Google adds Gemini 2.5 native-audio Live API preview models and preview TTS models",
+  "detail": "Gemini API changelog, 20 May 2025: gemini-2.5-flash-preview-native-audio-dialog and gemini-2.5-flash-exp-native-audio-thinking-dialog for the Live API with native audio output, plus gemini-2.5-flash-preview-tts and gemini-2.5-pro-preview-tts (one or two speakers). The changelog records gemini-2.0-flash-live-001 (preview, billing enabled) on 9 April 2025.",
+  "why_it_matters_for_builders": "Adds Google speech-to-speech and TTS options; preview-labelled models can carry short shutdown notices.",
+  "sources": [
+   "https://ai.google.dev/gemini-api/docs/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-hume-evi-3",
+  "date": "2025-05-29",
+  "vendors": [
+   "Hume AI"
+  ],
+  "event_type": "model_release",
+  "headline": "Hume AI introduces EVI 3, a speech-language model for speech-to-speech voice agents",
+  "detail": "Hume's 29 May 2025 post introduces EVI 3, described as a third-generation speech-language model in which one model handles transcription, language and speech. Hume states responses in under 300 ms on top-end hardware (practical latency varies), support for any of 100,000+ custom voices, and compares latency against Gemini Live API, GPT-4o Realtime and Sesame.",
+  "why_it_matters_for_builders": "Adds another speech-to-speech option with custom voices; the latency comparisons are Hume's own tests.",
+  "sources": [
+   "https://www.hume.ai/blog/introducing-evi-3"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-conversational-ai-2",
+  "date": "2025-05-30",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "launch",
+  "headline": "ElevenLabs launches Conversational AI 2.0 with a turn-taking model, integrated RAG and language detection",
+  "detail": "ElevenLabs' blog post (shows 'Published May 30, 2025') introduces Conversational AI 2.0, listing a new turn-taking model, integrated retrieval-augmented generation, automatic language detection, and HIPAA compliance with EU data residency. Later docs and changelog entries use the name Agents Platform for this product.",
+  "why_it_matters_for_builders": "Raises the feature baseline of hosted agent platforms; the product was later renamed, so older docs and tutorials use the earlier name.",
+  "sources": [
+   "https://elevenlabs.io/blog/conversational-ai-2-0",
+   "https://elevenlabs.io/docs/changelog/2025/9/22.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-v3-alpha",
+  "date": "2025-06",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "model_release",
+  "headline": "ElevenLabs releases Eleven v3 (alpha) TTS as a research preview, not recommended for real-time use",
+  "detail": "ElevenLabs' blog page (shows 'Published Jun 3, 2025') and its changelog describe Eleven v3 (alpha) with 70+ languages and a Text to Dialogue endpoint. ElevenLabs says higher latency and prompt-engineering needs make it unsuitable for real-time use and recommends Eleven v2.5 Turbo or Flash for agents.",
+  "why_it_matters_for_builders": "Expressive long-form TTS and low-latency agent TTS stayed on different models at launch.",
+  "sources": [
+   "https://elevenlabs.io/blog/eleven-v3",
+   "https://elevenlabs.io/docs/changelog/2025/6/8.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-assemblyai-universal-streaming",
+  "date": "2025-06-02",
+  "vendors": [
+   "AssemblyAI"
+  ],
+  "event_type": "model_release",
+  "headline": "AssemblyAI launches Universal-Streaming speech-to-text for voice agents, stating a price of $0.15 per hour",
+  "detail": "AssemblyAI's post dated 2 June 2025 introduces Universal-Streaming with immutable transcripts (AssemblyAI states about 300 ms), built-in endpointing and unlimited concurrency. AssemblyAI states pricing of $0.15 per hour, billed on total session duration rather than audio duration.",
+  "why_it_matters_for_builders": "Adds a streaming STT option with no concurrency cap and published per-hour pricing, aimed at agent workloads.",
+  "sources": [
+   "https://www.assemblyai.com/blog/introducing-universal-streaming"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-openai-realtime-preview-2024-10-deprecation",
+  "date": "2025-06-10",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "deprecation",
+  "headline": "OpenAI deprecates gpt-4o-realtime-preview-2024-10-01 and gpt-4o-audio-preview-2024-10-01, removal 10 October 2025",
+  "detail": "OpenAI's deprecations page records notices dated 10 June 2025 for both October 2024 snapshots, with removal three months later on 2025-10-10. The page currently lists gpt-realtime-1.5 and gpt-audio-1.5 as recommended replacements.",
+  "why_it_matters_for_builders": "Apps pinned to the October 2024 preview snapshots stopped working on 10 October 2025 unless the model ID was changed.",
+  "sources": [
+   "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-playht-api-deprecation",
+  "date": "2025-06-26",
+  "vendors": [
+   "PlayHT (PlayAI)",
+   "Kore.ai"
+  ],
+  "event_type": "deprecation",
+  "headline": "PlayHT deprecates its Voice API and TTS service; Kore.ai sets 15 July 2025 deadline to switch providers",
+  "detail": "A Kore.ai community announcement dated 2025-06-26 states that PlayHT officially deprecated support for its Voice API and TTS services, and that Kore.ai Contact Center customers must switch to another TTS provider by 15 July 2025. This predates press reports of Meta acquiring PlayAI (11 to 13 July 2025). PlayHT's own notice was not found.",
+  "why_it_matters_for_builders": "Platforms and apps using PlayHT voices faced a mid-July 2025 cutoff and had to re-create voices elsewhere.",
+  "sources": [
+   "https://community.kore.ai/t/important-update-playht-tts-support-discontinued-heres-what-to-do/5001",
+   "https://community.kore.ai/t/5001.json"
+  ],
+  "evidence_grade": "single-source",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-kyutai-tts-1-6b-unmute",
+  "date": "2025-07-03",
+  "vendors": [
+   "Kyutai"
+  ],
+  "event_type": "model_release",
+  "headline": "Kyutai releases Kyutai TTS 1.6B, a text-streaming TTS used in its open Unmute voice pipeline",
+  "detail": "Kyutai's blog dated 3 July 2025 releases Kyutai TTS 1.6B (English and French). Kyutai states it accepts streamed text and has 220 ms latency to first audio, and that its Unmute demo serves up to 32 concurrent requests on an L40S GPU at 350 ms. Hugging Face lists CC-BY-4.0 for the TTS and STT models; GitHub lists MIT for Unmute.",
+  "why_it_matters_for_builders": "An open STT, TTS and orchestration stack that can run on self-managed GPUs with any text LLM.",
+  "sources": [
+   "https://kyutai.org/blog/2025-07-03-kyutai-tts-1-6b/",
+   "https://kyutai.org/next/unmute",
+   "https://huggingface.co/api/models/kyutai/tts-1.6b-en_fr",
+   "https://github.com/kyutai-labs/unmute"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-meta-acquires-playai",
+  "date": "2025-07-13",
+  "vendors": [
+   "Meta",
+   "PlayAI (PlayHT)"
+  ],
+  "event_type": "acquisition",
+  "headline": "Meta acquires voice AI startup PlayAI; the entire team joins Meta",
+  "detail": "TechCrunch (13 July 2025), citing Bloomberg: a Meta spokesperson confirmed the acquisition and an internal memo said the entire PlayAI team would join the following week. Financial terms were not disclosed. The memo named AI Characters, Meta AI, wearables and audio content creation as areas of fit.",
+  "why_it_matters_for_builders": "A TTS and voice-agent vendor was absorbed by a platform company, so dependent builders needed alternative providers.",
+  "sources": [
+   "https://techcrunch.com/2025/07/13/meta-acquires-voice-startup-play-ai/"
+  ],
+  "evidence_grade": "reputable-press",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-mistral-voxtral",
+  "date": "2025-07-15",
+  "vendors": [
+   "Mistral AI"
+  ],
+  "event_type": "model_release",
+  "headline": "Mistral releases Voxtral 24B and 3B open-weight speech models under Apache 2.0, plus an API",
+  "detail": "Mistral's 15 July 2025 post: two sizes (24B for production, 3B for edge), both Apache 2.0, with a 32k-token context covering up to 30 minutes of transcription. The API routes transcription to Voxtral Mini Transcribe; Mistral states pricing starts at $0.001 per minute and that it beats Whisper large-v3 on its benchmarks.",
+  "why_it_matters_for_builders": "Adds an open-weight STT-plus-understanding option that can be self-hosted or called through a per-minute API.",
+  "sources": [
+   "https://mistral.ai/news/voxtral/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-nice-acquires-cognigy",
+  "date": "2025-07-28",
+  "vendors": [
+   "NiCE",
+   "Cognigy"
+  ],
+  "event_type": "acquisition",
+  "headline": "NiCE agrees to acquire Cognigy for about $955 million; deal closes 8 September 2025",
+  "detail": "NiCE press release of 28 July 2025: definitive agreement valuing Cognigy at about $955M, including roughly $50M of time-bound holdback; expected close in Q4 2025. A second NiCE release dated 8 September 2025 announces the closing after regulatory approvals.",
+  "why_it_matters_for_builders": "A large contact-center vendor now owns a conversational and voice AI platform, which can shift enterprise platform choices and roadmaps.",
+  "sources": [
+   "https://www.nice.com/press-releases/nice-to-acquire-cognigy-advancing-the-leading-cx-ai-platform-to-accelerate-ai-first-customer-experience",
+   "https://www.nice.com/press-releases/nice-closes-acquisition-of-cognigy-transforming-customer-experience-with-best-in-class-data-driven-cx-ai-platform"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-meta-acquires-waveforms",
+  "date": "2025-08-08",
+  "vendors": [
+   "Meta",
+   "WaveForms AI"
+  ],
+  "event_type": "acquisition",
+  "headline": "Meta acquires audio AI startup WaveForms; co-founders join Meta Superintelligence Labs",
+  "detail": "TechCrunch (8 August 2025), citing The Information: undisclosed sum. WaveForms had raised $40M from Andreessen Horowitz at a $160M pre-money valuation per PitchBook. Co-founders Alexis Conneau and Coralie Lemaitre reportedly joined Meta; WaveForms' own website appeared to be down. TechCrunch calls it Meta's second audio-AI purchase in a month, after PlayAI.",
+  "why_it_matters_for_builders": "Another independent speech-to-speech team moved into a platform company, reducing independent options.",
+  "sources": [
+   "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/"
+  ],
+  "evidence_grade": "reputable-press",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-v3-api",
+  "date": "2025-08-20",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "model_release",
+  "headline": "ElevenLabs makes Eleven v3 available through the API (model ID eleven_v3)",
+  "detail": "ElevenLabs changelog, week of 20 August 2025: Eleven v3 is available via the API by specifying model ID eleven_v3 in text-to-speech requests. The same entry says the Eleven Music API became available to all paid users.",
+  "why_it_matters_for_builders": "Lets developers call v3 programmatically; its real-time suitability still follows ElevenLabs' own guidance.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog/2025/8/20.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-openai-gpt-realtime-ga",
+  "date": "2025-08-28",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "launch",
+  "headline": "OpenAI makes the Realtime API generally available with gpt-realtime, remote MCP, image input and SIP support",
+  "detail": "OpenAI's 28 August 2025 post: Realtime API generally available, new gpt-realtime speech-to-speech model, remote MCP server support, image input and SIP phone calling. The post says the API had been in public beta since October 2024.",
+  "why_it_matters_for_builders": "Moves OpenAI speech-to-speech from beta to GA and adds direct telephony (SIP) without a separate bridge.",
+  "sources": [
+   "https://openai.com/index/introducing-gpt-realtime/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-openai-gpt-realtime-price-cut",
+  "date": "2025-08-28",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "pricing_change",
+  "headline": "OpenAI prices gpt-realtime 20% below gpt-4o-realtime-preview",
+  "detail": "With the 28 August 2025 GA, OpenAI states gpt-realtime costs $32 per 1M audio input tokens ($0.40 per 1M cached input tokens) and $64 per 1M audio output tokens, 20% below gpt-4o-realtime-preview. It also added controls to truncate conversation context to reduce cost on long sessions.",
+  "why_it_matters_for_builders": "Lowers per-minute cost of OpenAI speech-to-speech; cost models built on preview pricing need updating.",
+  "sources": [
+   "https://openai.com/index/introducing-gpt-realtime/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-microsoft-mai-voice-1",
+  "date": "2025-08-28",
+  "vendors": [
+   "Microsoft"
+  ],
+  "event_type": "model_release",
+  "headline": "Microsoft AI introduces MAI-Voice-1, an in-house speech generation model used in Copilot",
+  "detail": "Microsoft AI's 28 August 2025 post says MAI-Voice-1 powers Copilot Daily and Podcasts and is offered in a Copilot Labs experience. Microsoft states it can generate a minute of audio in under a second on a single GPU. The post does not announce an API for MAI-Voice-1.",
+  "why_it_matters_for_builders": "Shows Microsoft building its own TTS; the post announces no developer API, so it was not yet a builder option.",
+  "sources": [
+   "https://microsoft.ai/news/two-new-in-house-models/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-soundhound-acquires-interactions",
+  "date": "2025-09-09",
+  "vendors": [
+   "SoundHound AI",
+   "Interactions"
+  ],
+  "event_type": "acquisition",
+  "headline": "SoundHound AI announces acquisition of Interactions for about $60 million in cash",
+  "detail": "StreetInsider (9 September 2025), summarizing SoundHound's release: about $60M cash plus possible revenue-milestone payments, adding Interactions' enterprise customer-service clients. A TipRanks summary of the related SEC filing, syndicated by The Globe and Mail, says the acquisition was completed on 3 September 2025. The primary SEC filing was not opened.",
+  "why_it_matters_for_builders": "Another enterprise voice-AI vendor consolidated into a listed company; customers of Interactions now deal with SoundHound.",
+  "sources": [
+   "https://www.streetinsider.com/Corporate+News/SoundHound+AI+acquires+Interactions+for+$60+million+in+cash/25312928.html",
+   "https://www.theglobeandmail.com/investing/markets/stocks/SOUN/pressreleases/34733488/soundhound-ai-completes-acquisition-of-interactions-corp/"
+  ],
+  "evidence_grade": "reputable-press",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-pipecat-smart-turn-v3",
+  "date": "2025-09-12",
+  "vendors": [
+   "Daily",
+   "Pipecat"
+  ],
+  "event_type": "launch",
+  "headline": "Pipecat 0.0.85 adds local Smart Turn v3 turn detection; v3.1 follows on 3 December 2025",
+  "detail": "The smart-turn README says LocalSmartTurnAnalyzerV3 is available from Pipecat 0.0.85, which PyPI shows uploaded 2025-09-12 UTC. The repo is BSD-2-Clause per GitHub. Daily's post dated 3 December 2025 announces Smart Turn v3.1 as a drop-in replacement with improved accuracy, with open weights and datasets.",
+  "why_it_matters_for_builders": "Gives Pipecat users an open, locally run audio-based turn detector instead of silence-only endpointing.",
+  "sources": [
+   "https://github.com/pipecat-ai/smart-turn",
+   "https://pypi.org/pypi/pipecat-ai/json",
+   "https://www.daily.co/blog/improved-accuracy-in-smart-turn-v3-1/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-openai-realtime-preview-2025-09-deprecation",
+  "date": "2025-09-15",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "deprecation",
+  "headline": "OpenAI deprecates gpt-4o-realtime-preview models and the Realtime beta interface, with removal in May 2026",
+  "detail": "OpenAI's deprecations page records a 15 September 2025 notice: gpt-4o-realtime-preview (incl. 2025-06-03 and 2024-12-17), gpt-4o-mini-realtime-preview and the gpt-4o(-mini)-audio-preview models are removed 2026-05-07; the OpenAI-Beta: realtime=v1 interface is removed 2026-05-12.",
+  "why_it_matters_for_builders": "Apps on preview models or the beta interface must migrate to GA Realtime models and the GA interface.",
+  "sources": [
+   "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-qwen3-omni",
+  "date": "2025-09-22",
+  "vendors": [
+   "Alibaba Qwen"
+  ],
+  "event_type": "model_release",
+  "headline": "Alibaba's Qwen team releases Qwen3-Omni, an omni-modal model with streaming speech output",
+  "detail": "The QwenLM/Qwen3-Omni README news line dated 2025.09.22 says Qwen3-Omni was released. The README describes an end-to-end model that processes text, images, audio and video and streams text or speech responses, with 19 speech-input and 10 speech-output languages. GitHub lists the repository license as Apache-2.0.",
+  "why_it_matters_for_builders": "Adds an open-weight speech-to-speech-capable model from a major lab that can be self-hosted.",
+  "sources": [
+   "https://github.com/QwenLM/Qwen3-Omni"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-v1-tts-deprecation",
+  "date": "2025-09-29",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "deprecation",
+  "headline": "ElevenLabs deprecates eleven_monolingual_v1 and eleven_multilingual_v1, with removal scheduled for 15 December 2025",
+  "detail": "ElevenLabs changelog, week of 29 September 2025: the eleven_monolingual_v1 and eleven_multilingual_v1 TTS models are deprecated and will be removed on 15 December 2025; the entry links a migration guide to newer models.",
+  "why_it_matters_for_builders": "Integrations still using the v1 model IDs needed to move to newer models before the removal date.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog/2025/9/29.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-deepgram-flux",
+  "date": "2025-10-02",
+  "vendors": [
+   "Deepgram"
+  ],
+  "event_type": "model_release",
+  "headline": "Deepgram introduces Flux, a speech recognition model with built-in end-of-turn detection for voice agents",
+  "detail": "Deepgram's changelog, 2 October 2025: Flux is served on a new /v2/listen endpoint (model flux-general-en). It was English-only at launch per Deepgram's 15 October self-hosted note. Deepgram made it free throughout October 2025 for up to 50 concurrent connections.",
+  "why_it_matters_for_builders": "Puts turn detection inside the STT model, which can replace separate VAD and endpointing components.",
+  "sources": [
+   "https://developers.deepgram.com/changelog/2025/10/2.md",
+   "https://developers.deepgram.com/changelog/2025/10/15.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-openai-gpt-realtime-mini",
+  "date": "2025-10-06",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "model_release",
+  "headline": "OpenAI releases gpt-realtime-mini and gpt-audio-mini at DevDay for lower-cost speech-to-speech",
+  "detail": "OpenAI's changelog, 6 October 2025 (DevDay): gpt-realtime-mini and gpt-audio-mini released for more cost-efficient speech to speech. On 15 December 2025 OpenAI added four dated audio snapshots (gpt-realtime-mini, gpt-audio-mini, gpt-4o-mini-transcribe and gpt-4o-mini-tts, all 2025-12-15), with custom voices for eligible customers.",
+  "why_it_matters_for_builders": "Adds a cheaper realtime tier; model slugs later moved to newer snapshots, so pinning dated IDs matters.",
+  "sources": [
+   "https://developers.openai.com/api/docs/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-pipecat-deprecates-playht",
+  "date": "2025-10-07",
+  "vendors": [
+   "Pipecat",
+   "PlayHT (PlayAI)"
+  ],
+  "event_type": "deprecation",
+  "headline": "Pipecat 0.0.88 deprecates its PlayHT TTS services because PlayHT is shutting down its API on 31 December 2025",
+  "detail": "Pipecat's CHANGELOG entry for 0.0.88 (dated 2025-10-07) says PlayHT is shutting down its API on 31 December 2025, so PlayHTTTSService and PlayHTHttpTTSService are deprecated for later removal. The 0.0.104 entry (2026-03-02) removes both services, stating PlayHT has been shut down.",
+  "why_it_matters_for_builders": "Pipecat apps using PlayHT voices needed another TTS service; upgrading past 0.0.104 breaks imports of the PlayHT classes.",
+  "sources": [
+   "https://github.com/pipecat-ai/pipecat/blob/main/CHANGELOG.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-google-cloud-chirp-3-stt-ga",
+  "date": "2025-10-13",
+  "vendors": [
+   "Google Cloud"
+  ],
+  "event_type": "model_release",
+  "headline": "Google Cloud Speech-to-Text makes Chirp 3 transcription generally available in the V2 API",
+  "detail": "Google Cloud release note of 13 October 2025: Chirp 3 (model chirp_3) is GA, exclusively in Speech-to-Text API V2, with speaker diarization, automatic language detection, and StreamingRecognize, Recognize and BatchRecognize. The same page lists private preview on 11 April and public preview on 29 August 2025.",
+  "why_it_matters_for_builders": "Gives Google Cloud STT users a newer multilingual model with streaming; it requires the V2 API.",
+  "sources": [
+   "https://cloud.google.com/speech-to-text/docs/release-notes"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-cartesia-sonic-3",
+  "date": "2025-10-27",
+  "vendors": [
+   "Cartesia"
+  ],
+  "event_type": "model_release",
+  "headline": "Cartesia launches Sonic 3 TTS with 42 languages and volume, speed and emotion controls",
+  "detail": "Cartesia's changelog lists the Sonic 3 launch on 27 October 2025 with stable snapshot sonic-3-2025-10-27, 42 languages, and volume, speed and emotion controls. Cartesia states real-time conversation with emotion and laughter at about 190 ms median latency (vendor claim).",
+  "why_it_matters_for_builders": "Adds a newer low-latency TTS model with controllable speed, volume and emotion for agent voices.",
+  "sources": [
+   "https://docs.cartesia.ai/changelog/2025"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-deepgram-legacy-intelligence-deprecation",
+  "date": "2025-11-05",
+  "vendors": [
+   "Deepgram"
+  ],
+  "event_type": "deprecation",
+  "headline": "Deepgram returns HTTP 400 for legacy Intelligence parameters such as analyze_sentiment, detect_topics and summarize=v1",
+  "detail": "Deepgram's changelog, 5 November 2025: legacy Intelligence feature parameters (analyze_sentiment=true, detect_topics=true, summarize=v1 and summarize=true in the v1 structure) are deprecated, and requests using them now return HTTP 400 errors; current parameters must be used instead.",
+  "why_it_matters_for_builders": "Post-call analytics code using the old parameters fails with 400 errors until updated.",
+  "sources": [
+   "https://developers.deepgram.com/changelog/2025/11/5.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-elevenlabs-scribe-v2-realtime",
+  "date": "2025-11-12",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "model_release",
+  "headline": "ElevenLabs launches Scribe v2 Realtime, a streaming speech-to-text model",
+  "detail": "ElevenLabs changelog, week of 12 November 2025: Scribe v2 Realtime launched. ElevenLabs states support for over 92 languages with about 150 ms latency (vendor claim), and its SDKs moved the speech-to-text endpoint to scribe_realtime.",
+  "why_it_matters_for_builders": "Adds a streaming STT option from a TTS vendor, so agents can use one vendor in both directions.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog/2025/11/12.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-deepgram-managed-cartesia-tts",
+  "date": "2025-11-12",
+  "vendors": [
+   "Deepgram",
+   "Cartesia"
+  ],
+  "event_type": "partnership",
+  "headline": "Deepgram Voice Agent API adds Deepgram-managed Cartesia TTS models, billed within Deepgram's Standard tier",
+  "detail": "Deepgram's changelog, 12 November 2025: Cartesia can be selected as a TTS provider inside the Voice Agent API by naming the provider and model, with no Cartesia account, setup or payments needed. Deepgram states the feature is included in its Standard pricing tier. The same entry adds Anthropic's Claude Haiku 4.5 as a supported LLM.",
+  "why_it_matters_for_builders": "Lets one Deepgram bill cover STT, LLM and Cartesia voices for agents built on its Voice Agent API.",
+  "sources": [
+   "https://developers.deepgram.com/changelog/2025/11/12.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-amazon-nova-2-sonic",
+  "date": "2025-12-02",
+  "vendors": [
+   "Amazon Web Services"
+  ],
+  "event_type": "model_release",
+  "headline": "Amazon introduces Nova 2 Sonic with added languages, polyglot voices, configurable turn-taking and asynchronous tool calling",
+  "detail": "AWS blog post dated 2 December 2025: Nova 2 Sonic adds Portuguese and Hindi to English, French, Italian, German and Spanish; polyglot voices that switch languages mid-conversation; configurable voice activity detection sensitivity; cross-modal text and voice input; and asynchronous tool calling. It uses the same bidirectional streaming API as Nova Sonic.",
+  "why_it_matters_for_builders": "Existing Nova Sonic integrations can adopt the new features incrementally through additional parameters and events.",
+  "sources": [
+   "https://aws.amazon.com/blogs/aws/introducing-amazon-nova-2-sonic-next-generation-speech-to-speech-model-for-conversational-ai/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-gemini-live-model-shutdowns",
+  "date": "2025-12-09",
+  "vendors": [
+   "Google"
+  ],
+  "event_type": "deprecation",
+  "headline": "Google shuts down gemini-2.0-flash-live-001 and gemini-live-2.5-flash-preview Live API models",
+  "detail": "Gemini API changelog: the two models were shut down on 9 December 2025, announced 20 October 2025. On 20 October the native-audio preview models gemini-2.5-flash-preview-native-audio-dialog and gemini-2.5-flash-exp-native-audio-thinking-dialog were also shut down, with gemini-2.5-flash-native-audio-preview-09-2025 as replacement.",
+  "why_it_matters_for_builders": "Live API model IDs have short lifetimes; pinned versions need monitoring against the deprecations page.",
+  "sources": [
+   "https://ai.google.dev/gemini-api/docs/changelog",
+   "https://ai.google.dev/gemini-api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-xai-grok-speech-to-speech-ga",
+  "date": "2025-12-16",
+  "vendors": [
+   "xAI"
+  ],
+  "event_type": "launch",
+  "headline": "xAI makes its Grok Speech to Speech API generally available",
+  "detail": "xAI's API release notes list, under 16 December 2025, that the Grok Speech to Speech API is generally available and point to its documentation for usage guidance.",
+  "why_it_matters_for_builders": "Adds another vendor's speech-to-speech API beside OpenAI, Google and Amazon.",
+  "sources": [
+   "https://docs.x.ai/docs/release-notes"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-groq-nvidia-licensing",
+  "date": "2025-12-24",
+  "vendors": [
+   "Groq",
+   "Nvidia"
+  ],
+  "event_type": "acquihire_or_licensing",
+  "headline": "Groq and Nvidia sign non-exclusive inference technology licensing deal; Groq founder and president join Nvidia",
+  "detail": "Groq's 24 December 2025 release: a non-exclusive licensing agreement for Groq's inference technology; founder Jonathan Ross, president Sunny Madra and other team members join Nvidia. Groq says it continues as an independent company with Simon Edwards as CEO, and that GroqCloud continues to operate without interruption.",
+  "why_it_matters_for_builders": "Teams using GroqCloud for fast LLM or speech inference should watch roadmap and pricing after the leadership move.",
+  "sources": [
+   "https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j1-playht-platform-sunset",
+  "date": "2025-12-31",
+  "vendors": [
+   "PlayHT (PlayAI)"
+  ],
+  "event_type": "shutdown",
+  "headline": "PlayHT's API and platform are shut down; third parties give 31 December 2025 as the sunset date",
+  "detail": "Pipecat's changelog says PlayHT would shut its API on 31 December 2025 (0.0.88, 2025-10-07) and, in an entry dated 2026-03-02, that PlayHT has been shut down. Groq's deprecation page lists playai-tts and playai-tts-arabic with shutdown date 12/31/25. Archived captures of play.ht (2026-01-06) and play.ai (2026-01-11) show a banner reading 'We have shut down the service. Thank you for being part of our journey.' Inworld's migration guide (a competitor) says clones were deleted with no export and the API went offline around 26 July 2025. A PlayHT-authored announcement stating the dates was not found, so the exact API-offline date is unverified. play.ht and play.ai had no DNS A record on 2026-09-30.",
+  "why_it_matters_for_builders": "Voice clones and integrations on PlayHT are unrecoverable; any remaining dependency must be replaced.",
+  "sources": [
+   "https://github.com/pipecat-ai/pipecat/blob/main/CHANGELOG.md",
+   "https://inworld.ai/resources/migrate-from-playht",
+   "https://web.archive.org/web/20260106201747id_/https://play.ht/",
+   "https://web.archive.org/web/20260111050734id_/https://play.ai/",
+   "https://console.groq.com/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "x-pipecat-cloud-ga",
+  "date": "2026-01-08",
+  "vendors": [
+   "Daily",
+   "Pipecat"
+  ],
+  "event_type": "launch",
+  "headline": "Pipecat Cloud reaches general availability after a nine-month beta",
+  "detail": "Daily's blog states Pipecat Cloud became generally available on 2026-01-08; the former Daily Bots product pages now redirect to Pipecat Cloud.",
+  "why_it_matters_for_builders": "A hosted runtime for Pipecat agents exists from the framework's maintainer; the older Daily Bots product appears folded into it.",
+  "sources": [
+   "https://www.daily.co/blog/pipecat-cloud-is-now-generally-available/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-deepgram-ofone-series-c",
+  "date": "2026-01-13",
+  "vendors": [
+   "Deepgram",
+   "OfOne"
+  ],
+  "event_type": "acquisition",
+  "headline": "Deepgram acquires OfOne, a drive-thru voice AI startup, and announces a $130M Series C",
+  "detail": "SiliconANGLE reports Deepgram bought OfOne Inc., a restaurant and drive-through voice startup whose team and technology anchor a new Deepgram for Restaurants product. The same day Deepgram announced a $130M Series C at a $1.3B valuation, led by AVP.",
+  "why_it_matters_for_builders": "A speech-API vendor adding a vertical product by acquisition; relevant when judging a vendor's roadmap and customer overlap.",
+  "sources": [
+   "https://siliconangle.com/2026/01/13/real-time-voice-ai-unicorn-deepgram-raises-130m-streamline-human-machine-interactions/"
+  ],
+  "evidence_grade": "reputable-press",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "x-clickhouse-acquires-langfuse",
+  "date": "2026-01-16",
+  "vendors": [
+   "ClickHouse",
+   "Langfuse"
+  ],
+  "event_type": "acquisition",
+  "headline": "ClickHouse announces the acquisition of Langfuse alongside a $400M Series D",
+  "detail": "ClickHouse's press release dated 2026-01-16; Langfuse's own post says it stays open source and self-hostable with no planned licensing changes.",
+  "why_it_matters_for_builders": "A widely used open-source LLM tracing tool now belongs to a database vendor; the vendor states licensing is unchanged.",
+  "sources": [
+   "https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres",
+   "https://langfuse.com/blog/joining-clickhouse"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-hume-google-deepmind-license",
+  "date": "2026-01-22",
+  "vendors": [
+   "Hume AI",
+   "Google DeepMind"
+  ],
+  "event_type": "acquihire_or_licensing",
+  "headline": "Google DeepMind signs licensing deal with Hume AI and hires its CEO plus about seven engineers",
+  "detail": "WIRED reported that CEO Alan Cowen and roughly seven engineers join Google DeepMind under a licensing agreement; financial terms are confidential. Hume AI continues under new CEO Andrew Ettinger and says it will keep supplying technology to other frontier AI labs. Hume had raised $74M.",
+  "why_it_matters_for_builders": "Hume's roadmap now depends on the post-deal company; check support commitments and model update plans before building on its APIs.",
+  "sources": [
+   "https://www.wired.com/story/google-hires-hume-ai-ceo-licensing-deal-gemini/",
+   "https://www.pymnts.com/news/artificial-intelligence/2026/google-recruits-hume-ceo-alan-cowen-bolster-voice-ai-efforts/",
+   "https://www.eweek.com/news/google-hume-ai-talent-raid/"
+  ],
+  "evidence_grade": "reputable-press",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-elevenlabs-v3-out-of-alpha",
+  "date": "2026-02-02",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "model_release",
+  "headline": "ElevenLabs moves Eleven v3 text-to-speech out of alpha",
+  "detail": "ElevenLabs' docs changelog entry for the week of February 2, 2026 states that Eleven v3 is out of alpha and is more stable, more accurate and lower latency. The following week's changelog adds an eleven_v3_conversational model option for agents.",
+  "why_it_matters_for_builders": "v3 becomes a supported production TTS option, including for ElevenLabs agents, rather than an alpha model.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog/2026/2/2",
+   "https://elevenlabs.io/docs/changelog/2026/2/9"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-mistral-voxtral-transcribe-2",
+  "date": "2026-02-04",
+  "vendors": [
+   "Mistral AI"
+  ],
+  "event_type": "model_release",
+  "headline": "Mistral releases Voxtral Mini Transcribe 2 and a realtime transcription model, plus context biasing and diarization",
+  "detail": "Mistral's changelog lists voxtral-mini-2602 (Voxtral Mini Transcribe 2) and voxtral-mini-transcribe-realtime-2602 on February 4, 2026. The same entry adds context biasing and diarize options to the Audio Transcriptions API.",
+  "why_it_matters_for_builders": "Adds a realtime speech-to-text model and biasing and diarization options from Mistral's API.",
+  "sources": [
+   "https://docs.mistral.ai/resources/changelogs"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-elevenlabs-product-rename",
+  "date": "2026-02-09",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "rename",
+  "headline": "ElevenLabs renames Agents Platform to ElevenAgents and introduces ElevenCreative and ElevenAPI product families",
+  "detail": "ElevenLabs' changelog for the week of February 9, 2026 says it is moving to a platform structure: ElevenAgents (formerly Agents Platform), ElevenCreative (formerly Creative Platform) and ElevenAPI (new developer platform). SDK 2.36.0 on February 23 renamed Conversational AI references to ElevenAgents.",
+  "why_it_matters_for_builders": "Docs, SDK names and search terms changed; older tutorials may use Conversational AI or Agents Platform names.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog/2026/2/9",
+   "https://elevenlabs.io/docs/changelog/2026/2/23"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-gpt-realtime-1-5",
+  "date": "2026-02-23",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "model_release",
+  "headline": "OpenAI releases gpt-realtime-1.5 in the Realtime API and gpt-audio-1.5 in Chat Completions",
+  "detail": "OpenAI's API changelog lists gpt-realtime-1.5 (Realtime API) and gpt-audio-1.5 (Chat Completions) as released on February 23, 2026. gpt-audio-1.5 later appears as the recommended replacement for older audio models on OpenAI's deprecations page.",
+  "why_it_matters_for_builders": "Updated snapshot for speech-to-speech and audio chat apps; gpt-audio-1.5 is the named replacement for older audio models.",
+  "sources": [
+   "https://developers.openai.com/api/docs/changelog",
+   "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-mistral-voxtral-tts",
+  "date": "2026-03-23",
+  "vendors": [
+   "Mistral AI"
+  ],
+  "event_type": "model_release",
+  "headline": "Mistral releases Voxtral TTS (voxtral-tts-2603) with zero-shot voice cloning and real-time streaming",
+  "detail": "Mistral's changelog entry dated March 23, 2026 lists voxtral-tts-2603, described as a text-to-speech model with zero-shot voice cloning, multilingual support and real-time streaming.",
+  "why_it_matters_for_builders": "Adds a Mistral-hosted TTS model, extending Mistral's audio line from transcription to speech output.",
+  "sources": [
+   "https://docs.mistral.ai/resources/changelogs"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-gemini-3-1-flash-live-preview",
+  "date": "2026-03-26",
+  "vendors": [
+   "Google"
+  ],
+  "event_type": "model_release",
+  "headline": "Google releases gemini-3.1-flash-live-preview, an audio-to-audio model for the Live API",
+  "detail": "The Gemini API changelog lists gemini-3.1-flash-live-preview on March 26, 2026 as the latest audio-to-audio model for real-time dialogue and voice-first applications. The deprecations page later names gemini-3.8-live as its replacement, with no shutdown date announced.",
+  "why_it_matters_for_builders": "Preview Live API model for voice agents; plan to move to gemini-3.8-live, which Google lists as the replacement.",
+  "sources": [
+   "https://ai.google.dev/gemini-api/docs/changelog",
+   "https://ai.google.dev/gemini-api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-azure-speech-rest-v3-retired",
+  "date": "2026-03-31",
+  "vendors": [
+   "Microsoft Azure"
+  ],
+  "event_type": "deprecation",
+  "headline": "Microsoft retires Azure Speech to text REST API v3.0 and v3.1 on March 31, 2026",
+  "detail": "Microsoft's Azure Speech release notes state that Speech to text REST API v3.1 and v3.0 were retired on March 31, 2026, and link migration guides for moving from v3.0 to v3.1 and from v3.1 to v3.2. Version 3.2 is listed as generally available.",
+  "why_it_matters_for_builders": "Integrations that still call the Speech to text REST API v3.0 or v3.1 need to move to v3.2.",
+  "sources": [
+   "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/releasenotes"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-pipecat-1-0-release",
+  "date": "2026-04-14",
+  "vendors": [
+   "Pipecat",
+   "Daily"
+  ],
+  "event_type": "launch",
+  "headline": "Pipecat publishes v1.0.0 with a migration guide and removal of deprecated APIs",
+  "detail": "The Pipecat v1.0.0 GitHub release, published April 14, 2026, links a migration guide and flags many breaking changes, including removal of deprecated transport parameters and frames, NoisereduceFilter and OpenPipeLLMService. It adds a WebSocket-based OpenAI Responses service as the new default.",
+  "why_it_matters_for_builders": "Projects on Pipecat 0.x need the migration guide; removed transport parameters and frames will break older code.",
+  "sources": [
+   "https://github.com/pipecat-ai/pipecat/releases/tag/v1.0.0"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-soundhound-liveperson-announced",
+  "date": "2026-04-21",
+  "vendors": [
+   "SoundHound AI",
+   "LivePerson"
+  ],
+  "event_type": "acquisition",
+  "headline": "SoundHound AI agrees to acquire LivePerson at a $43M equity value",
+  "detail": "SoundHound's April 21, 2026 release says it will acquire LivePerson for an equity value of $43M, implying a total enterprise value of $250M after discounts on LivePerson's debt. Closing was expected in the second half of 2026 pending regulatory approvals.",
+  "why_it_matters_for_builders": "Consolidation of a voice-AI vendor with a digital messaging platform; existing LivePerson customers face roadmap and contract changes.",
+  "sources": [
+   "https://www.soundhound.com/newsroom/soundhound-ai-to-acquire-liveperson-combining-proprietary-voice-agentic-ai-and-digital-messaging-to-create-a-world-leading-end-to-end-omnichannel-conversational-ai-platform"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-assemblyai-voice-agent-api",
+  "date": "2026-04-25",
+  "vendors": [
+   "AssemblyAI"
+  ],
+  "event_type": "launch",
+  "headline": "AssemblyAI launches Voice Agent API, a single-WebSocket voice agent pipeline at $4.50 per hour all-in",
+  "detail": "AssemblyAI's changelog dated April 25, 2026 introduces the Voice Agent API, a pipeline on AssemblyAI's own models over one WebSocket. It states one all-in rate of $4.50 per hour covering speech understanding, LLM reasoning and voice generation, with server-side turn detection.",
+  "why_it_matters_for_builders": "Adds a bundled, per-hour priced voice agent endpoint from an STT vendor, alongside similar bundles from other vendors.",
+  "sources": [
+   "https://www.assemblyai.com/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-cartesia-ink2-sonic35-ga",
+  "date": "2026-05",
+  "vendors": [
+   "Cartesia"
+  ],
+  "event_type": "model_release",
+  "headline": "Cartesia releases Ink-2 streaming speech-to-text and makes Sonic 3.5 text-to-speech generally available",
+  "detail": "Cartesia's May 2026 changelog lists Ink-2, a streaming STT model with built-in turn detection that supports English only at release, and Sonic 3.5 generally available on the sonic-3.5 alias. Eligible Line agents default to Sonic 3.5 and Ink 2.",
+  "why_it_matters_for_builders": "Cartesia now offers its own STT and TTS pair for agents; Ink-2 launched with English only.",
+  "sources": [
+   "https://docs.cartesia.ai/changelog/2026"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-aircall-vogent",
+  "date": "2026-05-06",
+  "vendors": [
+   "Aircall",
+   "Vogent"
+  ],
+  "event_type": "acquisition",
+  "headline": "Aircall acquires Vogent, a voice AI agent company",
+  "detail": "Aircall announced on May 6, 2026 that it acquired Vogent and that Vogent's San Francisco team joins Aircall. The release cites Vogent's speech models, turn-taking, voice activity detection and custom voice models as additions to Aircall's AI Voice Agent. The release states no terms.",
+  "why_it_matters_for_builders": "Vogent's technology is being folded into Aircall's phone product; standalone Vogent users should confirm the platform's continuation with the vendor.",
+  "sources": [
+   "https://finance.yahoo.com/sectors/technology/articles/aircall-acquires-vogent-advance-ai-100300337.html",
+   "https://pulse2.com/aircall-acquisition-of-vogent-expands-ai-voice-agent-technology-platform/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-gpt-realtime-2",
+  "date": "2026-05-07",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "model_release",
+  "headline": "OpenAI releases gpt-realtime-2, gpt-realtime-translate and gpt-realtime-whisper",
+  "detail": "OpenAI's changelog for May 7, 2026 lists GPT-Realtime-2, a realtime voice model with configurable reasoning for speech-to-speech agents, plus GPT-Realtime-Translate for streaming speech translation and GPT-Realtime-Whisper for streaming speech-to-text, with new translation endpoints.",
+  "why_it_matters_for_builders": "Adds reasoning settings to realtime voice agents and separate streaming translation and transcription models.",
+  "sources": [
+   "https://developers.openai.com/api/docs/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-realtime-beta-removed",
+  "date": "2026-05-12",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "deprecation",
+  "headline": "OpenAI removes the Realtime API beta interface; apps must use the released Realtime API",
+  "detail": "OpenAI's changelog says the Realtime API Beta was deprecated and removed from the API on May 12, 2026, and tells developers still on the beta interface to migrate to the released Realtime API using its migration guide.",
+  "why_it_matters_for_builders": "Code still using the beta interface stops working; migrate to the released Realtime API.",
+  "sources": [
+   "https://developers.openai.com/api/docs/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-weights-gg",
+  "date": "2026-05-15",
+  "vendors": [
+   "OpenAI",
+   "Weights.gg"
+  ],
+  "event_type": "acquisition",
+  "headline": "OpenAI reportedly acquires voice-cloning startup Weights.gg; its Replay app had already shut down",
+  "detail": "Pulse 2, citing a May 15, 2026 New York Times report, says OpenAI acquired Weights.gg's intellectual property and a small team; terms were not disclosed. Weights.gg had shut down its Replay voice-cloning app earlier in 2026. OpenAI reportedly has no plan for a standalone voice-cloning product.",
+  "why_it_matters_for_builders": "Shows OpenAI adding voice-cloning talent; no standalone OpenAI cloning product was reported.",
+  "sources": [
+   "https://pulse2.com/openai-reportedly-acquires-voice-cloning-startup-weights-gg/"
+  ],
+  "evidence_grade": "single-source",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-inworld-price-cut",
+  "date": "2026-06",
+  "vendors": [
+   "Inworld AI"
+  ],
+  "event_type": "pricing_change",
+  "headline": "Inworld cuts TTS, STT and LLM routing prices by half or more for most developers",
+  "detail": "Inworld's June 2026 post says new prices are live for every developer and fall by half or more. It lists Realtime TTS-2 at $25 per 1M characters list, $12.50 on the Growth plan and as low as $5 for enterprise commitments, and speech-to-text at $0.15 per hour on demand, down to $0.10 at scale.",
+  "why_it_matters_for_builders": "A large cut in stated TTS and STT list prices; compare current rates before renewing or choosing a provider.",
+  "sources": [
+   "https://inworld.ai/blog/consumer-ai-cost-pricing"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-microsoft-mai-voice-2",
+  "date": "2026-06-02",
+  "vendors": [
+   "Microsoft"
+  ],
+  "event_type": "model_release",
+  "headline": "Microsoft launches MAI-Voice-2 text-to-speech with 15 languages and zero-shot voice prompting",
+  "detail": "Microsoft AI's June 2, 2026 post announces MAI-Voice-2, expanding from English only to 15 languages, with zero-shot voice prompting from 5 to 60 seconds of reference audio and code-switching for select language pairs. Custom voices are created in Microsoft Foundry with consent controls.",
+  "why_it_matters_for_builders": "Adds a Microsoft first-party TTS model in Foundry with consent-gated voice cloning.",
+  "sources": [
+   "https://microsoft.ai/news/mai-voice-2/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-assemblyai-universal-3-5-pro",
+  "date": "2026-06-15",
+  "vendors": [
+   "AssemblyAI"
+  ],
+  "event_type": "model_release",
+  "headline": "AssemblyAI releases Universal-3.5 Pro Realtime at $0.45 per hour, then the async version on July 6",
+  "detail": "AssemblyAI's changelog lists Universal-3.5 Pro Realtime on June 15, 2026, a streaming model that takes agent context as input, at $0.45 per hour, the same as Universal-3 Pro Realtime. Universal-3.5 Pro for pre-recorded audio followed on July 6 at $0.21 per hour.",
+  "why_it_matters_for_builders": "Streaming STT with agent-context input is now in AssemblyAI's lineup, with stated per-hour prices.",
+  "sources": [
+   "https://www.assemblyai.com/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-salesforce-fin-agreement",
+  "date": "2026-06-15",
+  "vendors": [
+   "Salesforce",
+   "Fin (formerly Intercom)"
+  ],
+  "event_type": "acquisition",
+  "headline": "Salesforce signs agreement to acquire Fin, formerly Intercom, for about $3.6B",
+  "detail": "Salesforce's June 15, 2026 release says it will acquire Fin, formerly Intercom, for about $3.6B. Fin's AI agent handles customer queries across chat, email, WhatsApp, SMS, phone and Slack. Intercom's blog says the company changed its name to Fin weeks earlier.",
+  "why_it_matters_for_builders": "A customer-service agent vendor with a phone channel moves under Salesforce; relevant to CCaaS and CRM-native voice agent choices.",
+  "sources": [
+   "https://www.salesforce.com/news/press-releases/2026/06/15/salesforce-signs-definitive-agreement-to-acquire-fin/",
+   "https://www.intercom.com/blog/salesforce-signs-definitive-agreement-to-acquire-fin/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-deepl-mixhalo",
+  "date": "2026-06-17",
+  "vendors": [
+   "DeepL",
+   "Mixhalo"
+  ],
+  "event_type": "acquisition",
+  "headline": "DeepL adds Mixhalo's team and technology, extending DeepL Voice to live events",
+  "detail": "DeepL's June 17, 2026 release says the team and technology behind Mixhalo, a San Francisco real-time audio platform, have joined DeepL, and DeepL is opening a San Francisco office. TechCrunch reports the same. The release does not state terms. Mixhalo already used the DeepL Voice API for live translation.",
+  "why_it_matters_for_builders": "A translation vendor adds live-audio delivery; relevant to speech-to-speech translation and event-audio pipelines.",
+  "sources": [
+   "https://www.deepl.com/en/press-release/deepl-expands-to-silicon-valley-and-adds-mixhalo-technology-to-accelerate-voice-ai",
+   "https://techcrunch.com/2026/06/17/deepl-acquires-mixhalo-for-live-event-audio-streaming-and-translation/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-cartesia-sonic2-turbo-sunset",
+  "date": "2026-07",
+  "vendors": [
+   "Cartesia"
+  ],
+  "event_type": "deprecation",
+  "headline": "Cartesia schedules sunset of Sonic-2, Sonic-turbo and Sonic-3-2025-10-27 after October 20, 2026",
+  "detail": "Cartesia's July 2026 changelog deprecation notice says Sonic-2, Sonic-turbo and the Sonic-3-2025-10-27 snapshot will be sunsetted after October 20, 2026, and tells customers to migrate to the newest stable TTS snapshot before then.",
+  "why_it_matters_for_builders": "Pinned model IDs for these snapshots stop working after the date; repoint production traffic first.",
+  "sources": [
+   "https://docs.cartesia.ai/changelog/2026"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-xai-rebrand-spacexai",
+  "date": "2026-07",
+  "vendors": [
+   "xAI",
+   "SpaceXAI",
+   "SpaceX"
+  ],
+  "event_type": "rename",
+  "headline": "xAI is rebranded SpaceXAI in July 2026 after SpaceX acquired it in February",
+  "detail": "xAI's developer docs and news site now carry the SpaceXAI name. Wikipedia states SpaceX acquired xAI on February 2, 2026 and the company was rebranded SpaceXAI in July 2026; only the Wikipedia page was found for those dates, and the release notes still refer to the 'xAI API'.",
+  "why_it_matters_for_builders": "Vendor name changed in docs and release notes; the Grok voice APIs are documented under SpaceXAI.",
+  "sources": [
+   "https://x.ai/news",
+   "https://docs.x.ai/developers/release-notes",
+   "https://en.wikipedia.org/wiki/SpaceXAI"
+  ],
+  "evidence_grade": "single-source",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-gpt-realtime-2-1",
+  "date": "2026-07-06",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "model_release",
+  "headline": "OpenAI releases gpt-realtime-2.1 and gpt-realtime-2.1-mini",
+  "detail": "OpenAI's changelog for July 6, 2026 lists GPT-Realtime-2.1, with improved alphanumeric recognition, silence and noise handling and interruption behavior, and GPT-Realtime-2.1 mini, a faster, lower-cost distilled reasoning model. OpenAI later names both as replacements for older realtime models.",
+  "why_it_matters_for_builders": "Current recommended realtime snapshots; older realtime families have announced removal dates.",
+  "sources": [
+   "https://developers.openai.com/api/docs/changelog",
+   "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-legacy-realtime-audio-removal",
+  "date": "2026-07-20",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "deprecation",
+  "headline": "OpenAI notifies removal of gpt-realtime, gpt-4o-realtime, gpt-audio and mini variants on January 20, 2027",
+  "detail": "OpenAI's deprecations page records a July 20, 2026 notice: gpt-realtime, gpt-audio, gpt-4o-audio, gpt-4o-realtime, gpt-realtime-mini, gpt-audio-mini, gpt-4o-mini-realtime, gpt-4o-mini-audio and one mini-transcribe snapshot are removed January 20, 2027. Replacements listed: gpt-realtime-2.1, gpt-realtime-2.1-mini, gpt-audio-1.5.",
+  "why_it_matters_for_builders": "Any voice agent pinned to these model names needs a migration and re-test before January 20, 2027.",
+  "sources": [
+   "https://developers.openai.com/api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-xai-grok-voice-think-fast-2",
+  "date": "2026-07-29",
+  "vendors": [
+   "SpaceXAI"
+  ],
+  "event_type": "model_release",
+  "headline": "SpaceXAI releases grok-voice-think-fast-2.0 speech-to-speech model",
+  "detail": "SpaceXAI's API release notes for July 29, 2026 list grok-voice-think-fast-2.0 for the Speech to Speech API and say the grok-voice-latest alias routes to it from August 5, 2026. Think Fast 1.0 was listed on April 23, 2026.",
+  "why_it_matters_for_builders": "The grok-voice-latest alias changes target on August 5; pin a model ID if behavior must not change.",
+  "sources": [
+   "https://docs.x.ai/developers/release-notes",
+   "https://x.ai/news"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-cartesia-line-hosting-end",
+  "date": "2026-08",
+  "vendors": [
+   "Cartesia"
+  ],
+  "event_type": "deprecation",
+  "headline": "Cartesia will stop hosting Line SDK agents on December 1, 2026 and introduces Managed Agents",
+  "detail": "Cartesia's August 2026 changelog says it stops hosting Line SDK agents on December 1, 2026; self-hosted agents are not affected and existing agents keep running until then. The same entry introduces Cartesia Managed Agents, configured by UI or API, and a migration guide maps Line features to it.",
+  "why_it_matters_for_builders": "Hosted Line code agents need a rebuild as Managed Agents, or self-hosting, before December 1, 2026.",
+  "sources": [
+   "https://docs.cartesia.ai/changelog/2026",
+   "https://docs.cartesia.ai/agents/migrate-from-line-sdk"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "x-lmnt-shutdown",
+  "date": "2026-08",
+  "vendors": [
+   "LMNT"
+  ],
+  "event_type": "shutdown",
+  "headline": "LMNT's website shows a shutdown message in place of its speech API",
+  "detail": "lmnt.com and docs.lmnt.com show only a message that the company's speech generation journey has come to an end. Archived captures show the normal site on 2026-08-03 and the message on 2026-09-01, so the change happened in that window (capture dates, not an announced date). No acquirer or migration notice was found.",
+  "why_it_matters_for_builders": "Applications that used the LMNT TTS API need another provider; no migration path was published.",
+  "sources": [
+   "https://www.lmnt.com/",
+   "https://docs.lmnt.com/",
+   "https://web.archive.org/web/20260901224504id_/https://lmnt.com/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-livekit-per-second-metering",
+  "date": "2026-08-24",
+  "vendors": [
+   "LiveKit"
+  ],
+  "event_type": "pricing_change",
+  "headline": "LiveKit moves agent sessions, recording, WebRTC and SIP to per-second billing with a ten-second minimum",
+  "detail": "LiveKit's August 24, 2026 post says agent session minutes, recording, WebRTC connections and SIP connections are now metered per second with a ten-second minimum increment, on all plans including enterprise contracts. It is already live and appears on September bills for August usage.",
+  "why_it_matters_for_builders": "Short outbound calls and brief sessions are billed by the second rather than rounded up to the minute.",
+  "sources": [
+   "https://livekit.com/blog/introducing-per-second-metering-for-livekit"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-gemini-3-5-transcribe-ga",
+  "date": "2026-08-26",
+  "vendors": [
+   "Google"
+  ],
+  "event_type": "model_release",
+  "headline": "Google makes Gemini 3.5 Transcribe and Gemini 3.5 Transcribe Live generally available",
+  "detail": "The Gemini API changelog for August 26, 2026 lists two speech-to-text models: gemini-3.5-transcribe for non-streaming transcription and gemini-3.5-transcribe-live for bidirectional streaming over WebSockets in the Live API, with interim and final transcript events and voice activity detection options.",
+  "why_it_matters_for_builders": "Adds Google-hosted batch and streaming STT models usable as a Live API component in voice-agent pipelines.",
+  "sources": [
+   "https://ai.google.dev/gemini-api/docs/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-whisper-gpt4o-transcribe-deprecated",
+  "date": "2026-08-26",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "deprecation",
+  "headline": "OpenAI deprecates whisper-1 and gpt-4o transcription models, with removal on February 26, 2027",
+  "detail": "OpenAI's deprecations page records an August 26, 2026 notice that whisper-1, gpt-4o-transcribe, gpt-4o-mini-transcribe and gpt-4o-transcribe-diarize are removed on February 26, 2027. Recommended replacements are gpt-live-transcribe or gpt-transcribe, which the changelog lists as released July 28, 2026.",
+  "why_it_matters_for_builders": "Apps using the Whisper API or gpt-4o transcription models need to move to gpt-transcribe or gpt-live-transcribe.",
+  "sources": [
+   "https://developers.openai.com/api/docs/deprecations",
+   "https://developers.openai.com/api/docs/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-livekit-connectors",
+  "date": "2026-09-01",
+  "vendors": [
+   "LiveKit",
+   "Twilio",
+   "WhatsApp"
+  ],
+  "event_type": "launch",
+  "headline": "LiveKit launches Connectors bridging LiveKit rooms to Twilio Programmable Voice and WhatsApp Business Calling",
+  "detail": "LiveKit's September 1, 2026 post introduces Connectors, which bring a Twilio Programmable Voice or WhatsApp Business Calling call into a LiveKit room as a regular participant, with no SIP trunk to provision. LiveKit says more platforms are planned.",
+  "why_it_matters_for_builders": "Agents can take WhatsApp and existing Twilio calls without SIP trunking or a separate gateway.",
+  "sources": [
+   "https://livekit.com/blog/introducing-livekit-connectors"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-microsoft-mai-transcribe-2",
+  "date": "2026-09-03",
+  "vendors": [
+   "Microsoft"
+  ],
+  "event_type": "model_release",
+  "headline": "Microsoft releases MAI-Transcribe-2 at $0.10 per audio hour, a limited-time price through year-end",
+  "detail": "Microsoft AI's September 3, 2026 post says MAI-Transcribe-2 is priced at $0.10 per hour as a limited-time offer until the end of the year and is available via Microsoft Foundry, MAI Playground and OpenRouter. VentureBeat reports the prior MAI-Transcribe-1 launch price was $0.36 per hour.",
+  "why_it_matters_for_builders": "A low per-hour STT price point from a hyperscaler; the price is promotional through December 31, 2026.",
+  "sources": [
+   "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/",
+   "https://venturebeat.com/infrastructure/microsoft-ais-mai-transcribe-2-undercuts-openai-google-and-elevenlabs-on-price-and-speed"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-soundhound-liveperson-completed",
+  "date": "2026-09-04",
+  "vendors": [
+   "SoundHound AI",
+   "LivePerson"
+  ],
+  "event_type": "acquisition",
+  "headline": "SoundHound AI completes its acquisition of LivePerson",
+  "detail": "SoundHound's September 4, 2026 release says it completed the LivePerson acquisition after regulatory and shareholder approvals, appointed John Collins as chief financial officer of the combined company, and said integration is underway.",
+  "why_it_matters_for_builders": "LivePerson products now belong to SoundHound; expect integration changes to plans, support and roadmaps.",
+  "sources": [
+   "https://www.soundhound.com/newsroom/soundhound-ai-completes-acquisition-of-liveperson-creating-a-world-leading-omnichannel-conversational-ai-powerhouse"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-openai-gpt-live-1-ga",
+  "date": "2026-09-10",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "model_release",
+  "headline": "OpenAI makes GPT-Live-1, a full-duplex voice model, generally available in the API at $0.05 per minute",
+  "detail": "OpenAI's changelog for September 10, 2026 says GPT-Live-1 is generally available for full-duplex voice conversations that continue while a backend model or agent handles reasoning and tools. Voice sessions cost $0.05 per minute, billed per second; backend model and tool usage is charged separately.",
+  "why_it_matters_for_builders": "A new per-minute voice-layer price and a new session endpoint separate from the Realtime API.",
+  "sources": [
+   "https://developers.openai.com/api/docs/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-salesforce-fin-completed",
+  "date": "2026-09-10",
+  "vendors": [
+   "Salesforce",
+   "Fin (formerly Intercom)"
+  ],
+  "event_type": "acquisition",
+  "headline": "Salesforce completes its acquisition of Fin, formerly Intercom",
+  "detail": "Salesforce's September 10, 2026 release says the Fin acquisition closed, bringing Fin's customer agent platform, technical AI team and a customer base of more than 30,000 companies to Salesforce. Fin's agent operates across chat, email, WhatsApp, SMS, voice and Slack.",
+  "why_it_matters_for_builders": "Fin's voice channel is now part of Salesforce's agent portfolio; check contract and roadmap changes.",
+  "sources": [
+   "https://www.salesforce.com/news/press-releases/2026/09/10/salesforce-completes-acquisition-of-fin/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-deepgram-india-endpoint-ga",
+  "date": "2026-09-15",
+  "vendors": [
+   "Deepgram"
+  ],
+  "event_type": "launch",
+  "headline": "Deepgram makes its India endpoint generally available for speech-to-text, text-to-speech, Voice Agent and Text Intelligence APIs",
+  "detail": "Deepgram's September 15, 2026 changelog says the India endpoint, api.in.deepgram.com, is generally available for customers who need data processing within India. It covers speech-to-text and text-to-speech (v1 and v2 Flux), Voice Agent and Text Intelligence. Existing API keys and tokens work with it.",
+  "why_it_matters_for_builders": "Builders who need in-country processing for India can point SDKs at the regional host; keys are unchanged.",
+  "sources": [
+   "https://developers.deepgram.com/changelog/2026/9/15"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-gemini-3-8-live-ga",
+  "date": "2026-09-15",
+  "vendors": [
+   "Google"
+  ],
+  "event_type": "model_release",
+  "headline": "Google makes Gemini 3.8 Live and 3.8 Live Extended Thinking generally available in the Live API",
+  "detail": "The Gemini API changelog for September 15, 2026 lists gemini-3.8-live, described as the default for low-latency voice agents, and gemini-3.8-live-extended-thinking, an audio-to-audio model with background reasoning. The deprecations page names gemini-3.8-live as the replacement for earlier Live preview models.",
+  "why_it_matters_for_builders": "GA Live API models with named replacements for earlier preview Live models.",
+  "sources": [
+   "https://ai.google.dev/gemini-api/docs/changelog",
+   "https://ai.google.dev/gemini-api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-xai-grok-voice-transcribe-2",
+  "date": "2026-09-17",
+  "vendors": [
+   "SpaceXAI"
+  ],
+  "event_type": "model_release",
+  "headline": "SpaceXAI releases grok-voice-transcribe-2.0 speech-to-text; the default stays on version 1.0",
+  "detail": "SpaceXAI's release notes list grok-voice-transcribe-2.0 on September 17, 2026 and say the default model remains grok-voice-transcribe-1.0, so callers must select 2.0 explicitly. SpaceXAI's news page lists the announcement on September 18.",
+  "why_it_matters_for_builders": "Version 2.0 is opt-in by model ID; the default model did not change.",
+  "sources": [
+   "https://docs.x.ai/developers/release-notes",
+   "https://x.ai/news"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-gladia-joins-ovh",
+  "date": "2026-09-21",
+  "vendors": [
+   "Gladia",
+   "OVH Groupe"
+  ],
+  "event_type": "acquisition",
+  "headline": "Gladia says it is joining OVH Groupe and will keep its brand and API",
+  "detail": "Gladia's post dated September 21, 2026 says it announced on July 31 that it was acquired by OVH Groupe, parent of OVHcloud. Gladia will continue as an independent product line under its own brand, with the same API and customer relationships. The post uses both completed and conditional wording.",
+  "why_it_matters_for_builders": "A European STT API vendor moves under a cloud provider; Gladia says API and brand continue, but confirm contract terms.",
+  "sources": [
+   "https://www.gladia.io/blog/gladia-joins-ovh-groupe"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-gemini-3-8-flash-tts-ga",
+  "date": "2026-09-22",
+  "vendors": [
+   "Google"
+  ],
+  "event_type": "model_release",
+  "headline": "Google makes Gemini 3.8 Flash TTS and Flash-Lite TTS generally available, with a Voices endpoint",
+  "detail": "The Gemini API changelog for September 22, 2026 lists gemini-3.8-flash-tts and gemini-3.8-flash-lite-tts, a /v1beta/voices endpoint, voice design, voice replication with consent verification and an extended voice library. Flash-Lite TTS is presented as the replacement for gemini-3.1-flash-tts-preview.",
+  "why_it_matters_for_builders": "New Google TTS models and a voice catalogue API; the preview TTS model has a named replacement.",
+  "sources": [
+   "https://ai.google.dev/gemini-api/docs/changelog",
+   "https://ai.google.dev/gemini-api/docs/deprecations"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-twilio-realtime-transcription-failover",
+  "date": "2026-09-22",
+  "vendors": [
+   "Twilio"
+  ],
+  "event_type": "launch",
+  "headline": "Twilio announces provider failover for Real-Time Transcriptions, enabled by default on October 22, 2026",
+  "detail": "Twilio's September 22, 2026 changelog says that from October 22, Real-Time Transcriptions starts a session on a second speech provider when the primary provider does not connect. It routes only within the customer's existing region, is enabled for existing accounts on that date, and can be opted out per sub-account.",
+  "why_it_matters_for_builders": "Transcription may run on a different provider than configured after October 22 unless you opt out.",
+  "sources": [
+   "https://www.twilio.com/en-us/changelog"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "j2-elevenlabs-eleven-v4",
+  "date": "2026-09-28",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "model_release",
+  "headline": "ElevenLabs releases Eleven v4 and Eleven v4 Turbo text-to-speech models",
+  "detail": "ElevenLabs' changelog entry dated September 28, 2026 lists eleven_v4 for content creation and eleven_v4_turbo for real-time agents, eleven_v4 via the Text to Dialogue API and eleven_v4_turbo via the Text to Dialogue WebSocket. ElevenLabs states median inference latency of about 100 ms for v4 Turbo and support for more than 90 languages.",
+  "why_it_matters_for_builders": "New TTS model IDs; docs note no Style or Speed sliders and no SSML in v4, so migration needs testing.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog",
+   "https://elevenlabs.io/docs/overview/capabilities/text-to-speech/eleven-v4"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "x-inworld-acquires-ultravox",
+  "date": "2026-09-30",
+  "vendors": [
+   "Inworld",
+   "Ultravox"
+  ],
+  "event_type": "acquisition",
+  "headline": "Inworld announces it has acquired Ultravox, the voice-agent platform",
+  "detail": "Inworld's blog post dated 2026-09-30 says Inworld has acquired Ultravox and that Ultravox team members who joined Inworld continue developing it; existing agents keep running with no migration. No deal terms. No news-outlet coverage was found (search tools were exhausted); the Ultravox site banner repeats the announcement.",
+  "why_it_matters_for_builders": "A speech-to-speech platform now sits inside a TTS/STT vendor; check roadmap and pricing commitments before building on either.",
+  "sources": [
+   "https://inworld.ai/blog/inworld-acquires-ultravox"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ },
+ {
+  "id": "x-chime-sip-media-app-closing",
+  "date": "2026-10-29",
+  "vendors": [
+   "Amazon Web Services"
+  ],
+  "event_type": "deprecation",
+  "headline": "AWS will stop opening the Amazon Chime SDK SIP Media Application to new customers on 2026-10-29",
+  "detail": "AWS's Chime SDK page carries an end-of-support notice: the feature will no longer be open to new customers starting 10/29/2026 and customers who want it should sign up before that date. The announcement date is not stated; 2026-10-29 is the effective date.",
+  "why_it_matters_for_builders": "Teams planning SIP-based telephony agents on Chime SDK must sign up before the cutoff or choose another SIP route.",
+  "sources": [
+   "https://aws.amazon.com/chime/chime-sdk/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-09-30"
+ }
+]

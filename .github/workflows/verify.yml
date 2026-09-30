@@ -23,3 +23,5 @@ jobs:
         run: python scripts/verify.py
       - name: Check the verifier rejects bad input
         run: python scripts/test_verify.py
+      - name: Check the upstream drift logic offline
+        run: python scripts/test_check_upstream.py

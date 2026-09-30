@@ -8,7 +8,8 @@ A smaller, useful collection beats a larger collection of overlapping prompts.
 1. Fork the repo and create a branch.
 2. Make your change. For a typo or broken link, that's all.
 3. Run `python scripts/verify.py` and `python scripts/test_verify.py`.
-4. Open a pull request and fill in the checklist.
+4. Open a pull request and fill in the checklist. Pull requests get an automated
+   Claude review comment; a maintainer reviews and merges.
 
 By contributing you agree that your original work is released under the repo's
 [MIT license](LICENSE).
