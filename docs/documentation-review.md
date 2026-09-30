@@ -144,7 +144,7 @@ installation and OpenAI output-path caveats are in [usage notes](usage.md).
 
 ## Architecture graphic check, 2026-09-30 UTC
 
-The front-page comparison was checked against the current
+The three-pattern architecture comparison was checked against the current
 [OpenAI voice agents guide](https://developers.openai.com/api/docs/guides/voice-agents).
 It distinguishes a chain, speech-to-speech, and a delegated conversational layer.
 Context7 library `/websites/developers_openai_api` returned useful chain guidance
@@ -155,8 +155,30 @@ comparison, with media and business-state responsibilities left to the full guid
 
 ## What remains unverified
 
-The review did not execute provider APIs, paid model inference, audio benchmarks,
+The review did not execute voice-provider APIs, paid voice inference, audio benchmarks,
 phone calls, deployments, or third-party installers. It cannot establish runtime
 compatibility or voice quality for a future application. The resource library's
 original star counts retain their original observation dates; this documentation
 review does not silently refresh those numbers.
+
+## Illustrated timing and call flow review, 2026-09-30 UTC
+
+The expanded README uses six compact original teaching diagrams and a task-based
+skill directory. The cascade, call tree, conversational score, acoustic signal
+path, and action ledger summarize the dated foundation guides. New provider skill links were
+matched to the original `SKILL.md` URLs already recorded in the catalogs.
+
+The timing chart is a fabricated single-turn trace, with its complete event
+sequence stated in native text. Its numbers do not come from a vendor benchmark.
+Context7 library `/websites/livekit_io_agents` returned no result for the focused
+measurement-boundary query; a broader query returned tuning and avatar snippets
+but did not establish the full latency contract. The canonical
+[LiveKit data hooks page](https://docs.livekit.io/testing/observability/data.md)
+was then retrieved through the official LiveKit documentation connector on
+2026-09-30 UTC. It distinguishes per-plugin and per-turn metrics, identifies
+pipeline-only fields, and qualifies reported playback timing. The README keeps
+the distinction between instrumented events and observed caller playback.
+
+Context7 retrieval was used where available, with the gap recorded here. The
+current-source check supports measurement terminology; it does not turn the
+illustrative trace into measured data or refresh unrelated repository statistics.

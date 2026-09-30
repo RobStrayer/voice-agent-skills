@@ -56,13 +56,23 @@ inside its folder so installing it preserves those instructions. Check diagrams
 against the revised state and event contracts; update their source and rendered
 form together, with meaningful alternative text and a source-review date.
 
-Keep the README a short visual entrance: immediate reading routes, early skill
-installation, and a few useful examples. Put topic navigation in
-[the handbook](handbook.md), and technical depth in the portable skill guides.
-Do not expand the README by pasting each chapter's introduction into it. Review
-changed pages at their rendered reading width; headings alone do not break up
-long, repetitive prose. Keep the neutral graphic palette and ordinary text links
-beside graphics so navigation works even when an image does not load.
+Keep the README a practical skills and learning library. Put task-based skill
+discovery and installation links near the top, followed by a substantial
+illustrated introduction to voice engineering. Avoid sales copy or decorative
+hero artwork.
+Explain the cascade, timing boundaries, call routing, turn taking, audio, and
+action recovery on the page, with relevant foundation and original provider
+skills beside each part. Preserve useful depth when improving readability;
+word-count reduction is not a quality goal. The [handbook](handbook.md) and
+portable skill guides provide the longer implementation paths.
+
+Vary the visual treatment to match the problem: a timeline explains concurrent
+work, a call tree explains routing, and an audio cutaway explains physical echo.
+Review changed pages at their rendered reading width. Follow the compact cool
+palette in [diagram style](diagram-style.md), with readable labels and ordinary
+text explanations beside graphics. Avoid oversized canvases and large tan fields.
+Synthetic traces
+must say that their values are illustrative, not measurements or targets.
 
 ## Checks before publication
 

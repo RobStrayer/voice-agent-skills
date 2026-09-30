@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="307" viewBox="0 0 960 307" role="img" aria-labelledby="conversation-score-title conversation-score-desc" id="conversation-score-root">
+<title id="conversation-score-title">Caller, playback and action lifetimes</title>
+<desc id="conversation-score-desc">The caller pauses within a sentence, continues, and then corrects Tuesday to Thursday. Accepted interruption stops old playback while action A remains pending. Positions show event ordering, not elapsed time.</desc>
+<defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #conversation-score-root { color: #23344b; font-family: 'Geist',system-ui,sans-serif; }
+      #conversation-score-root .diagram-container { width:100%;overflow-x:auto }
+      #conversation-score-root .title { font:600 22px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #conversation-score-root .name { font:600 20px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #conversation-score-root .body { font:400 18px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #conversation-score-root .small { font:400 16px 'Geist',system-ui,sans-serif;fill:#50627a }
+      #conversation-score-root .mono { font:500 15px 'Geist Mono',Consolas,monospace;fill:#50627a }
+      #conversation-score-root .reverse { fill:#ffffff }
+      #conversation-score-root .blue { fill:#365f9c }
+      #conversation-score-root .teal { fill:#176d6a }
+      #conversation-score-root .amber { fill:#815313 }
+      #conversation-score-root .diagram-container { overflow-x:visible }</style>
+<marker id="conversation-score-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 L8 4 L0 8Z" fill="#50627a"/>
+</marker>
+<pattern id="conversation-score-hatch" patternUnits="userSpaceOnUse" width="8" height="8">
+<path d="M0 8L8 0" stroke="#b7c5d5" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="0" y="0" width="960" height="307" rx="12" fill="#eef3f8" stroke="none" />
+<text x="24" y="35" class="title">A pause, a continuation, a correction</text>
+<text x="936" y="34" class="mono" text-anchor="end">Ordering only, not a time scale</text>
+<text x="24" y="104" class="name">Caller</text>
+<text x="24" y="128" class="small">incoming words</text>
+<text x="24" y="177" class="name">Playback</text>
+<text x="24" y="201" class="small">audible response</text>
+<text x="24" y="250" class="name">Action A</text>
+<text x="24" y="274" class="small">external work</text>
+<rect x="176" y="80" width="212" height="50" rx="8" fill="#dce8f8" stroke="none" />
+<text x="192" y="112" class="body">“Book Tuesday…”</text>
+<rect x="400" y="80" width="70" height="50" rx="8" fill="url(#conversation-score-hatch)" stroke="#b7c5d5" />
+<text x="435" y="112" class="small" text-anchor="middle">pause</text>
+<rect x="482" y="80" width="142" height="50" rx="8" fill="#dce8f8" stroke="none" />
+<text x="498" y="112" class="body">“…at two.”</text>
+<rect x="744" y="80" width="192" height="50" rx="8" fill="#d9efeb" stroke="none" />
+<text x="760" y="112" class="body">“Thursday instead.”</text>
+<rect x="624" y="153" width="108" height="50" rx="8" fill="#dce8f8" stroke="none" />
+<text x="678" y="185" class="small" text-anchor="middle">Checking…</text>
+<rect x="744" y="153" width="192" height="50" rx="8" fill="#ffffff" stroke="#b7c5d5" stroke-dasharray="5 4"/>
+<text x="760" y="185" class="body">Old audio stops</text>
+<rect x="624" y="226" width="312" height="50" rx="8" fill="#f5e8ce" stroke="none" />
+<text x="640" y="257" class="body">A stays pending: reconcile it</text>
+<line x1="736" y1="67" x2="736" y2="214" stroke="#176d6a" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="176" y="169" class="body">Wait for completion evidence.</text>
+<text x="176" y="245" class="body">Interruption stops speech.</text>
+<text x="176" y="270" class="small">It does not erase action history.</text>
+</svg>

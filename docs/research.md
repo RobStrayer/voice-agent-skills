@@ -125,13 +125,15 @@ prerelease and platform-support qualifications.
 
 ## Remaining limits
 
-The reading structure was revised on 2026-09-30 UTC. The README is a short entry
-page; the [handbook](handbook.md) groups eleven work areas into four reading paths.
-Detailed guidance stays with each foundation skill. Catalog navigation and
-expandable supporting notes preserve the source entries and their qualifications.
-A new architecture comparison introduces three speech patterns, and an original
-waveform cover supplies the collection's visual identity. The waveform is an
-illustration, not an audio measurement.
+The reading structure was revised on 2026-09-30 UTC. The README is a substantial
+illustrated introduction, with diagrams explaining the cascade, call routing,
+timing, turns, acoustic processing, and action recovery. Relevant foundation and
+original provider skills appear beside each topic. The [handbook](handbook.md)
+groups eleven work areas into four longer reading paths; implementation guides
+stay with each foundation skill. Catalog entries and their qualifications remain
+intact. The front page begins with a task-based skill directory and uses compact
+technical diagrams without a decorative cover. Timing values and conversation
+traces in the new figures are explicitly synthetic teaching examples.
 
 Five original figures explain system responsibilities, turn state, endpoint echo
 processing, interrupted actions, and recoverable human handoff. Their editable
@@ -153,7 +155,7 @@ broad interruption and LiveKit enhancement statements, which were corrected
 against the current primary documents. These were instruction exercises, not
 executed calls or audio benchmarks.
 
-No third-party helper, installer, model inference, paid API request, voice call,
+No third-party helper, installer, voice-model inference, paid voice API request, voice call,
 provider account mutation, or deployment was executed. Released package archives
 were read as data. Source inspection cannot establish production compatibility,
 voice quality, model accuracy, or end-to-end latency.

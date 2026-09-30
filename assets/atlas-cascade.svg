@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="306" viewBox="0 0 960 306" role="img" aria-labelledby="atlas-cascade-title atlas-cascade-desc" id="atlas-cascade-root">
+<title id="atlas-cascade-title">A cascaded voice architecture</title>
+<desc id="atlas-cascade-desc">Capture, recognition, text agent, synthesis and playback form a streaming speech path. The text agent exchanges requests and results with tools whose actions have a separate lifetime.</desc>
+<defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #atlas-cascade-root { color: #23344b; font-family: 'Geist',system-ui,sans-serif; }
+      #atlas-cascade-root .diagram-container { width:100%;overflow-x:auto }
+      #atlas-cascade-root .title { font:600 22px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #atlas-cascade-root .name { font:600 20px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #atlas-cascade-root .body { font:400 18px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #atlas-cascade-root .small { font:400 16px 'Geist',system-ui,sans-serif;fill:#50627a }
+      #atlas-cascade-root .mono { font:500 15px 'Geist Mono',Consolas,monospace;fill:#50627a }
+      #atlas-cascade-root .reverse { fill:#ffffff }
+      #atlas-cascade-root .blue { fill:#365f9c }
+      #atlas-cascade-root .teal { fill:#176d6a }
+      #atlas-cascade-root .amber { fill:#815313 }
+      #atlas-cascade-root .diagram-container { overflow-x:visible }</style>
+<marker id="atlas-cascade-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 L8 4 L0 8Z" fill="#50627a"/>
+</marker>
+<pattern id="atlas-cascade-hatch" patternUnits="userSpaceOnUse" width="8" height="8">
+<path d="M0 8L8 0" stroke="#b7c5d5" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="0" y="0" width="960" height="306" rx="12" fill="#eef3f8" stroke="none" />
+<text x="24" y="35" class="title">Follow the speech, then the action</text>
+<text x="936" y="34" class="mono" text-anchor="end">Conceptual example</text>
+<text x="195" y="76" class="mono" text-anchor="middle">audio</text>
+<text x="383" y="76" class="mono" text-anchor="middle">text</text>
+<text x="577" y="76" class="mono" text-anchor="middle">words</text>
+<text x="765" y="76" class="mono" text-anchor="middle">audio</text>
+<line x1="178" y1="130" x2="206" y2="130" stroke="#50627a" stroke-width="1.5" marker-end="url(#atlas-cascade-arrow)"/>
+<line x1="366" y1="130" x2="394" y2="130" stroke="#50627a" stroke-width="1.5" marker-end="url(#atlas-cascade-arrow)"/>
+<line x1="560" y1="130" x2="588" y2="130" stroke="#50627a" stroke-width="1.5" marker-end="url(#atlas-cascade-arrow)"/>
+<line x1="748" y1="130" x2="776" y2="130" stroke="#50627a" stroke-width="1.5" marker-end="url(#atlas-cascade-arrow)"/>
+<rect x="24" y="90" width="154" height="80" rx="8" fill="#dce8f8" stroke="none" />
+<rect x="24" y="90" width="4" height="80" rx="0" fill="#365f9c" stroke="none" />
+<text x="40" y="121" class="name">Capture</text>
+<text x="40" y="147" class="small">Mic / phone</text>
+<rect x="212" y="90" width="154" height="80" rx="8" fill="#dce8f8" stroke="none" />
+<rect x="212" y="90" width="4" height="80" rx="0" fill="#365f9c" stroke="none" />
+<text x="228" y="121" class="name">Recognize</text>
+<text x="228" y="147" class="small">STT revisions</text>
+<rect x="400" y="90" width="160" height="80" rx="8" fill="#d9efeb" stroke="none" />
+<rect x="400" y="90" width="4" height="80" rx="0" fill="#176d6a" stroke="none" />
+<text x="416" y="121" class="name">Text agent</text>
+<text x="416" y="147" class="small">Accepted turn</text>
+<rect x="594" y="90" width="154" height="80" rx="8" fill="#dce8f8" stroke="none" />
+<rect x="594" y="90" width="4" height="80" rx="0" fill="#365f9c" stroke="none" />
+<text x="610" y="121" class="name">Synthesize</text>
+<text x="610" y="147" class="small">TTS chunks</text>
+<rect x="782" y="90" width="154" height="80" rx="8" fill="#dce8f8" stroke="none" />
+<rect x="782" y="90" width="4" height="80" rx="0" fill="#365f9c" stroke="none" />
+<text x="798" y="121" class="name">Playback</text>
+<text x="798" y="147" class="small">What is heard</text>
+<line x1="440" y1="170" x2="440" y2="214" stroke="#50627a" stroke-width="1.5" marker-end="url(#atlas-cascade-arrow)"/>
+<line x1="520" y1="220" x2="520" y2="176" stroke="#50627a" stroke-width="1.5" marker-end="url(#atlas-cascade-arrow)"/>
+<text x="425" y="199" class="mono" text-anchor="end">request</text>
+<text x="535" y="199" class="mono">result</text>
+<rect x="400" y="220" width="160" height="64" rx="8" fill="#f5e8ce" stroke="none" />
+<rect x="400" y="220" width="4" height="64" rx="0" fill="#815313" stroke="none" />
+<text x="416" y="251" class="name">Tools / actions</text>
+<text x="24" y="238" class="body">Streaming stages can overlap.</text>
+<text x="24" y="264" class="small">A correction must invalidate stale output.</text>
+<text x="596" y="239" class="body">Track the write separately.</text>
+<text x="596" y="265" class="small">Stopped speech is not a cancelled action.</text>
+</svg>

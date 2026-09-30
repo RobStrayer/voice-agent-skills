@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="334" viewBox="0 0 960 334" role="img" aria-labelledby="audio-cutaway-title audio-cutaway-desc" id="audio-cutaway-root">
+<title id="audio-cutaway-title">Capture, render reference and audio processing</title>
+<desc id="audio-cutaway-desc">Playback leaks acoustically into microphone capture. A separate rendered-audio reference feeds acoustic echo cancellation. Optional enhancement precedes speech detection and recognition. The figure describes inputs and responsibilities, not a provider API.</desc>
+<defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #audio-cutaway-root { color: #23344b; font-family: 'Geist',system-ui,sans-serif; }
+      #audio-cutaway-root .diagram-container { width:100%;overflow-x:auto }
+      #audio-cutaway-root .title { font:600 22px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #audio-cutaway-root .name { font:600 20px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #audio-cutaway-root .body { font:400 18px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #audio-cutaway-root .small { font:400 16px 'Geist',system-ui,sans-serif;fill:#50627a }
+      #audio-cutaway-root .mono { font:500 15px 'Geist Mono',Consolas,monospace;fill:#50627a }
+      #audio-cutaway-root .reverse { fill:#ffffff }
+      #audio-cutaway-root .blue { fill:#365f9c }
+      #audio-cutaway-root .teal { fill:#176d6a }
+      #audio-cutaway-root .amber { fill:#815313 }
+      #audio-cutaway-root .diagram-container { overflow-x:visible }</style>
+<marker id="audio-cutaway-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 L8 4 L0 8Z" fill="#50627a"/>
+</marker>
+<pattern id="audio-cutaway-hatch" patternUnits="userSpaceOnUse" width="8" height="8">
+<path d="M0 8L8 0" stroke="#b7c5d5" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="0" y="0" width="960" height="334" rx="12" fill="#eef3f8" stroke="none" />
+<text x="24" y="35" class="title">Echo needs a reference, noise needs a diagnosis</text>
+<text x="936" y="34" class="mono" text-anchor="end">Conceptual example</text>
+<rect x="24" y="78" width="176" height="76" rx="8" fill="#dce8f8" stroke="none" />
+<rect x="24" y="78" width="4" height="76" rx="0" fill="#365f9c" stroke="none" />
+<text x="40" y="109" class="name">Playback</text>
+<text x="40" y="135" class="small">Rendered audio</text>
+<rect x="24" y="232" width="176" height="76" rx="8" fill="#dce8f8" stroke="none" />
+<rect x="24" y="232" width="4" height="76" rx="0" fill="#365f9c" stroke="none" />
+<text x="40" y="263" class="name">Microphone</text>
+<text x="40" y="289" class="small">Captured audio</text>
+<rect x="282" y="232" width="142" height="76" rx="8" fill="#d9efeb" stroke="none" />
+<rect x="282" y="232" width="4" height="76" rx="0" fill="#176d6a" stroke="none" />
+<text x="298" y="263" class="name">AEC</text>
+<text x="298" y="289" class="small">Echo reduction</text>
+<rect x="476" y="232" width="196" height="76" rx="8" fill="#d9efeb" stroke="none" />
+<rect x="476" y="232" width="4" height="76" rx="0" fill="#176d6a" stroke="none" />
+<text x="492" y="263" class="name">Enhancement</text>
+<text x="492" y="289" class="small">Optional cleanup</text>
+<rect x="736" y="232" width="200" height="76" rx="8" fill="#dce8f8" stroke="none" />
+<rect x="736" y="232" width="4" height="76" rx="0" fill="#365f9c" stroke="none" />
+<text x="752" y="263" class="name">Speech evidence</text>
+<text x="752" y="289" class="small">VAD + recognition</text>
+<line x1="200" y1="270" x2="276" y2="270" stroke="#50627a" stroke-width="1.5" marker-end="url(#audio-cutaway-arrow)"/>
+<line x1="424" y1="270" x2="470" y2="270" stroke="#50627a" stroke-width="1.5" marker-end="url(#audio-cutaway-arrow)"/>
+<line x1="672" y1="270" x2="730" y2="270" stroke="#50627a" stroke-width="1.5" marker-end="url(#audio-cutaway-arrow)"/>
+<path d="M200 116 H354 V226" fill="none" stroke="#50627a" stroke-width="1.5" marker-end="url(#audio-cutaway-arrow)"/>
+<text x="224" y="104" class="mono">render reference</text>
+<path d="M112 154 V224" fill="none" stroke="#365f9c" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="130" y="197" class="small blue">acoustic echo</text>
+<rect x="476" y="78" width="460" height="110" rx="8" fill="#ffffff" stroke="none" />
+<text x="494" y="109" class="name teal">Preserve the quiet “no.”</text>
+<text x="494" y="137" class="body">Noise suppression, speaker isolation, and gates</text>
+<text x="494" y="164" class="body">have different contracts. Test double-talk.</text>
+</svg>

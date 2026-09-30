@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="402" viewBox="0 0 960 402" role="img" aria-labelledby="atlas-latency-title atlas-latency-desc" id="atlas-latency-root">
+<title id="atlas-latency-title">Overlapping activity and audible response timing</title>
+<desc id="atlas-latency-desc">One fabricated shared-clock trace starts at speech end. Dots mark turn commitment at 260, first speakable phrase at 720, first synthesis chunk at 900, arrival at 950, and first sound at 1060 milliseconds. Useful speech begins at 1120 milliseconds. Bars represent continuing overlapping activity, not independent durations to sum.</desc>
+<defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #atlas-latency-root { color: #23344b; font-family: 'Geist',system-ui,sans-serif; }
+      #atlas-latency-root .diagram-container { width:100%;overflow-x:auto }
+      #atlas-latency-root .title { font:600 22px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #atlas-latency-root .name { font:600 20px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #atlas-latency-root .body { font:400 18px 'Geist',system-ui,sans-serif;fill:#23344b }
+      #atlas-latency-root .small { font:400 16px 'Geist',system-ui,sans-serif;fill:#50627a }
+      #atlas-latency-root .mono { font:500 15px 'Geist Mono',Consolas,monospace;fill:#50627a }
+      #atlas-latency-root .reverse { fill:#ffffff }
+      #atlas-latency-root .blue { fill:#365f9c }
+      #atlas-latency-root .teal { fill:#176d6a }
+      #atlas-latency-root .amber { fill:#815313 }
+      #atlas-latency-root .diagram-container { overflow-x:visible }</style>
+<marker id="atlas-latency-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto" markerUnits="userSpaceOnUse">
+<path d="M0 0 L8 4 L0 8Z" fill="#50627a"/>
+</marker>
+<pattern id="atlas-latency-hatch" patternUnits="userSpaceOnUse" width="8" height="8">
+<path d="M0 8L8 0" stroke="#b7c5d5" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="0" y="0" width="960" height="402" rx="12" fill="#eef3f8" stroke="none" />
+<text x="24" y="35" class="title">First sound and useful speech are different events</text>
+<text x="936" y="34" class="mono" text-anchor="end">Synthetic trace, not a benchmark</text>
+<line x1="250.0" y1="72" x2="250.0" y2="319" stroke="#b7c5d5" stroke-width="1.5" stroke-dasharray="2 5"/>
+<text x="250.0" y="62" class="mono" text-anchor="middle">0 ms</text>
+<line x1="410.0" y1="72" x2="410.0" y2="319" stroke="#b7c5d5" stroke-width="1.5" stroke-dasharray="2 5"/>
+<text x="410.0" y="62" class="mono" text-anchor="middle">500 ms</text>
+<line x1="570.0" y1="72" x2="570.0" y2="319" stroke="#b7c5d5" stroke-width="1.5" stroke-dasharray="2 5"/>
+<text x="570.0" y="62" class="mono" text-anchor="middle">1,000 ms</text>
+<line x1="730.0" y1="72" x2="730.0" y2="319" stroke="#b7c5d5" stroke-width="1.5" stroke-dasharray="2 5"/>
+<text x="730.0" y="62" class="mono" text-anchor="middle">1,500 ms</text>
+<line x1="890.0" y1="72" x2="890.0" y2="319" stroke="#b7c5d5" stroke-width="1.5" stroke-dasharray="2 5"/>
+<text x="890.0" y="62" class="mono" text-anchor="middle">2,000 ms</text>
+<text x="24" y="113" class="name">Turn decision</text>
+<rect x="250.0" y="90" width="83.2" height="30" rx="4" fill="#dce8f8" stroke="none" />
+<circle cx="333.2" cy="105" r="5" fill="#365f9c"/>
+<text x="345.2" y="111" class="small">260: turn commits</text>
+<text x="24" y="157" class="name">Text generation</text>
+<rect x="333.2" y="134" width="390.40000000000003" height="30" rx="4" fill="#dce8f8" stroke="none" />
+<circle cx="480.4" cy="149" r="5" fill="#365f9c"/>
+<text x="492.4" y="155" class="small">720: phrase ready</text>
+<text x="24" y="201" class="name">Synthesis</text>
+<rect x="480.4" y="178" width="320.0" height="30" rx="4" fill="#dce8f8" stroke="none" />
+<circle cx="538.0" cy="193" r="5" fill="#365f9c"/>
+<text x="550.0" y="199" class="small">900: first chunk</text>
+<text x="24" y="245" class="name">Audio delivery</text>
+<rect x="538.0" y="222" width="320.0" height="30" rx="4" fill="#dce8f8" stroke="none" />
+<circle cx="554.0" cy="237" r="5" fill="#365f9c"/>
+<text x="566.0" y="243" class="small">950: first arrival</text>
+<text x="24" y="289" class="name">Playback</text>
+<rect x="589.2" y="266" width="300.8" height="30" rx="4" fill="#d9efeb" stroke="none" />
+<circle cx="589.2" cy="281" r="5" fill="#176d6a"/>
+<text x="601.2" y="287" class="small">1,060: first sound</text>
+<line x1="608.4000000000001" y1="296" x2="608.4000000000001" y2="326" stroke="#176d6a" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="608.4000000000001" y="348" class="mono teal" text-anchor="middle">1,120 ms: useful speech</text>
+<rect x="24" y="330" width="14" height="14" rx="2" fill="#dce8f8" stroke="none" />
+<text x="47" y="342" class="small">activity span</text>
+<circle cx="193" cy="337" r="4" fill="#365f9c"/>
+<text x="207" y="342" class="small">event</text>
+<text x="24" y="381" class="small">Speech ends at 0 ms. Streaming stages overlap; adding bar lengths does not give response latency.</text>
+</svg>
