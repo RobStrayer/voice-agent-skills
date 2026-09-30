@@ -1,22 +1,84 @@
-# Using the collection
+# Installing and using the skills
 
-Reviewed: **2026-09-30 UTC**. Provider snapshots were collected on 2026-09-29
-(America/New_York). See the [documentation review](documentation-review.md) for
-the sources checked and the difference between review and publication dates.
+[Home](../README.md) / Install
 
-Start with the original upstream links in the [catalog](catalog.md). Those links
-track the source collection's default branch. Follow the upstream installation
-guide for the latest version. Bundled provider folders are dated reference copies;
-they do not refresh automatically. The foundation skills are original to this repo.
+A skill is a folder with a `SKILL.md` file (plus any `references/`, `assets/` or
+`scripts/` next to it). Your coding agent reads the short description of every
+installed skill and loads the full instructions when a task matches. Install the
+**whole folder**, not just `SKILL.md`.
 
-Each folder containing `SKILL.md` is a skill unit. Preserve the whole folder when
-copying it. Frontmatter names remain unchanged from upstream. Select individual
-skills rather than copying a provider parent as though it were one skill.
+## Claude Code: plugin marketplace
 
-Provider skills describe real products and sometimes assume a vendor CLI or MCP.
-The collection supplies their instructions and supporting files, not those tools,
-credentials, services, model weights, or a portable adapter for every agent host.
-Read the [catalog](catalog.md) for prerequisites and verify current SDK/CLI help.
+This repo is a Claude Code plugin marketplace. Add it once, then install the
+bundles you want:
+
+```text
+/plugin marketplace add RBStrayer/nl-voice-skills
+/plugin install voice-foundations@nl-voice-skills
+```
+
+Or from your shell:
+
+```bash
+claude plugin marketplace add RBStrayer/nl-voice-skills
+claude plugin install voice-foundations@nl-voice-skills
+```
+
+| Plugin | What you get |
+| --- | --- |
+| `voice-foundations` | The provider-neutral skills written for this repo. Start here. |
+| `voice-livekit` | LiveKit's official skills (dated copy) |
+| `voice-pipecat` | Pipecat's official skills (dated copy) |
+| `voice-elevenlabs` | ElevenLabs' official skills (dated copy) |
+| `voice-twilio` | Twilio's official voice skills (dated copy) |
+| `voice-cartesia` | Cartesia's official skills (dated copy) |
+| `voice-openai-speech` | OpenAI's file-based speech and transcription skills (dated copy) |
+
+Plugin skills are namespaced, so `voice-turn-taking` runs as
+`/voice-foundations:voice-turn-taking`. Claude also picks skills automatically
+when your request matches their description.
+
+## Any agent: `npx skills`
+
+The [`skills` CLI](https://github.com/vercel-labs/skills) finds every skill in the
+repo and installs it for Claude Code, Codex, Cursor and other agents it supports:
+
+```bash
+npx skills add RBStrayer/nl-voice-skills --list
+npx skills add RBStrayer/nl-voice-skills --skill voice-turn-taking
+```
+
+## Copy a folder by hand
+
+Clone the repo and copy the skill folders you want into your agent's skills
+directory:
+
+| Agent | Personal skills | Project skills |
+| --- | --- | --- |
+| Claude Code | `~/.claude/skills/<name>/` | `.claude/skills/<name>/` |
+| OpenAI Codex | `~/.codex/skills/<name>/` | Check the [Codex skills docs](https://developers.openai.com/codex/skills) |
+
+```bash
+git clone https://github.com/RBStrayer/nl-voice-skills.git
+cp -r nl-voice-skills/skills/foundations/voice-turn-taking ~/.claude/skills/
+```
+
+## Fresh copies versus snapshots
+
+The `foundations` skills are written and maintained here. The provider folders
+(`livekit`, `pipecat`, `elevenlabs`, `twilio`, `cartesia`, `openai`) are **dated
+copies** of each vendor's official skills, pinned to the commits in
+[`sources.json`](../sources.json). They don't update themselves. For the newest
+version, install from the vendor's own repo; every entry in the
+[catalog](catalog.md) links to it.
+
+Provider skills describe real products and sometimes expect a vendor CLI, SDK or
+MCP server. This repo supplies the instructions, not those tools, API keys or
+accounts. Skills never expand what you've authorized: live calls, phone numbers
+and paid API requests still need your go-ahead.
+
+Provider snapshots were collected on 2026-09-29. See the
+[documentation review](documentation-review.md) for the sources checked.
 
 ## Runtime notes
 

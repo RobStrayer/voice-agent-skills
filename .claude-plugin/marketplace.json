@@ -1,0 +1,74 @@
+{
+  "name": "nl-voice-skills",
+  "description": "Skills for building AI voice agents: provider-neutral voice engineering skills plus dated copies of official provider skills.",
+  "owner": {
+    "name": "Rob Strayer",
+    "url": "https://github.com/RBStrayer"
+  },
+  "plugins": [
+    {
+      "name": "voice-foundations",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/foundations/"],
+      "description": "Provider-neutral voice agent skills: stack selection, turn taking, audio, speech pipeline, conversation design, calls, latency, media debugging, evaluation, compliance and security.",
+      "license": "MIT",
+      "category": "voice",
+      "keywords": ["voice", "voice-agents", "speech", "telephony"]
+    },
+    {
+      "name": "voice-livekit",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/livekit/"],
+      "description": "Dated copy of LiveKit's official agent skills (github.com/livekit/agent-skills): build, debug, test, simulate and operate LiveKit agents.",
+      "license": "MIT",
+      "category": "voice"
+    },
+    {
+      "name": "voice-pipecat",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/pipecat/"],
+      "description": "Dated copy of Pipecat's official skills (github.com/pipecat-ai/skills): initialize, deploy and talk to Pipecat agents.",
+      "license": "BSD-2-Clause",
+      "category": "voice"
+    },
+    {
+      "name": "voice-elevenlabs",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/elevenlabs/"],
+      "description": "Dated copy of ElevenLabs' official skills (github.com/elevenlabs/skills): agents, text-to-speech, speech-to-text, dubbing, voice changer and isolation.",
+      "license": "MIT",
+      "category": "voice"
+    },
+    {
+      "name": "voice-twilio",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/twilio/"],
+      "description": "Dated copy of Twilio's official voice skills (github.com/twilio/ai): agent architecture, ConversationRelay, TwiML, outbound calls, conferences and recordings.",
+      "license": "MIT",
+      "category": "voice"
+    },
+    {
+      "name": "voice-cartesia",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/cartesia/"],
+      "description": "Dated copy of Cartesia's official skills (github.com/cartesia-ai/skills): speech API and Line agents.",
+      "license": "MIT",
+      "category": "voice"
+    },
+    {
+      "name": "voice-openai-speech",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/openai/"],
+      "description": "Dated copy of OpenAI's speech and transcribe skills (github.com/openai/skills): file-based text-to-speech and transcription.",
+      "license": "Apache-2.0",
+      "category": "voice"
+    }
+  ]
+}
