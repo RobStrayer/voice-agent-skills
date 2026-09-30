@@ -1,0 +1,862 @@
+{
+  "schema": 1,
+  "snapshot_date": "2026-09-29",
+  "snapshot_timezone": "America/New_York",
+  "checked_at": "2026-09-30T02:36:23.019087+00:00",
+  "skill_count": 31,
+  "copied_file_count": 104,
+  "verification": "Every copied file was read back and compared byte-for-byte with its exact commit-pinned archive entry. Full upstream skill folder trees retained, including nested licenses and optional metadata/assets.",
+  "collections": [
+    {
+      "repo": "elevenlabs/skills",
+      "url": "https://github.com/elevenlabs/skills",
+      "stars": 460,
+      "stars_source": "https://api.github.com/repos/elevenlabs/skills",
+      "sha": "279173d974ea5cf0c4c4f91d4e7e65202b406dab",
+      "retrieved_at": "2026-09-30T02:37:57.568389+00:00",
+      "decision": "vendored",
+      "provider": "elevenlabs",
+      "license": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "vendored_skill_roots": [
+        "agents",
+        "speech-engine",
+        "speech-to-text",
+        "text-to-speech",
+        "voice-isolator",
+        "voice-changer",
+        "dubbing"
+      ],
+      "vendored_skill_count": 7,
+      "copied_files": [
+        {
+          "upstream_path": "agents/SKILL.md",
+          "copied_path": "skills/elevenlabs/agents/SKILL.md",
+          "sha256": "e1172f03467ec7a666b5b08e538c8fee72b7d62e8bdff5f896203d49230d2a2e",
+          "bytes": 24724
+        },
+        {
+          "upstream_path": "agents/references/agent-configuration.md",
+          "copied_path": "skills/elevenlabs/agents/references/agent-configuration.md",
+          "sha256": "5e80d47beec9892f6a2eb926c3e0e4e74e6ff9f7d203108d9d7d38ac54a9b09a",
+          "bytes": 34924
+        },
+        {
+          "upstream_path": "agents/references/client-tools.md",
+          "copied_path": "skills/elevenlabs/agents/references/client-tools.md",
+          "sha256": "30d358f7aca012283af9126a94f67e6c1a891828031e91946d0a8b87f28cc0dd",
+          "bytes": 20104
+        },
+        {
+          "upstream_path": "agents/references/installation.md",
+          "copied_path": "skills/elevenlabs/agents/references/installation.md",
+          "sha256": "3b7cc53333ebda76c6ba7d41924adc19f42bd4eb9c81c47f3f82a0bb6cf12439",
+          "bytes": 4074
+        },
+        {
+          "upstream_path": "agents/references/outbound-calls.md",
+          "copied_path": "skills/elevenlabs/agents/references/outbound-calls.md",
+          "sha256": "0d6527241915314b520ccad2fb6c923d4168aff370be6a518d3c14d624c53858",
+          "bytes": 8252
+        },
+        {
+          "upstream_path": "agents/references/using-procedure-api.md",
+          "copied_path": "skills/elevenlabs/agents/references/using-procedure-api.md",
+          "sha256": "b75d0c3b0051c55e3e6a771d7d86a1b123d7bd0b3af5c36129c9d24f231294c1",
+          "bytes": 15632
+        },
+        {
+          "upstream_path": "agents/references/widget-embedding.md",
+          "copied_path": "skills/elevenlabs/agents/references/widget-embedding.md",
+          "sha256": "c10efa83e0e81f5dd83345fa2f3491435e164e3828d67867dc52385f7a09b0ea",
+          "bytes": 8240
+        },
+        {
+          "upstream_path": "agents/references/writing-procedures.md",
+          "copied_path": "skills/elevenlabs/agents/references/writing-procedures.md",
+          "sha256": "308b434b3adce1eb636bd697fb686aff8dc023adcf2f2a4a0b596ad306b683ef",
+          "bytes": 5485
+        },
+        {
+          "upstream_path": "speech-engine/SKILL.md",
+          "copied_path": "skills/elevenlabs/speech-engine/SKILL.md",
+          "sha256": "18f778fa2943919f0356cd6d5fd1bd67feb410abf24743d8cff534d5bad7e7ef",
+          "bytes": 10037
+        },
+        {
+          "upstream_path": "speech-engine/references/installation.md",
+          "copied_path": "skills/elevenlabs/speech-engine/references/installation.md",
+          "sha256": "45e5ca6e36be5d104956e279b9e66b1b5bfd584456afb4919397346a76fba08f",
+          "bytes": 2451
+        },
+        {
+          "upstream_path": "speech-engine/references/javascript-sdk-reference.md",
+          "copied_path": "skills/elevenlabs/speech-engine/references/javascript-sdk-reference.md",
+          "sha256": "82bfcbfcdfa7422ce3b4373e5379c3fed378fd4a2fc6012ee4c74b99fc177d3c",
+          "bytes": 4502
+        },
+        {
+          "upstream_path": "speech-engine/references/python-sdk-reference.md",
+          "copied_path": "skills/elevenlabs/speech-engine/references/python-sdk-reference.md",
+          "sha256": "691710b03ef24b2398c510c3c1c2221f93e68c95204173f25d19980ee1411d2b",
+          "bytes": 4739
+        },
+        {
+          "upstream_path": "speech-to-text/SKILL.md",
+          "copied_path": "skills/elevenlabs/speech-to-text/SKILL.md",
+          "sha256": "f2e2fce3ec51934a86fe1ead0f95f2522b312fd41254340e10e84c55379a733c",
+          "bytes": 10167
+        },
+        {
+          "upstream_path": "speech-to-text/references/installation.md",
+          "copied_path": "skills/elevenlabs/speech-to-text/references/installation.md",
+          "sha256": "95ced4021a8cca97249d584baabbb427c94d43c3e7364815cf15e263f54d8c2a",
+          "bytes": 2749
+        },
+        {
+          "upstream_path": "speech-to-text/references/realtime-client-side.md",
+          "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-client-side.md",
+          "sha256": "95837c130ca3a3db989d2eeb4b608de536932d3a75fa1f60592005705f0b811a",
+          "bytes": 6813
+        },
+        {
+          "upstream_path": "speech-to-text/references/realtime-commit-strategies.md",
+          "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-commit-strategies.md",
+          "sha256": "b2c3de86609e60850503b034804379239ae21de2569a1803fc3a341978ddfed7",
+          "bytes": 4598
+        },
+        {
+          "upstream_path": "speech-to-text/references/realtime-events.md",
+          "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-events.md",
+          "sha256": "f704d624ca2cf10b4ff9cab21f1941d3290a7ae0e8f4b2392957621e7860c07f",
+          "bytes": 8287
+        },
+        {
+          "upstream_path": "speech-to-text/references/realtime-server-side.md",
+          "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-server-side.md",
+          "sha256": "f1972abf593a89c6e6ebbc2b74a5424a22c747d428f4e4b3721a363d07c14daa",
+          "bytes": 10870
+        },
+        {
+          "upstream_path": "speech-to-text/references/transcription-options.md",
+          "copied_path": "skills/elevenlabs/speech-to-text/references/transcription-options.md",
+          "sha256": "f5fe1b976813b97753afff6e1fbcac3708366188db0dd360667c1168ecacb766",
+          "bytes": 10920
+        },
+        {
+          "upstream_path": "text-to-speech/SKILL.md",
+          "copied_path": "skills/elevenlabs/text-to-speech/SKILL.md",
+          "sha256": "4ddef6ac522329dda69ca7ec2824ba2a6c4edb609b2745d9763b0803b0e6d944",
+          "bytes": 8116
+        },
+        {
+          "upstream_path": "text-to-speech/references/installation.md",
+          "copied_path": "skills/elevenlabs/text-to-speech/references/installation.md",
+          "sha256": "052ada238eb61412db885a38079dc508a8b77c5a96fc2f3e80236f74fe4a9350",
+          "bytes": 2682
+        },
+        {
+          "upstream_path": "text-to-speech/references/streaming.md",
+          "copied_path": "skills/elevenlabs/text-to-speech/references/streaming.md",
+          "sha256": "62340c36b14dd4788a31a07c76aab954e5a2da6b54b752e11041cb0d3f30708b",
+          "bytes": 8382
+        },
+        {
+          "upstream_path": "text-to-speech/references/voice-settings.md",
+          "copied_path": "skills/elevenlabs/text-to-speech/references/voice-settings.md",
+          "sha256": "208782e3db26a87543d5bb4f34b42f743027a4a8ac294e647eefd19e658c2e14",
+          "bytes": 3488
+        },
+        {
+          "upstream_path": "voice-isolator/SKILL.md",
+          "copied_path": "skills/elevenlabs/voice-isolator/SKILL.md",
+          "sha256": "02af0dfaf9a22832f3d9a9a86aa11579fe331d40c0ff051045898980c62bc15e",
+          "bytes": 3701
+        },
+        {
+          "upstream_path": "voice-isolator/references/installation.md",
+          "copied_path": "skills/elevenlabs/voice-isolator/references/installation.md",
+          "sha256": "c627bb042c3baa552c7cf5d6417485b32a910bad726b79cfa968816b73ffd209",
+          "bytes": 1980
+        },
+        {
+          "upstream_path": "voice-changer/SKILL.md",
+          "copied_path": "skills/elevenlabs/voice-changer/SKILL.md",
+          "sha256": "75e5773d63b74e052e928c5529c56c535eba12786f358a20cf9e8c5821a18c69",
+          "bytes": 11876
+        },
+        {
+          "upstream_path": "voice-changer/references/installation.md",
+          "copied_path": "skills/elevenlabs/voice-changer/references/installation.md",
+          "sha256": "4ab667ad050507a0cbc5506e4c8e3b32880782d83d844611bd563645521eb774",
+          "bytes": 2072
+        },
+        {
+          "upstream_path": "dubbing/SKILL.md",
+          "copied_path": "skills/elevenlabs/dubbing/SKILL.md",
+          "sha256": "dcc4dfb9553481944133704a4a4954f72ad93b84905c0a14e28241347ef2db8a",
+          "bytes": 13115
+        },
+        {
+          "upstream_path": "dubbing/references/api-reference.md",
+          "copied_path": "skills/elevenlabs/dubbing/references/api-reference.md",
+          "sha256": "533f0ff9dcf2c3c16c8c07f0629505ea0b2e4014f8279f083cbf29a54c6fd163",
+          "bytes": 13788
+        },
+        {
+          "upstream_path": "dubbing/references/installation.md",
+          "copied_path": "skills/elevenlabs/dubbing/references/installation.md",
+          "sha256": "6ffeb3179011ffb580c30fb80540236dc680cf831f4f803d30513e68d5fc26ea",
+          "bytes": 2667
+        },
+        {
+          "upstream_path": "LICENSE",
+          "copied_path": "licenses/elevenlabs/LICENSE",
+          "sha256": "4ab5e9af2296f748eefa6c0696667f83aa9c0edda7b6972785966b60644b3da6",
+          "bytes": 1067
+        }
+      ]
+    },
+    {
+      "repo": "livekit/agent-skills",
+      "url": "https://github.com/livekit/agent-skills",
+      "stars": 72,
+      "stars_source": "https://api.github.com/repos/livekit/agent-skills",
+      "sha": "5d7488b118c279812b89e73a9bee8474d1fe00a1",
+      "retrieved_at": "2026-09-30T02:37:57.487129+00:00",
+      "decision": "vendored",
+      "provider": "livekit",
+      "license": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "vendored_skill_roots": [
+        "skills/reading-livekit-docs",
+        "skills/building-livekit-agents",
+        "skills/debugging-livekit-agents",
+        "skills/testing-livekit-agents",
+        "skills/writing-livekit-scenarios",
+        "skills/running-livekit-simulations",
+        "skills/operating-livekit-agents"
+      ],
+      "vendored_skill_count": 7,
+      "copied_files": [
+        {
+          "upstream_path": "skills/reading-livekit-docs/SKILL.md",
+          "copied_path": "skills/livekit/reading-livekit-docs/SKILL.md",
+          "sha256": "83bef0fb1d3eb173235b2cfcdf2ae8c28c03fae256b89a0eea0cb41fdb406469",
+          "bytes": 4199
+        },
+        {
+          "upstream_path": "skills/building-livekit-agents/SKILL.md",
+          "copied_path": "skills/livekit/building-livekit-agents/SKILL.md",
+          "sha256": "ea4c4e9310c83223668970cb3c3a9339d223ca981bf91215cc78d05e057ffce8",
+          "bytes": 9618
+        },
+        {
+          "upstream_path": "skills/building-livekit-agents/references/state-and-effects.md",
+          "copied_path": "skills/livekit/building-livekit-agents/references/state-and-effects.md",
+          "sha256": "71ee0b4dda2a3d0bd6240dbd76a2c6a4f5ff57c02639b81b19072e4975c552d1",
+          "bytes": 8434
+        },
+        {
+          "upstream_path": "skills/debugging-livekit-agents/SKILL.md",
+          "copied_path": "skills/livekit/debugging-livekit-agents/SKILL.md",
+          "sha256": "3bffddd7f1c4e2e8e1593959aba117d4d1b92026039bbfcb7949e26b08858625",
+          "bytes": 4832
+        },
+        {
+          "upstream_path": "skills/testing-livekit-agents/SKILL.md",
+          "copied_path": "skills/livekit/testing-livekit-agents/SKILL.md",
+          "sha256": "18dddabe4f1471ff05c3f6855ff429df3564367a7dc1f8c5f435ce3cfd8c09d5",
+          "bytes": 7601
+        },
+        {
+          "upstream_path": "skills/writing-livekit-scenarios/SKILL.md",
+          "copied_path": "skills/livekit/writing-livekit-scenarios/SKILL.md",
+          "sha256": "6660d0790031a6ca6b08f833878f29a7648710baeec180a1f1e9b34e275e56d7",
+          "bytes": 10046
+        },
+        {
+          "upstream_path": "skills/writing-livekit-scenarios/references/connecting-the-agent.md",
+          "copied_path": "skills/livekit/writing-livekit-scenarios/references/connecting-the-agent.md",
+          "sha256": "2b3247379a05180364b95b8d76417dc3cabe7de5f6193e4600644f12cf9d6620",
+          "bytes": 5370
+        },
+        {
+          "upstream_path": "skills/writing-livekit-scenarios/references/risk-coverage.md",
+          "copied_path": "skills/livekit/writing-livekit-scenarios/references/risk-coverage.md",
+          "sha256": "c48d606a55fdb391a0638aae049b623c6e52d54b7300a950189294ab1e5c3b4e",
+          "bytes": 3874
+        },
+        {
+          "upstream_path": "skills/writing-livekit-scenarios/references/scenario-craft.md",
+          "copied_path": "skills/livekit/writing-livekit-scenarios/references/scenario-craft.md",
+          "sha256": "ffec95016762353ea5c5c6829d6605d18d0316244925627f17c8440263b7754c",
+          "bytes": 5318
+        },
+        {
+          "upstream_path": "skills/running-livekit-simulations/SKILL.md",
+          "copied_path": "skills/livekit/running-livekit-simulations/SKILL.md",
+          "sha256": "e373c9dc38f309995ec0c20eccf3d3644e65ac46533040496ffcba81462c3d47",
+          "bytes": 6617
+        },
+        {
+          "upstream_path": "skills/operating-livekit-agents/SKILL.md",
+          "copied_path": "skills/livekit/operating-livekit-agents/SKILL.md",
+          "sha256": "4583f731a9ed393e650d04272fc33dbe1abbe3960a7973d6d90c1f0877c81a75",
+          "bytes": 9736
+        },
+        {
+          "upstream_path": "LICENSE",
+          "copied_path": "licenses/livekit/LICENSE",
+          "sha256": "27870700f52055147513fb619162b1c9d30451fdd0846b5215e1bc5898500d89",
+          "bytes": 1064
+        }
+      ]
+    },
+    {
+      "repo": "pipecat-ai/skills",
+      "url": "https://github.com/pipecat-ai/skills",
+      "stars": 27,
+      "stars_source": "https://api.github.com/repos/pipecat-ai/skills",
+      "sha": "cca35d3b85665fb417fddb2bc8ec8a5c3805aa57",
+      "retrieved_at": "2026-09-30T02:37:57.450628+00:00",
+      "decision": "vendored",
+      "provider": "pipecat",
+      "license": "BSD-2-Clause",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "vendored_skill_roots": [
+        "skills/init",
+        "skills/deploy",
+        "skills/talk"
+      ],
+      "vendored_skill_count": 3,
+      "copied_files": [
+        {
+          "upstream_path": "skills/init/SKILL.md",
+          "copied_path": "skills/pipecat/init/SKILL.md",
+          "sha256": "54cb6b3f20d90d2381743bdfa6471595d9eef63b537dc72d5b4612f6b542dd80",
+          "bytes": 7320
+        },
+        {
+          "upstream_path": "skills/deploy/SKILL.md",
+          "copied_path": "skills/pipecat/deploy/SKILL.md",
+          "sha256": "ed31c7282db6140db0645b1322f63d9e8a03f6d69ba42b34eb8ef614e570e849",
+          "bytes": 8177
+        },
+        {
+          "upstream_path": "skills/talk/SKILL.md",
+          "copied_path": "skills/pipecat/talk/SKILL.md",
+          "sha256": "97c11318113abe29a388aa898609dd2ee5f1a01b088f7c4eebec2f294376845f",
+          "bytes": 2542
+        },
+        {
+          "upstream_path": "LICENSE",
+          "copied_path": "licenses/pipecat/LICENSE",
+          "sha256": "e31a733ecb79cbffafd5474e964e5eca15e0a0876a42b1d7253b51b198eb61aa",
+          "bytes": 1301
+        }
+      ]
+    },
+    {
+      "repo": "deepgram/skills",
+      "url": "https://github.com/deepgram/skills",
+      "stars": 22,
+      "stars_source": "https://api.github.com/repos/deepgram/skills",
+      "sha": "c56c10b9394581cb17cc5977760c66fc48cb931c",
+      "decision": "link-only",
+      "license_paths": []
+    },
+    {
+      "repo": "VapiAI/skills",
+      "url": "https://github.com/VapiAI/skills",
+      "stars": 66,
+      "stars_source": "https://api.github.com/repos/VapiAI/skills",
+      "sha": "ecd56bd32688be8ea6fe54029445b536333d8d9c",
+      "decision": "link-only",
+      "license_paths": []
+    },
+    {
+      "repo": "cartesia-ai/skills",
+      "url": "https://github.com/cartesia-ai/skills",
+      "stars": 5,
+      "stars_source": "https://api.github.com/repos/cartesia-ai/skills",
+      "sha": "0ee3f4a4ad8e9cf9d314962448b721cdc34fae42",
+      "retrieved_at": "2026-09-30T02:37:57.766069+00:00",
+      "decision": "vendored",
+      "provider": "cartesia",
+      "license": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "vendored_skill_roots": [
+        "skills/cartesia-api",
+        "skills/cartesia-line"
+      ],
+      "vendored_skill_count": 2,
+      "copied_files": [
+        {
+          "upstream_path": "skills/cartesia-api/SKILL.md",
+          "copied_path": "skills/cartesia/cartesia-api/SKILL.md",
+          "sha256": "2703928441734b90c533c0539a9a4c1628fc3eacb6f471ba80b7572b23b13e22",
+          "bytes": 11961
+        },
+        {
+          "upstream_path": "skills/cartesia-api/references/resources.md",
+          "copied_path": "skills/cartesia/cartesia-api/references/resources.md",
+          "sha256": "0510496749e9dad45d9e01be9abd6e8233e9727584ea6c731f328e1e829e45f2",
+          "bytes": 2571
+        },
+        {
+          "upstream_path": "skills/cartesia-line/SKILL.md",
+          "copied_path": "skills/cartesia/cartesia-line/SKILL.md",
+          "sha256": "b340d979ddfde6c7e10baceb5d80661e90055b8a9f190e159ed32a8116a82748",
+          "bytes": 25055
+        },
+        {
+          "upstream_path": "skills/cartesia-line/references/advanced-patterns.md",
+          "copied_path": "skills/cartesia/cartesia-line/references/advanced-patterns.md",
+          "sha256": "68414b178bfa7e04530f13965bd2d502b5d4fc1f3a798abd8ee20cc88cefe533",
+          "bytes": 14053
+        },
+        {
+          "upstream_path": "skills/cartesia-line/references/calls-api.md",
+          "copied_path": "skills/cartesia/cartesia-line/references/calls-api.md",
+          "sha256": "e59ec0270978e5ddbc839aa7df1da4c34f3a36e9c888a97017f8b9ccb1a96623",
+          "bytes": 9078
+        },
+        {
+          "upstream_path": "skills/cartesia-line/references/multi-agent-workflows.md",
+          "copied_path": "skills/cartesia/cartesia-line/references/multi-agent-workflows.md",
+          "sha256": "28f462d1f728e6aa06a87c023d76ee0e1d6dd924fd3af631f834467baa7e5851",
+          "bytes": 9386
+        },
+        {
+          "upstream_path": "skills/cartesia-line/references/tool-patterns.md",
+          "copied_path": "skills/cartesia/cartesia-line/references/tool-patterns.md",
+          "sha256": "4efed652421638a4780fb7e80a5fbe09b7fccffd2a6e6f2b7c1cd631b5e68dd2",
+          "bytes": 7884
+        },
+        {
+          "upstream_path": "skills/cartesia-line/references/troubleshooting.md",
+          "copied_path": "skills/cartesia/cartesia-line/references/troubleshooting.md",
+          "sha256": "c819f3328d0cc423fafe6014cee5034c6e9dc25035705dc01311905d12caa782",
+          "bytes": 8889
+        },
+        {
+          "upstream_path": "LICENSE",
+          "copied_path": "licenses/cartesia/LICENSE",
+          "sha256": "2ae26160589ee74c0d45506c96dcb983745592323a0f451be567bd127f5acbef",
+          "bytes": 1065
+        }
+      ]
+    },
+    {
+      "repo": "twilio/ai",
+      "url": "https://github.com/twilio/ai",
+      "stars": 34,
+      "stars_source": "https://api.github.com/repos/twilio/ai",
+      "sha": "8aba46fb65dc8d9a20f4b301a68352064b4159a5",
+      "retrieved_at": "2026-09-30T02:37:58.349871+00:00",
+      "decision": "vendored",
+      "provider": "twilio",
+      "license": "MIT",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "vendored_skill_roots": [
+        "skills/twilio/twilio-ai-agent-architect",
+        "skills/twilio/twilio-voice-conversation-relay",
+        "skills/twilio/twilio-voice-outbound-calls",
+        "skills/twilio/twilio-voice-twiml",
+        "skills/twilio/twilio-call-recordings",
+        "skills/twilio/twilio-conference-calls"
+      ],
+      "vendored_skill_count": 6,
+      "copied_files": [
+        {
+          "upstream_path": "skills/twilio/twilio-ai-agent-architect/SKILL.md",
+          "copied_path": "skills/twilio/twilio-ai-agent-architect/SKILL.md",
+          "sha256": "f546f819ac2ead063ce05248b2c03421fffa61879ea6feecfebb4fbb263c3722",
+          "bytes": 20363
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-ai-agent-architect/agents/openai.yaml",
+          "copied_path": "skills/twilio/twilio-ai-agent-architect/agents/openai.yaml",
+          "sha256": "4c965a8551eb73f7246499c9fdae4b644466cd909279344b67d0522b72181359",
+          "bytes": 472
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-ai-agent-architect/assets/icon-large.png",
+          "copied_path": "skills/twilio/twilio-ai-agent-architect/assets/icon-large.png",
+          "sha256": "0ba822e011727cfc40dfc7207e5d99fed81c78a7ff8a4389d128352714390839",
+          "bytes": 9590
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-ai-agent-architect/assets/icon-small.png",
+          "copied_path": "skills/twilio/twilio-ai-agent-architect/assets/icon-small.png",
+          "sha256": "400e3f49b6c125888f25a05c414d6d2a83ab3a14cbf0ec1784211d18350b99ba",
+          "bytes": 5559
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-conversation-relay/SKILL.md",
+          "copied_path": "skills/twilio/twilio-voice-conversation-relay/SKILL.md",
+          "sha256": "f0d6cd430779ff49bc2298a20b9565d60ea5c220d4c90d7618a49bda011caef2",
+          "bytes": 7634
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-conversation-relay/agents/openai.yaml",
+          "copied_path": "skills/twilio/twilio-voice-conversation-relay/agents/openai.yaml",
+          "sha256": "84cf9564b1ef521cdb5d318862742f9e679b4d5622c3ee5c95c0117a0edad641",
+          "bytes": 465
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-conversation-relay/assets/icon-large.png",
+          "copied_path": "skills/twilio/twilio-voice-conversation-relay/assets/icon-large.png",
+          "sha256": "0ba822e011727cfc40dfc7207e5d99fed81c78a7ff8a4389d128352714390839",
+          "bytes": 9590
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-conversation-relay/assets/icon-small.png",
+          "copied_path": "skills/twilio/twilio-voice-conversation-relay/assets/icon-small.png",
+          "sha256": "400e3f49b6c125888f25a05c414d6d2a83ab3a14cbf0ec1784211d18350b99ba",
+          "bytes": 5559
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-outbound-calls/SKILL.md",
+          "copied_path": "skills/twilio/twilio-voice-outbound-calls/SKILL.md",
+          "sha256": "389ee1901e5d32bbca997d65dd4abb984997fa296af225d863711ed71615dd00",
+          "bytes": 10321
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-outbound-calls/agents/openai.yaml",
+          "copied_path": "skills/twilio/twilio-voice-outbound-calls/agents/openai.yaml",
+          "sha256": "33ebd41807be1a4faab9d38e08247ba06d2f23d1be57bbc713d1e185e5e3371d",
+          "bytes": 471
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-outbound-calls/assets/icon-large.png",
+          "copied_path": "skills/twilio/twilio-voice-outbound-calls/assets/icon-large.png",
+          "sha256": "0ba822e011727cfc40dfc7207e5d99fed81c78a7ff8a4389d128352714390839",
+          "bytes": 9590
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-outbound-calls/assets/icon-small.png",
+          "copied_path": "skills/twilio/twilio-voice-outbound-calls/assets/icon-small.png",
+          "sha256": "400e3f49b6c125888f25a05c414d6d2a83ab3a14cbf0ec1784211d18350b99ba",
+          "bytes": 5559
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-twiml/SKILL.md",
+          "copied_path": "skills/twilio/twilio-voice-twiml/SKILL.md",
+          "sha256": "60d5495a42a9132ac29138362208b2c87027eec79a4d2b4dc521b32ff4dcdec8",
+          "bytes": 10632
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-twiml/agents/openai.yaml",
+          "copied_path": "skills/twilio/twilio-voice-twiml/agents/openai.yaml",
+          "sha256": "8b76401a0daa821447288414698ae57723f69cc626e0a5de65b3764a216e3a78",
+          "bytes": 446
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-twiml/assets/icon-large.png",
+          "copied_path": "skills/twilio/twilio-voice-twiml/assets/icon-large.png",
+          "sha256": "0ba822e011727cfc40dfc7207e5d99fed81c78a7ff8a4389d128352714390839",
+          "bytes": 9590
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-voice-twiml/assets/icon-small.png",
+          "copied_path": "skills/twilio/twilio-voice-twiml/assets/icon-small.png",
+          "sha256": "400e3f49b6c125888f25a05c414d6d2a83ab3a14cbf0ec1784211d18350b99ba",
+          "bytes": 5559
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-call-recordings/SKILL.md",
+          "copied_path": "skills/twilio/twilio-call-recordings/SKILL.md",
+          "sha256": "b28ac7f3e4fb01af892c5d645ea0ba688933ced02fb59c49cc94c79d11e76a8a",
+          "bytes": 10675
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-call-recordings/agents/openai.yaml",
+          "copied_path": "skills/twilio/twilio-call-recordings/agents/openai.yaml",
+          "sha256": "2e19698447c15f43333bacac907d126bf6e0b5301ba48a3ff838aefbb202e1f1",
+          "bytes": 434
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-call-recordings/assets/icon-large.png",
+          "copied_path": "skills/twilio/twilio-call-recordings/assets/icon-large.png",
+          "sha256": "0ba822e011727cfc40dfc7207e5d99fed81c78a7ff8a4389d128352714390839",
+          "bytes": 9590
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-call-recordings/assets/icon-small.png",
+          "copied_path": "skills/twilio/twilio-call-recordings/assets/icon-small.png",
+          "sha256": "400e3f49b6c125888f25a05c414d6d2a83ab3a14cbf0ec1784211d18350b99ba",
+          "bytes": 5559
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-conference-calls/SKILL.md",
+          "copied_path": "skills/twilio/twilio-conference-calls/SKILL.md",
+          "sha256": "e1ca152391ea1eaa1a883be185c89376d275d2340579344d3f5419f76fe58f3e",
+          "bytes": 11558
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-conference-calls/agents/openai.yaml",
+          "copied_path": "skills/twilio/twilio-conference-calls/agents/openai.yaml",
+          "sha256": "c6299c8c1efcb881c8cd9c4331ef550a8766f387f953cb8c16d53c80cad2fe20",
+          "bytes": 434
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-conference-calls/assets/icon-large.png",
+          "copied_path": "skills/twilio/twilio-conference-calls/assets/icon-large.png",
+          "sha256": "0ba822e011727cfc40dfc7207e5d99fed81c78a7ff8a4389d128352714390839",
+          "bytes": 9590
+        },
+        {
+          "upstream_path": "skills/twilio/twilio-conference-calls/assets/icon-small.png",
+          "copied_path": "skills/twilio/twilio-conference-calls/assets/icon-small.png",
+          "sha256": "400e3f49b6c125888f25a05c414d6d2a83ab3a14cbf0ec1784211d18350b99ba",
+          "bytes": 5559
+        },
+        {
+          "upstream_path": "LICENSE",
+          "copied_path": "licenses/twilio/LICENSE",
+          "sha256": "1e0f166dca99875b117f289c0619f1c3f32d6ba9a9c433fca12812977ca15d4f",
+          "bytes": 1063
+        }
+      ]
+    },
+    {
+      "repo": "openai/skills",
+      "url": "https://github.com/openai/skills",
+      "stars": 27814,
+      "stars_source": "https://api.github.com/repos/openai/skills",
+      "sha": "49f948faa9258a0c61caceaf225e179651397431",
+      "retrieved_at": "2026-09-30T02:37:58.449483+00:00",
+      "decision": "vendored",
+      "provider": "openai",
+      "license": "Apache-2.0 (per-skill)",
+      "license_paths": [
+        "skills/.curated/aspnet-core/LICENSE.txt",
+        "skills/.curated/chatgpt-apps/LICENSE.txt",
+        "skills/.curated/cli-creator/LICENSE.txt",
+        "skills/.curated/cloudflare-deploy/LICENSE.txt",
+        "skills/.curated/define-goal/LICENSE.txt",
+        "skills/.curated/figma-code-connect-components/LICENSE.TXT",
+        "skills/.curated/figma-create-design-system-rules/LICENSE.TXT",
+        "skills/.curated/figma-create-new-file/LICENSE.TXT",
+        "skills/.curated/figma-generate-design/LICENSE.TXT",
+        "skills/.curated/figma-generate-library/LICENSE.TXT",
+        "skills/.curated/figma-implement-design/LICENSE.txt",
+        "skills/.curated/figma-use/LICENSE.TXT",
+        "skills/.curated/figma/LICENSE.txt",
+        "skills/.curated/gh-address-comments/LICENSE.txt",
+        "skills/.curated/gh-fix-ci/LICENSE.txt",
+        "skills/.curated/hatch-pet/LICENSE.txt",
+        "skills/.curated/jupyter-notebook/LICENSE.txt",
+        "skills/.curated/linear/LICENSE.txt",
+        "skills/.curated/migrate-to-codex/LICENSE.txt",
+        "skills/.curated/netlify-deploy/LICENSE.txt",
+        "skills/.curated/notion-knowledge-capture/LICENSE.txt",
+        "skills/.curated/notion-meeting-intelligence/LICENSE.txt",
+        "skills/.curated/notion-research-documentation/LICENSE.txt",
+        "skills/.curated/notion-spec-to-implementation/LICENSE.txt",
+        "skills/.curated/openai-docs/LICENSE.txt",
+        "skills/.curated/pdf/LICENSE.txt",
+        "skills/.curated/playwright-interactive/LICENSE.txt",
+        "skills/.curated/playwright-interactive/NOTICE.txt",
+        "skills/.curated/playwright/LICENSE.txt",
+        "skills/.curated/playwright/NOTICE.txt",
+        "skills/.curated/render-deploy/LICENSE.txt",
+        "skills/.curated/screenshot/LICENSE.txt",
+        "skills/.curated/security-best-practices/LICENSE.txt",
+        "skills/.curated/security-ownership-map/LICENSE.txt",
+        "skills/.curated/security-threat-model/LICENSE.txt",
+        "skills/.curated/sentry/LICENSE.txt",
+        "skills/.curated/speech/LICENSE.txt",
+        "skills/.curated/transcribe/LICENSE.txt",
+        "skills/.curated/vercel-deploy/LICENSE.txt",
+        "skills/.curated/winui-app/LICENSE.txt",
+        "skills/.curated/yeet/LICENSE.txt",
+        "skills/.system/imagegen/LICENSE.txt",
+        "skills/.system/openai-docs/LICENSE.txt",
+        "skills/.system/plugin-creator/LICENSE.txt",
+        "skills/.system/skill-creator/LICENSE.txt",
+        "skills/.system/skill-installer/LICENSE.txt"
+      ],
+      "vendored_skill_roots": [
+        "skills/.curated/speech",
+        "skills/.curated/transcribe"
+      ],
+      "vendored_skill_count": 2,
+      "copied_files": [
+        {
+          "upstream_path": "skills/.curated/speech/LICENSE.txt",
+          "copied_path": "skills/openai/speech/LICENSE.txt",
+          "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+          "bytes": 10776
+        },
+        {
+          "upstream_path": "skills/.curated/speech/SKILL.md",
+          "copied_path": "skills/openai/speech/SKILL.md",
+          "sha256": "d6120efc03ea0e80204f687801cfaec8efc4519a3430b68e13e4ebd8e1c69b52",
+          "bytes": 7241
+        },
+        {
+          "upstream_path": "skills/.curated/speech/agents/openai.yaml",
+          "copied_path": "skills/openai/speech/agents/openai.yaml",
+          "sha256": "1a152d9e7e66b86100db33b8e6ff3327955bf107bb9e77044a1ad6dfb10d6e18",
+          "bytes": 299
+        },
+        {
+          "upstream_path": "skills/.curated/speech/assets/speech-small.svg",
+          "copied_path": "skills/openai/speech/assets/speech-small.svg",
+          "sha256": "b879fe9fc476f183e1c9bfd0e2883b8b2c28c708ca3d90f409bed051fe6a173e",
+          "bytes": 742
+        },
+        {
+          "upstream_path": "skills/.curated/speech/assets/speech.png",
+          "copied_path": "skills/openai/speech/assets/speech.png",
+          "sha256": "b5abb383bba63a309f73a4da1060b50b6c92b1b5f974f44b8f609b3da10112f9",
+          "bytes": 1234
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/accessibility.md",
+          "copied_path": "skills/openai/speech/references/accessibility.md",
+          "sha256": "34cd91bc6a3ef65c8da8997e312d163babcdfc3241f9e359418b3f5a76f15b76",
+          "bytes": 696
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/audio-api.md",
+          "copied_path": "skills/openai/speech/references/audio-api.md",
+          "sha256": "dba58cfc0d5e125cf1ac13875193950233aa948639b268ed7799ca17bca66bfe",
+          "bytes": 902
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/cli.md",
+          "copied_path": "skills/openai/speech/references/cli.md",
+          "sha256": "77e6a0c01036ac0092cf37c3d5c88dc6800b223524c5b9c8920d10fc4f68e0cc",
+          "bytes": 3275
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/codex-network.md",
+          "copied_path": "skills/openai/speech/references/codex-network.md",
+          "sha256": "c956a51d3e67246cfb43982aa8c82065350fcce4ef7b94bd89e599c575c94d9c",
+          "bytes": 1148
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/ivr.md",
+          "copied_path": "skills/openai/speech/references/ivr.md",
+          "sha256": "2aaf225b7cea9277fe5413eb0360a845de035c00ea0d6f30348b5ce7138803fc",
+          "bytes": 708
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/narration.md",
+          "copied_path": "skills/openai/speech/references/narration.md",
+          "sha256": "3e68829fe4a5a47c3d37cbe9a1ed95ff3cedf1b303ff02a10501e56ad5e7c74a",
+          "bytes": 671
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/prompting.md",
+          "copied_path": "skills/openai/speech/references/prompting.md",
+          "sha256": "2adcb001813be04e56918eb0d34d9a45f9326aa0fb240526ae74a926522b6554",
+          "bytes": 1553
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/sample-prompts.md",
+          "copied_path": "skills/openai/speech/references/sample-prompts.md",
+          "sha256": "c14e1b1c526f2fe555ab2dc86c0e8aead33d38238d2bfcfbf9de0c18d28bde03",
+          "bytes": 991
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/voice-directions.md",
+          "copied_path": "skills/openai/speech/references/voice-directions.md",
+          "sha256": "5da0a4c59bdadb47d1795f51a9708b515fbf2901f0ca808cc5c66d83a336986d",
+          "bytes": 2155
+        },
+        {
+          "upstream_path": "skills/.curated/speech/references/voiceover.md",
+          "copied_path": "skills/openai/speech/references/voiceover.md",
+          "sha256": "a4bb96c31c8be6a62d35a103f9d7fc700b8004df2efd10595d00b63f0c096486",
+          "bytes": 790
+        },
+        {
+          "upstream_path": "skills/.curated/speech/scripts/text_to_speech.py",
+          "copied_path": "skills/openai/speech/scripts/text_to_speech.py",
+          "sha256": "0000014efdf1194512c017ffa0d0574ae65881f6a1340b7ed822053b6e3d3c44",
+          "bytes": 15592
+        },
+        {
+          "upstream_path": "skills/.curated/transcribe/LICENSE.txt",
+          "copied_path": "skills/openai/transcribe/LICENSE.txt",
+          "sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9",
+          "bytes": 10776
+        },
+        {
+          "upstream_path": "skills/.curated/transcribe/SKILL.md",
+          "copied_path": "skills/openai/transcribe/SKILL.md",
+          "sha256": "f530021da9f377362ee4214e0bc689cbb5404640d2eb88ee272d51d61f530a09",
+          "bytes": 2834
+        },
+        {
+          "upstream_path": "skills/.curated/transcribe/agents/openai.yaml",
+          "copied_path": "skills/openai/transcribe/agents/openai.yaml",
+          "sha256": "fe7a20b9c03ce027e2f3023a4fd363c2d958ceeae1b7daaef77d1f6d055d97a4",
+          "bytes": 414
+        },
+        {
+          "upstream_path": "skills/.curated/transcribe/assets/transcribe-small.svg",
+          "copied_path": "skills/openai/transcribe/assets/transcribe-small.svg",
+          "sha256": "7d67890abf0f145a77f5fb87752bb6337b394fd4e26f5969c57d82d40e369a14",
+          "bytes": 750
+        },
+        {
+          "upstream_path": "skills/.curated/transcribe/assets/transcribe.png",
+          "copied_path": "skills/openai/transcribe/assets/transcribe.png",
+          "sha256": "0860df58af6b9e58f4445a81baca7bfd94029a447742ae9b9e896e7c5b748688",
+          "bytes": 1288
+        },
+        {
+          "upstream_path": "skills/.curated/transcribe/references/api.md",
+          "copied_path": "skills/openai/transcribe/references/api.md",
+          "sha256": "a2bf7e59d69aa127b176255c5c01afbafda4e3029b12b4413e75074233ffb36d",
+          "bytes": 457
+        },
+        {
+          "upstream_path": "skills/.curated/transcribe/scripts/transcribe_diarize.py",
+          "copied_path": "skills/openai/transcribe/scripts/transcribe_diarize.py",
+          "sha256": "d623b1fed1491b7ca4b7b5b393089165e3581a83d90d5a57868241f1b2a5d951",
+          "bytes": 8684
+        }
+      ]
+    },
+    {
+      "repo": "Generovo/claude-voice-skills",
+      "url": "https://github.com/Generovo/claude-voice-skills",
+      "stars": 0,
+      "stars_source": "https://api.github.com/repos/Generovo/claude-voice-skills",
+      "sha": "1350e7b2102756ebeb021a9059f45ab22a9e597d",
+      "decision": "link-only",
+      "license_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repo": "bachhao-tech/RETELL-AI",
+      "stars": 0,
+      "sha": "70952a6d300f4ab74162506e9cbcb8541838cba1",
+      "decision": "link-only"
+    }
+  ],
+  "original_skills": [
+    "skills/foundations/voice-agent-evaluation",
+    "skills/foundations/voice-conversation-design",
+    "skills/foundations/voice-latency-audit",
+    "skills/foundations/voice-stack-selection"
+  ]
+}
