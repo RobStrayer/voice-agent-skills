@@ -1,6 +1,6 @@
 # Skill catalog
 
-[Home](../README.md) / [Engineering handbook](handbook.md) / Core skills
+[Home](../README.md) / Skill catalog
 
 **39 bundled skills** · **12 original foundations** · **27 provider skills**
 

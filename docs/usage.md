@@ -56,7 +56,7 @@ directory:
 | Agent | Personal skills | Project skills |
 | --- | --- | --- |
 | Claude Code | `~/.claude/skills/<name>/` | `.claude/skills/<name>/` |
-| OpenAI Codex | `~/.codex/skills/<name>/` | Check the [Codex skills docs](https://developers.openai.com/codex/skills) |
+| OpenAI Codex | `~/.agents/skills/<name>/` (older Codex versions: `~/.codex/skills/`) | `.agents/skills/<name>/` ([Codex skills docs](https://learn.chatgpt.com/docs/build-skills)) |
 
 ```bash
 git clone https://github.com/RBStrayer/nl-voice-skills.git
@@ -96,11 +96,11 @@ Pipecat init/deploy mention Claude-specific `AskUserQuestion`; talk expects MCP
 start/speak/listen/stop tools and its own confirmations. Hosts without those tools
 need an equivalent supported workflow. OpenAI script examples assume paths below
 `~/.codex/skills/`; adjust the CLI path to the folder where you actually copied the
-skill. Markdown format compatibility does not establish runtime compatibility.
+skill. Markdown format compatibility doesn't prove runtime compatibility.
 
 Eight upstream skills use the Agent Skills specification's `compatibility` field;
 Twilio's architect skill also uses a provider-specific `tier` field. The bundled
-Codex skill-creator validator rejects these extra fields, although all 36 headers
+Codex skill-creator validator rejects these extra fields, although all 39 headers
 parse as YAML and their required names/descriptions pass the collection checks.
 Upstream content is preserved. If a host requires a narrower schema, adapt a local
 installation copy and retain the original snapshot and attribution here.
@@ -163,12 +163,12 @@ do not apply one product's message schema to the other.
 
 ElevenLabs exposes separate controls for waiting through user silence, taking a
 turn, and filling a delay while the LLM is still working. A soft-timeout filler
-does not establish that the requested answer is ready. Its
+doesn't prove that the requested answer is ready. Its
 [conversation-flow documentation](https://elevenlabs.io/docs/eleven-agents/customization/conversation-flow)
 describes these controls. For tools, use the current
 [`interruption_mode` settings](https://elevenlabs.io/docs/eleven-agents/customization/tools/tool-configuration/tool-interruptions).
 The preserved skill already documents this field. Suppressing speech interruptions
-does not establish that an external action can be rolled back.
+doesn't prove that an external action can be rolled back.
 
 Cartesia's [context cancellation documentation](https://docs.cartesia.ai/use-the-api/tts-websocket/contexts)
 states: "Any currently generating request will continue sending responses until

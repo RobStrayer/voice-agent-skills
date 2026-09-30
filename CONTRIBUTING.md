@@ -1,9 +1,17 @@
 # Contributing
 
-Reviewed: 2026-09-30 UTC.
-
 Bring a skill that helps someone build, operate, or evaluate a voice AI agent.
 A smaller, useful collection beats a larger collection of overlapping prompts.
+
+## Quick start
+
+1. Fork the repo and create a branch.
+2. Make your change. For a typo or broken link, that's all.
+3. Run `python scripts/verify.py` and `python scripts/test_verify.py`.
+4. Open a pull request and fill in the checklist.
+
+By contributing you agree that your original work is released under the repo's
+[MIT license](LICENSE).
 
 ## Add a skill
 
@@ -20,9 +28,9 @@ A smaller, useful collection beats a larger collection of overlapping prompts.
 5. Review scripts and hooks before including them. Never include account data,
    recordings, credentials, internal URLs, or project-specific operational notes.
 6. For original guidance, add a review date and cite the relevant official pages
-   beside changing technical claims. Use Context7 to locate current documentation,
-   then check the canonical page, especially for deprecations or contradictory
-   examples. A retrieval date is not the provider's publication date.
+   beside changing technical claims. Check the provider's current documentation and
+   the canonical page, especially for deprecations or contradictory examples. A
+   retrieval date is not the provider's publication date.
 7. Update the catalog and relevant README entry. Run `python scripts/verify.py`
    and `python scripts/test_verify.py`.
 

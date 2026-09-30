@@ -31,7 +31,7 @@ and interrupt. That is what this repo is about.
 
 ## Where should you start?
 
-![A decision flowchart. No code: use a managed platform such as Vapi, Retell, ElevenLabs Agents or Synthflow. Code and full control: use an open-source framework such as LiveKit Agents or Pipecat. Code for a browser or app: use a speech-to-speech API such as OpenAI Realtime or Gemini Live. Code for phone calls: use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo.](assets/diagrams/where-to-start.svg)
+![A decision flowchart. No code: use a managed platform such as Vapi, Retell, ElevenAgents or Bland. Code and full control: use an open-source framework such as LiveKit Agents or Pipecat. Code for a browser or app: use a speech-to-speech API such as OpenAI GPT-Live or Gemini Live. Code for phone calls: use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo.](assets/diagrams/where-to-start.svg)
 
 The [getting started guide](docs/getting-started.md) links the official quickstart
 for each path, and the [stack selection skill](skills/foundations/voice-stack-selection/SKILL.md)
@@ -59,7 +59,8 @@ npx skills add RBStrayer/nl-voice-skills --skill voice-turn-taking
 ```
 
 **By hand:** copy a skill folder (the whole folder, not just `SKILL.md`) into
-`~/.claude/skills/` for Claude Code or `~/.codex/skills/` for Codex.
+`~/.claude/skills/` for Claude Code or `~/.agents/skills/` for Codex (see the
+[install guide](docs/usage.md) for older versions).
 
 Then give the agent a real task and the evidence it needs:
 
@@ -91,7 +92,7 @@ These twelve skills are original to this repo and work with any provider.
 
 ## Level up
 
-![A four-step staircase from Talk to it through Put it to work and Own the pipeline to Run it for real, each step listing the repo skills that help.](assets/diagrams/learning-path.svg)
+![A four-step staircase. 1, Talk to it: voice-stack-selection. 2, Put it to work: voice-conversation-design, voice-turn-taking, voice-phone-compliance. 3, Own the pipeline: voice-speech-pipeline, voice-latency-audit, voice-audio-frontends, voice-media-debugging. 4, Run it for real: voice-agent-evaluation, voice-call-reliability, voice-agent-security, voice-cost-estimation.](assets/diagrams/learning-path.svg)
 
 ## Common problems
 

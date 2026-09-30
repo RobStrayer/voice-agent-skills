@@ -52,13 +52,15 @@ the caller's turn is often the biggest part and is often missing from platform
 numbers. Distance adds more, and the phone leg can roughly double what you
 measured in the browser.
 
-**What works.** Run the orchestrator, speech-to-text, model and text-to-speech
-in the same region as the phone edge. Keep speech connections warm. Replace a
+**What works.** Run your agent server and its speech and model services in the
+same region as your phone provider's nearest data centre. Keep speech
+connections warm. Replace a
 fixed silence timer with an end-of-turn model. Say something short before slow
 steps. Measure from recorded audio on both sides of the call, not from
 platform timestamps. One independent test of real phone calls measured medians
-of 1.3 to 1.7 seconds across five managed platforms, with platform self-reports
-about half a second lower than what callers heard.
+of 1.3 to 1.7 seconds across five managed platforms, even with the end-of-turn
+wait cut to 0.1 seconds on three of them, with platform self-reports about half a
+second lower than what callers heard.
 
 **Skills:** [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) ·
 [voice-stack-selection](../skills/foundations/voice-stack-selection/SKILL.md)
@@ -70,8 +72,8 @@ about half a second lower than what callers heard.
 ## 2. Turn-taking: knowing when the caller has finished
 
 **What happens.** It goes wrong both ways, and "it answers the moment I pause"
-is now the louder complaint. A 1.2-second silence threshold feels broken; 500 ms
-cuts people off mid-thought.
+is now the louder complaint. Builders describe the trap: a 1.2-second silence
+threshold feels broken, and 500 ms cuts people off mid-thought.
 
 **Why.** A silence timer can't tell a thinking pause from a finished sentence,
 and common defaults sit around 300 to 500 ms. Builders often stack several turn
@@ -154,8 +156,8 @@ $0.14 per minute across five managed platforms, for short test calls.
 ## 6. Caller trust and conversation design
 
 **What happens.** Callers hang up on bots that only repeat the website, loop, or
-ignore "no thanks". A receptionist launch with over 300 comments on Hacker News
-drew people saying they hang up on AI receptionists, and asking how its
+ignore "no thanks". A post about building an AI receptionist drew over 300
+comments on Hacker News, with people saying they hang up on AI receptionists, and asking how its
 hang-up rate compared with plain voicemail.
 
 **Why.** The agent doesn't solve the caller's actual problem, botches a name or
@@ -196,8 +198,8 @@ before switching models.
 
 ## 8. Reliability at scale
 
-**What happens.** Rare per call, expensive in aggregate. A minor framework
-upgrade killed about 1% of calls. A caller hanging up froze a pipeline. A
+**What happens.** Rare per call, expensive in aggregate. After a minor
+framework upgrade, one team saw about 1% of calls die. A caller hanging up froze a pipeline. A
 dropped speech connection went silent until a timeout. Vendor outages with no
 status signal. A cheap setup that fell over at a few hundred concurrent calls.
 
@@ -285,8 +287,8 @@ to itself.
 
 **Why.** Echo cancellation happens in the device, browser or transport, not in
 your agent code. Raw WebSocket audio has none. Browsers differ: in one Pipecat
-thread a maintainer said Firefox lacks the echo cancellation and noise
-suppression that Chrome and Safari have.
+thread a commenter's agent heard its own audio in Firefox but worked in Edge, and
+a maintainer pointed to Chrome and Safari for their echo cancellation.
 
 **What works.** Use WebRTC or an SDK that applies echo cancellation. Add a
 denoiser before voice detection. Mute or gate the microphone while the agent
@@ -366,8 +368,9 @@ skills here record when their sources were last checked.
 **What happens.** Transfers drop context, time out or ring nowhere. A carrier's
 "press any key" message gets transcribed as the caller. The caller is stranded.
 
-**What works.** Decide routing in code. Use a blind transfer unless you have an
-announcement path for an attended one. Pass structured context, not a
+**What works.** Decide routing in code. Prefer a warm transfer that keeps the
+caller until a person accepts; use a blind (cold) transfer only when your
+platform can't do that. Pass structured context, not a
 transcript dump, to whoever picks up. Offer a callback as the fallback. Test
 transfers against real carriers, including call screening and phone menus.
 
@@ -398,10 +401,15 @@ constantly. That mismatch is the risk.
 
 **What the rules say** (orientation, not legal advice). In the US, the FCC ruled
 in 2024 that AI-generated voices count as "artificial" voices, so calls using
-them need prior consent, and telemarketing needs prior written consent. Calls
-must identify the business, respect do-not-call requests and calling hours.
+them to mobile phones and homes generally need the person's prior consent, and
+prior written consent for telemarketing. An artificial-voice message must name
+the business at the start. Telemarketing must also honour do-not-call requests
+and calling hours (8 a.m. to 9 p.m. the called person's time under federal rules;
+some states are stricter). Courts and the FCC are still changing parts of the
+consent rules, so check the current state before you dial.
 Wiretap lawsuits over recording and AI transcription are moving fast. In the
-EU, the AI Act's transparency rules apply from August 2, 2026, and the
+EU, the AI Act's rule that people must be told they're talking to an AI applies from
+August 2, 2026, and the
 Commission's guidelines use a spoken statement at the start of the call as the
 example for voice. A HIPAA business associate agreement alone doesn't make a
 voice agent compliant.

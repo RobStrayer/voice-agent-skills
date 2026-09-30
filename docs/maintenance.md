@@ -3,8 +3,9 @@
 Reviewed: 2026-09-30 UTC.
 
 Keep source links current, repair stale guidance, and add skills that help with
-real voice engineering work. A daily review should produce a change only when
-there is useful new evidence. Stars alone are not a reason to add an entry.
+real voice engineering work. A review should produce a change only when there is
+useful new evidence. Stars alone are not a reason to add an entry, and a review
+with nothing new needs no date-only commit.
 
 ## What to review
 
@@ -25,8 +26,7 @@ the date you fetched a page.
 ## Review an update
 
 1. Check local changes, the configured remote, and remote branch state. Preserve
-   concurrent work. Confirm the target repository is still private before pushing
-   under the current private-maintenance authorization.
+   concurrent work. Confirm the target repository and branch before pushing.
 2. Compare the new source with the last observed commit or review record. Read the
    changed instruction and its supporting material. Check whether a reference has
    moved, a default changed, or a model name become an alias for different behavior.
@@ -53,26 +53,21 @@ frontends, recognition, synthesis, tools, telephony, and operations each need
 direct navigation and practical guidance. A new source link does not replace a
 worked case, failure analysis, or test worksheet. Keep a skill's required guides
 inside its folder so installing it preserves those instructions. Check diagrams
-against the revised state and event contracts; update their source and rendered
-form together, with meaningful alternative text and a source-review date.
+against the revised state and event contracts, and keep each figure's alt text
+and `<desc>` in step with the drawing.
 
-Keep the README a practical skills and learning library. Put task-based skill
-discovery and installation links near the top, followed by a substantial
-illustrated introduction to voice engineering. Avoid sales copy or decorative
-hero artwork.
-Explain the cascade, timing boundaries, call routing, turn taking, audio, and
-action recovery on the page, with relevant foundation and original provider
-skills beside each part. Preserve useful depth when improving readability;
-word-count reduction is not a quality goal. The [handbook](handbook.md) and
-portable skill guides provide the longer implementation paths.
+Keep the README a front door, not the whole library. It opens with a banner, then
+a "Start here" table, a short "how it works" figure, a "where to start" chart,
+the install steps, the skill finder and the common problems. Longer explanations
+live in guides under `docs/`: the [walkthrough](walkthrough.md) and the
+[handbook](handbook.md) carry the implementation depth, and the skills carry the rest.
 
-Vary the visual treatment to match the problem: a timeline explains concurrent
-work, a call tree explains routing, and an audio cutaway explains physical echo.
-Review changed pages at their rendered reading width. Follow the compact cool
-palette in [diagram style](diagram-style.md), with readable labels and ordinary
-text explanations beside graphics. Avoid oversized canvases and large tan fields.
-Synthetic traces
-must say that their values are illustrative, not measurements or targets.
+Figures follow [diagram style](diagram-style.md): one hand-written SVG per idea,
+readable at README width, with a `<title>`, a `<desc>` and a plain-text explanation
+beside it. Match the figure to the problem: a timeline for concurrent work, a call
+tree for routing, an audio cutaway for echo. Review changed pages at their rendered
+reading width. Synthetic traces must say that their values are illustrative, not
+measurements or targets.
 
 ## Checks before publication
 
@@ -86,34 +81,17 @@ git diff --check
 
 The verifier checks snapshot hashes and retained licenses, skill names and local
 Markdown paths, source records, Python syntax, and a bounded set of credential
-patterns. Its regression check must reject tampered source content. Review new
-links against the live original sources; a local link check cannot establish that
-an external API or skill still works.
+patterns. Its regression check must reject tampered source content. The verify
+check runs on every pull request and must pass before merging. Review new links
+against the live original sources; a local link check cannot prove that an
+external API or skill still works.
 
 Inspect the changed text for credentials, private account data, local usernames,
 internal URLs, recordings, and copied project instructions. Pattern matching is
 only part of that review. Keep private research artifacts outside the repository.
 
-Publish validated, task-owned changes with a descriptive commit based on reconciled
-`origin/main`. Use `git push origin HEAD:refs/heads/main` so a local branch or
-`push.default` setting cannot silently choose another destination. Preserve unrelated
-branches and edits. Reconcile a concurrent remote update before pushing; never
-force-push over other work. After publication, read back the remote commit and
-private visibility. Record any unverified source or blocked operation precisely.
-
-## Autonomous daily maintenance
-
-The maintainer has authorized daily research, validated content updates, commits,
-and pushes to this private repository. Routine maintenance does not require a new
-approval. This authority does not cover making the repository public, changing
-credentials or account permissions, paid calls, live provider changes, or unrelated
-repositories.
-
-The scheduled review runs at 09:00 America/New_York in the maintainer's Codex
-environment. Its authentication stays in the local credential store; no token or
-account configuration belongs in this repository. The schedule and credentials are
-external to the checkout and are not installed by cloning it.
-
-Notify the maintainer when useful content changes, a material deprecation affects
-the collection, or an authentication or policy failure blocks an update. An
-unchanged review needs no notification or date-only commit.
+Land validated, task-owned changes through a pull request from a topic branch
+based on reconciled `origin/main`, with the verify check passing. Preserve
+unrelated branches and edits. Reconcile a concurrent remote update before opening
+the pull request; never force-push over other work. After the merge, read back the
+remote commit. Record any unverified source or blocked operation precisely.

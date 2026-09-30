@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 804" width="1080" height="804" role="img" aria-labelledby="t d">
 <title id="t">Where should you start?</title>
-<desc id="d">A decision flowchart with three questions. Question 1: do you want to write code? If no, use a managed platform: build it in a dashboard, pick a voice, write a prompt and attach a phone number, for example Vapi, Retell, ElevenLabs Agents or Synthflow. If yes, question 2: do you need to pick each part yourself, such as your own speech-to-text, model and voice, self-hosting, or fine control of cost and speed? If yes, use an open-source framework such as LiveKit Agents or Pipecat and code the listen, think, speak loop yourself. If no, question 3: is it for a browser or app, or for phone calls? For a browser or app, use a speech-to-speech API such as OpenAI Realtime or Gemini Live, where one model hears and speaks and you add tools and hosting. For phone calls, use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo, where the provider handles the call and your server gets the caller's words as text, or the raw audio. Footnote: this is not a one-way door; frameworks can run speech-to-speech models, and every path can call your own tools.</desc>
+<desc id="d">A decision flowchart with three questions. Question 1: do you want to write code? If no, use a managed platform: build it in a dashboard, pick a voice, write a prompt and attach a phone number, for example Vapi, Retell, ElevenAgents or Bland. If yes, question 2: do you need to pick each part yourself, such as your own speech-to-text, model and voice, self-hosting, or fine control of cost and speed? If yes, use an open-source framework such as LiveKit Agents or Pipecat and code the listen, think, speak loop yourself. If no, question 3: is it for a browser or app, or for phone calls? For a browser or app, use a speech-to-speech API such as OpenAI GPT-Live or Gemini Live, where one model hears and speaks and you add tools and hosting. For phone calls, use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo, where the provider handles the call and your server gets the caller's words as text, or the raw audio. Footnote: this is not a one-way door; frameworks can run speech-to-speech models, and every path can call your own tools.</desc>
 <!-- Edit freely. Questions sit in the left column, outcomes in the right; each outcome is one group.
      Chip labels are centred; if you rename a chip, set its width to about characters x 7.1 + 24 and recentre the label. -->
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
@@ -60,10 +60,10 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <text class="chipt" x="582.2" y="220" text-anchor="middle">Vapi</text>
 <rect class="chip" x="616.4" y="202" width="66.6" height="26" rx="13"/>
 <text class="chipt" x="649.7" y="220" text-anchor="middle">Retell</text>
-<rect class="chip" x="691.0" y="202" width="144.7" height="26" rx="13"/>
-<text class="chipt" x="763.4" y="220" text-anchor="middle">ElevenLabs Agents</text>
-<rect class="chip" x="843.7" y="202" width="87.9" height="26" rx="13"/>
-<text class="chipt" x="887.7" y="220" text-anchor="middle">Synthflow</text>
+<rect class="chip" x="691.0" y="202" width="109.2" height="26" rx="13"/>
+<text class="chipt" x="745.6" y="220" text-anchor="middle">ElevenAgents</text>
+<rect class="chip" x="808.2" y="202" width="59.5" height="26" rx="13"/>
+<text class="chipt" x="838" y="220" text-anchor="middle">Bland</text>
 </g>
 <g id="path-b">
 <clipPath id="clip-b"><rect x="532" y="278" width="516" height="134" rx="14"/></clipPath>
@@ -85,7 +85,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <text class="h2" x="556" y="504">One model hears and speaks</text>
 <text class="desc" x="556" y="528">The most natural feel for a prototype. You add tools and hosting.</text>
 <rect class="chip" x="556" y="542" width="130.5" height="26" rx="13"/>
-<text class="chipt" x="621.2" y="560" text-anchor="middle">OpenAI Realtime</text>
+<text class="chipt" x="621.2" y="560" text-anchor="middle">OpenAI GPT-Live</text>
 <rect class="chip" x="694.5" y="542" width="102.1" height="26" rx="13"/>
 <text class="chipt" x="745.5" y="560" text-anchor="middle">Gemini Live</text>
 </g>

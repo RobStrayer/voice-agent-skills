@@ -1,10 +1,10 @@
-[Home](../README.md) / **Engineering handbook** · [Skills](catalog.md) · [Resources](resources.md)
-
 # Build the conversation, end to end
 
-Follow a path from the first microphone sample to a confirmed outcome.
-Each chapter gives you a model of the problem, a worked case or decision process,
-and checks you can apply to a real project.
+[Home](../README.md) / Engineering handbook
+
+Follow a call from the first sound at the microphone to a confirmed result.
+Each chapter explains the problem, works through an example or a decision, and
+gives you checks to run on a real project.
 
 **[01 Design](#01-design-the-system)** · **[02 Listen and respond](#02-listen-and-respond)** ·
 **[03 Act and connect](#03-act-and-connect)** · **[04 Operate and verify](#04-operate-and-verify)**
@@ -28,8 +28,8 @@ and the recovery before committing to a provider.
 ![Audio, call control, and business actions have separate owners and evidence.](../skills/foundations/voice-stack-selection/assets/voice-system-map.svg)
 
 
-**Leave with:** a conditional architecture choice, named owners, and evidence
-that could change the decision.
+**Leave with:** a stack choice, who owns each part, and what would make you change
+your mind.
 
 ## 02 Listen and respond
 
@@ -55,8 +55,9 @@ turn decisions, recognition, and playback influence one another.
 
 </details>
 
-**Leave with:** an event trace, an audio-format contract, and a test set that
-includes quiet speech, pauses, corrections, and double-talk.
+**Leave with:** a trace of what happened and when, the audio format each step
+expects, and a test set with quiet speech, pauses, corrections and both sides
+talking at once.
 
 ## 03 Act and connect
 
@@ -81,8 +82,9 @@ accepted request, and a completed business action are different evidence.
 
 </details>
 
-**Leave with:** explicit pending-action states, a reconciliation owner, and a
-caller recovery path for every failed handoff.
+**Leave with:** clear states for actions still in progress, someone who owns
+checking what really happened, and a way to get the caller back on track after
+every failed handoff.
 
 ## 04 Operate and verify
 
@@ -105,7 +107,8 @@ a successful text simulation each prove only part of it.
 
 ![An illustrative timeline of one reply: the turn is committed at 260 ms, the first phrase is ready at 720 ms, playback starts at 1,060 ms and useful words are heard at 1,120 ms.](../assets/diagrams/latency-budget.svg)
 
-**Leave with:** a repeatable release set and named gaps in the evidence.
+**Leave with:** a release test set you can repeat, and a written list of what you
+haven't checked.
 
 ---
 

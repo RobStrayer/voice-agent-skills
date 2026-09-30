@@ -35,9 +35,10 @@ describes all three paths. No path guarantees the lowest caller-perceived delay;
 endpointing, streaming, network placement, and playback still affect the result.
 
 Hosting is another decision. A chain can run in a managed runtime, and an
-application you operate can call a hosted speech model. Decide whether your team
-can support admission, capacity, dispatch, and deployments while calls remain
-active. Check the full processing route before promising a region or retention policy.
+application you operate can call a hosted speech model. Can your team
+keep enough servers ready for calls, start new calls on the right one, and deploy
+without dropping live calls? Also check where audio and transcripts are processed
+and stored before you promise a customer a region.
 
 ### A booking system makes the tradeoffs concrete
 
@@ -49,10 +50,10 @@ recommendation.
 A chain is a useful candidate if you also need a text checkpoint before every
 spoken response or want to retain an existing text agent. A native speech session
 remains a candidate when validated tool arguments satisfy the business checkpoint.
-An action check alone does not force the entire conversation through a text chain.
+Checking an action before it runs doesn't mean the whole conversation has to go through a text chain.
 
 Both candidates still need an authorized booking service, a way to establish
-uncertain outcomes, and a tested transfer route. Compare them using the same
+unclear outcomes, and a tested transfer route. Compare them using the same
 corrections, noisy input, and failed writes. Record caller-audible timing and total
 cost with the same boundaries. Choose a default and name the requirement that
 would make you reconsider it.
@@ -76,13 +77,13 @@ Skills for this decision:
 “Send it to Alex… actually, to Alexis.” A quiet stretch between those phrases
 doesn't tell you whether the thought is complete. Voice activity detection finds
 likely speech. Silence endpointing waits for a gap. End-of-turn prediction estimates
-completion. A finalized transcription segment follows its recognizer's contract.
+completion. A “final” transcript from the speech service means only that the service won't change those words.
 Your application still needs to decide when to respond.
 
 ![A call timeline where the agent waits through a pause, replies at the end of the turn, then stops mid-sentence when the caller barges in, with five steps for handling the interruption.](../assets/diagrams/turn-taking.svg)
 
-Give one controller authority to commit a user turn and release the response.
-Other detectors contribute evidence. Otherwise, two policies can trigger two
+Let one part of your code decide when the caller has finished and when the agent may answer.
+Everything else only gives it hints. Otherwise, two policies can trigger two
 answers or add their waiting periods together.
 
 An “uh-huh” can invite the agent to continue. A quiet “no” can reverse the answer
@@ -99,7 +100,7 @@ When an interruption is accepted, follow it through the system:
 5. Keep any external action under its own cancellation or recovery contract.
 
 A stopped generator can leave seconds of audio in another buffer. A stopped
-coroutine cannot establish that a remote write stopped. Check every boundary
+coroutine can't prove that a remote write stopped. Check every boundary
 your actual transport exposes.
 
 The [turn-taking guide](../skills/foundations/voice-turn-taking/references/turn-taking-guide.md)
@@ -145,7 +146,7 @@ speech-preservation measures.
 
 - [Audio frontends](../skills/foundations/voice-audio-frontends/SKILL.md): locate the interference and compare processing without losing speech.
 - [Media debugging](../skills/foundations/voice-media-debugging/SKILL.md): inspect format conversion, capture, and playback boundaries.
-- [ElevenLabs voice isolation](https://github.com/elevenlabs/skills/blob/main/voice-isolator/SKILL.md): use the provider's isolation workflow. Check its input and processing contract before considering a live audio path; an isolation skill does not establish streaming AEC support.
+- [ElevenLabs voice isolation](https://github.com/elevenlabs/skills/blob/main/voice-isolator/SKILL.md): use the provider's isolation workflow. Check its input and processing contract before considering a live audio path; an isolation skill doesn't prove streaming AEC support.
 
 ## Carry the meaning through recognition and speech
 
@@ -165,11 +166,11 @@ caller will actually use.
 
 ### Handle transcript revisions
 
-Treat streaming transcripts as revisions. Replace provisional hypotheses under
-the provider's segment or timestamp contract; appending every update duplicates
-words. Keep stable segments together until the application's turn policy accepts
-the utterance. Reversible preparation can start earlier if corrected intent
-invalidates its results.
+Treat a streaming transcript as a draft that keeps changing. Replace each draft
+with the provider's newer version of the same segment; adding every update to the
+end repeats words. Hold finished segments until your turn logic accepts the
+caller's utterance. Preparation that's easy to undo can start earlier, in case a
+correction makes it obsolete.
 
 For example, an application might receive this synthetic sequence. These are
 illustrative records, not a provider's event schema:
@@ -180,8 +181,8 @@ Segment 7, revision 2, final:   "Thursday at two"
 Turn state: waiting for completion evidence
 ```
 
-Replace the first hypothesis with the second. Preserve the distinction between
-a finalized segment and the application's decision to commit the turn.
+Replace the first guess with the second. A segment being final is not the same
+as your application deciding the turn is over.
 
 ### Form phrases for playback
 
@@ -213,8 +214,9 @@ the caller says, “Actually, make it Monday.”
 ![When a caller changes their mind while an action is in flight, the agent stops talking, checks what happened to the first action, then branches on committed, not committed or unknown.](../assets/diagrams/action-outcomes.svg)
 
 Stopping the old speech is useful. The application must also discover what happened
-to Friday. Keep the original action, arguments, and supported idempotency key;
-retain Monday as corrected intent. A temporarily empty lookup does not prove the
+to Friday. Keep the original action, its arguments, and its idempotency key if the service
+supports one (an ID that lets it spot a repeated request); retain Monday as
+corrected intent. A temporarily empty lookup does not prove the
 first request failed.
 
 - **Friday committed:** use the service's authorized change or cancellation workflow.
@@ -222,9 +224,9 @@ first request failed.
 - **Friday remains unknown:** preserve both records and use the defined reconciliation or human recovery path.
 
 This gives the agent something honest to say: “I'm checking whether Friday went
-through before I change it.” A new turn does not justify a second booking.
-Application deduplication also cannot manufacture exactly-once effects in an
-external API that lacks the necessary contract.
+through before I change it.” The caller speaking again is not a reason to book twice. And if the
+booking system can't tell you whether a request went through, your code can't
+guarantee it happened exactly once.
 
 Conversation design includes these recovery sentences, narrow clarification
 questions, meaningful progress, and alternatives for people who cannot use the
@@ -243,12 +245,12 @@ develops durable action states and recovery across handoffs.
 A phone call has a control path and a media path. An answered call can still have
 one-way audio, a bad codec, or an empty playback queue. Inspect both directions
 and record the actual format at each boundary. Build inbound and outbound flows
-independently; one working direction does not establish the other.
+independently; one working direction doesn't prove the other.
 
 For a warm handoff, retain the caller while reaching the destination, verify
 acceptance, and connect the parties before retiring the bot when the selected
 mechanism permits it. Decide who speaks during each transition. Ringing or an
-acknowledged transfer request does not establish that a person accepted the caller.
+acknowledged transfer request doesn't prove that a person accepted the caller.
 
 When the destination fails, the caller needs a supported next step: return to the
 agent, a bounded wait, contact instructions, or an authorized callback. Confirm
@@ -314,8 +316,7 @@ It can still need decoding, transport, and player buffering before **playback**
 begins. Define which of those events the log actually captures.
 
 The **first useful audible response** is the caller-facing endpoint. A filler
-such as “one moment” is different from the requested answer. A server log cannot
-establish what reached the caller's ear without the corresponding evidence.
+such as “one moment” is different from the requested answer. A server log can't prove what reached the caller's ear without the corresponding evidence.
 Report runtime playback when that is all you observed, and keep missing coverage
 visible.
 
@@ -349,10 +350,12 @@ telephone audio does not restore missing frequencies.
 Build a release set around successful tasks and difficult transitions: pauses,
 quiet corrections, interruptions during writes, failed transfers, cold starts,
 disconnects, and cleanup. Text simulations help with dialogue and tool logic.
-Audio and transport tests establish different evidence. Verify the resulting
+Audio and transport tests show different things. Verify the resulting
 business records as well as what the agent said.
 
 - [Agent evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md): build a proportionate test matrix and record what remains unproven.
 - [Test LiveKit agents](https://github.com/livekit/agent-skills/blob/main/skills/testing-livekit-agents/SKILL.md): write turn-level behavior regressions.
 - [Write LiveKit scenarios](https://github.com/livekit/agent-skills/blob/main/skills/writing-livekit-scenarios/SKILL.md): preserve meaningful caller situations as simulation scenarios.
 - [Run LiveKit simulations](https://github.com/livekit/agent-skills/blob/main/skills/running-livekit-simulations/SKILL.md): exercise those scenarios within the authorized test scope and inspect outcomes.
+
+**Next:** [common problems](common-problems.md) for fixes, or the [skill catalog](catalog.md) to install what you need.

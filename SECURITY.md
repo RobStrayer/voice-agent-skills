@@ -1,8 +1,9 @@
 # Security policy
 
-This repo is documentation, skills and two small Python scripts. The main risks
-are a skill that tells a coding agent to do something unsafe, a script with a
-bug, or a secret that slipped into a file.
+This repo is documentation, skills and a few small Python scripts: the repo's own
+checks in `scripts/`, a cost estimator, and two upstream OpenAI examples. The main
+risks are a skill that tells a coding agent to do something unsafe, a script with
+a bug, or a secret that slipped into a file.
 
 ## Report a problem privately
 

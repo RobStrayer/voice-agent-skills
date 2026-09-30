@@ -21,9 +21,10 @@ is never perfect, so plan what the agent says in both cases.
 
 **ASR (automatic speech recognition).** Another name for speech-to-text (STT).
 
-**BAA (business associate agreement).** The contract a US healthcare provider
-needs with any vendor that handles patient data. Signing one is required under
-HIPAA but doesn't make a voice agent compliant on its own.
+**BAA (business associate agreement).** The contract a HIPAA-covered organization,
+such as most US healthcare providers, must sign with any vendor that handles
+protected health information for it. You need one, but it doesn't make a voice
+agent compliant on its own.
 See [phone compliance](../skills/foundations/voice-phone-compliance/SKILL.md).
 
 **Backchannel.** Short listener noises such as "mm-hm", "yeah" and "right". People
@@ -39,12 +40,15 @@ See [turn taking](../skills/foundations/voice-turn-taking/SKILL.md).
 language model, then text-to-speech. You pick each part and can read the text in
 between. Compare with [speech-to-speech](#s).
 
+**Code switching.** Changing language in the middle of a conversation or sentence,
+such as English to Hindi.
+
 **Codec.** How audio is compressed for transport. Phone networks commonly use
 G.711 (μ-law or A-law) at 8 kHz; WebRTC usually uses Opus. Mixing up codecs or
 sample rates gives you silence, chipmunk voices or static.
 See [media debugging](../skills/foundations/voice-media-debugging/SKILL.md).
 
-**Cold transfer.** Handing the call to another number without introducing it
+**Cold transfer (blind transfer).** Handing the call to another number without introducing it
 first. The caller may land in a queue or voicemail. Compare with *warm transfer*.
 
 **Concurrency.** How many calls run at the same time. Providers often limit it,
@@ -54,6 +58,12 @@ and it drives your server and cost planning more than total minutes do.
 
 **Diarization.** Labelling who spoke when in a recording ("speaker 1", "speaker 2").
 Useful for call analytics; usually not needed for a live one-to-one agent.
+
+**Do-not-call (DNC).** National and company lists of people who have asked not to
+get telemarketing calls. US telemarketers must check them and honour requests.
+
+**Double-talk.** Both sides talking at once. Echo cancellation has to remove the
+agent's voice without removing the caller's.
 
 **DTMF.** The tones made by pressing phone keys. Still useful for collecting PINs
 or card numbers without saying them aloud, and for navigating other companies' menus.
@@ -110,9 +120,14 @@ Applied too hard, it can also delete quiet speech, including short words like "n
 **Opus.** The standard audio codec for WebRTC. It handles wideband speech and
 packet loss well.
 
+**Orchestrator.** The part of a voice agent that passes audio and text between
+speech-to-text, the model and text-to-speech, and decides whose turn it is.
+
 **p50, p95 (percentiles).** The p50 (median) is the value half your calls beat;
 the p95 is the value 95% beat, so it shows the slow calls. Report both for
 latency. Adding each stage's p95 does not give the end-to-end p95.
+
+**PBX.** A business's own phone system, which routes calls between extensions.
 
 **PCM.** Uncompressed audio samples. Most speech APIs want 16-bit PCM at a stated
 sample rate. Always check the rate: 8, 16, 24 and 48 kHz are all common.
@@ -134,7 +149,7 @@ models, such as OpenAI's Realtime API or Google's Gemini Live API.
 
 ## S
 
-**Sample rate.** How many audio samples per second. Phone audio is 8 kHz
+**Sample rate.** How many audio samples per second. Phone audio is usually 8 kHz
 (narrowband); many speech models prefer 16 kHz or more. Upsampling phone audio
 does not restore detail that was never captured.
 
@@ -161,8 +176,8 @@ carriers. It affects whether your outbound calls show as verified or get labelle
 
 ## T–Z
 
-**TCPA.** The US Telephone Consumer Protection Act. It governs calls that use an
-artificial or prerecorded voice, and the FCC ruled in 2024 that AI-generated
+**TCPA.** The US Telephone Consumer Protection Act. Among other things, it restricts
+calls that use an artificial or prerecorded voice, and the FCC ruled in 2024 that AI-generated
 voices count. See [phone compliance](../skills/foundations/voice-phone-compliance/SKILL.md).
 
 **Text-to-speech (TTS).** Turns text into audio. For live agents, the key numbers
@@ -183,9 +198,10 @@ Used to notice that someone started or stopped talking. On its own it can't tell
 a thinking pause from the end of a sentence.
 
 **Voice cloning.** Creating a synthetic voice from recordings of a real person.
-Requires that person's consent and is restricted by several providers and laws.
+Providers require the speaker's consent, and several laws restrict cloning a real
+person's voice.
 
-**Warm transfer.** Connecting the caller to a person after the destination
+**Warm transfer (attended transfer).** Connecting the caller to a person after the destination
 accepts, often with a summary, while keeping the caller on the line if nobody
 answers. See [call reliability](../skills/foundations/voice-call-reliability/SKILL.md).
 

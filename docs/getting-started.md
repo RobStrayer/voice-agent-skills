@@ -10,7 +10,7 @@ experience needed. If a word is new, check the [glossary](glossary.md).
 [Pick a starting path](#pick-a-starting-path) · [Your first hour](#your-first-hour) ·
 [Put it on a phone number](#put-it-on-a-phone-number) · [Write for the ear](#write-for-the-ear) ·
 [Test it like a caller](#test-it-like-a-caller) · [What good feels like](#what-good-feels-like) ·
-[Where next](#where-next)
+[What it costs](#what-it-costs) · [Where next](#where-next)
 
 ## How a voice agent works
 
@@ -38,9 +38,9 @@ against control.
 
 | Path | Pick it when | Time to first conversation | What you give up |
 | --- | --- | --- | --- |
-| **Managed platform** (Vapi, Retell, ElevenLabs Agents, Synthflow and others) | You want a working phone agent fast, or you don't want to run servers | Minutes to an hour, often without code | A per-minute platform fee, and less control over each stage |
+| **Managed platform** (Vapi, Retell, ElevenAgents, Bland and others) | You want a working phone agent fast, or you don't want to run servers | Minutes to an hour, often without code | A per-minute platform fee, and less control over each stage |
 | **Open-source framework** (LiveKit Agents, Pipecat) | You're a developer who wants to pick every component, self-host, or tune latency and cost | An hour or two with a quickstart | You run and scale the agent yourself (or pay for their cloud) |
-| **Speech-to-speech API** (OpenAI Realtime, Gemini Live) | You want the most natural-sounding conversation in a browser or app prototype | An hour or so for a browser demo | Less control over each stage, and you build the phone and tool plumbing |
+| **Speech-to-speech API** (OpenAI GPT-Live or Realtime, Gemini Live) | You want the most natural-sounding conversation in a browser or app prototype | An hour or so for a browser demo | Less control over each stage, and you build the phone and tool plumbing |
 
 Not sure? Start with a managed platform to learn what a good call feels like.
 Move to a framework when you hit a wall on cost, control or latency. Both
@@ -59,7 +59,7 @@ this page links to them instead of copying commands.
 1. Sign up and create an agent from a template:
    [Vapi](https://docs.vapi.ai/quickstart) ·
    [Retell](https://docs.retellai.com/get-started/quick-start) ·
-   [ElevenLabs Agents](https://elevenlabs.io/docs/eleven-agents/quickstart).
+   [ElevenLabs ElevenAgents](https://elevenlabs.io/docs/eleven-agents/quickstart).
 2. Write a short system prompt (see [write for the ear](#write-for-the-ear)).
 3. Talk to it in the browser. Interrupt it. Pause mid-sentence. See what breaks.
 
@@ -82,6 +82,7 @@ straight from [LiveKit](https://github.com/livekit/agent-skills) and
 **Speech-to-speech API**
 
 1. Read the provider guide:
+   [OpenAI GPT-Live](https://developers.openai.com/api/docs/guides/live) ·
    [OpenAI Realtime](https://developers.openai.com/api/docs/guides/realtime) ·
    [OpenAI voice agents](https://developers.openai.com/api/docs/guides/voice-agents) ·
    [Gemini Live API](https://ai.google.dev/gemini-api/docs/live-api).
@@ -102,13 +103,15 @@ straight from [LiveKit](https://github.com/livekit/agent-skills) and
   With [Twilio ConversationRelay](https://www.twilio.com/docs/voice/conversationrelay),
   Twilio handles speech and your code only sees text.
 
-Phone audio is narrowband (8 kHz), so recognition that worked in the browser can
+Phone audio is usually narrowband (8 kHz), so recognition that worked in the browser can
 get worse on a real call. Test on real phone calls early.
 
-Calling people (outbound) is where the legal rules bite: consent, AI disclosure,
-calling hours and spam labelling. Read the
+Calling people (outbound) is where most legal rules bite: consent, AI disclosure,
+calling hours and spam labelling. Inbound calls have rules too. Recording or AI
+transcription can need every caller's consent in some US states, and in the EU
+callers must be told they're talking to an AI. Read the
 [phone compliance skill](../skills/foundations/voice-phone-compliance/SKILL.md)
-before you dial anyone.
+before you dial anyone or record a call. It's orientation, not legal advice.
 
 ## Write for the ear
 
@@ -175,7 +178,8 @@ Speed is the thing people notice first. Some reference points:
   as the upper limit ([Twilio, November 2025](https://www.twilio.com/en-us/blog/developers/best-practices/guide-core-latency-ai-voice-agents)).
 - **Real calls are slower than dashboards.** One independent test that recorded
   real phone calls to five managed platforms measured medians of 1.3 to 1.7
-  seconds and 95th percentiles of 1.8 to 2.3 seconds. The platforms' own numbers
+  seconds and 95th percentiles of 1.8 to 2.3 seconds, even with the end-of-turn
+  wait cut to 0.1 seconds on three of them. The platforms' own numbers
   read about half a second faster than what the caller heard
   ([OpenBenchmarks, August 2026](https://openbenchmarks.com/voice-agent-latency)).
 
@@ -187,9 +191,19 @@ guide above makes the same point. The
 where your time goes, and the [turn taking skill](../skills/foundations/voice-turn-taking/SKILL.md)
 covers the waiting.
 
+## What it costs
+
+Expect roughly $0.05 to $0.15 a minute on a managed platform, before the phone
+line. That is what one independent test measured from five platforms' own billing
+on short test calls, with the carrier leg left out
+([OpenBenchmarks](https://openbenchmarks.com/voice-agent-latency)). Advertised
+prices usually cover one layer, and speech, the model, the voice and the phone
+line can be billed separately. Before you promise anyone a price, run your own
+numbers with the [cost estimation skill](../skills/foundations/voice-cost-estimation/SKILL.md).
+
 ## Where next
 
-![A four-step path: Talk to it, Put it to work, Own the pipeline, Run it for real, with the skills for each step.](../assets/diagrams/learning-path.svg)
+![A four-step staircase. 1, Talk to it: voice-stack-selection. 2, Put it to work: voice-conversation-design, voice-turn-taking, voice-phone-compliance. 3, Own the pipeline: voice-speech-pipeline, voice-latency-audit, voice-audio-frontends, voice-media-debugging. 4, Run it for real: voice-agent-evaluation, voice-call-reliability, voice-agent-security, voice-cost-estimation.](../assets/diagrams/learning-path.svg)
 
 - **Ideas for what to build, and what's hard:** [what to build](what-to-build.md)
 - **Every provider, compared:** [provider landscape](landscape.md)

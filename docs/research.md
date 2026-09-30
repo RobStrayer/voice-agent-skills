@@ -25,7 +25,7 @@ The initial local scan screened 1,654 installed `SKILL.md` headers plus 244 head
 in an available Hermes package. It found 133 voice-relevant copies, deduplicated to
 80 provider/name entries: LiveKit 9, Deepgram 15, ElevenLabs 33, Twilio 18, and
 Hermes 5. Some project directories were inaccessible, so project-local coverage
-is incomplete. The private inventory stays outside this repository.
+is incomplete. A local inventory used for discovery is not published.
 
 Installed files supplied leads. Published content came from the public original
 sources, with their current branches, supporting folders, and licenses inspected.
@@ -74,7 +74,6 @@ collection's purpose.
 | [Community Retell pack](https://github.com/bachhao-tech/RETELL-AI) | Discovery record retained; limited evidence that it improves on current provider documentation. No official endorsement inferred. |
 | Cloudflare and Strands general agent skills | Voice documentation linked as a learning resource. No dedicated realtime voice skill was established in the bounded trees/searches examined. This is not a claim that none exists anywhere. |
 | Older Coval specialist launch workflows | Newer bounded evaluation workflows selected. Whole-set defaults and less bounded watch/relaunch behavior require additional care. |
-| Installed ElevenLabs connector specialists and custom local variants | Private discovery only where a current redistributable original source was not established. Public agent skills and official documentation supply the published coverage. |
 
 ## Checks performed
 
