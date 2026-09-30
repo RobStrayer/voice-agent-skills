@@ -22,11 +22,11 @@ meaning independently of color.
 Typography follows Diagram Design: Instrument Serif for figure titles, Geist
 for names, and Geist Mono for technical labels. Arial, Georgia, and system
 monospace fallbacks keep exports usable when a host blocks remote fonts. GitHub
-image rendering may substitute those fallbacks. Diagrams use a 960 × 600 viewBox;
+image rendering may substitute those fallbacks. Detailed diagrams use a 960 × 600 viewBox;
 their HTML has a local horizontal scroller on narrow screens and a print rule
 that fits the complete figure on the page.
 
-Exports also declare a 960 × 600 intrinsic size so an image host does not treat
+Exports also declare their intrinsic size so an image host does not treat
 them as small thumbnails. The primary and secondary text colors exceed 4.5:1
 contrast against the stone surface; the light and dark surrounds do not change
 that internal contrast. Open a figure at full size for its smaller technical labels.
@@ -42,10 +42,18 @@ are not provider event specifications, benchmark results, or a claim that one
 deployment has implemented those behaviors. Follow the dated references in the
 associated guide when turning a diagram into code.
 
+The front page uses two simpler assets at the same 960-pixel width: a 304-pixel
+editorial cover and a 620-pixel architecture comparison. The cover waveform is an
+original illustration, not measured audio. The comparison uses larger 16-pixel
+node names and 12-pixel supporting labels. It introduces three speech patterns;
+the full guide supplies transport, hosting, authority, and recovery decisions.
+
 ## Figure library
 
 | Figure | Editable source | Portable image |
 | --- | --- | --- |
+| Field guide cover | [HTML](../assets/voice-field-guide.html) | [SVG](../assets/voice-field-guide.svg) |
+| Three speech architecture patterns | [HTML](../skills/foundations/voice-stack-selection/assets/speech-architectures.html) | [SVG](../skills/foundations/voice-stack-selection/assets/speech-architectures.svg) |
 | Audio, call control, and business state | [HTML](../skills/foundations/voice-stack-selection/assets/voice-system-map.html) | [SVG](../skills/foundations/voice-stack-selection/assets/voice-system-map.svg) |
 | Turn commitment and interruption | [HTML](../skills/foundations/voice-turn-taking/assets/turn-controller.html) | [SVG](../skills/foundations/voice-turn-taking/assets/turn-controller.svg) |
 | Echo reference and audio processing | [HTML](../skills/foundations/voice-audio-frontends/assets/echo-processing.html) | [SVG](../skills/foundations/voice-audio-frontends/assets/echo-processing.svg) |

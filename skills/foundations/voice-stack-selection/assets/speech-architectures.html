@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where does the conversation happen? | NL Voice Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+* { box-sizing:border-box; }
+:root { --paper:#b9beb8; --paper-2:#d2d6cf; --ink:#202823; --muted:#3e4a42; --soft:#414e44; --rule:#8e9b90; --accent:#2d6358; --tint:#c9d9cf; }
+body { margin:0; padding:24px; background:var(--paper); color:var(--ink); font-family:'Geist',Arial,sans-serif; }
+main { max-width:1040px; min-width:0; margin:auto; }
+.diagram-container { width:100%; overflow-x:auto; }
+svg { width:100%; min-width:960px; height:auto; display:block; }
+text { fill:var(--ink); }
+.title { font:400 40px 'Instrument Serif',Georgia,serif; }
+.node-name { font:600 16px 'Geist',Arial,sans-serif; }
+.row-title { font:600 14px 'Geist',Arial,sans-serif; }
+.sub { font:400 12px 'Geist Mono',Consolas,monospace; fill:var(--muted); }
+.note { font:400 11px 'Geist',Arial,sans-serif; fill:var(--muted); }
+.meta { font:500 8px 'Geist Mono',Consolas,monospace; letter-spacing:1.4px; fill:var(--soft); }
+@media print { body { padding:0; } .diagram-container { overflow-x:visible; } svg { min-width:0; } }
+</style>
+</head>
+<body><main><div class="diagram-container">
+<svg width="960" height="620" viewBox="0 0 960 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="speech-architectures-title speech-architectures-desc">
+  <title id="speech-architectures-title">Where does the conversation happen?</title>
+  <desc id="speech-architectures-desc">Three conceptual voice paths: speech-to-text, text agent and text-to-speech; a single speech model session; and a spoken interface delegating work to a backend and receiving results. Incoming and outgoing audio cross each path boundary. These paths do not rank latency or specify transport, authorization or durable records.</desc>
+  <defs><marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 8 4 L 0 8 Z" fill="#3e4a42"/></marker></defs>
+  <rect width="960" height="620" fill="#b9beb8"/>
+  <text x="40" y="44" class="meta" >ARCHITECTURE / THREE COMMON PATTERNS</text>
+<text x="40" y="96" class="title" >Where does the conversation happen?</text>
+<text x="40" y="126" class="sub" >The speech path changes. Application ownership still matters.</text>
+<text x="40" y="192" class="row-title" >01  Chained</text>
+<text x="40" y="216" class="note" >Text checkpoints</text>
+<line x1="228" y1="208" x2="264" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="448" y1="208" x2="488" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="672" y1="208" x2="712" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="896" y1="208" x2="920" y2="208" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<rect x="264" y="176" width="184" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
+<text x="280" y="203" class="node-name" >Speech to text</text>
+<text x="280" y="224" class="sub" >recognition</text>
+<rect x="488" y="176" width="184" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
+<text x="504" y="203" class="node-name" >Text agent</text>
+<text x="504" y="224" class="sub" >reasoning + tools</text>
+<rect x="712" y="176" width="184" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
+<text x="728" y="203" class="node-name" >Text to speech</text>
+<text x="728" y="224" class="sub" >synthesis</text>
+<line x1="40" y1="268" x2="920" y2="268" stroke="#8e9b90"/>
+<text x="40" y="316" class="row-title" >02  Speech to speech</text>
+<text x="40" y="340" class="note" >One voice session</text>
+<line x1="228" y1="332" x2="264" y2="332" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="896" y1="332" x2="920" y2="332" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<rect x="264" y="300" width="632" height="64" rx="6" fill="#c9d9cf" stroke="#2d6358"/>
+<text x="280" y="327" class="node-name" >Speech model session</text>
+<text x="280" y="348" class="sub" >audio interpretation, reasoning, tools, speech</text>
+<line x1="40" y1="392" x2="920" y2="392" stroke="#8e9b90"/>
+<text x="40" y="448" class="row-title" >03  Delegated</text>
+<text x="40" y="472" class="note" >Separate backend</text>
+<line x1="228" y1="448" x2="264" y2="448" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="264" y1="472" x2="228" y2="472" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="520" y1="440" x2="640" y2="440" stroke="#3e4a42" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="640" y1="480" x2="520" y2="480" stroke="#3e4a42" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+<rect x="548" y="416" width="64" height="16" fill="#b9beb8"/>
+<rect x="548" y="488" width="64" height="16" fill="#b9beb8"/>
+<text x="580" y="430" class="sub" text-anchor="middle">WORK</text>
+<text x="580" y="500" class="sub" text-anchor="middle">RESULT</text>
+<rect x="264" y="424" width="256" height="64" rx="6" fill="#c9d9cf" stroke="#2d6358"/>
+<text x="280" y="451" class="node-name" >Spoken interface</text>
+<text x="280" y="472" class="sub" >continuous conversation</text>
+<rect x="640" y="424" width="256" height="64" rx="6" fill="#d2d6cf" stroke="#8e9b90"/>
+<text x="656" y="451" class="node-name" >Backend workflow</text>
+<text x="656" y="472" class="sub" >reasoning + tools</text>
+<line x1="40" y1="532" x2="920" y2="532" stroke="#8e9b90"/>
+<text x="40" y="556" class="note" >Boundary arrows: audio. Solid backend arrow: work. Dashed arrow: returned result.</text>
+<text x="40" y="576" class="note" >Conceptual paths, not a latency ranking. Transport, permissions and durable records need separate design.</text>
+<text x="40" y="596" class="meta" >SOURCE REVIEW 2026-09-30 UTC / OPENAI VOICE AGENTS / SEE THE LINKED ARCHITECTURE GUIDE</text>
+</svg>
+</div></main></body>
+</html>

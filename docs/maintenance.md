@@ -56,6 +56,14 @@ inside its folder so installing it preserves those instructions. Check diagrams
 against the revised state and event contracts; update their source and rendered
 form together, with meaningful alternative text and a source-review date.
 
+Keep the README a short visual entrance: immediate reading routes, early skill
+installation, and a few useful examples. Put topic navigation in
+[the handbook](handbook.md), and technical depth in the portable skill guides.
+Do not expand the README by pasting each chapter's introduction into it. Review
+changed pages at their rendered reading width; headings alone do not break up
+long, repetitive prose. Keep the neutral graphic palette and ordinary text links
+beside graphics so navigation works even when an image does not load.
+
 ## Checks before publication
 
 Run from the repository root:

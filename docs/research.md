@@ -125,6 +125,14 @@ prerelease and platform-support qualifications.
 
 ## Remaining limits
 
+The reading structure was revised on 2026-09-30 UTC. The README is a short entry
+page; the [handbook](handbook.md) groups eleven work areas into four reading paths.
+Detailed guidance stays with each foundation skill. Catalog navigation and
+expandable supporting notes preserve the source entries and their qualifications.
+A new architecture comparison introduces three speech patterns, and an original
+waveform cover supplies the collection's visual identity. The waveform is an
+illustration, not an audio measurement.
+
 Five original figures explain system responsibilities, turn state, endpoint echo
 processing, interrupted actions, and recoverable human handoff. Their editable
 HTML and exported SVG remain with the associated skills. Semantic review checked

@@ -1,12 +1,30 @@
 # Production operations: protect sessions and reconcile outcomes
 
+[Handbook](../../../../docs/handbook.md) / [Call reliability skill](../SKILL.md)
+
 Reviewed against current primary documentation on **September 30, 2026 UTC**. The examples and worksheets are engineering guidance, not measured service levels. Pin installed SDKs and runtime configuration; provider quotas, prices, and regional behavior require current account-specific evidence.
+
+## Pick the operating decision
+
+| Your job | Start here | Required output |
+| --- | --- | --- |
+| Define overload behavior | [Admission](#admission-is-a-product-decision) | Bounded queues and channel-specific caller feedback |
+| Plan capacity or a load test | [Occupancy and dependencies](#size-for-occupancy-bursts-and-the-weakest-dependency) | Peak/start limits and weakest-dependency evidence |
+| Deploy during active calls | [Draining](#drain-before-replacing-and-define-the-deadline-outcome) | New-session switch, grace deadline, and recovery policy |
+| Design failover | [Failure layers](#bound-failover-by-the-layer-that-failed) | Tested fallback with preserved action/history truth |
+| Set indicators and diagnose incidents | [Observability](#observe-the-layers-and-keep-identifiers-out-of-metric-labels) | Correlation map, denominators, and evidence boundaries |
+| Release or respond to an incident | [Operating worksheet](#use-an-operating-worksheet-then-exercise-it) | Drill evidence and named recovery ownership |
 
 ## Admission is a product decision
 
 Separate session-start requests, active conversations, and tool work. A worker with spare CPU may still lack model quota, a media connection, or an available booking service. Authenticate starts, bound pending work, and admit only when the complete route can serve the call. Distinguish rejected starts, caller abandonment while waiting, and failures after admission.
 
-Declare the overload experience for each channel. A browser can show waiting or a retry; a phone caller needs an intentional message, route, or termination policy. Keep waits bounded by the chosen experience requirement. Do not repeatedly create rooms, dial attempts, or provider sessions while hoping capacity appears. Reserve capacity for active calls and recovery, and make downstream tool queues visible.
+| Channel or resource | Overload policy to define |
+| --- | --- |
+| Browser | Waiting or retry behavior, with a bounded wait |
+| Phone | Intentional message, route, or termination policy |
+| Active calls and recovery | Reserved capacity and visible downstream tool queues |
+| New-session creation | Admission limits; no repeated room, dial, or provider-session creation while waiting |
 
 Pipecat's production guide separates bot code, session-start dispatch, and media transport. Its development runner is not a supported production dispatcher: the documented missing controls include authentication, backpressure, and lifecycle management. Hosting a demo endpoint behind a public URL does not supply them. [Pipecat production](https://docs.pipecat.ai/pipecat/deployment/running-bots-in-production).
 
@@ -18,15 +36,41 @@ An average arrival rate multiplied by average duration estimates steady-state oc
 
 Replay an observed traffic trace before inventing a smooth load profile. Measure cold starts separately from warm admission. Include process startup, model/asset initialization, transport creation, credentials, and provider connection setup. A warm pool exchanges idle cost for startup tolerance; it still needs health, quota, and dependency checks.
 
-Find the limiting resource across active sessions, simultaneous starts, CPU/memory, model/audio quotas, tool concurrency, WebSocket/file descriptors, relay bandwidth, and carrier call-rate limits. A limit in calls per second is not a limit in concurrent calls; model requests per minute are not audio-session capacity. Conferences and warm transfers can temporarily add legs and participants per caller. Measure that amplification.
+| Capacity boundary | Unit to preserve |
+| --- | --- |
+| Active sessions and simultaneous starts | Occupancy and start rate separately |
+| Runtime | CPU/memory and WebSocket/file descriptors |
+| Speech provider | Model/audio quota; requests per minute do not establish audio-session capacity |
+| Business tools | Concurrent work and queue depth |
+| Media relay and carrier | Bandwidth, allocations, and call-rate limits; calls per second differ from concurrent calls |
+| Conferences and warm transfers | Extra legs/participants per caller |
 
-Load tests should include a burst, long-duration calls, a cold fleet, a slow tool, and loss of a worker or upstream dependency. Report admission delay, failed starts, active-call failures, queue growth, and authoritative task outcomes beside latency. Increase load only within the approved test environment and budget. **SIPp** can generate signaling traffic with rate and concurrent-call controls; add media/application assertions because protocol success does not establish useful conversations. [SIPp traffic control](https://sipp.readthedocs.io/en/latest/controlling.html), [current documentation source](https://github.com/SIPp/sipp/blob/master/docs/controlling.rst).
+Find the weakest boundary and measure transfer amplification.
+
+Load-test plan:
+
+| Set up | Report |
+| --- | --- |
+| Burst starts, long calls, cold fleet, slow tool, worker/upstream loss | Admission delay, failed starts, active-call failures, queue growth, authoritative outcomes, and latency |
+| Approved environment and budget | Actual load and scope |
+
+SIPp supports signaling rate and concurrent-call controls. Add media/application
+assertions; protocol success does not establish useful conversations.
+[SIPp traffic control](https://sipp.readthedocs.io/en/latest/controlling.html), [current documentation source](https://github.com/SIPp/sipp/blob/master/docs/controlling.rst).
 
 TURN belongs in the capacity model when used. coturn deployments expose listener and relay-port requirements, and credentials can be time-limited. Inspect relay allocations, bandwidth, exhausted port ranges, and the route clients actually selected. A healthy agent process cannot fix a saturated relay. [coturn deployment](https://github.com/coturn/coturn/blob/master/docker/coturn/README.md), [authentication mechanisms](https://github.com/coturn/coturn).
 
 ## Drain before replacing, and define the deadline outcome
 
-Plan a rollout around conversations that may last minutes, not ordinary short HTTP requests. Stop assigning new sessions to the old version, route new work to verified healthy capacity, let existing sessions finish, and reconcile outcomes before releasing resources. Keep control handlers and callback routes valid for the versions still serving calls.
+Deployment sequence:
+
+1. Stop assigning new sessions to the old version.
+2. Route new work to verified healthy capacity.
+3. Let existing sessions finish under the deadline policy.
+4. Reconcile outcomes before releasing resources.
+
+Keep control handlers and callback routes valid for every version still serving calls.
+Conversations may last minutes, so a short-HTTP-request rollout policy is insufficient.
 
 LiveKit's production startup mode documents graceful shutdown: stop accepting jobs, wait for active jobs up to `drain_timeout`/`drainTimeout`, then close connections and clean up. That configurable timeout is a termination boundary, not a promise that every caller will finish. Set orchestrator grace periods consistently with the measured call-duration tail and the explicit deadline recovery policy. [Startup and draining](https://docs.livekit.io/agents/server/startup-modes/).
 
@@ -49,7 +93,13 @@ Autoscaling usually changes where new work lands. Do not describe it as live mig
 
 Distinguish transport, speech provider, worker, and business-service failures. A different model cannot restore an ended carrier leg; a restarted worker cannot know an uncertain booking committed unless it reconciles authoritative state. Define a permitted fallback for each failure, including when the honest answer is controlled degradation.
 
-Provider substitution needs tested codecs, event mappings, turn ownership, cancellation, language behavior, tool schemas, and context reconstruction. Preserve played versus generated output and committed actions. Failover must stay within approved processing/retention regions and access scope; do not use an unverified region to make an availability graph look better. Retry starts and read operations with bounded backoff where supported. For non-idempotent writes, an empty status lookup after timeout can remain ambiguous; retain uncertainty rather than blindly replaying.
+Failover checklist:
+
+- [ ] Test codecs, event mappings, turn ownership, cancellation, languages, tools, and context reconstruction.
+- [ ] Preserve played versus generated output and committed actions.
+- [ ] Stay within approved processing/retention regions and access scope.
+- [ ] Retry starts/reads with bounded backoff where supported.
+- [ ] Reconcile non-idempotent writes; an empty lookup after timeout can remain ambiguous.
 
 ## Observe the layers and keep identifiers out of metric labels
 
@@ -65,7 +115,15 @@ flowchart TB
     Config[Version, route, and deployment metadata] --> Join
 ```
 
-For each layer, record timestamps with clock domain and provenance. A generated audio event, runtime playback report, carrier mark, and caller recording have different meanings. Missing playback must remain missing. Use raw correlated records for root-cause work; do not produce a caller-audible percentile by adding component percentiles. Use `voice-latency-audit` for deeper timing investigation if that skill is installed. [Twilio mark/clear contract](https://www.twilio.com/docs/voice/media-streams/websocket-messages).
+Timing checklist:
+
+- [ ] Record clock domain and provenance for each timestamp.
+- [ ] Distinguish generated audio, runtime playback, carrier marks, and caller recordings.
+- [ ] Retain missing playback as missing.
+- [ ] Use raw correlated records; never add component percentiles to produce a caller-audible percentile.
+
+Use `voice-latency-audit` for deeper timing investigation if installed.
+[Twilio mark/clear contract](https://www.twilio.com/docs/voice/media-streams/websocket-messages).
 
 Define service indicators before targets:
 
@@ -81,13 +139,37 @@ Define service indicators before targets:
 
 Choose targets with the owner from measured baselines and caller needs. Do not invent a universal latency percentile, availability percentage, or retention period. Slice outcomes by deployment, channel, language, region, load, and engine without hiding sparse groups or failures.
 
-Redact at collection where possible. Omit credentials, unnecessary tool payloads, full account identifiers, and sensitive free text from routine diagnostics. Store necessary recordings separately with explicit access, retention, deletion, and regional controls. Sampling must retain outcome counters and enough bounded failure evidence to diagnose incidents; a sampled trace is not the full denominator. Verify the configured retention and export path rather than relying on a vendor dashboard label.
+Diagnostic-data checklist:
+
+- [ ] Redact at collection: omit credentials, unnecessary tool payloads, full account IDs, and sensitive free text.
+- [ ] Store necessary recordings separately with access, retention, deletion, and regional controls.
+- [ ] Retain outcome counters and bounded failure evidence despite trace sampling.
+- [ ] Verify configured retention and export paths.
+
+A sampled trace is not the full denominator. A vendor dashboard label does not
+establish the configured data path.
 
 ## Reconcile cost in the same units that are billed
 
-Inventory carrier leg minutes and numbers, media/transport, model/audio or token usage, STT/TTS where separately billed, active compute, warm idle capacity, storage, recordings, egress, observability, and hosted platform fees. Track connected time, active speech, generated-but-discarded audio, tokens, and compute independently. Do not double-count components already included in a platform charge.
+| Billable group | Units to reconcile |
+| --- | --- |
+| Telephony and transport | Carrier-leg minutes, numbers, media/transport |
+| Speech and model | Model/audio or token usage; STT/TTS when separately billed |
+| Runtime | Active compute and warm idle capacity |
+| Supporting services | Storage, recordings, egress, observability, platform fees |
 
-Transfer and conference legs, failed starts, retries, test runs, and abandoned calls can consume units without completing a task. Match usage to application attempts and provider invoice periods, then reconcile discrepancies. Use current rates, account minimums, and the combined monthly ceiling; a minute-price comparison alone misses idle fleets and failed outcomes. Treat automated budget enforcement as a routing decision with a defined effect on active callers, not an abrupt surprise shutdown.
+Track connected time, active speech, generated-but-discarded audio, tokens, and
+compute independently. Exclude components already included in a platform charge.
+
+Cost-reconciliation sequence:
+
+1. Include transfer/conference legs, failed starts, retries, tests, and abandoned calls.
+2. Match usage to application attempts and provider invoice periods; reconcile discrepancies.
+3. Apply current rates, account minimums, and the combined monthly ceiling.
+4. Define budget enforcement's routing effect on active callers before enabling it.
+
+Units can accrue without a completed task. Per-minute prices alone miss idle
+fleets and failed outcomes; budget enforcement must not surprise active callers.
 
 ## Use an operating worksheet, then exercise it
 
@@ -103,4 +185,14 @@ Transfer and conference legs, failed starts, retries, test runs, and abandoned c
 
 Roll out through fixtures, staging, then a bounded authorized canary. Shadow comparisons may inspect inputs or prepare proposals; they must not dial a second destination or perform duplicate business writes. Establish stop conditions from the agreed indicators, preserve the old route for new-session rollback, and expand only when task outcomes and caller experience support it.
 
-During an incident: restrict unsafe new admissions, identify affected attempts and versions, preserve active-call truth, apply the tested recovery route, reconcile orphaned legs/workers/actions, and confirm provider usage. Preserve a redacted evidence window before changing configuration. The incident report should name the trigger, actual blast radius, incomplete outcomes, correction, regression fixture, and remaining limits. A green infrastructure dashboard is insufficient if callers still have unresolved bookings or failed handoffs.
+### Incident sequence
+
+1. Restrict unsafe new admissions; identify affected attempts and versions.
+2. Preserve active-call truth and a redacted evidence window before changing configuration.
+3. Apply the tested recovery route.
+4. Reconcile orphaned legs, workers, actions, and provider usage.
+5. Report the trigger, actual blast radius, incomplete outcomes, correction,
+   regression fixture, and remaining limits.
+
+Close the incident using caller and business outcomes, including unresolved bookings
+or failed handoffs; infrastructure health alone is insufficient.

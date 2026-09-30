@@ -142,6 +142,17 @@ These are repository-head commit times, not each skill's last edit date. Full fi
 hashes and licenses remain in [sources.json](../sources.json). The current Pipecat
 installation and OpenAI output-path caveats are in [usage notes](usage.md).
 
+## Architecture graphic check, 2026-09-30 UTC
+
+The front-page comparison was checked against the current
+[OpenAI voice agents guide](https://developers.openai.com/api/docs/guides/voice-agents).
+It distinguishes a chain, speech-to-speech, and a delegated conversational layer.
+Context7 library `/websites/developers_openai_api` returned useful chain guidance
+but did not cover the requested GPT-Live distinction in its response; the
+canonical page supplied that part. No model name, speed ranking, or compatibility
+claim was inferred from the mixed-version snippets. The figure is a conceptual
+comparison, with media and business-state responsibilities left to the full guide.
+
 ## What remains unverified
 
 The review did not execute provider APIs, paid model inference, audio benchmarks,

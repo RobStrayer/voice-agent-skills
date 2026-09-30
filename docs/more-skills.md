@@ -1,30 +1,22 @@
 # More voice skills
 
-A linked selection of **102 additional skills** across 20 original repositories. Open a skill’s original source for its current instructions. These
-collections cover voice APIs, browser and mobile calls, language-specific SDKs,
-simulations, and optional migrations.
+[Home](../README.md) / [Engineering handbook](handbook.md) / [Core skills](catalog.md) / More upstream skills
 
-[Core collection](catalog.md) · [Usage notes](usage.md) · [Machine-readable index](../linked-skills.json)
+**102 additional skill files** · **20 original repositories** · **Checked September 30, 2026 UTC**
 
-Checked **September 30, 2026 UTC**. Every selected manifest resolved on its
-repository’s current default branch and matched the checked commit. Repository
-stars describe the whole project, and each language variant is counted as a
-separate skill. The source index records retrieval times, commits, licenses,
-dependencies, and known limitations.
+Open the original source for current instructions. This index groups voice APIs, client calling, SDK language variants, evaluation, and optional migrations. [Usage notes](usage.md) cover installation and host assumptions; [linked-skills.json](../linked-skills.json) retains exact source metadata.
 
-## Find your provider
+## Choose a task
 
-| Collection | Selected skills | Useful for |
-| --- | ---: | --- |
-| [Telnyx](#telnyx) | 32 | AI assistants, programmable voice, SIP, WebRTC, TeXML, migrations |
-| [Deepgram SDKs](#deepgram-sdk-skills) | 29 | Speech and voice APIs in six languages |
-| [Deepgram product guides](#deepgram-product-guides) | 6 | Cross-language voice APIs, browser agents, self-hosting |
-| [AssemblyAI](#assemblyai) | 1 | Transcription, streaming, dictation, and speech analytics |
-| [Vapi](#vapi) | 10 | Assistant setup, prompts, tools, handoffs, and simulations |
-| [Cloud voice and speech](#cloud-voice-and-speech) | 10 | Microsoft, Google, and NVIDIA SDKs and documentation |
-| [Evaluation and local speech](#evaluation-and-local-speech) | 9 | Coval evaluation workflows and Moonshine local speech |
-| [Voximplant and Synthflow](#voximplant-and-synthflow) | 4 | Voice call flows and optional hosted evaluations |
-| [Native .NET audio](#native-net-audio) | 1 | Optional prerelease Shiny capture, playback, and speech frontend |
+| Your next step | Collections | Selected files |
+| --- | --- | --- |
+| Build assistants and connect phone or browser calls | [Telnyx](#telnyx) · [Vapi](#vapi) · [Voximplant and Synthflow](#voximplant-and-synthflow) | 32 · 10 · 4 |
+| Integrate recognition, synthesis, or voice SDKs | [Deepgram SDKs](#deepgram-sdk-skills) · [Deepgram product guides](#deepgram-product-guides) · [AssemblyAI](#assemblyai) | 29 · 6 · 1 |
+| Use managed cloud voice and speech services | [Cloud voice and speech](#cloud-voice-and-speech) | 10 |
+| Evaluate agents or integrate local speech | [Evaluation and local speech](#evaluation-and-local-speech) | 9 |
+| Build a native .NET audio frontend | [Native .NET audio](#native-net-audio) | 1 |
+
+Counts describe skill files, including language variants, not independent capabilities. Stars describe the whole repository. Optional migration and prerelease entries are marked in their sections.
 
 ## Telnyx
 
@@ -63,6 +55,9 @@ require `TELNYX_API_KEY` and the matching SDK. Keep account keys on the server.
 
 ### Optional migrations
 
+<details>
+<summary>Migration from Twilio, Vapi, Retell or ElevenLabs (4 optional skills)</summary>
+
 Use these when migrating an existing provider integration. They can change
 application code, provision resources, transfer configuration, and store integration
 secrets. The Twilio migration includes non-voice products and bundled scripts,
@@ -76,79 +71,7 @@ prices before authorizing its paid test workflow.
 | Retell | [Migration guide](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-import-retell/SKILL.md) |
 | ElevenLabs | [Migration guide](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-import-elevenlabs/SKILL.md) |
 
-## Deepgram SDK skills
-
-Each SDK repository carries product-specific instructions for its own code and
-examples. Choose the language you use, and keep that repository’s reference context
-available. Live requests require `DEEPGRAM_API_KEY` or an appropriate temporary
-token. These six SDK repositories have MIT licenses.
-
-| Product | JavaScript | Python | Java | Go | Rust | .NET |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard STT | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-speech-to-text/SKILL.md) |
-| Conversational STT / Flux | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-conversational-stt/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-conversational-stt/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-conversational-stt/SKILL.md) | [Current examples](https://github.com/deepgram/deepgram-go-sdk/blob/main/examples/speech-to-text/websocket/flux_channel/README.md)¹ | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-conversational-stt/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-conversational-stt/SKILL.md) |
-| TTS | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-text-to-speech/SKILL.md) |
-| Voice agents | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-voice-agent/SKILL.md) |
-| Audio intelligence | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-audio-intelligence/SKILL.md) |
-
-¹ The Go conversational-STT manifest says that a v2 client and Flux examples do
-not exist. Its current repository already contains both, including a
-[typed v2 client example](https://github.com/deepgram/deepgram-go-sdk/blob/main/examples/speech-to-text/websocket/flux_channel/main.go).
-The stale manifest is excluded from the skill count.
-
-The Java skills reference a root `reference.md` file that is absent from the
-checked repository. Use its [README](https://github.com/deepgram/deepgram-java-sdk/blob/main/README.md)
-and current source examples. Rust’s voice-agent guide uses a raw WebSocket fallback
-with extra crates. Python’s force-end-turn support requires the documented Flux
-provider or deployment enablement; it is not interchangeable with standard v1 STT.
-
-| SDK source | Stars observed | License |
-| --- | ---: | --- |
-| [deepgram/deepgram-js-sdk](https://github.com/deepgram/deepgram-js-sdk) | 274 | [MIT](https://github.com/deepgram/deepgram-js-sdk/blob/main/LICENSE) |
-| [deepgram/deepgram-python-sdk](https://github.com/deepgram/deepgram-python-sdk) | 468 | [MIT](https://github.com/deepgram/deepgram-python-sdk/blob/main/LICENSE) |
-| [deepgram/deepgram-java-sdk](https://github.com/deepgram/deepgram-java-sdk) | 11 | [MIT](https://github.com/deepgram/deepgram-java-sdk/blob/main/LICENSE) |
-| [deepgram/deepgram-go-sdk](https://github.com/deepgram/deepgram-go-sdk) | 90 | [MIT](https://github.com/deepgram/deepgram-go-sdk/blob/main/LICENSE) |
-| [deepgram/deepgram-rust-sdk](https://github.com/deepgram/deepgram-rust-sdk) | 66 | [MIT](https://github.com/deepgram/deepgram-rust-sdk/blob/main/LICENSE) |
-| [deepgram/deepgram-dotnet-sdk](https://github.com/deepgram/deepgram-dotnet-sdk) | 55 | [MIT](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/LICENSE) |
-
-## Deepgram product guides
-
-[Official collection](https://github.com/deepgram/skills/tree/main/skills) ·
-**22 repository stars** · **Source links only: no repository LICENSE found**
-
-Use these for cross-language API guidance and deployment choices. The browser
-guide covers core, React, UI, and widget packages; browser authentication requires
-a server-issued temporary token. Self-hosting requires the appropriate entitlement
-and infrastructure.
-
-| Task | Original skill |
-| --- | --- |
-| Speech recognition | [Guide](https://github.com/deepgram/skills/blob/main/skills/speech-to-text/SKILL.md) |
-| Speech synthesis | [Guide](https://github.com/deepgram/skills/blob/main/skills/text-to-speech/SKILL.md) |
-| Interactive voice agents | [Guide](https://github.com/deepgram/skills/blob/main/skills/voice-agent/SKILL.md) |
-| Speech analytics | [Guide](https://github.com/deepgram/skills/blob/main/skills/audio-intelligence/SKILL.md) |
-| Browser agents and voice widgets | [Guide](https://github.com/deepgram/skills/blob/main/skills/browser-agent/SKILL.md) |
-| Self-hosting, optional deployment | [Guide](https://github.com/deepgram/skills/blob/main/skills/self-hosted/SKILL.md) |
-
-The central README advertises Swift, Kotlin, and browser SDK repository URLs that
-returned HTTP 404 in this check. Those repositories are not indexed here. The browser
-packages documented by the browser-agent skill are available on npm; a broken
-repository link does not establish that a package is unavailable.
-
-## AssemblyAI
-
-[AssemblyAI skill](https://github.com/AssemblyAI/assemblyai-skill/blob/main/skills/assemblyai/SKILL.md) ·
-**15 repository stars** · **Source link only: no repository LICENSE found**
-
-One comprehensive skill covers prerecorded and streaming transcription, dictation,
-speech analytics, and voice-agent integrations. Keep its reference guides beside
-the manifest and use a supported SDK or REST client.
-
-The skill calls Python 1.5.4 and JavaScript 4.41.1 current. On September 30, 2026,
-the [Python registry](https://pypi.org/project/assemblyai/) reports 1.6.1 and the
-[JavaScript registry](https://www.npmjs.com/package/assemblyai) reports 4.41.5.
-Check the installed version and current API surface before using release-sensitive
-features.
+</details>
 
 ## Vapi
 
@@ -176,6 +99,105 @@ Live operations require `VAPI_API_KEY` and current schema checks. Calls, campaig
 number provisioning, and simulation runs can change external resources or consume
 usage. Text simulations help test logic; voice tests are needed to assess speech
 recognition, audio delivery, and interruptions.
+
+
+## Voximplant and Synthflow
+
+| Original skill | Use it for | Qualification |
+| --- | --- | --- |
+| [create-eval](https://github.com/SynthFlowAI/synthflow-skills/blob/main/create-eval/SKILL.md) | Define post-call custom evaluations and business outcomes. | Optional provider workflow; no complete LICENSE found. Contains telemetry commands with DO_NOT_TRACK / DISABLE_TELEMETRY opt-outs. |
+| [create-simulation](https://github.com/SynthFlowAI/synthflow-skills/blob/main/create-simulation/SKILL.md) | Build caller scenarios and simulation tests for Synthflow agents. | Optional provider workflow; no complete LICENSE found. Contains telemetry commands with DO_NOT_TRACK / DISABLE_TELEMETRY opt-outs. |
+| [voximplant-voxengine-dev](https://github.com/voximplant/ai-agent-skills/blob/main/plugins/voximplant-ai-agent-skills/skills/voximplant-voxengine-dev/SKILL.md) | Build VoxEngine call flows and media bridges with current API references. | Apache-2.0; use current docs.voximplant.ai references and narrowly scoped account roles. |
+| [voximplant-management-api](https://github.com/voximplant/ai-agent-skills/blob/main/plugins/voximplant-ai-agent-skills/skills/voximplant-management-api/SKILL.md) | Manage voice application configuration, scenarios, rules, and call logs. | Apache-2.0; use current docs.voximplant.ai references and narrowly scoped account roles. |
+
+Inspect Synthflow's telemetry section before running its instructions. No telemetry,
+provider changes, or calls were performed for this index. Use its current
+[custom evaluations](https://docs.synthflow.ai/create-a-custom-evaluation) and
+[simulation documentation](https://docs.synthflow.ai/simulations) for API details.
+Voximplant's current [voice orchestration examples](https://docs.voximplant.ai/voice-ai-orchestration/openai/inbound.md)
+are preferable to copying an older indexed snippet without checking the API.
+
+
+## Deepgram SDK skills
+
+Each SDK repository carries product-specific instructions for its own code and
+examples. Choose the language you use, and keep that repository’s reference context
+available. Live requests require `DEEPGRAM_API_KEY` or an appropriate temporary
+token. These six SDK repositories have MIT licenses.
+
+| Product | JavaScript | Python | Java | Go | Rust | .NET |
+| --- | --- | --- | --- | --- | --- | --- |
+| Standard STT | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-speech-to-text/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-speech-to-text/SKILL.md) |
+| Conversational STT / Flux | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-conversational-stt/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-conversational-stt/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-conversational-stt/SKILL.md) | [Current examples](https://github.com/deepgram/deepgram-go-sdk/blob/main/examples/speech-to-text/websocket/flux_channel/README.md)¹ | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-conversational-stt/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-conversational-stt/SKILL.md) |
+| TTS | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-text-to-speech/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-text-to-speech/SKILL.md) |
+| Voice agents | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-voice-agent/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-voice-agent/SKILL.md) |
+| Audio intelligence | [Skill](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-java-sdk/blob/main/.agents/skills/deepgram-java-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-go-sdk/blob/main/.agents/skills/deepgram-go-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-rust-sdk/blob/main/.agents/skills/deepgram-rust-audio-intelligence/SKILL.md) | [Skill](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/.agents/skills/deepgram-dotnet-audio-intelligence/SKILL.md) |
+
+¹ The Go conversational-STT manifest says that a v2 client and Flux examples do
+not exist. Its current repository already contains both, including a
+[typed v2 client example](https://github.com/deepgram/deepgram-go-sdk/blob/main/examples/speech-to-text/websocket/flux_channel/main.go).
+The stale manifest is excluded from the skill count.
+
+The Java skills reference a root `reference.md` file that is absent from the
+checked repository. Use its [README](https://github.com/deepgram/deepgram-java-sdk/blob/main/README.md)
+and current source examples. Rust’s voice-agent guide uses a raw WebSocket fallback
+with extra crates. Python’s force-end-turn support requires the documented Flux
+provider or deployment enablement; it is not interchangeable with standard v1 STT.
+
+<details>
+<summary>Six SDK repositories: dated stars and license links</summary>
+
+| SDK source | Stars observed | License |
+| --- | ---: | --- |
+| [deepgram/deepgram-js-sdk](https://github.com/deepgram/deepgram-js-sdk) | 274 | [MIT](https://github.com/deepgram/deepgram-js-sdk/blob/main/LICENSE) |
+| [deepgram/deepgram-python-sdk](https://github.com/deepgram/deepgram-python-sdk) | 468 | [MIT](https://github.com/deepgram/deepgram-python-sdk/blob/main/LICENSE) |
+| [deepgram/deepgram-java-sdk](https://github.com/deepgram/deepgram-java-sdk) | 11 | [MIT](https://github.com/deepgram/deepgram-java-sdk/blob/main/LICENSE) |
+| [deepgram/deepgram-go-sdk](https://github.com/deepgram/deepgram-go-sdk) | 90 | [MIT](https://github.com/deepgram/deepgram-go-sdk/blob/main/LICENSE) |
+| [deepgram/deepgram-rust-sdk](https://github.com/deepgram/deepgram-rust-sdk) | 66 | [MIT](https://github.com/deepgram/deepgram-rust-sdk/blob/main/LICENSE) |
+| [deepgram/deepgram-dotnet-sdk](https://github.com/deepgram/deepgram-dotnet-sdk) | 55 | [MIT](https://github.com/deepgram/deepgram-dotnet-sdk/blob/main/LICENSE) |
+
+</details>
+
+## Deepgram product guides
+
+[Official collection](https://github.com/deepgram/skills/tree/main/skills) ·
+**22 repository stars** · **Source links only: no repository LICENSE found**
+
+Use these for cross-language API guidance and deployment choices. The browser
+guide covers core, React, UI, and widget packages; browser authentication requires
+a server-issued temporary token. Self-hosting requires the appropriate entitlement
+and infrastructure.
+
+| Task | Original skill |
+| --- | --- |
+| Speech recognition | [Guide](https://github.com/deepgram/skills/blob/main/skills/speech-to-text/SKILL.md) |
+| Speech synthesis | [Guide](https://github.com/deepgram/skills/blob/main/skills/text-to-speech/SKILL.md) |
+| Interactive voice agents | [Guide](https://github.com/deepgram/skills/blob/main/skills/voice-agent/SKILL.md) |
+| Speech analytics | [Guide](https://github.com/deepgram/skills/blob/main/skills/audio-intelligence/SKILL.md) |
+| Browser agents and voice widgets | [Guide](https://github.com/deepgram/skills/blob/main/skills/browser-agent/SKILL.md) |
+| Self-hosting, optional deployment | [Guide](https://github.com/deepgram/skills/blob/main/skills/self-hosted/SKILL.md) |
+
+The central README advertises Swift, Kotlin, and browser SDK repository URLs that
+returned HTTP 404 in this check. Those repositories are not indexed here. The browser
+packages documented by the browser-agent skill are available on npm; a broken
+repository link does not establish that a package is unavailable.
+
+
+## AssemblyAI
+
+[AssemblyAI skill](https://github.com/AssemblyAI/assemblyai-skill/blob/main/skills/assemblyai/SKILL.md) ·
+**15 repository stars** · **Source link only: no repository LICENSE found**
+
+One comprehensive skill covers prerecorded and streaming transcription, dictation,
+speech analytics, and voice-agent integrations. Keep its reference guides beside
+the manifest and use a supported SDK or REST client.
+
+The skill calls Python 1.5.4 and JavaScript 4.41.1 current. On September 30, 2026,
+the [Python registry](https://pypi.org/project/assemblyai/) reports 1.6.1 and the
+[JavaScript registry](https://www.npmjs.com/package/assemblyai) reports 4.41.5.
+Check the installed version and current API surface before using release-sensitive
+features.
+
 
 ## Cloud voice and speech
 
@@ -221,6 +243,7 @@ source checks; none of the provider workflows was executed.
 | Voice Live .NET | The hierarchy's `SendAudioAsync` name should be `SendInputAudioAsync`. Checked in `1.0.0` and released `1.2.0`; other sampled lifecycle methods exist. | [.NET public API](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/voicelive/Azure.AI.VoiceLive/api/Azure.AI.VoiceLive.netstandard2.0.cs) |
 | Voice Live Python | Central session, audio-buffer, and response methods exist in released `1.3.0`. This check does not cover every model, endpoint, or authentication branch. | [Python SDK](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/voicelive/azure-ai-voicelive/README.md) |
 
+
 ## Evaluation and local speech
 
 Coval's selected workflows cover evidence review, test suites, evaluator
@@ -249,21 +272,6 @@ listed legacy nonstreaming non-English models have noncommercial terms. TTS/G2P
 assets carry separate source terms. See the [resource qualifications](resources.md#current-source-caveats)
 and the exact source licenses in [linked-skills.json](../linked-skills.json).
 
-## Voximplant and Synthflow
-
-| Original skill | Use it for | Qualification |
-| --- | --- | --- |
-| [create-eval](https://github.com/SynthFlowAI/synthflow-skills/blob/main/create-eval/SKILL.md) | Define post-call custom evaluations and business outcomes. | Optional provider workflow; no complete LICENSE found. Contains telemetry commands with DO_NOT_TRACK / DISABLE_TELEMETRY opt-outs. |
-| [create-simulation](https://github.com/SynthFlowAI/synthflow-skills/blob/main/create-simulation/SKILL.md) | Build caller scenarios and simulation tests for Synthflow agents. | Optional provider workflow; no complete LICENSE found. Contains telemetry commands with DO_NOT_TRACK / DISABLE_TELEMETRY opt-outs. |
-| [voximplant-voxengine-dev](https://github.com/voximplant/ai-agent-skills/blob/main/plugins/voximplant-ai-agent-skills/skills/voximplant-voxengine-dev/SKILL.md) | Build VoxEngine call flows and media bridges with current API references. | Apache-2.0; use current docs.voximplant.ai references and narrowly scoped account roles. |
-| [voximplant-management-api](https://github.com/voximplant/ai-agent-skills/blob/main/plugins/voximplant-ai-agent-skills/skills/voximplant-management-api/SKILL.md) | Manage voice application configuration, scenarios, rules, and call logs. | Apache-2.0; use current docs.voximplant.ai references and narrowly scoped account roles. |
-
-Inspect Synthflow's telemetry section before running its instructions. No telemetry,
-provider changes, or calls were performed for this index. Use its current
-[custom evaluations](https://docs.synthflow.ai/create-a-custom-evaluation) and
-[simulation documentation](https://docs.synthflow.ai/simulations) for API details.
-Voximplant's current [voice orchestration examples](https://docs.voximplant.ai/voice-ai-orchestration/openai/inbound.md)
-are preferable to copying an older indexed snippet without checking the API.
 
 ## Native .NET audio
 
@@ -282,7 +290,14 @@ or recognition backend. The reviewed package XML confirms selected API members;
 no integration was compiled or run. This skill supplies a frontend, not an entire
 voice-agent runtime.
 
+
 ## What was checked
+
+<details>
+<summary>Source checks, technical discrepancies and remaining limits</summary>
+
+Every selected manifest resolved on its repository’s current default branch and matched the checked commit. Repository stars describe the whole project, and each language variant is counted as a separate skill. The source index records retrieval times, commits, licenses, dependencies, and known limitations.
+
 
 The selection uses canonical skill paths and excludes provider plugin mirrors.
 Selected manifests were read from pinned archives and checked against their live
@@ -294,3 +309,5 @@ No provider calls, installations, or runtime tests were performed. The index doe
 not certify every SDK example or guarantee that an installed skill will work with
 a different package version. The [structured index](../linked-skills.json) records
 the checks and remaining limits.
+
+</details>

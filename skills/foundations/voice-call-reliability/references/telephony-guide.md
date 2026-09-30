@@ -1,6 +1,19 @@
 # Telephony: make the call path observable and recoverable
 
+[Handbook](../../../../docs/handbook.md) / [Call reliability skill](../SKILL.md)
+
 Reviewed against current primary documentation on **September 30, 2026 UTC**. This is a review date, not a publication date. Provider-specific statements are linked; the state machines and failure policies below are engineering guidance. Check the installed SDK, carrier configuration, and exact API version before using field names or transfer behavior.
+
+## Find the call failure
+
+| Problem or job | Start here | Evidence required |
+| --- | --- | --- |
+| Call answers but audio is missing | [Control/media paths](#follow-two-paths-then-verify-four-outcomes) and [media contract](#define-the-media-contract-at-every-boundary) | Two-way media on the actual caller path |
+| Build or retry call creation | [Inbound and outbound](#build-inbound-and-outbound-independently) | Routing, admission, attempt IDs, and final outcome |
+| Determine who answered | [Answer and machine detection](#keep-answer-machine-detection-and-task-completion-separate) | Separate connection, classifier, and task results |
+| Transfer safely | [Recoverable handoff](#make-handoff-a-recoverable-transaction) | Recipient acceptance and caller-leg ownership |
+| Handle duplicate or late events | [Event authentication](#authenticate-events-then-make-effects-safe) | Durable receipts and allowed transitions |
+| Recover an incident | [Lifecycle failure cases](#work-failures-through-the-whole-lifecycle) | Every owned leg, stream, worker, and action reconciled |
 
 ## Follow two paths, then verify four outcomes
 
@@ -20,15 +33,35 @@ flowchart LR
     Gateway -->|Authorized request| Records[Business records]
 ```
 
-Keep the browser path explicit too: WebRTC may need TURN to traverse a restrictive network. **coturn** provides STUN/TURN media traversal, including supported authentication mechanisms; it does not supply phone numbers, a SIP call controller, or business authorization. Protect relay access, check allocation/relay-port capacity, and verify the selected UDP/TCP/TLS route. A successful TURN allocation is not proof of intelligible audio. [coturn source](https://github.com/coturn/coturn), [deployment ports](https://github.com/coturn/coturn/blob/master/docker/coturn/README.md).
+WebRTC may need TURN on restrictive networks. coturn supplies STUN/TURN traversal
+and supported authentication, but phone numbers, SIP call control, and business
+authorization require their own services.
+
+Protect relay access, check allocation/relay-port capacity, and verify the selected
+UDP/TCP/TLS route. Allocation success does not prove intelligible audio.
+[coturn source](https://github.com/coturn/coturn), [deployment ports](https://github.com/coturn/coturn/blob/master/docker/coturn/README.md).
 
 ## Build inbound and outbound independently
 
-For inbound calls, identify the dialed number, trunk authentication or source controls, routing/dispatch rule, session admission decision, agent readiness, and the moment media becomes usable. Decide what an early caller hears while a worker starts. Reject or route an unserviceable call deliberately instead of answering it into silence. The calling number is routing metadata; the application must establish any required account identity separately.
+| Direction | Record and verify | Failure policy |
+| --- | --- | --- |
+| Inbound | Dialed number, trunk authentication/source controls, dispatch rule, admission, agent readiness, and usable media | Define early-caller audio; deliberately reject or route an unserviceable call |
+| Outbound | Authorized destination, attempt ID, routing permissions, caller number, destination format, ringing timeout, and final outcome | A retry can incur charges and contact the destination again; duplicate events must not redial |
 
-For outbound calls, record the authorized destination and attempt ID before requesting a call. Check account routing permissions, caller number configuration, destination format, ringing timeout, and final outcome. Starting a dial request does not mean a person answered. A retry creates a distinct attempt and may create another charge or disturb the same destination; duplicate events must not trigger another dial.
+Record the outbound destination and attempt ID before requesting the call; each
+retry is a distinct attempt.
+Calling number is routing metadata; establish required account identity separately.
+A dial request does not establish that a person answered.
 
-LiveKit uses inbound trunks and dispatch rules for receiving calls, while outbound creation uses `CreateSIPParticipant`. Current documentation exposes `wait_until_answered` and SIP failure information. Its `sip.callStatus` values have specific semantics: `active` signals the connected participant state, and `automation` can indicate connected outbound DTMF processing. Neither establishes a successful conversation. Preserve provider-specific state alongside your normalized state. [Inbound workflow](https://docs.livekit.io/telephony/accepting-calls/workflow-setup/), [outbound workflow](https://docs.livekit.io/telephony/making-calls/workflow-setup/), [participant attributes](https://docs.livekit.io/reference/telephony/sip-participant/).
+| LiveKit boundary | Documented contract |
+| --- | --- |
+| Inbound | Trunks and dispatch rules |
+| Outbound | `CreateSIPParticipant`; `wait_until_answered` and SIP failure information |
+| `sip.callStatus`: `active` | Connected participant state |
+| `sip.callStatus`: `automation` | Can indicate connected outbound DTMF processing |
+
+Neither status establishes successful conversation. Retain provider-specific state
+alongside normalized state. [Inbound workflow](https://docs.livekit.io/telephony/accepting-calls/workflow-setup/), [outbound workflow](https://docs.livekit.io/telephony/making-calls/workflow-setup/), [participant attributes](https://docs.livekit.io/reference/telephony/sip-participant/).
 
 ## Define the media contract at every boundary
 
@@ -38,7 +71,18 @@ Twilio's Media Streams protocol currently specifies μ-law audio at 8 kHz with o
 
 Twilio distinguishes unidirectional and bidirectional streams. Bidirectional streaming exposes the inbound track to the application; its DTMF support is inbound, from Twilio to the media server. Do not assume the same socket sends keypad tones to an external IVR or provides a separate recording of the bot's outbound track. Verify the exact DTMF mechanism and destination leg. [Media Streams overview](https://www.twilio.com/docs/voice/media-streams).
 
-Other bridges use different envelopes. jambonz's `listen` sends linear16 PCM in binary frames. Its streaming return path uses binary frames, while its buffered return path uses JSON with base64 audio; incoming and return sample rates can differ. A `mark` result distinguishes `playout` from `cleared`. `conference` can stream mixed conference audio, which may hide who spoke unless other evidence identifies the participant. Select the correct parser and playback evidence for that bridge. [jambonz listen](https://docs.jambonz.org/verbs/verbs/listen), [clean Markdown contract](https://docs.jambonz.org/verbs/verbs/listen.md), [conference](https://docs.jambonz.org/verbs/verbs/conference).
+For jambonz, select the parser and evidence for the actual path:
+
+| Path or event | Documented contract |
+| --- | --- |
+| `listen` input | linear16 PCM in binary frames |
+| Streaming return | Binary frames |
+| Buffered return | JSON with base64 audio |
+| Sample rates | Input and return can differ |
+| `mark` result | Distinguishes `playout` from `cleared` |
+| `conference` audio | May be mixed; participant identity needs other evidence |
+
+[jambonz listen](https://docs.jambonz.org/verbs/verbs/listen), [clean Markdown contract](https://docs.jambonz.org/verbs/verbs/listen.md), [conference](https://docs.jambonz.org/verbs/verbs/conference).
 
 ## Keep answer, machine detection, and task completion separate
 
@@ -46,11 +90,30 @@ Use application states such as `requested → ringing → answered → media_rea
 
 Twilio's progress callback event `completed` is not identical to a `CallStatus` value of `completed`: the completion event can report other terminal outcomes. Inspect the actual status and the connected leg. An answered and ended call can still have reached voicemail, heard silence, or failed its task. [Call resource](https://www.twilio.com/docs/voice/api/call-resource).
 
-Answering machine detection adds another classifier. Test human, machine, fax where relevant, and unknown outcomes against actual greeting conditions. Synchronous and asynchronous detection affect when conversation proceeds; late detection must not retroactively turn a guessed result into a verified one. Decide what the agent may say or do while classification is unresolved. Record false-human and false-machine outcomes separately from call connection. [Twilio AMD](https://www.twilio.com/docs/voice/answering-machine-detection).
+For answering machine detection:
+
+- Test human, machine, relevant fax, and unknown outcomes against actual greetings.
+- Define conversation behavior while synchronous/asynchronous classification is unresolved.
+- Keep a late detection result separate from an earlier guess.
+- Record false-human and false-machine outcomes separately from connection.
+
+[Twilio AMD](https://www.twilio.com/docs/voice/answering-machine-detection).
 
 ## Make handoff a recoverable transaction
 
-A bridge connects legs; a conference gives the application a participant structure for holds and multi-party handoffs; a cold transfer delegates the caller to another destination. These choices have different ownership after failure. For a warm handoff, keep the caller leg while reaching the human, confirm the destination and acceptance, pass the authorized context, connect the parties, and only then retire the bot leg. Decide who speaks during that transition.
+| Handoff mechanism | Ownership to verify |
+| --- | --- |
+| Bridge | Connected legs and their failure handling |
+| Conference | Participant structure, holds, and multi-party ownership |
+| Cold transfer | Control delegated to another destination; remaining recovery options |
+
+Warm-handoff sequence:
+
+1. Keep the caller leg while reaching the human.
+2. Confirm destination and acceptance; pass authorized context.
+3. Connect the parties, then retire the bot leg when the contract permits.
+
+Assign the speaker during each transition.
 
 This conceptual sequence is an application policy, not an API recipe.
 
@@ -66,7 +129,16 @@ When the human queue is unavailable, use a preapproved return-to-agent, bounded 
 
 Validate the provider's webhook authentication before changing call state. Twilio signature verification depends on the exact public request URL and all received parameters; reverse-proxy URL rewriting and omitted new fields can invalidate verification. Use the current helper rather than a home-grown partial reconstruction. For JSON requests, follow the documented raw-body validation path. [Secure webhooks](https://www.twilio.com/docs/usage/webhooks/webhooks-security).
 
-Authentication establishes origin and integrity, not freshness, ordering, or permission to perform a new business action. Store received events durably, correlate them to the correct call leg and session generation, deduplicate with documented event identifiers or a defined equivalent, and apply allowed state transitions atomically. Do not deduplicate all events by call ID: one call legitimately has many updates. Acknowledge only after the event is safely accepted; execute expensive or retryable effects through bounded workers when the webhook contract permits.
+Authentication establishes origin and integrity. Freshness, ordering, and authority
+for new business actions require application checks.
+
+- [ ] Store received events durably and correlate the call leg/session generation.
+- [ ] Deduplicate by documented event ID or a defined equivalent, not call ID alone.
+- [ ] Apply allowed state transitions atomically.
+- [ ] Acknowledge after safe acceptance.
+- [ ] Use bounded workers for expensive/retryable effects when the webhook contract permits.
+
+One call legitimately has many updates.
 
 ## Work failures through the whole lifecycle
 
@@ -79,6 +151,12 @@ Authentication establishes origin and integrity, not freshness, ordering, or per
 | Media socket closes while call remains active | Stream termination reason and authoritative call/participant state | Follow the chosen reconnect, reroute, or end-call policy; verify all owned resources afterward. |
 | Worker disappears after a booking write | Action ledger and authoritative booking lookup | Record uncertain outcome; do not replay a non-idempotent write solely because lookup is empty. |
 
-Cleanup must reconcile every leg, participant, stream, worker, playback queue, and action. A stream ending is not universal proof the phone call ended; ending the call does not imply a business write rolled back. Make cleanup safe to repeat and use an orphan sweeper with explicit ownership and grace conditions, so late callbacks do not end a newer session.
+Cleanup checklist:
+
+- [ ] Reconcile legs, participants, streams, workers, playback queues, and actions.
+- [ ] Check authoritative call state when a stream ends.
+- [ ] Keep business-write state independent of call termination.
+- [ ] Make cleanup repeatable; give orphan sweepers explicit ownership and grace conditions.
+- [ ] Prevent late callbacks from ending a newer session.
 
 Use **SIPp** to exercise signaling scenarios, arrival rate, concurrency, and supported RTP replay/echo in an isolated test path. Pair it with real media and business assertions: a passed SIP scenario cannot establish recognition, intelligibility, interruption quality, or human handoff. Start with synthetic destinations and authorize any carrier-connected load separately. [SIPp controls](https://sipp.readthedocs.io/en/latest/controlling.html), [media](https://sipp.readthedocs.io/en/latest/media.html), [current control documentation source](https://github.com/SIPp/sipp/blob/master/docs/controlling.rst), [media source](https://github.com/SIPp/sipp/blob/master/docs/media.rst).

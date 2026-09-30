@@ -1,18 +1,23 @@
 # Choosing a voice agent architecture
 
+[Handbook](../../../../docs/handbook.md) / [Stack selection skill](../SKILL.md)
+
 Reviewed against official documentation on **2026-09-30 UTC**. This is a review date,
 not a source update date. The reviewed pages did not establish last-modified dates.
 Check current documentation and installed versions when using this guide.
 
-Sourced paragraphs describe documented behavior. Recommendations and conditional
+Cited provider statements describe documented behavior. Recommendations and conditional
 examples are engineering guidance to test, not verified compatibility or performance.
 
-[Speech and hosting](#separate-five-decisions) ·
-[Media paths](#draw-media-and-control-paths) ·
-[Turns and actions](#assign-turn-ownership) ·
-[Capacity and cost](#size-capacity-and-cost-together) ·
-[Decision worksheet](#compare-two-or-three-complete-options) ·
-[Migration tests](#prove-the-decision-before-migration)
+## Choose a starting point
+
+| Your job | Start here | Leave with |
+| --- | --- | --- |
+| Select a first stack | [Task constraints](#begin-with-the-task), then [speech and hosting](#separate-five-decisions) | Two complete candidates and their blocking unknowns |
+| Add web or phone access | [Media paths](#draw-media-and-control-paths) | A channel-specific transport and control map |
+| Protect bookings and other writes | [Turn ownership](#assign-turn-ownership), then [authority](#keep-business-authority-in-the-application) | A cancellation and reconciliation contract |
+| Fit a budget or traffic forecast | [Capacity and cost](#size-capacity-and-cost-together) | Peak-load evidence and comparable billing units |
+| Replace a working stack | [Decision worksheet](#compare-two-or-three-complete-options), then [migration tests](#prove-the-decision-before-migration) | A measured comparison and reversible rollout |
 
 ## Begin with the task
 
@@ -49,27 +54,37 @@ not require operating its runtime yourself.
 
 ### Choose the speech architecture
 
-OpenAI's current guide distinguishes Realtime, a chain, and GPT-Live. Realtime combines
-audio interpretation, reasoning, tools, and speech in one session. A chain exposes
-speech recognition, a text agent, and speech generation. GPT-Live handles spoken
-interaction while delegating backend work, including client delegation to an existing
-workflow. The guide describes a chain as “Control over each speech and text stage.”
+![A speech chain separates recognition, text reasoning, and synthesis; speech-to-speech uses one audio session; a delegated conversational layer calls an existing backend workflow.](../assets/speech-architectures.svg)
+
+[Editable comparison](../assets/speech-architectures.html). These are architectural boundaries, not model-version or performance claims.
+
+OpenAI's current guide distinguishes three paths:
+
+| Path | Documented responsibility |
+| --- | --- |
+| Realtime | Audio interpretation, reasoning, tools, and speech in one session |
+| Chain | Speech recognition, a text agent, and speech generation; “Control over each speech and text stage.” |
+| GPT-Live | Spoken interaction with delegated backend work, including client delegation to an existing workflow |
+
 [OpenAI voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
 
-Test native speech-to-speech when conversational timing and prosody
-matter and no text checkpoint is required before each answer. Test a chain when you
-must inspect or transform intermediate text, reuse a mature text agent, or choose
-speech components independently. Consider a delegated conversational layer when
-retaining the backend decides the choice. Check availability and integration rather
-than assuming it replaces Realtime without changes.
+| Task requirement | Candidate to test | Boundary to verify |
+| --- | --- | --- |
+| Conversational timing and prosody; no text checkpoint before every answer | Native speech-to-speech | Application controls, timing, and playback |
+| Inspect or transform intermediate text, reuse a text agent, or choose speech components separately | A speech chain | Recognition, text-agent, and synthesis contracts |
+| Keep an existing backend workflow | A delegated conversational layer | Availability and integration; replacement is not automatic |
 
-Neither architecture guarantees lower latency. Streaming, endpointing, model behavior,
+No speech architecture guarantees lower latency. Streaming, endpointing, model behavior,
 and playback affect the result; native speech-to-speech still needs application controls.
 
-Define any text checkpoint precisely: before each spoken answer, before a tool write,
-or during later review. Name the reviewer and whether approval is required. A native
-speech frontend can submit a text proposal to a trusted action gate before a write;
-that requirement alone does not force the whole conversation through a speech chain.
+Before selecting a chain for a text checkpoint, record:
+
+- When review happens: before every spoken answer, before a tool write, or later.
+- What is reviewed: recognized text, a proposed action, or the final record.
+- Who reviews it and whether approval is required.
+
+A native speech frontend can submit a text proposal to a trusted action gate before
+a write. A checkpoint on that proposal alone does not require a speech chain.
 
 Pipecat composes pipelines from processors and services. Its documented chain includes
 transport input, STT, user context, LLM, TTS, transport output, and assistant context.
@@ -79,9 +94,11 @@ that providers share context, cancellation, and tool behavior.
 
 ### Choose who operates the agent
 
-A managed agent platform may own conversation configuration and routing. A managed
-runtime hosts your bot code. A self-hosted design owns the dispatcher and session
-processes too. Compare the actual division of work.
+| Operating model | Responsibility to confirm |
+| --- | --- |
+| Managed agent platform | Which conversation configuration, routing, and operations it owns |
+| Managed runtime | How it hosts your bot code and admits sessions |
+| Self-hosted runtime | How your team operates dispatch and session processes |
 
 Pipecat separates the bot, session-start service, and media transport. Pipecat Cloud
 runs agents in Daily-hosted regions; Enterprise uses a region in your VPC. Placement
@@ -89,10 +106,11 @@ must be checked across the full data path, including external speech services.
 [Deployment overview](https://docs.pipecat.ai/pipecat/deployment/overview),
 [Cloud and Enterprise](https://docs.pipecat.ai/pipecat-cloud/introduction)
 
-Prefer managed hosting if the team cannot support dispatch,
-isolation, capacity, and deployment during active calls. Operate the runtime when
-network placement, custom audio, isolation, or existing infrastructure justifies that
-work. Verify export, debugging, regions, tools, and failure handling.
+Choose managed hosting when the team cannot support dispatch, isolation, capacity,
+and deployment during active calls. Operate the runtime when network placement,
+custom audio, isolation, or existing infrastructure justifies that work.
+
+Before choosing either, verify export, debugging, regions, tools, and failure handling.
 
 Pipecat's dedicated production guide calls its development runner “not built for
 production.” It lacks production admission and lifecycle controls. A local demo does
@@ -134,10 +152,12 @@ Phone network <== provider media ==> Application relay <== model stream ==> Spee
                                   tools and durable state
 ```
 
-Use direct SIP when its documented controls and media path satisfy
-the task. Use a relay for audio processing, multiple providers, or existing transport
-logic. The relay owns event translation, necessary codec conversion, queue limits,
-interruptions, and shutdown on both legs. Verify inbound and outbound support separately.
+| Path | Use when | Required ownership |
+| --- | --- | --- |
+| Direct SIP | Its documented controls and media path satisfy the task | Call admission, session controls, and business service |
+| Audio relay | Audio processing, multiple providers, or existing transport logic requires it | Event translation, codec conversion, queue limits, interruptions, and shutdown on both legs |
+
+Verify inbound and outbound support separately.
 
 A text relay differs from raw audio streaming. Twilio ConversationRelay exchanges
 speech-related events and application text; bidirectional Media Streams exchanges
@@ -156,12 +176,15 @@ Record who detects turn completion, starts a response, interrupts
 speech, cancels generation, stops playback, and reconciles history. Test interacting
 automatic policies before adding another detector.
 
-Realtime allows automatic VAD, manual turns, or VAD with automatic response creation
-and interruption disabled. With WebRTC/SIP, the server manages output buffering and
-automatically truncates unheard audio on interruption. With WebSocket, “the client
-manages audio playback, and thus must stop playback and handle truncation.” The documented
-flow tracks played duration and sends `conversation.item.truncate`; canceling generation
-alone does not clear a local playback queue.
+Realtime supports automatic VAD, manual turns, or VAD with automatic response
+creation and interruption disabled.
+
+| Transport | Documented output owner |
+| --- | --- |
+| WebRTC/SIP | Server buffering and automatic truncation of unheard audio on interruption |
+| WebSocket | “the client manages audio playback, and thus must stop playback and handle truncation.” Track played duration and send `conversation.item.truncate`. |
+
+Canceling generation alone does not clear a local playback queue.
 [Realtime conversations](https://developers.openai.com/api/docs/guides/realtime-conversations#interruption-and-truncation)
 
 Keep three states separate:
@@ -176,25 +199,31 @@ Stop stale generation and queued playback using each leg's supported controls. R
 model context under that API's playback rules. Correlate late tool results with their
 action. A cut-off spoken answer does not undo a completed booking.
 
-Keep action IDs in durable state. Where the business API supports idempotency keys,
-retain the original key for a retry of the same action. Otherwise implement deduplication
-in the application; do not assume the provider accepts a key. If cancellation races
-with a write or a tool times out, query authoritative status before retrying. A new
-turn does not justify a duplicate write. These are application recommendations,
-not voice-provider cancellation guarantees.
+Use this application policy for action recovery; it is not a voice-provider
+cancellation guarantee:
 
-Application deduplication cannot guarantee exactly-once effects across a non-idempotent
-external API. A missing result from a lagging lookup does not prove that the write
-failed. Preserve an uncertain action for reconciliation; replay only after evidence
-establishes that doing so cannot duplicate a committed effect. Define an operator or
-user recovery path when the service cannot establish that outcome.
+| Situation | Action |
+| --- | --- |
+| Retry of the same action with API-supported idempotency | Retain the durable action ID and original key under that API's contract |
+| API has no idempotency key | Deduplicate dispatch in the application; exactly-once external effects remain unguaranteed |
+| Cancellation races with a write, or a tool times out | Query authoritative status before retrying |
+| A lagging lookup returns nothing | Keep the outcome uncertain; absence does not prove failure |
+| The service cannot establish the outcome | Use the defined operator or user recovery path |
+
+A new turn does not justify another write. Replay only when evidence establishes
+that it cannot duplicate a committed effect.
 
 ## Keep business authority in the application
 
-Treat tool arguments, transcripts, and client events as requests.
-The application checks identity, permissions, inputs, limits, and prior completion.
-Keep provider and tool credentials in a trusted service. An ephemeral browser credential
-does not authorize access to another account.
+Before dispatching an action, the trusted application checks:
+
+- Identity and account permissions.
+- Proposed inputs and applicable limits.
+- Prior completion of the same action.
+
+Tool arguments, transcripts, and client events are requests. Keep provider and tool
+credentials in the trusted service; an ephemeral browser credential does not authorize
+access to another account.
 
 A sideband separates private execution from browser media; it does not replace
 authorization. Persist outcomes needed after session shutdown. Correlate call, response,
@@ -214,10 +243,13 @@ Pipecat's production guidance covers per-session processes and draining old work
 during deployments. Long calls need a different rollout policy from short HTTP requests.
 [Session lifecycle](https://docs.pipecat.ai/pipecat/deployment/running-bots-in-production#session-lifecycle)
 
-Size for peak sessions and arrival bursts. Average arrival rate
-times average duration estimates steady-state concurrency, not peak capacity. Test cold
-startup, warm admission, rejection, quotas, CPU, memory, local models, and connections.
-Decide what the caller hears at capacity.
+1. Estimate steady-state concurrency from average arrival rate and duration.
+2. Measure peak sessions and arrival bursts separately.
+3. Exercise cold startup, warm admission, rejection, quotas, CPU, memory, local
+   models, and connections.
+4. Define what the caller hears when capacity is unavailable.
+
+The average estimate does not establish peak capacity.
 
 Use current billing units, not remembered prices:
 
@@ -257,41 +289,30 @@ Recommend one default and name the requirement that would change the decision.
 
 ### Conditional examples
 
-**Browser tutor, small operations team.** If the native model supports the language and
-controls, start with WebRTC and a trusted backend. Compare a managed framework runtime
-when added orchestration solves a need. Test noise, interruptions, permissions, reconnects.
-
-**Booking on web and phones.** If an existing text booking service is reliable and a
-text checkpoint is required, test a chain with separate channel adapters and one action
-service. Compare direct SIP plus Realtime after proving its tools and transfer path.
-Interrupt a booking while the write is in flight.
-
-**Changing speech providers.** A modular framework can preserve business code while
-replacing a service. Budget for context, tools, turns, codecs, and cancellation differences.
-Pipecat organizes that work; it does not make providers equivalent. A component benchmark
-alone does not justify migration.
-
-**Sporadic traffic, strict budget.** Compare startup tolerance against idle capacity cost.
-A self-hosted server also costs money and needs an operator. If callers cannot wait,
-fund warm capacity or test a path without that fleet. Count web and phone under one ceiling.
+| Situation | Starting hypothesis | Test that could change it |
+| --- | --- | --- |
+| Browser tutor, small operations team | WebRTC and a trusted backend if the native model supports the language and controls; compare managed orchestration when needed | Noise, interruptions, permissions, and reconnects |
+| Booking on web and phones | A chain, channel adapters, and one action service when the existing text workflow and checkpoint require it | Direct SIP plus Realtime tools/transfer; interrupt an in-flight write |
+| Changing speech providers | A modular framework may preserve business code | Context, tools, turns, codecs, and cancellation differences; a component benchmark is insufficient |
+| Sporadic traffic, strict budget | Compare startup tolerance with idle capacity cost; include self-hosted compute and its operator | Fund warm capacity or test another path if callers cannot wait; keep web and phone under one ceiling |
 
 ### Worked comparison: appointments over web and phone
 
 This is a hypothetical design exercise, not a tested provider recommendation.
-Assume an existing booking service, web and inbound phone channels, a required
-text checkpoint before writes, human escalation, and a small operating team.
-The booking API can report operation status but cannot reliably cancel a request
-after dispatch. Language support, regional processing, and peak load remain to
-be measured or verified.
+
+| Assumptions | Open questions |
+| --- | --- |
+| Existing booking service; web and inbound phone; text checkpoint before writes; human escalation; small operating team | Language support, regional processing, and peak load |
+| Booking API reports operation status but cannot reliably cancel after dispatch | Whether each candidate meets the checkpoint and transfer requirements |
 
 | Decision | A: staged speech pipeline | B: native speech session |
 | --- | --- | --- |
-| Input and response | STT supplies revisions to a text agent; TTS speaks its output. | The speech model handles audio interaction; an auxiliary transcript is evidence only under its documented contract. |
-| Business checkpoint | Application validates text-agent arguments and required confirmation before dispatch. | Application validates proposed tool arguments and confirmation before dispatch. If policy requires inspecting the model's exact recognized text, an auxiliary transcript alone does not satisfy that requirement. |
-| Web and phone | Distinct channel adapters share the action service. Each owns its codec and playback contract. | Supported WebRTC/SIP or bridge paths connect the session. Verify transfer and playback controls for each path. |
-| Uncertain booking | Durable action A remains unresolved while the caller gives corrected intent B. | Same durable action contract; conversational fluency does not remove the reconciliation requirement. |
-| Operational cost | More speech-stage boundaries to observe, plus selected runtime and provider quotas. | Fewer explicit speech stages, with model-session constraints and any bridge/runtime costs still present. |
-| Replacement cost | Stage adapters can be replaced, but segmentation, timing, and cancellation must be retested. | Replacing the speech session may require remapping events, context, voice, tools, and interruption behavior. |
+| Input and response | STT revisions → text agent → TTS | Audio interaction in the speech model; auxiliary transcript has its own evidence contract |
+| Business checkpoint | Validate text-agent arguments and confirmation | Validate proposed arguments and confirmation; auxiliary text alone cannot prove exact recognized text |
+| Web and phone | Channel adapters share the action service; each owns codec/playback | Supported WebRTC/SIP or bridge; verify transfer/playback per path |
+| Uncertain booking | Action A remains unresolved when corrected intent B arrives | Same reconciliation requirement |
+| Operational cost | More speech-stage boundaries to observe, plus runtime and quotas | Fewer explicit speech stages; session constraints and any bridge/runtime costs remain |
+| Replacement cost | Retest segmentation, timing, and cancellation after adapter changes | Remap events, context, voice, tools, and interruptions as required |
 
 Start the comparison with A because the stated text checkpoint and existing text
 workflow favor that boundary. Keep B as a candidate if the owner confirms that
@@ -299,11 +320,13 @@ validated tool arguments satisfy the checkpoint requirement, or the selected
 native path supplies the necessary text evidence. Neither option passes until
 language, region, transfer, and load requirements have evidence.
 
-Run the same booking, correction, quiet-speech, and transfer-failure fixtures
-against both. Compare correct authoritative outcomes before response speed.
-Measure speech-end to useful playback and interruption-to-stop on compatible
-clocks; report missing coverage. Account for the same connected time, active
-speech, tool calls, warm capacity, and transfer legs under each billing model.
+Run the same fixtures and collect:
+
+| Comparison | Required evidence |
+| --- | --- |
+| Booking, correction, quiet speech, transfer failure | Correct authoritative outcomes before response speed |
+| Response and interruption delay | Speech-end to useful playback; interruption-to-stop; compatible clocks and missing coverage |
+| Total cost | The same connected time, active speech, tool calls, warm capacity, and transfer legs |
 
 The decision record might read: "Choose A for the initial release if it meets the
 agreed conversation and cost criteria. Reopen the choice if B satisfies the text
@@ -331,10 +354,13 @@ Measure audible response delay, stop delay, startup, completion, incorrect actio
 recovery, and total cost using identical definitions. Report sample size and missing
 measurements. A few scripts do not establish a winning percentile.
 
-For migration, preserve business contracts and action IDs. Map session events explicitly,
-compare recordings or synthetic traces offline, then use a bounded rollout and fallback.
-Shadow testing must not duplicate writes. Name the reversible switch and evidence needed
-to expand traffic.
+Migration checklist:
+
+- [ ] Preserve business contracts and action IDs.
+- [ ] Map session events explicitly and compare recordings or synthetic traces offline.
+- [ ] Keep shadow tests from duplicating writes.
+- [ ] Name the reversible switch, fallback, and evidence needed to expand traffic.
+- [ ] Use a bounded rollout only after the comparison passes.
 
 ## Source discipline
 

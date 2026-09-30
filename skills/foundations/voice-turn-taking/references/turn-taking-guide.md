@@ -1,8 +1,18 @@
 # Turn taking: deciding when to listen, speak, and yield
 
+[Handbook](../../../../docs/handbook.md) / [Turn-taking skill](../SKILL.md)
+
 Reviewed against current primary sources on **2026-09-30 UTC**. Provider facts below describe the cited integration; design rules and the worked timeline are engineering recommendations. Synthetic times illustrate ordering and are not benchmarks.
 
-[Detection](#separate-the-detectors) · [Turn state](#keep-a-turn-controller) · [Interruptions](#decide-which-overlap-should-interrupt) · [Worked example](#worked-example-a-correction-during-booking) · [Tuning](#tune-for-the-cost-of-the-error) · [Integration](#choose-an-integration-you-can-observe)
+## Find the decision you need
+
+| Problem | Start here | Required result |
+| --- | --- | --- |
+| Caller is cut off during a pause | [Detector boundaries](#separate-the-detectors) | Distinguish silence from completed intent |
+| Duplicate replies or stacked waits | [One turn controller](#keep-a-turn-controller) | One owner commits turns and releases responses |
+| Echo, backchannels, or corrections interrupt speech | [Interruption eligibility](#decide-which-overlap-should-interrupt) | A policy that preserves short genuine corrections |
+| Old audio or pending tools survive interruption | [Cancellation boundaries](#stop-each-kind-of-work-explicitly) and [booking example](#worked-example-a-correction-during-booking) | Stop output while retaining action truth |
+| Choose or tune a detector | [Error costs](#tune-for-the-cost-of-the-error) and [integration choices](#choose-an-integration-you-can-observe) | Cohort-specific evidence, not a universal threshold |
 
 ## Separate the detectors
 
@@ -18,7 +28,15 @@ A caller says, "Send it to Alex... actually, to Alexis." The system must preserv
 
 OpenAI distinguishes silence-based server VAD from semantic VAD, whose timeout adapts to estimated completion. Its create_response and interrupt_response controls apply to speech-to-speech conversations; transcription sessions use turn detection for audio chunking. Some transcription models require explicit commits instead. Check the selected session and model. [Realtime VAD](https://developers.openai.com/api/docs/guides/realtime-vad).
 
-Treat streaming hypotheses as revisions. Record segment IDs, revision order, timestamps, and finality according to the STT's contract. A UI can show interim text, and speculative retrieval can start early if discarded safely. A mutable partial such as "Tuesday" must not authorize a booking that becomes "Thursday" in the final turn. An irreversible tool needs validated intent and the workflow's required confirmation.
+Keep streaming transcript uses separate:
+
+| Use | Handling |
+| --- | --- |
+| Interim display | Preserve segment IDs, revision order, timestamps, and finality under the STT contract |
+| Speculative retrieval | Start early only if stale work can be discarded safely |
+| Irreversible tool | Require validated intent and the workflow's confirmation |
+
+A mutable partial such as "Tuesday" must not authorize a booking that becomes "Thursday" in the final turn.
 
 Preserve pauses after unfinished phrases, spelled identifiers, numbers, self-corrections, and "let me think." Test the actual languages, accents, code switching, and speaking styles. An EOT model's language list is not evidence for every mixed-language conversation. Missing transcription can reflect a recognizer failure, not a caller who said nothing.
 
@@ -30,7 +48,14 @@ Give one component authority to commit user turns and release assistant response
 
 [Editable diagram](../assets/turn-controller.html). One controller owns turn commitment; tool actions keep an independent lifetime.
 
-Listening includes capture while work is pending. CandidateEnd holds a possible boundary while EOT and required transcript evidence arrive. Responding includes generation and output, which can overlap. Yielding invalidates the old response and stops its output. Business actions live in a separate ledger and can remain pending in any of these states.
+| State | Responsibility |
+| --- | --- |
+| Listening | Capture input, including while work is pending |
+| CandidateEnd | Hold a possible boundary while EOT and required transcript evidence arrive |
+| Responding | Generate and play output; these can overlap |
+| Yielding | Invalidate the old response and stop its output |
+
+Business actions remain in a separate ledger and can be pending in any state.
 
 Use stable session, user-turn, response, and tool-operation IDs. A new speech segment that arrives before commitment returns the controller to Listening. If it arrives after speculative generation began, invalidate that generation before exposing its audio. The policy should state how a detector timeout or lost STT stream changes the decision, including when to request clarification.
 
@@ -38,7 +63,12 @@ Use stable session, user-turn, response, and tool-operation IDs. A new speech se
 
 "Uh-huh" during an explanation may mean "continue." "No" after a confirmation question may be the entire answer. Duration or word-count filters alone cannot resolve that distinction.
 
-Consider the assistant's current speech, caller timing, acoustic evidence, available text, and task. Keep short corrections and stop requests eligible. Test quiet speakers and a one-word "no" when raising a minimum duration or word count. Agent acknowledgements can also seize the floor accidentally: keep listening and prevent a filler response from masking the caller's next words.
+Before changing interruption filters:
+
+- Check current assistant speech, caller timing, acoustic evidence, available text, and task.
+- Keep short corrections and stop requests eligible.
+- Test quiet speakers and a one-word "no" when raising duration or word-count minima.
+- Keep listening during acknowledgements; filler must not mask the caller's next words.
 
 Separate permission to interrupt output from permission to change an action. A caller can be heard during a transaction even when its external API cannot cancel. If a bounded announcement must finish, specify whether overlapping input is buffered, transcribed, or dropped. Do not disable input silently to make a metric look better.
 
@@ -97,11 +127,23 @@ The caller gets the floor while action reconciliation continues. No Thursday boo
 
 Label a replay corpus with completed turns, hesitation, desired interruptions, backchannels, and unacceptable speech overlap. Include disagreements between annotators instead of forcing ambiguous examples into certain labels.
 
-Start with the integration's supported defaults. Change one control family at a time: VAD sensitivity, onset duration, endpoint wait, EOT threshold, or interruption policy. Model scores need their own calibration; a threshold from another detector has no transferable meaning.
+1. Start with the integration's supported defaults.
+2. Change one family: VAD sensitivity, onset duration, endpoint wait, EOT threshold, or interruption policy.
+3. Assign error costs with the owner and compare errors against delay.
+4. Validate the selected configuration on held-out conversations, including failures and quiet speakers.
 
-Track early turn commits per user turn, false accepted interruptions per overlap candidate, missed intentional interruptions, and endpoint-to-first-played-audio distributions. Also measure overlap after a requested stop, extra clarification turns, and duplicate external actions. Keep denominators, language/device cohorts, sample sizes, and clock boundaries explicit.
+Model scores need their own calibration; thresholds do not transfer between detectors.
 
-Assign error costs with the product owner. Cutting off an address correction may be more costly than waiting through a pause. A long wait after "stop" may be more costly than a brief false interruption. Choose a configuration from the tradeoff between errors and delay, then validate it on held-out conversations. Do not optimize average latency by excluding failures or quiet speakers.
+| Measure | Keep explicit |
+| --- | --- |
+| Early commits | Errors per user turn |
+| False accepted interruptions | Errors per overlap candidate |
+| Missed intentional interruptions | Desired interruption labels and recall |
+| Endpoint-to-first-played audio; overlap after stop | Distribution and clock boundaries |
+| Extra clarification turns; duplicate external actions | Task consequences |
+| Every measure | Language/device cohorts, sample size, and denominator |
+
+An address correction cut off early may cost more than waiting through a pause. A long wait after "stop" may cost more than a brief false interruption. Use those task costs when choosing a configuration.
 
 ## Instrument and exercise the boundaries
 
@@ -121,13 +163,21 @@ Replay tests diagnose detector behavior. Also test the authorized browser or tel
 
 ## Choose an integration you can observe
 
-| Option | Concrete requirements and tradeoff |
+| Option | Input and version requirements |
 | --- | --- |
-| LiveKit audio turn detector | Current docs require Python Agents 1.6.1+ or Node 1.4.7+, VAD, and a VAD minimum silence duration of at least 250 ms. Full v1 runs on LiveKit Inference; v1-mini runs locally. It does not require a transcript. Observe model fallback and language thresholds. |
-| LiveKit text turn detector | Transcript-driven, open weights, and deprecated for future SDK removal. Keep legacy STT timing and language coverage explicit. New audio and old text configurations are different integrations. |
-| Pipecat Smart Turn | Current v3.2 source consumes 16 kHz mono audio with up to eight seconds of context, evaluated after VAD detects silence. Re-evaluate when speech resumes. Check the model artifact bundled by the installed analyzer. Pipeline strategies may additionally wait for STT; audio inference and turn commitment are separate boundaries. |
-| Silero VAD plus endpoint policy | Speech probabilities at 8/16 kHz; direct current ONNX wrapper uses 256/512-sample chunks respectively. Buffer/resample correctly and isolate state per stream. You supply conversational completion and interruption policy. |
-| Provider-native turn detection | Fewer application detectors, but provider-specific controls and events. Confirm client versus server ownership, transcription constraints, cancellation, and output buffering. Avoid a second automatic response trigger. |
+| LiveKit audio turn detector | Python Agents 1.6.1+ or Node 1.4.7+, VAD, and minimum VAD silence duration of at least 250 ms; no transcript required |
+| LiveKit text turn detector | Transcript-driven, open weights; deprecated for future SDK removal |
+| Pipecat Smart Turn | Current v3.2: 16 kHz mono, up to eight seconds of context, evaluation after VAD silence |
+| Silero VAD | 8/16 kHz probabilities; current direct ONNX wrapper uses 256/512-sample chunks respectively |
+| Provider-native detection | Selected session/model's controls and event contract |
+
+| Option | Deployment and policy work |
+| --- | --- |
+| LiveKit audio | Full v1 on LiveKit Inference; v1-mini local. Observe fallback and language thresholds. |
+| LiveKit text | Preserve legacy STT timing/language coverage; audio and text configurations are different integrations. |
+| Smart Turn | Re-evaluate after resumed speech; check the installed analyzer's model artifact. Pipeline commitment may also wait for STT. |
+| Silero | Buffer/resample correctly, isolate state per stream, and supply completion/interruption policy. |
+| Provider-native | Fewer application detectors; confirm client/server ownership, transcription, cancellation, and buffering. Avoid a second response trigger. |
 
 Sources: [LiveKit audio and text models](https://docs.livekit.io/agents/logic/turns/turn-detector/), [Smart Turn model](https://github.com/pipecat-ai/smart-turn), [Pipecat turn strategies](https://docs.pipecat.ai/api-reference/server/utilities/turn-management/user-turn-strategies), [Silero source and input checks](https://github.com/snakers4/silero-vad/blob/master/src/silero_vad/utils_vad.py).
 

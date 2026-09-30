@@ -1,14 +1,20 @@
 # Speech recognition and spoken output
 
+[Handbook](../../../../docs/handbook.md) / [Speech pipeline skill](../SKILL.md)
+
 Reviewed **2026-09-30 UTC** using Context7 and current primary documentation.
 This is the review date; publication dates were not established for the living
 pages cited below. Procedures and examples are engineering guidance.
 
-[Recognition](#choose-recognition-for-the-task) ·
-[Transcript events](#treat-transcripts-as-an-event-stream) ·
-[Synthesis](#design-the-spoken-output-path) ·
-[Pronunciation](#test-the-words-that-change-the-task) ·
-[Comparison worksheet](#compare-complete-pipelines)
+## Pick the boundary to inspect
+
+| Problem or job | Start here | Evidence to retain |
+| --- | --- | --- |
+| Wrong names, dates, or corrections | [Recognition selection](#choose-recognition-for-the-task) | Entity accuracy and input fixtures |
+| Duplicated words or premature actions | [Transcript events](#treat-transcripts-as-an-event-stream) | Revisions, finals, and committed-turn IDs |
+| Slow, distorted, or stale speech | [Spoken output](#design-the-spoken-output-path) | Phrase, format, and playback contract |
+| Correct text sounds ambiguous | [Pronunciation](#test-the-words-that-change-the-task) | Intended spoken forms and final-transport audio |
+| Replace a speech component | [Pipeline worksheet](#compare-complete-pipelines) | Comparable task outcomes and remaining unknowns |
 
 The speech path connects an acoustic signal to an action and back to a listener.
 Each boundary can introduce a different error. A correctly recognized date may
@@ -37,19 +43,21 @@ auxiliary transcript changes what the model already heard or acted on. Check the
 specific session API before designing text review around it.
 
 A basic word error rate is `(substitutions + deletions + insertions) / reference words`.
-Report the transcription normalization and reference policy beside it. If reference
-text spells out amounts but model text uses digits, a naive comparison can score a
-format difference as a recognition failure. Keep an entity-oriented score as well:
-the booking day, negation, quantity, account selector, or address that drives the
-action. Neither score alone establishes task success.
+
+| Score | Qualification |
+| --- | --- |
+| Word error rate | Publish normalization and reference policy. Spelled-out amounts versus digits can create format-only errors. |
+| Critical-entity accuracy | Check booking day, negation, quantity, account selector, and address. |
+| Task outcome | Verify what the application actually did; neither transcript score alone establishes success. |
 
 ## Treat transcripts as an event stream
 
-Keep provisional display text separate from committed segments. An interim update
-usually replaces an earlier hypothesis over some audio range; blindly appending
-every update duplicates words. Use the API's segment identifiers or timing ranges
-and preserve the original event for diagnosis. Reconnect behavior, replay, and
-stream offsets need explicit handling.
+Transcript handling checklist:
+
+- [ ] Separate provisional display text from committed segments.
+- [ ] Replace revised hypotheses using API segment IDs or timing ranges; do not append every update.
+- [ ] Preserve original events for diagnosis.
+- [ ] Define reconnect, replay, and stream-offset handling.
 
 Deepgram's current Nova streaming guide distinguishes `is_final`, which finalizes
 a segment, from `speech_final`, which marks a detected speech endpoint. Accumulate
@@ -93,16 +101,17 @@ change/cancellation workflow. Replacing transcript text does not change a bookin
 
 ## Design the spoken output path
 
-Choose synthesis transport from how text arrives. If the complete response is
-already available, a streaming HTTP response may be sufficient. Incremental text
-input needs an interface that accepts it while synthesis is running. Streaming
-audio output and streaming text input are separate capabilities.
+| Text arrival | Interface to consider | Check |
+| --- | --- | --- |
+| Complete response already available | Streaming HTTP output may suffice | Decoder and playback buffering |
+| Text arrives incrementally | Input interface that accepts text during synthesis | Streaming text input is separate from streaming audio output |
 
-Decide who forms phrases. Sending one token at a time can leave the synthesizer
-waiting for context or produce awkward phrasing; buffering the whole answer can
-delay useful speech. Start with the provider's documented behavior, then compare
-phrase policies using the same answers and playback path. Handle the final short
-phrase explicitly so it does not remain buffered indefinitely.
+Record who forms phrases. Token-by-token input can wait for context
+or sound awkward; whole-answer buffering can delay useful speech.
+
+1. Start with the provider's documented behavior.
+2. Compare phrase policies with identical answers and playback paths.
+3. Flush or otherwise handle the final short phrase so it cannot wait indefinitely.
 
 ElevenLabs' TTS WebSocket guide documents text buffering, chunk schedules, and
 `flush` for pending text. Its API reference recommends `auto_mode` for full
@@ -118,13 +127,13 @@ needs more bytes, or the browser rejects playback. Bind each chunk to its respon
 generation. On interruption, reject obsolete chunks and apply the player or
 carrier's queue-clearing contract before new speech is admitted.
 
-The speech-output contract should contain:
-
-- The actual codec, sample rate, channels, sample representation, and framing.
-- Who performs decoding or conversion, and where any resampling occurs.
-- Phrase buffering, flush behavior, backpressure, and queue limits.
-- Generation cancellation, already-produced audio, and player queue behavior.
-- The evidence used for playback completion and history reconciliation.
+| Output contract | Record |
+| --- | --- |
+| Format | Actual codec, rate, channels, sample representation, and framing |
+| Conversion | Owner of decoding/conversion and location of resampling |
+| Queues | Phrase buffering, flush, backpressure, and limits |
+| Interruption | Generation cancellation, produced audio, and player queue behavior |
+| Completion | Playback evidence and history reconciliation |
 
 Keep compressed bytes out of a raw PCM player. Do not add a WAV header to a raw
 audio message unless the receiving interface explicitly expects that container.
@@ -139,14 +148,19 @@ and listen with the chosen voice, model, language, and final transport.
 
 Keep a canonical value and a spoken rendering separately. For example, a business
 service can retain an ISO date while the agent says an unambiguous localized date.
-Do not mutate authoritative values merely to make TTS read them naturally. Check
-normalization on and off before adopting a manual substitution that might break
+Do not mutate authoritative values merely to make TTS read them naturally.
+
+Check normalization on and off before adopting a manual substitution that might break
 another language or a different occurrence of the same string.
 
-Pronunciation dictionaries and phoneme markup are model-specific. Verify support,
-dictionary version, initialization timing, and whether the integration actually
-forwards the option. A dictionary that exists in the provider account but is never
-included in the request cannot explain the output.
+Before diagnosing a dictionary failure, verify:
+
+- Model support for the dictionary or phoneme markup.
+- Dictionary version and initialization timing.
+- Whether the integration forwards the option in the request.
+
+A dictionary merely present in the provider account cannot explain output if it
+was never included in the request.
 
 For multilingual work, compare intelligibility, entity pronunciation, and repair
 burden per language. Language labels, accent labels, and voice availability are

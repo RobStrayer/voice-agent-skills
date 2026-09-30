@@ -1,8 +1,20 @@
 # Audio frontends: preserve speech while removing interference
 
+[Handbook](../../../../docs/handbook.md) / [Audio frontend skill](../SKILL.md)
+
 Reviewed: **2026-09-30 UTC**. Processing choices and test procedures here are original engineering guidance. Linked provider contracts were checked on that date; living pages usually do not establish a publication date. No model, audio benchmark, or provider call was run for this review.
 
 An audio frontend decides which samples reach recognition and turn detection. Choose it against a specific failure: agent speech returning through a speaker, a fan keeping VAD active, background conversation becoming a command, or quiet words disappearing. Record the existing processing before adding another stage.
+
+## Start with the symptom
+
+| Symptom or job | First check | Next section |
+| --- | --- | --- |
+| Agent interrupts its own speaker audio | Capture AEC and render-reference routing | [Echo and double-talk](#keep-the-echo-reference-aligned-during-double-talk) |
+| Quiet words vanish after filtering | Bypass the added enhancement; inspect onsets and clipping | [Diagnostic order](#diagnose-a-noisy-call-without-hiding-the-user) |
+| Choose a processing stage | Match the interference to the operation | [Operations](#choose-the-operation-that-matches-the-interference), then [deployment](#compare-deployment-choices) |
+| Distorted audio or unexplained delay | Format and timestamp contract at each boundary | [Formats](#preserve-the-format-contract) |
+| Decide whether a filter helped | Paired fixtures with speech-preservation evidence | [Paired testing](#run-a-paired-test-that-catches-information-loss) |
 
 ## Choose the operation that matches the interference
 
@@ -38,19 +50,36 @@ flowchart LR
 
 For a phone call, investigate echo at the caller's endpoint and the actual carrier/media path. The agent's generated TTS file alone lacks the caller's playback timing, speaker behavior, and capture clock. A noise filter on received media cannot substitute for a working endpoint echo-reference path.
 
-In browsers, request appropriate `echoCancellation`, `noiseSuppression`, and `autoGainControl` constraints, then inspect support and the track's actual `getSettings()`. A simple boolean is a preference; an `exact` constraint can reject the request if it cannot be satisfied. Returned settings describe configuration, not measured cancellation quality. Device changes require another inspection. See [MDN capture constraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) and [echo cancellation](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/echoCancellation).
+For browser capture:
+
+1. Request appropriate `echoCancellation`, `noiseSuppression`, and `autoGainControl` constraints.
+2. Inspect support and the track's actual `getSettings()`.
+3. Repeat that inspection after device changes.
+
+A boolean is a preference; an `exact` constraint can reject an unsatisfiable request. Settings establish configuration, not cancellation quality. [MDN capture constraints](https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints), [echo cancellation](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/echoCancellation).
 
 ## Keep the echo reference aligned during double-talk
 
 In reference-based AEC, feed the playback/render stream through the supported reference API while processing microphone capture. Check delay, clock drift, dropped reference frames, and changes in output routing. Clipping and nonlinear speaker behavior complicate the relationship between digital playback and captured echo. The current [WebRTC APM interface](https://webrtc.googlesource.com/src/+/refs/heads/main/api/audio/audio_processing.h) distinguishes capture `ProcessStream()` from render `ProcessReverseStream()`.
 
-Exercise far-end-only playback, near-end-only speech, and double-talk: the user says “wait, change that” while the agent is speaking. A quiet output during double-talk can mean the user's interruption was suppressed. Test moving the device, changing volume, switching to Bluetooth, and reconnecting. A headset comparison helps isolate the acoustic path; it does not prove every remaining fault is AEC.
+| Acoustic fixture | What to inspect |
+| --- | --- |
+| Far-end-only playback | Residual agent echo reaching capture |
+| Near-end-only speech | Preserved user words, including quiet onsets |
+| Double-talk: "wait, change that" during agent speech | Whether the genuine interruption survives; quiet output may mean it was suppressed |
+| Device movement, volume change, Bluetooth switch, reconnect | Reference routing and timing after the change |
+
+A headset comparison helps isolate the acoustic path; it does not prove every remaining fault is AEC.
 
 Avoid muting microphone input for the entire agent utterance when interruption is a product requirement. That prevents the system from observing genuine barge-in. Route an identified echo problem to its processing owner before raising VAD thresholds.
 
 ## Preserve the format contract
 
-Record codec, container/raw format, rate, channel order, sample width, byte order, numeric scale, frame size, and timestamps at each boundary. Decode compressed audio before passing samples to a PCM processor. Downmix only after an array-dependent operation. Convert a reference channel separately; do not average it into user speech.
+Record codec, container/raw format, rate, channel order, sample width, byte order, numeric scale, frame size, and timestamps at each boundary.
+
+- Decode compressed audio before a PCM processor.
+- Downmix after any array-dependent operation.
+- Convert the reference channel separately; do not average it into user speech.
 
 RNNoise's example consumes raw mono 16-bit PCM at 48 kHz. Its C API accepts float buffers, and the demo converts integer-valued PCM directly to floats. Confirm numeric scale when adapting normalized browser samples. Obtain frame size through `rnnoise_get_frame_size()` instead of assuming an arbitrary WebSocket chunk is one processing frame. [RNNoise README](https://gitlab.xiph.org/xiph/rnnoise/-/blob/main/README), [API](https://gitlab.xiph.org/xiph/rnnoise/-/blob/main/include/rnnoise.h), and [demo](https://gitlab.xiph.org/xiph/rnnoise/-/blob/main/examples/rnnoise_demo.c).
 
@@ -66,21 +95,50 @@ Use a stateful resampler and preserve continuous timestamps across chunks. Relab
 | LiveKit enhanced processing | Frontend, agent input, or SIP trunk, as supported | Cloud provides the Krisp/ai-coustics route. The agent-side ai-coustics plugin also supports a self-hosted SFU with a separately supplied license key and direct ai-coustics billing. Commercial model terms remain separate from the framework license. |
 | Provider speech processing | Provider input buffer or supported native SDK | Check exact API, language, platform, and service/SDK terms. The provider may expose no processed samples or internal quality metric. |
 
-LiveKit's [current cancellation guide](https://docs.livekit.io/transport/media/noise-cancellation) names agent-side Krisp VIVA and VIVA telephony, exposed in Python as `krisp.voice_isolation()` and `krisp.voice_isolation_telephony()`. BVC remains a frontend model; SIP-trunk processing uses NC. Avoid stacked enhanced frontend/agent filters; standard capture suppression and separate AEC can remain enabled. Check client support by SDK. The [ai-coustics self-hosted section](https://docs.livekit.io/transport/media/noise-cancellation#self-hosted-auth) specifies direct authentication through `auth`; agent hosting location alone does not establish that configuration.
+LiveKit's [current cancellation guide](https://docs.livekit.io/transport/media/noise-cancellation) distinguishes these integrations:
 
-OpenAI's [Realtime reference](https://developers.openai.com/api/reference/resources/realtime) places input noise reduction before VAD and model processing. Its `near_field` and `far_field` profiles describe microphone use. Select against the current Realtime schema, not an older beta field layout. Azure MAS DSP is documented for C++, C#, and Java on Windows/Linux, with minimum 16 kHz input and integral multiples of 16 kHz for downsampling. Neither interface establishes a universal configuration for every platform.
+| Location | Model or API named in the guide |
+| --- | --- |
+| Agent input, Krisp | VIVA and VIVA telephony; Python `krisp.voice_isolation()` and `krisp.voice_isolation_telephony()` |
+| Frontend | BVC; check client support by SDK |
+| SIP trunk | NC |
+
+Avoid stacked enhanced frontend/agent filters. Standard capture suppression and
+separate AEC can remain enabled.
+
+The [ai-coustics self-hosted section](https://docs.livekit.io/transport/media/noise-cancellation#self-hosted-auth) specifies direct authentication through `auth`. Agent hosting location alone does not establish that configuration.
+
+OpenAI's [Realtime reference](https://developers.openai.com/api/reference/resources/realtime) places input noise reduction before VAD and model processing. Its `near_field` and `far_field` profiles describe microphone use. Select against the current Realtime schema, not an older beta field layout.
+
+Azure MAS DSP is documented for C++, C#, and Java on Windows/Linux, with minimum
+16 kHz input and integral multiples of 16 kHz for downsampling. Neither interface
+establishes a universal configuration for every platform.
 
 ## Diagnose a noisy call without hiding the user
 
 Suppose a laptop agent interrupts itself when its speaker plays, a desk fan prolongs turns, and whispered corrections vanish after adding suppression. Preserve the same authorized capture and render fixture. Keep model, transcript prompts, output volume, and turn settings fixed.
 
-First compare headphones with speaker playback. Inspect capture AEC configuration and render-reference availability. Next bypass only the added enhancement while retaining the known capture configuration. Compare whisper onsets and trailing consonants. Then test environmental suppression alone against the fan, without speaker isolation unless nearby speech is genuinely unwanted. Check clipping before adjusting gain.
+| Order | Change or inspection | Evidence to keep |
+| --- | --- | --- |
+| 1 | Compare headphones with speaker playback; inspect capture AEC and render reference | Echo behavior on the same fixture |
+| 2 | Bypass only the added enhancement; retain known capture configuration | Whisper onsets and trailing consonants |
+| 3 | Test environmental suppression against the fan | Preserved speech and reduced interference; use isolation only if nearby speech is unwanted |
+| 4 | Inspect clipping before adjusting gain | Samples and level behavior |
+| 5 | Select the frontend, then recalibrate VAD/EOT on its output | Speech-start/end decisions and subgroup results |
 
-Only after selecting the frontend, recalibrate VAD/EOT on its output. Changed signal energy can move speech-start and speech-end decisions. Threshold tuning cannot restore deleted words. For languages, accents, distant speakers, and quiet speech, measure subgroup results rather than asserting a universal benefit.
+Changed signal energy can move detector decisions. Threshold tuning cannot restore deleted words. Keep language, accent, distance, and quiet-speech results separate.
 
 ## Run a paired test that catches information loss
 
-Replay the same authorized source through bypass and candidate processing, preserving unprocessed capture, render reference, processed output, configuration, timestamps, and ground-truth words. Store recordings privately with a retention policy. A browser/device AEC cannot be fully assessed by replaying microphone audio into a server filter; use synchronized endpoint capture/render or a controlled acoustic replay. “Unprocessed” is only accurate if earlier device effects are absent or recorded as a limitation.
+Paired-test setup:
+
+- [ ] Use the same authorized source for bypass and candidate processing.
+- [ ] Preserve capture, render reference, processed output, configuration, timestamps, and ground-truth words.
+- [ ] Store recordings privately under the retention policy.
+- [ ] For endpoint AEC, use synchronized capture/render or controlled acoustic replay.
+- [ ] Label earlier device processing; call capture "unprocessed" only when that is accurate.
+
+Replaying microphone audio into a server filter alone cannot fully assess browser/device AEC.
 
 Use fixtures for silence/noise, normal and quiet speech, fan/transients, competing talkers, reverberation, far-end-only echo, and double-talk. Include supported devices, codecs, languages, and distances. Do not normalize each output separately before checking gain or clipping, since that can conceal a processing failure.
 
