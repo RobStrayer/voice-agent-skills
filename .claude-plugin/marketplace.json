@@ -11,7 +11,7 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/foundations/"],
-      "description": "Provider-neutral voice agent skills: stack selection, turn taking, audio, speech pipeline, conversation design, calls, latency, media debugging, evaluation, compliance and security.",
+      "description": "Provider-neutral voice agent skills: stack selection, turn taking, audio, speech pipeline, conversation design, calls, latency, media debugging, evaluation, cost, compliance and security.",
       "license": "MIT",
       "category": "voice",
       "keywords": ["voice", "voice-agents", "speech", "telephony"]

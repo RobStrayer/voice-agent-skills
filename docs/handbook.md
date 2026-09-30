@@ -11,6 +11,8 @@ and checks you can apply to a real project.
 
 Source review dates and version qualifications live in each guide.
 **Guide** links teach the topic; **Skill** links give a coding agent its working instructions.
+New to voice agents? Read [getting started](getting-started.md) first. For one call
+followed end to end, read [how a voice call really works](walkthrough.md).
 
 ## 01 Design the system
 
@@ -21,6 +23,7 @@ and the recovery before committing to a provider.
 | :--- | :--- | :--- |
 | **Architecture** | Speech paths, hosting, transport, capacity, cost, and a worked appointment-system decision | [Guide](../skills/foundations/voice-stack-selection/references/architecture-guide.md) · [Skill](../skills/foundations/voice-stack-selection/SKILL.md) |
 | **Conversation and accessibility** | Useful questions, narrow repairs, confirmations, and supported alternatives to speech | [Skill and checklist](../skills/foundations/voice-conversation-design/SKILL.md) |
+| **Cost** | Per-minute cost from phone, speech, model and server prices, with stress cases | [Skill and estimator](../skills/foundations/voice-cost-estimation/SKILL.md) |
 
 ![Audio, call control, and business actions have separate owners and evidence.](../skills/foundations/voice-stack-selection/assets/voice-system-map.svg)
 
@@ -64,6 +67,7 @@ accepted request, and a completed business action are different evidence.
 | :--- | :--- | :--- |
 | **Tools, transactions, and handoffs** | Lost responses, idempotency, corrected intent, action ledgers, and ownership | [Guide](../skills/foundations/voice-conversation-design/references/transactions-and-handoffs.md) · [Skill](../skills/foundations/voice-conversation-design/SKILL.md) |
 | **Telephony and call control** | Signaling versus media, codecs, DTMF, transfers, webhook evidence, and cleanup | [Guide](../skills/foundations/voice-call-reliability/references/telephony-guide.md) · [Skill](../skills/foundations/voice-call-reliability/SKILL.md) |
+| **Phone rules** | Consent, AI disclosure, do-not-call lists, calling hours, recording consent, caller ID and spam labels | [Legal guide](../skills/foundations/voice-phone-compliance/references/legal-requirements-guide.md) · [Skill](../skills/foundations/voice-phone-compliance/SKILL.md) |
 
 ![A caller correction stops old playback while the first booking action remains pending. Its eventual result must be reconciled before acting on the corrected request.](../skills/foundations/voice-conversation-design/assets/interrupted-action.svg)
 
@@ -90,6 +94,7 @@ a successful text simulation each prove only part of it.
 | **Production operations** | Admission, warm capacity, graceful draining, dependency failure, and cost boundaries | [Guide](../skills/foundations/voice-call-reliability/references/production-operations-guide.md) · [Skill](../skills/foundations/voice-call-reliability/SKILL.md) |
 | **Latency and media debugging** | Compatible clocks, first useful speech, buffering, one-way audio, and stale output | [Latency skill](../skills/foundations/voice-latency-audit/SKILL.md) · [Media skill](../skills/foundations/voice-media-debugging/SKILL.md) |
 | **Evaluation and release** | Conversation, tools, audio, transport, failure, and lifecycle evidence | [Skill and test matrix](../skills/foundations/voice-agent-evaluation/SKILL.md) |
+| **Security** | Prompt injection by voice, key handling, caller identity, toll fraud, and red-team scripts | [Guide](../skills/foundations/voice-agent-security/references/security-guide.md) · [Skill](../skills/foundations/voice-agent-security/SKILL.md) |
 
 | Ask before shipping | Evidence to keep |
 | :--- | :--- |
@@ -98,9 +103,11 @@ a successful text simulation each prove only part of it.
 | Does the session recover? | Failed starts, disconnects, transfers, pending actions, and cleanup |
 | What changed under load? | Comparable traffic, resource use, failure counts, and latency distributions |
 
+![An illustrative timeline of one reply: the turn is committed at 260 ms, the first phrase is ready at 720 ms, playback starts at 1,060 ms and useful words are heard at 1,120 ms.](../assets/diagrams/latency-budget.svg)
+
 **Leave with:** a repeatable release set and named gaps in the evidence.
 
 ---
 
 [Choose a skill](catalog.md) · [Find runtime components](resources.md) ·
-[Installation](usage.md) · [Source review](documentation-review.md) · [Back to home](../README.md)
+[Installation](usage.md) · [Glossary](glossary.md) · [Source review](documentation-review.md) · [Back to home](../README.md)

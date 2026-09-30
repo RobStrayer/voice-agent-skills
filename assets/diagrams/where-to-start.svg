@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 804" width="1080" height="804" role="img" aria-labelledby="t d">
+<title id="t">Where should you start?</title>
+<desc id="d">A decision flowchart with three questions. Question 1: do you want to write code? If no, use a managed platform: build it in a dashboard, pick a voice, write a prompt and attach a phone number, for example Vapi, Retell, ElevenLabs Agents or Synthflow. If yes, question 2: do you need to pick each part yourself, such as your own speech-to-text, model and voice, self-hosting, or fine control of cost and speed? If yes, use an open-source framework such as LiveKit Agents or Pipecat and code the listen, think, speak loop yourself. If no, question 3: is it for a browser or app, or for phone calls? For a browser or app, use a speech-to-speech API such as OpenAI Realtime or Gemini Live, where one model hears and speaks and you add tools and hosting. For phone calls, use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo, where the provider runs speech and your server gets the caller's words as text or the raw audio. Footnote: this is not a one-way door; frameworks can run speech-to-speech models, and every path can call your own tools.</desc>
+<!-- Edit freely. Questions sit in the left column, outcomes in the right; each outcome is one group.
+     Chip labels are centred; if you rename a chip, set its width to about characters x 7.1 + 24 and recentre the label. -->
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--think:#4a3aa7;--speak:#b3441a}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--think:#a29af0;--speak:#ec7a45}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
+.ink2{fill:var(--ink2)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.h2{font-size:19px;font-weight:700}
+.e-net{fill:var(--net)}.e-listen{fill:var(--listen)}.e-think{fill:var(--think)}.e-speak{fill:var(--speak)}
+.bar-net{fill:var(--net)}.bar-listen{fill:var(--listen)}.bar-think{fill:var(--think)}.bar-speak{fill:var(--speak)}
+.q{font-size:17px;font-weight:600}.desc{font-size:15px;fill:var(--ink2)}.foot{font-size:15px;fill:var(--ink2)}
+.badge{fill:var(--net-t);stroke:var(--line)}.num{font-size:16px;font-weight:700}
+.chip{fill:var(--net-t);stroke:var(--line)}.chipt{font-size:14px}
+.arrow{fill:none;stroke:var(--ink2);stroke-width:2}.head{fill:var(--ink2)}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="803" rx="16"/>
+<text class="h1" x="32" y="50">Where should you start?</text>
+<text class="sub" x="32" y="78">Answer up to three questions to pick a first path. You can switch later.</text>
+<g id="question-1">
+<rect class="card" x="32" y="108" width="360" height="134" rx="14"/>
+<circle class="badge" cx="68" cy="144" r="16"/>
+<text class="num" x="68" y="149.5" text-anchor="middle">1</text>
+<text class="q" x="96" y="150">Do you want to write code?</text>
+<text class="desc" x="96" y="174"><tspan x="96" dy="0">Or would you rather set it all up</tspan><tspan x="96" dy="21">in a browser dashboard?</tspan></text>
+</g>
+<g id="question-2">
+<rect class="card" x="32" y="278" width="360" height="134" rx="14"/>
+<circle class="badge" cx="68" cy="314" r="16"/>
+<text class="num" x="68" y="319.5" text-anchor="middle">2</text>
+<text class="q" x="96" y="320">Do you need to pick each part?</text>
+<text class="desc" x="96" y="344"><tspan x="96" dy="0">Your own speech-to-text, model and</tspan><tspan x="96" dy="21">voice, self-hosting, or fine control</tspan><tspan x="96" dy="21">of cost and speed.</tspan></text>
+</g>
+<g id="question-3">
+<rect class="card" x="32" y="448" width="360" height="282" rx="14"/>
+<circle class="badge" cx="68" cy="554.5" r="16"/>
+<text class="num" x="68" y="560.0" text-anchor="middle">3</text>
+<text class="q" x="96" y="560.5">Is it for a browser or app,</text>
+<text class="q" x="96" y="584.5">or for phone calls?</text>
+<text class="desc" x="96" y="608.5"><tspan x="96" dy="0">Start with the channel you'll</tspan><tspan x="96" dy="21">launch on first.</tspan></text>
+</g>
+<path class="arrow" d="M68 242V275" marker-end="url(#ah)"/>
+<text class="mono ink2" x="82" y="265.0">Yes</text>
+<path class="arrow" d="M68 412V445" marker-end="url(#ah)"/>
+<text class="mono ink2" x="82" y="435.0">No</text>
+<g id="path-a">
+<clipPath id="clip-a"><rect x="532" y="108" width="516" height="134" rx="14"/></clipPath>
+<rect class="card" x="532" y="108" width="516" height="134" rx="14"/>
+<rect class="bar-net" x="532" y="108" width="6" height="134" clip-path="url(#clip-a)"/>
+<text class="eyebrow e-net" x="556" y="138">MANAGED PLATFORM</text>
+<text class="h2" x="556" y="164">Build it in a dashboard</text>
+<text class="desc" x="556" y="188">Pick a voice, write a prompt, attach a phone number.</text>
+<rect class="chip" x="556" y="202" width="52.4" height="26" rx="13"/>
+<text class="chipt" x="582.2" y="220" text-anchor="middle">Vapi</text>
+<rect class="chip" x="616.4" y="202" width="66.6" height="26" rx="13"/>
+<text class="chipt" x="649.7" y="220" text-anchor="middle">Retell</text>
+<rect class="chip" x="691.0" y="202" width="144.7" height="26" rx="13"/>
+<text class="chipt" x="763.4" y="220" text-anchor="middle">ElevenLabs Agents</text>
+<rect class="chip" x="843.7" y="202" width="87.9" height="26" rx="13"/>
+<text class="chipt" x="887.7" y="220" text-anchor="middle">Synthflow</text>
+</g>
+<g id="path-b">
+<clipPath id="clip-b"><rect x="532" y="278" width="516" height="134" rx="14"/></clipPath>
+<rect class="card" x="532" y="278" width="516" height="134" rx="14"/>
+<rect class="bar-listen" x="532" y="278" width="6" height="134" clip-path="url(#clip-b)"/>
+<text class="eyebrow e-listen" x="556" y="308">OPEN-SOURCE FRAMEWORK</text>
+<text class="h2" x="556" y="334">Assemble your own pipeline</text>
+<text class="desc" x="556" y="358">Code the listen, think, speak loop and run it where you like.</text>
+<rect class="chip" x="556" y="372" width="123.4" height="26" rx="13"/>
+<text class="chipt" x="617.7" y="390" text-anchor="middle">LiveKit Agents</text>
+<rect class="chip" x="687.4" y="372" width="73.7" height="26" rx="13"/>
+<text class="chipt" x="724.2" y="390" text-anchor="middle">Pipecat</text>
+</g>
+<g id="path-c">
+<clipPath id="clip-c"><rect x="532" y="448" width="516" height="134" rx="14"/></clipPath>
+<rect class="card" x="532" y="448" width="516" height="134" rx="14"/>
+<rect class="bar-think" x="532" y="448" width="6" height="134" clip-path="url(#clip-c)"/>
+<text class="eyebrow e-think" x="556" y="478">SPEECH-TO-SPEECH API</text>
+<text class="h2" x="556" y="504">One model hears and speaks</text>
+<text class="desc" x="556" y="528">The most natural feel for a prototype. You add tools and hosting.</text>
+<rect class="chip" x="556" y="542" width="130.5" height="26" rx="13"/>
+<text class="chipt" x="621.2" y="560" text-anchor="middle">OpenAI Realtime</text>
+<rect class="chip" x="694.5" y="542" width="102.1" height="26" rx="13"/>
+<text class="chipt" x="745.5" y="560" text-anchor="middle">Gemini Live</text>
+</g>
+<g id="path-d">
+<clipPath id="clip-d"><rect x="532" y="596" width="516" height="134" rx="14"/></clipPath>
+<rect class="card" x="532" y="596" width="516" height="134" rx="14"/>
+<rect class="bar-speak" x="532" y="596" width="6" height="134" clip-path="url(#clip-d)"/>
+<text class="eyebrow e-speak" x="556" y="626">PHONE PROVIDER + YOUR CODE</text>
+<text class="h2" x="556" y="652">Let the phone provider run speech</text>
+<text class="desc" x="556" y="676">Your server gets the caller's words as text, or the raw audio.</text>
+<rect class="chip" x="556" y="690" width="194.4" height="26" rx="13"/>
+<text class="chipt" x="653.2" y="708" text-anchor="middle">Twilio ConversationRelay</text>
+<rect class="chip" x="758.4" y="690" width="66.6" height="26" rx="13"/>
+<text class="chipt" x="791.7" y="708" text-anchor="middle">Telnyx</text>
+<rect class="chip" x="833.0" y="690" width="59.5" height="26" rx="13"/>
+<text class="chipt" x="862.8" y="708" text-anchor="middle">Plivo</text>
+</g>
+<path class="arrow" d="M392 175.0H529" marker-end="url(#ah)"/>
+<text class="mono ink2" x="462.0" y="165.0" text-anchor="middle">No</text>
+<path class="arrow" d="M392 345.0H529" marker-end="url(#ah)"/>
+<text class="mono ink2" x="462.0" y="335.0" text-anchor="middle">Yes</text>
+<path class="arrow" d="M392 515.0H529" marker-end="url(#ah)"/>
+<text class="mono ink2" x="462.0" y="505.0" text-anchor="middle">Browser or app</text>
+<path class="arrow" d="M392 663.0H529" marker-end="url(#ah)"/>
+<text class="mono ink2" x="462.0" y="653.0" text-anchor="middle">Phone calls</text>
+<text class="foot" x="32" y="770">Not a one-way door: frameworks can run speech-to-speech models, and every path can call your own tools.</text>
+</svg>

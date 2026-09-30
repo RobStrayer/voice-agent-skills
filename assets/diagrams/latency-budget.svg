@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 628" width="1080" height="628" role="img" aria-labelledby="t d">
+<title id="t">Where one reply's time goes</title>
+<desc id="d">An illustrative timeline of one reply, not a benchmark. The caller stops talking at 0 milliseconds. The app waits for the end of the turn and commits it at 260 milliseconds. The language model then writes a first speakable phrase, ready at 720 milliseconds, 460 milliseconds later. Text-to-speech makes the first audio chunk by 900 milliseconds and it reaches the caller's device at 950 milliseconds, 230 milliseconds after the phrase. The device buffers it and playback starts at 1,060 milliseconds, 110 milliseconds later. So the caller hears 1,060 milliseconds of silence, then a short filler, and the first useful words at 1,120 milliseconds. Notes: stages can overlap, so measure end to end on real calls; adding each stage's 95th percentile does not give the end-to-end 95th percentile.</desc>
+<!-- Edit freely. Synthetic trace: keep the numbers in <desc> in step with the bars.
+     Time maps to x as x = 300 + (ms - (-150)) * 0.51852. Each stage row is one bar plus its duration label. -->
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--net:#57606a;--net-t:#eaeef2;--listen:#0b7a53;--think:#4a3aa7;--speak:#b3441a;--speak-t:#f2c3ad;--grid:#eaeef2}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--net:#8b949e;--net-t:#21262d;--listen:#2fb784;--think:#a29af0;--speak:#ec7a45;--speak-t:#7a3d22;--grid:#21262d}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.mono,.tick{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
+.tick{fill:var(--ink2)}.ink2{fill:var(--ink2)}
+.bg{fill:var(--bg);stroke:var(--line)}.card{fill:var(--card);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px;fill:var(--ink2)}
+.e-listen{fill:var(--listen)}.e-think{fill:var(--think)}.e-speak{fill:var(--speak)}.e-net{fill:var(--net)}
+.name{font-size:16px;font-weight:600}.small{font-size:14px}.foot{font-size:15px;fill:var(--ink2)}
+.total{font-size:17px;font-weight:700}
+.grid{stroke:var(--grid);stroke-width:1}.axis{stroke:var(--line);stroke-width:1.5}
+.zero{stroke:var(--ink2);stroke-width:1.5;stroke-dasharray:4 4}
+.b-listen{fill:var(--listen)}.b-think{fill:var(--think)}.b-speak{fill:var(--speak)}.b-speak-t{fill:var(--speak-t)}.b-net{fill:var(--net)}
+.wave-caller{fill:var(--ink2)}.wave-filler{fill:var(--speak-t)}.wave-agent{fill:var(--speak)}
+.silence{stroke:var(--line);stroke-width:2;stroke-dasharray:2 6;stroke-linecap:round}
+.pill{fill:var(--card);stroke:var(--line)}
+.brace{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}.brace-tick{stroke:var(--ink2);stroke-width:2}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="627" rx="16"/>
+<text class="h1" x="32" y="50">Where one reply's time goes</text>
+<text class="sub" x="32" y="78">One turn, from the caller going quiet to hearing a useful answer. An illustrative trace, not a benchmark.</text>
+<rect class="card" x="24" y="104" width="1032" height="500" rx="14"/>
+<path class="grid" d="M377.8 116V420"/>
+<text class="tick" x="377.8" y="442" text-anchor="middle">0</text>
+<path class="grid" d="M481.5 116V420"/>
+<text class="tick" x="481.5" y="442" text-anchor="middle">200</text>
+<path class="grid" d="M585.2 116V420"/>
+<text class="tick" x="585.2" y="442" text-anchor="middle">400</text>
+<path class="grid" d="M688.9 116V420"/>
+<text class="tick" x="688.9" y="442" text-anchor="middle">600</text>
+<path class="grid" d="M792.6 116V420"/>
+<text class="tick" x="792.6" y="442" text-anchor="middle">800</text>
+<path class="grid" d="M896.3 116V420"/>
+<text class="tick" x="896.3" y="442" text-anchor="middle">1,000</text>
+<path class="grid" d="M1000.0 116V420"/>
+<text class="tick" x="1000.0" y="442" text-anchor="middle">1,200 ms</text>
+<path class="axis" d="M300 420H1000"/>
+<path class="zero" d="M377.8 110V420"/>
+<text class="mono ink2" x="385.8" y="122">caller stops talking</text>
+<text class="eyebrow" x="56" y="150">CALLER</text>
+<text class="name" x="56" y="172">What they hear</text>
+<rect class="wave-caller" x="298.0" y="152.0" width="4" height="8" rx="2"/>
+<rect class="wave-caller" x="305.2" y="148.0" width="4" height="16" rx="2"/>
+<rect class="wave-caller" x="312.3" y="145.0" width="4" height="22" rx="2"/>
+<rect class="wave-caller" x="319.5" y="150.0" width="4" height="12" rx="2"/>
+<rect class="wave-caller" x="326.6" y="147.0" width="4" height="18" rx="2"/>
+<rect class="wave-caller" x="333.8" y="143.0" width="4" height="26" rx="2"/>
+<rect class="wave-caller" x="341.0" y="149.0" width="4" height="14" rx="2"/>
+<rect class="wave-caller" x="348.1" y="146.0" width="4" height="20" rx="2"/>
+<rect class="wave-caller" x="355.3" y="151.0" width="4" height="10" rx="2"/>
+<rect class="wave-caller" x="362.4" y="148.0" width="4" height="16" rx="2"/>
+<rect class="wave-caller" x="369.6" y="152.0" width="4" height="8" rx="2"/>
+<path class="silence" d="M383.8 156H921.4"/>
+<rect class="pill" x="568.6" y="142" width="168" height="28" rx="14"/>
+<text class="mono ink2" x="652.6" y="161" text-anchor="middle">1,060 ms silence</text>
+<rect class="wave-filler" x="927.5" y="151.0" width="4" height="10" rx="2"/>
+<rect class="wave-filler" x="937.3" y="147.0" width="4" height="18" rx="2"/>
+<rect class="wave-filler" x="947.0" y="150.0" width="4" height="12" rx="2"/>
+<rect class="wave-agent" x="956.8" y="145.0" width="4" height="22" rx="2"/>
+<rect class="wave-agent" x="966.6" y="148.0" width="4" height="16" rx="2"/>
+<rect class="wave-agent" x="976.4" y="143.0" width="4" height="26" rx="2"/>
+<rect class="wave-agent" x="986.1" y="149.0" width="4" height="14" rx="2"/>
+<rect class="wave-agent" x="995.9" y="146.0" width="4" height="20" rx="2"/>
+<text class="eyebrow e-listen" x="56" y="208">LISTEN</text>
+<text class="name" x="56" y="230">Wait for end of turn</text>
+<rect class="b-listen" x="377.8" y="203.0" width="134.8" height="22" rx="4"/>
+<text class="mono ink2" x="522.6" y="219.0">260 ms</text>
+<text class="eyebrow e-think" x="56" y="266">THINK</text>
+<text class="name" x="56" y="288">Model writes a first phrase</text>
+<rect class="b-think" x="512.6" y="261.0" width="238.5" height="22" rx="4"/>
+<text class="mono ink2" x="761.1" y="277.0">+460 ms</text>
+<text class="eyebrow e-speak" x="56" y="324">SPEAK</text>
+<text class="name" x="56" y="346">Make audio, then send it</text>
+<rect class="b-speak" x="751.1" y="319.0" width="93.3" height="22" rx="4"/>
+<rect class="b-speak-t" x="846.4" y="319.0" width="24.0" height="22" rx="4"/>
+<text class="mono ink2" x="880.4" y="335.0">+230 ms</text>
+<text class="eyebrow e-net" x="56" y="382">DEVICE</text>
+<text class="name" x="56" y="404">Buffer, then play</text>
+<rect class="b-net" x="870.4" y="377.0" width="57.0" height="22" rx="4"/>
+<text class="mono ink2" x="937.4" y="393.0">+110 ms</text>
+<text class="small ink2" x="845.4" y="358.0" text-anchor="middle">first chunk</text>
+<path class="brace" d="M377.8 468V478H958.5V468"/>
+<path class="brace-tick" d="M927.4 472V478"/>
+<text class="total" x="668.15" y="504" text-anchor="middle">1,120 ms until the caller hears a useful answer</text>
+<text class="small ink2" x="668.15" y="526" text-anchor="middle">First sound at 1,060 ms. A filler like “one moment” is not the answer.</text>
+<text class="foot" x="56" y="572">Stages can overlap: recognition runs while the caller talks, and later audio is made while earlier audio plays.</text>
+<text class="foot" x="56" y="596">Measure end to end on real calls. Adding up each stage’s p95 does not give you the end-to-end p95.</text>
+</svg>

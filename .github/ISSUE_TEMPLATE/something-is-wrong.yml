@@ -1,0 +1,24 @@
+name: Something is wrong
+description: A mistake in a guide or skill, a broken link, or a skill that misbehaves.
+labels: [bug]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: File path or page link.
+      placeholder: skills/foundations/voice-turn-taking/SKILL.md
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong
+      description: What does it say or do, and what should it say or do instead? Link a source if a fact is out of date.
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent and version (if a skill misbehaved)
+      placeholder: Claude Code 2.1, Codex CLI 0.x

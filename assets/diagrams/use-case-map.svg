@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 670" width="1080" height="670" role="img" aria-labelledby="t d">
+<title id="t">What's worth building</title>
+<desc id="d">A grid of voice agent use cases by difficulty (easy 2 to very hard 5, left to right) and value (very high 5 at the top to low 2 at the bottom). The start-here zone covers easy to medium difficulty with medium to high value: oral exams (easy, medium value); small-business front desk, restaurant phones, and speed-to-lead call-backs (medium, medium); AI-led interviews, language tutoring and freight check calls (medium, high). Outside it: reselling agents to local firms (easy, low, avoid at first); calls made for you (medium, low); companions and toys (hard, medium, avoid at first), accessibility and government 311 and 911 (hard, medium); bank and telco service (hard, high); healthcare front desk (hard, very high); outbound cold calling (very hard, low, avoid at first); debt collection and in-car assistants (very hard, medium, both avoid at first); drive-thru ordering (very hard, high, avoid at first). Ratings are judgements from public reports, not measurements.</desc>
+<!-- Edit freely. Each use case is one dot plus a label inside its grid cell; move it by changing its (difficulty, value) key in the generator or by editing x/y here. -->
+<style>
+svg{--bg:#f6f8fa;--card:#fff;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--listen:#0b7a53;--listen-t:#dff3ea;--think:#4a3aa7;--warn:#8a5c00}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--listen:#2fb784;--listen-t:#12301f;--think:#a29af0;--warn:#d29922}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.bg{fill:var(--bg);stroke:var(--line)}
+.h1{font-size:27px;font-weight:700}.sub{font-size:16px;fill:var(--ink2)}
+.grid-box{fill:var(--card);stroke:var(--line)}.grid{stroke:var(--line)}
+.zone{fill:var(--listen-t)}.zone-edge{fill:none;stroke:var(--listen);stroke-width:2;stroke-dasharray:6 5}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.4px}.e-listen{fill:var(--listen)}
+.axis{font-size:15px;font-weight:600}.n{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-weight:400;fill:var(--ink2)}
+.axis-title{font-size:14px;font-weight:700;letter-spacing:1.4px;fill:var(--ink2)}
+.item{font-size:15px}.legend{font-size:15px}.note{font-size:15px;fill:var(--ink2)}
+.dot{fill:var(--think)}.ring{fill:none;stroke:var(--warn);stroke-width:2.5}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="669" rx="16"/>
+<text class="h1" x="32" y="50">What's worth building</text>
+<text class="sub" x="32" y="78">Use cases by difficulty and value, from reports up to September 2026. Start in the green zone.</text>
+<rect class="grid-box" x="176" y="150" width="872" height="416" rx="10"/>
+<rect class="zone" x="176.0" y="254" width="436.0" height="208"/>
+<path class="grid" d="M394.0 150V566"/>
+<path class="grid" d="M176 254H1048"/>
+<path class="grid" d="M612.0 150V566"/>
+<path class="grid" d="M176 358H1048"/>
+<path class="grid" d="M830.0 150V566"/>
+<path class="grid" d="M176 462H1048"/>
+<rect class="zone-edge" x="177.0" y="255" width="434.0" height="206" rx="4"/>
+<text class="eyebrow e-listen" x="190.0" y="448">START HERE</text>
+<text class="axis" x="285.0" y="136" text-anchor="middle"><tspan class="n">2</tspan> Easy</text>
+<text class="axis" x="503.0" y="136" text-anchor="middle"><tspan class="n">3</tspan> Medium</text>
+<text class="axis" x="721.0" y="136" text-anchor="middle"><tspan class="n">4</tspan> Hard</text>
+<text class="axis" x="939.0" y="136" text-anchor="middle"><tspan class="n">5</tspan> Very hard</text>
+<text class="axis" x="160" y="207.0" text-anchor="end">Very high <tspan class="n">5</tspan></text>
+<text class="axis" x="160" y="311.0" text-anchor="end">High <tspan class="n">4</tspan></text>
+<text class="axis" x="160" y="415.0" text-anchor="end">Medium <tspan class="n">3</tspan></text>
+<text class="axis" x="160" y="519.0" text-anchor="end">Low <tspan class="n">2</tspan></text>
+<text class="axis-title" x="176" y="106">DIFFICULTY →</text>
+<text class="axis-title" x="160" y="136" text-anchor="end">VALUE ↑</text>
+<circle class="ring" cx="196.0" cy="509.0" r="5"/>
+<text class="item" x="210.0" y="514.0">Reselling to local firms</text>
+<circle class="dot" cx="196.0" cy="405.0" r="5.5"/>
+<text class="item" x="210.0" y="410.0">Oral exams</text>
+<circle class="dot" cx="414.0" cy="509.0" r="5.5"/>
+<text class="item" x="428.0" y="514.0">Calls made for you</text>
+<circle class="dot" cx="414.0" cy="379.0" r="5.5"/>
+<text class="item" x="428.0" y="384.0">Small-business front desk</text>
+<circle class="dot" cx="414.0" cy="405.0" r="5.5"/>
+<text class="item" x="428.0" y="410.0">Restaurant phones</text>
+<circle class="dot" cx="414.0" cy="431.0" r="5.5"/>
+<text class="item" x="428.0" y="436.0">Speed-to-lead call-backs</text>
+<circle class="dot" cx="414.0" cy="275.0" r="5.5"/>
+<text class="item" x="428.0" y="280.0">AI-led interviews</text>
+<circle class="dot" cx="414.0" cy="301.0" r="5.5"/>
+<text class="item" x="428.0" y="306.0">Language tutoring</text>
+<circle class="dot" cx="414.0" cy="327.0" r="5.5"/>
+<text class="item" x="428.0" y="332.0">Freight check calls</text>
+<circle class="ring" cx="632.0" cy="379.0" r="5"/>
+<text class="item" x="646.0" y="384.0">Companions and toys</text>
+<circle class="dot" cx="632.0" cy="405.0" r="5.5"/>
+<text class="item" x="646.0" y="410.0">Accessibility</text>
+<circle class="dot" cx="632.0" cy="431.0" r="5.5"/>
+<text class="item" x="646.0" y="436.0">Government 311 and 911</text>
+<circle class="dot" cx="632.0" cy="301.0" r="5.5"/>
+<text class="item" x="646.0" y="306.0">Bank and telco service</text>
+<circle class="dot" cx="632.0" cy="197.0" r="5.5"/>
+<text class="item" x="646.0" y="202.0">Healthcare front desk</text>
+<circle class="ring" cx="850.0" cy="509.0" r="5"/>
+<text class="item" x="864.0" y="514.0">Outbound cold calling</text>
+<circle class="ring" cx="850.0" cy="392.0" r="5"/>
+<text class="item" x="864.0" y="397.0">Debt collection</text>
+<circle class="ring" cx="850.0" cy="418.0" r="5"/>
+<text class="item" x="864.0" y="423.0">In-car assistants</text>
+<circle class="ring" cx="850.0" cy="301.0" r="5"/>
+<text class="item" x="864.0" y="306.0">Drive-thru ordering</text>
+<circle class="dot" cx="182" cy="605" r="5.5"/>
+<text class="legend" x="196" y="610">Use case</text>
+<circle class="ring" cx="286" cy="605" r="5"/>
+<text class="legend" x="300" y="610">Avoid at first: legal, safety or partner hurdles</text>
+<text class="note" x="176" y="638">Ratings are judgements from public reports, not measurements. Details and sources are in the guide.</text>
+</svg>

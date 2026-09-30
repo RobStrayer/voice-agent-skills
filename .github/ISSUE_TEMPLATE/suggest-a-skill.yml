@@ -1,0 +1,26 @@
+name: Suggest a skill, provider or resource
+description: Something that would help people build voice agents and should be here.
+labels: [enhancement]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: The skill, repo or page you're suggesting.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What it helps with
+      description: Who would use it, and for what task?
+    validations:
+      required: true
+  - type: dropdown
+    id: official
+    attributes:
+      label: Who publishes it?
+      options:
+        - The provider itself
+        - A third party or the community
+        - Not sure

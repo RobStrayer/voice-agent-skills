@@ -2,7 +2,7 @@
 
 [Home](../README.md) / [Engineering handbook](handbook.md) / Core skills
 
-**36 bundled skills** · **9 original foundations** · **27 provider skills**
+**39 bundled skills** · **12 original foundations** · **27 provider skills**
 
 Choose a foundation for the engineering problem, then a provider skill for the implementation. All provider names below open the original maintained source; **Snapshot** opens the dated copy kept here.
 
@@ -18,6 +18,9 @@ Reviewed: **2026-09-30 UTC**. [More upstream skills](more-skills.md) cover addit
 | Fix conversation, tool progress, or handoffs | [voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md) · [voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md) |
 | Investigate delay, silence, or stale playback | [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) · [voice-media-debugging](../skills/foundations/voice-media-debugging/SKILL.md) |
 | Test a change before release | [voice-agent-evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md) |
+| Estimate what it will cost | [voice-cost-estimation](../skills/foundations/voice-cost-estimation/SKILL.md) |
+| Stay legal on the phone, or fix spam-labelled numbers | [voice-phone-compliance](../skills/foundations/voice-phone-compliance/SKILL.md) |
+| Review security before launch | [voice-agent-security](../skills/foundations/voice-agent-security/SKILL.md) |
 
 **Provider shortcuts:** [LiveKit](#livekit) · [ElevenLabs](#elevenlabs) · [Twilio](#twilio) · [Pipecat](#pipecat) · [Cartesia](#cartesia) · [OpenAI](#openai)
 
@@ -28,11 +31,14 @@ Original provider-neutral skills. Use with project context and redacted evidence
 | Skill and original source | What it helps with | Bundled copy |
 | --- | --- | --- |
 | [voice-agent-evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md) | Design and run proportionate voice agent evaluations covering conversation success, turn taking, tool correctness, audio behavior, failures, and lifecycle cleanup. | Original NL Voice Skills material |
+| [voice-agent-security](../skills/foundations/voice-agent-security/SKILL.md) | Harden a voice agent against prompt injection by phone, spoofed caller ID, leaked keys, PII in transcripts, toll fraud and cloning misuse; includes red-team scripts. | Original NL Voice Skills material |
 | [voice-audio-frontends](../skills/foundations/voice-audio-frontends/SKILL.md) | Diagnose echo and noise, choose processing placement, preserve quiet speech, and compare enhancement with paired tests. | Original NL Voice Skills material |
 | [voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md) | Design and debug telephony, transfers, capacity, shutdown, observability, and incident recovery. | Original NL Voice Skills material |
 | [voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md) | Write and evaluate voice agent prompts for spoken turn taking, concise responses, clarification, tool progress, interruptions, and safe handoffs. | Original NL Voice Skills material |
+| [voice-cost-estimation](../skills/foundations/voice-cost-estimation/SKILL.md) | Estimate cost per minute, per call and per month from your own prices, find what drives the bill, and stress-test the numbers. | Original NL Voice Skills material |
 | [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) | Investigate voice agent response delay using raw turn events, consistent clocks, component timings, and audio playback evidence; use for latency regressions and benchmark audits. | Original NL Voice Skills material |
 | [voice-media-debugging](../skills/foundations/voice-media-debugging/SKILL.md) | Isolate bad codecs, sample rates, buffering, one-way audio, and stale playback after interruption. | Original NL Voice Skills material |
+| [voice-phone-compliance](../skills/foundations/voice-phone-compliance/SKILL.md) | Keep AI phone agents legal and their numbers deliverable: consent, AI disclosure, do-not-call, calling hours, recording consent, STIR/SHAKEN and spam labels. Not legal advice. | Original NL Voice Skills material |
 | [voice-stack-selection](../skills/foundations/voice-stack-selection/SKILL.md) | Choose a practical architecture for a voice AI agent by comparing realtime speech models, STT-LLM-TTS pipelines, transports, and hosting against the user's constraints. | Original NL Voice Skills material |
 | [voice-speech-pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md) | Select and integrate streaming recognition and synthesis, handle transcript revisions and playback, and test task-specific accuracy. | Original NL Voice Skills material |
 | [voice-turn-taking](../skills/foundations/voice-turn-taking/SKILL.md) | Design turn ownership, diagnose early endpoints and false interruptions, and coordinate output cancellation with action state. | Original NL Voice Skills material |
