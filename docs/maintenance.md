@@ -108,9 +108,10 @@ Most upkeep is automatic, and AI is spent only when something really changed.
   files are new upstream content that ships to every installer, so check scripts,
   hooks, install commands and URLs as you would for an outside pull request.
 - **Repository settings (check once, in the GitHub UI).** Turn off "Allow GitHub
-  Actions to create and approve pull requests", and protect `main` with a
-  required maintainer review, so a workflow token can never produce a mergeable
-  approval.
+  Actions to create and approve pull requests", so a workflow token can never
+  approve a pull request. Protect `main` by requiring the verify check and
+  blocking force pushes and deletion. Only a maintainer merges outside pull
+  requests.
 - **Quarterly refresh.** Prices and products in [the landscape](landscape.md)
   change quickly. Once a quarter, re-check them against the vendors' own pages.
   The records behind that page live in `data/`: `landscape.json` (products),
