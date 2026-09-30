@@ -21,7 +21,17 @@
     "license_notes": "Apache-2.0 framework; turn-detector models use the separate LiveKit Model License.",
     "reason": "Covers frameworks work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/livekit/agents",
+      "match_scope": "exact-repository-library",
+      "query": "AgentSession tools handoffs and testing capability; Apache-2.0 framework versus separate turn-detector model license.",
+      "primary_source": "https://raw.githubusercontent.com/livekit/agents/1f2e85c8add1422c9e6368e47e770dd6c076ebf3/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Framework and plugin code are Apache-2.0; turn-detector models have a separate LiveKit Model License. Session tools, handoffs and test assertions are supported.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "pipecat-ai/pipecat",
@@ -45,7 +55,17 @@
     "license_notes": "BSD-2-Clause.",
     "reason": "Covers frameworks work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/pipecat-ai/pipecat",
+      "match_scope": "exact-repository-library",
+      "query": "How do pipeline processors handle transports audio interruptions and modular STT LLM TTS services? BSD-2-Clause license.",
+      "primary_source": "https://raw.githubusercontent.com/pipecat-ai/pipecat/20999cd7b816dc5950eb9553b1ae36a1e771f2bc/README.md",
+      "unavailable_reported_github_source_count": 1,
+      "finding": "Cascade and realtime S2S pipelines, transport processors and interruption handling support the catalog scope. One returned generated API-reference path was unavailable; use installed-version docs for implementation.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "openai/openai-agents-js",
@@ -69,7 +89,17 @@
     "license_notes": "MIT SDK; hosted model terms and usage costs are separate.",
     "reason": "Covers frameworks work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/openai/openai-agents-js",
+      "match_scope": "exact-repository-library",
+      "query": "Realtime voice agents support tools handoffs WebRTC in browsers versus server WebSocket; SDK MIT versus hosted service usage.",
+      "primary_source": "https://raw.githubusercontent.com/openai/openai-agents-js/fdaf0a66ca6e9d89498909ad7cf64745630e8afb/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "RealtimeSession browser WebRTC and server WebSocket paths, tools and handoffs corroborate the catalog. Function tools run where the session runs; no private server-tool guarantee follows from a browser example.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "pipecat-ai/pipecat-examples",
@@ -93,7 +123,17 @@
     "license_notes": "BSD-2-Clause; running provider integrations can incur costs.",
     "reason": "Covers examples work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/pipecat-ai/pipecat-examples",
+      "match_scope": "exact-repository-library",
+      "query": "Examples of browser realtime and telephone voice agents and requirements for provider keys; examples BSD-2-Clause license.",
+      "primary_source": "https://raw.githubusercontent.com/pipecat-ai/pipecat-examples/93c0bd5f31e18d5d182a49f4a5eeead60b640db6/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Specific browser and telephony examples exist. Provider credentials in an example are requirements for that example, not every Pipecat application.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "jambonz/jambonz-feature-server",
@@ -117,7 +157,17 @@
     "license_notes": "MIT; requires other jambonz deployment components.",
     "reason": "Covers transport work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/jambonz/jambonz-feature-server",
+      "match_scope": "exact-repository-library",
+      "query": "Core feature server responsibilities in SIP voice apps and other deployment components needed; MIT code.",
+      "primary_source": "https://raw.githubusercontent.com/jambonz/jambonz-feature-server/baf97dabc29bef761731aaa6be9ee90ba910dc65/README.md",
+      "unavailable_reported_github_source_count": 3,
+      "finding": "The available contributing guide supports separate drachtio signaling and FreeSWITCH media dependencies. Generated _autodocs links were unavailable; do not treat returned version requirements as verified.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "drachtio/drachtio-srf",
@@ -141,7 +191,17 @@
     "license_notes": "MIT; signaling infrastructure, not an AI runtime.",
     "reason": "Covers transport work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/drachtio/drachtio-srf",
+      "match_scope": "exact-repository-library",
+      "query": "Node.js SIP signaling proxies and B2BUA session control; is media handled by separate infrastructure? MIT code.",
+      "primary_source": "https://raw.githubusercontent.com/drachtio/drachtio-srf/21c80a060cb3b10ecc2eebaf7e8cb89168624979/README.md",
+      "unavailable_reported_github_source_count": 1,
+      "finding": "SIP session-control examples support signaling/B2BUA capability. Media proxy operations use separate rtpengine infrastructure. Returned generated API-reference file was unavailable.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "pion/webrtc",
@@ -165,7 +225,17 @@
     "license_notes": "MIT.",
     "reason": "Covers transport work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/pion/webrtc",
+      "match_scope": "exact-repository-library",
+      "query": "Does Pion support custom Go RTP tracks and audio/data WebRTC applications? Media codec handling is application responsibility.",
+      "primary_source": "https://raw.githubusercontent.com/pion/webrtc/84eba3a51d6cf165f064856b773cb4f62ff42eb0/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Go WebRTC media/RTP integration is supported. Returned wiki snippets include old v3 APIs and conceptual MediaAPI material; no current API snippets were added to the catalog.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "aiortc/aiortc",
@@ -189,7 +259,17 @@
     "is_installable_agent_skill": false,
     "metadata_method": "github_rest_api",
     "readme_source": "https://raw.githubusercontent.com/aiortc/aiortc/8a2864630bf417d977a06dda8d0254b1c1501bfb/README.rst",
-    "readme_checked_at": "2026-09-30T02:38:04.998Z"
+    "readme_checked_at": "2026-09-30T02:38:04.998Z",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/aiortc/aiortc",
+      "match_scope": "exact-repository-library",
+      "query": "Python asyncio media tracks and custom processing over WebRTC; library BSD-3-Clause license.",
+      "primary_source": "https://raw.githubusercontent.com/aiortc/aiortc/8a2864630bf417d977a06dda8d0254b1c1501bfb/README.rst",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Python asyncio WebRTC and decoded frame/custom-track support are corroborated. Dummy 8 kHz silence track is an example implementation, not a universal negotiated audio format.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "pipecat-ai/smart-turn",
@@ -213,7 +293,17 @@
     "license_notes": "BSD-2-Clause; evaluate under intended conversation conditions.",
     "reason": "Covers turn-taking work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/pipecat-ai/smart-turn",
+      "match_scope": "exact-repository-library",
+      "query": "Audio end-of-turn completion prediction versus speech activity detection and current model version and license.",
+      "primary_source": "https://raw.githubusercontent.com/pipecat-ai/smart-turn/4786657e242dfe77dd138699ac564ee074a2a543/README.md",
+      "unavailable_reported_github_source_count": 2,
+      "finding": "Exact library resolved, but both returned _autodocs files were unavailable. Pinned README remains the source for native-audio turn prediction; cached input window/API defaults are not adopted.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "snakers4/silero-vad",
@@ -237,7 +327,17 @@
     "license_notes": "MIT; voice activity is not semantic turn completion.",
     "reason": "Covers turn-taking work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/snakers4/silero-vad",
+      "match_scope": "exact-repository-library",
+      "query": "Speech probability and speech timestamps with ONNX or PyTorch inference; MIT license; voice activity does not establish semantic turn completion.",
+      "primary_source": "https://raw.githubusercontent.com/snakers4/silero-vad/1e261b036686cd0017d500ee96acd1c4ba572a9d/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "PyTorch and ONNX speech probabilities/timestamps and MIT license are supported. Voice activity remains different from semantic completion.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "openai/whisper",
@@ -261,7 +361,17 @@
     "license_notes": "MIT code and weights; streaming requires a wrapper or policy.",
     "reason": "Covers speech-recognition work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/openai/whisper",
+      "match_scope": "exact-repository-library",
+      "query": "What does the reference transcribe method do, and are code/model weights MIT? Distinguish 30-second window transcription from online streaming.",
+      "primary_source": "https://raw.githubusercontent.com/openai/whisper/86098128c0b4f24f0e2aa2994de830614b474227/README.md",
+      "unavailable_reported_github_source_count": 3,
+      "finding": "Exact library resolved, but returned generated documentation and root transcribe.py links were unavailable. Pinned README supports multilingual ASR and sliding-window transcription; preserve streaming-wrapper caveat.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "SYSTRAN/faster-whisper",
@@ -285,7 +395,17 @@
     "license_notes": "MIT; throughput benchmarks do not establish conversational latency.",
     "reason": "Covers speech-recognition work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/systran/faster-whisper",
+      "match_scope": "exact-repository-library",
+      "query": "CTranslate2 quantized and batched Whisper inference; benchmark includes decoding beam size and CPU/GPU settings, not user-heard conversational latency.",
+      "primary_source": "https://raw.githubusercontent.com/SYSTRAN/faster-whisper/ed9a06cd89a93e47838f564998a6c09b655d7f43/README.md",
+      "unavailable_reported_github_source_count": 1,
+      "finding": "CTranslate2 conversion, batching and quantization are supported. Generated batch-reference source was unavailable; do not use returned versionless signature as implementation authority.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "ggml-org/whisper.cpp",
@@ -309,7 +429,17 @@
     "license_notes": "MIT; microphone streaming sample is described upstream as naive.",
     "reason": "Covers speech-recognition work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/ggml-org/whisper.cpp",
+      "match_scope": "exact-repository-library",
+      "query": "Quantized local C/C++ Whisper inference and example stream README naive real-time microphone inference limitation.",
+      "primary_source": "https://raw.githubusercontent.com/ggml-org/whisper.cpp/6e4ab854f67f743900934a703d5603419384c961/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Local quantization is supported; upstream explicitly describes the microphone stream sample as naive. No conversational latency claim follows.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "k2-fsa/sherpa-onnx",
@@ -333,7 +463,17 @@
     "license_notes": "Apache-2.0 code; individual model terms vary.",
     "reason": "Covers speech-recognition work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/k2-fsa/sherpa-onnx",
+      "match_scope": "exact-repository-library",
+      "query": "Online streaming and offline speech recognition and cross-platform inference; pretrained model licenses may differ from Apache-2.0 code.",
+      "primary_source": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/040afe360a38e25daaa325ce8889abf93ea02609/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Online/streaming and offline examples corroborate capability. Select a model and its own card rather than inheriting the library license.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "NVIDIA/NeMo",
@@ -357,7 +497,17 @@
     "license_notes": "Apache-2.0 code; model checkpoints have separate model cards.",
     "reason": "Covers speech-recognition work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/nvidia-nemo/speech",
+      "match_scope": "exact-repository-library",
+      "query": "NeMo Speech supports streaming ASR training inference and speaker diarization; checkpoint model cards license versus Apache-2.0 code.",
+      "primary_source": "https://raw.githubusercontent.com/NVIDIA-NeMo/Speech/f059ad1a16e813cba650b2843855fc43cf18738f/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "The renamed exact repository is indexed. Streaming diarization and pretrained ASR support the catalog; model checkpoint terms remain separate.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "OHF-Voice/piper1-gpl",
@@ -381,7 +531,17 @@
     "license_notes": "GPL-3.0 code; voice-model terms vary; upstream seeks maintainers.",
     "reason": "Covers speech-synthesis work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/ohf-voice/piper1-gpl",
+      "match_scope": "exact-repository-library",
+      "query": "Current Piper local speech synthesis library GPL-3.0 code and per-voice model license requirements; maintainer status.",
+      "primary_source": "https://raw.githubusercontent.com/OHF-Voice/piper1-gpl/efffbfb226bfb511ebbcf55d0cecd8b35a89743d/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Current project resolves rather than old rhasspy/piper. Per-voice MODEL_CARD terms apply; HTTP route builds a complete WAV, so local synthesis does not imply HTTP streaming.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "hexgrad/kokoro",
@@ -405,7 +565,17 @@
     "license_notes": "Apache-2.0 repository; upstream describes Apache-licensed weights.",
     "reason": "Covers speech-synthesis work in voice AI agents",
     "is_installable_agent_skill": false,
-    "metadata_method": "github_rest_api"
+    "metadata_method": "github_rest_api",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/hexgrad/kokoro",
+      "match_scope": "exact-repository-library",
+      "query": "KPipeline compact Kokoro TTS inference and Apache-licensed model weights versus downstream wrappers.",
+      "primary_source": "https://raw.githubusercontent.com/hexgrad/kokoro/dfb907a02bba8152ca444717ca5d78747ccb4bec/README.md",
+      "unavailable_reported_github_source_count": 1,
+      "finding": "KPipeline and Apache-licensed weights are supported by the current README. One generated JS-reference path was unavailable; downstream wrappers have independent packaging.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "SWivid/F5-TTS",
@@ -428,7 +598,17 @@
     "curated_description": "Flow-matching TTS research with reference-audio conditioning.",
     "license_notes": "MIT code; upstream pretrained weights CC-BY-NC.",
     "reason": "Covers speech-synthesis work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/swivid/f5-tts",
+      "match_scope": "exact-repository-library",
+      "query": "F5 TTS reference-audio conditioned flow matching synthesis; MIT code but pretrained models CC-BY-NC due training data.",
+      "primary_source": "https://raw.githubusercontent.com/SWivid/F5-TTS/283252563dbf91be625e0c27926acfaac449186c/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Flow-matching/reference-audio synthesis is supported. README states MIT code and CC-BY-NC pretrained models, matching the catalog caveat.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "Blaizzy/mlx-audio",
@@ -451,7 +631,17 @@
     "curated_description": "Apple Silicon STT, TTS, and speech-to-speech inference.",
     "license_notes": "MIT library; loaded model licenses vary.",
     "reason": "Covers speech-synthesis work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/blaizzy/mlx-audio",
+      "match_scope": "exact-repository-library",
+      "query": "Apple Silicon MLX Audio speech to text, text to speech and speech to speech inference support; separate loaded model licenses.",
+      "primary_source": "https://raw.githubusercontent.com/Blaizzy/mlx-audio/94c7716212b2228f178d2f9c7619a591fd1b0b78/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "STT, TTS and STS model-loading paths on Apple Silicon support the catalog; loaded model cards still determine model terms.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "TEN-framework/ten-framework",
@@ -476,7 +666,17 @@
     "reason": "Covers frameworks work in voice AI agents",
     "is_installable_agent_skill": false,
     "metadata_method": "github_rest_api",
-    "license_source": "https://raw.githubusercontent.com/TEN-framework/ten-framework/5c27ef51e662a1ec1453567c02ad71b33057629d/LICENSE"
+    "license_source": "https://raw.githubusercontent.com/TEN-framework/ten-framework/5c27ef51e662a1ec1453567c02ad71b33057629d/LICENSE",
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/ten-framework/ten-framework",
+      "match_scope": "exact-repository-library",
+      "query": "Realtime multimodal agent architecture extensions and LICENSE custom Apache 2.0 based terms restricting competitive use or end-user device distribution.",
+      "primary_source": "https://raw.githubusercontent.com/TEN-framework/ten-framework/5c27ef51e662a1ec1453567c02ad71b33057629d/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "README and pinned root LICENSE confirm additional end-user-device and competitive-use restrictions. A retrieved third-party Apache license does not establish the framework root license.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "huggingface/speech-to-speech",
@@ -499,7 +699,17 @@
     "curated_description": "Local speech pipelines with WebSocket/WebRTC serving and configurable components.",
     "license_notes": "Apache-2.0 code; selected model licenses vary.",
     "reason": "Covers frameworks work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": null,
+      "match_scope": "no-exact-match",
+      "query": null,
+      "primary_source": "https://raw.githubusercontent.com/huggingface/speech-to-speech/9e2ed1099190a4e4bc8a972b4a3488949ff1b9f6/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Resolve returned unrelated speech libraries; no exact target was found. Pinned README supports local configurable voice serving and carries model-specific licensing caveats. No unrelated library was queried.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "livekit/eot-bench",
@@ -522,7 +732,17 @@
     "curated_description": "Causal end-of-turn evaluation of latency/false-cutoff tradeoffs.",
     "license_notes": "Apache-2.0; emerging vendor-maintained benchmark.",
     "reason": "Covers evaluation work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/websites/livekit_io",
+      "match_scope": "ecosystem-only",
+      "query": "eot-bench causal end-of-turn benchmark latency false cutoff and interruption tradeoff, benchmark scope",
+      "primary_source": "https://raw.githubusercontent.com/livekit/eot-bench/9ee21b52840e167c58bb4d67fbf2d13fb26240b5/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "No exact benchmark library resolved. LiveKit ecosystem query returned turn-handling docs rather than benchmark methodology. Pinned eot-bench README is the benchmark scope authority.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "jptaylor/pipecat-dev-tools",
@@ -545,7 +765,17 @@
     "curated_description": "Audio-level turn timings with optional framework-event overlays.",
     "license_notes": "MIT; emerging specialist utility with little adoption.",
     "reason": "Covers evaluation work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/pipecat-ai/docs",
+      "match_scope": "ecosystem-only",
+      "query": "pipecat-dev-tools audio turn timing inspector framework event overlays; distinguish service metrics TTFB from acoustic response",
+      "primary_source": "https://raw.githubusercontent.com/jptaylor/pipecat-dev-tools/9a1e0db1e8119af8f17144789ca6a9a79b5a3a35/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "No exact utility library resolved. Pipecat metrics docs support separate service measurements but do not prove this utility implementation. Pinned utility README remains its source.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "twilio-labs/call-gpt",
@@ -568,7 +798,17 @@
     "curated_description": "Streaming phone-call reference for dialogue state and tools.",
     "license_notes": "MIT; inspect current provider API compatibility before reuse.",
     "reason": "Covers examples work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/llmstxt/twilio_llms_txt",
+      "match_scope": "ecosystem-only",
+      "query": "Call GPT streaming phone conversation state and function calling example; Media Streams bidirectional audio contract.",
+      "primary_source": "https://raw.githubusercontent.com/twilio-labs/call-gpt/db0aecda0058f222bfc26ad626d831c365ecfcea/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "No exact demo library resolved. Twilio provider docs support bidirectional media contract; pinned Call GPT README remains authority for demo dialogue/tools implementation.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "openai/openai-realtime-console",
@@ -591,7 +831,17 @@
     "curated_description": "Browser WebRTC sample for session events and tools.",
     "license_notes": "MIT; an example, not a production guarantee.",
     "reason": "Covers examples work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/openai/openai-agents-js",
+      "match_scope": "ecosystem-only",
+      "query": "OpenAI realtime-console browser sample WebRTC session events and function tools; distinguish demo repository from production framework.",
+      "primary_source": "https://raw.githubusercontent.com/openai/openai-realtime-console/ab8b8f5852b47ec1b9ef73bf566851d0eeafddbb/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "No exact console library resolved. OpenAI Agents docs corroborate related WebRTC/tool concepts, not console implementation. Pinned console README remains its source.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "langfuse/langfuse",
@@ -614,7 +864,17 @@
     "curated_description": "LLM and tool tracing, evaluation, and prompt inspection.",
     "license_notes": "MIT outside specified enterprise directories; audio timing needs additional instrumentation.",
     "reason": "Covers observability work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/langfuse/langfuse-docs",
+      "match_scope": "official-documentation-library",
+      "query": "LLM tool tracing evaluation prompt management and audio or voice instrumentation limitations; MIT code versus enterprise licensing",
+      "primary_source": "https://raw.githubusercontent.com/langfuse/langfuse/09a1b8484b66c4c4cbaf4ba972fc11bd699d4784/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Official documentation library supports tracing, evaluation and prompt configuration. The current pinned LICENSE still excludes specified enterprise directories from MIT, despite broad open-source messaging.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "arize-ai/phoenix",
@@ -637,7 +897,17 @@
     "curated_description": "Model/tool trace inspection and evaluation for voice pipelines.",
     "license_notes": "Elastic License 2.0; not a complete voice timing recorder.",
     "reason": "Covers observability work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/arize-ai/phoenix",
+      "match_scope": "exact-repository-library",
+      "query": "OpenTelemetry traces for LLMs and tools plus evaluation; current Elastic License 2.0 license, audio timing instrumentation limitation",
+      "primary_source": "https://raw.githubusercontent.com/arize-ai/phoenix/923300b935b12c6dd7fe1b27d13fe8a0cbccb5d7/README.md",
+      "unavailable_reported_github_source_count": 2,
+      "finding": "Trace instrumentation and tool spans support the catalog. Two returned notebook paths were unavailable. Pinned root LICENSE remains Elastic-2.0, not MIT or Apache.",
+      "source_publication_date": null
+    }
   },
   {
     "requested": "speechbrain/speechbrain",
@@ -660,6 +930,943 @@
     "curated_description": "Research recipes for recognition, diarization, and enhancement.",
     "license_notes": "Apache-2.0; research toolkit, not a complete realtime-agent runtime.",
     "reason": "Covers speech-recognition work in voice AI agents",
-    "is_installable_agent_skill": false
+    "is_installable_agent_skill": false,
+    "context7": {
+      "reviewed_at": "2026-09-30 UTC",
+      "library_id": "/speechbrain/speechbrain",
+      "match_scope": "exact-repository-library",
+      "query": "Speech recognition speaker diarization and enhancement training recipes; research toolkit versus full realtime agent runtime and Apache license",
+      "primary_source": "https://raw.githubusercontent.com/speechbrain/speechbrain/89ead74d163463d30c62329a09cfdb4c54f5abc1/README.md",
+      "unavailable_reported_github_source_count": 0,
+      "finding": "Enhancement and speaker/diarization research recipes support the catalog. No complete live-agent orchestration claim is made.",
+      "source_publication_date": null
+    }
+  },
+  {
+    "name": "coval-ai/coval-external-skills",
+    "url": "https://github.com/coval-ai/coval-external-skills",
+    "stars": 2,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "831adfdfedb6395c43283ea5f0a216b2c6a51efe",
+    "commit_source": "https://github.com/coval-ai/coval-external-skills",
+    "metadata_source": "https://github.com/coval-ai/coval-external-skills",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:09.292Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/coval-ai/coval-external-skills/831adfdfedb6395c43283ea5f0a216b2c6a51efe/README.md",
+    "license": "MIT",
+    "license_source": "https://raw.githubusercontent.com/coval-ai/coval-external-skills/831adfdfedb6395c43283ea5f0a216b2c6a51efe/LICENSE",
+    "resource_type": "evaluation",
+    "curated_description": "Coval workflows for evidence review, bounded runs, judge calibration and matched regressions.",
+    "recommendation": "add",
+    "license_notes": "Skills are open source; executing hosted simulations requires an authorized Coval account and provider/call budget. Newer evaluation skills are preferred over older specialist launch loops.",
+    "reason": "Distinct practical evaluation coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": true,
+    "context7": {
+      "library_id": "/llmstxt/coval_ai_llms_txt",
+      "status": "matched",
+      "queries": [
+        "Voice agent accent testing and simulation run creation, provider account dependencies, API key authentication, and recording evidence for voice latency evaluation"
+      ],
+      "sources": [
+        "https://docs.coval.ai/guides/testing-across-accents",
+        "https://docs.coval.ai/api-reference/v1/introduction"
+      ]
+    }
+  },
+  {
+    "name": "ServiceNow/eva",
+    "url": "https://github.com/ServiceNow/eva",
+    "stars": 221,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "2a0b0f474fbbac6f67ca4ddcd2b3b278e2140bef",
+    "commit_source": "https://github.com/ServiceNow/eva",
+    "metadata_source": "https://github.com/ServiceNow/eva",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:09.349Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/ServiceNow/eva/2a0b0f474fbbac6f67ca4ddcd2b3b278e2140bef/README.md",
+    "license": "MIT",
+    "license_source": "https://raw.githubusercontent.com/ServiceNow/eva/2a0b0f474fbbac6f67ca4ddcd2b3b278e2140bef/LICENSE",
+    "resource_type": "evaluation",
+    "curated_description": "End-to-end voice-agent benchmark with multi-turn synthetic callers and task and speech-quality evaluation.",
+    "recommendation": "add",
+    "license_notes": "Caller models and evaluation providers require API credentials and can incur cost. OpenAI Realtime caller is marked experimental in the pinned README. Synthetic caller success does not prove production prevalence.",
+    "reason": "Distinct practical evaluation coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "no-exact-match",
+      "fallback": "No exact target returned. Pinned primary README/license supplies catalog purpose; unrelated library not queried.",
+      "name": "ServiceNow/eva",
+      "resolve_query": {
+        "libraryName": "ServiceNow EVA",
+        "query": "End-to-end voice agent benchmark multi-turn caller perturbations and evaluation limitations"
+      },
+      "resolve_candidates": [
+        {
+          "title": "ServiceNow AI Platform",
+          "id": "/servicenow/servicenowdocs"
+        },
+        {
+          "title": "ServiceNow SDK",
+          "id": "/websites/servicenow_github_io_sdk"
+        },
+        {
+          "title": "ServiceNow Guru",
+          "id": "/websites/servicenowguru"
+        },
+        {
+          "title": "ServiceNow API",
+          "id": "/knuckles-team/servicenow-api"
+        },
+        {
+          "title": "ServiceNow PowerShell",
+          "id": "/snow-shell/servicenow-powershell"
+        }
+      ],
+      "library_id": null,
+      "docs_query": null,
+      "docs_sources": [],
+      "match_scope": "no-exact-match",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": []
+    }
+  },
+  {
+    "name": "future-agi/simulate-sdk",
+    "url": "https://github.com/future-agi/simulate-sdk",
+    "stars": 58,
+    "archived": true,
+    "default_branch": "main",
+    "commit": "1875fa3930b6ded40831850fdf97752a6feda9a0",
+    "commit_source": "https://github.com/future-agi/simulate-sdk",
+    "metadata_source": "https://github.com/future-agi/simulate-sdk",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:10.163Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/future-agi/simulate-sdk/1875fa3930b6ded40831850fdf97752a6feda9a0/README.md",
+    "license": "Apache-2.0",
+    "license_source": "https://raw.githubusercontent.com/future-agi/simulate-sdk/1875fa3930b6ded40831850fdf97752a6feda9a0/LICENSE",
+    "resource_type": "evaluation",
+    "curated_description": "LiveKit voice simulation SDK with per-speaker recordings, transcripts and evaluation helpers.",
+    "recommendation": "add",
+    "license_notes": "Text cloud simulation uses hosted Future AGI; voice caller/provider dependencies may incur costs. Compare pinned SDK docs with Agent Learning Kit before choosing imports because repositories document consolidation differently.",
+    "reason": "Distinct practical evaluation coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "library_id": "/future-agi/future-agi",
+      "status": "matched-platform-parent",
+      "queries": [
+        "Voice agent simulation coverage using LiveKit, Vapi, Retell or Pipecat connectors; audio perturbations, evaluation output evidence, local SDK vs hosted service dependency"
+      ],
+      "sources": [
+        "https://github.com/future-agi/future-agi/blob/main/README.md",
+        "https://github.com/future-agi/future-agi/blob/main/INSTALLATION.md"
+      ],
+      "fallback": "Pinned simulate-sdk and agent-learning-kit READMEs for exact package status; avoid inferring migration parity."
+    }
+  },
+  {
+    "name": "fixie-ai/ultravox",
+    "url": "https://github.com/fixie-ai/ultravox",
+    "stars": 4574,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "69ddc63b2d72be5e9a86f818315da72cec55a876",
+    "commit_source": "https://github.com/fixie-ai/ultravox",
+    "metadata_source": "https://github.com/fixie-ai/ultravox",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:10.225Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/fixie-ai/ultravox/69ddc63b2d72be5e9a86f818315da72cec55a876/README.md",
+    "license": "MIT code",
+    "license_source": "https://raw.githubusercontent.com/fixie-ai/ultravox/69ddc63b2d72be5e9a86f818315da72cec55a876/LICENSE",
+    "resource_type": "speech-language-models",
+    "curated_description": "Speech-input language model that emits streaming text without a separate ASR stage.",
+    "recommendation": "add",
+    "license_notes": "The open model is audio-to-text; a voice agent still needs output speech synthesis and turn/media orchestration. Check selected model card and underlying base-model terms separately from repo code.",
+    "reason": "Distinct practical speech-language-models coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "provider-docs-only",
+      "fallback": "Hosted Ultravox provider docs are related, not an index of the open model repo. Use pinned model README for audio-to-text capability.",
+      "name": "fixie-ai/ultravox",
+      "resolve_query": {
+        "libraryName": "Ultravox",
+        "query": "Open source speech input language model outputs streaming text not native audio output"
+      },
+      "resolve_candidates": [
+        {
+          "title": "Ultravox",
+          "id": "/fixie-ai/ultradox"
+        },
+        {
+          "title": "Ultravox Realtime",
+          "id": "/websites/ultravox_ai"
+        },
+        {
+          "title": "Ultravox Client Tools",
+          "id": "/fixie-ai/ultravox-tutorial-client-tools"
+        },
+        {
+          "title": "Ultravox",
+          "id": "/websites/fixie_ai"
+        }
+      ],
+      "library_id": "/fixie-ai/ultradox",
+      "docs_query": "Open Ultravox model audio input emits streaming text, separate TTS required versus hosted Ultravox Realtime complete speech service; code/model licenses",
+      "docs_sources": [
+        "https://github.com/fixie-ai/ultradox/blob/main/voices/bring-your-own.mdx",
+        "https://github.com/fixie-ai/ultradox/blob/main/agents/building-and-editing-agents.mdx",
+        "https://github.com/fixie-ai/ultradox/blob/main/overview.mdx",
+        "https://github.com/fixie-ai/ultradox/blob/main/gettingstarted/faq.mdx"
+      ],
+      "match_scope": "provider-docs-only",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": [
+        {
+          "reported_url": "https://github.com/fixie-ai/ultradox/blob/main/overview.mdx",
+          "checked_url": "https://raw.githubusercontent.com/fixie-ai/ultradox/main/overview.mdx",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:04.896Z"
+        },
+        {
+          "reported_url": "https://github.com/fixie-ai/ultradox/blob/main/gettingstarted/faq.mdx",
+          "checked_url": "https://raw.githubusercontent.com/fixie-ai/ultradox/main/gettingstarted/faq.mdx",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:04.899Z"
+        },
+        {
+          "reported_url": "https://github.com/fixie-ai/ultradox/blob/main/voices/bring-your-own.mdx",
+          "checked_url": "https://raw.githubusercontent.com/fixie-ai/ultradox/main/voices/bring-your-own.mdx",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:04.918Z"
+        },
+        {
+          "reported_url": "https://github.com/fixie-ai/ultradox/blob/main/agents/building-and-editing-agents.mdx",
+          "checked_url": "https://raw.githubusercontent.com/fixie-ai/ultradox/main/agents/building-and-editing-agents.mdx",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:04.940Z"
+        }
+      ]
+    }
+  },
+  {
+    "name": "bolna-ai/bolna",
+    "url": "https://github.com/bolna-ai/bolna",
+    "stars": 778,
+    "archived": false,
+    "default_branch": "master",
+    "commit": "f503f618308283419489a256d3d3e45048ade585",
+    "commit_source": "https://github.com/bolna-ai/bolna",
+    "metadata_source": "https://github.com/bolna-ai/bolna",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:10.262Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/bolna-ai/bolna/f503f618308283419489a256d3d3e45048ade585/README.md",
+    "license": "MIT",
+    "license_source": "https://raw.githubusercontent.com/bolna-ai/bolna/f503f618308283419489a256d3d3e45048ade585/LICENSE",
+    "resource_type": "frameworks",
+    "curated_description": "Python orchestration for streamed STT, language models, TTS and telephony.",
+    "recommendation": "add",
+    "license_notes": "Telephony requires a bidirectional provider integration and provider credentials. Open-source orchestrator is distinct from Bolna hosted services.",
+    "reason": "Distinct practical frameworks coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "exact-repository-library",
+      "fallback": "Pinned primary README/license remains authoritative. Generated _autodocs links are not assumed current.",
+      "name": "bolna-ai/bolna",
+      "resolve_query": {
+        "libraryName": "Bolna",
+        "query": "Python streaming voice agent orchestration telephony integrations hosted provider separation"
+      },
+      "resolve_candidates": [
+        {
+          "title": "Bolna",
+          "id": "/websites/bolna_ai"
+        },
+        {
+          "title": "Bolna",
+          "id": "/bolna-ai/bolna"
+        }
+      ],
+      "library_id": "/bolna-ai/bolna",
+      "docs_query": "Streaming Python voice orchestration STT LLM TTS plus telephony: bidirectional stream and provider credential requirements",
+      "docs_sources": [
+        "https://github.com/bolna-ai/bolna/blob/master/_autodocs/05-types-enums.md",
+        "https://github.com/bolna-ai/bolna/blob/master/_autodocs/07-tools-functions.md",
+        "https://github.com/bolna-ai/bolna/blob/master/_autodocs/09-endpoints-api.md",
+        "https://github.com/bolna-ai/bolna/blob/master/_autodocs/02-transcriber-synthesizer.md",
+        "https://github.com/bolna-ai/bolna/blob/master/README.md"
+      ],
+      "match_scope": "exact-repository-library",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": [
+        {
+          "reported_url": "https://github.com/bolna-ai/bolna/blob/master/_autodocs/05-types-enums.md",
+          "checked_url": "https://raw.githubusercontent.com/bolna-ai/bolna/master/_autodocs/05-types-enums.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:04.968Z"
+        },
+        {
+          "reported_url": "https://github.com/bolna-ai/bolna/blob/master/_autodocs/07-tools-functions.md",
+          "checked_url": "https://raw.githubusercontent.com/bolna-ai/bolna/master/_autodocs/07-tools-functions.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:04.975Z"
+        },
+        {
+          "reported_url": "https://github.com/bolna-ai/bolna/blob/master/_autodocs/09-endpoints-api.md",
+          "checked_url": "https://raw.githubusercontent.com/bolna-ai/bolna/master/_autodocs/09-endpoints-api.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:04.995Z"
+        },
+        {
+          "reported_url": "https://github.com/bolna-ai/bolna/blob/master/_autodocs/02-transcriber-synthesizer.md",
+          "checked_url": "https://raw.githubusercontent.com/bolna-ai/bolna/master/_autodocs/02-transcriber-synthesizer.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:05.006Z"
+        },
+        {
+          "reported_url": "https://github.com/bolna-ai/bolna/blob/master/README.md",
+          "checked_url": "https://raw.githubusercontent.com/bolna-ai/bolna/master/README.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.063Z"
+        }
+      ]
+    }
+  },
+  {
+    "name": "kyutai-labs/moshi",
+    "url": "https://github.com/kyutai-labs/moshi",
+    "stars": 11162,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "e6a55d2722a65870ef52a6c9f6ecfc0e90f38362",
+    "commit_source": "https://github.com/kyutai-labs/moshi",
+    "metadata_source": "https://github.com/kyutai-labs/moshi",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:10.835Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/kyutai-labs/moshi/e6a55d2722a65870ef52a6c9f6ecfc0e90f38362/README.md",
+    "license": "MIT Python/client; Apache-2.0 Rust",
+    "license_source": [
+      "https://raw.githubusercontent.com/kyutai-labs/moshi/e6a55d2722a65870ef52a6c9f6ecfc0e90f38362/LICENSE-MIT",
+      "https://raw.githubusercontent.com/kyutai-labs/moshi/e6a55d2722a65870ef52a6c9f6ecfc0e90f38362/LICENSE-APACHE"
+    ],
+    "resource_type": "speech-language-models",
+    "curated_description": "Full-duplex speech conversation research with streaming Mimi audio codec and local inference paths.",
+    "recommendation": "add",
+    "license_notes": "Model weights are separately CC-BY-4.0 according to the pinned README. Codec frame latency is not whole-agent acoustic response latency; deployment still needs hardware and orchestration.",
+    "reason": "Distinct practical speech-language-models coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "exact-repository-library",
+      "fallback": "Pinned primary README/license remains authoritative. Generated _autodocs links are not assumed current.",
+      "name": "kyutai-labs/moshi",
+      "resolve_query": {
+        "libraryName": "Kyutai Moshi",
+        "query": "Full-duplex speech conversation research code MIT Apache and model CC-BY license"
+      },
+      "resolve_candidates": [
+        {
+          "title": "Moshi",
+          "id": "/kyutai-labs/moshi"
+        },
+        {
+          "title": "Moshi Finetune",
+          "id": "/kyutai-labs/moshi-finetune"
+        },
+        {
+          "title": "MoshiRAG",
+          "id": "/kyutai-labs/moshi-rag"
+        },
+        {
+          "title": "MoshiVis",
+          "id": "/websites/kyutai_moshivis"
+        },
+        {
+          "title": "MoshiVis",
+          "id": "/kyutai-labs/moshivis"
+        }
+      ],
+      "library_id": "/kyutai-labs/moshi",
+      "docs_query": "Full duplex speech text model Mimi streaming codec; MIT Python versus Apache Rust code and CC-BY-4.0 model weights",
+      "docs_sources": [
+        "https://github.com/kyutai-labs/moshi/blob/main/moshi/README.md",
+        "https://github.com/kyutai-labs/moshi/blob/main/rust/README.md",
+        "https://github.com/kyutai-labs/moshi/blob/main/README.md"
+      ],
+      "match_scope": "exact-repository-library",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": [
+        {
+          "reported_url": "https://github.com/kyutai-labs/moshi/blob/main/moshi/README.md",
+          "checked_url": "https://raw.githubusercontent.com/kyutai-labs/moshi/main/moshi/README.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.060Z"
+        },
+        {
+          "reported_url": "https://github.com/kyutai-labs/moshi/blob/main/rust/README.md",
+          "checked_url": "https://raw.githubusercontent.com/kyutai-labs/moshi/main/rust/README.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.099Z"
+        },
+        {
+          "reported_url": "https://github.com/kyutai-labs/moshi/blob/main/README.md",
+          "checked_url": "https://raw.githubusercontent.com/kyutai-labs/moshi/main/README.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.223Z"
+        }
+      ]
+    }
+  },
+  {
+    "name": "kyutai-labs/delayed-streams-modeling",
+    "url": "https://github.com/kyutai-labs/delayed-streams-modeling",
+    "stars": 3034,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "4c4f65e147df056adf3346290d64c7b9649b18c9",
+    "commit_source": "https://github.com/kyutai-labs/delayed-streams-modeling",
+    "metadata_source": "https://github.com/kyutai-labs/delayed-streams-modeling",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:10.795Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/kyutai-labs/delayed-streams-modeling/4c4f65e147df056adf3346290d64c7b9649b18c9/README.md",
+    "license": "MIT Python/client; Apache-2.0 Rust",
+    "license_source": [
+      "https://raw.githubusercontent.com/kyutai-labs/delayed-streams-modeling/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-MIT",
+      "https://raw.githubusercontent.com/kyutai-labs/delayed-streams-modeling/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-APACHE"
+    ],
+    "resource_type": "stt-tts",
+    "curated_description": "Kyutai streaming STT and TTS implementations with Rust WebSocket serving.",
+    "recommendation": "add",
+    "license_notes": "Pinned README explicitly gives STT weights CC-BY-4.0; inspect the selected TTS model card independently. Throughput claims or simulated pacing do not establish user-heard latency.",
+    "reason": "Distinct practical stt-tts coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "exact-repository-library",
+      "fallback": "Pinned primary README/license remains authoritative. Generated _autodocs links are not assumed current.",
+      "name": "kyutai-labs/delayed-streams-modeling",
+      "resolve_query": {
+        "libraryName": "Kyutai Delayed Streams Modeling",
+        "query": "Streaming STT TTS WebSocket serving and model licenses"
+      },
+      "resolve_candidates": [
+        {
+          "title": "Kyutai Delayed Streams Modeling",
+          "id": "/kyutai-labs/delayed-streams-modeling"
+        }
+      ],
+      "library_id": "/kyutai-labs/delayed-streams-modeling",
+      "docs_query": "Streaming STT TTS Rust WebSocket serving versus PyTorch inference; code licenses and separately licensed weights",
+      "docs_sources": [
+        "https://context7.com/kyutai-labs/delayed-streams-modeling/llms.txt"
+      ],
+      "match_scope": "exact-repository-library",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": []
+    }
+  },
+  {
+    "name": "resemble-ai/chatterbox",
+    "url": "https://github.com/resemble-ai/chatterbox",
+    "stars": 26617,
+    "archived": false,
+    "default_branch": "master",
+    "commit": "5de7a54aa4e5e2baadb0182dde554908b48b85c2",
+    "commit_source": "https://github.com/resemble-ai/chatterbox",
+    "metadata_source": "https://github.com/resemble-ai/chatterbox",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:10.893Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/resemble-ai/chatterbox/5de7a54aa4e5e2baadb0182dde554908b48b85c2/README.md",
+    "license": "MIT",
+    "license_source": "https://raw.githubusercontent.com/resemble-ai/chatterbox/5de7a54aa4e5e2baadb0182dde554908b48b85c2/LICENSE",
+    "resource_type": "tts",
+    "curated_description": "Local speech synthesis and voice-cloning models with multilingual variants.",
+    "recommendation": "add",
+    "license_notes": "The checked ResembleAI/chatterbox model card declares MIT. Hardware, chosen checkpoint, language, pacing and synthesis API determine practical agent suitability; provider preference benchmarks do not establish transport latency.",
+    "reason": "Distinct practical tts coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "exact-repository-library",
+      "fallback": "Pinned primary README/license remains authoritative. Generated _autodocs links are not assumed current.",
+      "name": "resemble-ai/chatterbox",
+      "resolve_query": {
+        "libraryName": "Chatterbox",
+        "query": "Local TTS and multilingual voice cloning MIT code and model licenses"
+      },
+      "resolve_candidates": [
+        {
+          "title": "Chatterbox",
+          "id": "/resemble-ai/chatterbox"
+        },
+        {
+          "title": "Chatterbox (Deepwiki)",
+          "id": "/websites/deepwiki_resemble-ai_chatterbox"
+        },
+        {
+          "title": "Chatterbox TTS Server",
+          "id": "/devnen/chatterbox-tts-server"
+        },
+        {
+          "title": "Chatterbox TTS Streaming",
+          "id": "/davidbrowne17/chatterbox-streaming"
+        },
+        {
+          "title": "MLX Audio Plus",
+          "id": "/depasqualeorg/mlx-audio-plus"
+        }
+      ],
+      "library_id": "/resemble-ai/chatterbox",
+      "docs_query": "Local multilingual TTS model variants and voice cloning; MIT code model license versus preference evaluation limits",
+      "docs_sources": [
+        "https://github.com/resemble-ai/chatterbox/blob/master/_autodocs/03-multilingual-tts-api.md",
+        "https://github.com/resemble-ai/chatterbox/blob/master/_autodocs/07-configuration-environment.md",
+        "https://github.com/resemble-ai/chatterbox/blob/master/pyproject.toml"
+      ],
+      "match_scope": "exact-repository-library",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": [
+        {
+          "reported_url": "https://github.com/resemble-ai/chatterbox/blob/master/_autodocs/03-multilingual-tts-api.md",
+          "checked_url": "https://raw.githubusercontent.com/resemble-ai/chatterbox/master/_autodocs/03-multilingual-tts-api.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:05.126Z"
+        },
+        {
+          "reported_url": "https://github.com/resemble-ai/chatterbox/blob/master/_autodocs/07-configuration-environment.md",
+          "checked_url": "https://raw.githubusercontent.com/resemble-ai/chatterbox/master/_autodocs/07-configuration-environment.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:05.134Z"
+        },
+        {
+          "reported_url": "https://github.com/resemble-ai/chatterbox/blob/master/pyproject.toml",
+          "checked_url": "https://raw.githubusercontent.com/resemble-ai/chatterbox/master/pyproject.toml",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.161Z"
+        }
+      ]
+    }
+  },
+  {
+    "name": "moonshine-ai/moonshine",
+    "url": "https://github.com/moonshine-ai/moonshine",
+    "stars": 11160,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "234f60faa0eb388b01cdf7e60aca232af37aefda",
+    "commit_source": "https://github.com/moonshine-ai/moonshine",
+    "metadata_source": "https://github.com/moonshine-ai/moonshine",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:10.759Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/moonshine-ai/moonshine/234f60faa0eb388b01cdf7e60aca232af37aefda/README.md",
+    "license": "MIT code with third-party exceptions",
+    "license_source": "https://raw.githubusercontent.com/moonshine-ai/moonshine/234f60faa0eb388b01cdf7e60aca232af37aefda/LICENSE",
+    "resource_type": "stt-tts",
+    "curated_description": "On-device voice toolkit and an official moonshine-voice coding-agent skill.",
+    "recommendation": "add",
+    "license_notes": "Current LICENSE makes streaming STT and English STT models MIT; enumerated legacy nonstreaming non-English models are noncommercial. TTS/G2P assets have separate source terms. Context7 indexed license summary is older and contradicts the current pinned LICENSE.",
+    "reason": "Distinct practical stt-tts coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": true,
+    "context7": {
+      "library_id": "/moonshine-ai/moonshine",
+      "status": "matched-with-stale-license-summary",
+      "queries": [
+        "Current Moonshine Python transcription versus VoicePipeline, stream update/event listeners, low latency chunk handling; current model licenses for streaming models compared with legacy non-English models"
+      ],
+      "sources": [
+        "https://github.com/moonshine-ai/moonshine/blob/main/language-bindings/python/README.md"
+      ],
+      "fallback": "Pinned current SKILL.md and LICENSE; cached older API examples and blanket license summary are not authoritative for latest high-level API."
+    }
+  },
+  {
+    "name": "QwenLM/Qwen3-TTS",
+    "url": "https://github.com/QwenLM/Qwen3-TTS",
+    "stars": 13594,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "022e286b98fbec7e1e916cb940cdf532cd9f488e",
+    "commit_source": "https://github.com/QwenLM/Qwen3-TTS",
+    "metadata_source": "https://github.com/QwenLM/Qwen3-TTS",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:11.787Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/QwenLM/Qwen3-TTS/022e286b98fbec7e1e916cb940cdf532cd9f488e/README.md",
+    "license": "Apache-2.0",
+    "license_source": "https://raw.githubusercontent.com/QwenLM/Qwen3-TTS/022e286b98fbec7e1e916cb940cdf532cd9f488e/LICENSE",
+    "resource_type": "tts",
+    "curated_description": "Speech synthesis and voice-cloning research with streaming-capable model design.",
+    "recommendation": "add",
+    "license_notes": "Checked Qwen3-TTS-12Hz-1.7B-Base model card declares Apache-2.0. The pinned repository documents offline-only vLLM inference with online serving planned; do not claim every backend provides streaming today. Pinned Python API also documents non_streaming_mode=false as simulated streaming text input, without true streaming input or generation.",
+    "reason": "Distinct practical tts coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "exact-repository-library",
+      "fallback": "Pinned primary README/license remains authoritative. Generated _autodocs links are not assumed current.",
+      "name": "QwenLM/Qwen3-TTS",
+      "resolve_query": {
+        "libraryName": "Qwen3 TTS",
+        "query": "Streaming TTS model and offline-only vLLM backend, Apache licenses"
+      },
+      "resolve_candidates": [
+        {
+          "title": "Faster Qwen3-TTS",
+          "id": "/andimarafioti/faster-qwen3-tts"
+        },
+        {
+          "title": "Qwen3-TTS",
+          "id": "/qwenlm/qwen3-tts"
+        },
+        {
+          "title": "Qwen3-TTS",
+          "id": "/kritsanan1/qwen3-tts"
+        },
+        {
+          "title": "Any TTS",
+          "id": "/rheosoph/any-tts"
+        },
+        {
+          "title": "Faster Qwen3-TTS (DeepWiki)",
+          "id": "/websites/deepwiki_andimarafioti_faster-qwen3-tts"
+        }
+      ],
+      "library_id": "/qwenlm/qwen3-tts",
+      "docs_query": "Model streaming capability versus vLLM backend currently offline inference only and online serving planned; Apache-2.0 model license",
+      "docs_sources": [
+        "https://github.com/qwenlm/qwen3-tts/blob/main/README.md",
+        "https://github.com/qwenlm/qwen3-tts/blob/main/_autodocs/api-reference/qwen3-tts-model.md",
+        "https://github.com/qwenlm/qwen3-tts/blob/main/qwen_tts/inference/qwen3_tts_model.py",
+        "https://github.com/qwenlm/qwen3-tts/blob/main/assets/Qwen3_TTS.pdf"
+      ],
+      "match_scope": "exact-repository-library",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": [
+        {
+          "reported_url": "https://github.com/qwenlm/qwen3-tts/blob/main/_autodocs/api-reference/qwen3-tts-model.md",
+          "checked_url": "https://raw.githubusercontent.com/qwenlm/qwen3-tts/main/_autodocs/api-reference/qwen3-tts-model.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:05.201Z"
+        },
+        {
+          "reported_url": "https://github.com/qwenlm/qwen3-tts/blob/main/qwen_tts/inference/qwen3_tts_model.py",
+          "checked_url": "https://raw.githubusercontent.com/qwenlm/qwen3-tts/main/qwen_tts/inference/qwen3_tts_model.py",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.243Z"
+        },
+        {
+          "reported_url": "https://github.com/qwenlm/qwen3-tts/blob/main/README.md",
+          "checked_url": "https://raw.githubusercontent.com/qwenlm/qwen3-tts/main/README.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.373Z"
+        },
+        {
+          "reported_url": "https://github.com/qwenlm/qwen3-tts/blob/main/assets/Qwen3_TTS.pdf",
+          "checked_url": "https://raw.githubusercontent.com/qwenlm/qwen3-tts/main/assets/Qwen3_TTS.pdf",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.761Z"
+        }
+      ],
+      "verified_caveat_source": "https://raw.githubusercontent.com/QwenLM/Qwen3-TTS/022e286b98fbec7e1e916cb940cdf532cd9f488e/qwen_tts/inference/qwen3_tts_model.py"
+    }
+  },
+  {
+    "name": "QwenLM/Qwen3-ASR",
+    "url": "https://github.com/QwenLM/Qwen3-ASR",
+    "stars": 3629,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "7c6daf77a2421100f5fb066495372c00129d39ff",
+    "commit_source": "https://github.com/QwenLM/Qwen3-ASR",
+    "metadata_source": "https://github.com/QwenLM/Qwen3-ASR",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:11.796Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/7c6daf77a2421100f5fb066495372c00129d39ff/README.md",
+    "license": "Apache-2.0",
+    "license_source": "https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/7c6daf77a2421100f5fb066495372c00129d39ff/LICENSE",
+    "resource_type": "stt",
+    "curated_description": "Multilingual ASR with streaming inference support and separate alignment tooling.",
+    "recommendation": "add",
+    "license_notes": "Checked Qwen3-ASR-1.7B model card declares Apache-2.0. Streaming support is documented for vLLM only and lacks batching/timestamps in the pinned README; language coverage is a project claim, not our measured accuracy.",
+    "reason": "Distinct practical stt coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "exact-repository-library",
+      "fallback": "Pinned primary README/license remains authoritative. Generated _autodocs links are not assumed current.",
+      "name": "QwenLM/Qwen3-ASR",
+      "resolve_query": {
+        "libraryName": "Qwen3 ASR",
+        "query": "Streaming inference only vLLM backend no batching no timestamps, Apache license"
+      },
+      "resolve_candidates": [
+        {
+          "title": "Qwen3-ASR",
+          "id": "/qwenlm/qwen3-asr"
+        },
+        {
+          "title": "Qwen3-ASR",
+          "id": "/websites/huggingface_co_qwen_qwen3-asr-1_7b"
+        },
+        {
+          "title": "Qwen3 ASR Toolkit",
+          "id": "/qwenlm/qwen3-asr-toolkit"
+        },
+        {
+          "title": "Qwen3 ASR Rust",
+          "id": "/second-state/qwen3_asr_rs"
+        },
+        {
+          "title": "Qwen ASR",
+          "id": "/huanglizhuo/qwenasr"
+        }
+      ],
+      "library_id": "/qwenlm/qwen3-asr",
+      "docs_query": "Streaming backend currently vLLM only, no batching no return_timestamps for streaming; Apache-2.0 model license",
+      "docs_sources": [
+        "https://github.com/qwenlm/qwen3-asr/blob/main/_autodocs/api-reference-qwen3-asr-model.md",
+        "https://github.com/qwenlm/qwen3-asr/blob/main/_autodocs/README.md",
+        "https://github.com/qwenlm/qwen3-asr/blob/main/README.md"
+      ],
+      "match_scope": "exact-repository-library",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": [
+        {
+          "reported_url": "https://github.com/qwenlm/qwen3-asr/blob/main/_autodocs/api-reference-qwen3-asr-model.md",
+          "checked_url": "https://raw.githubusercontent.com/qwenlm/qwen3-asr/main/_autodocs/api-reference-qwen3-asr-model.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:05.289Z"
+        },
+        {
+          "reported_url": "https://github.com/qwenlm/qwen3-asr/blob/main/_autodocs/README.md",
+          "checked_url": "https://raw.githubusercontent.com/qwenlm/qwen3-asr/main/_autodocs/README.md",
+          "status": 404,
+          "checked_at": "2026-09-30T03:38:05.311Z"
+        },
+        {
+          "reported_url": "https://github.com/qwenlm/qwen3-asr/blob/main/README.md",
+          "checked_url": "https://raw.githubusercontent.com/qwenlm/qwen3-asr/main/README.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.529Z"
+        }
+      ]
+    }
+  },
+  {
+    "name": "pguso/voice-agents-from-scratch",
+    "url": "https://github.com/pguso/voice-agents-from-scratch",
+    "stars": 47,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "4c215bd4acd3247d87fa296326e005392938f0a4",
+    "commit_source": "https://github.com/pguso/voice-agents-from-scratch",
+    "metadata_source": "https://github.com/pguso/voice-agents-from-scratch",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:12.011Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/pguso/voice-agents-from-scratch/4c215bd4acd3247d87fa296326e005392938f0a4/README.md",
+    "license": "MIT",
+    "license_source": "https://raw.githubusercontent.com/pguso/voice-agents-from-scratch/4c215bd4acd3247d87fa296326e005392938f0a4/LICENSE",
+    "resource_type": "learning",
+    "curated_description": "Chaptered runnable guide to STT, language models, TTS and streamed voice-agent pipelines.",
+    "recommendation": "add",
+    "license_notes": "A learning repository, not an installable SKILL.md pack. Setup downloads model assets, whose licenses and hardware needs must be checked separately. No chapters were executed in this research.",
+    "reason": "Distinct practical learning coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "no-exact-match",
+      "fallback": "No exact target returned. Pinned primary README/license supplies catalog purpose; unrelated library not queried.",
+      "name": "pguso/voice-agents-from-scratch",
+      "resolve_query": {
+        "libraryName": "voice agents from scratch pguso",
+        "query": "Runnable chaptered STT LLM TTS voice agent tutorial GitHub"
+      },
+      "resolve_candidates": [
+        {
+          "title": "C++ Voice Agent",
+          "id": "/deepgram-starters/cpp-voice-agent"
+        },
+        {
+          "title": "Sarvam Voice Agents",
+          "id": "/websites/sarvam_ai_conversations"
+        },
+        {
+          "title": "Build a Large Language Model (From Scratch)",
+          "id": "/rasbt/llms-from-scratch"
+        },
+        {
+          "title": "AI Engineering from Scratch",
+          "id": "/rohitg00/ai-engineering-from-scratch"
+        },
+        {
+          "title": "Agents From Scratch",
+          "id": "/langchain-ai/agents-from-scratch"
+        }
+      ],
+      "library_id": null,
+      "docs_query": null,
+      "docs_sources": [],
+      "match_scope": "no-exact-match",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": []
+    }
+  },
+  {
+    "name": "coturn/coturn",
+    "url": "https://github.com/coturn/coturn",
+    "stars": 14440,
+    "archived": false,
+    "default_branch": "master",
+    "commit": "dd644d0a7b9462c31d95f19d8eccd180c55e29e5",
+    "commit_source": "https://github.com/coturn/coturn",
+    "metadata_source": "https://github.com/coturn/coturn",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:11.794Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/coturn/coturn/dd644d0a7b9462c31d95f19d8eccd180c55e29e5/README.md",
+    "license": "BSD-3-Clause",
+    "license_source": "https://raw.githubusercontent.com/coturn/coturn/dd644d0a7b9462c31d95f19d8eccd180c55e29e5/LICENSE",
+    "resource_type": "networking",
+    "curated_description": "STUN/TURN relay server for WebRTC media connectivity through restrictive networks.",
+    "recommendation": "add",
+    "license_notes": "A successful STUN exchange is not proof of bidirectional relayed media. Verify selected ICE candidate, authenticated allocation and advertised relay port mapping. No network configuration was changed.",
+    "reason": "Distinct practical networking coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "library_id": "/coturn/coturn",
+      "status": "matched",
+      "queries": [
+        "WebRTC TURN relay setup for ICE behind NAT: advertised external-ip, relay min-port/max-port firewall mapping and long-term or REST authentication; distinguish successful STUN response from actual media relay"
+      ],
+      "sources": [
+        "https://github.com/coturn/coturn/blob/master/examples/etc/turnserver.conf",
+        "https://github.com/coturn/coturn/wiki/turnserver"
+      ]
+    }
+  },
+  {
+    "name": "SIPp/sipp",
+    "url": "https://github.com/SIPp/sipp",
+    "stars": 1141,
+    "archived": false,
+    "default_branch": "master",
+    "commit": "934c0fe2db9b3a98f60b474a2bd9d9993fda359b",
+    "commit_source": "https://github.com/SIPp/sipp",
+    "metadata_source": "https://github.com/SIPp/sipp",
+    "metadata_method": "github_html_embedded_json",
+    "retrieved_at": "2026-09-30T03:21:12.549Z",
+    "reviewed_date": "2026-09-30 UTC",
+    "provider_publication_date": null,
+    "readme_source": "https://raw.githubusercontent.com/SIPp/sipp/934c0fe2db9b3a98f60b474a2bd9d9993fda359b/README.md",
+    "license": "GPL-2.0-or-later per LICENSE.txt; file exceptions",
+    "license_source": "https://raw.githubusercontent.com/SIPp/sipp/934c0fe2db9b3a98f60b474a2bd9d9993fda359b/LICENSE.txt",
+    "resource_type": "networking",
+    "curated_description": "SIP scenario and load-test tool for signaling, call routing and media-path checks.",
+    "recommendation": "add",
+    "license_notes": "Pinned LICENSE.txt says GPL-2.0-or-later and separate send_packets files, while the README template says GPL-3.0-or-later. Record that discrepancy instead of choosing the README badge. SIP success does not prove agent behavior; live calls need an authorized target and budget.",
+    "reason": "Distinct practical networking coverage for voice-agent builders; stars are snapshot adoption evidence, not quality validation.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "status": "exact-repository-library",
+      "fallback": "Pinned primary README/license remains authoritative. Generated _autodocs links are not assumed current.",
+      "name": "SIPp/sipp",
+      "resolve_query": {
+        "libraryName": "SIPp",
+        "query": "SIP scenario call load test signaling media tool GPL version discrepancy"
+      },
+      "resolve_candidates": [
+        {
+          "title": "SIPp",
+          "id": "/sipp/sipp"
+        },
+        {
+          "title": "SIPp",
+          "id": "/websites/sipp_readthedocs_io_en"
+        }
+      ],
+      "library_id": "/sipp/sipp",
+      "docs_query": "SIP signaling scenario and load generator with optional RTP media; GPL LICENSE.txt version 2 or later versus README version 3 or later",
+      "docs_sources": [
+        "https://github.com/sipp/sipp/blob/master/CHANGES.md",
+        "https://github.com/sipp/sipp/blob/master/docs/scenarios/ownscenarios.rst",
+        "https://github.com/sipp/sipp/blob/master/README.md",
+        "https://github.com/sipp/sipp/blob/master/docs/media.rst"
+      ],
+      "match_scope": "exact-repository-library",
+      "reviewed_date": "2026-09-30 UTC",
+      "docs_source_checks": [
+        {
+          "reported_url": "https://github.com/sipp/sipp/blob/master/CHANGES.md",
+          "checked_url": "https://raw.githubusercontent.com/sipp/sipp/master/CHANGES.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.396Z"
+        },
+        {
+          "reported_url": "https://github.com/sipp/sipp/blob/master/README.md",
+          "checked_url": "https://raw.githubusercontent.com/sipp/sipp/master/README.md",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.463Z"
+        },
+        {
+          "reported_url": "https://github.com/sipp/sipp/blob/master/docs/scenarios/ownscenarios.rst",
+          "checked_url": "https://raw.githubusercontent.com/sipp/sipp/master/docs/scenarios/ownscenarios.rst",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.474Z"
+        },
+        {
+          "reported_url": "https://github.com/sipp/sipp/blob/master/docs/media.rst",
+          "checked_url": "https://raw.githubusercontent.com/sipp/sipp/master/docs/media.rst",
+          "status": 200,
+          "checked_at": "2026-09-30T03:38:05.557Z"
+        }
+      ]
+    }
+  },
+  {
+    "name": "xiph/rnnoise",
+    "url": "https://gitlab.xiph.org/xiph/rnnoise",
+    "stars": 5873,
+    "stars_source": "https://github.com/xiph/rnnoise",
+    "stars_scope": "GitHub convenience mirror, not authoritative GitLab repository",
+    "default_branch": "main",
+    "commit": "70f1d256acd4b34a572f999a05c87bf00b67730d",
+    "commit_source": "https://gitlab.xiph.org/xiph/rnnoise",
+    "repository_commit_at": "2025-02-22T18:58:18.000-05:00",
+    "metadata_source": "https://github.com/xiph/rnnoise",
+    "metadata_method": "github_html_and_authoritative_gitlab_readback",
+    "retrieved_at": "2026-09-30T03:43:28.705471+00:00",
+    "readme_source": "https://gitlab.xiph.org/xiph/rnnoise/-/blob/main/README",
+    "readme_sha256": "87fc8de7620259a3200be2012e7c77fc9383997d3224318451eaded27691754f",
+    "github_gitlab_readme_sha256_equal": true,
+    "license": "BSD-3-Clause",
+    "license_source": "https://gitlab.xiph.org/xiph/rnnoise/-/blob/main/COPYING",
+    "license_notes": "BSD-3-Clause code. Authoritative GitLab and GitHub mirror match at the recorded commit. Main last changed 2025-02-22. Official example uses 48 kHz mono raw PCM; no AEC replacement or runtime quality guarantee. Build helper downloads model data; separate training/model terms require review.",
+    "resource_type": "audio-processing",
+    "curated_description": "Neural noise suppression for microphone input before recognition or turn detection.",
+    "is_installable_agent_skill": false,
+    "context7": {
+      "library_id": "/xiph/rnnoise",
+      "reviewed_at": "2026-09-30",
+      "finding": "Context7 returned synthetic llms.txt citations; canonical claims were checked directly against authoritative GitLab README, COPYING and C header.",
+      "primary_source": "https://gitlab.xiph.org/xiph/rnnoise/-/blob/main/README"
+    }
   }
 ]

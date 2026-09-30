@@ -6,175 +6,161 @@
 
 **Skills for the agents that build voice agents.**
 
-A curated workbench for realtime conversation, speech, telephony, and voice agent engineering.
+Practical instructions for speech, conversation, telephony, and the engineering between them.
 
-![Skills: 31](https://img.shields.io/badge/skills-31-6366f1?style=flat-square)
-![Upstream providers: 6](https://img.shields.io/badge/upstream_providers-6-0891b2?style=flat-square)
-![Resources: 28](https://img.shields.io/badge/resources-28-059669?style=flat-square)
+![Bundled skills: 32](https://img.shields.io/badge/bundled_skills-32-6366f1?style=flat-square)
+![Original foundations: 5](https://img.shields.io/badge/original_foundations-5-0891b2?style=flat-square)
+![Resource projects: 43](https://img.shields.io/badge/resource_projects-43-059669?style=flat-square)
 ![Original material: MIT](https://img.shields.io/badge/original_material-MIT-475569?style=flat-square)
 
-[Choose a skill](#choose-a-skill) · [Get started](#get-started) · [Explore the stack](#explore-the-stack) · [Full catalog](docs/catalog.md) · [Contribute](CONTRIBUTING.md)
+[Find a skill](#find-a-skill) · [Choose an architecture](#choose-an-architecture) · [Get started](#get-started) · [Resource library](docs/resources.md)
 
 </div>
 
 ---
 
-Building a voice agent means getting a lot of details right: streaming audio, turn
-taking, tool calls, phone connections, spoken responses, and the moments when things
-fail. NL Voice Skills brings practical instructions for that work into one place.
+Voice agents have to listen, take turns, act, and recover while someone is waiting
+on the other end. This collection helps a coding agent work through those details.
+It brings together original engineering guides and skills from the people who
+maintain the underlying platforms.
 
-**31 skill entries:** 27 original, maintained upstream skills from six providers,
-plus four original skills for engineering across providers. Provider links open
-their source repository's current default branch. The repo also preserves clearly
-dated snapshots with supporting files and licenses. A separate library covers
-28 frameworks, models, and tools, official documentation, and community discoveries.
+**Reviewed September 30, 2026 (UTC).** Provider links lead to their original
+repositories' current default branches. The five NL foundations are maintained
+here. The 27 bundled provider copies remain dated reference snapshots with
+licenses and file hashes. Additional skills are organized in a separate
+[upstream index](docs/more-skills.md), including language variants and optional
+workflows. These counts describe files and projects, not independent capabilities.
 
-These skills guide a coding or operations agent. The frameworks and models in the
-resource library are the components that run your voice application.
+## Find a skill
 
-## Choose a skill
-
-| I want to… | Start with |
+| Your task | Start here |
 | --- | --- |
-| Choose the right voice architecture | [Voice stack selection](skills/foundations/voice-stack-selection/SKILL.md) |
-| Build a LiveKit agent | [Building LiveKit agents](https://github.com/livekit/agent-skills/blob/main/skills/building-livekit-agents/SKILL.md) |
-| Create a Pipecat project | [Pipecat init](https://github.com/pipecat-ai/skills/blob/main/skills/init/SKILL.md) |
-| Build an ElevenLabs conversational agent | [ElevenLabs agents](https://github.com/elevenlabs/skills/blob/main/agents/SKILL.md) |
-| Build with Cartesia speech or Line | [Cartesia API](https://github.com/cartesia-ai/skills/blob/main/skills/cartesia-api/SKILL.md) · [Cartesia Line](https://github.com/cartesia-ai/skills/blob/main/skills/cartesia-line/SKILL.md) |
-| Connect a phone conversation to an AI agent | [Twilio ConversationRelay](https://github.com/twilio/ai/blob/main/skills/twilio/twilio-voice-conversation-relay/SKILL.md) |
-| Generate speech or transcribe audio | [OpenAI speech](https://github.com/openai/skills/blob/main/skills/.curated/speech/SKILL.md) · [OpenAI transcribe](https://github.com/openai/skills/blob/main/skills/.curated/transcribe/SKILL.md) |
-| Make spoken conversations feel natural | [Voice conversation design](skills/foundations/voice-conversation-design/SKILL.md) |
-| Diagnose slow responses and interruptions | [Voice latency audit](skills/foundations/voice-latency-audit/SKILL.md) · [LiveKit debugging](https://github.com/livekit/agent-skills/blob/main/skills/debugging-livekit-agents/SKILL.md) |
-| Test real conversation behavior | [Voice agent evaluation](skills/foundations/voice-agent-evaluation/SKILL.md) · [LiveKit testing](https://github.com/livekit/agent-skills/blob/main/skills/testing-livekit-agents/SKILL.md) |
+| Choose a stack and justify the tradeoffs | [Stack selection](skills/foundations/voice-stack-selection/SKILL.md) · [Architecture guide and decision worksheet](skills/foundations/voice-stack-selection/references/architecture-guide.md) |
+| Design a conversation people can follow | [Conversation design](skills/foundations/voice-conversation-design/SKILL.md) |
+| Explain slow responses or awkward interruptions | [Latency audit](skills/foundations/voice-latency-audit/SKILL.md) |
+| Fix silence, distorted audio, or one-way calls | [Media debugging](skills/foundations/voice-media-debugging/SKILL.md) |
+| Test conversation behavior and tool correctness | [Evaluation](skills/foundations/voice-agent-evaluation/SKILL.md) · [Coval workflows](docs/more-skills.md#evaluation-and-local-speech) |
+| Build with LiveKit or Pipecat | [LiveKit builder](https://github.com/livekit/agent-skills/blob/main/skills/building-livekit-agents/SKILL.md) · [Pipecat init](https://github.com/pipecat-ai/skills/blob/main/skills/init/SKILL.md) |
+| Use a hosted voice agent platform | [ElevenLabs](https://github.com/elevenlabs/skills/blob/main/agents/SKILL.md) · [Cartesia Line](https://github.com/cartesia-ai/skills/blob/main/skills/cartesia-line/SKILL.md) · [More platforms](docs/more-skills.md) |
+| Build with Azure Voice Live or Gemini Live | [Cloud voice skills](docs/more-skills.md#cloud-voice-and-speech) |
+| Connect phone calls, SIP, or browser audio | [Twilio ConversationRelay](https://github.com/twilio/ai/blob/main/skills/twilio/twilio-voice-conversation-relay/SKILL.md) · [Telnyx and other carriers](docs/more-skills.md) |
+| Add recognition, synthesis, or local speech | [Deepgram and AssemblyAI](docs/more-skills.md) · [OpenAI speech](https://github.com/openai/skills/blob/main/skills/.curated/speech/SKILL.md) · [Local models](docs/resources.md#local-speech-synthesis-and-audio-inference) |
 
-## The collection
+### Two catalogs, one source policy
 
-| Collection | Skills | What it covers | Source license |
-| --- | ---: | --- | --- |
-| [Foundations](docs/catalog.md#foundations) | 4 | Stack decisions, conversation design, latency, evaluation | MIT |
-| [LiveKit](https://github.com/livekit/agent-skills/tree/main) | 7 | Docs, building, debugging, tests, scenarios, simulations, operations | MIT |
-| [ElevenLabs](https://github.com/elevenlabs/skills/tree/main) | 7 | Agents, speech engine, STT, TTS, voice isolation, voice conversion, dubbing | MIT |
-| [Twilio](https://github.com/twilio/ai/tree/main) | 6 | Agent architecture, ConversationRelay, TwiML, outbound calls, recordings, conferences | MIT |
-| [Pipecat](https://github.com/pipecat-ai/skills/tree/main) | 3 | Initialize, deploy, and talk to a Pipecat agent | BSD-2-Clause |
-| [Cartesia](https://github.com/cartesia-ai/skills/tree/main) | 2 | Speech API and Line agents | MIT |
-| [OpenAI](https://github.com/openai/skills/tree/main) | 2 | Speech generation and transcription with diarization | Apache-2.0 |
+| Catalog | What you will find |
+| --- | --- |
+| [Core skills](docs/catalog.md) | Five original foundations and 27 provider skills from LiveKit, ElevenLabs, Twilio, Pipecat, Cartesia, and OpenAI. Original links appear beside optional snapshots. |
+| [More upstream skills](docs/more-skills.md) | Voice-specific source links for Telnyx, Deepgram, Vapi, AssemblyAI, Microsoft, Google, NVIDIA, Coval, Moonshine, Voximplant, Synthflow, and Shiny. Language variants are grouped by task. |
+| [Runtime resources](docs/resources.md) | 43 frameworks, models, evaluation tools, media utilities, and learning projects, with dated stars and license qualifications. |
 
-Browse [all 31 skills and their original sources](docs/catalog.md). Open upstream
-links for the latest instructions. Bundled copies are a September 29, 2026 snapshot;
-[sources.json](sources.json) records current source links, immutable snapshot
-commits, licenses, and file checksums.
+A skill guides your coding agent. A runtime framework or model becomes part of
+your application. Some source repositories contain both; the catalogs say which
+one you are looking at.
 
-### More skill packs worth exploring
+## Choose an architecture
 
-- [Deepgram skills](https://github.com/deepgram/skills): speech recognition, speech
-  synthesis, voice agents, and debugging workflows.
-- [Vapi skills](https://github.com/VapiAI/skills): agents, tools, phone numbers,
-  integrations, and platform workflows.
-- [Twilio's full AI collection](https://github.com/twilio/ai): additional integration
-  skills that can complement the voice subset here.
-- [ElevenLabs Agents documentation](https://elevenlabs.io/docs/agents-platform/overview):
-  specialist topics such as evaluation, procedures, tools, and production operations.
+Start with the conversation and operational constraints, then compare two
+plausible designs using the same tasks and audio path. A responsive demo alone
+cannot tell you how a system handles tool failures, noisy callers, transfers,
+or many simultaneous sessions.
 
-Deepgram and Vapi are indexed as external collections while complete redistribution
-terms are unresolved. The [research notes](docs/research.md) explain the selection,
-local inventory, exclusions, and source coverage.
+| Decision | What to establish before committing |
+| --- | --- |
+| Realtime speech model or STT → LLM → TTS pipeline | How much control you need over recognized text, speech output, model choice, and interruption behavior. Measure the actual streaming path. |
+| Managed platform or application-owned orchestration | Who owns session state, turn detection, tool execution, retries, observability, and incident response. |
+| Browser, mobile, or telephone transport | The required media contract, network traversal, codecs, call routing, and where credentials can safely live. |
+| Tool execution and human handoff | What may happen during an interruption, which actions need confirmation, how duplicate work is prevented, and what context a human receives. |
+| Hosting, cost, and migration | Regions, data handling, concurrency limits, compute and call costs, failover behavior, and the boundaries you can replace later. |
+
+The [architecture guide](skills/foundations/voice-stack-selection/references/architecture-guide.md)
+works through those choices, including hybrid designs, conditional examples,
+failure cases, a proof-of-concept plan, and a decision record. It separates
+provider-documented behavior from engineering recommendations. Use the
+[evaluation skill](skills/foundations/voice-agent-evaluation/SKILL.md) to define
+what would make you change your mind.
 
 ## Get started
 
-1. Pick the skill that matches your task and open its original source link.
-2. For provider skills, follow the original collection's current installation guide.
-   For NL foundations, use this repository.
-3. Install the **whole skill folder** into your agent's supported skill directory.
-   Keep references, scripts, metadata, and assets beside `SKILL.md`.
-4. Invoke the skill by its frontmatter name, using your agent's skill syntax.
+1. Choose the skill for the work in front of you and open its original source.
+2. Check its prerequisites and current installation instructions. Install the
+   **whole skill folder**, including references and scripts. Some SDK skills also
+   depend on files elsewhere in their source repository.
+3. Invoke it by its frontmatter name using your coding agent's skill syntax.
+4. Start with fixtures or mocked tools, then test the authorized real media path.
 
 ```sh
 git clone https://github.com/RBStrayer/nl-voice-skills.git
 ```
 
-The clone contains our original foundations and dated provider snapshots. For
-current LiveKit instructions, use the source linked in the catalog, then ask:
+For an architecture review:
 
-> Use building-livekit-agents to add a browser voice assistant with a mocked booking tool.
+> Use voice-stack-selection to compare two designs for a multilingual phone assistant. Include interruptions during a booking tool, transfer failure, cost, and evidence needed before choosing.
 
-For a provider-neutral review:
+For a media fault:
 
-> Use voice-latency-audit to explain response delay from these traces. Separate measured stages from missing playback evidence.
+> Use voice-media-debugging to explain why this connected call is silent. Inspect the negotiated formats, transport counters, and playback result before changing the model.
 
-Install only the skills you need. Provider skills may require a CLI, documentation
-MCP, SDK, or credentials. [Usage notes](docs/usage.md) explain those dependencies
-and snapshot caveats. Installing a skill grants no permission to dial, spend,
-record, deploy, or change a live account.
+[Usage notes](docs/usage.md) cover host compatibility, dependencies, and concrete
+source caveats. Installing instructions does not itself authorize dialing,
+recording, spending, deploying, or changing a provider account.
 
 ## Explore the stack
 
-### Frameworks and realtime agents
+| Work area | Selected starting points |
+| --- | --- |
+| Orchestration | [LiveKit Agents](https://github.com/livekit/agents), [Pipecat](https://github.com/pipecat-ai/pipecat), [OpenAI Agents SDK](https://github.com/openai/openai-agents-js), [Bolna](https://github.com/bolna-ai/bolna) |
+| Turn taking | [Silero VAD](https://github.com/snakers4/silero-vad), [Smart Turn](https://github.com/pipecat-ai/smart-turn), [eot-bench](https://github.com/livekit/eot-bench) |
+| Local recognition | [Whisper](https://github.com/openai/whisper), [faster-whisper](https://github.com/SYSTRAN/faster-whisper), [Moonshine](https://github.com/moonshine-ai/moonshine), [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR) |
+| Local synthesis | [Kokoro](https://github.com/hexgrad/kokoro), [Chatterbox](https://github.com/resemble-ai/chatterbox), [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) |
+| Speech models | [Ultravox](https://github.com/fixie-ai/ultravox), [Moshi](https://github.com/kyutai-labs/moshi), [Kyutai STT/TTS](https://github.com/kyutai-labs/delayed-streams-modeling) |
+| Media and telephone infrastructure | [Pion](https://github.com/pion/webrtc), [coturn](https://github.com/coturn/coturn), [jambonz](https://github.com/jambonz/jambonz-feature-server), [SIPp](https://github.com/SIPp/sipp) |
+| Evaluation and traces | [EVA](https://github.com/ServiceNow/eva), [Coval skills](https://github.com/coval-ai/coval-external-skills), [Langfuse](https://github.com/langfuse/langfuse), [Phoenix](https://github.com/Arize-ai/phoenix) |
 
-| Project | Useful for | Stars* |
-| --- | --- | ---: |
-| [Pipecat](https://github.com/pipecat-ai/pipecat) | Composable streaming speech pipelines and transports | 16,017 |
-| [LiveKit Agents](https://github.com/livekit/agents) | Voice agents over WebRTC and SIP, with provider integrations | 14,427 |
-| [OpenAI Agents SDK, TypeScript](https://github.com/openai/openai-agents-js) | Realtime agents, tools, and browser/server connections | 3,880 |
-| [Hugging Face speech-to-speech](https://github.com/huggingface/speech-to-speech) | Exploring a local speech pipeline | See resource library |
+The [full library](docs/resources.md) explains each project's role, limitations,
+licenses, current documentation, and community discovery sources. Stars are dated
+signals of adoption. They are not a quality ranking, and code licenses do not
+necessarily cover model weights, voices, datasets, or hosted services.
 
-### Go deeper
+## Freshness and maintenance
 
-- **Conversation timing:** [Silero VAD](https://github.com/snakers4/silero-vad),
-  [Smart Turn](https://github.com/pipecat-ai/smart-turn),
-  [eot-bench](https://github.com/livekit/eot-bench).
-- **Speech recognition:** [Whisper](https://github.com/openai/whisper),
-  [faster-whisper](https://github.com/SYSTRAN/faster-whisper),
-  [whisper.cpp](https://github.com/ggml-org/whisper.cpp).
-- **Speech synthesis:** [Kokoro](https://github.com/hexgrad/kokoro),
-  [F5-TTS](https://github.com/SWivid/F5-TTS),
-  [Piper](https://github.com/OHF-Voice/piper1-gpl).
-- **Telephony:** [Twilio Media Streams](https://github.com/twilio/media-streams),
-  [jambonz](https://github.com/jambonz/jambonz-feature-server),
-  [drachtio-srf](https://github.com/drachtio/drachtio-srf).
-- **Tracing and evaluation:** [Langfuse](https://github.com/langfuse/langfuse),
-  [Phoenix](https://github.com/Arize-ai/phoenix), plus the voice-specific timing
-  and test guidance in this collection.
+This review used **Context7 plus current primary documentation**, with direct
+source checks where the index was missing or stale. Retrieval dates are distinct
+from provider publication dates. [Documentation review](docs/documentation-review.md)
+records those checks and the contradictions found. Examples include changed
+Pipecat installation commands, outdated SDK constants, and model-license summaries
+that no longer match the current source.
 
-**[Open the full resource library →](docs/resources.md)** for all 28 projects,
-licenses, official learning paths, benchmarks, and Reddit/community discovery links.
+A daily review is configured in the maintainer's Codex workspace for **9:00 a.m.
+America/New_York**. It checks original sources and releases, makes supported
+updates, validates them, and pushes to this private repository. That scheduler
+and its authentication are external to the repository; cloning it does not
+install an automation. [Maintenance procedure](docs/maintenance.md).
 
-*Stars are a dated discovery signal, not a quality ranking. Snapshot: September 29,
-2026 (America/New_York). Exact observation times and sources are in
-[resources.json](resources.json). Framework, model-weight, and hosted-service terms
-can differ; qualifications are recorded in the resource library.*
-
-## Repository layout
-
-```text
-skills/
-  foundations/    Cross-provider engineering skills
-  livekit/        Agent lifecycle and realtime conversation
-  elevenlabs/     Voice agents and speech workflows
-  twilio/         Phone calls and voice infrastructure
-  pipecat/        Pipeline project workflows
-  cartesia/       Speech API and Line agents
-  openai/         Speech and transcription
-docs/
-  catalog.md      Original upstream links and prerequisites
-  resources.md    Frameworks, models, tools, and learning paths
-  usage.md        Portability and runtime notes
-  research.md     Curation method and coverage
-licenses/         Preserved upstream licenses
-sources.json      Pinned skill origins and file checksums
-resources.json    Resource metadata and dated evidence
-scripts/verify.py Local collection checks
+```sh
+python scripts/verify.py
+python scripts/test_verify.py
 ```
 
-## Curation and contribution
+These checks cover recorded source hashes and licenses, skill structure, local
+links, metadata consistency, and common credential patterns. They do not execute
+provider APIs or establish production voice quality.
 
-Selection favors practical voice-specific work, credible maintainers, usable
-instructions, supporting material, and clear provenance. Community discussion and
-stars help find candidates; direct source inspection decides what belongs here.
+## Repository map
 
-Run `python scripts/verify.py` to check the collection locally. See
-[CONTRIBUTING.md](CONTRIBUTING.md) to propose a skill or resource.
+| Path | Contents |
+| --- | --- |
+| [skills/](skills/) | Original foundations and dated provider snapshots |
+| [docs/catalog.md](docs/catalog.md) · [docs/more-skills.md](docs/more-skills.md) | Core and expanded skill indexes |
+| [docs/resources.md](docs/resources.md) | Runtime components, official learning paths, and community leads |
+| [sources.json](sources.json) | Snapshot commits, retained licenses, and copied-file hashes |
+| [linked-skills.json](linked-skills.json) · [resources.json](resources.json) | Dated metadata for original source links and resource projects |
+| [docs/research.md](docs/research.md) | Search coverage, exclusions, and verification limits |
 
-Original NL Voice Skills material is [MIT licensed](LICENSE). Upstream material
-retains its own terms; see [third-party notices](THIRD_PARTY_NOTICES.md).
+Contributions should fill a concrete voice-engineering gap and link to the
+original maintained source. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Original NL material is [MIT licensed](LICENSE). Copied upstream content retains
+its own terms in [third-party notices](THIRD_PARTY_NOTICES.md).
 
 Maintained by [Rob Strayer](https://github.com/RBStrayer).

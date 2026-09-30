@@ -3,10 +3,21 @@ import ast
 import hashlib
 import json
 import re
+from collections import Counter
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# These checks catch common leaks; a human review still covers private prose/data.
+SENSITIVE = [re.compile(pattern) for pattern in (
+    r'gh[pousr]_[A-Za-z0-9]{20,}',
+    r'github_pat_[A-Za-z0-9_]{30,}',
+    r'sk-[A-Za-z0-9_-]{24,}',
+    r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
+    r'(?:C:[/\\]Users[/\\]|/Users/)[A-Za-z0-9][^/\\\s]*[/\\]',
+)]
 
 
 def inside(relative):
@@ -30,6 +41,12 @@ def verify(root=ROOT):
                 continue
             assert re.fullmatch(r'[0-9a-f]{40}', source['sha']), source['repo']
             assert source['license'], source['repo']
+            copied_paths = {item['copied_path'] for item in source['copied_files']}
+            license_paths = ({'skills/openai/speech/LICENSE.txt',
+                              'skills/openai/transcribe/LICENSE.txt'}
+                             if source['provider'] == 'openai'
+                             else {'licenses/' + source['provider'] + '/LICENSE'})
+            assert license_paths <= copied_paths, 'Missing retained license: ' + source['repo']
             assert source['live_url'] == source['url'] + '/tree/' + source['default_branch']
             assert f'](skills/{source["provider"]}/' not in readme, 'Provider README links must use original sources'
             for item in source['copied_files']:
@@ -63,15 +80,61 @@ def verify(root=ROOT):
                         assert member.relative_to(ROOT).as_posix() in tracked, member
         assert len(skills) == sources['skill_count'], 'Skill count mismatch'
         assert len(tracked) == sources['copied_file_count'], 'Copied count mismatch'
+        originals = {p.parent.relative_to(ROOT).as_posix()
+                     for p in (ROOT / 'skills/foundations').rglob('SKILL.md')}
+        assert originals == set(sources['original_skills']), 'Original skill index mismatch'
+        linked = json.loads((ROOT / 'linked-skills.json').read_text(encoding='utf-8'))
+        linked_catalog = (ROOT / 'docs/more-skills.md').read_text(encoding='utf-8')
+        origins = {item['repo']: item for item in linked['sources']}
+        assert len(origins) == len(linked['sources']) == linked['source_repository_count']
+        entries = linked['skills']
+        assert len(entries) == len({item['url'] for item in entries}) == linked['selected_skill_count']
+        for key in ('current_branch_manifest_count', 'current_branch_manifest_http_200',
+                    'current_branch_manifest_hash_matches'):
+            assert linked['verification'][key] == len(entries), 'Stale verification counter: ' + key
+        assert dict(Counter(item['repository'] for item in entries)) == linked['counts_by_repository']
+        assert dict(Counter(item['selection'] for item in entries)) == linked['counts_by_selection']
+        for source in origins.values():
+            assert re.fullmatch(r'[0-9a-f]{40}', source['head']), source['repo']
+            assert isinstance(source['stars'], int) and source['stars'] >= 0, source['repo']
+            datetime.fromisoformat(source['retrieved_at'].replace('Z', '+00:00'))
+            assert source['license_status'], source['repo']
+            if source['license_path']:
+                assert source['license_url'] == ('https://github.com/' + source['repo'] +
+                       '/blob/' + source['default_branch'] + '/' + source['license_path'])
+        for item in entries:
+            source = origins[item['repository']]
+            assert item['default_branch'] == source['default_branch'], item['name']
+            assert item['pinned_commit'] == source['head'], item['name']
+            assert item['path'].endswith('/SKILL.md'), item['name']
+            original = ('https://github.com/' + item['repository'] + '/blob/' +
+                        source['default_branch'] + '/' + item['path'])
+            assert item['url'] == original and original in linked_catalog, item['name']
+            assert re.fullmatch(r'[0-9a-f]{64}', item['verified_manifest_sha256']), item['name']
+            assert item['purpose'] and item['dependencies'] and item['concerns'], item['name']
         resources = json.loads((ROOT / 'resources.json').read_text(encoding='utf-8'))
+        resource_catalog = (ROOT / 'docs/resources.md').read_text(encoding='utf-8')
         assert len(resources) == len({item['name'] for item in resources}), 'Duplicate resource'
         for item in resources:
             assert isinstance(item['stars'], int) and item['stars'] >= 0, item['name']
             assert re.fullmatch(r'[0-9a-f]{40}', item['commit']), item['name']
             assert item['metadata_source'] and item['retrieved_at'], item['name']
+            assert item['url'] in resource_catalog, 'Missing resource link: ' + item['name']
         for path in ROOT.rglob('*.py'):
             if '.git' not in path.parts:
                 ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
+        for path in ROOT.rglob('*'):
+            if not path.is_file() or {'.git', '__pycache__', 'node_modules'} & set(path.parts):
+                continue
+            assert not (path.name == '.env' or
+                        path.name.startswith('.env.') and path.name != '.env.example' or
+                        path.name in {'id_rsa', 'id_ed25519'}), 'Private file: ' + str(path)
+            try:
+                content = path.read_text(encoding='utf-8')
+            except UnicodeDecodeError:
+                continue
+            assert not any(pattern.search(content) for pattern in SENSITIVE), \
+                'Credential or private-path pattern in: ' + str(path)
         for path in ROOT.rglob('*.md'):
             if '.git' in path.parts:
                 continue
@@ -85,7 +148,8 @@ def verify(root=ROOT):
                 local = (path.parent / unquote(url.path)).resolve()
                 assert local.is_relative_to(ROOT) and local.exists(), f'{path}: {target}'
         print(f'PASS: {len(skills)} skills, {len(tracked)} upstream files, '
-              f'{len(resources)} resources; names, provenance, syntax, and local paths checked.')
+              f'{len(entries)} linked skills, {len(resources)} resources; names, provenance, licenses, syntax, '
+              'local paths, and bounded credential patterns checked.')
     finally:
         ROOT = previous
 

@@ -4,7 +4,7 @@
   "snapshot_timezone": "America/New_York",
   "link_policy": "Original upstream default-branch URLs are primary; bundled files are dated snapshots.",
   "checked_at": "2026-09-30T02:36:23.019087+00:00",
-  "skill_count": 31,
+  "skill_count": 32,
   "copied_file_count": 104,
   "verification": "Every copied file was read back and compared byte-for-byte with its exact commit-pinned archive entry. Full upstream skill folder trees retained, including nested licenses and optional metadata/assets.",
   "collections": [
@@ -870,6 +870,7 @@
     "skills/foundations/voice-agent-evaluation",
     "skills/foundations/voice-conversation-design",
     "skills/foundations/voice-latency-audit",
+    "skills/foundations/voice-media-debugging",
     "skills/foundations/voice-stack-selection"
   ]
 }

@@ -1,93 +1,131 @@
 # Curation and research notes
 
-Initial research: September 29, 2026 (America/New_York). Machine records include
-UTC observation times that fall on September 30. This collection is a curated
-starting point, with demonstrated coverage below, rather than an exhaustive
-inventory of every voice skill on the internet.
+Expanded review: **2026-09-30 UTC**. Initial collection: September 29, 2026
+(America/New_York). This page describes the sources actually searched and the
+limits of the review. It is not an inventory of every voice skill on the internet.
 
-## Sources searched
+## What is included
 
-- Installed Codex, Claude, shared agent, and plugin-cache skill directories.
-- A locally available Hermes foundation package containing additional skills.
-- Public upstream repositories, their skill folders, supporting material, licenses,
-  immutable commits, and current repository metadata.
-- Web search, official documentation, Reddit discussions, and community links.
-
-The local scan screened 1,654 installed `SKILL.md` headers plus 244 Hermes-package
-headers. It found 133 voice-relevant copies, deduplicated to 80 provider/name
-entries: LiveKit 9, Deepgram 15, ElevenLabs 33, Twilio 18, and Hermes 5.
-Different versions and content variants were retained in the private research
-inventory. Some project directories were inaccessible, so project-local coverage
-is incomplete. The research inventory stays outside this publishable repository.
-
-The installed collection was a discovery source. Public upstream snapshots supply
-the vendored content. This avoids exporting local execution customizations or
-private project information. Local files were not assumed to be latest or licensed
-for redistribution merely because they were installed.
-
-Original upstream links are primary in the README and skill catalog. All six
-included source collections use `main`; all 27 live upstream `SKILL.md` paths
-returned HTTP 200 and matched the recorded snapshots when checked. Historical
-local names and entries without an established current original source are not
-included in the published catalog. Bundled provider files are explicitly dated
-reference snapshots and do not automatically update with upstream.
-
-## Inclusion rules
-
-Include skills that help build, debug, test, operate, or design voice agents, plus
-speech workflows directly useful to that work. Preserve the supporting folder and
-upstream name. Favor official and maintained sources, clear task triggers, and
-meaningful engineering guidance over duplicate prompts or generic skill bundles.
-
-Repository popularity was checked as a discovery signal. Actual voice-specific
-skill packs often have far fewer stars than framework or general-skill repositories.
-The skill-source counts in `sources.json` and framework counts in `resources.json`
-refer to different repositories and should not be combined as an endorsement.
-
-## Included and indexed
-
-| Source | Treatment | Reason |
+| Material | Coverage | Treatment |
 | --- | --- | --- |
-| ElevenLabs, LiveKit, Pipecat, Cartesia, Twilio, OpenAI | 27 selected skills copied at pinned commits | Clear license files covering the selected content; supporting material retained. |
-| [Deepgram skills](https://github.com/deepgram/skills) | External index | No root or nested redistribution license found in the searched pinned repository tree. This is a source-search result, not a claim that permission can never be obtained. |
-| [Vapi skills](https://github.com/VapiAI/skills) | External index | Skill frontmatter declares MIT, but no complete license/notice file was located to establish supporting-file scope. |
-| ElevenLabs connector architect specialists | Official documentation links | Installed specialist prose lacked a located redistribution license; public SDK/agent skills and documentation cover the main workflows. |
-| Twilio Conversation Intelligence | Full upstream link | Selected skill depends on other non-voice skills and contains environment-specific absolute links. |
-| [Generovo voice skills](https://github.com/Generovo/claude-voice-skills) | Discovery record in sources.json | Smaller community pack with limited adoption evidence; retained for exploration rather than promoted over official sources. |
-| [Community Retell pack](https://github.com/bachhao-tech/RETELL-AI) | Discovery record in sources.json | Limited adoption/provenance evidence; no official-provider endorsement inferred. |
-| Hermes package and local custom variants | Private inventory only | Provenance, account side effects, and portability need further review before redistribution. |
+| Original NL foundations | 5 skills | Architecture, conversation design, latency, evaluation, and media debugging; maintained here. |
+| Core provider skills | 27 skills from 6 repositories | Current original links, plus 104 licensed files preserved at recorded commits. |
+| Additional source links | 102 skills from 20 repositories | Voice-specific provider workflows, SDK language variants, and clearly marked optional entries; no new third-party copies. |
+| Runtime resources | 43 unique projects | Frameworks, models, transport, evaluation, and learning material with dated metadata and license qualifications. |
 
-Music generation, generic sound effects, animation, cybersecurity, and broad
-non-voice platform skills were excluded. Additional Twilio product skills stay in
-the upstream collection instead of broadening the voice-only scope here.
+A language variant counts as another skill file, not a new engineering capability.
+A project that contains skills can also appear in the resource library; those
+indexes are different views, not additive measures of coverage. Current counts and
+source records are in [sources.json](../sources.json),
+[linked-skills.json](../linked-skills.json), and [resources.json](../resources.json).
 
-## Verification and remaining limits
+## Discovery and original sources
 
-All 104 copied upstream files were compared byte-for-byte with their commit-pinned
-archive entries. Licenses and nested OpenAI licenses were retained. Source review
-covered copied text and the two included Python scripts; no upstream code, paid
-speech request, model, phone call, or deployment was executed.
+The initial local scan screened 1,654 installed `SKILL.md` headers plus 244 headers
+in an available Hermes package. It found 133 voice-relevant copies, deduplicated to
+80 provider/name entries: LiveKit 9, Deepgram 15, ElevenLabs 33, Twilio 18, and
+Hermes 5. Some project directories were inaccessible, so project-local coverage
+is incomplete. The private inventory stays outside this repository.
 
-The four original foundation skills received an independent scenario review for
-latency evidence, interrupted tool actions, stack selection, and spoken prompts.
-That review checks instruction quality; it is not a field trial of a deployed agent.
+Installed files supplied leads. Published content came from the public original
+sources, with their current branches, supporting folders, and licenses inspected.
+Local variants and account-specific execution instructions were not exported.
 
-The resource library contains 28 unique projects. Eighteen metadata records use the
-GitHub REST API; ten use explicitly identified GitHub HTML metadata after the
-shared unauthenticated API quota was exhausted. Their READMEs and license
-qualifications were inspected. Eight documentation links returned HTTP 200.
+The expanded pass covered public repository trees and archives, source manifests,
+SDK examples, released package contents where a concrete discrepancy required it,
+provider documentation, Context7, web search, and Reddit leads. It located selected
+skills from Microsoft, Google, NVIDIA, Telnyx, Deepgram, AssemblyAI, Vapi, Coval,
+Moonshine, Voximplant, Synthflow, and Shiny. Canonical skill paths were separated from
+plugin mirrors before counting.
 
-Docker Firecrawl was unavailable from the active environment. Standard web search,
-public GitHub retrieval, and primary documentation supplied the research. Reddit
-supplied candidate projects and reported concerns; community claims and published
-benchmark results were not independently reproduced.
+Stars are a discovery signal. Large runtime repositories and small skill packs
+serve different purposes; their popularity does not establish instruction quality.
+Source-level checks found defects in official repositories as well as community
+material. The index records those defects where they affect the selected workflow.
 
-`scripts/verify.py` checks structure, unique skill names, source coverage and
-checksums, resource records, Python syntax, and local Markdown paths. It does not
-certify agent-host compatibility, API currency, audio quality, or provider behavior.
+## Selection rules
 
-All 31 frontmatter blocks parsed as YAML. The bundled Codex quick validator passed
-22 skills, including all four originals; it rejected eight upstream `compatibility`
-fields and one custom Twilio `tier` field. Those source fields are preserved and
-documented in [usage notes](usage.md). The local negative regression check also
-confirmed that unrecorded changes to upstream content fail checksum verification.
+Include work that helps someone build, design, test, debug, or operate a voice
+agent, and speech tasks directly useful to that work. Prefer clear triggers,
+actionable instructions, maintained original sources, and usable supporting files.
+Preserve the upstream name. Group language variants by task so readers can find the
+right implementation without reading a long list of near-duplicates.
+
+For copied content, inspect complete redistribution terms, nested licenses, and
+supporting-file scope. Retain required notices and hash every copied file. A
+useful original link can be indexed even when redistribution terms are unresolved;
+that is not permission to copy its content.
+
+Music generation, generic sound effects, animation, cybersecurity packs, and
+broad platform skills with only a passing voice reference are outside this
+collection's purpose.
+
+## Deliberate exclusions and qualifications
+
+| Source or finding | Decision and evidence |
+| --- | --- |
+| Central Deepgram, Vapi, AssemblyAI, Synthflow | Original links only. A complete repository license was not found in the inspected sources. Vapi frontmatter alone did not establish all supporting-file terms. Deepgram's separate SDK repositories have MIT licenses. |
+| Azure AI Transcription Python skill | Excluded after released SDK inspection found its streaming/batch method examples absent. Use the [current SDK README](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/transcription/azure-ai-transcription/README.md). |
+| Deepgram Go conversational-STT skill | Excluded because its claim that the v2 client and Flux examples do not exist contradicts the current repository. The current example is linked in the catalog. |
+| Azure Voice Live language skills | Retained with explicit preview-version and API-name qualifications. A valid pinned Java preview example is not labeled broken merely because a later release changes the signature. |
+| [Large community skills aggregator](https://github.com/sickn33/agentic-awesome-skills) | Searched, including its voice subset. Several voice guides trace to [Vibeship's original YAML skills](https://github.com/vibeforge1111/vibeship-spawner-skills/tree/main/ai-agents/voice-agents). Old snippets and unqualified timing claims did not justify promoting a mirror over maintained provider sources. |
+| [Vobiz skills](https://github.com/vobiz-ai/Agent-Skills) | Inspected but not selected in this revision. Voice-agent and audio-stream guides disagree about stop events and media formats; current [WebSocket documentation](https://www.vobiz.ai/docs/integrations/websockets) distinguishes incoming messages from outbound commands. |
+| [Generovo voice skills](https://github.com/Generovo/claude-voice-skills) | Discovery record retained. Several references/examples are marked unfinished, and a local research dependency is not portable. |
+| [Community Retell pack](https://github.com/bachhao-tech/RETELL-AI) | Discovery record retained; limited evidence that it improves on current provider documentation. No official endorsement inferred. |
+| Cloudflare and Strands general agent skills | Voice documentation linked as a learning resource. No dedicated realtime voice skill was established in the bounded trees/searches examined. This is not a claim that none exists anywhere. |
+| Older Coval specialist launch workflows | Newer bounded evaluation workflows selected. Whole-set defaults and less bounded watch/relaunch behavior require additional care. |
+| Installed ElevenLabs connector specialists and custom local variants | Private discovery only where a current redistributable original source was not established. Public agent skills and official documentation supply the published coverage. |
+
+## Checks performed
+
+All 104 copied files were rechecked against their pinned archives and freshly
+observed upstream heads. The six heads and all selected copied files matched the
+existing snapshots. Licenses and the nested OpenAI licenses remain intact. That
+proves file identity at review time, not that every upstream example is current.
+
+The linked catalog checks actual manifests and source identity. Selected SDK
+references and central API workflows received deeper checks when conflicts were
+found. [Documentation review](documentation-review.md) records those findings,
+source dates, Context7 coverage, and direct-source fallbacks. Provider publication
+dates are stated only where the source supplies them.
+
+The original foundations received independent instruction reviews. A synthetic
+media case exercised rate mismatch, blocked browser playback, cumulative timing
+counters, reconnects, obsolete audio, clear acknowledgements, and an uncertain tool
+write. The review led to explicit clear-before-new-output ordering and clock
+alignment guidance. This checks how the instructions guide a diagnosis; it is not
+an audio benchmark or a deployed-agent field trial.
+
+A separate architecture scenario used a non-idempotent booking API, a regional
+constraint, two channels, uncertain language support, and burst traffic. It led to
+clearer text-checkpoint definitions and an explicit rule for unresolved write
+outcomes. Neither scenario establishes provider compatibility or production capacity.
+
+Local checks cover snapshot hashes and licenses, unique bundled names, original
+source URLs, catalog/count consistency, Python syntax, Markdown paths, and bounded
+credential/private-path patterns. Negative checks reject modified upstream files,
+substituted mirror URLs, and a synthetic credential pattern. A separate review
+checks first-party heading anchors and publication text.
+
+All bundled frontmatter is checked as YAML. The narrower Codex skill-creator
+validator rejects nine preserved upstream metadata extensions: eight
+`compatibility` fields and one Twilio `tier` field. Required names/descriptions
+remain valid; [usage notes](usage.md) explain host portability.
+
+RNNoise is linked to its authoritative GitLab repository. Its GitHub mirror
+provides the recorded popularity count; matching commits and README hashes were
+verified. Shiny supplies an optional native .NET frontend skill with visible
+prerelease and platform-support qualifications.
+
+## Remaining limits
+
+No third-party helper, installer, model inference, paid API request, voice call,
+provider account mutation, or deployment was executed. Released package archives
+were read as data. Source inspection cannot establish production compatibility,
+voice quality, model accuracy, or end-to-end latency.
+
+Docker Firecrawl was unavailable in this environment. Web search, Context7, public
+GitHub retrieval, and primary documentation supplied the research. Reddit supplied
+candidate projects and failure reports; anecdotes, vendor posts, and published
+benchmark rankings were not independently reproduced. Current-source links can
+change after the recorded review and are covered by the [maintenance procedure](maintenance.md).

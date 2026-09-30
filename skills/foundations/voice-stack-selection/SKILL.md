@@ -1,54 +1,27 @@
 ---
 name: voice-stack-selection
-description: Choose a practical architecture for a voice AI agent by comparing realtime speech models, STT-LLM-TTS pipelines, transports, and hosting against the user's constraints.
+description: Choose a voice AI architecture, speech engine, transport, and hosting model from real constraints. Use when comparing platforms, planning browser or phone agents, estimating total cost, or migrating an existing stack.
 license: MIT
 ---
 
 # Voice stack selection
 
-Produce the smallest architecture that meets the actual voice use case. Identify
-the entry channel, languages, expected concurrency, deployment environment,
-tool actions, data retention needs, budget, and acceptable user-perceived delay.
-Proceed with labeled assumptions when they do not block a useful comparison.
+Recommend the smallest architecture that meets the user's task and operating constraints.
+Read [the architecture guide](references/architecture-guide.md) before recommending a stack.
+It covers ownership, media paths, interruptions, capacity, cost, a worksheet, and a proof of concept.
 
-## Keep the choices separate
+Start with channel, languages, tool actions, traffic, deployment limits, budget, and caller
+experience. Ask only for missing facts that change the decision; label other assumptions.
 
-- **Media:** browser/mobile WebRTC, telephony/SIP, or server audio streams.
-- **Orchestration:** framework, managed agent platform, or a small custom service.
-- **Speech engine:** a realtime speech model or a streaming STT, LLM, and TTS chain.
-- **Turn policy:** who decides end of turn, interruptions, cancellation, and resume.
-- **Business state:** authorization, tools, durable memory, records, and finalization.
+Compare two or three complete call paths. Keep speech engine, orchestration, transport,
+hosting, and business state separate. A provider name alone does not specify an architecture.
 
-A framework name does not answer all five. A realtime model does not automatically
-provide telephony, persistent memory, tool authorization, or production operations.
+Use Context7 to resolve the relevant library and query current official documentation,
+then open the primary sources. Check installed SDK versions and the exact integration.
+Record review dates and source URLs. An example does not prove an untested combination
+works or meets a latency target.
 
-## Compare against evidence
-
-Read the current official integration documentation and installed SDK versions.
-Verify that the desired transport, codec, language, provider, and turn-control
-combination works together. Mark an untested combination as an integration risk.
-
-Compare at most three credible options using the same criteria: a complete call
-path, required glue, interruption behavior, observability, operational ownership,
-pricing units, and restrictions. Stars are a discovery signal, not a performance
-measurement. Do not compare a component's first-byte latency with acoustic
-end-to-end delay or price per token with price per connected minute.
-
-Estimate total cost at the stated traffic level, including telephony, hosting,
-orchestration, and model usage. Label assumed durations and utilization.
-
-Prefer an existing supported integration over a custom adapter. Recommend one
-default, explain the deciding tradeoff, and identify the requirement that would
-justify switching. Give a bounded proof-of-concept plan using synthetic audio
-and mocked business tools before any live calls or paid-provider testing.
-
-## Deliver
-
-A compact decision table, one recommended stack, a media-and-data-flow sketch,
-verified compatibility links, explicit unknowns, and the smallest useful next test.
-
-## Primary starting points
-
-- [LiveKit Agents](https://github.com/livekit/agents)
-- [Pipecat](https://github.com/pipecat-ai/pipecat)
-- [OpenAI voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
+Deliver one recommendation, its deciding tradeoff, a condition for switching, the worksheet,
+a media/control flow sketch, and the smallest useful comparison test. Separate documented
+behavior, engineering recommendations, and unknowns. Reuse existing user authorization;
+run paid or live tests only within that scope.

@@ -1,6 +1,8 @@
 # Skill catalog
 
-31 skill entries: 27 maintained original upstream sources and four original foundations.
+32 bundled skill entries: 27 maintained original upstream sources and five original foundations.
+
+Reviewed: **2026-09-30 UTC**. See the [expanded upstream index](more-skills.md) for additional providers and language-specific skills.
 
 Provider skill names link to their original repository on its current default branch. The Snapshot column is a dated bundled copy for reference. Install from the original source for its latest instructions. Frontmatter names are preserved. See [usage notes](usage.md) for tools, platform assumptions, and runtime caveats.
 
@@ -13,6 +15,7 @@ Original provider-neutral skills. Use with project context and redacted evidence
 | [voice-agent-evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md) | Design and run proportionate voice agent evaluations covering conversation success, turn taking, tool correctness, audio behavior, failures, and lifecycle cleanup. | Original NL Voice Skills material |
 | [voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md) | Write and evaluate voice agent prompts for spoken turn taking, concise responses, clarification, tool progress, interruptions, and safe handoffs. | Original NL Voice Skills material |
 | [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) | Investigate voice agent response delay using raw turn events, consistent clocks, component timings, and audio playback evidence; use for latency regressions and benchmark audits. | Original NL Voice Skills material |
+| [voice-media-debugging](../skills/foundations/voice-media-debugging/SKILL.md) | Isolate bad codecs, sample rates, buffering, one-way audio, and stale playback after interruption. | Original NL Voice Skills material |
 | [voice-stack-selection](../skills/foundations/voice-stack-selection/SKILL.md) | Choose a practical architecture for a voice AI agent by comparing realtime speech models, STT-LLM-TTS pipelines, transports, and hosting against the user's constraints. | Original NL Voice Skills material |
 
 Source: original NL Voice Skills material. License: [MIT](../LICENSE).
