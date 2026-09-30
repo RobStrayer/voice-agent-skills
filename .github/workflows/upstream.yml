@@ -98,7 +98,7 @@ jobs:
             {
               printf '\n## Broken external links\n\n'
               # iconv -c drops a character cut in half by the byte limit.
-              if [ -f "$dir/lychee-out.md" ]; then head -c 15000 "$dir/lychee-out.md" | iconv -c -f UTF-8 -t UTF-8; else echo 'The link checker produced no output.'; fi
+              if [ -f "$dir/lychee-out.md" ]; then head -c 15000 "$dir/lychee-out.md" | iconv -c -f UTF-8 -t UTF-8 || true; else echo 'The link checker produced no output.'; fi
             } >> "$body"
           fi
           # Keep the full text in the run log, with workflow commands switched off
@@ -109,7 +109,7 @@ jobs:
           echo "::$stop::"
           # GitHub rejects bodies over 65,536 characters; bytes are a safe upper bound.
           if [ "$(wc -c < "$body")" -gt 65000 ]; then
-            { head -c 60000 "$body" | iconv -c -f UTF-8 -t UTF-8
+            { head -c 60000 "$body" | iconv -c -f UTF-8 -t UTF-8 || true
               printf '\n\n(truncated; the full text is in the workflow run log)\n'; } > "$body.cut"
             mv "$body.cut" "$body"
           fi

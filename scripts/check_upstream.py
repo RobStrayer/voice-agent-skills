@@ -409,8 +409,9 @@ def apply(data, findings, root, now):
         collection = next(c for c in sources['collections'] if c['repo'] == result['repo'])
         for change in result['changed']:
             target = (root / change['item']['copied_path']).resolve()
-            if not target.is_relative_to((root / 'skills').resolve()):
-                raise InternalError('Path is outside skills/: ' + change['item']['copied_path'])
+            # Vendored copies live in skills/; their retained licenses live in licenses/.
+            if not any(target.is_relative_to((root / name).resolve()) for name in ('skills', 'licenses')):
+                raise InternalError('Path is outside skills/ and licenses/: ' + change['item']['copied_path'])
             target.write_bytes(change['body'])
             change['item']['sha256'], change['item']['bytes'] = change['sha256'], len(change['body'])
             printed.append(f"vendored {result['repo']}: {change['item']['copied_path']}")

@@ -160,6 +160,17 @@ def test_apply_refuses_to_write_outside_skills():
     raise AssertionError('a write outside skills/ was allowed')
 
 
+def test_apply_may_refresh_a_retained_license():
+    data = fixture()
+    data['sources']['collections'][0]['copied_files'][0]['copied_path'] = 'licenses/acme/LICENSE'
+    files = urls()
+    files[f'{cu.RAW}/acme/vendored/{NEW}/demo/SKILL.md'] = (200, BODY + b'new')
+    with tempfile.TemporaryDirectory() as directory:
+        (Path(directory) / 'licenses/acme').mkdir(parents=True)
+        cu.apply(data, run(Fake(files=files), data), directory, 'NOW')
+        assert (Path(directory) / 'licenses/acme/LICENSE').read_bytes() == BODY + b'new'
+
+
 def test_apply_refreshes_records_and_keeps_format():
     files = urls()
     files[f'{cu.RAW}/acme/vendored/{NEW}/demo/SKILL.md'] = (200, BODY + b'new')
