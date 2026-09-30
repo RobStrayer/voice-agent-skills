@@ -35,7 +35,7 @@ guidance with pointers into the rest of this page. It is not a vendor claim.
 | --- | --- | --- |
 | You need a phone agent soon and don't want to run servers | A managed platform ([A](#a-managed-voice-agent-platforms)) | Pass-through costs, concurrency caps, prompts and flows that live in the vendor's tool, and consolidation: Aircall bought Vogent, Inworld bought Ultravox and Vocode is listed as bought by OpenEvidence |
 | You want control of turn-taking, tools, telephony or where data lives, or your volume makes per-minute platform fees matter | An open-source framework ([C](#c-orchestration-frameworks)) plus provider APIs | You run it yourself. Some frameworks add license terms: the TEN Framework has extra conditions, and self-hosting jambonz needs a paid license key after a one-month trial |
-| A natural flow from one end-to-end model matters more than choosing each piece | A speech-to-speech API ([B](#b-speech-to-speech-and-realtime-models)) | Less control over the voice, speech-to-text and language model pieces. Re-billed context raises the cost of long calls. Models retire: OpenAI removes its older realtime models on January 20, 2027 |
+| A natural flow from one end-to-end model matters more than choosing each piece | A speech-to-speech API ([B](#b-speech-to-speech-and-realtime-models)) | Less control over the voice, speech-to-text and language model pieces. Builders report weaker tool use, so many keep phone and tool-heavy agents on a cascade ([common problems](common-problems.md#12-speech-to-speech-or-a-cascade)). Re-billed context raises the cost of long calls. Models retire: OpenAI removes its older realtime models on January 20, 2027 |
 | You already have a SIP trunk or carrier | A framework with SIP support, such as LiveKit SIP, jambonz or Pipecat with Daily ([C](#c-orchestration-frameworks), [F](#f-telephony-and-transport)) | Media-streaming add-ons (Twilio Media Streams is $0.0044/min), number rental and toll-free surcharges |
 | You must self-host models | Open-weight speech-to-text, text-to-speech and language models with a framework ([D](#d-streaming-speech-to-text), [E](#e-low-latency-text-to-speech), [I](#i-language-models)) | Read each license. Some weights are non-commercial or carry conditions, such as Voxtral TTS (CC BY-NC 4.0), Fish Audio and Higgs Audio v3. Many open text-to-speech projects have had no pushes for months |
 | You are about to ship | Testing ([H](#h-testing-evals-and-observability)) and turn detection ([G](#g-turn-detection-vad-and-noise)), early | Several testing tools publish prices, for example Cekura at $0.25 per voice testing minute, Roark at $0.15/min for simulation and Future AGI from $0.08/minute. Hamming is sales only |
@@ -58,17 +58,18 @@ All figures are US dollars per minute of live conversation, worked out from list
 prices seen on September 30, 2026. None of them is a quote. Volume tiers,
 promotions, free allowances, regions and currency all change the result.
 
-**Assumptions for the estimates.** The cascade and speech-to-speech arithmetic
+**Assumptions for the estimates.** The cascade arithmetic
 uses the defaults in LiveKit's published pricing calculator: 3,000 language
 model input tokens, 175 output tokens and 600 text-to-speech characters per
-minute. They come from LiveKit's docs MCP server (its `get_pricing_info` tool),
+minute. The speech-to-speech rows derived from token prices use OpenAI's stated
+audio rates (10 user and 20 assistant tokens per second). The cascade defaults come from LiveKit's docs MCP server (its `get_pricing_info` tool),
 read on September 30, 2026. They describe a short conversation. Real agents
 re-send a growing history, so the language model line is a floor. Turn taking,
 silence billing, minimum billing increments and recording are not modeled.
 
 | Approach | Typical range per minute, at list prices | What it leaves out |
 | --- | --- | --- |
-| Managed platform | $0.05 to $0.31 (vendor-published; what each figure includes differs) | Telephony on some, the language model on some, concurrency add-ons, HIPAA and SLA tiers |
+| Managed platform | $0.05 to $0.31 for the platforms tabled below (vendor-published; what each figure includes differs) | Telephony on some, the language model on some, concurrency add-ons, HIPAA and SLA tiers |
 | Assembled cascade | $0.015 to $0.132, mid stack about $0.056 (estimate) | Your engineering and operations time, language model growth as history is re-sent, recording, free tiers and volume discounts, and self-hosted compute in the low case |
 | Speech-to-speech API | $0.023 to $0.096 for the audio alone (estimate, a floor) | Telephony, backend model and tool calls, re-billed context and any platform markup |
 
@@ -85,14 +86,16 @@ what each one covers.
 | [Vapi](https://vapi.ai/pricing) | $0.05/min hosting fee; vendor calculator example (Deepgram + OpenAI + ElevenLabs, Vapi telephony/SIP) $0.082-$0.129/min | Hosting fee plus pass-through speech-to-text, language model and text-to-speech; PSTN carrier not included in the example |
 | [ElevenAgents](https://elevenlabs.io/pricing/agents) | $0.080/min beyond plan-included minutes | Agent platform minutes; the language model (passed through) and telephony (at cost) are extra |
 | [Bland AI](https://www.bland.ai/pricing) | $0.14/min (Start) or $0.12/min (Build, plus $299/month) | Language model, speech-to-text and text-to-speech included; telephony billed separately |
-| [Retell AI](https://www.retellai.com/pricing) | $0.07-$0.31/min vendor-stated range; vendor example $0.230/min (LLM $0.160 + infra $0.055 + TTS $0.015) | Voice infrastructure, text-to-speech and language model; telephony $0.015/min extra on Retell numbers |
+| [Retell AI](https://www.retellai.com/pricing) | $0.07-$0.31/min vendor-stated range; the page's calculator default is $0.11/min (LLM $0.04 + voice infra $0.055 + TTS $0.015) | Voice infrastructure, text-to-speech and language model; telephony $0.015/min extra on Retell numbers |
 | [Bolna](https://www.bolna.ai/pricing) | From 6.00 cents/min (standard volume-based rate); pilot packs about 4.2-4.6 cents/min | Platform rate; the recorded entry does not itemize what it includes (bring-your-own keys supported, credits billed on tokens) |
 | [Dasha](https://dasha.ai/pricing) | Growth plan from $0.08/min (the button reads Contact Us) | Platform; VoIP and language model tokens extra |
 | [AssemblyAI Voice Agent API (launched April 25, 2026)](https://www.assemblyai.com/changelog) | $4.50/hr all-in = $0.075/min (derived: $4.50 / 60) | Speech understanding, language model reasoning and voice generation on AssemblyAI's own models; telephony not stated |
 
-**Range.** Published figures run from $0.05/min (Deepgram Voice Agent API with
-your own language model and text-to-speech, so those costs are extra) to
-$0.31/min (the top of Retell AI's stated range). The lowest figure that already
+**Range.** Among the ten platforms in this table, published figures run from
+$0.05/min (Deepgram Voice Agent API with your own language model and
+text-to-speech, so those costs are extra) to $0.31/min (the top of Retell AI's
+stated range). Some base or connectivity fees in section A are lower (Millis AI
+$0.02/min, Voximplant $0.004/min) but cover less. The lowest figure that already
 includes telephony and a language model is Telnyx's own example at $0.0596/min.
 Sales-only platforms (Sierra, Decagon, PolyAI, Parloa, Regal, Synthflow
 enterprise contracts and Voiceflow plan prices) publish no per-minute price and
@@ -131,7 +134,7 @@ Audio-token or per-minute pricing.
 | [Gemini Live gemini-3.8-live (audio in + audio out)](https://ai.google.dev/gemini-api/docs/pricing) | $0.023 | Vendor-stated per-minute figures: $0.005/min in + $0.018/min out |
 | [OpenAI GPT-Live-1](https://developers.openai.com/api/docs/pricing) | $0.05 | Vendor-stated flat per-minute price, billed per second; backend model and tool usage extra |
 | [xAI Grok Speech to Speech](https://docs.x.ai/developers/pricing) | $0.08 | Vendor-stated flat per-minute price |
-| [OpenAI gpt-realtime-2.1-mini (audio tokens only)](https://developers.openai.com/api/docs/pricing) | $0.03 | Derived lower bound: 600 user tokens per minute x $10/1M + 1,200 assistant tokens per minute x $20/1M (OpenAI states 10 and 20 tokens per second) |
+| [OpenAI gpt-realtime-2.1-mini (audio tokens only)](https://developers.openai.com/api/docs/pricing) | $0.03 | Derived lower bound: 600 user tokens per minute x $10/1M + 1,200 assistant tokens per minute x $20/1M (OpenAI states 1 token per 100 ms of user audio and per 50 ms of assistant audio in its [voice cost guide](https://developers.openai.com/api/docs/guides/voice-latency-cost)) |
 | [OpenAI gpt-realtime-2.1 (audio tokens only)](https://developers.openai.com/api/docs/pricing) | $0.096 | Derived lower bound: 600 x $32/1M + 1,200 x $64/1M |
 | [Azure Voice Live Pro, native audio (audio tokens only)](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/) | $0.096 | Derived lower bound: 600 x $32/1M + 1,200 x $64/1M (same token rates as OpenAI) |
 
@@ -167,11 +170,13 @@ date is a range or rests on one source, the bullet says so.
   Archived copies of play.ht (January 6, 2026) and play.ai (January 11, 2026)
   show a banner saying the service has been shut down
   ([archived play.ht](https://web.archive.org/web/20260106201747id_/https://play.ht/)).
-  Sources disagree on when the API went offline. Pipecat's changelog and Groq's
-  deprecation page give December 31, 2025
-  ([Pipecat changelog](https://github.com/pipecat-ai/pipecat/blob/main/CHANGELOG.md),
-  [Groq](https://console.groq.com/docs/deprecations)). A competitor's migration
-  guide says around July 26, 2025
+  Sources disagree on when the API went offline. Pipecat's changelog gives
+  December 31, 2025
+  ([Pipecat changelog](https://github.com/pipecat-ai/pipecat/blob/main/CHANGELOG.md)),
+  and Groq retired its hosted PlayAI voice models on the same day
+  ([Groq](https://console.groq.com/docs/deprecations)). A competitor's migration
+  guide says the API went offline around July 26, 2025, before the platform
+  closed on December 31
   ([Inworld](https://inworld.ai/resources/migrate-from-playht)). No announcement
   from PlayHT with the dates was found, so the exact date is unverified.
 - **LMNT** ([E](#e-low-latency-text-to-speech)). Its website and docs show only
@@ -186,11 +191,13 @@ date is a range or rests on one source, the bullet says so.
   a standalone developer platform
   ([press release copy on Yahoo Finance](https://finance.yahoo.com/sectors/technology/articles/aircall-acquires-vogent-advance-ai-100300337.html)).
 - **Ultravox** ([B](#b-speech-to-speech-and-realtime-models)). Inworld announced
-  on September 30, 2026 that it acquired Ultravox. Existing agents keep running
-  ([Inworld blog](https://inworld.ai/blog/inworld-acquires-ultravox)).
-- **Vocode** ([C](#c-orchestration-frameworks)). OpenEvidence's About page says
-  Vocode was acquired by OpenEvidence, and Y Combinator's directory lists it as
-  acquired. Neither gives a date or terms
+  on September 30, 2026 that it acquired Ultravox. Existing agents keep running.
+  Ultravox's site carries the same notice
+  ([Inworld blog](https://inworld.ai/blog/inworld-acquires-ultravox),
+  [Ultravox](https://www.ultravox.ai/pricing)).
+- **Vocode** ([C](#c-orchestration-frameworks)). Two staff bios on OpenEvidence's
+  About page read "Founder @ Vocode (Acquired by OpenEvidence)", and Y
+  Combinator's directory lists Vocode as acquired. Neither gives a date or terms
   ([OpenEvidence](https://www.openevidence.com/about),
   [Y Combinator](https://www.ycombinator.com/companies/vocode)). Its hosted API
   host names no longer resolve, and no shutdown notice was found.
@@ -199,9 +206,9 @@ date is a range or rests on one source, the bullet says so.
   self-hostable
   ([ClickHouse](https://clickhouse.com/blog/clickhouse-raises-400-million-series-d-acquires-langfuse-launches-postgres)).
 - **Gladia** ([D](#d-streaming-speech-to-text)). A post dated September 21, 2026
-  says Gladia is joining OVH Groupe, says the acquisition was announced on July
-  31, and says Gladia keeps its brand and API. The post mixes completed and
-  conditional wording
+  says OVH Groupe's acquisition of Gladia was announced on July 31 and that
+  Gladia keeps its brand and API. The same post says the deal is still subject
+  to regulatory approvals and closing conditions, so it may not have closed yet
   ([Gladia](https://www.gladia.io/blog/gladia-joins-ovh-groupe)).
 - **Hume AI** ([B](#b-speech-to-speech-and-realtime-models),
   [E](#e-low-latency-text-to-speech)). WIRED reported on January 22, 2026 that
@@ -228,12 +235,14 @@ date is a range or rests on one source, the bullet says so.
   so the entry is marked unverified
   ([Daily](https://www.daily.co/products/daily-bots/)).
 - **xAI** ([B](#b-speech-to-speech-and-realtime-models),
-  [I](#i-language-models)). Its docs.x.ai pages now call the provider SpaceXAI,
-  and no rename announcement was opened. Wikipedia says SpaceX acquired xAI on
-  February 2, 2026 and that the rename came in July 2026. That page was the only
-  source found for those dates
-  ([xAI release notes](https://docs.x.ai/developers/release-notes),
-  [Wikipedia](https://en.wikipedia.org/wiki/SpaceXAI)).
+  [I](#i-language-models)). SpaceX acquired xAI in an all-stock deal on
+  February 2, 2026
+  ([Slashdot, citing CNBC](https://slashdot.org/story/26/02/03/0346252/spacex-acquires-xai-in-125-trillion-all-stock-deal)).
+  On July 6, 2026 the company's X account announced the name SpaceXAI
+  ([Not a Tesla App](https://www.notateslaapp.com/news/4410/spacex-unveils-new-xai-logo)).
+  The docs.x.ai pages now call the provider SpaceXAI but still call the product
+  the xAI API, and Grok keeps its name
+  ([xAI release notes](https://docs.x.ai/developers/release-notes)).
 
 ### Upcoming dates
 
@@ -244,14 +253,14 @@ Dates to plan around, sorted by day. All were still ahead on September 30, 2026.
 | Oct 1, 2026 | Cartesia: language model use in Managed Agents is free until this date. Per-minute agent rates are unchanged. | [migration guide](https://docs.cartesia.ai/agents/migrate-from-line-sdk) |
 | Oct 1, 2026 | Plivo: plan-based US account limits apply to accounts created on or after this date. The docs say earlier accounts keep custom limits. | [Plivo docs](https://plivo.com/docs/sip-trunking/concepts/account-limits) |
 | Oct 12 (the page shows no year) | ElevenLabs: the 72% promotional price on Eleven v4 and v4 Turbo ends. List prices are $0.08 and $0.04 per 1K characters, against $0.022 and $0.011 now. | [pricing page](https://elevenlabs.io/pricing/api) |
-| Oct 15, 2026 at the earliest | Anthropic's tentative retirement date for Claude Haiku 4.5. Anthropic states at least 60 days' notice and listed no deprecation notice on September 30, 2026. | [deprecations page](https://platform.claude.com/docs/en/about-claude/model-deprecations) |
-| Oct 20, 2026 | Cartesia retires sonic-2, sonic-turbo and sonic-3-2025-10-27. | [older models page](https://docs.cartesia.ai/build-with-cartesia/tts-models/older-models) |
+| Oct 15, 2026 at the earliest (tentative) | Anthropic's tentative retirement date for Claude Haiku 4.5. Anthropic promises at least 60 days' notice and had given none on September 30, 2026, so retirement cannot come before late November 2026. | [deprecations page](https://platform.claude.com/docs/en/about-claude/model-deprecations) |
+| After Oct 20, 2026 | Cartesia stops serving sonic-2, sonic-turbo and the sonic-3-2025-10-27 snapshot. The older models page still marks sonic-3-2025-10-27 as Stable. | [changelog](https://docs.cartesia.ai/changelog/2026), [older models page](https://docs.cartesia.ai/build-with-cartesia/tts-models/older-models) |
 | Oct 22, 2026 | Twilio turns on provider failover for Real-Time Transcriptions by default. | [Twilio changelog](https://www.twilio.com/en-us/changelog) |
 | Oct 23, 2026 | OpenAI shuts down gpt-4.1-nano. | [deprecations page](https://developers.openai.com/api/docs/deprecations) |
 | Oct 29, 2026 | AWS closes the Amazon Chime SDK SIP Media Application to new customers. | [AWS](https://aws.amazon.com/chime/chime-sdk/) |
 | Dec 1, 2026 | Cartesia stops hosting Line SDK agents. Managed Agents are the hosted path. | [migration guide](https://docs.cartesia.ai/agents/migrate-from-line-sdk) |
 | Dec 2, 2026 at the earliest | Amazon Nova 2 Sonic: the end-of-life date on its Bedrock model card is "no sooner than" this day. Its lifecycle still shows Active. | [model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-sonic) |
-| Dec 11, 2026 | OpenAI shuts down the gpt-5, gpt-5-mini and gpt-5-nano snapshots on its deprecations page. | [deprecations page](https://developers.openai.com/api/docs/deprecations) |
+| Dec 11, 2026 | OpenAI shuts down the gpt-5-2025-08-07, gpt-5-mini-2025-08-07 and gpt-5-nano-2025-08-07 snapshots. | [deprecations page](https://developers.openai.com/api/docs/deprecations) |
 | Jan 1, 2027 | Google: paid rates for Gemini 3.8, 3.7 and 3.6 Flash double (for example 3.8 Flash from $0.75 / $3.75 to $1.50 / $7.50 per 1M tokens). Gemini 3.8 Flash TTS (Preview) goes from $0.50 / $9.00 to $1.00 / $18.00. | [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing) |
 | Jan 20, 2027 | OpenAI removes gpt-realtime, gpt-realtime-mini, gpt-4o-realtime and gpt-4o-mini-realtime. The replacements are gpt-realtime-2.1 and gpt-realtime-2.1-mini. | [deprecations page](https://developers.openai.com/api/docs/deprecations) |
 | Feb 26, 2027 | OpenAI removes whisper-1 and the gpt-4o transcription models. | [deprecations page](https://developers.openai.com/api/docs/deprecations) |
@@ -300,7 +309,7 @@ enterprise contact center suites.
 | [Synthflow](https://docs.synthflow.ai/getting-started) | Hosted phone agent platform with an agent editor, an API and contact center links, sold on annual contracts. | [Sales only; contracts start at $30,000 annually](https://synthflow.ai/pricing) | No | [Official, hosted](https://docs.synthflow.ai/mcp-server) |
 | [ElevenAgents (ElevenLabs Agents)](https://elevenlabs.io/docs/eleven-agents/overview) | ElevenLabs' hosted platform for voice, chat and text agents, built on its own speech models. | [Plans $0 to $990/month; extra minutes $0.080/min](https://elevenlabs.io/pricing/agents) | No | [Official, hosted](https://elevenlabs.io/mcp) |
 | [Voiceflow](https://www.voiceflow.com/docs/documentation/introduction) | Visual builder for chat and voice agents, with a knowledge base, tools and analytics. | [Sales only; docs list phone usage at $0.05/min](https://www.voiceflow.com/docs/documentation/account-management/billing/credits-pricing-table) | No | [Official, hosted](https://www.voiceflow.com/docs/mcp) |
-| [Air AI (Air.ai)](https://www.ftc.gov/news-events/news/press-releases/2026/03/air-ai-its-owners-will-be-banned-marketing-business-opportunities-settle-ftc-charges-company-misled) *(status unverified)* | Sold as AI phone agents plus a resale package. FTC sued in Aug 2025; a court order followed in March 2026. | No current public price list | Unverified | None found |
+| [Air AI (Air.ai)](https://www.ftc.gov/news-events/news/press-releases/2026/03/air-ai-its-owners-will-be-banned-marketing-business-opportunities-settle-ftc-charges-company-misled) *(status unverified)* | Sold as AI phone agents plus a resale package. The FTC sued in Aug 2025; a stipulated settlement order was signed on March 30, 2026, in which the defendants neither admitted nor denied the allegations. | No current public price list | Unverified | None found |
 | [Cartesia Line and Managed Agents](https://docs.cartesia.ai/agents/introduction) | Hosted agents on Cartesia speech models, plus the open Line SDK (Cartesia stops hosting Line code Dec 1, 2026). | [$0.06/min agent calling (+$0.014/min telephony)](https://www.cartesia.ai/pricing) | Partly (Line SDK is Apache-2.0) | [Official, hosted](https://github.com/cartesia-ai/cartesia-mcp) |
 | [Vogent](https://docs.vogent.ai/introduction) *(acquired by Aircall, May 6, 2026)* | Platform for building and running voice agents through a dashboard and API, with SIP number import. | [$0.09/min standard voices, $0.14/min premium](https://docs.vogent.ai/platform-overview/billing) | No | None found |
 | [Dasha (Dasha BlackBox)](https://blackbox.dasha.ai/docs/) | Hosted voice agent API with a dashboard builder, SIP or Twilio phone links and call analytics. | [Sales only; Growth plan from $0.08/min](https://dasha.ai/pricing) | No | None found |
@@ -487,7 +496,7 @@ like conversation.
 | Product | What it is | Price (headline) | Open source | MCP server |
 | --- | --- | --- | --- | --- |
 | [PlayHT / PlayAI](https://docs.play.ht/reference/api-getting-started) *(shut down; Meta acquisition reported July 13, 2025)* | Former text-to-speech API and voice agent platform. The service is shut down. | None (service shut down) | No | None found |
-| [LMNT](https://docs.lmnt.com/) *(shut down; site notice appeared Aug 2026)* | Former speech generation API. Its website and docs now show only a shutdown message. | None (service shut down) | No | None found |
+| [LMNT](https://docs.lmnt.com/) *(shut down; site notice appeared between Aug 3 and Sep 1, 2026)* | Former speech generation API. Its website and docs now show only a shutdown message. | None (service shut down) | No | None found |
 
 ## F. Telephony and transport
 

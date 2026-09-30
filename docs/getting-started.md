@@ -193,7 +193,7 @@ covers the waiting.
 
 ## What it costs
 
-Expect roughly $0.05 to $0.15 a minute on a managed platform, before the phone
+Expect roughly $0.05 to $0.14 a minute on a managed platform, before the phone
 line. That is what one independent test measured from five platforms' own billing
 on short test calls, with the carrier leg left out
 ([OpenBenchmarks](https://openbenchmarks.com/voice-agent-latency)). Advertised
