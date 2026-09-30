@@ -35,6 +35,17 @@ if __name__ == '__main__':
             raise AssertionError('Mirror source URL was accepted')
         index.write_bytes(original_index)
         changed = json.loads(original_index)
+        changed['docs_hosted_skills'][0]['url'] = 'https://github.com/example/mirror/blob/main/SKILL.md'
+        index.write_text(json.dumps(changed), encoding='utf-8')
+        try:
+            verify(copy)
+        except AssertionError as error:
+            assert changed['docs_hosted_skills'][0]['name'] in str(error), error
+            print('PASS: docs-hosted skills must stay on the vendor documentation host.')
+        else:
+            raise AssertionError('GitHub mirror of a docs-hosted skill was accepted')
+        index.write_bytes(original_index)
+        changed = json.loads(original_index)
         changed['verification']['current_branch_manifest_hash_matches'] -= 1
         index.write_text(json.dumps(changed), encoding='utf-8')
         try:

@@ -10,7 +10,7 @@ limits of the review. It is not an inventory of every voice skill on the interne
 | --- | --- | --- |
 | Original NL foundations | 9 skills | Architecture, conversation, turn taking, audio frontends, recognition/synthesis, call reliability, latency, evaluation, and media debugging; maintained here. |
 | Core provider skills | 27 skills from 6 repositories | Current original links, plus 104 licensed files preserved at recorded commits. |
-| Additional source links | 103 skills from 21 repositories | Voice-specific provider workflows, SDK language variants, and clearly marked optional entries; no new third-party copies. |
+| Additional source links | 297 skills: 279 from 62 repositories and 18 on vendor documentation sites | Voice-specific provider workflows, SDK language variants, and clearly marked optional entries; no new third-party copies. |
 | Runtime resources | 43 unique projects | Frameworks, models, transport, evaluation, and learning material with dated metadata and license qualifications. |
 
 A language variant counts as another skill file, not a new engineering capability.
@@ -110,8 +110,9 @@ compatibility, measured latency, or production capacity.
 Local checks cover snapshot hashes and licenses, unique bundled names, original
 source URLs, catalog/count consistency, Python syntax, Markdown paths, and bounded
 credential/private-path patterns. Negative checks reject modified upstream files,
-substituted mirror URLs, stale verification counters, and a synthetic credential
-pattern. A separate review checks first-party heading anchors and publication text.
+substituted mirror URLs, a docs-hosted skill moved to GitHub, stale verification
+counters, and a synthetic credential pattern. A separate review checks first-party
+heading anchors and publication text.
 
 All bundled frontmatter is checked as YAML. The narrower Codex skill-creator
 validator rejects nine preserved upstream metadata extensions: eight

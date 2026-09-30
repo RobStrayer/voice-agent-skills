@@ -106,12 +106,30 @@ def verify(root=ROOT):
             source = origins[item['repository']]
             assert item['default_branch'] == source['default_branch'], item['name']
             assert item['pinned_commit'] == source['head'], item['name']
-            assert item['path'].endswith('/SKILL.md'), item['name']
+            assert item['path'] == 'SKILL.md' or item['path'].endswith('/SKILL.md'), item['name']
+            assert item['selection'] in linked['selection_definitions'], item['name']
             original = ('https://github.com/' + item['repository'] + '/blob/' +
                         source['default_branch'] + '/' + item['path'])
             assert item['url'] == original and original in linked_catalog, item['name']
             assert re.fullmatch(r'[0-9a-f]{64}', item['verified_manifest_sha256']), item['name']
             assert item['purpose'] and item['dependencies'] and item['concerns'], item['name']
+        # Docs-hosted skills have no commit: the vendor's own https file, pinned by sha256 and retrieval time.
+        docs = linked['docs_hosted_skills']
+        assert len(docs) == len({item['name'] for item in docs}) == len({item['url'] for item in docs}) \
+            == linked['docs_hosted_skill_count'], 'Docs-hosted count mismatch'
+        for key in ('docs_hosted_count', 'docs_hosted_http_200', 'docs_hosted_digest_matches'):
+            assert linked['verification'][key] == len(docs), 'Stale verification counter: ' + key
+        assert dict(Counter(item['selection'] for item in docs)) == linked['docs_hosted_counts_by_selection']
+        for item in docs:
+            url = urlsplit(item['url'])
+            assert url.scheme == 'https' and url.hostname == item['host'], item['name']
+            assert not re.search(r'(?:^|\.)github(?:usercontent)?\.com$', url.hostname), item['name']
+            assert re.fullmatch(r'[0-9a-f]{64}', item['sha256']), item['name']
+            assert isinstance(item['bytes'], int) and item['bytes'] > 0, item['name']
+            datetime.fromisoformat(item['retrieved_at'].replace('Z', '+00:00'))
+            assert item['selection'] in linked['selection_definitions'], item['name']
+            assert item['purpose'] and item['dependencies'] and item['concerns'], item['name']
+            assert item['url'] in linked_catalog, 'Missing docs-hosted link: ' + item['name']
         resources = json.loads((ROOT / 'resources.json').read_text(encoding='utf-8'))
         resource_catalog = (ROOT / 'docs/resources.md').read_text(encoding='utf-8')
         assert len(resources) == len({item['name'] for item in resources}), 'Duplicate resource'
@@ -148,7 +166,8 @@ def verify(root=ROOT):
                 local = (path.parent / unquote(url.path)).resolve()
                 assert local.is_relative_to(ROOT) and local.exists(), f'{path}: {target}'
         print(f'PASS: {len(skills)} skills, {len(tracked)} upstream files, '
-              f'{len(entries)} linked skills, {len(resources)} resources; names, provenance, licenses, syntax, '
+              f'{len(entries)} linked skills, {len(docs)} docs-hosted skills, {len(resources)} resources; '
+              'names, provenance, licenses, syntax, '
               'local paths, and bounded credential patterns checked.')
     finally:
         ROOT = previous

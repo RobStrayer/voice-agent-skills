@@ -8,7 +8,7 @@ a booking line, a browser assistant, or anything else people talk to. It has pla
 guides for beginners, diagrams that show how the parts fit, and **skills** your
 coding agent (Claude Code, Codex and others) can load to do the work properly.
 
-**12 original skills · 27 bundled provider skills · LINKED_TOTAL linked official skills from LINKED_PROVIDERS providers · 43 runtime resources**
+**12 original skills · 27 bundled provider skills · 297 linked skills from 50 providers and authors · 43 runtime resources**
 
 ## Start here
 
@@ -113,9 +113,10 @@ maintained original:
 | [Cartesia](https://github.com/cartesia-ai/skills) | Speech API integration and Line agent workflows |
 | [OpenAI](https://github.com/openai/skills) | Speech generation and transcription from files (not a realtime agent runtime) |
 
-The [linked skills index](docs/more-skills.md) points to LINKED_TOTAL more official
-skills from LINKED_PROVIDERS providers, including Telnyx, Vapi, Retell, Deepgram,
-AssemblyAI, Plivo, Sinch, SignalWire, AWS, Azure and testing platforms. Every entry
+The [linked skills index](docs/more-skills.md) points to 297 more skills from
+50 providers and other authors, including Telnyx, Vapi, Retell, Deepgram,
+AssemblyAI, Plivo, Sinch, SignalWire, AWS, Azure and testing platforms. Most come
+from the provider itself; community and third-party ones are marked. Every entry
 is pinned to a commit or file hash and was checked against it. The [resource library](docs/resources.md)
 lists frameworks, turn detectors, speech models and evaluation tools.
 
