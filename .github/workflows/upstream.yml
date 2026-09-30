@@ -46,6 +46,8 @@ jobs:
           mkdir handoff
           python scripts/check_upstream.py --out handoff/report.md
       - name: Check external links
+        # 403 and 405 are accepted: many sites block bots (403) and MCP endpoints reject plain GETs (405).
+        # Real rot (404, 410, 5xx, DNS and TLS failures) is still reported.
         id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
@@ -55,7 +57,7 @@ jobs:
             --no-progress
             --max-retries 2
             --timeout 20
-            --accept '200..=299,429'
+            --accept '200..=299,403,405,429'
             --exclude '^https?://([a-z0-9-]+\.)*(pnas\.org|sec\.gov|gartner\.com|bloomberg\.com)(/|$)'
             --exclude '^https://github\.com/RBStrayer/nl-voice-skills/issues'
             './*.md' './docs/**/*.md'
