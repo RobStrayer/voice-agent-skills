@@ -1,0 +1,24 @@
+{
+  "_read_me": "Every price below is a PLACEHOLDER to show the format. It is not any provider's price. Replace each one with the current price from the provider's pricing page, and fill in source and checked_on.",
+  "profile": {
+    "calls_per_month": 3000,
+    "minutes_per_call": 4,
+    "agent_talk_share": 0.5,
+    "turns_per_minute": 4,
+    "static_prompt_tokens": 2500,
+    "history_tokens_per_turn": 120,
+    "output_tokens_per_turn": 60,
+    "cached_input_share": 0.5,
+    "tts_characters_per_minute": 900
+  },
+  "components": [
+    {"name": "Phone minutes (inbound)", "unit": "per_call_minute", "round_up": true, "price": 0.01, "source": "PLACEHOLDER", "checked_on": ""},
+    {"name": "Phone number rental", "unit": "per_month", "price": 1.0, "source": "PLACEHOLDER", "checked_on": ""},
+    {"name": "Streaming speech-to-text", "unit": "per_caller_audio_minute", "price": 0.008, "source": "PLACEHOLDER", "checked_on": ""},
+    {"name": "LLM input tokens", "unit": "per_llm_input_token", "price": 0.0000004, "source": "PLACEHOLDER", "checked_on": ""},
+    {"name": "LLM cached input tokens", "unit": "per_llm_cached_input_token", "price": 0.0000001, "source": "PLACEHOLDER", "checked_on": ""},
+    {"name": "LLM output tokens", "unit": "per_llm_output_token", "price": 0.0000016, "source": "PLACEHOLDER", "checked_on": ""},
+    {"name": "Text-to-speech", "unit": "per_tts_character", "price": 0.00005, "source": "PLACEHOLDER", "checked_on": ""},
+    {"name": "Agent servers", "unit": "per_month", "price": 50.0, "source": "PLACEHOLDER: size for peak concurrency", "checked_on": ""}
+  ]
+}
