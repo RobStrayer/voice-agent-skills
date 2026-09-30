@@ -95,16 +95,9 @@ These twelve skills are original to this repo and work with any provider.
 
 ## Common problems
 
-| What you notice | Usually because | Start with |
-| --- | --- | --- |
-| It talks over people or cuts them off mid-thought | The end-of-turn decision fires on a pause | [voice-turn-taking](skills/foundations/voice-turn-taking/SKILL.md) |
-| It keeps talking when the caller interrupts | Playback isn't stopped and flushed on barge-in | [voice-turn-taking](skills/foundations/voice-turn-taking/SKILL.md) |
-| It interrupts itself on speakerphone | Its own voice leaks back in without echo cancellation | [voice-audio-frontends](skills/foundations/voice-audio-frontends/SKILL.md) |
-| Replies take too long | Waiting, model time and audio buffering add up | [voice-latency-audit](skills/foundations/voice-latency-audit/SKILL.md) |
-| Emails, names and numbers come out wrong | Phone audio is narrowband and the prompt never confirms | [voice-speech-pipeline](skills/foundations/voice-speech-pipeline/SKILL.md) |
-| Silence or robot noise on real phone calls | Wrong codec, sample rate or framing at a boundary | [voice-media-debugging](skills/foundations/voice-media-debugging/SKILL.md) |
+![The twenty problems builders hit most, in four groups with a one-line fix each. The conversation: knowing when the caller is done, caller trust, names and numbers, interruptions, echo and noise, languages. Actions and the phone: phone plumbing, tool calls, guardrails, handoffs, voicemail and spam labels, consent. Choosing: platform, cost, one model or a pipeline. Running it: latency, reliability, observability, testing, changing APIs.](assets/diagrams/common-problems.svg)
 
-[All common problems and fixes](docs/common-problems.md)
+The [common problems guide](docs/common-problems.md) gives the cause of each one, the fixes builders report, sources, and the skill that helps.
 
 ## Provider skills
 

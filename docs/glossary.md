@@ -21,6 +21,11 @@ is never perfect, so plan what the agent says in both cases.
 
 **ASR (automatic speech recognition).** Another name for speech-to-text (STT).
 
+**BAA (business associate agreement).** The contract a US healthcare provider
+needs with any vendor that handles patient data. Signing one is required under
+HIPAA but doesn't make a voice agent compliant on its own.
+See [phone compliance](../skills/foundations/voice-phone-compliance/SKILL.md).
+
 **Backchannel.** Short listener noises such as "mm-hm", "yeah" and "right". People
 say them while the other person talks. A good agent doesn't treat every backchannel
 as an interruption.
@@ -73,6 +78,11 @@ such as look up an order or book a slot, and gets the result back. Voice adds a
 twist: the caller can interrupt or change their mind while a tool is running.
 See [conversation design](../skills/foundations/voice-conversation-design/SKILL.md).
 
+**Idempotent.** Safe to repeat: running the same action twice has the same
+effect as running it once. Booking and payment tools should be idempotent,
+because a timeout or a retry can make the model call them again.
+See [call reliability](../skills/foundations/voice-call-reliability/SKILL.md).
+
 **IVR (interactive voice response).** The classic "press 1 for billing" phone menu.
 Many voice agents replace or sit behind an IVR.
 
@@ -99,6 +109,10 @@ Applied too hard, it can also delete quiet speech, including short words like "n
 
 **Opus.** The standard audio codec for WebRTC. It handles wideband speech and
 packet loss well.
+
+**p50, p95 (percentiles).** The p50 (median) is the value half your calls beat;
+the p95 is the value 95% beat, so it shows the slow calls. Report both for
+latency. Adding each stage's p95 does not give the end-to-end p95.
 
 **PCM.** Uncompressed audio samples. Most speech APIs want 16-bit PCM at a stated
 sample rate. Always check the rate: 8, 16, 24 and 48 kHz are all common.
@@ -146,6 +160,10 @@ carriers. It affects whether your outbound calls show as verified or get labelle
 "Spam Likely".
 
 ## T–Z
+
+**TCPA.** The US Telephone Consumer Protection Act. It governs calls that use an
+artificial or prerecorded voice, and the FCC ruled in 2024 that AI-generated
+voices count. See [phone compliance](../skills/foundations/voice-phone-compliance/SKILL.md).
 
 **Text-to-speech (TTS).** Turns text into audio. For live agents, the key numbers
 are how quickly the first audio arrives and whether it can stream while text is
