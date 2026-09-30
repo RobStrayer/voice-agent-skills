@@ -54,22 +54,9 @@ A bridge connects legs; a conference gives the application a participant structu
 
 This conceptual sequence is an application policy, not an API recipe.
 
-```mermaid
-sequenceDiagram
-    participant C as Caller leg
-    participant O as Call controller
-    participant H as Human queue or destination
-    O->>C: Explain handoff and preserve current leg
-    O->>H: Request a destination leg
-    alt Destination accepts and handoff checks pass
-        H-->>O: Acceptance evidence
-        O->>H: Deliver permitted context
-        O->>C: Connect parties and retire bot safely
-    else Busy, unavailable, timeout, or ambiguous result
-        H-->>O: Failure or unresolved outcome
-        O->>C: Resume verified fallback or explain next step
-    end
-```
+![Warm handoff retains the caller leg while acceptance and connection are checked; failure returns to a supported fallback.](../assets/recoverable-handoff.svg)
+
+[Editable diagram](../assets/recoverable-handoff.html). Warm handoff retains the caller leg while acceptance and connection are checked; failure returns to a supported fallback.
 
 LiveKit's current cold-transfer guide documents a `ringing_timeout`: unsuccessful timeout leaves the caller in the room. Verify that behavior in the installed integration. Do not generalize it to another carrier's REFER or bridge. A request acknowledgement can leave downstream progress unresolved, and some transfer mechanisms relinquish the original bot's control. [LiveKit cold transfer](https://docs.livekit.io/telephony/features/transfers/cold/).
 

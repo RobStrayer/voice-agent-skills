@@ -42,6 +42,11 @@ Do not use the last spoken sentence as the transaction ledger.
 
 ## Decide what interruption can cancel
 
+![Sequence showing a caller correction stopping old playback while the original booking action remains pending until an authoritative result arrives.](../assets/interrupted-action.svg)
+
+[Editable diagram](../assets/interrupted-action.html). This is a conceptual
+application sequence, not a provider event specification.
+
 Cancellation has several boundaries: the response generator, queued speech, local
 task, network request, and remote business operation. Stopping one does not prove
 the others stopped. A client timeout describes the client's wait, not the service's

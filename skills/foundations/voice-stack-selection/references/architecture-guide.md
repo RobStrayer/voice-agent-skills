@@ -101,6 +101,11 @@ not establish a deployment plan.
 
 ## Draw media and control paths
 
+![Conceptual audio, call-control, and durable-action responsibilities.](../assets/voice-system-map.svg)
+
+[Editable diagram](../assets/voice-system-map.html). Arrows show logical
+responsibilities; output still traverses the deployment's actual media transport.
+
 For OpenAI Realtime, browser initialization can pass through a backend or use a
 short-lived client credential minted by the backend. The standard API key stays there.
 OpenAI recommends WebRTC for browser/mobile clients and WebSocket for server-to-server.

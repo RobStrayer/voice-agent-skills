@@ -22,16 +22,9 @@ The [Microsoft Audio Stack DSP reference](https://learn.microsoft.com/en-us/azur
 
 A browser or native capture SDK can see device input and playback. An agent server typically receives encoded or decoded capture after device processing. A phone endpoint may already apply undocumented processing before the carrier delivers media. Treat those upstream effects as unknown until measured or documented.
 
-```mermaid
-flowchart LR
-    M[Microphone] --> C[Capture processing]
-    C --> T[Encode and transport]
-    T --> F[Decode and optional enhancement]
-    F --> V[VAD and speech model]
-    R[Device render PCM] --> S[Speaker]
-    R -. AEC reference .-> C
-    S -. Acoustic echo .-> M
-```
+![Endpoint capture uses its own render reference. The server enhancement stage is optional.](../assets/echo-processing.svg)
+
+[Editable diagram](../assets/echo-processing.html). Endpoint capture uses its own render reference. The server enhancement stage is optional.
 
 Capture processing can include AEC, suppression, and AGC, depending on the device. The server enhancement is optional, and its input is already capture-processed when those features are enabled. The AEC reference belongs to the rendering endpoint; the arrow does not imply that a remote server automatically receives it.
 

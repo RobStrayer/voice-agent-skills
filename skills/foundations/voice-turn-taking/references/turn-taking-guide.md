@@ -26,17 +26,9 @@ Preserve pauses after unfinished phrases, spelled identifiers, numbers, self-cor
 
 Give one component authority to commit user turns and release assistant responses. Other detectors supply evidence. Two independent committers can produce duplicate replies or stack their waits.
 
-~~~mermaid
-stateDiagram-v2
-    [*] --> Listening
-    Listening --> CandidateEnd: speech stops
-    CandidateEnd --> Listening: caller resumes
-    CandidateEnd --> Responding: completion accepted
-    Responding --> Listening: response finishes
-    Responding --> Yielding: eligible interruption
-    Yielding --> Listening: old output stopped
-    Yielding --> Responding: false alarm, safe resume
-~~~
+![One controller owns turn commitment; tool actions keep an independent lifetime.](../assets/turn-controller.svg)
+
+[Editable diagram](../assets/turn-controller.html). One controller owns turn commitment; tool actions keep an independent lifetime.
 
 Listening includes capture while work is pending. CandidateEnd holds a possible boundary while EOT and required transcript evidence arrive. Responding includes generation and output, which can overlap. Yielding invalidates the old response and stops its output. Business actions live in a separate ledger and can remain pending in any of these states.
 

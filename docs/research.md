@@ -125,6 +125,15 @@ prerelease and platform-support qualifications.
 
 ## Remaining limits
 
+Five original figures explain system responsibilities, turn state, endpoint echo
+processing, interrupted actions, and recoverable human handoff. Their editable
+HTML and exported SVG remain with the associated skills. Semantic review checked
+that the diagrams preserve action uncertainty and caller ownership; a handoff
+arrow was corrected to retire only the bot leg. Diagram checks cover accessibility
+metadata, SVG references, connector geometry, and local links. Browser review
+included light/dark surrounds and narrow-screen scrolling. These checks establish
+document behavior, not the runtime behavior of a voice application.
+
 The deeper handbook revision added six packaged chapters: turn control, audio
 frontends, speech recognition/synthesis, transactions/handoffs, telephony, and
 production operations. The architecture chapter remains a separate decision

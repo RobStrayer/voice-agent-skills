@@ -49,6 +49,8 @@ identify current-source conflicts and Context7 limitations.
 
 ### Architecture
 
+![Conceptual voice architecture: capture, transport, runtime, and playback form the audio path, while call control and durable business actions keep separate state.](skills/foundations/voice-stack-selection/assets/voice-system-map.svg)
+
 Choose a design by working through a difficult conversation, not just a clean
 demo. Include a correction during a write, quiet speech, a failed destination,
 and a burst of new sessions. Write down who owns the media stream, turn decision,
@@ -68,6 +70,8 @@ to apply it to a project. End with a conditional choice and the evidence that
 could overturn it.
 
 ### Turn taking and interruptions
+
+![Turn controller showing listening, a candidate end of turn, responding, and yielding, with a separate action ledger.](skills/foundations/voice-turn-taking/assets/turn-controller.svg)
 
 Voice activity detection asks whether speech is present. Endpointing and
 end-of-turn prediction ask whether it is time to respond. Interruption handling
@@ -94,6 +98,8 @@ different inputs and SDK requirements; the guide records those distinctions.
 Invoke [voice-turn-taking](skills/foundations/voice-turn-taking/SKILL.md).
 
 ### Noise, echo, and the audio frontend
+
+![Echo-processing map: the endpoint sends a render reference to capture processing; physical speaker echo returns to the microphone, while transported audio reaches optional server enhancement.](skills/foundations/voice-audio-frontends/assets/echo-processing.svg)
 
 Noise suppression reduces unwanted sound. Acoustic echo cancellation uses a
 reference of rendered audio to reduce sound returning through the microphone.
@@ -343,6 +349,7 @@ provider APIs or establish production voice quality.
 | [sources.json](sources.json) | Snapshot commits, retained licenses, and copied-file hashes |
 | [linked-skills.json](linked-skills.json) · [resources.json](resources.json) | Dated original-source metadata |
 | [docs/research.md](docs/research.md) | Search coverage, exclusions, and verification limits |
+| [docs/diagram-style.md](docs/diagram-style.md) | Diagram sources, neutral palette, and export notes |
 
 Contributions should fill a concrete voice-engineering gap and link to the
 original maintained source. See [CONTRIBUTING.md](CONTRIBUTING.md).
