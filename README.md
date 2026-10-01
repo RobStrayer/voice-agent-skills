@@ -4,6 +4,7 @@
   <a href="https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml"><img alt="verify" src="https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   <a href="https://github.com/RobStrayer/voice-agent-skills/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/RobStrayer/voice-agent-skills"></a>
+  <img alt="Visitors" src="https://visitor-badge.laobi.icu/badge?page_id=RobStrayer.voice-agent-skills">
   <a href="docs/usage.md"><img alt="Works with Claude Code and Codex" src="https://img.shields.io/badge/works%20with-Claude%20Code%20%7C%20Codex-6e56cf"></a>
   <a href="CONTRIBUTING.md"><img alt="Pull requests welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </p>
