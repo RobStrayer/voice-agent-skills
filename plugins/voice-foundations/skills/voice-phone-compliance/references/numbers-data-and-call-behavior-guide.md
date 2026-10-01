@@ -6,6 +6,27 @@
 
 Checked against primary documentation on **September 30, 2026 UTC**. This is a check date, not a publication date. "Opened" means I fetched the page that day and read the passage I cite, in full or as an extract returned by a scraper. CFR text came from the eCFR API for September 28, 2026, and the links point to the same sections on the eCFR site. Vendor pages are marked "vendor". Scripts, thresholds and test steps are engineering guidance, not law.
 
+## Contents
+
+- Find the fix
+- Why numbers get flagged
+- What to do
+- New numbers and rotation
+- Monitor and pace
+- HIPAA
+- PCI (payment cards)
+- Voiceprints and other biometrics
+- Call behavior
+  - Start of an outbound call
+  - Start of an inbound call
+  - When asked "are you a robot?"
+  - Stop requests
+  - Human transfer
+  - Voicemail
+  - Recording notice
+- Evidence and retention
+- Test plan
+
 ## Find the fix
 
 | Problem or job | Start here | Evidence to keep |

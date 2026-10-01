@@ -4,6 +4,18 @@
 
 Reviewed against current primary documentation on **September 30, 2026 UTC**. The examples and worksheets are engineering guidance, not measured service levels. Pin installed SDKs and runtime configuration; provider quotas, prices, and regional behavior require current account-specific evidence.
 
+## Contents
+
+- Pick the operating decision
+- Admission is a product decision
+- Size for occupancy, bursts, and the weakest dependency
+- Drain before replacing, and define the deadline outcome
+- Bound failover by the layer that failed
+- Observe the layers and keep identifiers out of metric labels
+- Reconcile cost in the same units that are billed
+- Use an operating worksheet, then exercise it
+  - Incident sequence
+
 ## Pick the operating decision
 
 | Your job | Start here | Required output |

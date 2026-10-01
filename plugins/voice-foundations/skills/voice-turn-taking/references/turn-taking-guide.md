@@ -4,6 +4,19 @@
 
 Reviewed against current primary sources on **2026-09-30 UTC**. Provider facts below describe the cited integration; design rules and the worked timeline are engineering recommendations. Synthetic times illustrate ordering and are not benchmarks.
 
+## Contents
+
+- Find the decision you need
+- Separate the detectors
+- Keep a turn controller
+- Decide which overlap should interrupt
+  - Stop each kind of work explicitly
+- Worked example: a correction during booking
+- Tune for the cost of the error
+- Recover from an interruption with no transcript
+- Instrument and exercise the boundaries
+- Choose an integration you can observe
+
 ## Find the decision you need
 
 | Problem | Start here | Required result |

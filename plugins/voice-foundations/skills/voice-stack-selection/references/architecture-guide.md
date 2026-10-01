@@ -9,6 +9,23 @@ Check current documentation and installed versions when using this guide.
 Cited provider statements describe documented behavior. Recommendations and conditional
 examples are engineering guidance to test, not verified compatibility or performance.
 
+## Contents
+
+- Choose a starting point
+- Begin with the task
+- Separate five decisions
+  - Choose the speech architecture
+  - Choose who operates the agent
+- Draw media and control paths
+- Assign turn ownership
+- Keep business authority in the application
+- Size capacity and cost together
+- Compare two or three complete options
+  - Conditional examples
+  - Worked comparison: appointments over web and phone
+- Prove the decision before migration
+- Source discipline
+
 ## Choose a starting point
 
 | Your job | Start here | Leave with |

@@ -6,6 +6,27 @@
 
 Checked against primary sources on **September 30, 2026 UTC**. This is a check date, not a publication date. "Opened" means I fetched the page that day and read the passage I cite, in full or as an extract returned by a scraper. CFR text came from the eCFR API for September 28, 2026, and the links point to the same sections on the eCFR site. A line marked "secondary" rests on a law-firm, news or advocacy summary, not on the law itself. A line that says "not opened" or "not read" is a pointer only. Laws in this area change often. Re-open the source before you rely on a claim for a launch.
 
+## Contents
+
+- Find the rule
+- US federal law
+  - AI voices count as artificial or prerecorded voices
+  - Who can sue, and what it costs
+  - Consent: which kind do you need?
+  - What the call must say and offer
+  - Stop requests
+  - Lists, hours and abandoned calls
+  - Caller ID
+  - Voicemail
+- State telemarketing laws
+- AI disclosure
+- Recording and transcripts
+- Outside the US
+  - European Union
+  - United Kingdom
+  - Canada
+- Unsettled and unverified
+
 ## Find the rule
 
 | Question | Start here |

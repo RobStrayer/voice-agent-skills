@@ -4,6 +4,17 @@
 
 Reviewed against current primary documentation on **September 30, 2026 UTC**. This is a review date, not a publication date. Provider-specific statements are linked; the state machines and failure policies below are engineering guidance. Check the installed SDK, carrier configuration, and exact API version before using field names or transfer behavior.
 
+## Contents
+
+- Find the call failure
+- Follow two paths, then verify four outcomes
+- Build inbound and outbound independently
+- Define the media contract at every boundary
+- Keep answer, machine detection, and task completion separate
+- Make handoff a recoverable transaction
+- Authenticate events, then make effects safe
+- Work failures through the whole lifecycle
+
 ## Find the call failure
 
 | Problem or job | Start here | Evidence required |

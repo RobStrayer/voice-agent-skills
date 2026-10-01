@@ -6,6 +6,16 @@ Reviewed **2026-09-30 UTC**, using Context7 and current provider documentation.
 The application patterns below are engineering recommendations. Provider behavior
 is cited separately; no live transaction or transfer was executed in this review.
 
+## Contents
+
+- Use the right recovery path
+- Define the action contract
+- Decide what interruption can cancel
+  - Defer a speculative tool before dispatch
+- Work through an uncertain booking
+- Transfer control with evidence
+- Test side effects separately from dialog
+
 ## Use the right recovery path
 
 | Situation | Start here | Preserve |

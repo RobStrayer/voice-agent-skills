@@ -6,6 +6,19 @@ Reviewed **2026-09-30 UTC** using Context7 and current primary documentation.
 This is the review date; publication dates were not established for the living
 pages cited below. Procedures and examples are engineering guidance.
 
+## Contents
+
+- Pick the boundary to inspect
+- Choose recognition for the task
+- Treat transcripts as an event stream
+  - Synthetic trace: a corrected day
+- Design the spoken output path
+- Test the words that change the task
+  - Check model and text-transform changes before migrating
+  - Build a pronunciation fixture set
+- Compare complete pipelines
+- Current source limitations
+
 ## Pick the boundary to inspect
 
 | Problem or job | Start here | Evidence to retain |

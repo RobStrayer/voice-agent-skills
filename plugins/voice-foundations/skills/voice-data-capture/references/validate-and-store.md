@@ -4,6 +4,18 @@
 
 Reviewed **2026-09-30 UTC** using current provider documentation and standards pages. This is the review date, not a publication date. Provider and standards facts are linked where they appear. Paragraphs marked *Inference* are engineering judgment, not documented provider behavior. This is engineering guidance, not legal advice. The authorization gateway is in the [security guide](../../voice-agent-security/references/security-guide.md#authorize-tools-in-the-backend) and is not repeated here.
 
+## Contents
+
+- Let the model propose and code decide
+- Gate every write
+- Validators by field
+- Check that the transcript supports the value
+- What to store with each value
+- Use framework capture tasks with care
+- A second transcriber for hard fields
+- Keep values out of general logs
+- Sources
+
 ## Let the model propose and code decide
 
 A speech model writes a guess. A language model may tidy that guess into a structured field. Neither one decides whether the value is real, was said, was confirmed or may be written. Code decides all four.

@@ -4,6 +4,24 @@
 
 Reviewed against current primary documentation on **September 30, 2026 UTC**. This is a review date, not a publication date. The attack categories follow OWASP's [LLM prompt injection cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html) and [AI agent security cheat sheet](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html). The spoken wording, the telephony cases, and the pass criteria are this skill's design, not provider documentation. The scripts test your own agent. Explanations and sources are in [the security guide](security-guide.md).
 
+## Contents
+
+- Find the script
+- Rules of engagement
+- How to run
+- Identity (ID)
+- Injection and social engineering (PI)
+- Indirect injection (IX)
+- Tool authorization (TA)
+- Data exposure (DX)
+- Secrets and infrastructure (IN)
+- Toll fraud and cost abuse (TF)
+- Voice cloning, impersonation, and disclosure (VC)
+- Abuse (AB)
+- Emergencies (EM)
+- Minors (MN)
+- Record results
+
 ## Find the script
 
 | Threat | IDs | Fixtures you need |

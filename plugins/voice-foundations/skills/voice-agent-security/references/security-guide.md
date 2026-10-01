@@ -4,6 +4,28 @@
 
 Reviewed against current primary documentation on **September 30, 2026 UTC**. This is a review date, not a publication date. Provider, standards, and law statements are linked. Paragraphs marked *Inference* are engineering judgment, not documented provider behavior. Provider controls, retention terms, and laws change, so check the current page and your contract before relying on a setting or a number. This is engineering guidance, not legal advice. No live call, payment, or attack was run to write it.
 
+## Contents
+
+- Find the problem
+- What is different on a phone call
+- Caller ID is a claim
+- Verify in steps, in the backend
+- Do not let a voice be the password
+- The prompt is not a control
+- Authorize tools in the backend
+- Untrusted text reaches the model
+- Social engineering by voice
+- Sensitive data in every store
+- Keep cards, PINs, and IDs off the model path
+- Redaction is best effort, so do not collect first
+- Set retention, access, and deletion on purpose
+- Keep keys off the client and mint short-lived credentials
+- Authenticate events and media streams
+- Cost abuse and toll fraud
+- Voice cloning, impersonation, and disclosure
+- Abuse, emergencies, and minors
+- Test before launch
+
 ## Find the problem
 
 | Problem or job | Start here | Evidence required |

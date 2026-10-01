@@ -4,6 +4,17 @@
 
 Reviewed **2026-09-30 UTC** using current provider documentation. This is the review date, not a publication date. Provider facts are linked where they appear. Paragraphs marked *Inference* are engineering judgment, not documented provider behavior. Numbers such as retry counts and group sizes are starting defaults to tune on your own calls, not findings. Provider settings change, so check the current page before you rely on one. [Sources](#sources) lists each page and the date it shows.
 
+## Contents
+
+- Ask one field at a time
+- Accept corrections
+- Give the caller a way out
+  - Text a link
+- Read the value back
+- Make the voice say it correctly
+- Keypad input by framework
+- Sources
+
 ## Ask one field at a time
 
 A good question names the field, says the format, gives one example and ends there.

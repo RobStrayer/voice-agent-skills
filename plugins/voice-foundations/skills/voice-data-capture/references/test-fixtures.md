@@ -4,6 +4,25 @@
 
 Reviewed **2026-09-30 UTC** using current provider documentation and standards pages. This is the review date, not a publication date. Provider and standards facts are linked where they appear. Paragraphs marked *Inference* are engineering judgment, not documented provider behavior. The fixtures are a starting set built from the failure shapes in the [protocols](entity-protocols.md). Add the wrong values your own calls produce. Do not run them against real customers, real people's voices or live card data.
 
+## Contents
+
+- What the tests measure
+- Safe test data
+- Conditions to cover
+- Fixtures by field
+  - Phone (PH)
+  - Email (EM)
+  - Names (NM)
+  - Addresses (AD)
+  - Dates and times (DT)
+  - Amounts (AM)
+  - Codes and reference numbers (CD)
+  - Yes, no and negation (YN)
+  - Private data and framework paths (PR)
+- Aids and settings
+- Pass criteria
+- Sources
+
 ## What the tests measure
 
 Test the whole capture flow and not only the recognizer. A wrong transcript that the flow catches and re-asks about is a pass. A wrong value that reaches a write is a failure, even when the transcript looked fine.

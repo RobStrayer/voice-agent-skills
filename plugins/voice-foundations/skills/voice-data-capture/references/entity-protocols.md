@@ -4,6 +4,21 @@
 
 Reviewed **2026-09-30 UTC** using current provider documentation, standards pages and the papers cited below. This is the review date, not a publication date. Provider, standards and paper facts are linked where they appear, and [Sources](#sources) lists each page, any date it shows and when it was retrieved. Paragraphs marked *Inference* are engineering judgment, not something a source says. The protocols are engineering recommendations. Group sizes, retry counts and similar numbers are starting defaults to tune on your own calls, not findings.
 
+## Contents
+
+- Find your field
+- Rules for every field
+- Why letters and digits get mixed up
+- Phone numbers
+- Email addresses
+- Names
+- Addresses and postcodes
+- Dates and times
+- Amounts and currency
+- Codes and reference numbers
+- Yes, no and negation
+- Sources
+
 ## Find your field
 
 | Field | What goes wrong | Section |

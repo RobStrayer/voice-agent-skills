@@ -6,6 +6,17 @@ Reviewed: **2026-09-30 UTC**. Processing choices and test procedures here are or
 
 An audio frontend decides which samples reach recognition and turn detection. Choose it against a specific failure: agent speech returning through a speaker, a fan keeping VAD active, background conversation becoming a command, or quiet words disappearing. Record the existing processing before adding another stage.
 
+## Contents
+
+- Start with the symptom
+- Choose the operation that matches the interference
+- Put processing where its inputs exist
+- Keep the echo reference aligned during double-talk
+- Preserve the format contract
+- Compare deployment choices
+- Diagnose a noisy call without hiding the user
+- Run a paired test that catches information loss
+
 ## Start with the symptom
 
 | Symptom or job | First check | Next section |
