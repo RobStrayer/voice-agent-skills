@@ -6,5 +6,5 @@ In short: be kind, assume good intent, keep feedback about the work, and don't
 harass anyone. Maintainers may edit or remove comments, issues and pull requests
 that break these rules, and may block people who keep breaking them.
 
-To report a problem, contact the maintainer, [@RBStrayer](https://github.com/RBStrayer),
+To report a problem, contact the maintainer, [@RobStrayer](https://github.com/RobStrayer),
 privately. Reports are kept confidential.

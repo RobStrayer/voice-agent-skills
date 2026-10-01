@@ -671,5 +671,5 @@ product. For ready-made skills by provider, see
   status that could not be confirmed and 13 have sales-only pricing. Re-check
   these before you rely on them.
 - Something out of date or wrong?
-  [Open an issue](https://github.com/RBStrayer/nl-voice-skills/issues/new/choose)
+  [Open an issue](https://github.com/RobStrayer/nl-voice-skills/issues/new/choose)
   with a source.
