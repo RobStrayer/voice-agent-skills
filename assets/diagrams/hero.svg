@@ -26,8 +26,8 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 </style>
 <rect class="bg" x="0.5" y="0.5" width="1279" height="423" rx="16"/>
 
-<text class="word" x="640" y="126" text-anchor="middle">Voice Agent Skills</text>
-<text class="tag" x="640" y="168" text-anchor="middle">Skills, guides and diagrams for building AI voice agents people enjoy talking to.</text>
+<text class="word" x="640" y="114" text-anchor="middle">Voice Agent Skills</text>
+<text class="tag" x="640" y="170" text-anchor="middle">Skills, guides and diagrams for building AI voice agents people enjoy talking to.</text>
 
 <!-- one conversational turn as a waveform: listen, think, speak (illustrative, not data) -->
 <g class="l">

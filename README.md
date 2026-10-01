@@ -1,7 +1,12 @@
 ![Voice Agent Skills: skills, guides and diagrams for building AI voice agents people enjoy talking to. A sound wave runs from green listening bars through violet thinking dots to orange speaking bars.](assets/diagrams/hero.svg)
 
-[![verify](https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml/badge.svg)](https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml"><img alt="verify" src="https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://github.com/RobStrayer/voice-agent-skills/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/RobStrayer/voice-agent-skills"></a>
+  <a href="docs/usage.md"><img alt="Works with Claude Code and Codex" src="https://img.shields.io/badge/works%20with-Claude%20Code%20%7C%20Codex-6e56cf"></a>
+  <a href="CONTRIBUTING.md"><img alt="Pull requests welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+</p>
 
 A free, open collection for anyone building a voice AI agent: a phone receptionist,
 a booking line, a browser assistant, or anything else people talk to. It has plain
