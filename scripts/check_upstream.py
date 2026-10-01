@@ -67,7 +67,7 @@ class Client:
         self.token = token
 
     def _open(self, url, body=None, auth=False):
-        headers = {'User-Agent': 'nl-voice-skills-upkeep'}
+        headers = {'User-Agent': 'voice-agent-skills-upkeep'}
         if auth:
             headers['Authorization'] = 'Bearer ' + self.token
         if body is not None:

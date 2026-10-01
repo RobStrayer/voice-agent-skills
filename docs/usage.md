@@ -13,15 +13,15 @@ This repo is a Claude Code plugin marketplace. Add it once, then install the
 bundles you want:
 
 ```text
-/plugin marketplace add RobStrayer/nl-voice-skills
-/plugin install voice-foundations@nl-voice-skills
+/plugin marketplace add RobStrayer/voice-agent-skills
+/plugin install voice-foundations@voice-agent-skills
 ```
 
 Or from your shell:
 
 ```bash
-claude plugin marketplace add RobStrayer/nl-voice-skills
-claude plugin install voice-foundations@nl-voice-skills
+claude plugin marketplace add RobStrayer/voice-agent-skills
+claude plugin install voice-foundations@voice-agent-skills
 ```
 
 | Plugin | What you get |
@@ -44,8 +44,8 @@ The [`skills` CLI](https://github.com/vercel-labs/skills) finds every skill in t
 repo and installs it for Claude Code, Codex, Cursor and other agents it supports:
 
 ```bash
-npx skills add RobStrayer/nl-voice-skills --list
-npx skills add RobStrayer/nl-voice-skills --skill voice-turn-taking
+npx skills add RobStrayer/voice-agent-skills --list
+npx skills add RobStrayer/voice-agent-skills --skill voice-turn-taking
 ```
 
 ## Copy a folder by hand
@@ -59,8 +59,8 @@ directory:
 | OpenAI Codex | `~/.agents/skills/<name>/` (older Codex versions: `~/.codex/skills/`) | `.agents/skills/<name>/` ([Codex skills docs](https://learn.chatgpt.com/docs/build-skills)) |
 
 ```bash
-git clone https://github.com/RobStrayer/nl-voice-skills.git
-cp -r nl-voice-skills/skills/foundations/voice-turn-taking ~/.claude/skills/
+git clone https://github.com/RobStrayer/voice-agent-skills.git
+cp -r voice-agent-skills/skills/foundations/voice-turn-taking ~/.claude/skills/
 ```
 
 ## Fresh copies versus snapshots

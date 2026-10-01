@@ -1,6 +1,6 @@
 # Third-party notices
 
-Upstream files remain under their original licenses and copyright notices. The root MIT license applies to original NL Voice Skills material. Linked projects are not redistributed by this repository.
+Upstream files remain under their original licenses and copyright notices. The root MIT license applies to original Voice Agent Skills material. Linked projects are not redistributed by this repository.
 
 | Source | Copied material | License files |
 | --- | --- | --- |

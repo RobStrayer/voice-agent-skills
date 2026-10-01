@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 424" width="1280" height="424" role="img" aria-labelledby="t d">
-<title id="t">Next Level Voice Skills</title>
-<desc id="d">Banner for Next Level Voice Skills: skills, guides and diagrams for building AI voice agents people enjoy talking to. A sound wave runs from left to right through the three stages of a voice agent. Listen: uneven green bars, like a caller's speech. Think: a steady band of violet dots while the agent decides. Speak: smooth orange bars that build to a peak, the agent's reply.</desc>
+<title id="t">Voice Agent Skills</title>
+<desc id="d">Banner for Voice Agent Skills: skills, guides and diagrams for building AI voice agents people enjoy talking to. A sound wave runs from left to right through the three stages of a voice agent. Listen: uneven green bars, like a caller's speech. Think: a steady band of violet dots while the agent decides. Speak: smooth orange bars that build to a peak, the agent's reply.</desc>
 <!-- Edit freely. The wave is plain <rect> bars and <circle> dots on a 12 px grid, centred on y=262: change a bar's y and height to reshape it.
      The number in each bar's style attribute is the order the one-time sweep visits it. The sweep only runs when the viewer has not asked for reduced motion. -->
 <style>
@@ -26,7 +26,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 </style>
 <rect class="bg" x="0.5" y="0.5" width="1279" height="423" rx="16"/>
 
-<text class="word" x="61" y="126">Next Level Voice Skills</text>
+<text class="word" x="61" y="126">Voice Agent Skills</text>
 <text class="tag" x="66" y="168">Skills, guides and diagrams for building AI voice agents people enjoy talking to.</text>
 
 <!-- one conversational turn as a waveform: listen, think, speak (illustrative, not data) -->

@@ -143,4 +143,4 @@ Most outcome numbers in customer service come from the companies that deployed
 or sold the agent; independent data is scarce for collections, insurance,
 real-estate call-backs, restaurant phones and small-business receptionists, so
 treat those rows as lower confidence. Corrections with sources are welcome:
-[open an issue](https://github.com/RobStrayer/nl-voice-skills/issues/new/choose).
+[open an issue](https://github.com/RobStrayer/voice-agent-skills/issues/new/choose).

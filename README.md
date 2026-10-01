@@ -1,6 +1,6 @@
-![Next Level Voice Skills: skills, guides and diagrams for building AI voice agents people enjoy talking to. A sound wave runs from green listening bars through violet thinking dots to orange speaking bars.](assets/diagrams/hero.svg)
+![Voice Agent Skills: skills, guides and diagrams for building AI voice agents people enjoy talking to. A sound wave runs from green listening bars through violet thinking dots to orange speaking bars.](assets/diagrams/hero.svg)
 
-[![verify](https://github.com/RobStrayer/nl-voice-skills/actions/workflows/verify.yml/badge.svg)](https://github.com/RobStrayer/nl-voice-skills/actions/workflows/verify.yml)
+[![verify](https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml/badge.svg)](https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 A free, open collection for anyone building a voice AI agent: a phone receptionist,
@@ -45,8 +45,8 @@ job well. Install them in whichever way suits your tools.
 **Claude Code plugin marketplace**
 
 ```text
-/plugin marketplace add RobStrayer/nl-voice-skills
-/plugin install voice-foundations@nl-voice-skills
+/plugin marketplace add RobStrayer/voice-agent-skills
+/plugin install voice-foundations@voice-agent-skills
 ```
 
 Provider plugins are also available: `voice-livekit`, `voice-pipecat`,
@@ -55,7 +55,7 @@ Provider plugins are also available: `voice-livekit`, `voice-pipecat`,
 **Any agent that supports the open skills format** (Claude Code, Codex and others)
 
 ```bash
-npx skills add RobStrayer/nl-voice-skills --skill voice-turn-taking
+npx skills add RobStrayer/voice-agent-skills --skill voice-turn-taking
 ```
 
 **By hand:** copy a skill folder (the whole folder, not just `SKILL.md`) into

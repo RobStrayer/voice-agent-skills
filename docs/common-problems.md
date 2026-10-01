@@ -425,4 +425,4 @@ ranked by judgement, weighing how many builder sources report them, how loudly,
 and how first-hand the reports are. The sample is English-language and
 search-ranked, and Reddit, Discord and Slack were largely out of reach, so small
 agencies and no-code users are under-represented. Found something wrong or
-missing? [Open an issue](https://github.com/RobStrayer/nl-voice-skills/issues/new/choose).
+missing? [Open an issue](https://github.com/RobStrayer/voice-agent-skills/issues/new/choose).
