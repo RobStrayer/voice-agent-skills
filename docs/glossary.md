@@ -13,7 +13,7 @@ Each entry says what the thing is and why it matters to you.
 microphone signal when it leaks out of a speaker and back in. It needs a copy of
 what was played (the "reference"). Without AEC, an agent on a laptop speaker can
 hear itself and interrupt itself.
-See [audio frontends](../skills/foundations/voice-audio-frontends/SKILL.md).
+See [audio frontends](../plugins/voice-foundations/skills/voice-audio-frontends/SKILL.md).
 
 **AMD (answering machine detection).** Deciding whether an outbound call reached
 a person or voicemail. It usually costs a few seconds at the start of the call and
@@ -25,7 +25,7 @@ is never perfect, so plan what the agent says in both cases.
 such as most US healthcare providers, must sign with any vendor that handles
 protected health information for it. You need one, but it doesn't make a voice
 agent compliant on its own.
-See [phone compliance](../skills/foundations/voice-phone-compliance/SKILL.md).
+See [phone compliance](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md).
 
 **Backchannel.** Short listener noises such as "mm-hm", "yeah" and "right". People
 say them while the other person talks. A good agent doesn't treat every backchannel
@@ -34,7 +34,7 @@ as an interruption.
 **Barge-in.** The caller talks over the agent. The agent should stop speaking
 quickly, drop the rest of its planned reply, and listen. Getting this wrong is
 one of the most common complaints about voice agents.
-See [turn taking](../skills/foundations/voice-turn-taking/SKILL.md).
+See [turn taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md).
 
 **Cascade (or pipeline).** The classic architecture: speech-to-text, then a text
 language model, then text-to-speech. You pick each part and can read the text in
@@ -46,7 +46,7 @@ such as English to Hindi.
 **Codec.** How audio is compressed for transport. Phone networks commonly use
 G.711 (μ-law or A-law) at 8 kHz; WebRTC usually uses Opus. Mixing up codecs or
 sample rates gives you silence, chipmunk voices or static.
-See [media debugging](../skills/foundations/voice-media-debugging/SKILL.md).
+See [media debugging](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md).
 
 **Cold transfer (blind transfer).** Handing the call to another number without introducing it
 first. The caller may land in a queue or voicemail. Compare with *warm transfer*.
@@ -86,12 +86,12 @@ handle overlap with barge-in rules.
 **Function calling (tools).** The language model asks your code to do something,
 such as look up an order or book a slot, and gets the result back. Voice adds a
 twist: the caller can interrupt or change their mind while a tool is running.
-See [conversation design](../skills/foundations/voice-conversation-design/SKILL.md).
+See [conversation design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md).
 
 **Idempotent.** Safe to repeat: running the same action twice has the same
 effect as running it once. Booking and payment tools should be idempotent,
 because a timeout or a retry can make the model call them again.
-See [call reliability](../skills/foundations/voice-call-reliability/SKILL.md).
+See [call reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md).
 
 **IVR (interactive voice response).** The classic "press 1 for billing" phone menu.
 Many voice agents replace or sit behind an IVR.
@@ -102,7 +102,7 @@ over the network. It adds a little delay in exchange for fewer glitches.
 **Latency (voice-to-voice).** The time from when the caller stops talking to when
 they hear the agent start answering. This is the number callers feel. It's made up
 of turn detection, speech-to-text, the model, text-to-speech, network and playback.
-See [latency audit](../skills/foundations/voice-latency-audit/SKILL.md).
+See [latency audit](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md).
 
 ## M–R
 
@@ -164,7 +164,7 @@ parts, with less control over each stage.
 **Speech-to-text (STT).** Turns speech into text. Streaming STT sends partial
 ("interim") results that can still change before a final result. Treat interim
 text as a draft.
-See [speech pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md).
+See [speech pipeline](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md).
 
 **SSML.** A markup language for controlling text-to-speech: pauses, emphasis,
 pronunciation, how to read numbers. Support varies by provider; some newer models
@@ -178,7 +178,7 @@ carriers. It affects whether your outbound calls show as verified or get labelle
 
 **TCPA.** The US Telephone Consumer Protection Act. Among other things, it restricts
 calls that use an artificial or prerecorded voice, and the FCC ruled in 2024 that AI-generated
-voices count. See [phone compliance](../skills/foundations/voice-phone-compliance/SKILL.md).
+voices count. See [phone compliance](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md).
 
 **Text-to-speech (TTS).** Turns text into audio. For live agents, the key numbers
 are how quickly the first audio arrives and whether it can stream while text is
@@ -191,7 +191,7 @@ waits for the whole file.
 **Turn detection.** Deciding whose turn it is to speak. It combines silence, the
 words said so far, and sometimes tone. It's the main cause of agents that cut
 people off or feel sluggish.
-See [turn taking](../skills/foundations/voice-turn-taking/SKILL.md).
+See [turn taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md).
 
 **VAD (voice activity detection).** Detects whether audio contains speech.
 Used to notice that someone started or stopped talking. On its own it can't tell
@@ -203,7 +203,7 @@ person's voice.
 
 **Warm transfer (attended transfer).** Connecting the caller to a person after the destination
 accepts, often with a summary, while keeping the caller on the line if nobody
-answers. See [call reliability](../skills/foundations/voice-call-reliability/SKILL.md).
+answers. See [call reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md).
 
 **WebRTC.** The browser standard for real-time audio and video. It handles echo
 cancellation, jitter and network changes, which is why many voice frameworks

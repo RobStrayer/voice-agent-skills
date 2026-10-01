@@ -38,7 +38,7 @@ and interrupt. That is what this repo is about.
 ![A decision flowchart. No code: use a managed platform such as Vapi, Retell, ElevenAgents or Bland. Code and full control: use an open-source framework such as LiveKit Agents or Pipecat. Code for a browser or app: use a speech-to-speech API such as OpenAI GPT-Live or Gemini Live. Code for phone calls: use a phone provider plus your own code, such as Twilio ConversationRelay, Telnyx or Plivo.](assets/diagrams/where-to-start.svg)
 
 The [getting started guide](docs/getting-started.md) links the official quickstart
-for each path, and the [stack selection skill](skills/foundations/voice-stack-selection/SKILL.md)
+for each path, and the [stack selection skill](plugins/voice-foundations/skills/voice-stack-selection/SKILL.md)
 walks your coding agent through the choice with you.
 
 ## Install the skills
@@ -55,6 +55,13 @@ job well. Install them in whichever way suits your tools.
 
 Provider plugins are also available: `voice-livekit`, `voice-pipecat`,
 `voice-elevenlabs`, `voice-twilio`, `voice-cartesia` and `voice-openai-speech`.
+
+**Codex plugin marketplace**
+
+```bash
+codex plugin marketplace add RobStrayer/voice-agent-skills
+codex plugin add voice-foundations@voice-agent-skills
+```
 
 **Any agent that supports the open skills format** (Claude Code, Codex and others)
 
@@ -81,19 +88,19 @@ These thirteen skills are original to this repo and work with any provider.
 
 | What you're working on | Skill |
 | --- | --- |
-| Choosing a platform, framework or speech model | [voice-stack-selection](skills/foundations/voice-stack-selection/SKILL.md) |
-| Writing prompts for the ear, confirmations, repairs and handoffs | [voice-conversation-design](skills/foundations/voice-conversation-design/SKILL.md) |
-| The agent cuts people off, or won't stop when interrupted | [voice-turn-taking](skills/foundations/voice-turn-taking/SKILL.md) |
-| Echo, background noise, or quiet words going missing | [voice-audio-frontends](skills/foundations/voice-audio-frontends/SKILL.md) |
-| Misheard names and numbers, pronunciation, streaming speech | [voice-speech-pipeline](skills/foundations/voice-speech-pipeline/SKILL.md) |
-| Capturing phone numbers, emails, names and addresses correctly | [voice-data-capture](skills/foundations/voice-data-capture/SKILL.md) |
-| Replies feel slow and you need to know where the time goes | [voice-latency-audit](skills/foundations/voice-latency-audit/SKILL.md) |
-| Silent, one-way or garbled audio, codec and sample-rate errors | [voice-media-debugging](skills/foundations/voice-media-debugging/SKILL.md) |
-| Phone numbers, transfers, dropped calls, scaling and deploys | [voice-call-reliability](skills/foundations/voice-call-reliability/SKILL.md) |
-| Testing calls, tools and recovery before you ship | [voice-agent-evaluation](skills/foundations/voice-agent-evaluation/SKILL.md) |
-| Working out the cost per minute before you commit | [voice-cost-estimation](skills/foundations/voice-cost-estimation/SKILL.md) |
-| Consent, AI disclosure, calling hours and recording rules | [voice-phone-compliance](skills/foundations/voice-phone-compliance/SKILL.md) |
-| Prompt injection, leaked keys, caller identity and abuse | [voice-agent-security](skills/foundations/voice-agent-security/SKILL.md) |
+| Choosing a platform, framework or speech model | [voice-stack-selection](plugins/voice-foundations/skills/voice-stack-selection/SKILL.md) |
+| Writing prompts for the ear, confirmations, repairs and handoffs | [voice-conversation-design](plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) |
+| The agent cuts people off, or won't stop when interrupted | [voice-turn-taking](plugins/voice-foundations/skills/voice-turn-taking/SKILL.md) |
+| Echo, background noise, or quiet words going missing | [voice-audio-frontends](plugins/voice-foundations/skills/voice-audio-frontends/SKILL.md) |
+| Misheard names and numbers, pronunciation, streaming speech | [voice-speech-pipeline](plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md) |
+| Capturing phone numbers, emails, names and addresses correctly | [voice-data-capture](plugins/voice-foundations/skills/voice-data-capture/SKILL.md) |
+| Replies feel slow and you need to know where the time goes | [voice-latency-audit](plugins/voice-foundations/skills/voice-latency-audit/SKILL.md) |
+| Silent, one-way or garbled audio, codec and sample-rate errors | [voice-media-debugging](plugins/voice-foundations/skills/voice-media-debugging/SKILL.md) |
+| Phone numbers, transfers, dropped calls, scaling and deploys | [voice-call-reliability](plugins/voice-foundations/skills/voice-call-reliability/SKILL.md) |
+| Testing calls, tools and recovery before you ship | [voice-agent-evaluation](plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md) |
+| Working out the cost per minute before you commit | [voice-cost-estimation](plugins/voice-foundations/skills/voice-cost-estimation/SKILL.md) |
+| Consent, AI disclosure, calling hours and recording rules | [voice-phone-compliance](plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md) |
+| Prompt injection, leaked keys, caller identity and abuse | [voice-agent-security](plugins/voice-foundations/skills/voice-agent-security/SKILL.md) |
 
 ## Level up
 

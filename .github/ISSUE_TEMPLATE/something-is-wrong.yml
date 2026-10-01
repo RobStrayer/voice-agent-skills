@@ -7,7 +7,7 @@ body:
     attributes:
       label: Where
       description: File path or page link.
-      placeholder: skills/foundations/voice-turn-taking/SKILL.md
+      placeholder: plugins/voice-foundations/skills/voice-turn-taking/SKILL.md
     validations:
       required: true
   - type: textarea

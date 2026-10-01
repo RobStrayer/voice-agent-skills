@@ -21,11 +21,11 @@ and the recovery before committing to a provider.
 
 | Work area | What you'll work through | Open |
 | :--- | :--- | :--- |
-| **Architecture** | Speech paths, hosting, transport, capacity, cost, and a worked appointment-system decision | [Guide](../skills/foundations/voice-stack-selection/references/architecture-guide.md) · [Skill](../skills/foundations/voice-stack-selection/SKILL.md) |
-| **Conversation and accessibility** | Useful questions, narrow repairs, confirmations, and supported alternatives to speech | [Skill and checklist](../skills/foundations/voice-conversation-design/SKILL.md) |
-| **Cost** | Per-minute cost from phone, speech, model and server prices, with stress cases | [Skill and estimator](../skills/foundations/voice-cost-estimation/SKILL.md) |
+| **Architecture** | Speech paths, hosting, transport, capacity, cost, and a worked appointment-system decision | [Guide](../plugins/voice-foundations/skills/voice-stack-selection/references/architecture-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md) |
+| **Conversation and accessibility** | Useful questions, narrow repairs, confirmations, and supported alternatives to speech | [Skill and checklist](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) |
+| **Cost** | Per-minute cost from phone, speech, model and server prices, with stress cases | [Skill and estimator](../plugins/voice-foundations/skills/voice-cost-estimation/SKILL.md) |
 
-![Audio, call control, and business actions have separate owners and evidence.](../skills/foundations/voice-stack-selection/assets/voice-system-map.svg)
+![Audio, call control, and business actions have separate owners and evidence.](../plugins/voice-foundations/skills/voice-stack-selection/assets/voice-system-map.svg)
 
 
 **Leave with:** a stack choice, who owns each part, and what would make you change
@@ -38,20 +38,20 @@ turn decisions, recognition, and playback influence one another.
 
 | Work area | What you'll work through | Open |
 | :--- | :--- | :--- |
-| **Turn taking and interruptions** | Hesitation, overlapping speech, false interruptions, response cancellation, and safe recovery | [Guide](../skills/foundations/voice-turn-taking/references/turn-taking-guide.md) · [Skill](../skills/foundations/voice-turn-taking/SKILL.md) |
-| **Noise and echo** | Processing owners, endpoint echo references, quiet speech, and paired audio tests | [Guide](../skills/foundations/voice-audio-frontends/references/audio-frontends-guide.md) · [Skill](../skills/foundations/voice-audio-frontends/SKILL.md) |
-| **Recognition** | Interim revisions, critical fields, language variation, and transcript finality | [Guide](../skills/foundations/voice-speech-pipeline/references/speech-pipeline-guide.md) · [Skill](../skills/foundations/voice-speech-pipeline/SKILL.md) |
-| **Synthesis and playback** | Phrase boundaries, pronunciation, queued audio, final flushes, and stale speech | [Guide](../skills/foundations/voice-speech-pipeline/references/speech-pipeline-guide.md) · [Skill](../skills/foundations/voice-speech-pipeline/SKILL.md) |
+| **Turn taking and interruptions** | Hesitation, overlapping speech, false interruptions, response cancellation, and safe recovery | [Guide](../plugins/voice-foundations/skills/voice-turn-taking/references/turn-taking-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md) |
+| **Noise and echo** | Processing owners, endpoint echo references, quiet speech, and paired audio tests | [Guide](../plugins/voice-foundations/skills/voice-audio-frontends/references/audio-frontends-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-audio-frontends/SKILL.md) |
+| **Recognition** | Interim revisions, critical fields, language variation, and transcript finality | [Guide](../plugins/voice-foundations/skills/voice-speech-pipeline/references/speech-pipeline-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md) |
+| **Synthesis and playback** | Phrase boundaries, pronunciation, queued audio, final flushes, and stale speech | [Guide](../plugins/voice-foundations/skills/voice-speech-pipeline/references/speech-pipeline-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md) |
 
-![Turn commitment moves from listening to a candidate end before responding. An eligible interruption yields old output; business actions keep a separate lifetime.](../skills/foundations/voice-turn-taking/assets/turn-controller.svg)
+![Turn commitment moves from listening to a candidate end before responding. An eligible interruption yields old output; business actions keep a separate lifetime.](../plugins/voice-foundations/skills/voice-turn-taking/assets/turn-controller.svg)
 
 
 <details>
 <summary>See where the echo reference belongs</summary>
 
-![The rendering endpoint feeds its playback reference into capture processing. Optional server enhancement does not automatically receive that reference.](../skills/foundations/voice-audio-frontends/assets/echo-processing.svg)
+![The rendering endpoint feeds its playback reference into capture processing. Optional server enhancement does not automatically receive that reference.](../plugins/voice-foundations/skills/voice-audio-frontends/assets/echo-processing.svg)
 
-[Walk through the noisy-laptop example →](../skills/foundations/voice-audio-frontends/references/audio-frontends-guide.md)
+[Walk through the noisy-laptop example →](../plugins/voice-foundations/skills/voice-audio-frontends/references/audio-frontends-guide.md)
 
 </details>
 
@@ -66,20 +66,20 @@ accepted request, and a completed business action are different evidence.
 
 | Work area | What you'll work through | Open |
 | :--- | :--- | :--- |
-| **Names, numbers, and emails** | Asking, reading back, validating and storing caller details before anything is written | [Skill and read-back script](../skills/foundations/voice-data-capture/SKILL.md) |
-| **Tools, transactions, and handoffs** | Lost responses, idempotency, corrected intent, action ledgers, and ownership | [Guide](../skills/foundations/voice-conversation-design/references/transactions-and-handoffs.md) · [Skill](../skills/foundations/voice-conversation-design/SKILL.md) |
-| **Telephony and call control** | Signaling versus media, codecs, DTMF, transfers, webhook evidence, and cleanup | [Guide](../skills/foundations/voice-call-reliability/references/telephony-guide.md) · [Skill](../skills/foundations/voice-call-reliability/SKILL.md) |
-| **Phone rules** | Consent, AI disclosure, do-not-call lists, calling hours, recording consent, caller ID and spam labels | [Legal guide](../skills/foundations/voice-phone-compliance/references/legal-requirements-guide.md) · [Skill](../skills/foundations/voice-phone-compliance/SKILL.md) |
+| **Names, numbers, and emails** | Asking, reading back, validating and storing caller details before anything is written | [Skill and read-back script](../plugins/voice-foundations/skills/voice-data-capture/SKILL.md) |
+| **Tools, transactions, and handoffs** | Lost responses, idempotency, corrected intent, action ledgers, and ownership | [Guide](../plugins/voice-foundations/skills/voice-conversation-design/references/transactions-and-handoffs.md) · [Skill](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) |
+| **Telephony and call control** | Signaling versus media, codecs, DTMF, transfers, webhook evidence, and cleanup | [Guide](../plugins/voice-foundations/skills/voice-call-reliability/references/telephony-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md) |
+| **Phone rules** | Consent, AI disclosure, do-not-call lists, calling hours, recording consent, caller ID and spam labels | [Legal guide](../plugins/voice-foundations/skills/voice-phone-compliance/references/legal-requirements-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md) |
 
-![A caller correction stops old playback while the first booking action remains pending. Its eventual result must be reconciled before acting on the corrected request.](../skills/foundations/voice-conversation-design/assets/interrupted-action.svg)
+![A caller correction stops old playback while the first booking action remains pending. Its eventual result must be reconciled before acting on the corrected request.](../plugins/voice-foundations/skills/voice-conversation-design/assets/interrupted-action.svg)
 
 
 <details>
 <summary>See a handoff that preserves the caller on failure</summary>
 
-![A recoverable handoff verifies acceptance and connected parties before retiring only the bot. Unconfirmed outcomes return to a supported fallback.](../skills/foundations/voice-call-reliability/assets/recoverable-handoff.svg)
+![A recoverable handoff verifies acceptance and connected parties before retiring only the bot. Unconfirmed outcomes return to a supported fallback.](../plugins/voice-foundations/skills/voice-call-reliability/assets/recoverable-handoff.svg)
 
-[Compare transfer choices and failure paths →](../skills/foundations/voice-call-reliability/references/telephony-guide.md)
+[Compare transfer choices and failure paths →](../plugins/voice-foundations/skills/voice-call-reliability/references/telephony-guide.md)
 
 </details>
 
@@ -94,10 +94,10 @@ a successful text simulation each prove only part of it.
 
 | Work area | What you'll work through | Open |
 | :--- | :--- | :--- |
-| **Production operations** | Admission, warm capacity, graceful draining, dependency failure, and cost boundaries | [Guide](../skills/foundations/voice-call-reliability/references/production-operations-guide.md) · [Skill](../skills/foundations/voice-call-reliability/SKILL.md) |
-| **Latency and media debugging** | Compatible clocks, first useful speech, buffering, one-way audio, and stale output | [Latency skill](../skills/foundations/voice-latency-audit/SKILL.md) · [Media skill](../skills/foundations/voice-media-debugging/SKILL.md) |
-| **Evaluation and release** | Conversation, tools, audio, transport, failure, and lifecycle evidence | [Skill and test matrix](../skills/foundations/voice-agent-evaluation/SKILL.md) |
-| **Security** | Prompt injection by voice, key handling, caller identity, toll fraud, and red-team scripts | [Guide](../skills/foundations/voice-agent-security/references/security-guide.md) · [Skill](../skills/foundations/voice-agent-security/SKILL.md) |
+| **Production operations** | Admission, warm capacity, graceful draining, dependency failure, and cost boundaries | [Guide](../plugins/voice-foundations/skills/voice-call-reliability/references/production-operations-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md) |
+| **Latency and media debugging** | Compatible clocks, first useful speech, buffering, one-way audio, and stale output | [Latency skill](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md) · [Media skill](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md) |
+| **Evaluation and release** | Conversation, tools, audio, transport, failure, and lifecycle evidence | [Skill and test matrix](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md) |
+| **Security** | Prompt injection by voice, key handling, caller identity, toll fraud, and red-team scripts | [Guide](../plugins/voice-foundations/skills/voice-agent-security/references/security-guide.md) · [Skill](../plugins/voice-foundations/skills/voice-agent-security/SKILL.md) |
 
 | Ask before shipping | Evidence to keep |
 | :--- | :--- |

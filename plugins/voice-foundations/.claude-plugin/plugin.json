@@ -1,0 +1,20 @@
+{
+  "name": "voice-foundations",
+  "displayName": "Voice Agent Skills",
+  "version": "1.0.0",
+  "description": "Thirteen provider-neutral skills for building, debugging and reviewing AI voice agents: stack selection, turn taking, conversation design, speech pipeline, audio frontends, latency, media debugging, call reliability, data capture, evaluation, cost, phone compliance and security.",
+  "author": {
+    "name": "Rob Strayer",
+    "url": "https://github.com/RobStrayer"
+  },
+  "homepage": "https://github.com/RobStrayer/voice-agent-skills",
+  "repository": "https://github.com/RobStrayer/voice-agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "voice",
+    "voice-agents",
+    "speech",
+    "telephony",
+    "conversational-ai"
+  ]
+}

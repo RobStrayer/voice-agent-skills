@@ -29,7 +29,7 @@ reach a person.
 | **Restaurant and hotel phones** (hours, menu, reservations) | Many calls ask the same few things | Live reservation or ordering-system integration and busy periods |
 | **Structured interviews** (hiring screens, research interviews) | Scripted, and the best-measured success in the field | Disclosure, fairness and keeping transcripts secure |
 | **Speaking practice and oral exams** | Known users and a bounded script | Recognising learners' speech; pacing and one question at a time |
-| **Check calls to people who expect them** (freight status, appointment confirmations) | Repetitive, scripted, and the other side knows why you're calling | Consent to call their mobile, exceptions and noisy lines; this is outbound, so read the [phone compliance skill](../skills/foundations/voice-phone-compliance/SKILL.md) first |
+| **Check calls to people who expect them** (freight status, appointment confirmations) | Repetitive, scripted, and the other side knows why you're calling | Consent to call their mobile, exceptions and noisy lines; this is outbound, so read the [phone compliance skill](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md) first |
 
 ## Every use case, rated
 
@@ -66,7 +66,7 @@ two. A note in brackets says how many independent reports there are.
   scrubbing and calling-hour rules built in code. In the US an AI voice counts as
   an artificial voice, so calls to mobile phones and homes generally need the
   person's prior consent. Read the
-  [phone compliance skill](../skills/foundations/voice-phone-compliance/SKILL.md) first.
+  [phone compliance skill](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md) first.
 - **Open-ended companions or toys for children.** A companion app ended open chat
   for under-18s after lawsuits
   ([CNBC](https://www.cnbc.com/2025/10/29/character-ai-chatbots-teens-persona.html)),
@@ -93,11 +93,11 @@ two. A note in brackets says how many independent reports there are.
 2. **Put code between the model and consequences.** Check the menu, calendar,
    eligibility or payment rules in code before the agent commits anything. The
    drive-thru failures read as missing hard limits, not proof that voice ordering
-   can't work. The [conversation design skill](../skills/foundations/voice-conversation-design/SKILL.md)
+   can't work. The [conversation design skill](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md)
    covers confirmations and action states.
 3. **Measure resolved calls, not answered calls.** Track what the caller needed,
    whether it happened, and how handoffs went. The
-   [agent evaluation skill](../skills/foundations/voice-agent-evaluation/SKILL.md)
+   [agent evaluation skill](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md)
    builds that test set.
 4. **Disclose, and keep a person close.** A field experiment with 70,000 job
    applicants found AI-led interviews led to 12% more job offers and better retention, and 78%
@@ -133,7 +133,7 @@ Automation rates depend on how they are counted:
 
 Ask what counts as "handled", who fixed the failures, and over what period.
 Before you promise savings, run the numbers with the
-[cost estimation skill](../skills/foundations/voice-cost-estimation/SKILL.md).
+[cost estimation skill](../plugins/voice-foundations/skills/voice-cost-estimation/SKILL.md).
 
 ---
 

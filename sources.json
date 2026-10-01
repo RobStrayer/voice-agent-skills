@@ -867,18 +867,18 @@
     }
   ],
   "original_skills": [
-    "skills/foundations/voice-agent-evaluation",
-    "skills/foundations/voice-agent-security",
-    "skills/foundations/voice-audio-frontends",
-    "skills/foundations/voice-call-reliability",
-    "skills/foundations/voice-conversation-design",
-    "skills/foundations/voice-cost-estimation",
-    "skills/foundations/voice-data-capture",
-    "skills/foundations/voice-latency-audit",
-    "skills/foundations/voice-media-debugging",
-    "skills/foundations/voice-phone-compliance",
-    "skills/foundations/voice-speech-pipeline",
-    "skills/foundations/voice-stack-selection",
-    "skills/foundations/voice-turn-taking"
+    "plugins/voice-foundations/skills/voice-agent-evaluation",
+    "plugins/voice-foundations/skills/voice-agent-security",
+    "plugins/voice-foundations/skills/voice-audio-frontends",
+    "plugins/voice-foundations/skills/voice-call-reliability",
+    "plugins/voice-foundations/skills/voice-conversation-design",
+    "plugins/voice-foundations/skills/voice-cost-estimation",
+    "plugins/voice-foundations/skills/voice-data-capture",
+    "plugins/voice-foundations/skills/voice-latency-audit",
+    "plugins/voice-foundations/skills/voice-media-debugging",
+    "plugins/voice-foundations/skills/voice-phone-compliance",
+    "plugins/voice-foundations/skills/voice-speech-pipeline",
+    "plugins/voice-foundations/skills/voice-stack-selection",
+    "plugins/voice-foundations/skills/voice-turn-taking"
   ]
 }

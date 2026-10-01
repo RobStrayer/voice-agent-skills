@@ -8,9 +8,7 @@
   "plugins": [
     {
       "name": "voice-foundations",
-      "source": "./",
-      "strict": false,
-      "skills": ["./skills/foundations/"],
+      "source": "./plugins/voice-foundations",
       "description": "Provider-neutral voice agent skills: stack selection, turn taking, audio, speech pipeline, conversation design, calls, latency, media debugging, evaluation, cost, compliance and security.",
       "license": "MIT",
       "category": "voice",

@@ -15,7 +15,7 @@ You should get a reply within a week.
 
 ## What's in scope
 
-- Original skills in `skills/foundations/` and the scripts in `scripts/` and in
+- Original skills in `plugins/voice-foundations/skills/` and the scripts in `scripts/` and in
   any skill's `scripts/` folder.
 - Instructions in any skill here that could lead an agent to leak data, spend
   money, place calls, or change live accounts without the user asking.

@@ -38,6 +38,18 @@ Plugin skills are namespaced, so `voice-turn-taking` runs as
 `/voice-foundations:voice-turn-taking`. Claude also picks skills automatically
 when your request matches their description.
 
+## Codex: plugin marketplace
+
+The repo is also a Codex plugin marketplace with the `voice-foundations` plugin:
+
+```bash
+codex plugin marketplace add RobStrayer/voice-agent-skills
+codex plugin add voice-foundations@voice-agent-skills
+```
+
+Start a new Codex session after installing. For the provider skills in Codex, use
+`npx skills` below.
+
 ## Any agent: `npx skills`
 
 The [`skills` CLI](https://github.com/vercel-labs/skills) finds every skill in the
@@ -60,12 +72,12 @@ directory:
 
 ```bash
 git clone https://github.com/RobStrayer/voice-agent-skills.git
-cp -r voice-agent-skills/skills/foundations/voice-turn-taking ~/.claude/skills/
+cp -r voice-agent-skills/plugins/voice-foundations/skills/voice-turn-taking ~/.claude/skills/
 ```
 
 ## Fresh copies versus snapshots
 
-The `foundations` skills are written and maintained here. The provider folders
+The `voice-foundations` skills are written and maintained here. The provider folders
 (`livekit`, `pipecat`, `elevenlabs`, `twilio`, `cartesia`, `openai`) are **dated
 copies** of each vendor's official skills, pinned to the commits in
 [`sources.json`](../sources.json). They don't update themselves. For the newest
@@ -179,8 +191,8 @@ orchestration; using the standalone speech API leaves more of that work with you
 application.
 
 For LiveKit metrics, tools, and turn handling, use the dated source notes in
-[latency audit](../skills/foundations/voice-latency-audit/SKILL.md) and
-[agent evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md). Match
+[latency audit](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md) and
+[agent evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md). Match
 examples to the installed SDK version before copying event handlers.
 
 ## Refreshing a snapshot

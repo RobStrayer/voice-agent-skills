@@ -61,7 +61,8 @@ def verify(root=ROOT):
                     original = source['url'] + '/blob/' + source['default_branch'] + '/' + item['upstream_path']
                     assert original in catalog, 'Missing original source: ' + original
         names = set()
-        skills = sorted((ROOT / 'skills').rglob('SKILL.md'))
+        originals_dir = ROOT / 'plugins/voice-foundations/skills'
+        skills = sorted((ROOT / 'skills').rglob('SKILL.md')) + sorted(originals_dir.rglob('SKILL.md'))
         for path in skills:
             text = path.read_text(encoding='utf-8')
             match = re.match(r'\A---\r?\n(.*?)\r?\n---(?:\r?\n|\Z)', text, re.S)
@@ -75,14 +76,14 @@ def verify(root=ROOT):
             assert name not in names, f'Duplicate skill name: {name}'
             names.add(name)
             assert re.search(r'^description:\s*\S', header, re.M), path
-            if path.parts[-3] != 'foundations':
+            if not path.is_relative_to(originals_dir):
                 for member in path.parent.rglob('*'):
                     if member.is_file():
                         assert member.relative_to(ROOT).as_posix() in tracked, member
         assert len(skills) == sources['skill_count'], 'Skill count mismatch'
         assert len(tracked) == sources['copied_file_count'], 'Copied count mismatch'
         originals = {p.parent.relative_to(ROOT).as_posix()
-                     for p in (ROOT / 'skills/foundations').rglob('SKILL.md')}
+                     for p in originals_dir.rglob('SKILL.md')}
         assert originals == set(sources['original_skills']), 'Original skill index mismatch'
         linked = json.loads((ROOT / 'linked-skills.json').read_text(encoding='utf-8'))
         linked_catalog = (ROOT / 'docs/more-skills.md').read_text(encoding='utf-8')

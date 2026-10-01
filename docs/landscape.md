@@ -49,7 +49,7 @@ A reasonable order of decisions:
 
 The getting started guide has a longer version in
 [Pick a starting path](getting-started.md#pick-a-starting-path). The
-[stack selection skill](../skills/foundations/voice-stack-selection/SKILL.md)
+[stack selection skill](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md)
 walks a coding agent through the same decision with you.
 
 ## What it costs per minute
@@ -154,7 +154,7 @@ Telephony, recording, concurrency, minimum billing increments and add-ons come
 on top. Builders report the same gap between headline price and invoice in
 [Cost: headline price versus the invoice](common-problems.md#5-cost-headline-price-versus-the-invoice).
 To work out your own number, use the
-[cost estimation skill](../skills/foundations/voice-cost-estimation/SKILL.md).
+[cost estimation skill](../plugins/voice-foundations/skills/voice-cost-estimation/SKILL.md).
 
 ## What changed recently
 

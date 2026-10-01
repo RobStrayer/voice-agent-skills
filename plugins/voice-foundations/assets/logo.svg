@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="t">
+<title id="t">Voice Agent Skills</title>
+<rect width="512" height="512" fill="#1f2328"/>
+<!-- listen, think, speak: two green bars, three violet dots, two orange bars -->
+<g fill="#2fb784"><rect x="86" y="196" width="34" height="120" rx="17"/><rect x="137" y="141" width="34" height="230" rx="17"/></g>
+<g fill="#a29af0"><circle cx="205" cy="256" r="17"/><circle cx="256" cy="256" r="17"/><circle cx="307" cy="256" r="17"/></g>
+<g fill="#ec7a45"><rect x="341" y="126" width="34" height="260" rx="17"/><rect x="392" y="191" width="34" height="130" rx="17"/></g>
+</svg>

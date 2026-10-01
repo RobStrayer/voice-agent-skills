@@ -1,0 +1,52 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "voice-foundations",
+  "version": "1.0.0",
+  "description": "Thirteen provider-neutral skills for building, debugging and reviewing AI voice agents: stack selection, turn taking, conversation design, speech pipeline, audio frontends, latency, media debugging, call reliability, data capture, evaluation, cost, phone compliance and security.",
+  "author": {
+    "name": "Rob Strayer",
+    "url": "https://github.com/RobStrayer"
+  },
+  "homepage": "https://github.com/RobStrayer/voice-agent-skills",
+  "repository": "https://github.com/RobStrayer/voice-agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "voice",
+    "voice-agents",
+    "speech",
+    "telephony",
+    "conversational-ai"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Voice Agent Skills",
+        "shortDescription": "Build better AI voice agents",
+        "longDescription": "Thirteen skills that help you build, debug and review AI voice agents people enjoy talking to. They cover choosing a stack, turn taking and interruptions, prompts for spoken conversation, speech-to-text and text-to-speech, audio quality, latency, silent or one-way audio, dropped calls and failed transfers, capturing phone numbers and other details correctly, testing, cost per minute, phone compliance and security. The skills are provider-neutral and work with managed platforms and open-source frameworks alike. They are for developers building voice or phone agents. They give engineering guidance, not legal advice, and they do not place calls or connect to any service.",
+        "developerName": "Rob Strayer",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Plan a voice agent stack",
+          "Fix turn taking and latency",
+          "Debug call audio",
+          "Estimate cost",
+          "Review compliance and security"
+        ],
+        "websiteURL": "https://github.com/RobStrayer/voice-agent-skills",
+        "supportURL": "https://github.com/RobStrayer/voice-agent-skills/issues",
+        "defaultPrompt": [
+          "Why does my voice agent keep interrupting callers?",
+          "Help me choose a stack for a phone voice agent.",
+          "Estimate what my voice agent will cost per month."
+        ],
+        "brandColor": "#4a3aa7",
+        "brandColorDark": "#a29af0",
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      },
+      "publication": {
+        "release_notes": "First release: 13 provider-neutral skills for building AI voice agents."
+      }
+    }
+  }
+}

@@ -46,7 +46,7 @@ Not sure? Start with a managed platform to learn what a good call feels like.
 Move to a framework when you hit a wall on cost, control or latency. Both
 frameworks can also use a speech-to-speech model inside them, so this isn't a
 one-way door. The [provider landscape](landscape.md) compares the options, and the
-[stack selection skill](../skills/foundations/voice-stack-selection/SKILL.md)
+[stack selection skill](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md)
 walks a coding agent through the decision with you.
 
 ## Your first hour
@@ -88,7 +88,7 @@ straight from [LiveKit](https://github.com/livekit/agent-skills) and
    [Gemini Live API](https://ai.google.dev/gemini-api/docs/live-api).
 2. Keep your API key on a server. Browsers connect with a short-lived token that
    your server issues. Never put a real key in front-end code. The
-   [security skill](../skills/foundations/voice-agent-security/SKILL.md) covers this.
+   [security skill](../plugins/voice-foundations/skills/voice-agent-security/SKILL.md) covers this.
 
 ## Put it on a phone number
 
@@ -110,7 +110,7 @@ Calling people (outbound) is where most legal rules bite: consent, AI disclosure
 calling hours and spam labelling. Inbound calls have rules too. Recording or AI
 transcription can need every caller's consent in some US states, and in the EU
 callers must be told they're talking to an AI. Read the
-[phone compliance skill](../skills/foundations/voice-phone-compliance/SKILL.md)
+[phone compliance skill](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md)
 before you dial anyone or record a call. It's orientation, not legal advice.
 
 ## Write for the ear
@@ -134,7 +134,7 @@ Before booking, read back the day, time and the caller's name and ask them to co
 If you can't help, offer to take a message or transfer to the front desk.
 ```
 
-The [conversation design skill](../skills/foundations/voice-conversation-design/SKILL.md)
+The [conversation design skill](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md)
 goes much deeper: repairs, tool progress, confirmations and accessibility.
 
 ## Test it like a caller
@@ -152,13 +152,13 @@ Before you show it to anyone, call it and try these:
 - [ ] Stay silent for 20 seconds. Hang up in the middle of a booking.
 
 Each failure maps to a skill: early cut-offs and barge-in to
-[turn taking](../skills/foundations/voice-turn-taking/SKILL.md), noise and echo to
-[audio frontends](../skills/foundations/voice-audio-frontends/SKILL.md), names and
-numbers to [speech pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md),
+[turn taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md), noise and echo to
+[audio frontends](../plugins/voice-foundations/skills/voice-audio-frontends/SKILL.md), names and
+numbers to [speech pipeline](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md),
 made-up answers and missing exits to
-[conversation design](../skills/foundations/voice-conversation-design/SKILL.md).
+[conversation design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md).
 When you're ready to automate these checks, use
-[agent evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md). The
+[agent evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md). The
 [common problems](common-problems.md) page lists the fixes that work.
 
 ## What good feels like
@@ -187,8 +187,8 @@ So a good first target is about a second, measured the way the caller hears it,
 and watch the slow calls as well as the average. Often the biggest lever is how
 long the agent waits to decide you've finished talking, not the model; Twilio's
 guide above makes the same point. The
-[latency audit skill](../skills/foundations/voice-latency-audit/SKILL.md) shows
-where your time goes, and the [turn taking skill](../skills/foundations/voice-turn-taking/SKILL.md)
+[latency audit skill](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md) shows
+where your time goes, and the [turn taking skill](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md)
 covers the waiting.
 
 ## What it costs
@@ -199,7 +199,7 @@ on short test calls, with the carrier leg left out
 ([OpenBenchmarks](https://openbenchmarks.com/voice-agent-latency)). Advertised
 prices usually cover one layer, and speech, the model, the voice and the phone
 line can be billed separately. Before you promise anyone a price, run your own
-numbers with the [cost estimation skill](../skills/foundations/voice-cost-estimation/SKILL.md).
+numbers with the [cost estimation skill](../plugins/voice-foundations/skills/voice-cost-estimation/SKILL.md).
 
 ## Where next
 

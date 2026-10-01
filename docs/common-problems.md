@@ -62,8 +62,8 @@ of 1.3 to 1.7 seconds across five managed platforms, even with the end-of-turn
 wait cut to 0.1 seconds on three of them, with platform self-reports about half a
 second lower than what callers heard.
 
-**Skills:** [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) ·
-[voice-stack-selection](../skills/foundations/voice-stack-selection/SKILL.md)
+**Skills:** [voice-latency-audit](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md) ·
+[voice-stack-selection](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md)
 **Sources:** [OpenBenchmarks](https://openbenchmarks.com/voice-agent-latency) ·
 [Twilio latency guide](https://www.twilio.com/en-us/blog/developers/best-practices/guide-core-latency-ai-voice-agents) ·
 [Retell forum breakdown](https://community.retellai.com/t/massive-jitter-and-llm-streaming-failing-more-often-increased-perceived-latency/3402) ·
@@ -86,8 +86,8 @@ timeout. Choose the wait per use case: one interview product raised its
 threshold from 0.4 to 1.5 seconds and reported 26% fewer interruptions. For
 slow, thoughtful speakers, consider push-to-talk.
 
-**Skills:** [voice-turn-taking](../skills/foundations/voice-turn-taking/SKILL.md) ·
-[voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md)
+**Skills:** [voice-turn-taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md) ·
+[voice-conversation-design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md)
 **Sources:** [HN: faster is worse without better turn-taking](https://news.ycombinator.com/item?id=48013919) ·
 [Pipecat: competing turn controllers](https://github.com/pipecat-ai/pipecat/issues/4279) ·
 [production eval playbook](https://velagao.substack.com/p/the-voice-ai-playbook-i-wish-i-had)
@@ -109,8 +109,8 @@ phone calls early. Host near your callers. When SIP fails, capture a packet
 trace first. Use the documented session-lifetime settings so a network blip
 doesn't end the call.
 
-**Skills:** [voice-media-debugging](../skills/foundations/voice-media-debugging/SKILL.md) ·
-[voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md)
+**Skills:** [voice-media-debugging](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md) ·
+[voice-call-reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md)
 **Sources:** [Pipecat: 8 kHz breaks turn detection](https://github.com/pipecat-ai/pipecat/issues/3844) ·
 [LiveKit: phone latency versus web](https://github.com/livekit/agents/issues/3685) ·
 [OpenAI forum: Realtime over SIP](https://community.openai.com/t/realtime-api-unreliable-over-sip/1366350)
@@ -129,7 +129,7 @@ Pin model versions and read deprecation notices. Check which features are
 cloud-only before you commit. Compare platforms on your own recorded calls, not
 their latency pages.
 
-**Skills:** [voice-stack-selection](../skills/foundations/voice-stack-selection/SKILL.md) ·
+**Skills:** [voice-stack-selection](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md) ·
 [provider landscape](landscape.md) · [where to start](getting-started.md#pick-a-starting-path)
 **Sources:** [HN: frameworks versus platforms](https://news.ycombinator.com/item?id=46380399) ·
 [Google forum: model retired before its replacement](https://discuss.ai.google.dev/t/gemini-2-5-flash-native-audio-preview-09-2025-text-text-only-not-working/107467) ·
@@ -149,7 +149,7 @@ ends calls and closes sockets. Cache repeated phrases such as greetings. One
 independent test that read each platform's own billing measured about $0.05 to
 $0.14 per minute across five managed platforms, for short test calls.
 
-**Skill:** [voice-cost-estimation](../skills/foundations/voice-cost-estimation/SKILL.md)
+**Skill:** [voice-cost-estimation](../plugins/voice-foundations/skills/voice-cost-estimation/SKILL.md)
 **Sources:** [OpenBenchmarks cost per minute](https://openbenchmarks.com/voice-agent-latency) ·
 [Pipecat: wrong model billed](https://github.com/pipecat-ai/pipecat/issues/2801)
 
@@ -170,7 +170,7 @@ Start narrow. The best-measured success is scripted: in a field experiment with
 70,000 job applicants, AI voice interviews led to more job offers, and most
 applicants chose the AI when offered.
 
-**Skills:** [voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md) ·
+**Skills:** [voice-conversation-design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) ·
 [what to build](what-to-build.md)
 **Sources:** [HN: AI receptionist for a car shop](https://news.ycombinator.com/item?id=47487536) ·
 [HN: drive-thru loops and hard limits](https://news.ycombinator.com/item?id=45162220) ·
@@ -190,8 +190,8 @@ Make side-effecting endpoints idempotent so a repeat does nothing. Use fewer,
 simpler tools and return small results. Test tool success on your own traffic
 before switching models.
 
-**Skills:** [voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md) ·
-[voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md)
+**Skills:** [voice-conversation-design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) ·
+[voice-call-reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md)
 **Sources:** [the receptionist that couldn't transfer](https://www.ashank.tech/blog/ai-receptionist-that-couldnt-transfer) ·
 [Amadeus: demo to production](https://amadeus.com/en/engineering-blog/articles/from-demo-to-production-3-key-lessons-developing-voice-to-voice-ai-agent) ·
 [Retell forum: five bookings in one turn](https://community.retellai.com/t/book-appointment-tool-calls-fired-in-a-single-llm-turn-after-streaming-timeout-resulted-in-multiple-appointments-booked-for-one-requested-slot/3301)
@@ -208,7 +208,7 @@ first. Cancel the pipeline when the caller disconnects. Use always-on hosting
 for agent workers, not scale-to-zero. Add monitoring, alerts and a fallback
 provider before real customers depend on it.
 
-**Skill:** [voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md)
+**Skill:** [voice-call-reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md)
 **Sources:** [LiveKit: 1% of calls after an upgrade](https://github.com/livekit/agents/issues/3637) ·
 [LiveKit: restarts on Cloud Run](https://github.com/livekit/agents/issues/1692)
 
@@ -223,7 +223,7 @@ fields. Check values against real data with code (calendar, customer list,
 address lookup). Offer the keypad for long digit strings. Keep transcripts
 linked to the audio so a person can check before anything is filed.
 
-**Skills:** [voice-data-capture](../skills/foundations/voice-data-capture/SKILL.md) · [voice-speech-pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md)
+**Skills:** [voice-data-capture](../plugins/voice-foundations/skills/voice-data-capture/SKILL.md) · [voice-speech-pipeline](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md)
 **Sources:** [HN: transcript errors treated as fact](https://news.ycombinator.com/item?id=49294441) ·
 [Pipecat: number transcription after a default change](https://github.com/pipecat-ai/pipecat/issues/3913)
 
@@ -237,8 +237,8 @@ timings. Use the framework's own tracing (OpenTelemetry in LiveKit Agents and
 Pipecat). Listen to real calls before trusting summaries or scores, and turn
 every production failure into a test case.
 
-**Skills:** [voice-latency-audit](../skills/foundations/voice-latency-audit/SKILL.md) ·
-[voice-agent-evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md)
+**Skills:** [voice-latency-audit](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md) ·
+[voice-agent-evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md)
 **Sources:** [LiveKit: tracing request (71 reactions)](https://github.com/livekit/agents/issues/2260) ·
 [an ex-vendor team's 14 production failures](https://shav.dev/blog/voice-ai-lessons)
 
@@ -256,8 +256,8 @@ activity. Require a minimum number of words or duration before stopping. Make
 transactions safe to interrupt so a booking doesn't fire after the caller
 changed their mind.
 
-**Skills:** [voice-turn-taking](../skills/foundations/voice-turn-taking/SKILL.md) ·
-[voice-audio-frontends](../skills/foundations/voice-audio-frontends/SKILL.md)
+**Skills:** [voice-turn-taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md) ·
+[voice-audio-frontends](../plugins/voice-foundations/skills/voice-audio-frontends/SKILL.md)
 **Sources:** [OpenAI forum: Realtime turn-taking](https://community.openai.com/t/issues-with-realtime-turn-taking/1369161) ·
 [LiveKit: interruption threshold bypassed](https://github.com/livekit/agents/issues/3515) ·
 [Pipecat Flows: orphaned function calls](https://github.com/pipecat-ai/pipecat-flows/issues/246)
@@ -275,7 +275,7 @@ stronger model. Whichever you pick, pin the model version and test tool success
 on your own calls. An independent leaderboard measures speech-to-speech models
 through their APIs, though not over phone lines.
 
-**Skill:** [voice-stack-selection](../skills/foundations/voice-stack-selection/SKILL.md)
+**Skill:** [voice-stack-selection](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md)
 **Sources:** [HN: pipeline versus full duplex](https://news.ycombinator.com/item?id=47258801) ·
 [Artificial Analysis speech-to-speech](https://artificialanalysis.ai/speech-to-speech)
 
@@ -295,7 +295,7 @@ denoiser before voice detection. Mute or gate the microphone while the agent
 speaks if you can live with weaker barge-in. Check whether a noise filter only
 works on a vendor's cloud before you plan to self-host.
 
-**Skill:** [voice-audio-frontends](../skills/foundations/voice-audio-frontends/SKILL.md)
+**Skill:** [voice-audio-frontends](../plugins/voice-foundations/skills/voice-audio-frontends/SKILL.md)
 **Sources:** [LiveKit: iPhone speaker echo](https://github.com/livekit/agents/issues/3758) ·
 [Pipecat: greeting heard as the caller](https://github.com/pipecat-ai/pipecat/issues/4383) ·
 [HN: a practitioner at 6,000 calls a day](https://news.ycombinator.com/item?id=48051951)
@@ -311,7 +311,7 @@ all injected context in the target language. Filter transcripts in an
 unexpected script before they reach the model. Pin model versions and test each
 language with your own names, terms and accents.
 
-**Skill:** [voice-speech-pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md)
+**Skill:** [voice-speech-pipeline](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md)
 **Sources:** [OpenAI forum: language drift](https://community.openai.com/t/gpt-realtime-2-1-exhibits-language-drift/1386953) ·
 [OpenAI forum: names flip the language](https://community.openai.com/t/realtime-api-language-switching/1366289) ·
 [LiveKit: language switching pattern](https://github.com/livekit/agents/issues/1335)
@@ -328,7 +328,7 @@ text for announcements such as transfers. Keep API keys on a server and put
 spend caps on public demos. Never let a transcript of unverified audio trigger a
 privileged action.
 
-**Skill:** [voice-agent-security](../skills/foundations/voice-agent-security/SKILL.md)
+**Skill:** [voice-agent-security](../plugins/voice-foundations/skills/voice-agent-security/SKILL.md)
 **Sources:** [Retell forum: system prompt spoken aloud](https://community.retellai.com/t/agent-spoke-its-system-prompt-aloud-to-the-caller-at-a-transfer-call-node-gpt-4-1-conversation-flow/3478) ·
 [HN: adversarial audio against transcribers](https://news.ycombinator.com/item?id=48178378)
 
@@ -345,7 +345,7 @@ versions so a silent alias change can't move your pass rate. Most public
 material on testing comes from companies that sell testing, so read it with
 that in mind.
 
-**Skill:** [voice-agent-evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md)
+**Skill:** [voice-agent-evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md)
 **Sources:** [fixing a voice agent, 3/14 to 13/13](https://jankoritak.com/blog/fixing-a-voice-agent-using-karpathy-s-autoresearch-blueprint) ·
 [six months of production voice AI](https://dev.to/autor_tech/6-months-of-running-a-production-voice-ai-what-changed-what-broke-what-wed-rebuild-5621)
 
@@ -374,8 +374,8 @@ platform can't do that. Pass structured context, not a
 transcript dump, to whoever picks up. Offer a callback as the fallback. Test
 transfers against real carriers, including call screening and phone menus.
 
-**Skills:** [voice-call-reliability](../skills/foundations/voice-call-reliability/SKILL.md) ·
-[voice-conversation-design](../skills/foundations/voice-conversation-design/SKILL.md)
+**Skills:** [voice-call-reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md) ·
+[voice-conversation-design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md)
 **Sources:** [LiveKit: transfer timeout and SIP REFER](https://github.com/livekit/agents/issues/3187) ·
 [Retell forum: silence after a forwarded call](https://community.retellai.com/t/agent-doesnt-speak-after-pressing-digit-until-customer-speaks-first/2087)
 
@@ -390,7 +390,7 @@ line until it decides. Use dedicated, verified numbers and keep volume per
 number modest. Consent and calling-hour rules apply to AI outbound calls: see
 the next item.
 
-**Skills:** [voice-phone-compliance](../skills/foundations/voice-phone-compliance/SKILL.md)
+**Skills:** [voice-phone-compliance](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md)
 **Sources:** [LiveKit: 30% voicemail or screening](https://github.com/livekit/agents/issues/3643) ·
 [LiveKit: detection delay](https://github.com/livekit/agents/issues/5616)
 
@@ -414,7 +414,7 @@ Commission's guidelines use a spoken statement at the start of the call as the
 example for voice. A HIPAA business associate agreement alone doesn't make a
 voice agent compliant.
 
-**Skill:** [voice-phone-compliance](../skills/foundations/voice-phone-compliance/SKILL.md)
+**Skill:** [voice-phone-compliance](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md)
 **Sources:** [47 CFR 64.1200](https://www.law.cornell.edu/cfr/text/47/64.1200) ·
 [Holland & Knight on AI class actions](https://www.hklaw.com/en/insights/publications/2026/05/recent-genai-class-actions-build-on-early-successes)
 

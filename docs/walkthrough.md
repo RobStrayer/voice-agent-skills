@@ -62,12 +62,12 @@ would make you reconsider it.
 > The model may finish an answer that the caller never hears. A booking may finish
 > after its confirmation was interrupted. Each needs its own evidence.
 
-The [architecture guide](../skills/foundations/voice-stack-selection/references/architecture-guide.md)
+The [architecture guide](../plugins/voice-foundations/skills/voice-stack-selection/references/architecture-guide.md)
 includes transport choices, capacity, billing boundaries, and a worked worksheet.
 
 Skills for this decision:
 
-- [Stack selection](../skills/foundations/voice-stack-selection/SKILL.md): compare complete candidates and write the decision record.
+- [Stack selection](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md): compare complete candidates and write the decision record.
 - [Twilio agent architect](https://github.com/twilio/ai/blob/main/skills/twilio/twilio-ai-agent-architect/SKILL.md): choose a Twilio voice implementation path.
 - [Build a LiveKit agent](https://github.com/livekit/agent-skills/blob/main/skills/building-livekit-agents/SKILL.md): implement sessions, tools, and workflows.
 - [Initialize Pipecat](https://github.com/pipecat-ai/skills/blob/main/skills/init/SKILL.md): turn the chosen pipeline into a project; check the [current CLI notes](usage.md#pipecat-cli-installation).
@@ -103,11 +103,11 @@ A stopped generator can leave seconds of audio in another buffer. A stopped
 coroutine can't prove that a remote write stopped. Check every boundary
 your actual transport exposes.
 
-The [turn-taking guide](../skills/foundations/voice-turn-taking/references/turn-taking-guide.md)
+The [turn-taking guide](../plugins/voice-foundations/skills/voice-turn-taking/references/turn-taking-guide.md)
 includes detector requirements and a correction-during-booking trace.
 
-- [Turn taking](../skills/foundations/voice-turn-taking/SKILL.md): find early endpoints, false interruptions, and competing response triggers.
-- [Conversation design](../skills/foundations/voice-conversation-design/SKILL.md): write questions and repairs that leave room for the caller.
+- [Turn taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md): find early endpoints, false interruptions, and competing response triggers.
+- [Conversation design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md): write questions and repairs that leave room for the caller.
 - [Debug LiveKit agents](https://github.com/livekit/agent-skills/blob/main/skills/debugging-livekit-agents/SKILL.md): exercise a multi-turn conversation and inspect behavior.
 - [Deepgram conversational STT, JavaScript](https://github.com/deepgram/deepgram-js-sdk/blob/main/.agents/skills/deepgram-js-conversational-stt/SKILL.md): integrate the conversational recognition path using its own event contract.
 
@@ -140,12 +140,12 @@ change that.” Removing both voices can look like excellent echo reduction whil
 making interruption impossible. Compare retained words and intended interruptions,
 alongside residual noise and added delay.
 
-The [audio guide](../skills/foundations/voice-audio-frontends/references/audio-frontends-guide.md)
+The [audio guide](../plugins/voice-foundations/skills/voice-audio-frontends/references/audio-frontends-guide.md)
 covers AEC references, browser constraints, resampling, deployment choices, and
 speech-preservation measures.
 
-- [Audio frontends](../skills/foundations/voice-audio-frontends/SKILL.md): locate the interference and compare processing without losing speech.
-- [Media debugging](../skills/foundations/voice-media-debugging/SKILL.md): inspect format conversion, capture, and playback boundaries.
+- [Audio frontends](../plugins/voice-foundations/skills/voice-audio-frontends/SKILL.md): locate the interference and compare processing without losing speech.
+- [Media debugging](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md): inspect format conversion, capture, and playback boundaries.
 - [ElevenLabs voice isolation](https://github.com/elevenlabs/skills/blob/main/voice-isolator/SKILL.md): use the provider's isolation workflow. Check its input and processing contract before considering a live audio path; an isolation skill doesn't prove streaming AEC support.
 
 ## Carry the meaning through recognition and speech
@@ -196,11 +196,11 @@ Keep the authoritative value separate from its spoken form: changing how a date
 is read should not change the date stored by the business service. Listen through
 the final transport with the selected voice and language.
 
-The [speech pipeline guide](../skills/foundations/voice-speech-pipeline/references/speech-pipeline-guide.md)
+The [speech pipeline guide](../plugins/voice-foundations/skills/voice-speech-pipeline/references/speech-pipeline-guide.md)
 covers transcript finality, pronunciation dictionaries, buffering, and component
 replacement tests.
 
-- [Speech pipeline](../skills/foundations/voice-speech-pipeline/SKILL.md): specify the whole recognition-to-playback contract.
+- [Speech pipeline](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md): specify the whole recognition-to-playback contract.
 - [Deepgram STT, Python](https://github.com/deepgram/deepgram-python-sdk/blob/main/.agents/skills/deepgram-python-speech-to-text/SKILL.md): integrate recognition in a Python application.
 - [ElevenLabs text-to-speech](https://github.com/elevenlabs/skills/blob/main/text-to-speech/SKILL.md): work with speech generation, streaming, and voice settings.
 - [Cartesia API](https://github.com/cartesia-ai/skills/blob/main/skills/cartesia-api/SKILL.md): integrate speech APIs and their streaming interfaces.
@@ -233,10 +233,10 @@ questions, meaningful progress, and alternatives for people who cannot use the
 speech flow comfortably. Keep prompts tied to actual tool state. “Almost done”
 requires evidence that the work is nearly complete.
 
-The [transactions guide](../skills/foundations/voice-conversation-design/references/transactions-and-handoffs.md)
+The [transactions guide](../plugins/voice-foundations/skills/voice-conversation-design/references/transactions-and-handoffs.md)
 develops durable action states and recovery across handoffs.
 
-- [Conversation design](../skills/foundations/voice-conversation-design/SKILL.md): connect prompts, corrections, and progress to actual application state.
+- [Conversation design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md): connect prompts, corrections, and progress to actual application state.
 - [ElevenLabs agents](https://github.com/elevenlabs/skills/blob/main/agents/SKILL.md): configure agents, tools, and procedures in that platform.
 - [Build LiveKit workflows](https://github.com/livekit/agent-skills/blob/main/skills/building-livekit-agents/SKILL.md): implement tools and handoffs while retaining application action ownership.
 
@@ -281,11 +281,11 @@ Track active sessions separately from start rate. Preserve pending action record
 through worker loss. Include extra transfer legs and idle capacity when comparing
 costs.
 
-The [telephony guide](../skills/foundations/voice-call-reliability/references/telephony-guide.md)
-and [operations guide](../skills/foundations/voice-call-reliability/references/production-operations-guide.md)
+The [telephony guide](../plugins/voice-foundations/skills/voice-call-reliability/references/telephony-guide.md)
+and [operations guide](../plugins/voice-foundations/skills/voice-call-reliability/references/production-operations-guide.md)
 cover event authentication, duplicate delivery, draining, overload, and incident recovery.
 
-- [Call reliability](../skills/foundations/voice-call-reliability/SKILL.md): trace every leg, transfer, worker, and pending outcome.
+- [Call reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md): trace every leg, transfer, worker, and pending outcome.
 - [Twilio TwiML](https://github.com/twilio/ai/blob/main/skills/twilio/twilio-voice-twiml/SKILL.md): define voice and IVR call flows.
 - [Twilio conferences](https://github.com/twilio/ai/blob/main/skills/twilio/twilio-conference-calls/SKILL.md): build conferences, holds, and transfer workflows.
 - [Telnyx voice, Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-python/SKILL.md): implement inbound, outbound, transfer, and bridge operations.
@@ -335,8 +335,8 @@ including residual queued speech, rather than folding it into answer latency.
 
 For a timing investigation:
 
-- [Latency audit](../skills/foundations/voice-latency-audit/SKILL.md): reconstruct a turn from raw events and state measurement coverage.
-- [Media debugging](../skills/foundations/voice-media-debugging/SKILL.md): locate transport, decoder, and playback queues.
+- [Latency audit](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md): reconstruct a turn from raw events and state measurement coverage.
+- [Media debugging](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md): locate transport, decoder, and playback queues.
 - [LiveKit debugging](https://github.com/livekit/agent-skills/blob/main/skills/debugging-livekit-agents/SKILL.md): reproduce the conversation that exposes the delay.
 - [ElevenLabs TTS](https://github.com/elevenlabs/skills/blob/main/text-to-speech/SKILL.md): inspect the synthesis integration and its streaming settings.
 
@@ -353,7 +353,7 @@ disconnects, and cleanup. Text simulations help with dialogue and tool logic.
 Audio and transport tests show different things. Verify the resulting
 business records as well as what the agent said.
 
-- [Agent evaluation](../skills/foundations/voice-agent-evaluation/SKILL.md): build a proportionate test matrix and record what remains unproven.
+- [Agent evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md): build a proportionate test matrix and record what remains unproven.
 - [Test LiveKit agents](https://github.com/livekit/agent-skills/blob/main/skills/testing-livekit-agents/SKILL.md): write turn-level behavior regressions.
 - [Write LiveKit scenarios](https://github.com/livekit/agent-skills/blob/main/skills/writing-livekit-scenarios/SKILL.md): preserve meaningful caller situations as simulation scenarios.
 - [Run LiveKit simulations](https://github.com/livekit/agent-skills/blob/main/skills/running-livekit-simulations/SKILL.md): exercise those scenarios within the authorized test scope and inspect outcomes.
