@@ -1,6 +1,6 @@
 ---
 name: agents
-description: Build voice AI agents with ElevenLabs. Use when creating voice assistants, customer service bots, interactive voice characters, or any real-time voice conversation experience, and when configuring an agent's tools, workflows, or procedures, including creating, editing, compiling, and publishing procedure drafts on an agent branch over the SDKs or REST API.
+description: Build voice AI agents with ElevenLabs. Use when creating voice assistants, customer service bots, interactive voice characters, or any real-time voice conversation experience, and when configuring an agent's tools, workflows, or procedures, including creating, editing, and publishing free-form and structured procedure drafts on an agent branch over the SDKs or REST API.
 license: MIT
 compatibility: Requires internet access and an ElevenLabs API key (ELEVENLABS_API_KEY).
 metadata: {"openclaw": {"requires": {"env": ["ELEVENLABS_API_KEY"]}, "primaryEnv": "ELEVENLABS_API_KEY"}}
@@ -10,7 +10,7 @@ metadata: {"openclaw": {"requires": {"env": ["ELEVENLABS_API_KEY"]}, "primaryEnv
 
 Build voice AI agents with natural conversations, multiple LLM providers, custom tools, and easy web embedding.
 
-> **Setup:** See [Installation Guide](references/installation.md) for CLI and SDK setup.
+> **Setup, before writing any code:** if `ELEVENLABS_API_KEY` isn't set for this project, run `npx -y @elevenlabs/cli@latest onboard init` from the app's folder first and follow what it prints: it signs the user in and stores a key for the project, so nobody copies one by hand. Otherwise see the [Installation Guide](references/installation.md) for CLI and SDK setup.
 
 ## Quick Start with CLI
 
@@ -168,13 +168,15 @@ function App({ signedUrl }: { signedUrl: string }) {
 
 | Provider | Models |
 |----------|--------|
-| OpenAI | `gpt-6-sol`, `gpt-6-luna`, `gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`, `gpt-5.5`, `gpt-5.5-2026-04-23`, `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.4-nano`, `gpt-5.4-2026-03-05`, `gpt-5.4-mini-2026-03-17`, `gpt-5.4-nano-2026-03-17`, `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo` |
-| Anthropic | `claude-opus-5-5`, `claude-opus-5`, `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-sonnet-4-5`, `claude-sonnet-4`, `claude-haiku-4-5`, `claude-3-7-sonnet`, `claude-3-5-sonnet`, `claude-3-haiku` |
-| Google | `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.1-flash-lite-preview`, `gemini-3.1-pro-preview`, `gemini-3-pro-preview`, `gemini-3-flash-preview`, `gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-2.0-flash`, `gemini-2.0-flash-lite` |
-| ElevenLabs | `glm-52`, `deepseek-v41-flash`, `glm-45-air-fp8`, `qwen3-30b-a3b`, `qwen36-35b-a3b`, `qwen35-35b-a3b`, `qwen35-397b-a17b`, `gpt-oss-120b` |
+| OpenAI | `gpt-6.1-sol`, `gpt-6-sol`, `gpt-6-luna`, `gpt-6-astra`, `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`, `gpt-5.5`, `gpt-5.5-2026-04-23`, `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.4-nano`, `gpt-5.4-2026-03-05`, `gpt-5.4-mini-2026-03-17`, `gpt-5.4-nano-2026-03-17`, `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `gpt-4o`, `gpt-4o-mini`, `gpt-4-turbo` |
+| Anthropic | `claude-opus-5-5`, `claude-opus-5`, `claude-sonnet-5-5`, `claude-opus-4-7`, `claude-opus-4-6`, `claude-sonnet-4-6`, `claude-sonnet-4-5`, `claude-sonnet-4`, `claude-haiku-4-5`, `claude-3-7-sonnet`, `claude-3-5-sonnet`, `claude-3-haiku` |
+| Google | `gemini-4-argon`, `gemini-3.8-flash`, `gemini-3.7-flash`, `gemini-3.6-flash`, `gemini-3.1-flash-lite-preview`, `gemini-3.1-pro-preview`, `gemini-3-pro-preview`, `gemini-3-flash-preview`, `gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-2.0-flash`, `gemini-2.0-flash-lite` |
+| ElevenLabs | `glm-52`, `deepseek-v41-flash`, `glm-45-air-fp8`, `qwen3-30b-a3b`, `qwen36-35b-a3b`, `qwen35-35b-a3b`, `qwen35-397b-a17b`, `nemotron-35-super-vl-nvfp4`, `gpt-oss-120b` |
 | Custom | `custom-llm` (bring your own endpoint) |
 
 Use `GET /v1/convai/llm/list` to inspect the current model catalog, including deprecation state, token/context limits, capability flags such as image-input support, and model-specific reasoning effort support.
+
+To run an agent on an ElevenLabs Realtime model instead of a separate LLM and TTS model (`conversation_config.realtime_model`), use the `realtime` skill.
 
 **Popular voices:** `JBFqnCBsd6RMkjVDRZzb` (George), `EXAVITQu4vr4xnSDxMaL` (Sarah), `onwK4e9ZLuTAKqWW03F9` (Daniel), `XB0fDUnXU5powFXDhCwa` (Charlotte)
 
@@ -216,8 +218,7 @@ Workspace environment variables can resolve per-environment server tool URLs, he
     ],
     "built_in_tools": {
         "end_call": {},
-        "transfer_to_number": {"transfers": [{"transfer_destination": {"type": "phone", "phone_number": "+1234567890"}, "condition": "User asks for human support"}]},
-        "start_procedure": {}
+        "transfer_to_number": {"transfers": [{"transfer_destination": {"type": "phone", "phone_number": "+1234567890"}, "condition": "User asks for human support"}]}
     }
 }
 ```
@@ -244,11 +245,11 @@ Set under `conversation_config.agent.prompt.built_in_tools`. `{}` enables defaul
 | `language_detection` | Multilingual agents |
 | `transfer_to_number` | Phone-based human escalation |
 | `transfer_to_agent` | Multi-agent workflows |
-| `start_procedure` | Procedure-guided conversations (see [Procedures](#procedures)) |
-| `end_procedure` | Completing active procedures |
 | `skip_turn` | Tutoring / coaching (silent listening) |
 | `voicemail_detection` | Outbound calling |
 | `play_keypad_touch_tone` | IVR navigation |
+
+`start_procedure` and `end_procedure` are not configured here. The platform adds them automatically whenever the agent has at least one procedure (see [Procedures](#procedures)).
 
 `run_subagent` is a system tool for delegating a task to another configured agent. Add it to
 `conversation_config.agent.prompt.tools` with `params.system_tool_type: "run_subagent"` and an
@@ -299,7 +300,7 @@ No-auth APIs useful for prototypes (URLs must be HTTPS):
 
 Route conversations through discrete steps with branching logic. Define under the agent's top-level `workflow` field. Reference: [Agent Workflows](https://elevenlabs.io/docs/eleven-agents/customization/agent-workflows).
 
-**Node types:** `start` (ID must be `"start_node"`), `end`, `override_agent` (subagent step with `label` + `additional_prompt`), `dispatch_tool` (executes a tool with success/failure routing), `agent_transfer`, `transfer_to_number`.
+**Node types:** `start` (ID must be `"start_node"`), `end` (`outcome` records the conversation as `success`, the default, or `failure`), `override_agent` (subagent step with `label` + `additional_prompt`), `dispatch_tool` (executes a tool with success/failure routing), `agent_transfer`, `transfer_to_number`.
 
 **Edge types:** `unconditional`, `llm` (natural-language condition), `expression` (deterministic data check). Tool nodes have separate success/failure edges.
 
@@ -325,26 +326,28 @@ For nested agent transfers, set `enable_nesting` on a `standalone_agent` node an
 
 ## Procedures
 
-Reusable instruction blocks an agent runs when a trigger matches. A procedure is `free_form` (markdown guidance the agent adapts, and the only type that can reference knowledge base documents) or `deterministic` (ordered, typed steps for flows that must run consistently). See [Using the Procedure API](references/using-procedure-api.md) for the full CLI and SDK flow, and [Writing Procedures](references/writing-procedures.md) for the step schema and authoring rules.
+Reusable instruction blocks an agent runs when a trigger matches. A procedure is `free_form` (markdown guidance the agent adapts, and the only type that can reference knowledge base documents) or `deterministic` (called "structured" in the dashboard: typed steps that run in a fixed order, for flows that must happen the same way every time). See [Using the Procedure API](references/using-procedure-api.md) for the full CLI and SDK flow, and [Writing Procedures](references/writing-procedures.md) for the step reference, validation rules, and authoring guidance.
 
 Procedures live on an agent branch, and every write stages a per-user draft:
 
 | Operation | Call |
 |-----------|------|
 | List, create, read, update, discard, remove | `/v1/convai/agents/{agent_id}/branches/{branch_id}/procedures...` (`procedures.*` and `procedures.drafts.*` in the SDKs) |
-| Compile | `POST .../procedures/compile` (`procedures.compile`) |
 | Publish | `PATCH /v1/convai/agents/{agent_id}?branch_id=...` (`agents.update`) |
 
 Semantics worth knowing before writing any of these calls:
 
 - Nothing reaches the live agent until you publish. Publishing is not a procedure endpoint; one PATCH on the agent versions every changed procedure draft on the branch.
 - `GET .../procedures/{procedure_id}` reads branch HEAD and returns `404` until that procedure's first publish. Read the `/draft` variant to see a procedure you just created; do not retry the create.
-- Compile only when structured (`deterministic`) procedures changed. Compilation turns them into workflow nodes, so the publish must carry the `workflow` that compile returned. Free-form-only changes publish without compiling, because the agent loads free-form procedures from their published versions.
-- Compile validates structured content and is the only way to check it. On `400` it returns `errors` keyed by procedure ID with the offending field `path`; repair the draft and compile again rather than publishing.
-- A draft update replaces the whole body. Read the draft first, then resend `name`, `type`, and `trigger` alongside the new `content`.
-- `content` is markdown for a `free_form` procedure, and a JSON-encoded object with a `trigger` and a `steps` array for a `deterministic` one. Serialize it; do not hand-escape quotes.
-- Routing is driven by the `trigger` text, not the procedure name. Write concrete, non-overlapping triggers that cover the phrasings a user would actually say.
-- To restrict the starting agent to selected procedures for one conversation, enable `platform_settings.overrides.enable_procedure_ids_from_client`, then pass their IDs as `procedure_ids` in conversation initiation data. An empty list disables all procedures for that starting agent.
+- Turning a structured procedure's steps into the form the agent executes is called compiling. The platform compiles every structured procedure when the agent draft is saved or the agent is published; authors never compile anything themselves. Both draft save and publish validate every structured procedure on the branch. A failed operation writes nothing. To validate without publishing, save an agent draft with `POST /v1/convai/agents/{agent_id}/drafts?branch_id=...`, sending the agent's current `name`, `conversation_config`, `platform_settings`, and `workflow` unchanged, then discard that agent draft with `DELETE` on the same path; see [Using the Procedure API](references/using-procedure-api.md#validate-without-publishing).
+- If a structured procedure is invalid, the publish or draft save returns `400` with `status` `procedure_validation_failed` and `errors` keyed by procedure ID, each entry carrying the `path` of the offending field and a message. Nothing is written; repair the procedure draft and publish again.
+- A draft update replaces the whole body. Read the draft first, then resend `name`, `type`, and `trigger` alongside the new `content`. `type` cannot change after creation.
+- `content` is markdown for a `free_form` procedure, and a JSON-encoded object with a `steps` array for a `deterministic` one. The trigger is the top-level `trigger` field in both cases, not part of `content`. Serialize it; do not hand-escape quotes.
+- Manually authored workflow edges cannot connect to or from a structured procedure. Use a `sub_procedure` step to chain structured procedures; entry from a matching trigger and completion are platform-managed.
+- A third `type`, `folder`, groups procedures in the dashboard. Folders carry no `content` or `trigger`; move a procedure into one with `POST .../procedures/{procedure_id}/move`.
+- The agent keeps the five most recently started procedures in context. When more have been started, the content, inline tools, and knowledge base documents of the oldest free-form ones drop out of the prompt, although the procedures remain active. Keep procedures focused and use sub-procedures so that few are active at once.
+- Routing is driven by the `trigger` text, not the procedure name. Write concrete, non-overlapping triggers that cover the phrasings a user would actually say. The model sees only a numbered menu of triggers; it never sees procedure names or IDs.
+- To restrict the starting agent to selected procedures for one conversation, enable `platform_settings.overrides.enable_procedure_ids_from_client`, then pass their IDs as `procedure_ids` in conversation initiation data. An empty list disables all procedures for that starting agent. The same setting allows `start_procedure_ids`: up to five free-form procedures that start with the conversation, for when the user's task is already known (for example from an IVR choice or the page hosting the widget).
 - Procedure APIs require `elevenlabs` (Python) or `@elevenlabs/elevenlabs-js` at `2.60.0` or newer.
 
 ## Guardrails
@@ -552,7 +555,7 @@ Common errors: **401** (invalid key), **404** (not found), **422** (invalid conf
 - [Installation Guide](references/installation.md) - SDK setup and migration
 - [Agent Configuration](references/agent-configuration.md) - All config options and CRUD examples
 - [Client Tools](references/client-tools.md) - Webhook, client, and system tools
-- [Using the Procedure API](references/using-procedure-api.md) - Procedure CLI and SDK flow, compile and publish
-- [Writing Procedures](references/writing-procedures.md) - Trigger and content authoring, step schema
+- [Using the Procedure API](references/using-procedure-api.md) - Procedure CLI and SDK flow, drafts and publish
+- [Writing Procedures](references/writing-procedures.md) - Trigger and content authoring, structured step reference and rules
 - [Widget Embedding](references/widget-embedding.md) - Website integration
 - [Outbound Calls](references/outbound-calls.md) - Phone call integrations

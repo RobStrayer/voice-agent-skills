@@ -37,7 +37,7 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/elevenlabs/"],
-      "description": "Dated copy of ElevenLabs' official skills (github.com/elevenlabs/skills): agents, text-to-speech, speech-to-text, dubbing, voice changer and isolation.",
+      "description": "Dated copy of ElevenLabs' official skills (github.com/elevenlabs/skills): agents, Realtime voice models (OpenAI Realtime-compatible API), Speech Engine, text-to-speech, speech-to-text, dubbing, voice changer and isolation.",
       "license": "MIT",
       "category": "voice"
     },

@@ -99,7 +99,8 @@
      "how": "as displayed"
     }
    ],
-   "total": 0.0561
+   "total": 0.0561,
+   "note": "OpenAI's deprecations page (notice of 2026-10-14) lists the gpt-4.1-mini snapshot gpt-4.1-mini-2025-04-14 for shutdown on 2027-01-14, with gpt-6-luna as the replacement. The line keeps the current list price; swap it at the next quarterly refresh."
   },
   "high": {
    "lines": [
@@ -128,7 +129,7 @@
      "item": "Eleven v4 (eleven_v4), list price",
      "url": "https://elevenlabs.io/pricing/api",
      "usd_per_min": 0.048,
-     "how": "600 chars x $0.08/1K (promotional $0.022 not used)"
+     "how": "600 chars x $0.08/1K"
     },
     {
      "label": "Telephony: Twilio outbound US local",
@@ -233,7 +234,7 @@
   {
    "name": "Retell AI",
    "entry": "retell-ai",
-   "figure": "$0.07-$0.31/min vendor-stated range; vendor example $0.230/min (LLM $0.160 + infra $0.055 + TTS $0.015); telephony $0.015/min extra on Retell numbers",
+   "figure": "$0.07-$0.31/min vendor-stated range; telephony $0.015/min extra on Retell numbers",
    "low": 0.07,
    "high": 0.31,
    "includes": "voice infra + TTS + LLM; telephony extra",
@@ -263,7 +264,7 @@
    "figure": "$4.50/hr all-in (launched 2026-04-25) = $0.075/min (DERIVED: $4.50 / 60)",
    "low": 0.075,
    "high": 0.075,
-   "includes": "speech understanding, LLM reasoning and voice generation on AssemblyAI's own models; telephony not stated",
+   "includes": "speech understanding, LLM reasoning and voice generation on AssemblyAI's own models; telephony not stated; AssemblyAI's model reference says the API is being retired (no date given)",
    "url": "https://www.assemblyai.com/changelog"
   }
  ],
@@ -325,6 +326,15 @@
    "usd_per_min": 0.096,
    "how": "600 x $32/1M + 1,200 x $64/1M (same token rates as OpenAI)",
    "kind": "DERIVED lower bound"
+  },
+  {
+   "name": "ElevenLabs Realtime v1 Mini and v1 Max",
+   "entry": "elevenlabs-realtime",
+   "as_displayed": "$0.08 + LLM usage, price per minute",
+   "url": "https://elevenlabs.io/pricing/api",
+   "usd_per_min": 0.08,
+   "how": "flat per-minute; Realtime model tokens extra: v1 Mini $0.20 input / $6.00 output per 1M, v1 Max $1.80 / $9.00 per 1M, no cached-input rate listed; $0.16/min above the plan's concurrency limit",
+   "kind": "vendor-stated per-minute price"
   }
  ],
  "s2s_range_derived_and_stated": [

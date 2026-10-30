@@ -14,7 +14,7 @@ a booking line, a browser assistant, or anything else people talk to. It has pla
 guides for beginners, diagrams that show how the parts fit, and **skills** your
 coding agent (Claude Code, Codex and others) can load to do the work properly.
 
-**13 original skills · 27 bundled provider skills · 345 linked skills from 59 providers and authors · 43 runtime resources**
+**13 original skills · 28 bundled provider skills · 344 linked skills from 58 providers and authors · 43 runtime resources**
 
 ## Start here
 
@@ -121,13 +121,13 @@ maintained original:
 | --- | --- |
 | [LiveKit](https://github.com/livekit/agent-skills) | Build, debug, test, simulate and operate LiveKit agents |
 | [Pipecat](https://github.com/pipecat-ai/skills) | Start and deploy Pipecat projects, talk to agents through MCP |
-| [ElevenLabs](https://github.com/elevenlabs/skills) | Conversational agents, speech-to-text, text-to-speech, dubbing, voice changing and isolation |
+| [ElevenLabs](https://github.com/elevenlabs/skills) | Conversational agents, Realtime voice models, Speech Engine, speech-to-text, text-to-speech, dubbing, voice changing and isolation |
 | [Twilio](https://github.com/twilio/ai) | Voice architecture, ConversationRelay, TwiML, outbound calls, conferences, recordings |
 | [Cartesia](https://github.com/cartesia-ai/skills) | Speech API integration and Line agent workflows |
 | [OpenAI](https://github.com/openai/skills) | Speech generation and transcription from files (not a realtime agent runtime) |
 
-The [linked skills index](docs/more-skills.md) points to 345 more skills from
-59 providers and other authors. Most come from the provider itself; community and
+The [linked skills index](docs/more-skills.md) points to 344 more skills from
+58 providers and other authors. Most come from the provider itself; community and
 third-party ones are marked. Every entry is pinned to a commit or file hash and
 was checked against it. The [resource library](docs/resources.md) lists
 frameworks, turn detectors, speech models and evaluation tools.
@@ -139,7 +139,7 @@ variants counted separately. Providers in **bold** also have skills bundled
 here. Smaller providers are in the index's [A to Z list](docs/more-skills.md#find-your-provider).
 
 - **Phone and calling:** [Telnyx](docs/more-skills.md#telnyx) 39 · [**Twilio**](docs/more-skills.md#twilio) 22 · [Plivo](docs/more-skills.md#plivo) 6 · [Sinch](docs/more-skills.md#sinch) 6 · [Voximplant](docs/more-skills.md#voximplant) 2 · [SignalWire](docs/more-skills.md#signalwire) 1
-- **Agent platforms:** [**ElevenAgents**](docs/more-skills.md#elevenlabs) 29 · [Bland](docs/more-skills.md#bland-ai) 22 · [Vapi](docs/more-skills.md#vapi) 10 · [Synthflow](docs/more-skills.md#synthflow) 7 · [PolyAI](docs/more-skills.md#polyai) 6 · [Retell](docs/more-skills.md#retell-ai) 2 · [Ultravox](docs/more-skills.md#ultravox) 1
+- **Agent platforms:** [**ElevenAgents**](docs/more-skills.md#elevenlabs) 30 · [Bland](docs/more-skills.md#bland-ai) 22 · [Vapi](docs/more-skills.md#vapi) 10 · [Synthflow](docs/more-skills.md#synthflow) 7 · [PolyAI](docs/more-skills.md#polyai) 6 · [Retell](docs/more-skills.md#retell-ai) 2 · [Ultravox](docs/more-skills.md#ultravox) 1
 - **Speech-to-text:** [Deepgram](docs/more-skills.md#deepgram) 39 · [Gladia](docs/more-skills.md#gladia) 6 · [AssemblyAI](docs/more-skills.md#assemblyai) 3
 - **Text-to-speech:** [Inworld](docs/more-skills.md#inworld) 3 · [**Cartesia**](docs/catalog.md#cartesia) 2 · [Rime](docs/more-skills.md#rime) 1
 - **Frameworks and media:** [**LiveKit Agents**](docs/catalog.md#livekit) 7 · [**Pipecat**](docs/more-skills.md#pipecat) 4 · [jambonz](docs/more-skills.md#jambonz) 3 · [Zero Runtime](docs/more-skills.md#zero-runtime) 3 · [Vision Agents](docs/more-skills.md#vision-agents) 1 · [Agora](docs/more-skills.md#agora) 1 · [Daily](docs/more-skills.md#daily) 1
@@ -148,7 +148,7 @@ here. Smaller providers are in the index's [A to Z list](docs/more-skills.md#fin
 
 Cloud includes the speech-to-speech models Nova Sonic, Gemini Live and Azure Voice Live.
 **No official voice-agent skill yet** (checked September 30, 2026): Vonage,
-Bandwidth, Hume, Speechmatics, Soniox, OpenAI Realtime and [a few others](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026),
+Bandwidth, Speechmatics, Soniox, OpenAI Realtime and [a few others](docs/more-skills.md#major-providers-without-an-official-skill-yet-checked-sep-30-2026),
 which the core skills here cover from the outside.
 
 ## Go deeper

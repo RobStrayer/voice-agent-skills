@@ -79,7 +79,8 @@ two. A note in brackets says how many independent reports there are.
   conversational AI business opportunities over its earnings and refund claims; a
   2026 settlement bans it from marketing business opportunities
   ([complaint](https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-sues-stop-air-ai-using-deceptive-claims-about-business-growth-earnings-potential-refund),
-  [settlement](https://www.ftc.gov/news-events/news/press-releases/2026/03/air-ai-its-owners-will-be-banned-marketing-business-opportunities-settle-ftc-charges-company-misled)).
+  [settlement](https://www.ftc.gov/news-events/news/press-releases/2026/03/air-ai-its-owners-will-be-banned-marketing-business-opportunities-settle-ftc-charges-company-misled),
+  [case page](https://www.ftc.gov/legal-library/browse/cases-proceedings/airai)).
 
 ## Five lessons from the field
 
@@ -111,7 +112,8 @@ two. A note in brackets says how many independent reports there are.
 5. **Test with real callers and real audio before you scale.** An AI
    receptionist used by some GP practices struggled with local accents and speech
    differences, and some patients hung up rather than keep trying
-   ([Healthwatch Rotherham](https://healthwatchrotherham.org.uk/blog/2026-07-10/patient-concern-over-ai-receptionist-emma-what-you-need-know)).
+   ([Healthwatch Rotherham](https://healthwatchrotherham.org.uk/blog/2026-07-10/patient-concern-over-ai-receptionist-emma-what-you-need-know),
+   [archived copy](https://web.archive.org/web/20260821070655/https://healthwatchrotherham.org.uk/blog/2026-07-10/patient-concern-over-ai-receptionist-emma-what-you-need-know)).
 
 ## Read vendor numbers carefully
 

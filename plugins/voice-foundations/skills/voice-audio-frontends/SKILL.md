@@ -6,7 +6,7 @@ license: MIT
 
 # Voice audio frontends
 
-Reviewed: **2026-09-30 UTC**. Use the [audio frontend engineering guide](references/audio-frontends-guide.md) for processing mechanisms, placement diagrams, deployment limits, source contracts, and paired-test metrics. Read the relevant sections before recommending settings.
+Reviewed: **2026-10-30 UTC**. Use the [audio frontend engineering guide](references/audio-frontends-guide.md) for processing mechanisms, placement diagrams, deployment limits, source contracts, and paired-test metrics. Read the relevant sections before recommending settings.
 
 Preserve speech information while addressing a specific interference source. Confirm the application's SDK/API version and target device; configuration examples from a different browser, native SDK, or phone transport are not interchangeable.
 
@@ -44,7 +44,7 @@ If formats or playback are already wrong, apply [voice-media-debugging](../voice
 
 Use the guide's [comparison](references/audio-frontends-guide.md#compare-deployment-choices). Check code, selected weights, dependencies, and service terms separately. Open-source orchestration does not grant rights to a commercial enhancement model.
 
-For LiveKit, use the guide's current placement/model distinction: agent VIVA/VIVA telephony, frontend BVC, and SIP-trunk NC. Verify the Cloud route or ai-coustics self-hosted authentication and direct-billing exception explicitly. Avoid stacked enhanced frontend/agent filters while retaining required capture AEC. Confirm the installed plugin contract instead of importing an older model alias.
+For LiveKit, use the guide's current placement/model table: agent-side Krisp or ai-coustics isolation or suppression, frontend NC or BVC depending on the client SDK, and SIP-trunk NC. Verify the Cloud route or the self-hosted license path (ai-coustics, or Krisp in Python) and its billing explicitly. Avoid stacked enhanced frontend/agent filters while retaining required capture AEC; Python 1.8.9 and later warn when both sides apply enhanced cancellation. Record the agent input's automatic gain control, which the Python room input enables by default unless a filter is passed directly. Confirm the installed plugin contract instead of importing an older model alias.
 
 For a provider input filter, confirm whether it precedes VAD and whether processed samples are observable. Use current microphone profiles and API schemas. Platform and language support must come from the actual SDK documentation. Preserve unavailable processed audio as a measurement limit.
 

@@ -1,6 +1,6 @@
 ---
 name: voice-speech-pipeline
-description: Select, integrate, and evaluate streaming speech recognition and synthesis for a voice agent, including transcript revisions, language support, pronunciation, text buffering, and playable audio delivery.
+description: Select, integrate, and evaluate streaming speech recognition and synthesis for a voice agent, including transcript revisions, language support, pronunciation, text buffering, and playable audio delivery. Use when choosing speech-to-text or text-to-speech providers, when names, numbers or words are misheard or mispronounced, or when streaming transcripts are unstable or speech starts late.
 license: MIT
 ---
 
@@ -39,5 +39,5 @@ Distinguish offline replay, synthetic examples, and observed live behavior.
 Provider calls, recordings, model downloads, and paid tests require the user's
 existing authorization for that work.
 
-Sources reviewed 2026-09-30 UTC. The guide records primary references and current
+Sources reviewed 2026-10-30 UTC. The guide records primary references and current
 documentation caveats; verify runtime behavior against the installed SDK.

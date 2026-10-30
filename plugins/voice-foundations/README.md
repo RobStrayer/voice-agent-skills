@@ -22,6 +22,25 @@ platforms like Vapi or Retell to frameworks like LiveKit Agents or Pipecat.
 | `voice-phone-compliance` | Recording consent, outbound calling rules and number reputation |
 | `voice-agent-security` | Caller verification, prompt injection and sensitive data |
 
+## Install
+
+In Claude Code, add the marketplace once, then install the plugin:
+
+```text
+/plugin marketplace add RobStrayer/voice-agent-skills
+/plugin install voice-foundations@voice-agent-skills
+```
+
+On Claude Code 2.1.275 or later, one line does both:
+`/plugin install voice-foundations --marketplace RobStrayer/voice-agent-skills`.
+
+In Codex CLI, add the marketplace and the plugin, then start a new session:
+
+```bash
+codex plugin marketplace add RobStrayer/voice-agent-skills
+codex plugin add voice-foundations@voice-agent-skills
+```
+
 Ask for what you need in plain words, such as "why does my agent keep interrupting
 people?", and the matching skill loads on its own.
 

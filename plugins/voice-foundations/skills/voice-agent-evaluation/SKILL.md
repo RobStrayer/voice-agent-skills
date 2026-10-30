@@ -1,6 +1,6 @@
 ---
 name: voice-agent-evaluation
-description: Design and run proportionate voice agent evaluations covering conversation success, turn taking, tool correctness, audio behavior, failures, and lifecycle cleanup.
+description: Design and run proportionate voice agent evaluations covering conversation success, turn taking, tool correctness, audio behavior, failures, and lifecycle cleanup. Use when writing tests or a regression suite for a voice or phone agent, scoring simulated or recorded calls, checking tool calls, handoffs and side effects, or deciding whether a change is safe to ship.
 license: MIT
 ---
 

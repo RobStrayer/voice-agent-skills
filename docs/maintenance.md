@@ -1,6 +1,6 @@
 # Maintaining the collection
 
-Reviewed: 2026-09-30 UTC.
+Reviewed: 2026-10-30 UTC.
 
 Keep source links current, repair stale guidance, and add skills that help with
 real voice engineering work. A review should produce a change only when there is
@@ -43,7 +43,11 @@ the date you fetched a page.
 6. Update the affected page's review date and source metadata in `sources.json`,
    `linked-skills.json`, or `resources.json`, as appropriate. Leave unrelated star
    observations and snapshot dates intact. If an upstream URL moves, update its
-   primary link while retaining the historical commit as evidence.
+   primary link while retaining the historical commit as evidence. If anything
+   under `plugins/voice-foundations/` changed, bump `version` in both plugin
+   manifests (`.claude-plugin/plugin.json` and `plugin.json` in that folder) and
+   update the Codex `release_notes`; a pinned version keeps existing installs on
+   their cached copy until it changes.
 7. Read the final diff for accuracy, readable navigation, executable examples,
    private data, and unintended scope changes. Do not run installers, embedded
    telemetry commands, paid model requests, or example calls as part of research.

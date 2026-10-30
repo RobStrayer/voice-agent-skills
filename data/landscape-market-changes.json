@@ -1228,15 +1228,16 @@
   ],
   "event_type": "rename",
   "headline": "xAI is rebranded SpaceXAI in July 2026 after SpaceX acquired it in February",
-  "detail": "xAI's developer docs and news site now carry the SpaceXAI name. Wikipedia states SpaceX acquired xAI on February 2, 2026 and the company was rebranded SpaceXAI in July 2026; only the Wikipedia page was found for those dates, and the release notes still refer to the 'xAI API'.",
+  "detail": "xAI's developer docs and news site now carry the SpaceXAI name. Wikipedia states SpaceX acquired xAI on February 2, 2026 and the company was rebranded SpaceXAI in July 2026; only the Wikipedia page was found for those dates, and the release notes still refer to the 'xAI API'. On 2026-10-30 the xAI docs index (docs.x.ai/llms.txt) is headed 'SpaceXSI API Documentation'; the API and Grok keep their names. No dated announcement of that heading was opened.",
   "why_it_matters_for_builders": "Vendor name changed in docs and release notes; the Grok voice APIs are documented under SpaceXAI.",
   "sources": [
    "https://x.ai/news",
    "https://docs.x.ai/developers/release-notes",
-   "https://en.wikipedia.org/wiki/SpaceXAI"
+   "https://en.wikipedia.org/wiki/SpaceXAI",
+   "https://docs.x.ai/llms.txt"
   ],
   "evidence_grade": "single-source",
-  "checked_at": "2026-09-30"
+  "checked_at": "2026-10-30"
  },
  {
   "id": "j2-openai-gpt-realtime-2-1",
@@ -1272,6 +1273,23 @@
   "checked_at": "2026-09-30"
  },
  {
+  "id": "x-azure-realtime-ga",
+  "date": "2026-07-25",
+  "vendors": [
+   "Microsoft"
+  ],
+  "event_type": "model_release",
+  "headline": "Microsoft makes its own azure-realtime speech-to-speech model generally available in Azure Voice Live",
+  "detail": "The Voice Live tab of the Azure Speech release notes, July 2026 release, dates the general availability of the Azure Realtime speech-to-speech model to 2026-07-25, with locale-native voices in 11 languages. The same release makes Voice Live API version 2026-07-15 generally available and the SDK default. Microsoft's latency comparison with GPT Realtime 1.5 is a vendor claim.",
+  "why_it_matters_for_builders": "Voice Live now offers a Microsoft model alongside the OpenAI ones, with its own voice type (azure-realtime-native) and API version requirement.",
+  "sources": [
+   "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/releasenotes",
+   "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live-how-to"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
   "id": "j2-xai-grok-voice-think-fast-2",
   "date": "2026-07-29",
   "vendors": [
@@ -1287,6 +1305,41 @@
   ],
   "evidence_grade": "primary",
   "checked_at": "2026-09-30"
+ },
+ {
+  "id": "x-polyai-dialog-rsn-1",
+  "date": "2026-07-30",
+  "vendors": [
+   "PolyAI"
+  ],
+  "event_type": "model_release",
+  "headline": "PolyAI introduces Dialog-RSN-1, an audio-native dialog model; a self-serve API is on its pricing page by October 30",
+  "detail": "PolyAI's blog post (datePublished 2026-07-30) introduces Dialog-RSN-1, a model that takes the caller's audio directly and handles turn taking, recognition, function calling and the response; existing PolyAI customers could enable it that day. On 2026-10-30 PolyAI's pricing page offers a self-serve Dialog-RSN-1 API at $0.02 per connected minute plus text tokens, with voice output free until November 19. The date the self-serve API opened was not established; the API limits page applies its session limits from 2026-10-20.",
+  "why_it_matters_for_builders": "A contact-center vendor now sells its model directly through a Realtime-style WebSocket API, priced per connected minute; English only at launch.",
+  "sources": [
+   "https://poly.ai/blog/polyai-dialog-rsn-1",
+   "https://poly.ai/pricing",
+   "https://docs.poly.ai/api-reference/dialog-rsn-1/limits.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
+  "id": "x-ovh-completes-gladia",
+  "date": "2026-07-31",
+  "vendors": [
+   "OVH Groupe",
+   "Gladia"
+  ],
+  "event_type": "acquisition",
+  "headline": "OVH Groupe completes its acquisition of Gladia, announced on June 11, 2026",
+  "detail": "OVH Groupe's press release dated July 31, 2026 announces the completion of its acquisition of Gladia, which it had announced on June 11, 2026. The deal was paid in newly issued OVH Groupe shares.",
+  "why_it_matters_for_builders": "The Gladia deal has closed; Gladia says its brand and API continue, so check contract terms rather than the product roadmap.",
+  "sources": [
+   "https://corporate.ovhcloud.com/en/newsroom/news/ovh-group-gladia-closing-acquisition-voice-ai/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
  },
  {
   "id": "j2-cartesia-line-hosting-end",
@@ -1497,15 +1550,15 @@
    "SpaceXAI"
   ],
   "event_type": "model_release",
-  "headline": "SpaceXAI releases grok-voice-transcribe-2.0 speech-to-text; the default stays on version 1.0",
-  "detail": "SpaceXAI's release notes list grok-voice-transcribe-2.0 on September 17, 2026 and say the default model remains grok-voice-transcribe-1.0, so callers must select 2.0 explicitly. SpaceXAI's news page lists the announcement on September 18.",
-  "why_it_matters_for_builders": "Version 2.0 is opt-in by model ID; the default model did not change.",
+  "headline": "SpaceXAI releases grok-voice-transcribe-2.0 speech-to-text as the default; version 1.0 reached end of life on October 2, 2026",
+  "detail": "Corrected 2026-10-30. SpaceXAI's release notes list grok-voice-transcribe-2.0 on September 17, 2026 as the default model. The October 2, 2026 entry says grok-voice-transcribe-1.0 reached end of life that day and requests to it are routed to 2.0 at the same price. SpaceXAI's news page lists the announcement on September 18.",
+  "why_it_matters_for_builders": "Code that pins grok-voice-transcribe-1.0 now gets 2.0; rerun transcription tests on your own audio.",
   "sources": [
    "https://docs.x.ai/developers/release-notes",
    "https://x.ai/news"
   ],
   "evidence_grade": "primary",
-  "checked_at": "2026-09-30"
+  "checked_at": "2026-10-30"
  },
  {
   "id": "j2-gladia-joins-ovh",
@@ -1516,13 +1569,13 @@
   ],
   "event_type": "acquisition",
   "headline": "Gladia says it is joining OVH Groupe and will keep its brand and API",
-  "detail": "Gladia's post dated September 21, 2026 says it announced on July 31 that it was acquired by OVH Groupe, parent of OVHcloud. Gladia will continue as an independent product line under its own brand, with the same API and customer relationships. The post uses both completed and conditional wording.",
+  "detail": "Gladia's post dated September 21, 2026 says it announced on July 31 that it was acquired by OVH Groupe, parent of OVHcloud. Gladia will continue as an independent product line under its own brand, with the same API and customer relationships. The post uses both completed and conditional wording. OVH Groupe's press release of July 31, 2026 says the acquisition, announced on June 11, was completed that day (event x-ovh-completes-gladia).",
   "why_it_matters_for_builders": "A European STT API vendor moves under a cloud provider; Gladia says API and brand continue, but confirm contract terms.",
   "sources": [
    "https://www.gladia.io/blog/gladia-joins-ovh-groupe"
   ],
   "evidence_grade": "primary",
-  "checked_at": "2026-09-30"
+  "checked_at": "2026-10-30"
  },
  {
   "id": "j2-gemini-3-8-flash-tts-ga",
@@ -1592,19 +1645,141 @@
   "checked_at": "2026-09-30"
  },
  {
+  "id": "x-xai-grok-voice-3",
+  "date": "2026-10",
+  "vendors": [
+   "xAI"
+  ],
+  "event_type": "model_release",
+  "headline": "xAI makes grok-voice-3.0 available for Speech to Speech and deprecates grok-voice-2.0",
+  "detail": "The October 2026 section of xAI's release notes (no day given) says grok-voice-3.0 is available at the same price as Grok Voice 2.0, that the grok-voice-latest alias now points to it, and that grok-voice-2.0 is deprecated. The pricing page lists both at $0.08 per minute.",
+  "why_it_matters_for_builders": "Sessions on grok-voice-latest changed model without a code change; pin a version if you need stable behavior.",
+  "sources": [
+   "https://docs.x.ai/developers/release-notes",
+   "https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech",
+   "https://docs.x.ai/developers/pricing"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
+  "id": "x-openai-tts-deprecation",
+  "date": "2026-10-01",
+  "vendors": [
+   "OpenAI"
+  ],
+  "event_type": "deprecation",
+  "headline": "OpenAI deprecates tts-1, tts-1-hd and gpt-4o-mini-tts, with shutdown on January 6, 2027",
+  "detail": "OpenAI's deprecations page records a notice dated October 1, 2026: tts-1, tts-1-hd and both gpt-4o-mini-tts snapshots are removed on January 6, 2027, with gpt-realtime-2.1-mini as the recommended replacement. The text-to-speech guide says gpt-realtime-2.1-mini is not supported on /v1/audio/speech, so migration means moving to the Realtime API.",
+  "why_it_matters_for_builders": "Apps that call OpenAI's speech endpoint need a new TTS provider or a Realtime API integration before January 6, 2027.",
+  "sources": [
+   "https://developers.openai.com/api/docs/deprecations",
+   "https://developers.openai.com/api/docs/guides/text-to-speech"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
+  "id": "x-hume-sunsets-evi-tts",
+  "date": "2026-10-02",
+  "vendors": [
+   "Hume AI"
+  ],
+  "event_type": "shutdown",
+  "headline": "Hume AI announces the sunset of its EVI and text-to-speech APIs, with access ending November 13, 2026",
+  "detail": "Hume's API changelog entry dated October 2, 2026 says it is sunsetting the TTS and EVI APIs. Access ends November 13, 2026 at 12:01 a.m. EST, both APIs stay supported until then, and account data is permanently deleted afterwards. The EVI and TTS docs carry the same banner, and on October 30, 2026 hume.ai/pricing redirected to the home page.",
+  "why_it_matters_for_builders": "Agents on Hume EVI or Octave TTS must move to another provider and export any data before November 13, 2026.",
+  "sources": [
+   "https://dev.hume.ai/changelog",
+   "https://dev.hume.ai/docs/speech-to-speech-evi/overview",
+   "https://dev.hume.ai/docs/text-to-speech-tts/overview"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
+  "id": "x-amazon-nova-2-5-sonic",
+  "date": "2026-10-05",
+  "vendors": [
+   "Amazon Web Services"
+  ],
+  "event_type": "model_release",
+  "headline": "Amazon releases Nova 2.5 Sonic speech-to-speech model on Bedrock",
+  "detail": "The Bedrock model card for Nova 2.5 Sonic (amazon.nova-2-5-sonic) gives a launch date of October 5, 2026, lifecycle Active and end of life no sooner than October 5, 2027. It lists a 256K-token context window, the same four Regions as Nova 2 Sonic, and a default quota of 20 concurrent sessions that can be raised. AWS states better reasoning, instruction following and tool calling than Nova 2 Sonic (vendor claim). US East speech prices match Nova 2 Sonic.",
+  "why_it_matters_for_builders": "A newer Nova Sonic model at the same US East price; test tool use and latency before switching, and note the smaller context window.",
+  "sources": [
+   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-5-sonic.html",
+   "https://aws.amazon.com/bedrock/pricing/"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
+  "id": "x-elevenlabs-realtime",
+  "date": "2026-10-19",
+  "vendors": [
+   "ElevenLabs"
+  ],
+  "event_type": "launch",
+  "headline": "ElevenLabs launches Eleven Realtime v1 Mini and v1 Max, with an OpenAI Realtime-compatible API",
+  "detail": "ElevenLabs' changelog for October 19, 2026 introduces Eleven Realtime, a family of models for ElevenAgents voice agents, rolling out gradually. Each model is a complete agent configuration in which ElevenLabs manages the LLM, speech-to-text and text-to-speech. Clients can connect with OpenAI Realtime events over WebSocket using server-minted client secrets. The pricing page lists $0.08 per minute plus model usage, and ElevenLabs' FAQ says the models are cascaded rather than fused.",
+  "why_it_matters_for_builders": "An existing OpenAI Realtime client can be pointed at ElevenLabs; compliance and residency availability differ between Mini and Max.",
+  "sources": [
+   "https://elevenlabs.io/docs/changelog",
+   "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models",
+   "https://elevenlabs.io/docs/eleven-agents/guides/openai-realtime-compatibility",
+   "https://elevenlabs.io/pricing/api"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
+  "id": "x-deepgram-nova-3-multilingual-55",
+  "date": "2026-10-23",
+  "vendors": [
+   "Deepgram"
+  ],
+  "event_type": "model_release",
+  "headline": "Deepgram moves Nova-3 multilingual to a 55-language model and adds language hints",
+  "detail": "Deepgram's changelog for October 23, 2026 says model=nova-3&language=multi now serves a new multilingual model covering 55 languages, for batch and streaming, with an optional language_hint parameter. The previous 10-language model can be pinned with version=2026-01-27.9107 (batch) or 2026-01-27.9249 (streaming). Self-hosted deployments keep the 10-language model.",
+  "why_it_matters_for_builders": "The same request string now selects a different model; pin the old version if you need unchanged results while you re-test.",
+  "sources": [
+   "https://developers.deepgram.com/changelog/2026/10/23"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
+  "id": "x-assemblyai-tts-1",
+  "date": "2026-10-27",
+  "vendors": [
+   "AssemblyAI"
+  ],
+  "event_type": "launch",
+  "headline": "AssemblyAI launches AssemblyAI-TTS-1 text-to-speech at $15 per 1M characters",
+  "detail": "AssemblyAI's model reference gives October 27, 2026 as the launch date of its Text-to-Speech API (AssemblyAI-TTS-1), with streaming (WebSocket) and HTTP modes and six languages. Its pricing reference bills it at $15 per 1M input characters. The same model reference says the Voice Agent API is being retired, with no date given, and points builders to LiveKit or Pipecat reference agents instead.",
+  "why_it_matters_for_builders": "One API key can now cover speech-to-text, LLM Gateway and text-to-speech; agents on the Voice Agent API should plan a move.",
+  "sources": [
+   "https://www.assemblyai.com/llms/models.md",
+   "https://www.assemblyai.com/llms/pricing.md"
+  ],
+  "evidence_grade": "primary",
+  "checked_at": "2026-10-30"
+ },
+ {
   "id": "x-chime-sip-media-app-closing",
   "date": "2026-10-29",
   "vendors": [
    "Amazon Web Services"
   ],
   "event_type": "deprecation",
-  "headline": "AWS will stop opening the Amazon Chime SDK SIP Media Application to new customers on 2026-10-29",
-  "detail": "AWS's Chime SDK page carries an end-of-support notice: the feature will no longer be open to new customers starting 10/29/2026 and customers who want it should sign up before that date. The announcement date is not stated; 2026-10-29 is the effective date.",
+  "headline": "AWS stops opening the Amazon Chime SDK SIP Media Application to new customers on 2026-10-29",
+  "detail": "AWS's Chime SDK page carries an end-of-support notice: the feature will no longer be open to new customers starting 10/29/2026 and customers who want it should sign up before that date. The announcement date is not stated; 2026-10-29 is the effective date. The date has passed: on 2026-10-30 the notice still gave 10/29/2026 as the start of the change.",
   "why_it_matters_for_builders": "Teams planning SIP-based telephony agents on Chime SDK must sign up before the cutoff or choose another SIP route.",
   "sources": [
    "https://aws.amazon.com/chime/chime-sdk/"
   ],
   "evidence_grade": "primary",
-  "checked_at": "2026-09-30"
+  "checked_at": "2026-10-30"
  }
 ]

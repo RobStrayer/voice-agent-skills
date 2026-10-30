@@ -2,11 +2,11 @@
 
 [Home](../README.md) / Skill catalog
 
-**40 bundled skills** · **13 original foundations** · **27 provider skills**
+**41 bundled skills** · **13 original foundations** · **28 provider skills**
 
 Choose a foundation for the engineering problem, then a provider skill for the implementation. All provider names below open the original maintained source; **Snapshot** opens the dated copy kept here.
 
-Reviewed: **2026-09-30 UTC**. [More upstream skills](more-skills.md) cover additional providers and language-specific SDKs. [Usage notes](usage.md) explain host compatibility, tools, and runtime caveats. Install from the original source for its latest instructions; frontmatter names are preserved.
+Reviewed: **2026-10-30 UTC**. [More upstream skills](more-skills.md) cover additional providers and language-specific SDKs. [Usage notes](usage.md) explain host compatibility, tools, and runtime caveats. Install from the original source for its latest instructions; frontmatter names are preserved.
 
 ## Choose your starting point
 
@@ -54,8 +54,8 @@ Official lifecycle skills. Relevant SDK/CLI and documentation MCP may be needed.
 
 | Skill and original source | What it helps with | Bundled copy |
 | --- | --- | --- |
-| [building-livekit-agents](https://github.com/livekit/agent-skills/blob/main/skills/building-livekit-agents/SKILL.md) | Build voice agents, tools, handoffs, and agent workflows with LiveKit. | [Snapshot](../skills/livekit/building-livekit-agents/SKILL.md) |
-| [debugging-livekit-agents](https://github.com/livekit/agent-skills/blob/main/skills/debugging-livekit-agents/SKILL.md) | Exercise a local agent in a multi-turn conversation to diagnose behavior. | [Snapshot](../skills/livekit/debugging-livekit-agents/SKILL.md) |
+| [building-livekit-agents](https://github.com/livekit/agent-skills/blob/main/skills/building-livekit-agents/SKILL.md) | Build voice agents, tools, handoffs, and agent workflows with LiveKit; on LiveKit Cloud it defaults to LiveKit Inference for models. | [Snapshot](../skills/livekit/building-livekit-agents/SKILL.md) |
+| [debugging-livekit-agents](https://github.com/livekit/agent-skills/blob/main/skills/debugging-livekit-agents/SKILL.md) | Drive a local agent through a multi-turn conversation, in text mode or (with a LiveKit Cloud project) audio mode, to diagnose behavior. | [Snapshot](../skills/livekit/debugging-livekit-agents/SKILL.md) |
 | [operating-livekit-agents](https://github.com/livekit/agent-skills/blob/main/skills/operating-livekit-agents/SKILL.md) | Deploy, roll back, configure, and operate LiveKit workers. | [Snapshot](../skills/livekit/operating-livekit-agents/SKILL.md) |
 | [reading-livekit-docs](https://github.com/livekit/agent-skills/blob/main/skills/reading-livekit-docs/SKILL.md) | Retrieve current SDK, CLI, integration, and provider documentation. | [Snapshot](../skills/livekit/reading-livekit-docs/SKILL.md) |
 | [running-livekit-simulations](https://github.com/livekit/agent-skills/blob/main/skills/running-livekit-simulations/SKILL.md) | Run simulation scenarios and investigate their outcomes. | [Snapshot](../skills/livekit/running-livekit-simulations/SKILL.md) |
@@ -65,7 +65,7 @@ Official lifecycle skills. Relevant SDK/CLI and documentation MCP may be needed.
 <details>
 <summary>Source, snapshot, license and dated stars</summary>
 
-Current source: [livekit/agent-skills](https://github.com/livekit/agent-skills/tree/main). [Recorded snapshot](https://github.com/livekit/agent-skills/tree/5d7488b118c279812b89e73a9bee8474d1fe00a1). License: MIT. Source repository stars: 72 (dated snapshot; applies to the source collection).
+Current source: [livekit/agent-skills](https://github.com/livekit/agent-skills/tree/main). [Recorded snapshot](https://github.com/livekit/agent-skills/tree/e1195b497388b1aecad5dd2e9a0c9bdfbaba1878). License: MIT. Source repository stars: 72 (dated snapshot; applies to the source collection).
 
 </details>
 
@@ -79,7 +79,8 @@ Official speech and agent workflows. Requires the relevant SDK/API, CLI, or MCP.
 | --- | --- | --- |
 | [agents](https://github.com/elevenlabs/skills/blob/main/agents/SKILL.md) | Build and configure conversational agents, tools, procedures, widgets, and phone integrations. | [Snapshot](../skills/elevenlabs/agents/SKILL.md) |
 | [dubbing](https://github.com/elevenlabs/skills/blob/main/dubbing/SKILL.md) | Translate and dub recorded speech. | [Snapshot](../skills/elevenlabs/dubbing/SKILL.md) |
-| [speech-engine](https://github.com/elevenlabs/skills/blob/main/speech-engine/SKILL.md) | Unified ElevenLabs speech engine usage and SDK integration. | [Snapshot](../skills/elevenlabs/speech-engine/SKILL.md) |
+| [realtime](https://github.com/elevenlabs/skills/blob/main/realtime/SKILL.md) | Switch an ElevenAgents agent to an Eleven Realtime model, or move a browser app from OpenAI Realtime to ElevenLabs' compatible API. | [Snapshot](../skills/elevenlabs/realtime/SKILL.md) |
+| [speech-engine](https://github.com/elevenlabs/skills/blob/main/speech-engine/SKILL.md) | Add real-time voice to an agent runtime you own: Speech Engine handles speech-to-text and text-to-speech while your server supplies the replies. | [Snapshot](../skills/elevenlabs/speech-engine/SKILL.md) |
 | [speech-to-text](https://github.com/elevenlabs/skills/blob/main/speech-to-text/SKILL.md) | File and realtime transcription, events, and commit strategies. | [Snapshot](../skills/elevenlabs/speech-to-text/SKILL.md) |
 | [text-to-speech](https://github.com/elevenlabs/skills/blob/main/text-to-speech/SKILL.md) | Speech generation, streaming, and voice settings. | [Snapshot](../skills/elevenlabs/text-to-speech/SKILL.md) |
 | [voice-changer](https://github.com/elevenlabs/skills/blob/main/voice-changer/SKILL.md) | Convert a voice while retaining speech delivery. | [Snapshot](../skills/elevenlabs/voice-changer/SKILL.md) |
@@ -88,7 +89,7 @@ Official speech and agent workflows. Requires the relevant SDK/API, CLI, or MCP.
 <details>
 <summary>Source, snapshot, license and dated stars</summary>
 
-Current source: [elevenlabs/skills](https://github.com/elevenlabs/skills/tree/main). [Recorded snapshot](https://github.com/elevenlabs/skills/tree/279173d974ea5cf0c4c4f91d4e7e65202b406dab). License: MIT. Source repository stars: 460 (dated snapshot; applies to the source collection).
+Current source: [elevenlabs/skills](https://github.com/elevenlabs/skills/tree/main). [Recorded snapshot](https://github.com/elevenlabs/skills/tree/503d4e9fda0190ab9357142f44e51de626f97f90). License: MIT. Source repository stars: 460 (dated snapshot; applies to the source collection).
 
 </details>
 
