@@ -37,8 +37,10 @@ Write down each thing that bills, with its unit:
   the square of the call length. Check whether prompt caching applies.
 - **Text-to-speech:** per character or per minute of generated audio. Include
   fillers and repeated confirmations.
-- **Speech-to-speech models:** usually billed per audio token or per minute, with
-  input and output priced differently. Check how the session's history is billed.
+- **Speech-to-speech models:** billed per audio token, with input and output
+  priced differently, or per connected minute with the backend or language model
+  tokens billed separately. Check how the session's history is billed and what a
+  per-minute price leaves out.
 - **Platform fee:** managed platforms charge per minute on top of, or bundled
   with, the components. Check which components are included and which are passed through.
 - **Everything else:** servers or workers for your own stack (sized to peak

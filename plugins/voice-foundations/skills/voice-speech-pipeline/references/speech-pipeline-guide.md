@@ -2,7 +2,7 @@
 
 [Handbook](https://github.com/RobStrayer/voice-agent-skills/blob/main/docs/handbook.md) / [Speech pipeline skill](../SKILL.md)
 
-Reviewed **2026-09-30 UTC** using Context7 and current primary documentation.
+Reviewed **2026-10-30 UTC** using Context7 and current primary documentation.
 This is the review date; publication dates were not established for the living
 pages cited below. Procedures and examples are engineering guidance.
 
@@ -134,6 +134,14 @@ guide places pronunciation dictionaries in connection initialization.
 [WebSocket guide](https://elevenlabs.io/docs/eleven-api/guides/how-to/websockets/realtime-tts),
 [API reference](https://elevenlabs.io/docs/api-reference/text-to-speech/v-1-text-to-speech-voice-id-stream-input).
 
+This `stream-input` WebSocket serves Flash, Multilingual v2 and other supported
+models, but not `eleven_v3` or `eleven_v4`. Those stream over the separate Text to
+Dialogue WebSocket, which defaults to `eleven_v3_conversational` when `model_id`
+is omitted; its multi-context variant accepts v3 models only. Check the endpoint
+as well as the model identifier before a migration.
+[TTS and dialogue WebSockets](https://elevenlabs.io/docs/eleven-api/guides/how-to/websockets/tts-vs-ttd-websockets),
+[dialogue WebSocket reference](https://elevenlabs.io/docs/api-reference/text-to-dialogue/ttd-websocket).
+
 Record where text, generated audio, and playable audio wait. A small first chunk
 does little for the listener if the application buffers the response, the decoder
 needs more bytes, or the browser rejects playback. Bind each chunk to its response
@@ -156,11 +164,12 @@ Inspect actual data and the negotiated contract when the sound is distorted.
 
 ### Check model and text-transform changes before migrating
 
-Reviewed September 30, 2026. These changes have different ownership boundaries:
+Reviewed October 30, 2026. These changes have different ownership boundaries:
 
 | Source and publication | Integration consequence | Regression case |
 | --- | --- | --- |
-| [AssemblyAI Universal-3.6 Pro Realtime](https://www.assemblyai.com/blog/universal-3-6-pro-realtime), September 29 | Select `universal-3-6-pro` on the streaming connection. 3.5 Pro Realtime remains available. | Compare short yes/no answers, identifiers, and turn boundaries on the same audio. Provider benchmarks do not establish your task's accuracy. |
+| [Deepgram Nova-3 multilingual](https://developers.deepgram.com/changelog/2026/10/23), October 23 | `model=nova-3&language=multi` now serves a 55-language model under the same name, with an optional `language_hint` ([language hints](https://developers.deepgram.com/docs/nova-3-language-prompting)). Pin `version=2026-01-27.9249` to keep the previous 10-language streaming model. Self-hosted deployments still serve the old model. | Compare code-switched turns, numbers, and names with and without the pin. A hint outside the supported list rejects the connection with HTTP 400. |
+| [AssemblyAI Universal-3.6 Pro Realtime](https://www.assemblyai.com/blog/universal-3-6-pro-realtime), September 29 | `universal-3-6-pro` is the default when `speech_model` is omitted ([model selection](https://www.assemblyai.com/docs/streaming/select-the-speech-model)). It covers 32 languages; 3.5 Pro Realtime remains available with 18. [LiveKit 1.8.4](https://github.com/livekit/agents/releases/tag/livekit-agents@1.8.4) (October 1) and [Pipecat 1.13.0](https://github.com/pipecat-ai/pipecat/releases/tag/v1.13.0) (October 19) also default to it. | Compare short yes/no answers, identifiers, language detection, and turn boundaries on the same audio. Set the model explicitly so a framework upgrade cannot switch it. Provider benchmarks do not establish your task's accuracy. |
 | [ElevenLabs v4 announcement](https://elevenlabs.io/docs/changelog), September 28 | `eleven_v4_turbo` uses the Text to Dialogue WebSocket. Adopt its message and voice-registration contract. | Test a short phrase, final flush, interruption, and reconnect with the chosen output format. |
 | [Pipecat 1.12.0](https://github.com/pipecat-ai/pipecat/releases/tag/v1.12.0), September 26 | `TTSService.pronunciation_transform_ipa()` produces service-specific markup. Put it last in `text_transforms`. Unsupported hints fall back to the original spelling. | Place a normalizer before the pronunciation transform; confirm the resulting hint survives and is supported by the selected service/model. |
 
@@ -171,7 +180,8 @@ short pending phrase. The [v4 model guide](https://elevenlabs.io/docs/overview/c
 also documents changed cross-language accent behavior and no SSML support.
 An old pronunciation or TTS connection example needs review before changing its
 model identifier. Pipecat's transform behavior was confirmed in
-[the 1.12.0 source](https://github.com/pipecat-ai/pipecat/blob/v1.12.0/src/pipecat/services/tts_service.py).
+[the 1.12.0 source](https://github.com/pipecat-ai/pipecat/blob/v1.12.0/src/pipecat/services/tts_service.py)
+and is unchanged in [1.15.0](https://github.com/pipecat-ai/pipecat/blob/v1.15.0/src/pipecat/services/tts_service.py).
 
 ### Build a pronunciation fixture set
 
@@ -229,7 +239,12 @@ of the streaming and state-handling risks.
 ## Current source limitations
 
 Context7 used `/websites/developers_deepgram` and
-`/elevenlabs/elevenlabs-python`. The primary pages above were retrieved directly.
+`/elevenlabs/elevenlabs-python` on 2026-09-30, and `/websites/developers_deepgram`,
+`/websites/assemblyai` and `/websites/elevenlabs_io` on 2026-10-30. The primary
+pages above were retrieved directly. On 2026-10-30 the ElevenLabs index still
+called the dialogue WebSocket v3-only; the current API reference accepts
+`eleven_v3` and `eleven_v4` models, and this guide follows the reference. The
+Deepgram index did not return the October 23 multilingual change.
 Generated SDK summaries are useful discovery aids, but their transport claims
 were not treated as proof of automatic HTTP/WebSocket selection. Check the exact
 installed SDK implementation for that behavior.

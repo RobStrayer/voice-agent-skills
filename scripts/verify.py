@@ -28,6 +28,29 @@ def inside(relative):
     return path
 
 
+def frontmatter_text(header, key):
+    """Return a top-level frontmatter string: plain, quoted, or a | or > block."""
+    lines = header.splitlines()
+    for index, line in enumerate(lines):
+        match = re.match(re.escape(key) + r':(?:[ \t]+(.*))?$', line)
+        if not match:
+            continue
+        first, rest = (match[1] or '').strip(), []
+        for follow in lines[index + 1:]:
+            if follow.strip() and not follow[0].isspace():
+                break
+            rest.append(follow.strip())
+        if re.fullmatch(r'[|>](?:[1-9]?[+-]?|[+-][1-9])(?:[ \t]+#.*)?', first):
+            if first[0] == '|':
+                return '\n'.join(rest).strip()
+            return ' '.join(part for part in rest if part)
+        text = ' '.join(part for part in [first] + rest if part)
+        if len(text) > 1 and text[0] == text[-1] and text[0] in '\'"':
+            text = text[1:-1].replace("''", "'") if text[0] == "'" else text[1:-1].replace('\\"', '"')
+        return text
+    return ''
+
+
 def verify(root=ROOT):
     # root is injected only for the isolated negative checks below.
     global ROOT
@@ -75,7 +98,12 @@ def verify(root=ROOT):
             assert len(name) <= 64 and name == path.parent.name, path
             assert name not in names, f'Duplicate skill name: {name}'
             names.add(name)
-            assert re.search(r'^description:\s*\S', header, re.M), path
+            # Agent Skills spec: 1 to 1,024 characters. Anthropic's skill rules also bar
+            # XML tags in the description and "anthropic" or "claude" in the name.
+            description = frontmatter_text(header, 'description')
+            assert 0 < len(description) <= 1024, f'Description empty or over 1,024 characters: {path}'
+            assert not re.search(r'[<>]', description), f'Angle bracket in description: {path}'
+            assert not re.search(r'anthropic|claude', name), f'Reserved word in skill name: {path}'
             if not path.is_relative_to(originals_dir):
                 for member in path.parent.rglob('*'):
                     if member.is_file():
@@ -178,7 +206,7 @@ def verify(root=ROOT):
                 assert local.is_relative_to(ROOT) and local.exists(), f'{path}: {target}'
         print(f'PASS: {len(skills)} skills, {len(tracked)} upstream files, '
               f'{len(entries)} linked skills, {len(docs)} docs-hosted skills, {len(resources)} resources; '
-              'names, provenance, licenses, syntax, figures, '
+              'names, descriptions, provenance, licenses, syntax, figures, '
               'local paths, and bounded credential patterns checked.')
     finally:
         ROOT = previous

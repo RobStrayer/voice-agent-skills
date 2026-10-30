@@ -1,6 +1,6 @@
 ---
 name: voice-conversation-design
-description: Write and evaluate voice agent prompts for spoken turn taking, concise responses, clarification, tool progress, interruptions, and safe handoffs.
+description: Write and evaluate voice agent prompts for spoken turn taking, concise responses, clarification, tool progress, interruptions, and safe handoffs. Use when writing or reviewing a voice agent's system prompt, when replies run long or read out lists, URLs or Markdown, or when designing confirmations, repair questions and transfers to a person.
 license: MIT
 ---
 

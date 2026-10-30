@@ -85,6 +85,12 @@ OpenAI's current guide distinguishes three paths:
 
 [OpenAI voice agents](https://developers.openai.com/api/docs/guides/voice-agents)
 
+Added October 30, 2026: OpenAI's [deprecations page](https://developers.openai.com/api/docs/deprecations)
+lists `tts-1`, `tts-1-hd` and `gpt-4o-mini-tts` for shutdown on January 6, 2027
+(notice dated October 1, 2026) and names `gpt-realtime-2.1-mini`, a Realtime API
+model, as the replacement. A chain that ends in OpenAI speech generation needs a
+migration plan or another text-to-speech provider (engineering judgment).
+
 | Task requirement | Candidate to test | Boundary to verify |
 | --- | --- | --- |
 | Conversational timing and prosody; no text checkpoint before every answer | Native speech-to-speech | Application controls, timing, and playback |

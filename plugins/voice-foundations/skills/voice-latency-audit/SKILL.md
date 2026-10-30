@@ -40,7 +40,11 @@ An older installed version can expose a different surface.
 LiveKit's current per-turn fields include `end_of_turn_delay`,
 `transcription_delay`, `llm_node_ttft`, `tts_node_ttfb`, `playback_latency`, and
 `e2e_latency`. The LLM/TTS node fields apply to an STT-LLM-TTS pipeline and are empty
-for realtime models. Its playback field ends at the output component's playback
+for realtime models. Since Python 1.8.7, a realtime agent also gets `e2e_latency`,
+measured from the end of user speech that its local VAD detected to the first
+playback of the reply, and only when a local VAD is configured
+([1.8.7 release](https://github.com/livekit/agents/releases/tag/livekit-agents@1.8.7)).
+The `playback_latency` field ends at the output component's playback
 report, which can be near zero without remote playback reporting. Validate these
 events against the actual media path before calling them listener measurements.
 [Source: LiveKit data hooks](https://docs.livekit.io/testing/observability/data.md).
@@ -120,6 +124,7 @@ Keep observed values, derived estimates, and proposed targets labeled separately
 
 ## Source review
 
-Documentation reviewed on 2026-09-30 UTC. This date records the review; publication
-dates were not established for the linked documentation. Check the installed SDK
-and current pages before relying on field names or configuration behavior.
+Documentation reviewed on 2026-10-30 UTC. This date records the review; publication
+dates were not established for the linked documentation pages. The LiveKit 1.8.7
+release was published October 14, 2026. Check the installed SDK and current pages
+before relying on field names or configuration behavior.

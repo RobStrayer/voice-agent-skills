@@ -421,7 +421,7 @@
   ],
   "pricing_source_url": "https://www.retellai.com/pricing",
   "pricing_seen": "2026-09-30",
-  "derived_notes": "Vendor example on the pricing page: $0.230/min = LLM $0.160 + Retell Voice Infra $0.055 + TTS $0.015 (telephony $0.000, add-ons $0.000); this is the vendor's calculator output, not our calculation. DERIVED: adding Retell-provided telephony at $0.015/min to that example gives $0.245/min (0.230 + 0.015), assuming the same LLM and TTS selection and no add-ons. Docs example (billing exceptions): a 60-second call with 4,800 prompt tokens is billed as 72 seconds (60 x 4,800 / 4,000). DERIVED from row counts of the docs language page (re-counted 2026-09-30): 55 language rows in the TTS table and 55 in the ASR table, the same 55 names in both; Azure covers all 55 ASR rows, Soniox 51, Deepgram 34, AssemblyAI 18.",
+  "derived_notes": "On 2026-10-30 the calculator's default inputs had changed (the static HTML preselects GPT 5.4), so the vendor example below is a 2026-09-30 observation only. Vendor example on the pricing page: $0.230/min = LLM $0.160 + Retell Voice Infra $0.055 + TTS $0.015 (telephony $0.000, add-ons $0.000); this is the vendor's calculator output, not our calculation. DERIVED: adding Retell-provided telephony at $0.015/min to that example gives $0.245/min (0.230 + 0.015), assuming the same LLM and TTS selection and no add-ons. Docs example (billing exceptions): a 60-second call with 4,800 prompt tokens is billed as 72 seconds (60 x 4,800 / 4,000). DERIVED from row counts of the docs language page (re-counted 2026-09-30): 55 language rows in the TTS table and 55 in the ASR table, the same 55 names in both; Azure covers all 55 ASR rows, Soniox 51, Deepgram 34, AssemblyAI 18.",
   "strengths": [
    {
     "text": "Component prices are published per minute (Voice Infra $0.055, TTS $0.015 on most voices, LLM by model) and SIP trunking or custom telephony carries no Retell charge.",
@@ -480,7 +480,7 @@
    "https://docs.retellai.com/get-started/mcp-server.md",
    "https://api.github.com/orgs/RetellAI/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "plan-by-plan check marks in the pricing comparison table (not readable in the page text obtained)",
    "retell-client-js-sdk license (GitHub API returns null)",
@@ -763,7 +763,7 @@
   "name": "Synthflow",
   "vendor": "Synthflow (the BAA template names AgentFlow AI GmbH as the contracting entity)",
   "status": "active",
-  "status_notes": "Pricing model change: an archived capture of synthflow.ai/pricing dated 2026-06-16 lists a Pay As You Go plan; archived captures of 2026-07-06 and 2026-07-30 and the live page on 2026-09-30 show only Enterprise contracts starting at $30,000 annually. The changelog entry dated 2026-09-04 (Deprecations & Migrations) says Stripe-based reselling ends 2026-09-15 and subscriptions created through custom pricing plans stop working, that individual subscriptions are unaffected, and that non-enterprise plans now run on Synthflow LLM, with third-party models including the GPT family no longer available outside Enterprise. So non-enterprise plans still exist for some accounts even though the public pricing page lists only Enterprise contracts; docs mention legacy workspaces.",
+  "status_notes": "Pricing model change: an archived capture of synthflow.ai/pricing dated 2026-06-16 lists a Pay As You Go plan; archived captures of 2026-07-06 and 2026-07-30 and the live page on 2026-09-30 show only Enterprise contracts starting at $30,000 annually. The changelog entry dated 2026-09-04 (Deprecations & Migrations) says Stripe-based reselling ends 2026-09-15 and subscriptions created through custom pricing plans stop working, that individual subscriptions are unaffected, and that non-enterprise plans now run on Synthflow LLM, with third-party models including the GPT family no longer available outside Enterprise. So non-enterprise plans still exist for some accounts even though the public pricing page lists only Enterprise contracts; docs mention legacy workspaces. On 2026-10-30 the pricing page no longer shows the $30,000 starting figure.",
   "status_sources": [
    "https://web.archive.org/web/20260616185145/https://synthflow.ai/pricing",
    "https://web.archive.org/web/20260706173622/https://synthflow.ai/pricing",
@@ -779,17 +779,17 @@
   "license": "proprietary",
   "open_source_notes": "Hosted service; the agent platform is not published. GitHub org synthflowai holds separate repositories: MIT-licensed n8n node and voiceblender (programmable SIP/WebRTC voice platform with pluggable AI agents), and a FreeSWITCH source fork.",
   "pricing_model": "Sales-scoped annual enterprise contract; usage billed in minutes per the agreement.",
-  "headline_price": "Enterprise contracts start at $30,000 annually; final pricing scoped by sales (no public self-serve price).",
+  "headline_price": "Sales only: annual enterprise agreements scoped by sales; no free plan, trial or per-minute rate and no published price (pricing page, 2026-10-30).",
   "pricing_gated": true,
   "pricing_details": [
    {
-    "item": "Enterprise contract",
-    "price": "Enterprise contracts start at $30,000 annually",
-    "price_usd": 30000,
+    "item": "Enterprise agreement",
+    "price": "Sales only; no published price",
+    "price_usd": null,
     "unit": "per year",
-    "conditions": "Final pricing is scoped around call volume, concurrency, telephony setup, integrations, security needs, and launch support",
+    "conditions": "On 2026-10-30 the pricing page says Synthflow is sold as an annual enterprise agreement with no free plan or trial and no rate by the minute; the '$30,000 annually' starting figure seen on 2026-09-30 no longer appears.",
     "url": "https://synthflow.ai/pricing",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
    },
    {
     "item": "Usage billing unit",
@@ -802,7 +802,7 @@
    }
   ],
   "pricing_source_url": "https://synthflow.ai/pricing",
-  "pricing_seen": "2026-09-30",
+  "pricing_seen": "2026-10-30",
   "derived_notes": "ARCHIVED (not current; capture dated 2026-06-16): Pay As You Go listed Voice Engine $0.09/min, LLM GPT-4.1 mini $0.02/min, GPT-4.1 $0.05/min, GPT-5/5.1/5.2 $0.04/min, Synthflow-managed Twilio $0.02/min (bring-your-own Twilio $0.00), Performance Routing $0.04/min, Global Low Latency Edge $0.04/min, extra concurrency $20/concurrency/month (5 included), white-label + reseller toolkit $2,000/month, phone number $1.50; Synthflow Native Telephony was listed as 'Enterprise only'; the comparison table showed '-' in the Pay As You Go column for the uptime SLA and HIPAA and listed a 99.99% uptime SLA in the Enterprise column (the Enterprise HIPAA cell was not readable in the capture); 5 messages sent/received to an agent counted as 1 minute of voice usage; its calculator example totalled $0.14/min (Voice Engine $0.09 + GPT-4.1 $0.05, native telephony 'custom'). Captures of 2026-07-06 and 2026-07-30 contain no pay-as-you-go wording, no Voice Engine line and no $0.09 figure. Third-party blogs cite older $29-$899/month plans (leads only, not used).",
   "strengths": [
    {
@@ -873,7 +873,7 @@
    "https://docs.synthflow.ai/mcp-server.md",
    "https://api.github.com/orgs/SynthFlowAI/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "default concurrency and CAPS limits",
    "whether self-serve accounts can still be created (docs mention legacy workspaces)",
@@ -949,7 +949,7 @@
   "name": "ElevenAgents (ElevenLabs Agents)",
   "vendor": "ElevenLabs",
   "status": "active",
-  "status_notes": "Renamed twice, still the same product: an ElevenLabs blog post dated 2025-09-03 states that Conversational AI became ElevenLabs Agents; the docs changelog entry of 2026-02-09 labels the product family 'ElevenAgents (Formerly Agents Platform)'; the Python SDK v2.36.0 notes (changelog 2026-02-23) rename package references from 'Conversational AI' to 'ElevenAgents'. Code examples in the burst-pricing guide still use the conversational_ai / conversationalAi SDK namespace, and API listings in the docs changelog (including September 2026 entries) still use /v1/convai/ paths, so older names remain in code and in search results.",
+  "status_notes": "Renamed twice, still the same product: an ElevenLabs blog post dated 2025-09-03 states that Conversational AI became ElevenLabs Agents; the docs changelog entry of 2026-02-09 labels the product family 'ElevenAgents (Formerly Agents Platform)'; the Python SDK v2.36.0 notes (changelog 2026-02-23) rename package references from 'Conversational AI' to 'ElevenAgents'. Code examples in the burst-pricing guide still use the conversational_ai / conversationalAi SDK namespace, and API listings in the docs changelog (including September 2026 entries) still use /v1/convai/ paths, so older names remain in code and in search results. Changelog 2026-10-19: agents can run in Realtime voice mode on Eleven Realtime v1 Mini or v1 Max, rolling out gradually (entry elevenlabs-realtime), and Guardrails are generally available. Changelog 2026-10-26: supported LLMs can run on a 'fast' service tier at a per-token premium. Changelog 2026-10-12: new agents are created with call queueing enabled.",
   "status_sources": [
    "https://elevenlabs.io/blog/introducing-elevenlabs-agents",
    "https://elevenlabs.io/docs/changelog/2026/2/9.md",
@@ -1122,7 +1122,7 @@
    }
   ],
   "pricing_source_url": "https://elevenlabs.io/pricing/agents",
-  "pricing_seen": "2026-09-30",
+  "pricing_seen": "2026-10-30",
   "derived_notes": "DERIVED: plan price divided by included minutes is about $0.08 per included minute on every paid tier (Starter 6/75 = 0.080; Creator 22/275 = 0.080; Pro 99/1,238 = 0.0800; Scale 299/3,738 = 0.0800; Business 990/12,375 = 0.080), which equals the $0.080 additional-minute rate; LLM cost and your telephony provider come on top. Creator first month: 11/275 = $0.040 per included minute (promotional). CONFLICTS recorded, not resolved: (a) on the Enterprise Pricing Reference page Agents Text is $0.070 per message under Services - API but $0.003 under Services - UI, and the plan page shows $0.003 per text message (the $0.003 figure appears twice; the $0.070 figure once); (b) Agents Audio is $0.070/min in the Enterprise fallback lists but $0.080/min as the additional-minute rate on the plan page (different contexts: Enterprise fallback vs plan overage). Page banner mentions a 3x-credits promotion on Creator and above until October 12 (not included in any figure here).",
   "strengths": [
    {
@@ -1140,6 +1140,10 @@
    {
     "text": "ElevenLabs states SOC 2 Type II, ISO 27001 and PCI DSS Level 1 certification plus HIPAA and GDPR compliance, with Zero Retention Mode and data residency in the US, EU and India listed as enterprise controls.",
     "url": "https://elevenlabs.io/agents"
+   },
+   {
+    "text": "Realtime voice mode (2026-10-19): one Eleven Realtime model choice replaces the LLM, TTS and ASR settings; system prompt, voice, tools and knowledge base work as before.",
+    "url": "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models"
    }
   ],
   "limits": [
@@ -1193,7 +1197,7 @@
    "https://github.com/elevenlabs/elevenlabs-mcp",
    "https://registry.modelcontextprotocol.io/v0/servers?search=elevenlabs"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "yearly-billing prices (only the monthly view was read)",
    "uptime SLA terms (Enterprise, custom)",
@@ -1272,6 +1276,14 @@
     "headline": "ElevenLabs renames Agents Platform to ElevenAgents and introduces ElevenCreative and ElevenAPI product families",
     "evidence_grade": "primary",
     "source": "https://elevenlabs.io/docs/changelog/2026/2/9"
+   },
+   {
+    "id": "x-elevenlabs-realtime",
+    "date": "2026-10-19",
+    "event_type": "launch",
+    "headline": "ElevenLabs launches Eleven Realtime v1 Mini and v1 Max, with an OpenAI Realtime-compatible API",
+    "evidence_grade": "primary",
+    "source": "https://elevenlabs.io/docs/changelog"
    }
   ],
   "source_notes": []
@@ -3753,7 +3765,7 @@
  {
   "category": "A",
   "also_listed_in": [],
-  "status_notes": "EU-Startups (2025-12): PolyAI raised 73.2 million euros ($86 million) in a Series D co-led by Georgian, Hedosophia and Khosla Ventures, and reports more than 100 enterprise customers, 45 languages and 25+ countries (company figures as reported). No acquisition, rename or shutdown found.",
+  "status_notes": "EU-Startups (2025-12): PolyAI raised 73.2 million euros ($86 million) in a Series D co-led by Georgian, Hedosophia and Khosla Ventures, and reports more than 100 enterprise customers, 45 languages and 25+ countries (company figures as reported). No acquisition, rename or shutdown found. On 2026-10-30 the pricing page also offers a self-serve Dialog-RSN-1 model API, recorded as the separate entry polyai-dialog-rsn-1; the platform itself remains sales only.",
   "status_sources": [
    "https://www.eu-startups.com/2025/12/london-based-polyai-raises-e73-2-million-to-scale-its-enterprise-conversational-ai-platform/"
   ],
@@ -3762,7 +3774,7 @@
   "mcp_server": "official-hosted",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "pricing"
   ],
@@ -3790,7 +3802,7 @@
   "open_source": "no",
   "license": "proprietary",
   "pricing_model": "Per-minute pricing for ongoing voice-agent use (rates not published); the pricing page lists support, SLA, monitoring and upgrades as included in all plans.",
-  "headline_price": "Contact sales for rates. PolyAI states ongoing use is priced per minute, including performance improvements, maintenance and 24/7 support; no dollar figures are published.",
+  "headline_price": "Contact sales for rates. PolyAI states ongoing use is priced per minute, including performance improvements, maintenance and 24/7 support; no dollar figures are published. Separate self-serve Dialog-RSN-1 model API: $0.02 per connected minute plus text tokens (entry polyai-dialog-rsn-1).",
   "pricing_source_url": "https://poly.ai/pricing",
   "pricing_seen": "2026-09-30",
   "strengths": [
@@ -4334,7 +4346,7 @@
   "name": "OpenAI Realtime API (gpt-realtime family)",
   "vendor": "OpenAI",
   "status": "active",
-  "status_notes": "Current speech-to-speech models: gpt-realtime-2.1 and gpt-realtime-2.1-mini (changelog entry dated 2026-07-06); gpt-realtime-2 (2026-05-07) and gpt-realtime-1.5 (2026-02-23) are also priced on the pricing page. Retired: Realtime API beta interface (OpenAI-Beta: realtime=v1) removed 2026-05-12; gpt-4o-realtime-preview models shut down 2026-05-07 (snapshot gpt-4o-realtime-preview-2024-10-01 on 2025-10-10); gpt-realtime-mini-2025-10-06 shut down 2026-07-23. Scheduled: notice dated 2026-07-20 removes the gpt-realtime, gpt-realtime-mini, gpt-4o-realtime and gpt-4o-mini-realtime families on 2027-01-20 (replacements gpt-realtime-2.1 / gpt-realtime-2.1-mini); gpt-realtime-1.5 and gpt-realtime-2 are not in that table. OpenAI's audio guide now says to start with GPT-Live for a new conversational voice application (separate API, see entry openai-gpt-live).",
+  "status_notes": "Current speech-to-speech models: gpt-realtime-2.1 and gpt-realtime-2.1-mini (changelog entry dated 2026-07-06); gpt-realtime-2 (2026-05-07) and gpt-realtime-1.5 (2026-02-23) are also priced on the pricing page. Retired: Realtime API beta interface (OpenAI-Beta: realtime=v1) removed 2026-05-12; gpt-4o-realtime-preview models shut down 2026-05-07 (snapshot gpt-4o-realtime-preview-2024-10-01 on 2025-10-10); gpt-realtime-mini-2025-10-06 shut down 2026-07-23. Scheduled: notice dated 2026-07-20 removes the gpt-realtime, gpt-realtime-mini, gpt-4o-realtime and gpt-4o-mini-realtime families on 2027-01-20 (replacements gpt-realtime-2.1 / gpt-realtime-2.1-mini); gpt-realtime-1.5 and gpt-realtime-2 are not in that table. OpenAI's audio guide now says to start with GPT-Live for a new conversational voice application (separate API, see entry openai-gpt-live). Deprecation notice dated 2026-10-01 names gpt-realtime-2.1-mini as the replacement for the tts-1, tts-1-hd and gpt-4o-mini-tts speech models, which shut down on 2027-01-06.",
   "status_sources": [
    "https://developers.openai.com/api/docs/deprecations.md",
    "https://developers.openai.com/api/docs/changelog.md",
@@ -4486,7 +4498,7 @@
     "url": "https://developers.openai.com/api/docs/guides/realtime-conversations.md"
    },
    {
-    "text": "gpt-realtime-2.1 rate limits by tier: Tier 1 = 200 RPM / 40,000 TPM; Tier 5 = 20,000 RPM / 15,000,000 TPM; context window 128,000 tokens, max output 32,000.",
+    "text": "gpt-realtime-2.1 rate limits by usage tier (tiers renamed 2026-10-06): Build 400 RPM / 200,000 TPM; Launch 10,000 / 4,000,000; Grow 20,000 / 15,000,000; context window 128,000 tokens, max output 32,000.",
     "url": "https://developers.openai.com/api/docs/models/gpt-realtime-2.1.md"
    },
    {
@@ -4529,7 +4541,7 @@
    "https://platform.openai.com/docs/llms.txt",
    "https://api.github.com/orgs/openai/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "agent_skills_repo_url": "https://github.com/openai/skills",
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
@@ -4618,7 +4630,16 @@
   ],
   "mcp_notes": "Cat B. Product scope: Realtime docs describe MCP client use (MCP tools in a session); no Realtime-specific server. OpenAI page states the server is documentation-only and does not call the OpenAI API. Other OpenAI repos (openai-mcpkit, tunnel-client, mcp-extensions) support building or tunnelling MCP servers; they are not API-wide product servers. Realtime API and Agents SDK document MCP client us",
   "mcp_vendor_level": false,
-  "related_events": [],
+  "related_events": [
+   {
+    "id": "x-openai-tts-deprecation",
+    "date": "2026-10-01",
+    "event_type": "deprecation",
+    "headline": "OpenAI deprecates tts-1, tts-1-hd and gpt-4o-mini-tts, with shutdown on January 6, 2027",
+    "evidence_grade": "primary",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+   }
+  ],
   "source_notes": []
  },
  {
@@ -4708,11 +4729,19 @@
    {
     "text": "Vendor states GPT-Live supports data residency in the United States and Europe and is eligible for Zero Data Retention.",
     "url": "https://developers.openai.com/api/docs/guides/your-data.md"
+   },
+   {
+    "text": "Changelog 2026-10-16: prompt-to-voice custom voices are generally available (created free from a text description, usable only in GPT-Live, with speech billed at session rates), plus nine natural voices for German, French, Hindi, Japanese and Korean.",
+    "url": "https://developers.openai.com/api/docs/changelog.md"
+   },
+   {
+    "text": "Changelog 2026-10-15: native Decisions API integration, so a GPT-Live app can act on decisions while the user is speaking or from transcript deltas.",
+    "url": "https://developers.openai.com/api/docs/changelog.md"
    }
   ],
   "limits": [
    {
-    "text": "Rate limits are concurrent sessions by tier: Tier 1 = 25, Tier 2 = 50, Tier 3 = 200, Tier 4 = 300, Tier 5 = 500; Free tier unsupported.",
+    "text": "Rate limits are concurrent sessions by usage tier (tiers renamed 2026-10-06): Build 50, Launch 300, Grow 500; Free tier unsupported.",
     "url": "https://developers.openai.com/api/docs/models/gpt-live-1.md"
    },
    {
@@ -4758,7 +4787,7 @@
    "https://platform.openai.com/docs/llms.txt",
    "https://api.github.com/orgs/openai/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "agent_skills_repo_url": "https://github.com/openai/skills",
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
@@ -4858,11 +4887,12 @@
   "name": "Google Gemini Live API (Gemini API and Gemini Enterprise Agent Platform, formerly Vertex AI)",
   "vendor": "Google",
   "status": "active",
-  "status_notes": "gemini-3.8-live and gemini-3.8-live-extended-thinking: GA per Gemini API changelog on 2026-09-15; Agent Platform release notes and model page give 2026-09-24 for Gemini 3.8 Live GA (conflict, both recorded). Legacy: gemini-3.1-flash-live-preview (released 2026-03-11) is labelled legacy, replacement gemini-3.8-live; gemini-2.5-flash-native-audio-preview-12-2025 (released 2025-12-12) lists gemini-3.8-live as replacement, no shutdown date announced; gemini-2.0-flash-live-001 and gemini-live-2.5-flash-preview reached their listed shutdown date 2025-12-09 (Google says listed dates are the earliest possible). Naming: Google's release notes list a 2026-04-22 change renaming Vertex AI to Gemini Enterprise Agent Platform ('Gemini Live API on Vertex AI' became 'Gemini Live API on Agent Platform').",
+  "status_notes": "gemini-3.8-live and gemini-3.8-live-extended-thinking: GA per Gemini API changelog on 2026-09-15; Agent Platform release notes and model page give 2026-09-24 for Gemini 3.8 Live GA (conflict, both recorded). Legacy: gemini-3.1-flash-live-preview (released 2026-03-11) is labelled legacy, replacement gemini-3.8-live; gemini-2.5-flash-native-audio-preview-12-2025 (released 2025-12-12) lists gemini-3.8-live as replacement (no shutdown date was announced on 2026-09-30); gemini-2.0-flash-live-001 and gemini-live-2.5-flash-preview reached their listed shutdown date 2025-12-09 (Google says listed dates are the earliest possible). Naming: Google's release notes list a 2026-04-22 change renaming Vertex AI to Gemini Enterprise Agent Platform ('Gemini Live API on Vertex AI' became 'Gemini Live API on Agent Platform'). On 2026-10-30 the Gemini API deprecations page gives 2026-11-17 as the shutdown date for gemini-3.1-flash-live-preview and gemini-2.5-flash-native-audio-preview-12-2025 (replacement gemini-3.8-live; Google says listed dates are the earliest possible). The Agent Platform model versions page (last updated 2026-10-28) retires gemini-live-2.5-flash-native-audio on 2026-12-13 (replacement gemini-3.8-live) and lists gemini-3.8-live until 2027-09-25 or later.",
   "status_sources": [
    "https://ai.google.dev/gemini-api/docs/deprecations.md.txt",
    "https://ai.google.dev/gemini-api/docs/changelog.md.txt",
-   "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes"
+   "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
+   "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-versions"
   ],
   "activity_evidence": "Gemini API changelog entries dated 2026-09-22 and 2026-09-15; Agent Platform Live API page 'Last updated 2026-09-28 UTC' and Gemini 3.8 Live page 'Last updated 2026-09-29 UTC' (opened 2026-09-30).",
   "what_it_is": "Google's bidirectional streaming API (stateful WebSocket) for Gemini audio-to-audio models (gemini-3.8-live, gemini-3.8-live-extended-thinking), offered through the Gemini Developer API and through Google Cloud's Gemini Enterprise Agent Platform.",
@@ -5011,6 +5041,10 @@
    {
     "text": "Google's pages disagree on supported language count: 70 (Gemini API Live overview), 99 (Gemini API capabilities page), 24 (Agent Platform Live overview); both recorded, none resolved.",
     "url": "https://ai.google.dev/gemini-api/docs/live-api.md.txt"
+   },
+   {
+    "text": "Older Live models retire: Gemini API Live previews on 2026-11-17 at the earliest; Agent Platform gemini-live-2.5-flash-native-audio on 2026-12-13.",
+    "url": "https://ai.google.dev/gemini-api/docs/deprecations.md.txt"
    }
   ],
   "docs_url": "https://ai.google.dev/gemini-api/docs/live-api.md.txt",
@@ -5046,7 +5080,7 @@
    "https://registry.modelcontextprotocol.io/v0/servers",
    "https://api.github.com/orgs/google-gemini/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "agent_skills_repo_url": "https://github.com/google-gemini/gemini-skills",
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
@@ -5120,23 +5154,24 @@
   "category": "B",
   "subcategory": "speech-to-speech-model (Amazon Bedrock)",
   "also_listed_in": [],
-  "name": "Amazon Nova Sonic / Nova 2 Sonic (Amazon Bedrock)",
+  "name": "Amazon Nova 2 Sonic / Nova 2.5 Sonic (Amazon Bedrock)",
   "vendor": "Amazon Web Services",
   "status": "active",
-  "status_notes": "Nova 2 Sonic exists: model launch 2025-12-02, lifecycle 'Active', 'EOL no sooner than' 2026-12-02 (Bedrock model card). The original Nova Sonic (amazon.nova-sonic-v1:0, launched Mar 2025) has lifecycle 'Legacy' and a model EOL date of 2026-09-14 on its card; the regional table marks us-east-1 and ap-northeast-1 as 'Legacy (EOL: 2026-09-14)' and eu-north-1 as supported.",
+  "status_notes": "Nova 2.5 Sonic (amazon.nova-2-5-sonic): the Bedrock model card gives launch date 2026-10-05, lifecycle Active and EOL no sooner than 2027-10-05 under the lifecycle policy for models launched on or after 2026-09-07. Nova 2 Sonic exists: model launch 2025-12-02, lifecycle 'Active', 'EOL no sooner than' 2026-12-02 (Bedrock model card). The original Nova Sonic (amazon.nova-sonic-v1:0, launched Mar 2025) has lifecycle 'Legacy' and a model EOL date of 2026-09-14 on its card; the regional table marks us-east-1 and ap-northeast-1 as 'Legacy (EOL: 2026-09-14)' and eu-north-1 as supported.",
   "status_sources": [
    "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-sonic.md",
    "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-sonic.md",
-   "https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.md"
+   "https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.md",
+   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-5-sonic.md"
   ],
-  "activity_evidence": "AWS Bedrock pricing data file manifest shows publication 2026-09-30T16:29:03Z; Nova 2 Sonic model card and user guide pages opened 2026-09-30; Nova 2 Sonic launched 2025-12-02.",
-  "what_it_is": "Amazon's speech-to-speech model on Amazon Bedrock (amazon.nova-2-sonic-v1:0), called through the InvokeModelWithBidirectionalStream API with streaming audio in and out, tool calling, and (Nova 2) text input in the same session.",
+  "activity_evidence": "AWS Bedrock pricing data file manifest shows publication 2026-09-30T16:29:03Z; Nova 2 Sonic model card and user guide pages opened 2026-09-30; Nova 2 Sonic launched 2025-12-02. Nova 2.5 Sonic model card (launch 2026-10-05) and pricing data file published 2026-10-29 read on 2026-10-30.",
+  "what_it_is": "Amazon's speech-to-speech models on Amazon Bedrock (amazon.nova-2-sonic-v1:0 and, since 2026-10-05, amazon.nova-2-5-sonic), called through the InvokeModelWithBidirectionalStream API with streaming audio in and out, tool calling, and (Nova 2) text input in the same session.",
   "best_for": "Teams already on AWS that want speech-to-speech inside Bedrock (IAM/SigV4 auth, regional endpoints) with documented Strands, AgentCore, LiveKit, Pipecat and telephony paths.",
   "open_source": "no",
   "license": "proprietary",
   "open_source_notes": "Hosted model on Amazon Bedrock; no weights published on the pages opened.",
   "pricing_model": "per-token on-demand pricing: speech and text tokens, input and output, per 1M tokens, varying by region",
-  "headline_price": "Nova 2 Sonic, US East (N. Virginia): speech $3.00 input / $12.00 output per 1M tokens; text $0.33 input / $2.75 output per 1M tokens",
+  "headline_price": "Nova 2 Sonic and Nova 2.5 Sonic, US East (N. Virginia): speech $3.00 input / $12.00 output per 1M tokens; text $0.33 input / $2.75 output per 1M tokens",
   "pricing_gated": false,
   "pricing_details": [
    {
@@ -5192,10 +5227,28 @@
     "conditions": "Static page text shows placeholders, not numbers",
     "url": "https://aws.amazon.com/bedrock/pricing/",
     "seen": "2026-09-30"
+   },
+   {
+    "item": "Nova 2.5 Sonic speech tokens, US East (N. Virginia)",
+    "price": "$3.00 / 1M input tokens; $12.00 / 1M output tokens",
+    "price_usd": null,
+    "unit": "per 1M tokens",
+    "conditions": "Text tokens $0.33 input / $2.75 output; read from the AWS pricing data file behind the page template (publication 2026-10-29T18:57:48Z)",
+    "url": "https://b0.p.awsstatic.com/pricing/2.0/meteredUnitMaps/bedrock/USD/current/bedrock.json",
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Nova 2.5 Sonic, other regions (speech in / out; text in / out)",
+    "price": "us-west-2: $3.183 / $12.733; $0.319 / $2.651. eu-north-1: $3.327 / $13.307; $0.363 / $2.992. ap-northeast-1: $3.741 / $14.964; $0.396 / $3.311",
+    "price_usd": null,
+    "unit": "per 1M tokens",
+    "conditions": "AWS pricing data file; outside US East, Nova 2.5 Sonic speech costs more than Nova 2 Sonic",
+    "url": "https://b0.p.awsstatic.com/pricing/2.0/meteredUnitMaps/bedrock/USD/current/bedrock.json",
+    "seen": "2026-10-30"
    }
   ],
   "pricing_source_url": "https://aws.amazon.com/bedrock/pricing/",
-  "pricing_seen": "2026-09-30",
+  "pricing_seen": "2026-10-30",
   "derived_notes": "No per-minute estimate and no speech-tokens-per-second statement for Nova (2) Sonic was found on the AWS pages opened (Bedrock pricing, model cards, Nova 2 user guide pages), so no per-minute conversion is given. The Bedrock pricing page fetched without JavaScript contains template placeholders instead of numbers; the numbers above come from the AWS pricing data file that the page template references (rate codes matched by RegionlessRateCode), which a browser would render. A headless-browser render (self-hosted Firecrawl) of the same page also left the placeholders unresolved, so no rendered-page check was possible.",
   "strengths": [
    {
@@ -5213,6 +5266,10 @@
    {
     "text": "Documented integrations: Strands BidiAgent, Bedrock AgentCore, LiveKit, Pipecat, and telephony via Twilio, Vonage and other SIP-based systems (AWS sample contact-center repository).",
     "url": "https://docs.aws.amazon.com/nova/latest/nova2-userguide/sonic-integrations.md"
+   },
+   {
+    "text": "Nova 2.5 Sonic: AWS states better reasoning, instruction following and tool-calling accuracy than Nova 2 Sonic, with lower latency (vendor claim); In-Region in us-east-1, us-west-2, eu-north-1 and ap-northeast-1.",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-5-sonic.md"
    }
   ],
   "limits": [
@@ -5231,6 +5288,10 @@
    {
     "text": "Service tiers: Standard supported; Priority, Flex and Reserved shown as not supported for Nova 2 Sonic.",
     "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-sonic.md"
+   },
+   {
+    "text": "Nova 2.5 Sonic: 256K-token context window (Nova 2 Sonic: 1M) and 64K max output; default quota of 20 concurrent InvokeModelWithBidirectionalStream sessions per account per Region, raisable through the AWS account team (Nova 2 Sonic's quota is not adjustable).",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-5-sonic.md"
    }
   ],
   "docs_url": "https://docs.aws.amazon.com/nova/latest/nova2-userguide/using-conversational-speech.html",
@@ -5269,9 +5330,10 @@
    "https://raw.githubusercontent.com/aws/agent-toolkit-for-aws/main/README.md",
    "https://raw.githubusercontent.com/awslabs/mcp/main/README.md",
    "https://docs.aws.amazon.com/llms.txt",
-   "https://registry.modelcontextprotocol.io/v0/servers"
+   "https://registry.modelcontextprotocol.io/v0/servers",
+   "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-5-sonic.md"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "agent_skills_repo_url": "https://github.com/aws/agent-toolkit-for-aws",
   "mcp_server": "official-hosted",
   "agent_skills_hint": null,
@@ -5393,7 +5455,16 @@
   ],
   "mcp_notes": "Cat B. Product scope: no Nova Sonic-specific MCP server found in awslabs/mcp README. Managed endpoint reached through the mcp-proxy-for-aws local proxy (uvx); registry lists io.github.aws/aws-mcp as preview. awslabs/mcp README says the Agent Toolkit for AWS is the successor to AWS Labs MCP servers. aws-samples/sample-nova-sonic-mcp exists but is a sample, not a product server. Auth mechanism (AWS ",
   "mcp_vendor_level": true,
-  "related_events": [],
+  "related_events": [
+   {
+    "id": "x-amazon-nova-2-5-sonic",
+    "date": "2026-10-05",
+    "event_type": "model_release",
+    "headline": "Amazon releases Nova 2.5 Sonic speech-to-speech model on Bedrock",
+    "evidence_grade": "primary",
+    "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-5-sonic.html"
+   }
+  ],
   "source_notes": [
    "https://registry.modelcontextprotocol.io/v0/servers (io.github.aws/aws-mcp)"
   ]
@@ -5406,12 +5477,13 @@
   "name": "Azure Voice Live API (Azure Speech in Foundry Tools)",
   "vendor": "Microsoft",
   "status": "active",
-  "status_notes": "Overview says pricing for the Voice Live API took effect on July 1, 2025; phi4-mm-realtime is marked preview in the model table. Docs titles use 'Foundry Tools' (Microsoft Foundry).",
+  "status_notes": "Overview says pricing for the Voice Live API took effect on July 1, 2025; phi4-mm-realtime is marked preview in the model table. Docs titles use 'Foundry Tools' (Microsoft Foundry). Release notes (Voice Live, July 2026): the Azure Realtime speech-to-speech model became generally available on 2026-07-25, and Voice Live API version 2026-07-15 became GA and the SDK default. On 2026-10-30 the overview (ms.date 2026-10-26) also lists gpt-6.1-sol (Pro) and gpt-6-luna (Lite).",
   "status_sources": [
-   "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live"
+   "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live",
+   "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/releasenotes"
   ],
-  "activity_evidence": "Voice Live overview page 'Last updated on 2026-09-29' lists gpt-realtime-2.1 and gpt-5.6 models; how-to shows WebSocket endpoint api-version=2026-04-10; Retail Prices API rows with effective dates up to 2026-09-01 (all opened 2026-09-30).",
-  "what_it_is": "A managed API from Azure Speech that bundles speech recognition, a selectable generative model (gpt-realtime family, GPT-5/4.1/4o variants, Phi), text to speech (standard or custom voices) and optional avatars; its events are designed for compatibility with the Azure OpenAI Realtime API.",
+  "activity_evidence": "Voice Live overview page 'Last updated on 2026-09-29' lists gpt-realtime-2.1 and gpt-5.6 models; how-to shows WebSocket endpoint api-version=2026-04-10; Retail Prices API rows with effective dates up to 2026-09-01 (all opened 2026-09-30). Overview page metadata updated_at 2026-10-27 (read 2026-10-30).",
+  "what_it_is": "A managed API from Azure Speech that bundles speech recognition, a selectable generative model (gpt-realtime family, GPT-5/4.1/4o variants, Phi), text to speech (standard or custom voices) and optional avatars; its events are designed for compatibility with the Azure OpenAI Realtime API. It also offers azure-realtime, Microsoft's own speech-to-speech model with azure-realtime-native voices (Pro tier), generally available since 2026-07-25.",
   "best_for": "Teams on Azure that want one managed endpoint combining Azure Speech recognition and voices (140+ STT locales, 600+ standard voices per Microsoft) with OpenAI or Phi models, optionally with custom voice or avatar.",
   "open_source": "no",
   "license": "proprietary",
@@ -5527,6 +5599,15 @@
     "conditions": "API also lists Pro LLM image input $0.005 / 1K (effective 2026-06-01) while the page shows Image: N/A",
     "url": "https://prices.azure.com/api/retail/prices?api-version=2023-01-01-preview&$filter=contains(meterName,'Voice%20Live')%20and%20armRegionName%20eq%20'eastus'%20and%20priceType%20eq%20'Consumption'",
     "seen": "2026-09-30"
+   },
+   {
+    "item": "Lite tier: native audio output",
+    "price": "$0.012 per 1K tokens ($12 per 1M)",
+    "price_usd": null,
+    "unit": "per 1M tokens",
+    "conditions": "Retail Prices API meter 'Voice Live API Lite - LLM Audio Output Tokens', East US, effective 2026-10-01; not shown on the page render of 2026-09-30",
+    "url": "https://prices.azure.com/api/retail/prices?api-version=2023-01-01-preview&$filter=contains(meterName,'Voice%20Live')%20and%20armRegionName%20eq%20'eastus'%20and%20priceType%20eq%20'Consumption'",
+    "seen": "2026-10-30"
    }
   ],
   "pricing_source_url": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/",
@@ -5548,6 +5629,10 @@
    {
     "text": "Regions page lists gpt-realtime-2.1 in 14 regions (australiaeast, canadacentral, canadaeast, centralindia, centralus, eastus, eastus2, francecentral, japaneast, northcentralus, southeastasia, swedencentral, uksouth, westus2); Vendor states -datazone variants process prompts and responses only within the data zone of the resource region.",
     "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/regions"
+   },
+   {
+    "text": "azure-realtime: Microsoft speech-to-speech model with azure-realtime-native voices; requires API version 2026-01-01-preview or later; listed in the Pro pricing tier.",
+    "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live-how-to"
    }
   ],
   "limits": [
@@ -5590,9 +5675,10 @@
    "https://learn.microsoft.com/azure/developer/azure-mcp-server/",
    "https://learn.microsoft.com/api/mcp",
    "https://raw.githubusercontent.com/microsoft/mcp/main/servers/Azure.Mcp.Server/README.md",
-   "https://github.com/MicrosoftDocs/mcp"
+   "https://github.com/MicrosoftDocs/mcp",
+   "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/releasenotes"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "agent_skills_repo_url": "https://github.com/microsoft/skills",
   "mcp_server": "official-local",
   "agent_skills_hint": null,
@@ -5679,7 +5765,16 @@
   ],
   "mcp_notes": "Cat B. Product scope: Voice Live tools not seen in README lines read. Vendor-level: Voice Live API not named in the README lines I grepped (only Speech STT/TTS and Communication Services SMS/email). Learn MCP (docs, hosted) may cover Voice Live docs; not checked.",
   "mcp_vendor_level": true,
-  "related_events": [],
+  "related_events": [
+   {
+    "id": "x-azure-realtime-ga",
+    "date": "2026-07-25",
+    "event_type": "model_release",
+    "headline": "Microsoft makes its own azure-realtime speech-to-speech model generally available in Azure Voice Live",
+    "evidence_grade": "primary",
+    "source": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/releasenotes"
+   }
+  ],
   "source_notes": []
  },
  {
@@ -5687,31 +5782,31 @@
   "category": "B",
   "subcategory": "speech-to-speech-api",
   "also_listed_in": [],
-  "name": "xAI Grok Speech to Speech API (grok-voice-think-fast-2.0)",
+  "name": "xAI Grok Speech to Speech API (grok-voice-3.0)",
   "vendor": "xAI (docs and pricing pages refer to the provider as SpaceXAI)",
   "status": "active",
-  "status_notes": "Release notes: grok-voice-think-fast-2.0 announced in the July section; grok-voice-latest routes to it from 2026-08-05. docs.x.ai pages call the provider 'SpaceXAI'; no rename announcement was opened.",
+  "status_notes": "Release notes, October 2026 section (no day given): grok-voice-3.0 is available at the same price as Grok Voice 2.0, grok-voice-latest now points to it, and grok-voice-2.0 is deprecated. The docs now name the previous model grok-voice-2.0; this entry recorded it as grok-voice-think-fast-2.0 on 2026-09-30. On 2026-10-30 the docs are headed SpaceXSI. Release notes: grok-voice-think-fast-2.0 announced in the July section; grok-voice-latest routes to it from 2026-08-05. docs.x.ai pages call the provider 'SpaceXAI'; no rename announcement was opened.",
   "status_sources": [
    "https://docs.x.ai/developers/release-notes.md"
   ],
   "activity_evidence": "Release notes page has September 2026 entries (Grok Voice Transcribe 2.0, Grok 4.7) and a July entry for Grok Voice Think Fast 2.0; speech-to-speech, SIP and pricing pages opened 2026-09-30.",
-  "what_it_is": "xAI's WebSocket Speech to Speech API (wss://api.x.ai/v1/realtime, model grok-voice-think-fast-2.0 via alias grok-voice-latest) for real-time voice agents with tools, WebRTC and SIP options; its docs state compatibility with the OpenAI Realtime API.",
+  "what_it_is": "xAI's WebSocket Speech to Speech API (wss://api.x.ai/v1/realtime, model grok-voice-3.0 via alias grok-voice-latest since October 2026) for real-time voice agents with tools, WebRTC and SIP options; its docs state compatibility with the OpenAI Realtime API.",
   "best_for": "Teams with existing OpenAI Realtime client code who want to try a Grok voice model by changing the base URL, or who want flat per-minute pricing with SIP or Twilio phone paths.",
   "open_source": "no",
   "license": "proprietary",
   "open_source_notes": "Hosted API and closed model; example apps are in xAI's cookbook repository (license not checked).",
   "pricing_model": "flat per-minute for speech-to-speech sessions, plus a separate text-input line as displayed",
-  "headline_price": "Speech to Speech (grok-voice-think-fast-2.0): $0.08 / min ($4.80 / hr); $0.004 / text input",
+  "headline_price": "Speech to Speech (grok-voice-3.0): $0.08 / min ($4.80 / hr); $0.004 / text input; the deprecated grok-voice-2.0 is listed at the same price",
   "pricing_gated": false,
   "pricing_details": [
    {
-    "item": "Speech to Speech (grok-voice-think-fast-2.0)",
+    "item": "Speech to Speech (grok-voice-3.0; same price as the deprecated grok-voice-2.0)",
     "price": "$0.08 / min ($4.80 / hr)",
     "price_usd": 0.08,
     "unit": "per minute",
     "conditions": "As displayed on the Voice Pricing table",
     "url": "https://docs.x.ai/developers/pricing.md",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
    },
    {
     "item": "Text input line shown with Speech to Speech",
@@ -5724,7 +5819,7 @@
    }
   ],
   "pricing_source_url": "https://docs.x.ai/developers/pricing.md",
-  "pricing_seen": "2026-09-30",
+  "pricing_seen": "2026-10-30",
   "derived_notes": "DERIVED: $0.08/min x 60 = $4.80/hr, matching the page's own hourly figure. No token rate is stated, so no token-to-minute conversion applies. The page does not define the '$0.004 / text input' unit (per message, per event or per 1K characters), so it is not converted.",
   "strengths": [
    {
@@ -5783,7 +5878,7 @@
    "https://docs.x.ai/.well-known/mcp/server-card.json",
    "https://api.github.com/orgs/xai-org/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "agent_skills_repo_url": "https://github.com/xai-org/plugin-marketplace",
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
@@ -5830,6 +5925,14 @@
     "headline": "xAI is rebranded SpaceXAI in July 2026 after SpaceX acquired it in February",
     "evidence_grade": "single-source",
     "source": "https://x.ai/news"
+   },
+   {
+    "id": "x-xai-grok-voice-3",
+    "date": "2026-10",
+    "event_type": "model_release",
+    "headline": "xAI makes grok-voice-3.0 available for Speech to Speech and deprecates grok-voice-2.0",
+    "evidence_grade": "primary",
+    "source": "https://docs.x.ai/developers/release-notes"
    }
   ],
   "source_notes": []
@@ -6007,11 +6110,12 @@
   "also_listed_in": [
    "A"
   ],
-  "status_notes": "2026-01-22: Wired and TechCrunch report that Google DeepMind signed a licensing agreement with Hume AI and is hiring CEO Alan Cowen and about seven engineers; financial terms were not disclosed. TechCrunch quotes new CEO Andrew Ettinger (joined the week before) describing Google's rights as a 'non-exclusive right to certain technologies' and says Hume will keep supplying its technology to other AI firms and release new models. This is a licensing and hiring deal, not an acquisition of the company. Wired cites $74M raised; TechCrunch cites close to $80M per PitchBook. Hume's own press release (PR Newswire, 2026-01-22) confirms it agreed to non-exclusively license certain technologies to Google and that co-founder Alan Cowen joined Google; it positions Hume as a research-infrastructure provider (voice data, evaluation, reinforcement learning) and said new versions of its text-to-speech and speech-to-speech models would follow 'in the coming weeks'. As of 2026-09-30 the docs list EVI 3 and EVI 4-mini as the supported versions; I found no newer EVI version.",
+  "status_notes": "Hume's API changelog entry of 2026-10-02 says it is sunsetting the TTS and EVI APIs: access ends 2026-11-13 at 12:01 a.m. EST, both stay supported until then, and account data is permanently deleted afterwards. On 2026-10-30 https://www.hume.ai/pricing redirected to the home page, so the prices below (seen 2026-09-30) can no longer be checked. 2026-01-22: Wired and TechCrunch report that Google DeepMind signed a licensing agreement with Hume AI and is hiring CEO Alan Cowen and about seven engineers; financial terms were not disclosed. TechCrunch quotes new CEO Andrew Ettinger (joined the week before) describing Google's rights as a 'non-exclusive right to certain technologies' and says Hume will keep supplying its technology to other AI firms and release new models. This is a licensing and hiring deal, not an acquisition of the company. Wired cites $74M raised; TechCrunch cites close to $80M per PitchBook. Hume's own press release (PR Newswire, 2026-01-22) confirms it agreed to non-exclusively license certain technologies to Google and that co-founder Alan Cowen joined Google; it positions Hume as a research-infrastructure provider (voice data, evaluation, reinforcement learning) and said new versions of its text-to-speech and speech-to-speech models would follow 'in the coming weeks'. As of 2026-09-30 the docs list EVI 3 and EVI 4-mini as the supported versions; I found no newer EVI version.",
   "status_sources": [
    "https://techcrunch.com/2026/01/22/google-reportedly-snags-up-team-behind-ai-voice-startup-hume-ai/",
    "https://www.wired.com/story/google-hires-hume-ai-ceo-licensing-deal-gemini/",
-   "https://www.prnewswire.com/news-releases/hume-ai-appoints-new-ceo-302668103.html"
+   "https://www.prnewswire.com/news-releases/hume-ai-appoints-new-ceo-302668103.html",
+   "https://dev.hume.ai/changelog"
   ],
   "open_source_notes": "Hosted service with no published core source. The hume-python-sdk, hume-typescript-sdk and hume-api-examples repos are MIT licensed (GitHub API).",
   "pricing_gated": false,
@@ -6110,6 +6214,10 @@
   ],
   "limits": [
    {
+    "text": "API access ends 2026-11-13 at 12:01 a.m. EST; account data is permanently deleted after that date.",
+    "url": "https://dev.hume.ai/changelog"
+   },
+   {
     "text": "EVI 3 supports English only; EVI 4-mini has no quick responses and requires a supplemental LLM (docs version comparison).",
     "url": "https://dev.hume.ai/docs/speech-to-speech-evi/configuration/evi-version.md"
    },
@@ -6146,23 +6254,24 @@
    "https://dev.hume.ai/docs/integrations/mcp",
    "https://dev.hume.ai/llms.txt",
    "https://dev.hume.ai/docs/integrations/mcp.md",
-   "https://api.github.com/orgs/HumeAI/repos"
+   "https://api.github.com/orgs/HumeAI/repos",
+   "https://dev.hume.ai/changelog"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [],
   "pricing_seen": "2026-09-30",
   "id": "hume-evi",
   "subcategory": "emotion-aware speech-to-speech voice API (Empathic Voice Interface)",
   "name": "Hume EVI (Empathic Voice Interface; EVI 3 and EVI 4-mini)",
   "vendor": "Hume AI",
-  "status": "active",
-  "activity_evidence": "GitHub HumeAI/hume-api-examples pushed 2026-09-30, hume-python-sdk and hume-typescript-sdk pushed 2026-08-17 and 2026-08-18; docs and pricing pages live 2026-09-30; docs changelog latest entries 2026-05-15 (TTS API) and 2026-04-10 (EVI API additions).",
+  "status": "deprecated",
+  "activity_evidence": "GitHub HumeAI/hume-api-examples pushed 2026-09-30, hume-python-sdk and hume-typescript-sdk pushed 2026-08-17 and 2026-08-18; docs and pricing pages live 2026-09-30; docs changelog latest entries 2026-05-15 (TTS API) and 2026-04-10 (EVI API additions). API changelog entry dated 2026-10-02 announces the sunset (read 2026-10-30).",
   "what_it_is": "Hosted real-time voice API over WebSocket in which Hume's speech-language model processes user speech, including prosody measures, and streams voice responses; current versions are EVI 3 (English) and EVI 4-mini (Octave 2 voices with a required supplemental LLM).",
   "best_for": "Teams building voice agents where expressive output and tone-of-voice signals matter, and who accept plan tiers with included minutes.",
   "open_source": "no",
   "license": "proprietary",
   "pricing_model": "Monthly plans (Free, Starter, Creator, Pro, Scale, Business; Enterprise custom) with included EVI minutes, then per-minute overage; EVI 4 mini metered at a half rate.",
-  "headline_price": "EVI 3 overage $0.06/min (Pro), $0.05/min (Scale), $0.04/min (Business); EVI 4 mini overage $0.03, $0.025, $0.02 per minute; plans from $0/month (5 EVI minutes) to $500/month (12,500 EVI minutes); Enterprise custom.",
+  "headline_price": "No current price page (hume.ai/pricing redirects to the home page on 2026-10-30). Last seen 2026-09-30: EVI 3 overage $0.06/min (Pro), $0.05/min (Scale), $0.04/min (Business); plans $0 to $500/month.",
   "pricing_source_url": "https://www.hume.ai/pricing",
   "docs_url": "https://dev.hume.ai/docs/speech-to-speech-evi/overview",
   "agent_skills_status": "none-found",
@@ -6182,6 +6291,14 @@
     "headline": "Google DeepMind signs licensing deal with Hume AI and hires its CEO plus about seven engineers",
     "evidence_grade": "reputable-press",
     "source": "https://www.wired.com/story/google-hires-hume-ai-ceo-licensing-deal-gemini/"
+   },
+   {
+    "id": "x-hume-sunsets-evi-tts",
+    "date": "2026-10-02",
+    "event_type": "shutdown",
+    "headline": "Hume AI announces the sunset of its EVI and text-to-speech APIs, with access ending November 13, 2026",
+    "evidence_grade": "primary",
+    "source": "https://dev.hume.ai/changelog"
    }
   ],
   "source_notes": []
@@ -7506,6 +7623,313 @@
     "headline": "Inworld announces it has acquired Ultravox, the voice-agent platform",
     "evidence_grade": "primary",
     "source": "https://inworld.ai/blog/inworld-acquires-ultravox"
+   }
+  ],
+  "source_notes": []
+ },
+ {
+  "id": "elevenlabs-realtime",
+  "category": "B",
+  "subcategory": "speech-to-speech API (managed cascade behind an OpenAI-Realtime-compatible protocol)",
+  "also_listed_in": [
+   "A"
+  ],
+  "name": "ElevenLabs Realtime (Eleven Realtime v1 Mini and v1 Max)",
+  "vendor": "ElevenLabs",
+  "status": "active",
+  "status_notes": "Released 2026-10-19 (changelog) and rolling out gradually: the docs say a workspace without access gets an error naming the missing feature. eleven_realtime_v1_mini is the default; eleven_realtime_v1_max reasons before it answers. ElevenLabs' compatibility FAQ says the models use a cascaded architecture, not a fused model.",
+  "status_sources": [
+   "https://elevenlabs.io/docs/changelog.md",
+   "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models.md",
+   "https://elevenlabs.io/docs/eleven-agents/guides/openai-realtime-compatibility.md"
+  ],
+  "activity_evidence": "Changelog entry dated 2026-10-19; models, realtime-models and compatibility pages and the API pricing page read 2026-10-30.",
+  "what_it_is": "ElevenLabs-managed voice agent models: each Realtime model bundles speech recognition, turn taking, an LLM and text-to-speech chosen and tuned by ElevenLabs. Used as a voice mode in ElevenAgents or through an API that speaks the OpenAI Realtime events over WebSocket.",
+  "best_for": "Teams that want one model choice instead of picking LLM, TTS and ASR, or that want to move an OpenAI Realtime client to ElevenLabs voices.",
+  "open_source": "no",
+  "license": "proprietary",
+  "open_source_notes": "Hosted service; the underlying component models are not public (compatibility FAQ).",
+  "pricing_model": "per-minute call rate plus Realtime model input, cached input and output tokens",
+  "headline_price": "$0.08 per minute plus LLM usage (API pricing page, Realtime v1 Mini and v1 Max); tokens per 1M: v1 Mini $0.20 input / $6.00 output, v1 Max $1.80 / $9.00; burst $0.16 per minute above the plan's concurrency limit",
+  "pricing_gated": false,
+  "pricing_details": [
+   {
+    "item": "Realtime v1 Mini",
+    "price": "$0.08 per minute + LLM usage; tokens $0.20 input / $6.00 output per 1M",
+    "price_usd": 0.08,
+    "unit": "per minute",
+    "conditions": "API pricing page card 'Speech to Speech'; OpenAI Realtime-compatible; no cached-input rate listed; $0.16 per minute above the plan's concurrency limit (4 to 40 concurrent calls by plan)",
+    "url": "https://elevenlabs.io/pricing/api",
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Realtime v1 Max",
+    "price": "$0.08 per minute + LLM usage; tokens $1.80 input / $9.00 output per 1M",
+    "price_usd": 0.08,
+    "unit": "per minute",
+    "conditions": "No cached-input rate listed; same $0.16 per minute burst rate above the concurrency limit",
+    "url": "https://elevenlabs.io/pricing/api",
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Billing statement",
+    "price": "Standard ElevenAgents per-minute rate plus input, cached input and output tokens at the Realtime model rates",
+    "price_usd": null,
+    "unit": "n/a",
+    "conditions": "Vendor states; per-token rates point to the general pricing page",
+    "url": "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models.md",
+    "seen": "2026-10-30"
+   }
+  ],
+  "pricing_source_url": "https://elevenlabs.io/pricing/api",
+  "pricing_seen": "2026-10-30",
+  "derived_notes": "No per-minute total is derived: token use per minute depends on the conversation, and the pricing page lists no cached-input rate.",
+  "strengths": [
+   {
+    "text": "OpenAI Realtime wire compatibility: the same client and server events over WebSocket; the backend mints a short-lived client secret for the browser.",
+    "url": "https://elevenlabs.io/docs/eleven-agents/guides/openai-realtime-compatibility.md"
+   },
+   {
+    "text": "In ElevenAgents, the system prompt, voice, tools, knowledge base and turn settings work as in Custom mode; if the Realtime model times out or errors, the agent falls back to backup LLMs.",
+    "url": "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models.md"
+   }
+  ],
+  "limits": [
+   {
+    "text": "Mini is not available under Zero Retention Mode or HIPAA; Max is not available in the India or Singapore data residency environments and needs a token limit of at least 1,024.",
+    "url": "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models.md"
+   },
+   {
+    "text": "Not available with a custom LLM or Amazon Bedrock, for Speech Engine agents, or for text-only agents; Realtime agents can transfer only to other Realtime agents.",
+    "url": "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models.md"
+   }
+  ],
+  "docs_url": "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models",
+  "agent_skills_repo_url": "https://github.com/elevenlabs/skills",
+  "mcp_server": "official-hosted",
+  "agent_skills_hint": null,
+  "mcp_hint": null,
+  "sources": [
+   "https://elevenlabs.io/docs/changelog.md",
+   "https://elevenlabs.io/docs/eleven-agents/customization/realtime-models.md",
+   "https://elevenlabs.io/docs/eleven-agents/guides/openai-realtime-compatibility.md",
+   "https://elevenlabs.io/docs/overview/models.md",
+   "https://elevenlabs.io/pricing/api"
+  ],
+  "checked_at": "2026-10-30",
+  "unverified_fields": [
+   "per-token rates for Realtime v1 Mini and v1 Max",
+   "latency (only vendor time-to-first-audio claims seen)"
+  ],
+  "agent_skills_status": "official-repo",
+  "agent_skills_repos": [
+   {
+    "url": "https://github.com/elevenlabs/plugin",
+    "kind": "dedicated-skills-or-plugin-repo",
+    "is_official": true,
+    "skill_md_count": 42,
+    "last_commit": "2026-09-07",
+    "license": "none found",
+    "covers": [
+     "ElevenLabs Agents Architect",
+     "ElevenLabs TTS/STT/music/dubbing",
+     "hosted MCP server"
+    ],
+    "official_evidence_url": "https://elevenlabs.io/docs/eleven-agents/operate/architect/external-assistants.md",
+    "install_hint": "/plugin marketplace add elevenlabs/plugin",
+    "sources": [
+     "https://api.github.com/repos/elevenlabs/plugin",
+     "https://api.github.com/repos/elevenlabs/plugin/commits/main",
+     "https://api.github.com/repos/elevenlabs/plugin/git/trees/1c5f1de18e1d28a3c84a9aa2146a6a5e9484488c?recursive=1",
+     "https://api.github.com/repos/elevenlabs/plugin/readme",
+     "https://api.github.com/orgs/elevenlabs",
+     "https://elevenlabs.io/docs/eleven-agents/operate/architect/external-assistants.md"
+    ],
+    "source_notes": [
+     "https://raw.githubusercontent.com/elevenlabs/plugin/1c5f1de18e/<each SKILL.md> (frontmatter parsed for 42 of 42 files)"
+    ]
+   },
+   {
+    "url": "https://github.com/elevenlabs/skills",
+    "kind": "dedicated-skills-or-plugin-repo",
+    "is_official": true,
+    "skill_md_count": 11,
+    "last_commit": "2026-09-29",
+    "license": "MIT",
+    "covers": [
+     "ElevenLabs TTS",
+     "ElevenLabs Agents",
+     "Scribe STT"
+    ],
+    "official_evidence_url": "https://api.github.com/orgs/elevenlabs",
+    "install_hint": "npx skills add elevenlabs/skills",
+    "sources": [
+     "https://api.github.com/repos/elevenlabs/skills",
+     "https://api.github.com/repos/elevenlabs/skills/commits/main",
+     "https://api.github.com/repos/elevenlabs/skills/git/trees/279173d974ea5cf0c4c4f91d4e7e65202b406dab?recursive=1",
+     "https://api.github.com/repos/elevenlabs/skills/readme",
+     "https://api.github.com/orgs/elevenlabs"
+    ],
+    "source_notes": [
+     "https://raw.githubusercontent.com/elevenlabs/skills/279173d974/<each SKILL.md> (frontmatter parsed for 11 of 11 files)"
+    ]
+   }
+  ],
+  "agent_skills_scope_note": "Vendor-level census (K1 vendor key 'ElevenLabs'): the primary repo is listed for the vendor, not confirmed per product; see 'covers' in agent_skills_repos.",
+  "mcp_server_urls": [
+   "https://api.elevenlabs.io/v1/mcp",
+   "https://api.us.elevenlabs.io/v1/mcp",
+   "https://elevenlabs.io/mcp",
+   "https://elevenlabs.io/docs/eleven-agents/operate/hosted-mcp"
+  ],
+  "mcp_notes": "Cat B. Vendor-wide ElevenLabs hosted MCP server (see elevenlabs-agents); no Realtime-specific server found.",
+  "mcp_vendor_level": true,
+  "related_events": [
+   {
+    "id": "x-elevenlabs-realtime",
+    "date": "2026-10-19",
+    "event_type": "launch",
+    "headline": "ElevenLabs launches Eleven Realtime v1 Mini and v1 Max, with an OpenAI Realtime-compatible API",
+    "evidence_grade": "primary",
+    "source": "https://elevenlabs.io/docs/changelog"
+   }
+  ],
+  "source_notes": []
+ },
+ {
+  "category": "B",
+  "also_listed_in": [],
+  "status_notes": "PolyAI's blog introduced Dialog-RSN-1 on 2026-07-30 for existing customers. On 2026-10-30 the pricing page offers a self-serve API with a launch credit; the date it opened was not established. The limits page applies its concurrency and session limits from 2026-10-20.",
+  "status_sources": [
+   "https://poly.ai/blog/polyai-dialog-rsn-1",
+   "https://poly.ai/pricing",
+   "https://docs.poly.ai/api-reference/dialog-rsn-1/limits.md"
+  ],
+  "derived_notes": "Left out of the cost comparison while voice output is promotional and its later price is unpublished.",
+  "agent_skills_repo_url": "https://github.com/polyai/adk",
+  "mcp_server": "official-hosted",
+  "agent_skills_hint": null,
+  "mcp_hint": null,
+  "checked_at": "2026-10-30",
+  "unverified_fields": [
+   "voice output price after 19 Nov",
+   "date the self-serve API opened"
+  ],
+  "pricing_gated": false,
+  "pricing_details": [
+   {
+    "item": "Connected time",
+    "price": "$0.02 per minute",
+    "price_usd": 0.02,
+    "unit": "per minute, billed per second",
+    "conditions": "Metered from WebSocket open to close; turn-detection tokens included",
+    "url": "https://docs.poly.ai/api-reference/dialog-rsn-1/limits.md",
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Text tokens",
+    "price": "$2.00 input / $0.20 cached input / $5.00 output",
+    "price_usd": null,
+    "unit": "per 1M tokens",
+    "conditions": "Text output is billed as output tokens",
+    "url": "https://poly.ai/pricing",
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Voice output",
+    "price": "Free until 19 Nov",
+    "price_usd": null,
+    "unit": "n/a",
+    "conditions": "Promotional; no later price published and the year is not shown",
+    "url": "https://poly.ai/pricing",
+    "seen": "2026-10-30"
+   }
+  ],
+  "open_source_notes": "Hosted API and closed model.",
+  "id": "polyai-dialog-rsn-1",
+  "subcategory": "speech-to-speech API (audio-native dialog model behind a Realtime-style protocol)",
+  "name": "PolyAI Dialog-RSN-1 API",
+  "vendor": "PolyAI",
+  "status": "active",
+  "activity_evidence": "Blog datePublished 2026-07-30 (dateModified 2026-10-06); pricing page, quickstart and limits page read 2026-10-30.",
+  "what_it_is": "PolyAI's audio-native dialog model as an API: one WebSocket session (wss://api.studio.poly.ai/v1/realtime) in which the model hears the caller, handles turn taking and tool calls, and replies with server-voiced speech or text for your own TTS.",
+  "best_for": "English-language voice agents that want a model with built-in turn taking and a Realtime-style protocol, billed per connected minute.",
+  "open_source": "no",
+  "license": "proprietary",
+  "pricing_model": "per connected minute (billed per second) plus text tokens",
+  "headline_price": "$0.02 per connected minute, billed per second; text tokens $2.00 input / $0.20 cached / $5.00 output per 1M; voice output free until Nov 19 (no later price published)",
+  "pricing_source_url": "https://poly.ai/pricing",
+  "pricing_seen": "2026-10-30",
+  "strengths": [
+   {
+    "text": "Existing OpenAI Realtime clients keep their auth and need a new URL and key (Bearer auth accepted).",
+    "url": "https://docs.poly.ai/dialog-rsn-1/quickstart.md"
+   },
+   {
+    "text": "Audio in as PCM16 at 24 kHz (default), 16 kHz or other rates, or G.711 mu-law and A-law at 8 kHz; output as server speech or text.",
+    "url": "https://docs.poly.ai/api-reference/dialog-rsn-1/limits.md"
+   }
+  ],
+  "limits": [
+   {
+    "text": "English only; 2 concurrent sessions on the sign-up credit, 10 with a card on file; 60-minute sessions; 32,768-token context window including audio.",
+    "url": "https://docs.poly.ai/api-reference/dialog-rsn-1/limits.md"
+   },
+   {
+    "text": "Keys stay server-side: the docs note a browser's WebSocket cannot set the auth header, so browser apps need a relay.",
+    "url": "https://docs.poly.ai/dialog-rsn-1/quickstart.md"
+   }
+  ],
+  "docs_url": "https://docs.poly.ai/dialog-rsn-1/overview",
+  "sources": [
+   "https://poly.ai/pricing",
+   "https://poly.ai/blog/polyai-dialog-rsn-1",
+   "https://docs.poly.ai/dialog-rsn-1/quickstart.md",
+   "https://docs.poly.ai/api-reference/dialog-rsn-1/limits.md",
+   "https://docs.poly.ai/llms.txt"
+  ],
+  "agent_skills_status": "sdk-or-examples-repo-only",
+  "agent_skills_repos": [
+   {
+    "url": "https://github.com/polyai/adk",
+    "kind": "sdk-or-examples-repo-containing-skills",
+    "is_official": true,
+    "skill_md_count": 5,
+    "last_commit": "2026-09-28",
+    "license": "Apache-2.0",
+    "covers": [
+     "PolyAI"
+    ],
+    "official_evidence_url": "https://docs.poly.ai/llms-full.txt",
+    "install_hint": null,
+    "sources": [
+     "https://api.github.com/repos/polyai/adk",
+     "https://api.github.com/repos/polyai/adk/commits/main",
+     "https://api.github.com/repos/polyai/adk/git/trees/0c0412eb3c32fa70693a7f8a60d0fa012bb2ebce?recursive=1",
+     "https://api.github.com/repos/polyai/adk/readme",
+     "https://api.github.com/orgs/polyai",
+     "https://docs.poly.ai/llms-full.txt"
+    ],
+    "source_notes": [
+     "https://raw.githubusercontent.com/polyai/adk/0c0412eb3c/<each SKILL.md> (frontmatter parsed for 5 of 5 files)"
+    ]
+   }
+  ],
+  "agent_skills_scope_note": "Vendor-level census (K1 vendor key 'PolyAI'): the primary repo is listed for the vendor, not confirmed per product; see 'covers' in agent_skills_repos.",
+  "mcp_server_urls": [
+   "https://docs.poly.ai/mcp/overview",
+   "https://docs.poly.ai/mcp/quickstart"
+  ],
+  "mcp_notes": "Cat B. Vendor-wide PolyAI hosted MCP servers (see polyai); no API-specific server found.",
+  "mcp_vendor_level": true,
+  "related_events": [
+   {
+    "id": "x-polyai-dialog-rsn-1",
+    "date": "2026-07-30",
+    "event_type": "model_release",
+    "headline": "PolyAI introduces Dialog-RSN-1, an audio-native dialog model; a self-serve API is on its pricing page by October 30",
+    "evidence_grade": "primary",
+    "source": "https://poly.ai/blog/polyai-dialog-rsn-1"
    }
   ],
   "source_notes": []
@@ -10468,7 +10892,7 @@
   "name": "Deepgram Nova-3 (streaming)",
   "vendor": "Deepgram",
   "status": "active",
-  "status_notes": "",
+  "status_notes": "Changelog 2026-10-23: model=nova-3&language=multi now serves a 55-language multilingual model (batch and streaming) with an optional language_hint parameter; pin version=2026-01-27.9107 (batch) or 2026-01-27.9249 (streaming) to keep the previous 10-language model; self-hosted stays on the 10-language model. Changelog entries of October 2026 add mid-stream keyterm updates through Configure messages on /v1/listen, with ConfigureSuccess or ConfigureFailure replies (2026-10-19).",
   "status_sources": [],
   "activity_evidence": "Deepgram changelog entries dated 2026-09-24 (improved Nova-3 models for Flemish, German (Switzerland), Lithuanian, Portuguese) and 2026-09-25 (Flux numerals toggle); pricing page opened 2026-09-30.",
   "what_it_is": "Deepgram's general-purpose speech-to-text model (nova-3), used for streaming over the /v1/listen WebSocket and for pre-recorded audio; it returns interim and final transcripts and has no model-native turn detection.",
@@ -10625,9 +11049,10 @@
    "https://developers.deepgram.com/_mcp/server",
    "https://developers.deepgram.com/developer-tools/agentic-tools.md",
    "https://developers.deepgram.com/developer-tools/cli/mcp-server.md",
-   "https://developers.deepgram.com/llms.txt"
+   "https://developers.deepgram.com/llms.txt",
+   "https://developers.deepgram.com/changelog/2026/10/23"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [],
   "agent_skills_status": "official-repo",
   "agent_skills_repos": [
@@ -10860,6 +11285,14 @@
     "headline": "Deepgram acquires OfOne, a drive-thru voice AI startup, and announces a $130M Series C",
     "evidence_grade": "reputable-press",
     "source": "https://siliconangle.com/2026/01/13/real-time-voice-ai-unicorn-deepgram-raises-130m-streamline-human-machine-interactions/"
+   },
+   {
+    "id": "x-deepgram-nova-3-multilingual-55",
+    "date": "2026-10-23",
+    "event_type": "model_release",
+    "headline": "Deepgram moves Nova-3 multilingual to a 55-language model and adds language hints",
+    "evidence_grade": "primary",
+    "source": "https://developers.deepgram.com/changelog/2026/10/23"
    }
   ],
   "source_notes": []
@@ -11265,7 +11698,7 @@
   "name": "AssemblyAI streaming speech-to-text (Universal-3.6 Pro Streaming, Universal-Streaming)",
   "vendor": "AssemblyAI",
   "status": "active",
-  "status_notes": "The docs model-selection page (opened 2026-09-30) lists universal-3-6-pro as the recommended streaming model and universal-3-5-pro as the previous model, still supported; AssemblyAI's pricing and models reference pages are stamped 'Last updated: 2026-09-28' and state the old v2 streaming endpoint (wss://api.assemblyai.com/v2/realtime/ws) is inactive.",
+  "status_notes": "The docs model-selection page (opened 2026-09-30) lists universal-3-6-pro as the recommended streaming model and universal-3-5-pro as the previous model, still supported; AssemblyAI's pricing and models reference pages are stamped 'Last updated: 2026-09-28' and state the old v2 streaming endpoint (wss://api.assemblyai.com/v2/realtime/ws) is inactive. The streaming docs say speech_model is optional and a session defaults to universal-3-6-pro when it is omitted. LiveKit Agents 1.8.4 (livekit-plugins-assemblyai) and Pipecat 1.13.0 both default their AssemblyAI STT to universal-3-6-pro (tagged source). AssemblyAI's model reference calls universal-3-6-pro the recommended default for real-time voice AI.",
   "status_sources": [
    "https://www.assemblyai.com/docs/streaming/select-the-speech-model",
    "https://www.assemblyai.com/pricing",
@@ -11404,9 +11837,12 @@
    "https://github.com/AssemblyAI/assemblyai-mcp",
    "https://assemblyai.com/docs/mcp",
    "https://www.assemblyai.com/docs/coding-agent-prompts",
-   "https://www.assemblyai.com/llms.txt"
+   "https://www.assemblyai.com/llms.txt",
+   "https://www.assemblyai.com/docs/streaming/select-the-speech-model.md",
+   "https://raw.githubusercontent.com/livekit/agents/livekit-agents@1.8.4/livekit-plugins/livekit-plugins-assemblyai/livekit/plugins/assemblyai/stt.py",
+   "https://raw.githubusercontent.com/pipecat-ai/pipecat/v1.13.0/src/pipecat/services/assemblyai/stt.py"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "universal-3-5-pro streaming price (not on the rate card opened)"
   ],
@@ -11751,10 +12187,11 @@
   "name": "Gladia real-time STT (Solaria-1)",
   "vendor": "Gladia",
   "status": "active",
-  "status_notes": "Gladia changelog: Solaria-3 announced 2026-06-10 (docs: pre-recorded only); entry dated 2026-07-03 says billing moves from monthly subscription to a prepaid credit wallet with no change to per-hour rates.",
+  "status_notes": "Gladia changelog: Solaria-3 announced 2026-06-10 (docs: pre-recorded only); entry dated 2026-07-03 says billing moves from monthly subscription to a prepaid credit wallet with no change to per-hour rates. OVH Groupe's press release of 2026-07-31 says it completed the acquisition of Gladia that day; the deal was announced on 2026-06-11.",
   "status_sources": [
    "https://www.gladia.io/changelog",
-   "https://docs.gladia.io/chapters/introduction/models.md"
+   "https://docs.gladia.io/chapters/introduction/models.md",
+   "https://corporate.ovhcloud.com/en/newsroom/news/ovh-group-gladia-closing-acquisition-voice-ai/"
   ],
   "activity_evidence": "Gladia changelog entries dated 2026-09-14 and 2026-09-09 (SDK updates for real-time transcription).",
   "what_it_is": "Hosted speech-to-text API with a live WebSocket endpoint; solaria-1 is the default model and the one that supports live transcription (100+ languages, code-switching), while solaria-3 is pre-recorded only.",
@@ -11865,7 +12302,7 @@
    "https://docs.gladia.io/llms.txt",
    "https://api.github.com/orgs/gladiaio/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [],
   "agent_skills_status": "official-repo",
   "agent_skills_repos": [
@@ -11909,6 +12346,14 @@
     "headline": "Gladia says it is joining OVH Groupe and will keep its brand and API",
     "evidence_grade": "primary",
     "source": "https://www.gladia.io/blog/gladia-joins-ovh-groupe"
+   },
+   {
+    "id": "x-ovh-completes-gladia",
+    "date": "2026-07-31",
+    "event_type": "acquisition",
+    "headline": "OVH Groupe completes its acquisition of Gladia, announced on June 11, 2026",
+    "evidence_grade": "primary",
+    "source": "https://corporate.ovhcloud.com/en/newsroom/news/ovh-group-gladia-closing-acquisition-voice-ai/"
    }
   ],
   "source_notes": [
@@ -12413,7 +12858,7 @@
     "url": "https://developers.openai.com/api/docs/models/gpt-realtime-whisper"
    },
    {
-    "text": "Rate limits for gpt-live-transcribe by usage tier: Tier 1 500 RPM / 60,000 TPM, Tier 2 2,000 RPM / 210,000 TPM; Free not supported.",
+    "text": "Rate limits for gpt-live-transcribe by usage tier (tiers renamed 2026-10-06): Build 2,000 RPM / 210,000 TPM; Launch 10,000 / 600,000; Grow 10,000 / 780,000.",
     "url": "https://developers.openai.com/api/docs/models/gpt-live-transcribe"
    }
   ],
@@ -12464,7 +12909,7 @@
    "https://platform.openai.com/docs/llms.txt",
    "https://api.github.com/orgs/openai/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "language_count (gpt-live-transcribe, gpt-transcribe)",
    "release dates of the gpt-live-transcribe / gpt-realtime-whisper / gpt-transcribe models",
@@ -14184,8 +14629,8 @@
  {
   "category": "D",
   "also_listed_in": [],
-  "status": "active",
-  "status_notes": "Maintained but quiet for STT: no newer Kyutai STT checkpoint was seen; see activity_evidence.",
+  "status": "dormant",
+  "status_notes": "kyutai-labs/delayed-streams-modeling, the linked repository, has no commits since 2026-01-26 (shallow git clone on 2026-10-30) and no deprecation or archive notice; the moshi repository that hosts moshi-server last changed on 2026-05-16. Marked dormant, as the Kyutai TTS entry from the same repository is; a signal to check, not a verdict. Maintained but quiet for STT: no newer Kyutai STT checkpoint was seen; see activity_evidence.",
   "status_sources": [
    "https://github.com/kyutai-labs/delayed-streams-modeling"
   ],
@@ -14193,7 +14638,7 @@
   "mcp_server": "none-found",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [],
   "derived_notes": "",
   "pricing_gated": false,
@@ -15121,7 +15566,7 @@
   "name": "ElevenLabs TTS models (Eleven v4, v4 Turbo, v3, Flash v2.5, Multilingual v2)",
   "vendor": "ElevenLabs",
   "status": "active",
-  "status_notes": "Docs changelog dated 2026-09-28 announces Eleven v4 (eleven_v4) and Eleven v4 Turbo (eleven_v4_turbo). The models page lists eleven_turbo_v2_5 and eleven_turbo_v2 as deprecated (replacements eleven_flash_v2_5 and eleven_flash_v2) and describes Eleven v3 as the previous generation. ElevenLabs Agents / ElevenAgents pricing is category A and is not covered here.",
+  "status_notes": "Docs changelog dated 2026-09-28 announces Eleven v4 (eleven_v4) and Eleven v4 Turbo (eleven_v4_turbo). The models page lists eleven_turbo_v2_5 and eleven_turbo_v2 as deprecated (replacements eleven_flash_v2_5 and eleven_flash_v2) and describes Eleven v3 as the previous generation. ElevenLabs Agents / ElevenAgents pricing is category A and is not covered here. On 2026-10-30 the API pricing page shows no v4 promotion. Changelog 2026-10-05: the default conversational TTS model for ElevenAgents changed from eleven_flash_v2 to eleven_v4_turbo. Changelog 2026-10-26: Text to Speech and Text to Dialogue accept clone_strength for v4 Professional Voice Clones.",
   "status_sources": [
    "https://elevenlabs.io/docs/changelog.md",
    "https://elevenlabs.io/docs/overview/models"
@@ -15133,7 +15578,7 @@
   "license": "proprietary",
   "open_source_notes": "Hosted service; no published model weights or source found on the pages opened. SDK repositories were not checked.",
   "pricing_model": "Per-1K-character API rates by model in USD, with monthly subscription plans that include characters and optional prepaid Pay As You Go top-ups.",
-  "headline_price": "Per 1K characters on the API pricing page: Flash / Turbo $0.04; v3 Conversational $0.04; v3 $0.08; v2 Multilingual $0.08; v4 $0.08 list ($0.022 promo until Oct 12); v4 Turbo $0.04 list ($0.011 promo until Oct 12).",
+  "headline_price": "Per 1K characters on the API pricing page: Flash / Turbo $0.04; v3 Conversational $0.04; v3 $0.08; v2 Multilingual $0.08; v4 $0.08; v4 Turbo $0.04.",
   "pricing_gated": false,
   "pricing_details": [
    {
@@ -15141,36 +15586,18 @@
     "price": "$0.08 per 1K characters",
     "price_usd": 0.08,
     "unit": "per 1K characters",
-    "conditions": "Shown struck through next to the promotional price on the API pricing page. Docs: 10,000 character limit per request; available via the Text to Dialogue API.",
+    "conditions": "The only price shown on 2026-10-30; the promotion seen on 2026-09-30 has ended. Docs: 10,000 character limit per request; available via the Text to Dialogue API.",
     "url": "https://elevenlabs.io/pricing/api",
-    "seen": "2026-09-30"
-   },
-   {
-    "item": "Eleven v4 (eleven_v4), promotional price",
-    "price": "$0.022 per 1K characters ('72% off until Oct 12')",
-    "price_usd": 0.022,
-    "unit": "per 1K characters",
-    "conditions": "End date shown as Oct 12 with no year. Characters included per plan while the promo is shown (Free/PAYG, Starter, Creator, Pro, Scale, Business): 10,000; 273,000; 1,000,000; 4,500,000; 13,591,000; 45,000,000.",
-    "url": "https://elevenlabs.io/pricing/api",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
    },
    {
     "item": "Eleven v4 Turbo (eleven_v4_turbo), list price",
     "price": "$0.04 per 1K characters",
     "price_usd": 0.04,
     "unit": "per 1K characters",
-    "conditions": "Shown struck through next to the promotional price. Docs: served through the Text to Dialogue WebSocket.",
+    "conditions": "The only price shown on 2026-10-30; the promotion seen on 2026-09-30 has ended. Docs: served through the Text to Dialogue WebSocket.",
     "url": "https://elevenlabs.io/pricing/api",
-    "seen": "2026-09-30"
-   },
-   {
-    "item": "Eleven v4 Turbo (eleven_v4_turbo), promotional price",
-    "price": "$0.011 per 1K characters ('72% off until Oct 12')",
-    "price_usd": 0.011,
-    "unit": "per 1K characters",
-    "conditions": "Characters included per plan while the promo is shown (Free/PAYG to Business): 20,000; 545,000; 2,000,000; 9,000,000; 27,182,000; 90,000,000.",
-    "url": "https://elevenlabs.io/pricing/api",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
    },
    {
     "item": "Eleven v3 (eleven_v3)",
@@ -15246,8 +15673,8 @@
    }
   ],
   "pricing_source_url": "https://elevenlabs.io/pricing/api",
-  "pricing_seen": "2026-09-30",
-  "derived_notes": "No unit conversion applied. The API pricing page shows its own per-minute estimates (about 1,000 characters per minute). Check (DERIVED): the page's 'characters included' equals plan price divided by the per-1K price (Creator $22 / $0.08 x 1,000 = 275,000 for v3; $22 / $0.022 x 1,000 = 1,000,000 for v4), so the v4 and v4 Turbo inclusions reflect the promotional rate; at the list price Starter $6 / $0.08 x 1,000 = 75,000 v4 characters. Two framings exist on ElevenLabs pages and are kept separate: USD per 1K characters (API pricing FAQ: 'API usage is billed in US dollars, not credits') and monthly credits (main pricing page). ElevenLabs Agents / Speech Engine per-minute pricing shown on the same API page is category A and not recorded.",
+  "pricing_seen": "2026-10-30",
+  "derived_notes": "No unit conversion applied. The API pricing page shows its own per-minute estimates (about 1,000 characters per minute). Check (DERIVED): the page's 'characters included' equals plan price divided by the per-1K price (Creator $22 / $0.08 x 1,000 = 275,000 for v3; $22 / $0.022 x 1,000 = 1,000,000 for v4), so the v4 and v4 Turbo inclusions reflect the promotional rate; at the list price Starter $6 / $0.08 x 1,000 = 75,000 v4 characters. Two framings exist on ElevenLabs pages and are kept separate: USD per 1K characters (API pricing FAQ: 'API usage is billed in US dollars, not credits') and monthly credits (main pricing page). ElevenLabs Agents / Speech Engine per-minute pricing shown on the same API page is category A and not recorded. (The v4 promotion described above was no longer shown on 2026-10-30.)",
   "strengths": [
    {
     "text": "Models page lists eleven_v4 and eleven_v4_turbo (90+ languages; vendor states median inference latency of about 100ms for v4 Turbo), eleven_flash_v2_5 (32 languages; vendor states about 75ms), eleven_v3_conversational (70+ languages; about 280ms) and eleven_multilingual_v2 (29 languages). Latency figures exclude application and network latency. The model-selection list names eleven_v4_turbo for low latency and for Agents use.",
@@ -15315,10 +15742,9 @@
    "https://github.com/elevenlabs/elevenlabs-mcp",
    "https://registry.modelcontextprotocol.io/v0/servers?search=elevenlabs"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
-   "voice_count (TTS voice library size not stated on the TTS pages opened)",
-   "promo_end_year (page says 'Oct 12' without a year)"
+   "voice_count (TTS voice library size not stated on the TTS pages opened)"
   ],
   "agent_skills_status": "official-repo",
   "agent_skills_repos": [
@@ -15397,7 +15823,7 @@
   "name": "Cartesia Sonic TTS (Sonic-3.6)",
   "vendor": "Cartesia",
   "status": "active",
-  "status_notes": "Docs mark Sonic 3.6 (sonic-3.6, snapshot sonic-3.6-2026-08-27) as Generally Available. sonic-3.5 and sonic-3 remain served; sonic-2 and sonic-turbo (all snapshots) and snapshot sonic-3-2025-10-27 stop working after 2026-10-20; sonic, sonic-english and sonic-multilingual were sunset on 2026-06-01. Cartesia Managed Agents (category A) are not covered here.",
+  "status_notes": "Docs mark Sonic 3.6 (sonic-3.6, snapshot sonic-3.6-2026-08-27) as Generally Available. sonic-3.5 and sonic-3 remain served; sonic-2 and sonic-turbo (all snapshots) and snapshot sonic-3-2025-10-27 stop working after 2026-10-20; sonic, sonic-english and sonic-multilingual were sunset on 2026-06-01. Cartesia Managed Agents (category A) are not covered here. Cartesia's changelog scheduled sonic-2, sonic-turbo and sonic-3-2025-10-27 to stop after 2026-10-20. On 2026-10-30 the older models page still labels those snapshots 'Sunsets Oct 20, 2026' and says sonic-2 and sonic-turbo will stop working after that date, so the switch-off itself was not confirmed.",
   "status_sources": [
    "https://docs.cartesia.ai/build-with-cartesia/tts-models/latest.md",
    "https://docs.cartesia.ai/build-with-cartesia/tts-models/older-models.md",
@@ -15575,7 +16001,7 @@
    "https://docs.cartesia.ai/tools/ai/mcp.md",
    "https://api.github.com/orgs/cartesia-ai/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "voice_count (not stated on the pages opened)",
    "latency_measurement_definition (vendor 'sub-90ms' claim has no stated method)"
@@ -16441,6 +16867,118 @@
   "source_notes": []
  },
  {
+  "id": "assemblyai-tts",
+  "category": "E",
+  "subcategory": "hosted streaming TTS (from an STT vendor)",
+  "also_listed_in": [],
+  "name": "AssemblyAI Text-to-Speech API (AssemblyAI-TTS-1)",
+  "vendor": "AssemblyAI",
+  "status": "active",
+  "status_notes": "AssemblyAI's model reference gives 2026-10-27 as the launch date and says public docs are not yet out, so it links the product page.",
+  "status_sources": [
+   "https://www.assemblyai.com/llms/models.md"
+  ],
+  "activity_evidence": "Launched 2026-10-27 per the model reference; model and pricing references read 2026-10-30.",
+  "what_it_is": "AssemblyAI text-to-speech with a streaming WebSocket mode for voice agent loops and an HTTP mode that returns a full file, in six languages (English, Spanish, French, German, Italian, Portuguese).",
+  "best_for": "Teams already on AssemblyAI streaming STT that want STT, LLM Gateway and TTS on one API key.",
+  "open_source": "no",
+  "license": "proprietary",
+  "open_source_notes": "Hosted API.",
+  "pricing_model": "per input character",
+  "headline_price": "$15 per 1M input characters",
+  "pricing_gated": false,
+  "pricing_details": [
+   {
+    "item": "AssemblyAI-TTS-1",
+    "price": "$15 per 1M characters",
+    "price_usd": 15.0,
+    "unit": "per 1M input characters",
+    "conditions": "Billed on the input characters sent to the API",
+    "url": "https://www.assemblyai.com/llms/pricing.md",
+    "seen": "2026-10-30"
+   }
+  ],
+  "pricing_source_url": "https://www.assemblyai.com/llms/pricing.md",
+  "pricing_seen": "2026-10-30",
+  "derived_notes": "DERIVED: 600 characters per minute (the cascade assumption on the landscape page) x $15/1M = $0.009 per minute.",
+  "strengths": [
+   {
+    "text": "Streaming (WebSocket) text in and audio out for the agent loop; HTTP for previews; a voice library of 4,000+ voices and voice cloning in the dashboard.",
+    "url": "https://www.assemblyai.com/llms/models.md"
+   }
+  ],
+  "limits": [
+   {
+    "text": "Six languages; the language setting controls the accent, so the voice's language should match the text.",
+    "url": "https://www.assemblyai.com/llms/models.md"
+   },
+   {
+    "text": "Concurrency limits on paid accounts are not published.",
+    "url": "https://www.assemblyai.com/llms/models.md"
+   }
+  ],
+  "docs_url": "https://www.assemblyai.com/products/text-to-speech",
+  "agent_skills_repo_url": "https://github.com/AssemblyAI/assemblyai-skill",
+  "mcp_server": "official-local",
+  "agent_skills_hint": null,
+  "mcp_hint": null,
+  "sources": [
+   "https://www.assemblyai.com/llms/models.md",
+   "https://www.assemblyai.com/llms/pricing.md",
+   "https://www.assemblyai.com/products/text-to-speech"
+  ],
+  "checked_at": "2026-10-30",
+  "unverified_fields": [
+   "latency",
+   "public API reference (not yet published)"
+  ],
+  "agent_skills_status": "official-repo",
+  "agent_skills_repos": [
+   {
+    "url": "https://github.com/AssemblyAI/assemblyai-skill",
+    "kind": "dedicated-skills-or-plugin-repo",
+    "is_official": true,
+    "skill_md_count": 1,
+    "last_commit": "2026-09-30",
+    "license": "none found",
+    "covers": [
+     "AssemblyAI STT (pre-recorded, streaming), voice agents, audio intelligence"
+    ],
+    "official_evidence_url": "https://www.assemblyai.com/docs/coding-agent-prompts",
+    "install_hint": "npx skills add AssemblyAI/assemblyai-skill",
+    "sources": [
+     "https://api.github.com/repos/AssemblyAI/assemblyai-skill",
+     "https://api.github.com/repos/AssemblyAI/assemblyai-skill/commits/main",
+     "https://api.github.com/repos/AssemblyAI/assemblyai-skill/git/trees/fb831c7cae619bc6b84a907feb5076acde054e3b?recursive=1",
+     "https://api.github.com/repos/AssemblyAI/assemblyai-skill/readme",
+     "https://api.github.com/orgs/AssemblyAI",
+     "https://www.assemblyai.com/docs/coding-agent-prompts"
+    ],
+    "source_notes": [
+     "https://raw.githubusercontent.com/AssemblyAI/assemblyai-skill/fb831c7cae/<each SKILL.md> (frontmatter parsed for 1 of 1 files)"
+    ]
+   }
+  ],
+  "agent_skills_scope_note": "Vendor-level census (K1 vendor key 'AssemblyAI'): the primary repo is listed for the vendor, not confirmed per product; see 'covers' in agent_skills_repos.",
+  "mcp_server_urls": [
+   "https://github.com/AssemblyAI/assemblyai-mcp",
+   "https://assemblyai.com/docs/mcp"
+  ],
+  "mcp_notes": "Cat E. Vendor-wide AssemblyAI MCP (see assemblyai-streaming); not confirmed to cover TTS.",
+  "mcp_vendor_level": true,
+  "related_events": [
+   {
+    "id": "x-assemblyai-tts-1",
+    "date": "2026-10-27",
+    "event_type": "launch",
+    "headline": "AssemblyAI launches AssemblyAI-TTS-1 text-to-speech at $15 per 1M characters",
+    "evidence_grade": "primary",
+    "source": "https://www.assemblyai.com/llms/models.md"
+   }
+  ],
+  "source_notes": []
+ },
+ {
   "id": "hume-octave",
   "category": "E",
   "subcategory": "tts-specialist-vendor",
@@ -16449,22 +16987,23 @@
   ],
   "name": "Hume Octave TTS (Octave 2 preview, Octave 1)",
   "vendor": "Hume AI, Inc.",
-  "status": "active",
-  "status_notes": "TechCrunch (2026-01-22): under a licensing agreement Google DeepMind hired CEO Alan Cowen and about seven engineers; Andrew Ettinger became CEO, said Google has a non-exclusive right to certain technologies, and said Hume would keep supplying its technology and release new models. A Hume blog post dated 2026-09-24 also says Hume has a non-exclusive licensing agreement with Google. Octave 2 launched as a preview on 2025-10-01 (blog) and docs still label it preview; no Octave version newer than 2 appears in the docs or the pricing page.",
+  "status": "deprecated",
+  "status_notes": "Hume's API changelog entry of 2026-10-02 says it is sunsetting the TTS and EVI APIs: access ends 2026-11-13 at 12:01 a.m. EST, both stay supported until then, and account data is permanently deleted afterwards. On 2026-10-30 https://www.hume.ai/pricing redirected to the home page, so the prices below (seen 2026-09-30) can no longer be checked. TechCrunch (2026-01-22): under a licensing agreement Google DeepMind hired CEO Alan Cowen and about seven engineers; Andrew Ettinger became CEO, said Google has a non-exclusive right to certain technologies, and said Hume would keep supplying its technology and release new models. A Hume blog post dated 2026-09-24 also says Hume has a non-exclusive licensing agreement with Google. Octave 2 launched as a preview on 2025-10-01 (blog) and docs still label it preview; no Octave version newer than 2 appears in the docs or the pricing page.",
   "status_sources": [
    "https://techcrunch.com/2026/01/22/google-reportedly-snags-up-team-behind-ai-voice-startup-hume-ai/",
    "https://www.hume.ai/blog/newly-released-google-s-gemini-3-8-flash-tts-tops-hume-s-real-world-voiceeq-leaderboard",
    "https://www.hume.ai/blog/octave-2-launch",
-   "https://dev.hume.ai/docs/text-to-speech-tts/overview.md"
+   "https://dev.hume.ai/docs/text-to-speech-tts/overview.md",
+   "https://dev.hume.ai/changelog"
   ],
-  "activity_evidence": "Hume blog posts dated 2026-09-24 and 2026-09-29; pricing page and docs live 2026-09-30. The TTS API changelog's last entry is 2026-05-15 (experimental temperature parameter), which is older than 90 days.",
+  "activity_evidence": "Hume blog posts dated 2026-09-24 and 2026-09-29; pricing page and docs live 2026-09-30. The TTS API changelog's last entry is 2026-05-15 (experimental temperature parameter), which is older than 90 days. API changelog entry dated 2026-10-02 announces the sunset (read 2026-10-30).",
   "what_it_is": "Text-to-speech API built on the Octave speech-language model, with Octave 1 (English, Spanish) and a preview-labelled Octave 2 (11 languages), plus voice design, voice cloning and voice conversion.",
   "best_for": "Developers who want prompt-based voice design and delivery control and who accept a preview-labelled Octave 2 for multilingual, lower-latency use.",
   "open_source": "no",
   "license": "proprietary",
   "open_source_notes": "Hosted service; no published model weights found on the pages opened.",
   "pricing_model": "Monthly subscription with included characters (one subscription covers TTS, EVI and Voice features) plus usage-based overage per 1,000 characters on Creator and above; Octave 2 is metered at half rate.",
-  "headline_price": "Plans Free $0 to Business $500/mo with 10,000 to 10,000,000 characters included; overage per 1,000 characters on Creator and above: Octave 1 $0.15 to $0.05, Octave 2 $0.075 to $0.025; page states Octave 2 characters are metered at half rate.",
+  "headline_price": "No current price page (hume.ai/pricing redirects to the home page on 2026-10-30). Last seen 2026-09-30: plans $0 to $500/month; Octave 1 overage $0.15 to $0.05 per 1,000 characters.",
   "pricing_gated": false,
   "pricing_details": [
    {
@@ -16581,6 +17120,10 @@
   ],
   "limits": [
    {
+    "text": "API access ends 2026-11-13 at 12:01 a.m. EST; account data is permanently deleted after that date.",
+    "url": "https://dev.hume.ai/changelog"
+   },
+   {
     "text": "Docs label Octave 2 a preview; for Octave 2 acting instructions are marked coming soon and voice design is English only.",
     "url": "https://dev.hume.ai/docs/text-to-speech-tts/overview.md"
    },
@@ -16613,9 +17156,10 @@
    "https://github.com/HumeAI/mcp-server-hume",
    "https://dev.hume.ai/docs/integrations/mcp",
    "https://dev.hume.ai/_mcp/server",
-   "https://dev.hume.ai/docs/integrations/mcp.md"
+   "https://dev.hume.ai/docs/integrations/mcp.md",
+   "https://dev.hume.ai/changelog"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "octave_2_overage_unit (page does not say per actual or per metered character)",
    "octave_2_ga_date (docs still say preview)"
@@ -16638,6 +17182,14 @@
     "headline": "Google DeepMind signs licensing deal with Hume AI and hires its CEO plus about seven engineers",
     "evidence_grade": "reputable-press",
     "source": "https://www.wired.com/story/google-hires-hume-ai-ceo-licensing-deal-gemini/"
+   },
+   {
+    "id": "x-hume-sunsets-evi-tts",
+    "date": "2026-10-02",
+    "event_type": "shutdown",
+    "headline": "Hume AI announces the sunset of its EVI and text-to-speech APIs, with access ending November 13, 2026",
+    "evidence_grade": "primary",
+    "source": "https://dev.hume.ai/changelog"
    }
   ],
   "source_notes": []
@@ -16652,9 +17204,13 @@
   ],
   "name": "OpenAI TTS (gpt-4o-mini-tts, tts-1, tts-1-hd)",
   "vendor": "OpenAI",
-  "status": "active",
-  "status_notes": "",
-  "status_sources": [],
+  "status": "deprecated",
+  "status_notes": "Deprecation notice dated 2026-10-01: tts-1, tts-1-hd, gpt-4o-mini-tts-2025-03-20 and gpt-4o-mini-tts-2025-12-15 shut down on 2027-01-06; the recommended replacement is gpt-realtime-2.1-mini. The text-to-speech guide says this changes the API workflow, because gpt-realtime-2.1-mini is not a supported model for /v1/audio/speech. The gpt-4o-mini-tts model page shows Status: Deprecated.",
+  "status_sources": [
+   "https://developers.openai.com/api/docs/deprecations.md",
+   "https://developers.openai.com/api/docs/guides/text-to-speech.md",
+   "https://developers.openai.com/api/docs/models/gpt-4o-mini-tts.md"
+  ],
   "activity_evidence": "Pricing page opened 2026-09-30 lists gpt-4o-mini-tts, tts-1 and tts-1-hd beside newer realtime models (gpt-realtime-2.1, gpt-live-1); model page shows default snapshot gpt-4o-mini-tts-2025-12-15; the deprecations page shows no tts or speech entry.",
   "what_it_is": "Speech generation endpoint (POST v1/audio/speech) in the OpenAI Audio API with three models: gpt-4o-mini-tts (steerable with an instructions parameter), tts-1 and tts-1-hd.",
   "best_for": "Teams already on the OpenAI API that want a single-vendor TTS with prompt-based style instructions and HTTP chunked streaming output.",
@@ -16725,11 +17281,15 @@
   ],
   "limits": [
    {
+    "text": "All three models shut down on 2027-01-06; the named replacement runs on the Realtime API, not on the speech endpoint.",
+    "url": "https://developers.openai.com/api/docs/deprecations.md"
+   },
+   {
     "text": "gpt-4o-mini-tts accepts at most 2,000 input tokens per request.",
     "url": "https://developers.openai.com/api/docs/models/gpt-4o-mini-tts.md"
    },
    {
-    "text": "gpt-4o-mini-tts rate limits by tier: Tier 1 500 RPM / 50,000 TPM; Tier 2 2,000 / 150,000; Tier 3 5,000 / 600,000; Tier 4 10,000 / 2,000,000; Tier 5 10,000 / 8,000,000.",
+    "text": "gpt-4o-mini-tts rate limits by usage tier (tiers renamed 2026-10-06): Build 2,000 RPM / 150,000 TPM; Launch 10,000 / 2,000,000; Grow 10,000 / 8,000,000.",
     "url": "https://developers.openai.com/api/docs/models/gpt-4o-mini-tts.md"
    },
    {
@@ -16771,7 +17331,7 @@
    "https://platform.openai.com/docs/llms.txt",
    "https://api.github.com/orgs/openai/repos"
   ],
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "per_minute_estimate (none shown on the pages opened)",
    "latency_claim (none published on the pages opened)"
@@ -16860,7 +17420,16 @@
   ],
   "mcp_notes": "Cat E. OpenAI page states the server is documentation-only and does not call the OpenAI API. Other OpenAI repos (openai-mcpkit, tunnel-client, mcp-extensions) support building or tunnelling MCP servers; they are not API-wide product servers. Realtime API and Agents SDK document MCP client use (consuming servers).",
   "mcp_vendor_level": false,
-  "related_events": [],
+  "related_events": [
+   {
+    "id": "x-openai-tts-deprecation",
+    "date": "2026-10-01",
+    "event_type": "deprecation",
+    "headline": "OpenAI deprecates tts-1, tts-1-hd and gpt-4o-mini-tts, with shutdown on January 6, 2027",
+    "evidence_grade": "primary",
+    "source": "https://developers.openai.com/api/docs/deprecations"
+   }
+  ],
   "source_notes": []
  },
  {
@@ -23653,7 +24222,7 @@
  {
   "category": "F",
   "also_listed_in": [],
-  "status_notes": "AWS's Chime SDK page states the SIP Media Application will no longer be open to new customers starting 2026-10-29 (sign up before that date to use it). Separately, AWS's Chime getting-started page states AWS ended support for the Amazon Chime service (the meetings app) on 2026-02-20 and that this does not affect the Chime SDK service.",
+  "status_notes": "AWS's Chime SDK page states the SIP Media Application will no longer be open to new customers starting 2026-10-29 (sign up before that date to use it); that date has passed, and on 2026-10-30 the notice still gave 10/29/2026. Separately, AWS's Chime getting-started page states AWS ended support for the Amazon Chime service (the meetings app) on 2026-02-20 and that this does not affect the Chime SDK service.",
   "status_sources": [
    "https://aws.amazon.com/chime/chime-sdk/",
    "https://aws.amazon.com/chime/getting-started/"
@@ -23664,7 +24233,7 @@
   "mcp_hint": null,
   "derived_notes": "",
   "pricing_gated": false,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "pricing_seen": null,
   "id": "amazon-chime-sdk-sip-media-application",
   "subcategory": "SIP application hosting (AWS)",
@@ -23844,7 +24413,7 @@
     "id": "x-chime-sip-media-app-closing",
     "date": "2026-10-29",
     "event_type": "deprecation",
-    "headline": "AWS will stop opening the Amazon Chime SDK SIP Media Application to new customers on 2026-10-29",
+    "headline": "AWS stops opening the Amazon Chime SDK SIP Media Application to new customers on 2026-10-29",
     "evidence_grade": "primary",
     "source": "https://aws.amazon.com/chime/chime-sdk/"
    }
@@ -23947,7 +24516,7 @@
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [],
   "pricing_gated": false,
   "pricing_details": [
@@ -23961,13 +24530,22 @@
     "seen": "2026-09-30"
    },
    {
-    "item": "Audio turn detector v1, local development and testing",
-    "price": "7,500 free requests per month on every plan",
+    "item": "Audio turn detector v1, self-hosted agents",
+    "price": "7,500 requests per month per project, then $0.50 per 1,000 requests on Ship and Scale",
     "price_usd": null,
     "unit": "per month",
-    "conditions": "When exhausted, the session falls back to local v1-mini automatically",
+    "conditions": "Quotas page: a request is one prediction; on the free Build plan the allowance is a hard cap, and by default the session falls back to local v1-mini when the limit is reached",
     "url": "https://docs.livekit.io/deploy/admin/quotas-and-limits.md",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Adaptive interruption handling, self-hosted agents",
+    "price": "40,000 requests per month per project, then $1.20 per 1,000 requests on Ship and Scale",
+    "price_usd": null,
+    "unit": "per 1,000 requests",
+    "conditions": "Included at no extra cost for agents deployed to LiveKit Cloud; falls back to VAD-based interruption detection at the limit",
+    "url": "https://docs.livekit.io/deploy/admin/quotas-and-limits.md",
+    "seen": "2026-10-30"
    },
    {
     "item": "Audio turn detector v1-mini",
@@ -23988,7 +24566,7 @@
     "seen": "2026-09-30"
    }
   ],
-  "pricing_seen": "2026-09-30",
+  "pricing_seen": "2026-10-30",
   "id": "livekit-turn-detector",
   "subcategory": "end-of-turn-detection",
   "name": "LiveKit turn detector (audio v1 / v1-mini; text MultilingualModel)",
@@ -24000,7 +24578,7 @@
   "open_source": "partial",
   "license": "LiveKit Model License Agreement (proprietary model license; 'Last Updated: November 25, 2024')",
   "pricing_model": "Included with LiveKit Agents: v1 free on LiveKit Cloud deployments and within a monthly request allowance for local development; v1-mini and the text model run locally at no license fee.",
-  "headline_price": "No per-use charge documented: v1 is free for agents deployed to LiveKit Cloud; every plan includes 7,500 free v1 requests per month for local development/testing, after which the session falls back to local v1-mini.",
+  "headline_price": "Included at no extra cost for agents deployed to LiveKit Cloud. Self-hosted agents: 7,500 v1 requests per month per project, then $0.50 per 1,000 on Ship and Scale (Build: hard cap; the session falls back to local v1-mini by default). Adaptive interruption handling: 40,000 requests a month, then $1.20 per 1,000.",
   "pricing_source_url": "https://docs.livekit.io/deploy/admin/quotas-and-limits.md",
   "strengths": [
    {
@@ -25599,7 +26177,7 @@
  {
   "category": "G",
   "also_listed_in": [],
-  "status_notes": "Repo is not archived and no deprecation notice was found, but the newest GitHub release tag is v1.0-ONNX (2025-07-11) and the last commit is 2026-02-02 (older than 90 days), so 'active' is not claimed. Pipecat's docs list a TenVadAnalyzer (docs index opened 2026-09-30) and the Hugging Face repo was updated 2026-03-13.",
+  "status_notes": "Latest commit d68ab71 on 2026-10-09 (a version update), read through a shallow git clone on 2026-10-30, so the earlier 'unverified' status (last commit 2026-02-02 at the 2026-09-30 check) no longer applies. Repo is not archived and no deprecation notice was found, but the newest GitHub release tag is v1.0-ONNX (2025-07-11) and the last commit is 2026-02-02 (older than 90 days), so 'active' is not claimed. Pipecat's docs list a TenVadAnalyzer (docs index opened 2026-09-30) and the Hugging Face repo was updated 2026-03-13.",
   "open_source_notes": "LICENSE file read in full: 'licensed pursuant to the Apache License v2.0 ... with the following additional conditions'. Deploying (reproduce, derive, display, sublicense, distribute) is allowed for commercial or non-commercial purposes if you agree: (1) you may not deploy it in a way that competes with Agora's offerings or lets others compete, including enabling third parties to develop or deploy Applications; (2) deploy it solely to create and run your own Application(s) for your benefit and your direct End Users (an optional 'Powered by ten-vad' notice); (3) derivative works stay under this license; (6) parts derive from BSD-2-Clause and BSD-3-Clause code (see NOTICES). GitHub shows the license as 'Other' (NOASSERTION). It is not plain Apache-2.0.",
   "status_sources": [
    "https://github.com/TEN-framework/ten-vad",
@@ -25610,7 +26188,7 @@
   "mcp_server": "none-found",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "status"
   ],
@@ -25621,8 +26199,8 @@
   "subcategory": "voice-activity-detection",
   "name": "TEN VAD",
   "vendor": "TEN Framework (Agora)",
-  "status": "unverified",
-  "activity_evidence": "Last GitHub commit 2026-02-02 ('fix bug'); license update merged 2025-12-23 (PR #81).",
+  "status": "active",
+  "activity_evidence": "Last GitHub commit 2026-10-09 ('Update version'); earlier: 2026-02-02 ('fix bug'); license update merged 2025-12-23 (PR #81).",
   "what_it_is": "Low-latency frame-level voice activity detector released by the TEN Framework team (C library with Python, JavaScript/WASM, Java and Go bindings, plus an ONNX model) that works on 16 kHz audio with 160 or 256 sample hops (10 or 16 ms).",
   "best_for": "Developers who want a small self-hosted VAD alternative to Silero and can accept the license conditions (no use that competes with Agora, use only inside your own applications).",
   "open_source": "partial",
@@ -26699,7 +27277,7 @@
   "also_listed_in": [
    "D"
   ],
-  "status_notes": "GitHub repository kyutai-labs/delayed-streams-modeling was last pushed 2026-01-26 (older than 90 days); not archived and no deprecation notice was seen, so 'active' is not claimed.",
+  "status_notes": "kyutai-labs/delayed-streams-modeling, the linked repository, has no commits since 2026-01-26 (shallow git clone on 2026-10-30) and no deprecation or archive notice; the moshi repository that hosts moshi-server last changed on 2026-05-16. Marked dormant, as the Kyutai TTS entry from the same repository is; a signal to check, not a verdict. GitHub repository kyutai-labs/delayed-streams-modeling was last pushed 2026-01-26 (older than 90 days); not archived and no deprecation notice was seen, so 'active' is not claimed.",
   "open_source_notes": "README License section: Python code under MIT, Rust backend under Apache, web client under MIT; speech-to-text weights under CC-BY 4.0 (attribution required; not an OSI software license).",
   "status_sources": [
    "https://github.com/kyutai-labs/delayed-streams-modeling"
@@ -26709,7 +27287,7 @@
   "mcp_server": "none-found",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "status"
   ],
@@ -26720,7 +27298,7 @@
   "subcategory": "stt-integrated-semantic-vad",
   "name": "Kyutai STT semantic VAD (kyutai/stt-1b-en_fr)",
   "vendor": "Kyutai",
-  "status": "unverified",
+  "status": "dormant",
   "activity_evidence": "GitHub last push 2026-01-26 (gh api, fetched 2026-09-30).",
   "what_it_is": "A semantic voice activity detection component inside Kyutai's 1B-parameter streaming speech-to-text model for English and French (0.5 second delay), which the README says can be used to detect when the user is speaking.",
   "best_for": "Teams self-hosting streaming STT for English or French voice agents who want a VAD signal from the STT model itself.",
@@ -29801,8 +30379,10 @@
   "category": "I",
   "also_listed_in": [],
   "status": "active",
-  "status_notes": "",
-  "status_sources": [],
+  "status_notes": "GPT-6.1 Terra (gpt-6.1-terra) released 2026-10-26 (changelog). Its model page lists the Responses and Chat Completions endpoints as supported and the Live and Realtime endpoints as not supported.",
+  "status_sources": [
+   "https://developers.openai.com/api/docs/models/gpt-6.1-terra.md"
+  ],
   "open_source": "no",
   "license": "proprietary",
   "open_source_notes": "Closed weights, API only.",
@@ -29812,14 +30392,14 @@
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "latency_or_throughput"
   ],
   "pricing_seen": "2026-09-30",
   "id": "openai-gpt-6",
   "subcategory": "closed-weight LLM API (GPT-6 family)",
-  "name": "OpenAI GPT-6 family (gpt-6-luna, gpt-6.1-sol, gpt-6-astra)",
+  "name": "OpenAI GPT-6 family (gpt-6-luna, gpt-6.1-terra, gpt-6.1-sol, gpt-6-astra)",
   "vendor": "OpenAI",
   "activity_evidence": "OpenAI's pricing page (opened 2026-09-30) lists gpt-6-astra, gpt-6.1-sol and gpt-6-luna in its Standard table and carries a note dated July 30, 2026 (Priority processing renamed Fast mode); the deprecations page has an entry dated 2026-09-11; model pages give knowledge cutoffs of Apr 30, 2026 (gpt-6.1-sol) and May 18, 2026 (gpt-6-luna).",
   "what_it_is": "OpenAI's GPT-6 text-generation models as listed on its models page: text and image input, text output, 1,050,000-token context window, served over the Responses and Chat Completions APIs; gpt-6-luna has the lowest per-token price of the GPT-6 tiers on the pricing page.",
@@ -29835,6 +30415,15 @@
     "conditions": "Standard processing; short context",
     "url": "https://developers.openai.com/api/docs/pricing",
     "seen": "2026-09-30"
+   },
+   {
+    "item": "gpt-6.1-terra, Standard",
+    "price": "$1.00 input / $0.05 cached input / $1.25 cache writes / $5.00 output",
+    "price_usd": null,
+    "unit": "per 1M tokens",
+    "conditions": "Standard processing; short context; released 2026-10-26",
+    "url": "https://developers.openai.com/api/docs/pricing",
+    "seen": "2026-10-30"
    },
    {
     "item": "gpt-6.1-sol, Standard",
@@ -30053,7 +30642,7 @@
   "category": "I",
   "also_listed_in": [],
   "status": "active",
-  "status_notes": "Mixed lifecycle, from OpenAI's deprecations page on 2026-09-30: gpt-5-2025-08-07, gpt-5-mini-2025-08-07 and gpt-5-nano-2025-08-07 shut down Dec 11, 2026 (replacements gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna); gpt-4.1-nano and ft-gpt-4.1-nano shut down Oct 23, 2026 (replacement gpt-5.6-luna). I found no shutdown row for gpt-4.1-mini, gpt-4o-mini or gpt-5.4-mini in the page text.",
+  "status_notes": "Mixed lifecycle, from OpenAI's deprecations page on 2026-09-30: gpt-5-2025-08-07, gpt-5-mini-2025-08-07 and gpt-5-nano-2025-08-07 shut down Dec 11, 2026 (replacements gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna); gpt-4.1-nano and ft-gpt-4.1-nano shut down Oct 23, 2026 (replacement gpt-5.6-luna). I found no shutdown row for gpt-4.1-mini, gpt-4o-mini or gpt-5.4-mini in the page text. Deprecations page on 2026-10-30: gpt-4.1-nano shut down on 2026-10-23 (the pricing page still lists it); the gpt-5-2025-08-07, gpt-5-mini-2025-08-07 and gpt-5-nano-2025-08-07 snapshots shut down 2026-12-11; a notice dated 2026-10-14 lists the GPT-4o, GPT-4o mini, GPT-4.1 and GPT-4.1 mini snapshots (including gpt-4.1-mini-2025-04-14 and gpt-4o-mini-2024-07-18) for shutdown on 2027-01-14 with gpt-6-luna as the replacement; a notice dated 2026-10-01 lists gpt-5.4-nano for shutdown on 2027-04-01 (replacement gpt-6-luna).",
   "status_sources": [
    "https://developers.openai.com/api/docs/deprecations.md"
   ],
@@ -30066,7 +30655,7 @@
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "latency_or_throughput"
   ],
@@ -30306,60 +30895,80 @@
   "category": "I",
   "also_listed_in": [],
   "status": "active",
-  "status_notes": "Listed as Active on Anthropic's model status table; tentative retirement 'Not sooner than October 15, 2026'. The page says Anthropic gives at least 60 days' notice before retiring publicly released models; no Haiku 4.5 deprecation notice was listed on 2026-09-30.",
+  "status_notes": "Launched 2026-10-07 (Claude API release notes). Model status table on 2026-10-30: claude-haiku-5-5 Active, tentative retirement not sooner than 2027-10-07. Claude Haiku 4.5 (claude-haiku-4-5-20251001) is still Active there, with a tentative retirement 'Not sooner than October 15, 2026' and no deprecation notice; the models overview lists it under legacy models that are still available. Anthropic promises at least 60 days' notice before retiring publicly released models, so Haiku 4.5 cannot retire before 2026-12-29 (DERIVED from the 2026-10-30 check).",
   "status_sources": [
-   "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+   "https://platform.claude.com/docs/en/release-notes/overview",
+   "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+   "https://platform.claude.com/docs/en/models/overview"
   ],
   "open_source": "no",
   "license": "proprietary",
   "open_source_notes": "Closed weights, API only.",
   "pricing_gated": false,
-  "derived_notes": "DERIVED (assumption: 3,000 input + 175 output tokens per voice minute, the default in LiveKit's pricing calculator as returned by the livekit-docs get_pricing_info MCP tool, not re-checked on a raw web page; no caching, standard context, LLM only, no STT/TTS/telephony): Claude Haiku 4.5: 3000 x $1.0/1M + 175 x $5.0/1M = $0.003875/min. Anthropic states that Claude 4.7 and later models use a newer tokenizer that produces approximately 30% more tokens for the same text and that Claude Sonnet 4.6 and earlier use the previous one; Haiku 4.5 is not named in that statement, so token counts may not be comparable across generations.",
+  "derived_notes": "DERIVED (same assumption as the 2026-09-30 entry: 3,000 input + 175 output tokens per voice minute, the default in LiveKit's pricing calculator; no caching, prompts under 100,000 tokens, LLM only, no STT/TTS/telephony): Claude Haiku 5.5: 3000 x $0.10/1M + 175 x $0.50/1M = $0.0003875/min. Claude Haiku 4.5 at $1/$5: $0.003875/min. The Haiku 5.5 model page says the same text counts as about 30 percent more tokens than on Haiku 4.5, so equal token counts do not mean equal conversations.",
   "agent_skills_repo_url": "https://github.com/anthropics/skills",
   "mcp_server": "none-found",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "latency_or_throughput"
   ],
-  "pricing_seen": "2026-09-30",
-  "id": "anthropic-claude-haiku-4-5",
+  "pricing_seen": "2026-10-30",
+  "id": "anthropic-claude-haiku-5-5",
   "subcategory": "closed-weight LLM API (small tier)",
-  "name": "Claude Haiku 4.5 (claude-haiku-4-5-20251001)",
+  "name": "Claude Haiku 5.5 (claude-haiku-5-5), with Claude Haiku 4.5 (legacy) for reference",
   "vendor": "Anthropic",
-  "activity_evidence": "Model deprecations page (opened 2026-09-30) contains a notice dated 2026-09-30 for Claude Sonnet 4.5; Haiku 4.5 row shows Active.",
-  "what_it_is": "Anthropic's lowest-priced current Claude model on its pricing table: extended thinking, 200K-token context window and 64K max output.",
-  "best_for": "Cascaded voice agents that want a Claude-family model at Anthropic's lowest per-token price tier.",
-  "pricing_model": "per-token (input, output) per million tokens (MTok); prompt-cache multipliers; Batch API 50% discount",
-  "headline_price": "$1 / MTok input, $5 / MTok output; cache 5m writes $1.25, 1h writes $2, hits and refreshes $0.10 per MTok",
+  "activity_evidence": "Release notes entry dated 2026-10-07 (Claude Haiku 5.5 launch and the Sonnet 5.5 cache-read price cut); pricing, model and deprecations pages opened 2026-10-30.",
+  "what_it_is": "Anthropic's lowest-priced current Claude model: adaptive thinking (on by default) with the effort parameter, 1M-token context window and 128K max output; requests with prompts over 100,000 tokens pay higher rates.",
+  "best_for": "Cascaded voice agents that want a Claude-family model at Anthropic's lowest per-token price, after testing the request changes from Haiku 4.5.",
+  "pricing_model": "per-token (input, output) per million tokens (MTok), with higher rates for prompts over 100,000 tokens; prompt-cache multipliers; Batch API 50% discount",
+  "headline_price": "$0.10 / MTok input, $0.50 / MTok output for prompts up to 100,000 tokens ($0.50 / $2.50 above); cache hits $0.01 ($0.05 above). Claude Haiku 4.5 (legacy): $1 / $5.",
   "pricing_details": [
    {
-    "item": "Claude Haiku 4.5 base tokens",
-    "price": "$1 input / $5 output",
+    "item": "Claude Haiku 5.5 base tokens, prompts up to 100,000 tokens",
+    "price": "$0.10 input / $0.50 output",
     "price_usd": null,
     "unit": "per MTok (1M tokens)",
     "conditions": "Claude API, standard",
     "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
    },
    {
-    "item": "Claude Haiku 4.5 prompt caching",
-    "price": "$1.25 (5m write) / $2 (1h write) / $0.10 (hit or refresh)",
+    "item": "Claude Haiku 5.5 base tokens, prompts over 100,000 tokens",
+    "price": "$0.50 input / $2.50 output",
+    "price_usd": null,
+    "unit": "per MTok",
+    "conditions": "The whole request pays these rates, including cache reads and writes",
+    "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Claude Haiku 5.5 prompt caching",
+    "price": "$0.125 (5m write) / $0.20 (1h write) / $0.01 (hit or refresh); over 100,000 tokens $0.625 / $1 / $0.05",
     "price_usd": null,
     "unit": "per MTok",
     "conditions": "Claude API",
     "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
    },
    {
-    "item": "Claude Haiku 4.5 Batch API",
-    "price": "$0.50 input / $2.50 output",
+    "item": "Claude Haiku 5.5 Batch API",
+    "price": "$0.05 input / $0.25 output; over 100,000 tokens $0.25 / $1.25",
     "price_usd": null,
     "unit": "per MTok",
     "conditions": "Batch API, 50% discount",
     "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
+   },
+   {
+    "item": "Claude Haiku 4.5 base tokens (legacy, still available)",
+    "price": "$1 input / $5 output; cache hit $0.10; Batch $0.50 / $2.50",
+    "price_usd": null,
+    "unit": "per MTok",
+    "conditions": "Claude API, standard",
+    "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "seen": "2026-10-30"
    },
    {
     "item": "Retell platform rate card, 'Claude 4.5 haiku'",
@@ -30374,47 +30983,40 @@
   "pricing_source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
   "strengths": [
    {
-    "text": "Anthropic's comparison table gives Haiku 4.5 a 'Fastest' comparative-latency rating (Sonnet 5.5 'Fast', Opus 5.5 'Moderate', Fable 5.1 'Slower'); this is a vendor rating, not a measured latency; Haiku 4.5 has extended thinking and no default-effort setting.",
-    "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
+    "text": "Anthropic's comparison table rates Haiku 5.5 'Fastest' comparative latency (a vendor rating, not a measured latency); default effort medium.",
+    "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
    },
    {
-    "text": "Claude API ID claude-haiku-4-5-20251001 (alias claude-haiku-4-5); also available on Amazon Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS with their own IDs.",
-    "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
-   },
-   {
-    "text": "LiveKit Agents has an Anthropic plugin for Python and Node.js.",
-    "url": "https://docs.livekit.io/agents/models/llm/"
+    "text": "Claude API ID claude-haiku-5-5; also on Amazon Bedrock, Claude Platform on AWS, Google Cloud and Microsoft Foundry.",
+    "url": "https://platform.claude.com/docs/en/release-notes/overview"
    }
   ],
   "limits": [
    {
-    "text": "200K-token context window and 64K max output, against 1M and 128K on Claude Sonnet 5.5; reliable knowledge cutoff Feb 2025.",
-    "url": "https://platform.claude.com/docs/en/about-claude/models/overview"
+    "text": "Code written for Haiku 4.5 can break: manual extended thinking (budget_tokens), temperature, top_p and top_k, and assistant message prefill can each return a 400 error; adaptive thinking is on by default, so a response can begin with thinking blocks.",
+    "url": "https://platform.claude.com/docs/en/release-notes/overview"
    },
    {
-    "text": "Tentative retirement date is 'Not sooner than October 15, 2026'.",
-    "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+    "text": "Model page: omit temperature, top_p and top_k; the same text counts as about 30 percent more tokens than on Haiku 4.5; minimum cacheable prompt 512 tokens.",
+    "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
    },
    {
     "text": "LiveKit Inference's LLM list (DeepSeek, Gemini, Gemma, OpenAI, SpaceXAI, Kimi) has no Anthropic models on 2026-09-30; use the Anthropic plugin with your own API key.",
     "url": "https://docs.livekit.io/agents/models/llm/"
-   },
-   {
-    "text": "Retell's rate card charges $0.025 per minute for 'Claude 4.5 haiku', above the $0.0032 to $0.0096 per minute it lists for GPT 6 Luna and Gemini Flash-Lite models.",
-    "url": "https://www.retellai.com/pricing"
    }
   ],
-  "docs_url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+  "docs_url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
   "sources": [
    "https://platform.claude.com/docs/en/about-claude/pricing",
-   "https://platform.claude.com/docs/en/about-claude/models/overview",
+   "https://platform.claude.com/docs/en/models/overview",
+   "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+   "https://platform.claude.com/docs/en/release-notes/overview",
    "https://platform.claude.com/docs/en/about-claude/model-deprecations",
    "https://docs.livekit.io/agents/models/llm/",
    "https://www.retellai.com/pricing",
    "https://api.github.com/repos/anthropics/skills",
    "https://api.github.com/repos/anthropics/skills/commits/main",
    "https://api.github.com/repos/anthropics/skills/git/trees/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4?recursive=1",
-   "https://platform.claude.com/docs/llms.txt",
    "https://api.github.com/orgs/anthropics/repos"
   ],
   "agent_skills_status": "official-repo",
@@ -30455,7 +31057,7 @@
   "category": "I",
   "also_listed_in": [],
   "status": "active",
-  "status_notes": "Listed as Active; tentative retirement 'Not sooner than September 28, 2027'.",
+  "status_notes": "Listed as Active; tentative retirement 'Not sooner than September 28, 2027'. Release notes 2026-10-07: prompt cache reads on Sonnet 5.5 cut from $0.20 to $0.10 per MTok; other prices unchanged.",
   "status_sources": [
    "https://platform.claude.com/docs/en/about-claude/model-deprecations"
   ],
@@ -30468,7 +31070,7 @@
   "mcp_server": "none-found",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "latency_or_throughput"
   ],
@@ -30481,7 +31083,7 @@
   "what_it_is": "Anthropic's Claude Sonnet 5.5: adaptive thinking, 1M-token context window and 128K max output; priced between Haiku 4.5 and Opus 5.5 on Anthropic's pricing table.",
   "best_for": "Voice agents that need stronger reasoning or tool use than a small tier and can absorb a higher per-minute LLM cost.",
   "pricing_model": "per-token (input, output) per million tokens (MTok); prompt-cache multipliers; Batch API 50% discount",
-  "headline_price": "Sonnet 5.5 $2 / MTok input, $10 / MTok output; cache hits $0.20 / MTok; Opus 5.5 $4 / $20; Fable 5.1 $10 / $50",
+  "headline_price": "Sonnet 5.5 $2 / MTok input, $10 / MTok output; cache hits $0.10 / MTok; Opus 5.5 $4 / $20; Fable 5.1 $10 / $50",
   "pricing_details": [
    {
     "item": "Claude Sonnet 5.5 base tokens",
@@ -30494,12 +31096,12 @@
    },
    {
     "item": "Claude Sonnet 5.5 prompt caching",
-    "price": "$2.50 (5m write) / $4 (1h write) / $0.20 (hit or refresh)",
+    "price": "$2.50 (5m write) / $4 (1h write) / $0.10 (hit or refresh)",
     "price_usd": null,
     "unit": "per MTok",
-    "conditions": "Claude API",
+    "conditions": "Claude API; cache reads cut from $0.20 to $0.10 (0.05x base input) per the release notes of 2026-10-07",
     "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-    "seen": "2026-09-30"
+    "seen": "2026-10-30"
    },
    {
     "item": "Claude Sonnet 5.5 Batch API",
@@ -30832,9 +31434,10 @@
   "category": "I",
   "also_listed_in": [],
   "status": "active",
-  "status_notes": "gemini-3.8-flash, 3.7-flash, 3.6-flash and 3.5-flash are labelled Stable; gemini-3.1-pro-preview is labelled Preview (Google models page, 2026-09-30). Google describes 3.7 and 3.6 as previous-generation and 3.5 Flash as 'legacy'.",
+  "status_notes": "gemini-3.8-flash, 3.7-flash, 3.6-flash and 3.5-flash are labelled Stable; gemini-3.1-pro-preview is labelled Preview (Google models page, 2026-09-30). Google describes 3.7 and 3.6 as previous-generation and 3.5 Flash as 'legacy'. Changelog 2026-10-08: gemini-3.7-flash and gemini-3.5-flash are deprecated, no longer selectable in Google AI Studio, and API requests route automatically to gemini-3.8-flash and gemini-3.6-flash; the deprecations page says the endpoints are not shutting down.",
   "status_sources": [
-   "https://ai.google.dev/gemini-api/docs/models"
+   "https://ai.google.dev/gemini-api/docs/models",
+   "https://ai.google.dev/gemini-api/docs/changelog"
   ],
   "open_source": "no",
   "license": "proprietary",
@@ -30845,14 +31448,14 @@
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "latency_or_throughput"
   ],
   "pricing_seen": "2026-09-30",
   "id": "google-gemini-flash-pro",
   "subcategory": "closed-weight LLM API (flash and pro tiers)",
-  "name": "Gemini 3.x Flash (gemini-3.8-flash, 3.7, 3.6, 3.5) and gemini-3.1-pro-preview",
+  "name": "Gemini 3.x Flash (gemini-3.8-flash, 3.6; 3.7 and 3.5 deprecated 2026-10-08) and gemini-3.1-pro-preview",
   "vendor": "Google (Gemini Developer API)",
   "activity_evidence": "gemini-3.8-flash model page: 'Latest update September 2026', last updated 2026-09-02 UTC.",
   "what_it_is": "Google's larger Gemini 3 models: Flash tiers with 1,048,576-token input limit and 65,536-token output limit, plus the Preview-labelled Pro model for reference.",
@@ -31041,7 +31644,7 @@
   "category": "I",
   "also_listed_in": [],
   "status": "active",
-  "status_notes": "Product is live under the xAI API name (release notes: 'now available on the xAI API'); docs.x.ai/llms.txt is headed 'SpaceXAI API Documentation' and calls itself official SpaceXAI (xAI) documentation, and the grok-4.7 model page names SpaceXAI as the vendor. I did not verify any corporate change from a primary source. LiveKit's docs mark Grok 4.1 Fast and Grok 4.1 Fast Reasoning as Retired (no date shown on the pages I read).",
+  "status_notes": "Product is live under the xAI API name (release notes: 'now available on the xAI API'); docs.x.ai/llms.txt is headed 'SpaceXAI API Documentation' and calls itself official SpaceXAI (xAI) documentation, and the grok-4.7 model page names SpaceXAI as the vendor. I did not verify any corporate change from a primary source. LiveKit's docs mark Grok 4.1 Fast and Grok 4.1 Fast Reasoning as Retired (no date shown on the pages I read). On 2026-10-30 https://docs.x.ai/llms.txt is headed 'SpaceXSI API Documentation'; the API (api.x.ai, called the xAI API in the release notes) and the Grok model names are unchanged. No dated announcement of that heading was opened.",
   "status_sources": [
    "https://docs.x.ai/llms.txt",
    "https://docs.livekit.io/agents/models/llm/",
@@ -31056,14 +31659,14 @@
   "mcp_server": "docs-only",
   "agent_skills_hint": null,
   "mcp_hint": null,
-  "checked_at": "2026-09-30",
+  "checked_at": "2026-10-30",
   "unverified_fields": [
    "latency_or_throughput"
   ],
   "pricing_seen": "2026-09-30",
   "id": "xai-grok-text",
   "subcategory": "closed-weight LLM API",
-  "name": "Grok text models (grok-4.3, grok-4.7; docs branded SpaceXAI / xAI)",
+  "name": "Grok text models (grok-4.3, grok-4.7; docs headed SpaceXSI / xAI)",
   "vendor": "SpaceXAI (xAI)",
   "activity_evidence": "Release notes (opened 2026-09-30): the top 'September' section (no year shown; it also mentions a retirement on November 2, 2026) has a Grok 4.7 entry and a Grok Voice Transcribe 2.0 entry.",
   "what_it_is": "xAI's Grok text models served over an OpenAI-compatible API: grok-4.3 (1M-token context) and grok-4.7 (500k-token context), both with text and image input and text output.",

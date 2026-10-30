@@ -15,7 +15,7 @@ Read these with the skill and keep them together:
 - [Legal requirements guide](references/legal-requirements-guide.md): US federal and state law, recording consent, EU, UK and Canada, with sources and open questions.
 - [Numbers, data and call behavior guide](references/numbers-data-and-call-behavior-guide.md): caller ID reputation, HIPAA, PCI, scripts, consent logs, retention, tests.
 
-Both were checked on September 30, 2026 UTC. Open the cited source again before you rely on a claim for a launch. If a rule you need is not in them, say "not checked" and list it for counsel. Do not guess.
+Both were checked on October 30, 2026 UTC. Open the cited source again before you rely on a claim for a launch. If a rule you need is not in them, say "not checked" and list it for counsel. Do not guess.
 
 For Twilio-specific steps (`<Pay>`, pausing recordings, SHAKEN/STIR, consent-record patterns) use the [Twilio compliance skill](https://github.com/twilio/ai/blob/main/skills/twilio/twilio-compliance-traffic/SKILL.md). This skill is provider-neutral and cites primary sources. Where they differ, the cited source wins: the Twilio skill says AI voice agents typically count as autodialed, but the FCC treats an AI voice as an artificial voice, which is a separate test. This skill does not cover debt collection, political calls or fundraising. Tell the user to get counsel for those. The Twilio skill has a debt-collection section that this skill did not check.
 
@@ -89,7 +89,7 @@ No tools are required. Ask these in one message before you write dialer or recor
 ## Unsettled (tell the user)
 
 - The FCC's AI-disclosure rule is only proposed.
-- The FCC adopted a new stop-request order on September 30, 2026. Its text and dates were not public when checked. Until then, honor stop requests broadly.
+- New FCC stop-request rules (FCC 26-67) take effect November 25, 2026. A caller may then designate one or more listed opt-out methods as the only ways to revoke, if it discloses them clearly on the call, and may treat a stop on an informational call as covering only that category. The in-call opt-out under (b)(3) still applies. A shorter deadline and a "revoke all" option are still proposed. Honor stop requests broadly.
 - Whether an LLM agent counts as a "live sales representative", a "prerecorded message" or an "automated calling system" under older rules.
 - Whether AI vendors in the audio path count as third-party eavesdroppers under California law. Courts are split between a "capability" test and an "extension" test, and every AI-voice ruling so far is at the pleading stage (*Ambriz*, *Taylor v. ConverseNow*).
-- New state AI laws (Colorado, January 2027) and whether they reach private phone agents.
+- New state AI laws (Colorado, January 2027; California AB 1609, signed September 28, 2026 and likely in force January 1, 2027, which is reported to cover telephone customer service at large businesses) and whether they reach private phone agents.

@@ -2,7 +2,7 @@
 
 [Handbook](https://github.com/RobStrayer/voice-agent-skills/blob/main/docs/handbook.md) / [Turn-taking skill](../SKILL.md)
 
-Reviewed against current primary sources on **2026-09-30 UTC**. Provider facts below describe the cited integration; design rules and the worked timeline are engineering recommendations. Synthetic times illustrate ordering and are not benchmarks.
+Reviewed against current primary sources on **2026-10-30 UTC**. Provider facts below describe the cited integration; design rules and the worked timeline are engineering recommendations. Synthetic times illustrate ordering and are not benchmarks.
 
 ## Contents
 
@@ -160,7 +160,7 @@ An address correction cut off early may cost more than waiting through a pause. 
 
 ## Recover from an interruption with no transcript
 
-Pipecat 1.12.0 (published September 26, reviewed September 30, 2026) enables
+Pipecat 1.12.0 (published September 26, 2026; defaults unchanged in 1.15.0) enables
 `LLMUserAggregatorParams.empty_user_turn` by default. When an empty user turn cuts
 the bot off, the aggregator adds a developer message and runs the LLM to recover.
 An empty turn while the bot is idle stays unanswered unless `idle_prompt` is set.
@@ -170,6 +170,11 @@ This configuration is ignored for realtime LLM services that hear audio directly
 [Release](https://github.com/pipecat-ai/pipecat/releases/tag/v1.12.0),
 [aggregator contract](https://github.com/pipecat-ai/pipecat/blob/v1.12.0/src/pipecat/processors/aggregators/llm_response_universal.py),
 [recovery configuration](https://github.com/pipecat-ai/pipecat/blob/v1.12.0/src/pipecat/turns/empty_user_turn.py).
+
+Pipecat 1.15.0 (published October 29, 2026) applies the same recovery when
+`FilterIncompleteUserTurnStrategies` hears a sound with no words while the LLM is
+answering. Before, the bot stayed silent.
+[1.15.0 changelog](https://github.com/pipecat-ai/pipecat/blob/v1.15.0/CHANGELOG.md).
 
 Test a cough during speech, a cough while idle, and quiet speech that STT misses.
 Assert whether recovery is expected, that its repetition is bounded, and that an
@@ -197,7 +202,7 @@ Replay tests diagnose detector behavior. Also test the authorized browser or tel
 | Option | Input and version requirements |
 | --- | --- |
 | LiveKit audio turn detector | Python Agents 1.6.1+ or Node 1.4.7+, VAD, and minimum VAD silence duration of at least 250 ms; no transcript required |
-| LiveKit text turn detector | Transcript-driven, open weights; deprecated for future SDK removal |
+| LiveKit text turn detector | Transcript-driven, open weights; deprecated and slated for removal in Agents 2.0, a staging-only beta since 2.0.0b1 (published October 12, 2026) |
 | Pipecat Smart Turn | Current v3.2: 16 kHz mono, up to eight seconds of context, evaluation after VAD silence |
 | Silero VAD | 8/16 kHz probabilities; current direct ONNX wrapper uses 256/512-sample chunks respectively |
 | Provider-native detection | Selected session/model's controls and event contract |
@@ -210,8 +215,12 @@ Replay tests diagnose detector behavior. Also test the authorized browser or tel
 | Silero | Buffer/resample correctly, isolate state per stream, and supply completion/interruption policy. |
 | Provider-native | Fewer application detectors; confirm client/server ownership, transcription, cancellation, and buffering. Avoid a second response trigger. |
 
-Sources: [LiveKit audio and text models](https://docs.livekit.io/agents/logic/turns/turn-detector/), [Smart Turn model](https://github.com/pipecat-ai/smart-turn), [Pipecat turn strategies](https://docs.pipecat.ai/api-reference/server/utilities/turn-management/user-turn-strategies), [Silero source and input checks](https://github.com/snakers4/silero-vad/blob/master/src/silero_vad/utils_vad.py).
+Sources: [LiveKit audio and text models](https://docs.livekit.io/agents/logic/turns/turn-detector/), [Agents 2.0 beta README](https://github.com/livekit/agents/blob/livekit-agents@2.0.0b1/README.md), [Smart Turn model](https://github.com/pipecat-ai/smart-turn), [Pipecat turn strategies](https://docs.pipecat.ai/api-reference/server/utilities/turn-management/user-turn-strategies), [Silero source and input checks](https://github.com/snakers4/silero-vad/blob/master/src/silero_vad/utils_vad.py).
 
-LiveKit adaptive interruption is a separate Cloud feature with its own SDK and transcript-alignment requirements, or a supported realtime model under client turn control. EOT accuracy does not establish interruption accuracy. [Adaptive interruption requirements](https://docs.livekit.io/agents/logic/turns/adaptive-interruption-handling/).
+LiveKit adaptive interruption is a separate model that decides whether speech over the agent is a real interruption or a backchannel. It is on by default for agents deployed to LiveKit Cloud, or running in dev mode with LiveKit Cloud credentials, when the session has VAD and either an STT or a realtime model with its server-side turn detection off. A self-hosted agent outside dev mode sets the interruption `mode` to `"adaptive"`. The current guide says it works with any STT, with or without aligned transcripts; Python 1.7.1 (published August 27, 2026) made it work without word timestamps. With a realtime model, a confirmed backchannel drops the whole buffered user turn, while the STT pipeline drops only the backchannel words. If LiveKit Inference fails or the usage limit is reached, the session falls back to VAD-only interruption. Since Python 1.8.9 (published October 24, 2026), an inference error moves to that fallback without retrying the connection by default. EOT accuracy does not establish interruption accuracy. [Adaptive interruption](https://docs.livekit.io/agents/logic/turns/adaptive-interruption-handling/), [1.7.1 release](https://github.com/livekit/agents/releases/tag/livekit-agents@1.7.1), [1.8.9 release](https://github.com/livekit/agents/releases/tag/livekit-agents@1.8.9), [interruption source](https://github.com/livekit/agents/blob/livekit-agents@1.8.9/livekit-agents/livekit/agents/inference/interruption.py).
+
+Both LiveKit models run on LiveKit Inference and cost nothing extra for agents deployed to LiveKit Cloud. A self-hosted agent, including one in dev mode, draws on a monthly allowance per project for each model. Beyond it, the Ship and Scale plans bill per request; the Build plan refuses requests, and the session falls back to `v1-mini` or to VAD-only interruption. The turn detector sends a request at each user pause of 200 ms or more, and adaptive interruption checks overlapping speech every 100 ms by default. When a turn-detector request fails, the prediction in flight returns a default probability of 1.0 so the turn is not blocked, and the session uses `v1-mini` until it ends. Estimate request counts from session usage data before a load test, and include `v1-mini` in threshold tests. [Quotas and limits](https://docs.livekit.io/deploy/admin/quotas-and-limits/), [fallback behavior](https://docs.livekit.io/agents/logic/turns/turn-detector/#audio-fallback).
+
+Upgrades can move turn boundaries without an application change. In Pipecat 1.15.0 (published October 29, 2026), several stop strategies in one `UserTurnStrategies.stop` list must all agree before a user turn ends, because `stop_mode` defaults to `StrategyMode.ALL`. `StrategyMode.FIRST` restores the earlier first-decision behavior; a single stop strategy, such as the Smart Turn default, behaves as before. The same release cancels an answer that has already started when the user speaks again before the turn ends. Pipecat 1.13.0 (published October 19, 2026) bundles Silero VAD v6.2, whose speech-stop events can arrive slightly later than v6's. Rerun the early-commit, endpoint-delay, and resumed-speech cases after either upgrade. [Changelog at 1.15.0](https://github.com/pipecat-ai/pipecat/blob/v1.15.0/CHANGELOG.md), [strategy defaults](https://github.com/pipecat-ai/pipecat/blob/v1.15.0/src/pipecat/turns/user_turn_strategies.py).
 
 Choose using the installed SDK, observed language/audio path, deployment capacity, and the labeled failure costs. Recheck current sources through Context7 and their originals before copying settings. The review did not execute these SDKs or reproduce vendor accuracy and latency claims.

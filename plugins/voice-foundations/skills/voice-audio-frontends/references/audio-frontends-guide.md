@@ -2,7 +2,7 @@
 
 [Handbook](https://github.com/RobStrayer/voice-agent-skills/blob/main/docs/handbook.md) / [Audio frontend skill](../SKILL.md)
 
-Reviewed: **2026-09-30 UTC**. Processing choices and test procedures here are original engineering guidance. Linked provider contracts were checked on that date; living pages usually do not establish a publication date. No model, audio benchmark, or provider call was run for this review.
+Reviewed: **2026-10-30 UTC**. Processing choices and test procedures here are original engineering guidance. Linked provider contracts were checked on that date; living pages usually do not establish a publication date. No model, audio benchmark, or provider call was run for this review.
 
 An audio frontend decides which samples reach recognition and turn detection. Choose it against a specific failure: agent speech returning through a speaker, a fan keeping VAD active, background conversation becoming a command, or quiet words disappearing. Record the existing processing before adding another stage.
 
@@ -103,19 +103,37 @@ Use a stateful resampler and preserve continuous timestamps across chunks. Relab
 | Browser/WebRTC APM | Device capture and render, including echo | Browser behavior varies. Standalone upstream WebRTC code has [BSD-3-Clause terms](https://webrtc.googlesource.com/src/+/refs/heads/main/LICENSE); dependency and packaged-browser terms are separate. |
 | RNNoise | Local microphone or decoded server input noise suppression | Portable C integration; 48 kHz example contract. Root [COPYING](https://gitlab.xiph.org/xiph/rnnoise/-/blob/main/COPYING) is BSD-3-Clause; retain file-level notices. Separately sourced models/training data need their own review. |
 | DeepFilterNet | Local or server speech enhancement | [README](https://github.com/Rikorose/DeepFilterNet) describes 48 kHz full-band processing and a 48 kHz WAV CLI; a file helper is not a complete streaming adapter. Code is MIT OR Apache-2.0 under its [LICENSE](https://github.com/Rikorose/DeepFilterNet/blob/main/LICENSE). Pin the chosen model artifact and retain its applicable terms. |
-| LiveKit enhanced processing | Frontend, agent input, or SIP trunk, as supported | Cloud provides the Krisp/ai-coustics route. The agent-side ai-coustics plugin also supports a self-hosted SFU with a separately supplied license key and direct ai-coustics billing. Commercial model terms remain separate from the framework license. |
+| LiveKit enhanced processing | Frontend, agent input, or SIP trunk, as supported | Cloud provides the Krisp/ai-coustics route. The agent-side ai-coustics plugin also supports a self-hosted SFU with a separately supplied license key and direct ai-coustics billing. The Python Krisp plugin can instead use a Krisp license key and `.kef` model file ([plugin reference](https://docs.livekit.io/reference/python/livekit/plugins/krisp/index.html)). Commercial model terms remain separate from the framework license. |
 | Provider speech processing | Provider input buffer or supported native SDK | Check exact API, language, platform, and service/SDK terms. The provider may expose no processed samples or internal quality metric. |
 
-LiveKit's [current cancellation guide](https://docs.livekit.io/transport/media/noise-cancellation) distinguishes these integrations:
+LiveKit's [current cancellation guide](https://docs.livekit.io/transport/media/noise-cancellation) (checked 2026-10-30) distinguishes these integrations:
 
-| Location | Model or API named in the guide |
+| Location | Models and APIs named in the guide |
 | --- | --- |
-| Agent input, Krisp | VIVA and VIVA telephony; Python `krisp.voice_isolation()` and `krisp.voice_isolation_telephony()` |
-| Frontend | BVC; check client support by SDK |
-| SIP trunk | NC |
+| Agent input, voice isolation (extra cost) | Krisp VIVA and VIVA telephony: Python `krisp.voice_isolation()` and `krisp.voice_isolation_telephony()`, Node.js `krisp.voiceIsolation()` and `krisp.voiceIsolationTelephony()`. ai-coustics Voice Focus 2.1 S and L (`QUAIL_VF_S`, `QUAIL_VF_L`) |
+| Agent input, background noise suppression | Krisp NC (Python `noise_cancellation.NC()`) and ai-coustics `QUAIL_L` |
+| Frontend | JavaScript SDK: NC and BVC; check `isKrispNoiseFilterSupported()` first. Android, Swift, React Native and Flutter SDKs: NC only |
+| SIP trunk | NC only. The guide recommends agent-side cancellation when an agent handles the call |
+
+The guide suggests voice isolation for a single speaker and background suppression
+for several speakers or diarization. The ai-coustics plugin can also supply the
+session VAD from inside its enhancement model. Adopting it changes speech detection
+as well as cleanup, so rerun the turn cases.
 
 Avoid stacked enhanced frontend/agent filters. Standard capture suppression and
-separate AEC can remain enabled.
+separate AEC can remain enabled. LiveKit Python 1.8.9 and later log a warning
+when a participant's track already has enhanced noise cancellation and the agent
+applies cancellation again ([1.8.9 release](https://github.com/livekit/agents/releases/tag/livekit-agents@1.8.9),
+[room input source](https://github.com/livekit/agents/blob/livekit-agents@1.8.9/livekit-agents/livekit/agents/voice/room_io/_input.py)).
+Treat that warning as a configuration fault.
+
+LiveKit's Python room input also runs automatic gain control unless told
+otherwise. In the 1.8.10 source, `auto_gain_control` defaults to on when no noise
+cancellation is set or when a selector picks it per participant, and to off when
+a filter is passed directly ([option](https://github.com/livekit/agents/blob/livekit-agents@1.8.10/livekit-agents/livekit/agents/voice/room_io/types.py),
+[default](https://github.com/livekit/agents/blob/livekit-agents@1.8.10/livekit-agents/livekit/agents/voice/room_io/room_io.py)).
+Record that stage in the processing inventory, and set it explicitly before
+comparing filters.
 
 The [ai-coustics self-hosted section](https://docs.livekit.io/transport/media/noise-cancellation#self-hosted-auth) specifies direct authentication through `auth`. Agent hosting location alone does not establish that configuration.
 

@@ -14,6 +14,8 @@ use the canonical reference for the version you are implementing.
 
 The [September 30 daily review](reviews/2026-09-30.md) records model releases,
 changed skills, and cases where current primary sources contradict the index.
+The [October 30 review](reviews/2026-10-30.md) records the October refresh,
+including the two corrections marked in the tables below.
 
 ## Architecture and runtime sources
 
@@ -28,7 +30,7 @@ engineering guidance, not quotations or guarantees from a provider.
 | OpenAI server media | [WebSockets, Realtime section](https://developers.openai.com/api/docs/guides/voice-websockets?api=realtime) | Server-side streaming has different media responsibilities from browser WebRTC. |
 | OpenAI server controls | [Server controls, Realtime section](https://developers.openai.com/api/docs/guides/voice-server-controls?api=realtime) | Keep business logic and credentials on the server when controlling a realtime session. |
 | OpenAI phone connections | [SIP, Realtime section](https://developers.openai.com/api/docs/guides/voice-sip?api=realtime) | Check the actual phone connection and call-control path. |
-| OpenAI recorded speech | [TTS model](https://developers.openai.com/api/docs/models/gpt-4o-mini-tts), [transcription reference](https://developers.openai.com/api/reference/python/resources/audio/subresources/transcriptions/methods/create) | The dated TTS model snapshot is still documented; file transcription and diarization are distinct from realtime conversation. |
+| OpenAI recorded speech | [TTS model](https://developers.openai.com/api/docs/models/gpt-4o-mini-tts), [transcription reference](https://developers.openai.com/api/reference/python/resources/audio/subresources/transcriptions/methods/create) | Corrected 2026-10-30: OpenAI's [deprecations page](https://developers.openai.com/api/docs/deprecations) lists `tts-1`, `tts-1-hd` and both `gpt-4o-mini-tts` snapshots for shutdown on 2027-01-06 (notice 2026-10-01), and the gpt-4o transcription models for removal on 2027-02-26. File transcription and diarization are distinct from realtime conversation. |
 | Pipecat CLI | [Overview](https://docs.pipecat.ai/api-reference/cli/overview), [init](https://docs.pipecat.ai/api-reference/cli/init) | Current package installation differs from the preserved skill wording; init remains supported. |
 | LiveKit turn handling | [Turns](https://docs.livekit.io/agents/logic/turns.md) | Check whether turn detection is controlled by the framework or realtime provider. |
 | LiveKit tool work | [Function tools](https://docs.livekit.io/agents/logic/tools/definition.md#interruptions) | Speech interruption does not cancel running work by default. |
@@ -65,7 +67,7 @@ indexed material was checked against the current primary source.
 | Browser playback | [MDN play](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play), [getStats](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/getStats) | Playback promises and media counters provide different evidence; a connected peer alone does not establish audible output. |
 | WebRTC transport | [Peer connections](https://webrtc.org/getting-started/peer-connections), [TURN](https://webrtc.org/getting-started/turn-server) | Separate signaling, candidate selection, transport, and playback. |
 | WebRTC timing | [W3C statistics](https://www.w3.org/TR/webrtc-stats/) | Published Candidate Recommendation Draft dated **2025-09-25**. Counter definitions support interval calculations; implementation support varies. |
-| Azure Voice Live | [Overview](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live) | The page's own `updated_at` metadata is **2026-09-29T06:04:00Z**. It is distinct from this review date. |
+| Azure Voice Live | [Overview](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live) | Corrected 2026-10-30: the page's own `updated_at` metadata is now **2026-10-27T06:04:00Z** (it was 2026-09-29). It is distinct from this review date. |
 | Azure SDK examples | [Version notes](more-skills.md#azure-sdk-version-notes) | Released Java, TypeScript, .NET, and Python package contents were inspected without installing or executing them. Preview pins and actual API typos are treated separately. |
 | Azure file transcription | [Python SDK README](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/transcription/azure-ai-transcription/README.md) | The linked skill's streaming/batch methods are absent from released `1.0.0`; that skill is excluded. |
 | Gemini Live | [Live API](https://ai.google.dev/gemini-api/docs/live-api), [ADK live](https://adk.dev/live/) | Direct live sessions and ADK orchestration have separate integration paths; the older ADK streaming page redirects. |

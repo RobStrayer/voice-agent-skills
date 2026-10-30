@@ -38,6 +38,23 @@ Plugin skills are namespaced, so `voice-turn-taking` runs as
 `/voice-foundations:voice-turn-taking`. Claude also picks skills automatically
 when your request matches their description.
 
+### Update
+
+Auto-update is off by default for third-party marketplaces, so pull new versions
+yourself:
+
+```bash
+claude plugin marketplace update voice-agent-skills
+claude plugin update voice-foundations@voice-agent-skills
+```
+
+Inside a session, `/plugin marketplace update voice-agent-skills` refreshes the
+marketplace. An updated plugin loads in your next session or after
+`/reload-plugins`. To have Claude Code check for you, turn on auto-update for this
+marketplace under `/plugin` → Marketplaces
+([CLI reference](https://code.claude.com/docs/en/plugins/cli-reference),
+[how plugins load](https://code.claude.com/docs/en/plugins/loading.md)).
+
 ## Codex: plugin marketplace
 
 The repo is also a Codex plugin marketplace with the `voice-foundations` plugin:
@@ -47,8 +64,11 @@ codex plugin marketplace add RobStrayer/voice-agent-skills
 codex plugin add voice-foundations@voice-agent-skills
 ```
 
-Start a new Codex session after installing. For the provider skills in Codex, use
-`npx skills` below.
+Start a new Codex session after installing. To update later, run
+`codex plugin marketplace upgrade voice-agent-skills` and start a new session
+([Codex CLI reference](https://learn.chatgpt.com/docs/cli/reference)). Then check
+that `codex plugin list` shows the new version; if not, run the `codex plugin add`
+command above again. For the provider skills in Codex, use `npx skills` below.
 
 ## Any agent: `npx skills`
 
@@ -89,7 +109,9 @@ MCP server. This repo supplies the instructions, not those tools, API keys or
 accounts. Skills never expand what you've authorized: live calls, phone numbers
 and paid API requests still need your go-ahead.
 
-Provider snapshots were collected on 2026-09-29. See the
+Provider snapshots were collected on 2026-09-29. The ElevenLabs and LiveKit
+copies were refreshed on 2026-10-30 UTC, and ElevenLabs' `realtime` skill was
+added the same day from the same ElevenLabs commit. See the
 [documentation review](documentation-review.md) for the sources checked.
 
 ## Runtime notes
@@ -97,12 +119,12 @@ Provider snapshots were collected on 2026-09-29. See the
 | Collection | Prerequisites and material caveats |
 | --- | --- |
 | Foundations | Project files, traces, or test artifacts appropriate to the task. Current documentation access is needed for version-sensitive claims; stack selection calls for Context7, with direct official documentation when its index is missing or stale. No paid vendor runtime is required for a review. |
-| LiveKit | Relevant SDK/CLI and LiveKit documentation access. Some upstream instructions expect the LiveKit Docs MCP. Simulations and operations can create billable or live resources. Current skills replace the older `livekit-agents` and `livekit-simulations` pack. |
-| ElevenLabs | SDK/API or ElevenLabs MCP/CLI as described by the skill. Some references show shell installers; review the current official installation method before executing them. Voice cloning/conversion and dubbing require rights to the source material. |
+| LiveKit | Relevant SDK/CLI and LiveKit documentation access. Some upstream instructions expect the LiveKit Docs MCP. Simulations and operations can create billable or live resources. The building skill now defaults to LiveKit Inference rather than provider plugins (plugins only on LiveKit OSS, for models Inference does not offer, or at the user's request), and the debugger's new audio mode needs LiveKit Cloud project credentials because it speaks each turn through Inference text-to-speech. Current skills replace the older `livekit-agents` and `livekit-simulations` pack. |
+| ElevenLabs | SDK/API or ElevenLabs MCP/CLI as described by the skill. Seven of the eight skills now start with a setup line telling the agent to run `npx -y @elevenlabs/cli@latest onboard init` (an unpinned vendor CLI) and follow what it prints; it signs the user in and stores an API key in a project env file. Run that step yourself or approve it explicitly, and keep the env file out of version control. The installation guides and `realtime` also point to a `setup-api-key` skill that is not bundled here. Some references show shell installers; review the current official installation method before executing them. Voice cloning/conversion and dubbing require rights to the source material. |
 | Pipecat | Python project and Pipecat CLI; hosting credentials for deploy. The pinned init/deploy skills use older `pipecat-ai-cli` installation wording. Use the current CLI instructions below. |
 | Cartesia | Cartesia API access or Line CLI. The pinned Line skill includes shell installer examples and operational commands. |
 | Twilio | Account/API or Twilio MCP access appropriate to the workflow. Additional Twilio skills are mentioned by name but are outside this voice subset; get them from the full upstream pack if needed. Phone numbers, outbound calls, recordings, and infrastructure changes need task-specific authorization. |
-| OpenAI | Python and the OpenAI SDK for the included scripts; API access for actual speech/transcription requests. These are file-oriented workflows, not a realtime conversational runtime. |
+| OpenAI | Python and the OpenAI SDK for the included scripts; API access for actual speech/transcription requests. These are file-oriented workflows, not a realtime conversational runtime. Both skills default to models OpenAI has deprecated; see [OpenAI speech and transcription model deprecations](#openai-speech-and-transcription-model-deprecations). |
 
 Pipecat init/deploy mention Claude-specific `AskUserQuestion`; talk expects MCP
 start/speak/listen/stop tools and its own confirmations. Hosts without those tools
@@ -112,7 +134,7 @@ skill. Markdown format compatibility doesn't prove runtime compatibility.
 
 Eight upstream skills use the Agent Skills specification's `compatibility` field;
 Twilio's architect skill also uses a provider-specific `tier` field. The bundled
-Codex skill-creator validator rejects these extra fields, although all 39 headers
+Codex skill-creator validator rejects these extra fields, although all 41 headers
 parse as YAML and their required names/descriptions pass the collection checks.
 Upstream content is preserved. If a host requires a narrower schema, adapt a local
 installation copy and retain the original snapshot and attribution here.
@@ -133,8 +155,11 @@ They were read and syntax-checked during curation; paid operations were not run.
   untrusted upload endpoint.
 
 No install hooks, background jobs, or provider accounts are configured by this repo.
-Skills and sample commands do not expand the user's authorization. Keep live
-operations within the requested account, destination, budget, and recording scope.
+The exception to watch is upstream text: the ElevenLabs setup line asks the agent
+itself to run a vendor CLI that signs in and stores an API key, so approve that
+step yourself. Skills and sample commands do not expand the user's authorization.
+Keep live operations within the requested account, destination, budget, and
+recording scope.
 
 ## Current documentation notes
 
@@ -194,6 +219,40 @@ For LiveKit metrics, tools, and turn handling, use the dated source notes in
 [latency audit](../plugins/voice-foundations/skills/voice-latency-audit/SKILL.md) and
 [agent evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md). Match
 examples to the installed SDK version before copying event handlers.
+
+### ElevenLabs Realtime inventory command
+
+The `realtime` skill's Step 0 inventory command quotes its file filter as
+`--include='*.{ts,tsx,js,jsx,mjs,py}'`. grep's `--include` glob has no brace
+expansion, and the quotes stop the shell from expanding it, so the command
+searches no files and prints nothing. In a test with GNU grep 3.11, that form
+missed `.ts` and `.py` files containing the search terms. Pass one quoted
+`--include` per extension instead (`--include='*.ts' --include='*.tsx'` and so
+on), and don't read an empty result as nothing to migrate.
+
+### OpenAI speech and transcription model deprecations
+
+Checked 2026-10-30 on OpenAI's
+[deprecations page](https://developers.openai.com/api/docs/deprecations). The
+pinned skills match upstream `main` on that date, so a fresh install has the
+same defaults.
+
+- **Text to speech (notice dated 2026-10-01).** `tts-1`, `tts-1-hd` and
+  `gpt-4o-mini-tts`, including the `gpt-4o-mini-tts-2025-12-15` snapshot, are
+  removed from the API on January 6, 2027. The listed replacement is
+  `gpt-realtime-2.1-mini`, and the notice points to the Realtime API guide for
+  the migration. **The bundled `speech` skill defaults to
+  `gpt-4o-mini-tts-2025-12-15`** (in `SKILL.md` and
+  `scripts/text_to_speech.py`), and the other models it documents, `tts-1` and
+  `tts-1-hd`, are on the same list. Its script calls the Audio speech endpoint
+  (`client.audio.speech`), so check the replacement against that call before
+  changing only the model name.
+- **Transcription (notice dated 2026-08-26).** `whisper-1`,
+  `gpt-4o-transcribe`, `gpt-4o-mini-transcribe` and
+  `gpt-4o-transcribe-diarize` are removed on February 26, 2027, with
+  `gpt-live-transcribe` or `gpt-transcribe` as the replacements. The bundled
+  `transcribe` skill defaults to `gpt-4o-mini-transcribe` and uses
+  `gpt-4o-transcribe-diarize` for speaker labels.
 
 ## Refreshing a snapshot
 

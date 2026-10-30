@@ -3,9 +3,9 @@
   "snapshot_date": "2026-09-29",
   "snapshot_timezone": "America/New_York",
   "link_policy": "Original upstream default-branch URLs are primary; bundled files are dated snapshots.",
-  "checked_at": "2026-09-30T02:36:23.019087+00:00",
-  "skill_count": 40,
-  "copied_file_count": 104,
+  "checked_at": "2026-10-30T03:20:20.705949+00:00",
+  "skill_count": 41,
+  "copied_file_count": 107,
   "verification": "Every copied file was read back and compared byte-for-byte with its exact commit-pinned archive entry. Full upstream skill folder trees retained, including nested licenses and optional metadata/assets.",
   "collections": [
     {
@@ -13,8 +13,8 @@
       "url": "https://github.com/elevenlabs/skills",
       "stars": 460,
       "stars_source": "https://api.github.com/repos/elevenlabs/skills",
-      "sha": "279173d974ea5cf0c4c4f91d4e7e65202b406dab",
-      "retrieved_at": "2026-09-30T02:37:57.568389+00:00",
+      "sha": "503d4e9fda0190ab9357142f44e51de626f97f90",
+      "retrieved_at": "2026-10-30T06:16:01+00:00",
       "decision": "vendored",
       "provider": "elevenlabs",
       "license": "MIT",
@@ -28,117 +28,118 @@
         "text-to-speech",
         "voice-isolator",
         "voice-changer",
-        "dubbing"
+        "dubbing",
+        "realtime"
       ],
-      "vendored_skill_count": 7,
+      "vendored_skill_count": 8,
       "copied_files": [
         {
           "upstream_path": "agents/SKILL.md",
           "copied_path": "skills/elevenlabs/agents/SKILL.md",
-          "sha256": "e1172f03467ec7a666b5b08e538c8fee72b7d62e8bdff5f896203d49230d2a2e",
-          "bytes": 24724
+          "sha256": "9678ac31b1ed88eefede93e0752b6fed3acdac8829462bb994749f642514e5be",
+          "bytes": 27056
         },
         {
           "upstream_path": "agents/references/agent-configuration.md",
           "copied_path": "skills/elevenlabs/agents/references/agent-configuration.md",
-          "sha256": "5e80d47beec9892f6a2eb926c3e0e4e74e6ff9f7d203108d9d7d38ac54a9b09a",
-          "bytes": 34924
+          "sha256": "6e94e668af89afe68cbdb9237e78896e31b542e75408b9e4068c538d18ac7d99",
+          "bytes": 35519
         },
         {
           "upstream_path": "agents/references/client-tools.md",
           "copied_path": "skills/elevenlabs/agents/references/client-tools.md",
-          "sha256": "30d358f7aca012283af9126a94f67e6c1a891828031e91946d0a8b87f28cc0dd",
-          "bytes": 20104
+          "sha256": "baeb30b74835c21ff92eed00399832d1e15698cecc4f17bed19d53a035440a6f",
+          "bytes": 20259
         },
         {
           "upstream_path": "agents/references/installation.md",
           "copied_path": "skills/elevenlabs/agents/references/installation.md",
-          "sha256": "3b7cc53333ebda76c6ba7d41924adc19f42bd4eb9c81c47f3f82a0bb6cf12439",
-          "bytes": 4074
+          "sha256": "b351af007571b9923065e8d0fd994e6c49a21dd72eb9b0a89d8203d8452fa412",
+          "bytes": 4309
         },
         {
           "upstream_path": "agents/references/outbound-calls.md",
           "copied_path": "skills/elevenlabs/agents/references/outbound-calls.md",
-          "sha256": "0d6527241915314b520ccad2fb6c923d4168aff370be6a518d3c14d624c53858",
-          "bytes": 8252
+          "sha256": "9cbf591fd0fe021b323e8c9e6f8598b65060f721fcc876a0563249940797ae7e",
+          "bytes": 8861
         },
         {
           "upstream_path": "agents/references/using-procedure-api.md",
           "copied_path": "skills/elevenlabs/agents/references/using-procedure-api.md",
-          "sha256": "b75d0c3b0051c55e3e6a771d7d86a1b123d7bd0b3af5c36129c9d24f231294c1",
-          "bytes": 15632
+          "sha256": "34668dbb83dcc2e16aa748785764404a410a999c46b5dab85f0e30e4653b4d70",
+          "bytes": 17272
         },
         {
           "upstream_path": "agents/references/widget-embedding.md",
           "copied_path": "skills/elevenlabs/agents/references/widget-embedding.md",
-          "sha256": "c10efa83e0e81f5dd83345fa2f3491435e164e3828d67867dc52385f7a09b0ea",
-          "bytes": 8240
+          "sha256": "0a60577597c1f07fc4d98dc36450e18201744d990892462d5507c5db745c0269",
+          "bytes": 8516
         },
         {
           "upstream_path": "agents/references/writing-procedures.md",
           "copied_path": "skills/elevenlabs/agents/references/writing-procedures.md",
-          "sha256": "308b434b3adce1eb636bd697fb686aff8dc023adcf2f2a4a0b596ad306b683ef",
-          "bytes": 5485
+          "sha256": "8c724eb9eea3432788852332738142dbe87e652e3a8e0d69c4ea65926b92dd3d",
+          "bytes": 11189
         },
         {
           "upstream_path": "speech-engine/SKILL.md",
           "copied_path": "skills/elevenlabs/speech-engine/SKILL.md",
-          "sha256": "18f778fa2943919f0356cd6d5fd1bd67feb410abf24743d8cff534d5bad7e7ef",
-          "bytes": 10037
+          "sha256": "531737834dc992b7241295dc7bd6d89da4d72186296510e44a4e5dd19324693b",
+          "bytes": 10317
         },
         {
           "upstream_path": "speech-engine/references/installation.md",
           "copied_path": "skills/elevenlabs/speech-engine/references/installation.md",
-          "sha256": "45e5ca6e36be5d104956e279b9e66b1b5bfd584456afb4919397346a76fba08f",
-          "bytes": 2451
+          "sha256": "05e367630f41068be1e66d2775f166fd012edd1d68d27ce861936eacc08ccb97",
+          "bytes": 2935
         },
         {
           "upstream_path": "speech-engine/references/javascript-sdk-reference.md",
           "copied_path": "skills/elevenlabs/speech-engine/references/javascript-sdk-reference.md",
-          "sha256": "82bfcbfcdfa7422ce3b4373e5379c3fed378fd4a2fc6012ee4c74b99fc177d3c",
-          "bytes": 4502
+          "sha256": "b536836e2c3849df373a3831b8722abb1f6603c1dd2f2c46635f33fdb270801e",
+          "bytes": 4465
         },
         {
           "upstream_path": "speech-engine/references/python-sdk-reference.md",
           "copied_path": "skills/elevenlabs/speech-engine/references/python-sdk-reference.md",
-          "sha256": "691710b03ef24b2398c510c3c1c2221f93e68c95204173f25d19980ee1411d2b",
-          "bytes": 4739
+          "sha256": "8c6861199193a00a378bc16ed7398440dd55158abe5f323f4a092c94ed0ab84c",
+          "bytes": 4694
         },
         {
           "upstream_path": "speech-to-text/SKILL.md",
           "copied_path": "skills/elevenlabs/speech-to-text/SKILL.md",
-          "sha256": "f2e2fce3ec51934a86fe1ead0f95f2522b312fd41254340e10e84c55379a733c",
-          "bytes": 10167
+          "sha256": "79744163f4ef2f804c75440b4d53954c93b9a93508c110fca3d847fc75683eea",
+          "bytes": 10850
         },
         {
           "upstream_path": "speech-to-text/references/installation.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/installation.md",
-          "sha256": "95ced4021a8cca97249d584baabbb427c94d43c3e7364815cf15e263f54d8c2a",
-          "bytes": 2749
+          "sha256": "a2a6cab545a5cc6a4f113b17efdd7fa60276bda13c2dfe29d20ede843d9b6bed",
+          "bytes": 2984
         },
         {
           "upstream_path": "speech-to-text/references/realtime-client-side.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-client-side.md",
-          "sha256": "95837c130ca3a3db989d2eeb4b608de536932d3a75fa1f60592005705f0b811a",
-          "bytes": 6813
+          "sha256": "3a0fb4f39e004fbe45f7b61e883103f912e45a129241e2f9ea7b81582221721f",
+          "bytes": 7033
         },
         {
           "upstream_path": "speech-to-text/references/realtime-commit-strategies.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-commit-strategies.md",
-          "sha256": "b2c3de86609e60850503b034804379239ae21de2569a1803fc3a341978ddfed7",
-          "bytes": 4598
+          "sha256": "456b60434c71080290c3135635e746b7cc5535a0ecca64777a2222d56edbb264",
+          "bytes": 4707
         },
         {
           "upstream_path": "speech-to-text/references/realtime-events.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-events.md",
-          "sha256": "f704d624ca2cf10b4ff9cab21f1941d3290a7ae0e8f4b2392957621e7860c07f",
-          "bytes": 8287
+          "sha256": "40034de82ee8bb36ff72048c3871813017e6fcbe65c1733c9279975c374b0be5",
+          "bytes": 8679
         },
         {
           "upstream_path": "speech-to-text/references/realtime-server-side.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-server-side.md",
-          "sha256": "f1972abf593a89c6e6ebbc2b74a5424a22c747d428f4e4b3721a363d07c14daa",
-          "bytes": 10870
+          "sha256": "b00079dac4e5210a073cc0ce5b1470558f1cb3eab075dde3b0e484cb2d68d39b",
+          "bytes": 10971
         },
         {
           "upstream_path": "speech-to-text/references/transcription-options.md",
@@ -149,68 +150,86 @@
         {
           "upstream_path": "text-to-speech/SKILL.md",
           "copied_path": "skills/elevenlabs/text-to-speech/SKILL.md",
-          "sha256": "4ddef6ac522329dda69ca7ec2824ba2a6c4edb609b2745d9763b0803b0e6d944",
-          "bytes": 8116
+          "sha256": "fcc105566df403f5f77c25e73b63d9eef170f7326aaea6a8bbb977386ff56abe",
+          "bytes": 10727
         },
         {
           "upstream_path": "text-to-speech/references/installation.md",
           "copied_path": "skills/elevenlabs/text-to-speech/references/installation.md",
-          "sha256": "052ada238eb61412db885a38079dc508a8b77c5a96fc2f3e80236f74fe4a9350",
-          "bytes": 2682
+          "sha256": "d7c820c9f1173b48d743a8f3393f210b168b5e40c8d4b9dff8193c1f01c5b187",
+          "bytes": 2904
         },
         {
           "upstream_path": "text-to-speech/references/streaming.md",
           "copied_path": "skills/elevenlabs/text-to-speech/references/streaming.md",
-          "sha256": "62340c36b14dd4788a31a07c76aab954e5a2da6b54b752e11041cb0d3f30708b",
-          "bytes": 8382
+          "sha256": "226a078a275b5cc4fcab508d9c4c20c052c53122e98afe42bf38ff7184ad9f56",
+          "bytes": 12626
         },
         {
           "upstream_path": "text-to-speech/references/voice-settings.md",
           "copied_path": "skills/elevenlabs/text-to-speech/references/voice-settings.md",
-          "sha256": "208782e3db26a87543d5bb4f34b42f743027a4a8ac294e647eefd19e658c2e14",
-          "bytes": 3488
+          "sha256": "35ec0e270a3d28bfe328de370216acd2fb1db32883faeda043d8ea3f23555457",
+          "bytes": 4086
         },
         {
           "upstream_path": "voice-isolator/SKILL.md",
           "copied_path": "skills/elevenlabs/voice-isolator/SKILL.md",
-          "sha256": "02af0dfaf9a22832f3d9a9a86aa11579fe331d40c0ff051045898980c62bc15e",
-          "bytes": 3701
+          "sha256": "2f2d5a9f330e4cf6da4e1123e5076cacfc29259fe75eb891059bae67934d55e9",
+          "bytes": 3981
         },
         {
           "upstream_path": "voice-isolator/references/installation.md",
           "copied_path": "skills/elevenlabs/voice-isolator/references/installation.md",
-          "sha256": "c627bb042c3baa552c7cf5d6417485b32a910bad726b79cfa968816b73ffd209",
-          "bytes": 1980
+          "sha256": "ea4852002fbc9d08869510e6046684b053c9318de4d05041fb7f88f0fb61fb59",
+          "bytes": 2215
         },
         {
           "upstream_path": "voice-changer/SKILL.md",
           "copied_path": "skills/elevenlabs/voice-changer/SKILL.md",
-          "sha256": "75e5773d63b74e052e928c5529c56c535eba12786f358a20cf9e8c5821a18c69",
-          "bytes": 11876
+          "sha256": "18438b05074d1a0ae3b8aeb864c0e7f335ca8d340e60703e3edbfd52b3e37b93",
+          "bytes": 12284
         },
         {
           "upstream_path": "voice-changer/references/installation.md",
           "copied_path": "skills/elevenlabs/voice-changer/references/installation.md",
-          "sha256": "4ab667ad050507a0cbc5506e4c8e3b32880782d83d844611bd563645521eb774",
-          "bytes": 2072
+          "sha256": "8e9af1fbba41c95a3a791004291dd462be951bf3974be73ff032949e0629c881",
+          "bytes": 2307
         },
         {
           "upstream_path": "dubbing/SKILL.md",
           "copied_path": "skills/elevenlabs/dubbing/SKILL.md",
-          "sha256": "dcc4dfb9553481944133704a4a4954f72ad93b84905c0a14e28241347ef2db8a",
-          "bytes": 13115
+          "sha256": "7903128517798ea87b6405d6485a0fbf87aea7134f630592bbaa8ef037828802",
+          "bytes": 13395
         },
         {
           "upstream_path": "dubbing/references/api-reference.md",
           "copied_path": "skills/elevenlabs/dubbing/references/api-reference.md",
-          "sha256": "533f0ff9dcf2c3c16c8c07f0629505ea0b2e4014f8279f083cbf29a54c6fd163",
-          "bytes": 13788
+          "sha256": "8bf65a492565a2291a6789e82ef7ac78443582ee01cc650eb4c5ef263a9e8f4e",
+          "bytes": 13987
         },
         {
           "upstream_path": "dubbing/references/installation.md",
           "copied_path": "skills/elevenlabs/dubbing/references/installation.md",
-          "sha256": "6ffeb3179011ffb580c30fb80540236dc680cf831f4f803d30513e68d5fc26ea",
-          "bytes": 2667
+          "sha256": "0e3e755e1dcae08386d8f5129d224b74323ea4dcd895fc3e5d84167fa2a185a1",
+          "bytes": 2902
+        },
+        {
+          "upstream_path": "realtime/SKILL.md",
+          "copied_path": "skills/elevenlabs/realtime/SKILL.md",
+          "sha256": "7fc54e609b367be2972874090e1a09b8341a139a7d808e79fd3ce7d836042be7",
+          "bytes": 24058
+        },
+        {
+          "upstream_path": "realtime/references/browser-audio.md",
+          "copied_path": "skills/elevenlabs/realtime/references/browser-audio.md",
+          "sha256": "7a2e866c4817f3e4789e3854d58411f4fa87d29d1a9bed8bcec5c7de981fdb2d",
+          "bytes": 4629
+        },
+        {
+          "upstream_path": "realtime/references/session-config.md",
+          "copied_path": "skills/elevenlabs/realtime/references/session-config.md",
+          "sha256": "4757a29ba463efbcb87fcc941c5eb4eceb11af06030cbbee754d2bef2552a8a9",
+          "bytes": 5598
         },
         {
           "upstream_path": "LICENSE",
@@ -227,8 +246,8 @@
       "url": "https://github.com/livekit/agent-skills",
       "stars": 72,
       "stars_source": "https://api.github.com/repos/livekit/agent-skills",
-      "sha": "5d7488b118c279812b89e73a9bee8474d1fe00a1",
-      "retrieved_at": "2026-09-30T02:37:57.487129+00:00",
+      "sha": "e1195b497388b1aecad5dd2e9a0c9bdfbaba1878",
+      "retrieved_at": "2026-10-30T03:20:20.705949+00:00",
       "decision": "vendored",
       "provider": "livekit",
       "license": "MIT",
@@ -255,8 +274,8 @@
         {
           "upstream_path": "skills/building-livekit-agents/SKILL.md",
           "copied_path": "skills/livekit/building-livekit-agents/SKILL.md",
-          "sha256": "ea4c4e9310c83223668970cb3c3a9339d223ca981bf91215cc78d05e057ffce8",
-          "bytes": 9618
+          "sha256": "5dc9e9d325422bf03feae7730858ae57affd1b3c5b8749699380d55ac7c3cac6",
+          "bytes": 11016
         },
         {
           "upstream_path": "skills/building-livekit-agents/references/state-and-effects.md",
@@ -267,8 +286,8 @@
         {
           "upstream_path": "skills/debugging-livekit-agents/SKILL.md",
           "copied_path": "skills/livekit/debugging-livekit-agents/SKILL.md",
-          "sha256": "3bffddd7f1c4e2e8e1593959aba117d4d1b92026039bbfcb7949e26b08858625",
-          "bytes": 4832
+          "sha256": "73eb5136cff95d9f780b3e03723c6d113f48d750d9e228ccb6fa6c830432c7a2",
+          "bytes": 6546
         },
         {
           "upstream_path": "skills/testing-livekit-agents/SKILL.md",

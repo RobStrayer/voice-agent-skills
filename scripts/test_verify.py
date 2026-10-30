@@ -1,4 +1,4 @@
-"""Regression check: reject source tampering, mirror links, and accidental secrets."""
+"""Regression check: reject source tampering, long descriptions, mirror links, and accidental secrets."""
 import json
 import shutil
 from pathlib import Path
@@ -21,6 +21,17 @@ if __name__ == '__main__':
         else:
             raise AssertionError('Tampered upstream content was accepted')
         sample.write_bytes(original)
+        skill = copy / 'plugins/voice-foundations/skills/voice-turn-taking/SKILL.md'
+        original_skill = skill.read_bytes()
+        skill.write_bytes(original_skill.replace(b'\ndescription: ', b'\ndescription: ' + b'x' * 1025 + b' ', 1))
+        try:
+            verify(copy)
+        except AssertionError as error:
+            assert 'over 1,024 characters' in str(error), error
+            print('PASS: skill descriptions over 1,024 characters are rejected.')
+        else:
+            raise AssertionError('Over-long skill description was accepted')
+        skill.write_bytes(original_skill)
         index = copy / 'linked-skills.json'
         original_index = index.read_bytes()
         changed = json.loads(original_index)

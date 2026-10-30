@@ -365,7 +365,7 @@ MIT. A learning repository, not an installable SKILL.md pack. Setup downloads mo
 
 ### Cloud voice and native speech services
 
-- [Azure Voice Live](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live) for Microsoft's managed voice service and integration choices. The source page records an update on 2026-09-29.
+- [Azure Voice Live](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live) for Microsoft's managed voice service and integration choices. The source page records an update on 2026-10-27.
 - [Gemini Live API](https://ai.google.dev/gemini-api/docs/live-api) for direct live sessions; [ADK live and voice agents](https://adk.dev/live/) for ADK orchestration.
 - [Strands bidirectional streaming](https://strandsagents.com/docs/user-guide/sdk/bidirectional-streaming/) and [Bedrock Nova Sonic](https://strandsagents.com/docs/user-guide/sdk/bidirectional-streaming/models/bedrock/) for the current Python experimental integration. Verify current class names; older indexed examples use a different API.
 - [Cloudflare Agents voice](https://developers.cloudflare.com/agents/communication-channels/voice/) for its voice integration. This is a focused reference within the general Agents SDK, not another dedicated voice skill counted here.

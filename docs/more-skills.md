@@ -2,7 +2,7 @@
 
 [Home](../README.md) / [Engineering handbook](handbook.md) / [Core skills](catalog.md) / More upstream skills
 
-**345 linked skills** · **314 in 69 source repositories** · **31 on vendor documentation sites** · **59 providers** · **Checked September 30, 2026 UTC**
+**344 linked skills** · **313 in 68 source repositories** · **31 on vendor documentation sites** · **58 providers** · **Checked October 30, 2026 UTC**
 
 These are skills from voice providers and other authors, linked to where they are published. Nothing here is copied into this repository. Open the original source for current instructions. [Usage notes](usage.md) cover installation and host assumptions. [linked-skills.json](../linked-skills.json) keeps exact source metadata for each skill: commit, hash, license, dependencies and concerns.
 
@@ -67,7 +67,6 @@ These are skills from voice providers and other authors, linked to where they ar
 | [Superlog](#superlog) | [Testing, evaluation and monitoring](#testing-evaluation-and-monitoring) | 1 |
 | [Synthflow](#synthflow) | [Managed voice-agent platforms](#managed-voice-agent-platforms) | 7 |
 | [Telnyx](#telnyx) | [Phone and calling platforms](#phone-and-calling-platforms) | 39 |
-| [Together AI](#together-ai) | [Speech-to-text and text-to-speech APIs](#speech-to-text-and-text-to-speech-apis) | 1 |
 | [Twilio](#twilio) | [Phone and calling platforms](#phone-and-calling-platforms) | 16 |
 | [Ultravox](#ultravox) | [Managed voice-agent platforms](#managed-voice-agent-platforms) | 1 |
 | [Vapi](#vapi) | [Managed voice-agent platforms](#managed-voice-agent-platforms) | 10 |
@@ -86,7 +85,7 @@ These are skills from voice providers and other authors, linked to where they ar
 | --- | --- | ---: |
 | Build and run an agent on a hosted platform | [Bland AI](#bland-ai) · [Bolna](#bolna) · [Dasha](#dasha) · [Dograh](#dograh) · [ElevenLabs](#elevenlabs) · [Millis AI](#millis-ai) · [Patter](#patter) · [PolyAI](#polyai) · [Retell AI](#retell-ai) · [SLNG](#slng) · [Smallest AI](#smallest-ai) · [Synthflow](#synthflow) · [Ultravox](#ultravox) · [Vapi](#vapi) · [Vogent](#vogent) · [Voiceflow](#voiceflow) · [Voximplant](#voximplant) | 103 |
 | Connect phone numbers, SIP trunks, or call control | [Agora](#agora) · [jambonz](#jambonz) · [Plivo](#plivo) · [SignalWire](#signalwire) · [Sinch](#sinch) · [Telnyx](#telnyx) · [Twilio](#twilio) · [Zavu](#zavu) | 73 |
-| Add speech recognition, speech synthesis or audio cleanup | [ai-coustics](#ai-coustics) · [AssemblyAI](#assemblyai) · [Deepgram](#deepgram) · [Fish Audio](#fish-audio) · [Gladia](#gladia) · [iFlytek](#iflytek) · [Inworld](#inworld) · [Jellypod](#jellypod) · [Moonshine](#moonshine) · [OpenRouter](#openrouter) · [pyannoteAI](#pyannoteai) · [Rime](#rime) · [Sarvam AI](#sarvam-ai) · [Shiny](#shiny) · [StepFun](#stepfun) · [Together AI](#together-ai) · [Venice AI](#venice-ai) | 77 |
+| Add speech recognition, speech synthesis or audio cleanup | [ai-coustics](#ai-coustics) · [AssemblyAI](#assemblyai) · [Deepgram](#deepgram) · [Fish Audio](#fish-audio) · [Gladia](#gladia) · [iFlytek](#iflytek) · [Inworld](#inworld) · [Jellypod](#jellypod) · [Moonshine](#moonshine) · [OpenRouter](#openrouter) · [pyannoteAI](#pyannoteai) · [Rime](#rime) · [Sarvam AI](#sarvam-ai) · [Shiny](#shiny) · [StepFun](#stepfun) · [Venice AI](#venice-ai) | 76 |
 | Build on a framework, SDK or real-time media stack | [Daily](#daily) · [NVIDIA](#nvidia) · [Pipecat](#pipecat) · [Vision Agents](#vision-agents) · [Zero Runtime](#zero-runtime) | 9 |
 | Use a cloud provider's voice and speech services | [AWS](#aws) · [Azure](#azure) · [Google](#google) | 36 |
 | Test, simulate, or monitor an agent | [Bluejay](#bluejay) · [Cekura](#cekura) · [Coval](#coval) · [Roark](#roark) · [Superlog](#superlog) · [voicetest](#voicetest) | 38 |
@@ -108,7 +107,7 @@ Bland publishes one skill on its documentation site. The other twenty-one come f
 
 | Task | Skill |
 | --- | --- |
-| Build, publish and promote Bland AI phone agents, attach tools and knowledge, and place calls through the API. *Published on docs.bland.ai.* | [blandai](https://docs.bland.ai/.well-known/agent-skills/blandai/skill.md) |
+| Build, test, publish and promote Bland AI v2 agents for calls, SMS and web chat, attach tools and knowledge, and place calls through the API. *Published on docs.bland.ai.* | [blandai](https://docs.bland.ai/.well-known/agent-skills/blandai/skill.md) |
 
 **v1: build and run**
 
@@ -120,7 +119,7 @@ Bland publishes one skill on its documentation site. The other twenty-one come f
 | Load text or web content into knowledge bases and test that mid-call retrieval returns the right passage. | [knowledge](https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/knowledge/SKILL.md) |
 | Build, test and manage custom tools and integrations (REST tools, webhooks, CRM calls) and the secrets they use. | [tools](https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/tools/SKILL.md) |
 | Inspect, monitor and diagnose automations, the triggers and pipelines that place calls or send texts. The skill says creating or changing them fails through the API, a gap that may since have been fixed. | [automations](https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/automations/SKILL.md) |
-| Call the Bland REST API directly, docs first, with one docs search tool, one read tool and one write tool. | [api](https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/api/SKILL.md) |
+| Call the Bland REST API docs first, through generic read and write tools or, when those are missing, exact named endpoint tools. | [api](https://github.com/CINTELLILABS/bland-plugins/blob/main/skills/api/SKILL.md) |
 
 **v1: review and test**
 
@@ -136,7 +135,7 @@ Bland publishes one skill on its documentation site. The other twenty-one come f
 | Task | Skill |
 | --- | --- |
 | Design and build a new v2 agent: scenario architecture, hub and entry authoring, steps, edges, tools and conduct rules. | [v2-authoring](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-authoring/SKILL.md) |
-| Ship and operate v2 agents: environments, publish, promote and rollback, branches, experiments and inbound number binding. | [v2-lifecycle](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-lifecycle/SKILL.md) |
+| Ship and operate v2 agents: which version answers each channel, publish, promote and rollback, staged rollouts, A/B tests and inbound number binding. | [v2-lifecycle](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-lifecycle/SKILL.md) |
 | Update, repair and debug an existing v2 agent without overwriting other editors' work. | [v2-maintenance](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-maintenance/SKILL.md) |
 | Explain and debug v2 runtime behavior: routing decision order, interruptions, and hub and scenario semantics. | [v2-runtime](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-runtime/SKILL.md) |
 | Author and debug v2 version snapshots by hand: the JSON for the behavior graph, steps, edges, tools and settings. | [v2-snapshot](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-snapshot/SKILL.md) |
@@ -146,9 +145,9 @@ Bland publishes one skill on its documentation site. The other twenty-one come f
 
 | Task | Skill |
 | --- | --- |
-| Verify v2 agents with platform simulations, test-chat probes and speech-to-speech tests, with safety rules for tests that fire real integrations. | [v2-testing](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-testing/SKILL.md) |
+| Verify v2 agents with platform simulations, test-chat probes, speech-to-speech tests, messaging previews, API chat and real test calls, with safety rules for tests that fire real integrations. | [v2-testing](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/v2-testing/SKILL.md) |
 | Create and calibrate v2 evaluation judges, run evaluations and simulations and read failed, partial or inconclusive scores. | [evaluations](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/evaluations/SKILL.md) |
-| Find, categorize and analyze calls in bulk with paginated API retrieval and code-based analysis. | [call-analysis](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/call-analysis/SKILL.md) |
+| Find, categorize and analyze calls, texts and chats in bulk with paginated API retrieval and code-based analysis, and inspect live calls and contacts. | [call-analysis](https://github.com/CINTELLILABS/bland-plugins/blob/main/v2/skills/call-analysis/SKILL.md) |
 
 <details>
 <summary>Migration (1 optional skill)</summary>
@@ -161,14 +160,14 @@ Use these to move an existing agent or integration. They can change application 
 
 </details>
 
-Text simulations run the real agent with its real integrations, so a webhook, a CRM write or a scheduler can fire during a test. Sort every integration into read or write before you test. The repository also has setup, triage and messaging skills. They are not linked, because they are connection, issue-tracking and text-message tools, not voice workflows.
+Text simulations run the real agent with its real integrations, so a webhook, a CRM write or a scheduler can fire during a test. Sort every integration into read or write before you test. The repository also has setup, triage and messaging skills. They are not linked, because they are connection, issue-tracking and text-message tools, not voice workflows. The linked v2 skills now also point to newer skills (agent-environments, dispositions, phone-numbers, tool-library and knowledge-sources) that this index has not reviewed yet.
 
 ### Bolna
 
 - [bolna-ai/skills](https://github.com/bolna-ai/skills) · **3 stars** · [MIT](https://github.com/bolna-ai/skills/blob/main/LICENSE)
 - [Skill index on www.bolna.ai](https://www.bolna.ai/docs/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
 
-Bolna also publishes a skill on its documentation site.
+Bolna also publishes a skill on its documentation site. Several repository skills load shared reference files from the repository's main branch, so those files are not pinned to the checked commit.
 
 | Task | Skill |
 | --- | --- |
@@ -178,8 +177,8 @@ Bolna also publishes a skill on its documentation site.
 | Connect your own SIP trunk to Bolna: create trunks, add DIDs, map numbers to agents, and troubleshoot audio. | [setup-sip-trunk](https://github.com/bolna-ai/skills/blob/main/setup-sip-trunk/SKILL.md) |
 | Place, schedule, retry and cancel outbound Bolna calls with per-call variables, using curl or bundled scripts. | [make-call](https://github.com/bolna-ai/skills/blob/main/make-call/SKILL.md) |
 | Diagnose Bolna call problems by mapping symptoms to agent settings using execution latency data and raw logs. | [debug-bolna-calls](https://github.com/bolna-ai/skills/blob/main/debug-bolna-calls/SKILL.md) |
-| Write and repair Bolna voice-agent prompts in a fixed section format for Hindi, English and Hinglish calls. | [bolna-voice-prompt](https://github.com/bolna-ai/skills/blob/main/prompt-writing/SKILL.md) |
-| Build, configure and operate Bolna phone voice agents, including calls, batch campaigns and post-call data. *Published on www.bolna.ai.* | [bolna](https://www.bolna.ai/docs/.well-known/agent-skills/bolna/skill.md) |
+| Write and repair Bolna voice-agent prompts in a fixed section format for Hindi, English and Hinglish calls. | [prompt-writing](https://github.com/bolna-ai/skills/blob/main/prompt-writing/SKILL.md) |
+| Build, configure and operate Bolna phone voice agents, including calls, batch campaigns, workflows and post-call data. *Published on www.bolna.ai.* | [bolna](https://www.bolna.ai/docs/.well-known/agent-skills/bolna/skill.md) |
 
 <details>
 <summary>Preview and beta APIs (1 optional skill)</summary>
@@ -196,7 +195,7 @@ These target alpha or beta features or APIs that can change. Check the current d
 
 [Skill index on docs.blackbox.dasha.ai](https://docs.blackbox.dasha.ai/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
 
-Dasha publishes its BlackBox skill on its documentation site. Configuration changes apply immediately to active calls, and linking a phone number to a new agent unlinks it from the previous one.
+Dasha publishes its BlackBox skill on its documentation site. An enabled agent takes live traffic at once, so the skill says to create agents disabled and test them before you enable them.
 
 | Task | Skill |
 | --- | --- |
@@ -304,7 +303,7 @@ Millis AI publishes its skill on its documentation site. The [provider landscape
 - [polyai/adk](https://github.com/polyai/adk) · **83 stars** · [Apache-2.0](https://github.com/polyai/adk/blob/main/LICENSE)
 - [Skill index on docs.poly.ai](https://docs.poly.ai/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
 
-The five repository skills drive PolyAI's ADK command line. The documentation-site skill is broader and adds the REST APIs. The two sets disagree about publishing. The repository skills say that merging into main deploys to sandbox and that promotion is a separate step. The documentation-site skill says `poly branch merge` on main publishes to Live. Their project layouts differ too. Check `poly docs` for the version you installed before you trust either. If `poly` is missing, the workflow skill tells the agent to install uv with `curl -LsSf https://astral.sh/uv/install.sh | sh`, which pipes a remote script into a shell. Install uv yourself first. See [Use with care](#use-with-care).
+The five repository skills drive PolyAI's ADK command line. The documentation-site skill is broader and adds the REST APIs. The two sets disagree about publishing. The repository skills say that merging into main deploys to sandbox and that promotion is a separate step. The documentation-site skill says that publishing a branch merges it onto Live. Their project layouts differ too. Check `poly docs` for the version you installed before you trust either. If `poly` is missing, the workflow skill tells the agent to install uv with `curl -LsSf https://astral.sh/uv/install.sh | sh`, which pipes a remote script into a shell. Install uv yourself first. See [Use with care](#use-with-care).
 
 | Task | Skill |
 | --- | --- |
@@ -415,7 +414,7 @@ Ultravox publishes its skill on its documentation site. The skill is named fixie
 
 [Official collection](https://github.com/VapiAI/skills/tree/main) · **66 stars** · **No license file: linked only**
 
-The manifests declare MIT, but the repository has no LICENSE or NOTICE file in the checked archive. This index links to ten voice-specific workflows. Generic credential setup and the opt-in Bun bootstrap scaffold are excluded.
+The manifests declare MIT, but the repository has no LICENSE or NOTICE file in the checked archive. This index links to ten voice-specific workflows. Generic credential setup, the opt-in Bun bootstrap scaffold and the experimental vapi-demo dashboard builder are excluded. The demo builder asks for the private API key in chat and deploys endpoints that check no authentication.
 
 | Task | Skill |
 | --- | --- |
@@ -494,13 +493,13 @@ The skill tells the agent to run the official ConvoAI quickstart before writing 
 - [plivo/plivo-cli](https://github.com/plivo/plivo-cli) · **2 stars** · [Apache-2.0](https://github.com/plivo/plivo-cli/blob/main/LICENSE)
 - [Skill index on plivo.com](https://plivo.com/docs/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
 
-Most of the skills live in the repository of the Plivo command-line tool. The documentation-site skill is a router that points to companion skills, so it does little on its own. The plivo-audio-streaming and plivo-sip-trunking descriptions contain an unquoted colon, so a strict YAML loader rejects them. Quote the description after you install them.
+Most of the skills live in the repository of the Plivo command-line tool. The documentation-site skill is a router that points to companion skills, so it does little on its own. The plivo-audio-streaming and plivo-sip-trunking frontmatter names differ from their folder names, so rename each folder to match when you install it. The command-line skill installs the CLI with Homebrew or asks you to install it from its GitHub release page, and companion skills install with `plivo skill install`. The audio-streaming and SIP-trunking skills still suggest the install.sh one-liner from Plivo's docs when the CLI is missing, so install the CLI yourself first.
 
 | Task | Skill |
 | --- | --- |
 | Set up, verify and debug Plivo phone calls that stream audio to a WebSocket voice bot, through to production. | [plivo-audio-streaming](https://github.com/plivo/plivo-cli/blob/main/audio-streaming-skill/SKILL.md) |
 | Set up and debug Plivo SIP trunks linking AI voice platforms to phone numbers, using the Plivo CLI. | [plivo-sip-trunking](https://github.com/plivo/plivo-cli/blob/main/sip-trunking-skill/SKILL.md) |
-| Build, validate and publish Plivo CX agent flow graphs through the Agents API, with a pre-POST check script. | [plivo-cx-agents](https://github.com/plivo/plivo-cli/blob/main/agents-skill/SKILL.md) |
+| Build, validate, test and publish Plivo CX agent flow graphs through the Agents API and the Plivo CLI, with a preflight check script. | [plivo-cx-agents](https://github.com/plivo/plivo-cli/blob/main/agents-skill/SKILL.md) |
 | Write and debug Plivo Voice XML for answer and action URLs: IVR, dial, record, conference, callbacks, error codes. | [plivo-voice-xml](https://github.com/plivo/plivo-cli/blob/main/voice-xml-skill/SKILL.md) |
 | Drive Plivo messaging, calls, numbers, verify and WebSocket stream testing through the plivo CLI. | [plivo-cli](https://github.com/plivo/plivo-cli/blob/main/cli-skill/SKILL.md) |
 | Route Plivo tasks to the right companion skill and state platform facts that every integration relies on. *Published on plivo.com.* | [plivo](https://plivo.com/docs/.well-known/agent-skills/plivo/skill.md) |
@@ -540,7 +539,7 @@ These target alpha or beta features or APIs that can change. Check the current d
 
 [Official collection](https://github.com/team-telnyx/ai/tree/main/skills) · **219 stars** · [MIT](https://github.com/team-telnyx/ai/blob/main/LICENSE)
 
-Choose the guide for your server language. Backend WebRTC guides create credentials and tokens; the client guides below handle browser or mobile calling. Live operations require `TELNYX_API_KEY` and the matching SDK. Keep account keys on the server.
+Choose the guide for your server language. Backend WebRTC guides create credentials and tokens; the client guides below handle browser or mobile calling. Live operations require `TELNYX_API_KEY` and the matching SDK. Keep account keys on the server. The advanced guides include a pay command that collects card details by keypad and charges or tokenizes them; they do not discuss PCI scope.
 
 | Task | Python | JavaScript |
 | --- | --- | --- |
@@ -550,7 +549,7 @@ Choose the guide for your server language. Backend WebRTC guides create credenti
 | Collect speech and DTMF | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-gather-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-gather-javascript/SKILL.md) |
 | Synthesize, play, and record call audio | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-media-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-media-javascript/SKILL.md) |
 | Manage conferences and call queues | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-conferencing-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-conferencing-javascript/SKILL.md) |
-| Use SIPREC, supervision, and advanced controls | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-advanced-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-advanced-javascript/SKILL.md) |
+| Use SIPREC, supervision, in-call payments, and advanced controls | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-advanced-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-voice-advanced-javascript/SKILL.md) |
 | Configure SIP and outbound voice routing | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-sip-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-sip-javascript/SKILL.md) |
 | Use TeXML and TwiML-compatible voice flows | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-texml-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-texml-javascript/SKILL.md) |
 | Provision backend WebRTC credentials and tokens | [Python](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-webrtc-python/SKILL.md) | [JavaScript](https://github.com/team-telnyx/ai/blob/main/skills/telnyx-webrtc-javascript/SKILL.md) |
@@ -665,13 +664,11 @@ Keep the repository skill's reference guides beside its manifest, and use a supp
 
 | Task | Skill |
 | --- | --- |
-| Prerecorded and streaming transcription, dictation, speech analytics, and voice-agent integrations. | [assemblyai](https://github.com/AssemblyAI/assemblyai-skill/blob/main/skills/assemblyai/SKILL.md) |
+| Prerecorded and streaming transcription, dictation, text-to-speech, speech analytics, and LiveKit and Pipecat integrations. | [assemblyai](https://github.com/AssemblyAI/assemblyai-skill/blob/main/skills/assemblyai/SKILL.md) |
 | Transcribe files and URLs, stream live transcription, talk to the Voice Agent in a terminal and scaffold starter apps, including a voice-agent app, with the `assembly` command line. | [aai-cli](https://github.com/AssemblyAI/cli/blob/main/aai_cli/skills/aai-cli/SKILL.md) |
-| Use AssemblyAI speech-to-text, streaming, Voice Agent API and LLM Gateway for voice applications. *Published on assemblyai.com.* | [assemblyai](https://assemblyai.com/docs/.well-known/agent-skills/assemblyai/skill.md) |
+| Use AssemblyAI speech-to-text, streaming, text-to-speech, speech understanding and LLM Gateway for voice applications. *Published on assemblyai.com.* | [assemblyai](https://assemblyai.com/docs/.well-known/agent-skills/assemblyai/skill.md) |
 
-The documentation-site copy has frontmatter that is not valid YAML, because its description contains an unquoted colon. Quote the description before you install it.
-
-The September 30 upstream revision updates its SDK examples to Python 1.6.1 and JavaScript 4.41.5 and covers [Universal-3.6 Pro Realtime](https://www.assemblyai.com/blog/universal-3-6-pro-realtime), published September 29. The new model identifier is `universal-3-6-pro`; 3.5 Pro Realtime remains available for comparisons. Match the streaming API and installed SDK to the example. A realtime model announcement does not establish support in the prerecorded or dictation APIs. Context7 still returned older 3.5 Pro examples during this review.
+The October 28 upstream revision adds text-to-speech, moves its SDK examples to Python 1.8.2 and JavaScript 4.42.0, and drops its Voice Agent API section. [Universal-3.6 Pro Realtime](https://www.assemblyai.com/blog/universal-3-6-pro-realtime) (`universal-3-6-pro`) is generally available for streaming only, so use `universal-3-5-pro` for prerecorded and Sync STT. Match the streaming API and installed SDK to the example.
 
 ### Deepgram
 
@@ -689,7 +686,7 @@ Each SDK repository carries product-specific instructions for its own code and e
 
 ¹ The Go conversational-STT manifest says that a v2 client and Flux examples do not exist. Its current repository already contains both, including a [typed v2 client example](https://github.com/deepgram/deepgram-go-sdk/blob/main/examples/speech-to-text/websocket/flux_channel/main.go). The stale manifest is excluded from the skill count.
 
-The Java skills reference a root `reference.md` file that is absent from the checked repository. Use its [README](https://github.com/deepgram/deepgram-java-sdk/blob/main/README.md) and current source examples. Rust's voice-agent guide uses a raw WebSocket fallback with extra crates. Python's force-end-turn support requires the documented Flux provider or deployment enablement; it is not interchangeable with standard v1 STT.
+The Java skills reference a root `reference.md` file that is absent from the checked repository. Use its [README](https://github.com/deepgram/deepgram-java-sdk/blob/main/README.md) and current source examples. Rust's voice-agent guide uses the typed `agent()` client from deepgram 0.12, so check the crate version first. Python's force-end-turn support works on Deepgram-hosted Flux, including EU and AU; self-hosted deployments need the 2026-09-15 release with two feature flags. It is not interchangeable with standard v1 STT.
 
 <details>
 <summary>Six SDK repositories: dated stars and license links</summary>
@@ -768,13 +765,13 @@ The repository also has a voice-clone skill that is not linked. Its script turns
 
 [Skill index on inworld.ai](https://inworld.ai/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
 
-Inworld publishes three short skills on its website. Each is a pointer of a few hundred bytes: endpoints, the authentication header and links to the docs. They do not cover voices, streaming, limits or errors, so follow their links. The text-to-speech example names a model that [Inworld's own llms.txt](https://docs.inworld.ai/llms.txt) marks deprecated, and that file lists the current models. The [provider landscape](landscape.md) notes that Inworld announced its acquisition of Ultravox, which has its own skill under [Ultravox](#ultravox).
+Inworld publishes three short skills on its website, each about 1 KB or less: endpoints, authentication, a few inputs and links to the docs. They do not cover voice lists, limits or errors, so follow their links. The [provider landscape](landscape.md) notes that Inworld announced its acquisition of Ultravox, which has its own skill under [Ultravox](#ultravox).
 
 | Task | Skill |
 | --- | --- |
-| Find the Inworld text-to-speech endpoints, authentication and docs. *Published on inworld.ai.* | [tts-api](https://inworld.ai/.well-known/agent-skills/tts-api.md) |
-| Find the Inworld speech-to-text endpoint, authentication and docs. *Published on inworld.ai.* | [stt-api](https://inworld.ai/.well-known/agent-skills/stt-api.md) |
-| Find the Inworld Realtime API endpoints for speech-to-speech sessions, authentication and docs. *Published on inworld.ai.* | [realtime-api](https://inworld.ai/.well-known/agent-skills/realtime-api.md) |
+| Find the Inworld text-to-speech (TTS-2) endpoints, authentication, inputs, SDK installs and docs. *Published on inworld.ai.* | [tts-api](https://inworld.ai/.well-known/agent-skills/tts-api.md) |
+| Find the Inworld speech-to-text batch and streaming endpoints, model, authentication and docs. *Published on inworld.ai.* | [stt-api](https://inworld.ai/.well-known/agent-skills/stt-api.md) |
+| Find the Inworld Realtime API endpoints for speech-to-speech sessions, server and client authentication, session setup and docs. *Published on inworld.ai.* | [realtime-api](https://inworld.ai/.well-known/agent-skills/realtime-api.md) |
 
 ### Jellypod
 
@@ -819,7 +816,7 @@ The skill creates voiceprints, which identify people by voice. It gives no conse
 
 | Task | Skill |
 | --- | --- |
-| Synthesize speech with Rime TTS over HTTP or WebSocket, choose models and voices, and wire it into voice agents. *Published on docs.rime.ai.* | [rimelabs](https://docs.rime.ai/.well-known/agent-skills/rimelabs/skill.md) |
+| Use Rime text-to-speech (Coda and Mist v3), Prism speech-to-speech and speech-to-text over HTTP or WebSocket, choose models and voices, and wire them into voice agents. *Published on docs.rime.ai.* | [rimelabs](https://docs.rime.ai/.well-known/agent-skills/rimelabs/skill.md) |
 
 ### Sarvam AI
 
@@ -837,7 +834,7 @@ The skill creates voiceprints, which identify people by voice. It gives no conse
 
 [shinyorg/skills](https://github.com/shinyorg/skills) · **4 stars** · [MIT](https://github.com/shinyorg/skills/blob/main/LICENSE)
 
-The Shiny Speech skill gives microphone capture, playback, recognition, synthesis, and platform audio processing guidance for native .NET apps. **Optional prerelease workflow:** the inspected core APIs are in `3.0.0-beta-0030` packages targeting .NET 10; stable Shiny.Speech `2.1.0` and the SDK's default branch do not expose the same surface. Follow the versioned package and [current documentation](https://shinylib.net/speech/), preserving `reference/api-reference.md` with the skill.
+The Shiny Speech skill gives microphone capture, playback, full-duplex call audio, recognition, synthesis, and platform audio processing guidance for native .NET apps. **Optional prerelease workflow:** the inspected core APIs are in `3.0.0-beta-0030` packages targeting .NET 10; stable Shiny.Speech `2.1.0` and the SDK's default branch do not expose the same surface. Follow the versioned package and [current documentation](https://shinylib.net/speech/), preserving `reference/api-reference.md` with the skill.
 
 <details>
 <summary>Preview and beta APIs (1 optional skill)</summary>
@@ -846,11 +843,11 @@ These target alpha or beta features or APIs that can change. Check the current d
 
 | Task | Skill |
 | --- | --- |
-| Capture audio, play it back, recognize and synthesize speech, and use platform audio processing in a .NET app. | [shiny-speech](https://github.com/shinyorg/skills/blob/main/plugins/shiny/skills/shiny-speech/SKILL.md) |
+| Capture audio, play it back, run echo-cancelled full-duplex call audio, recognize and synthesize speech, and use platform audio processing in a .NET app. | [shiny-speech](https://github.com/shinyorg/skills/blob/main/plugins/shiny/skills/shiny-speech/SKILL.md) |
 
 </details>
 
-The upstream overview and later sections disagree about monitor/device support on Linux. Verify each target platform before using those features. Processing flags do not guarantee echo cancellation or suppression on every device, driver, or recognition backend. The reviewed package XML confirms selected API members; no integration was compiled or run. This skill supplies a frontend, not an entire voice-agent runtime.
+The upstream feature list and later sections disagree about which platforms support audio device selection: the list leaves out macOS and Windows, which later sections include. Full-duplex call audio runs only on iOS, Mac Catalyst, macOS and Android. Verify each target platform before using those features. Processing flags do not guarantee echo cancellation or suppression on every device, driver, or recognition backend. The reviewed package XML confirms selected API members; no integration was compiled or run. This skill supplies a frontend, not an entire voice-agent runtime.
 
 ### StepFun
 
@@ -861,14 +858,6 @@ The upstream overview and later sections disagree about monitor/device support o
 | Transcribe audio files to text with the StepFun ASR streaming (SSE) API through a Python CLI. | [step-asr](https://github.com/stepfun-ai/StepAudio-Skills/blob/main/skills/step-asr/SKILL.md) |
 | Synthesize speech and create cloned voices with StepFun TTS through a bash CLI. | [step-tts](https://github.com/stepfun-ai/StepAudio-Skills/blob/main/skills/step-tts/SKILL.md) |
 | Call StepFun step-audio-r1.1 chat completions with text or audio input; save the reply audio, transcript and raw JSON. | [stepfun-step-audio-r1-1](https://github.com/stepfun-ai/StepAudio-Skills/blob/main/skills/stepfun-step-audio-r1-1/SKILL.md) |
-
-### Together AI
-
-[togethercomputer/skills](https://github.com/togethercomputer/skills) · **36 stars** · [MIT](https://github.com/togethercomputer/skills/blob/main/LICENSE)
-
-| Task | Skill |
-| --- | --- |
-| Use Together AI audio APIs: TTS (REST, streaming, WebSocket) plus transcription, diarization and realtime STT. | [together-audio](https://github.com/togethercomputer/skills/blob/main/skills/together-audio/SKILL.md) |
 
 ### Venice AI
 
@@ -887,7 +876,7 @@ Frameworks, SDKs and real-time media infrastructure for agents you build yoursel
 
 [Skill index on docs.daily.co](https://docs.daily.co/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
 
-The skill covers the Daily video-calling APIs in general and does not mention voice agents. Its meeting-token curl example builds invalid JSON, so do not copy it as written.
+The skill covers the Daily video-calling APIs in general, including dial-in and dial-out, and does not mention voice agents.
 
 | Task | Skill |
 | --- | --- |
@@ -1082,9 +1071,9 @@ Gemini Developer API credentials and Google Cloud authentication are not interch
 | Scaffold a cloud-authenticated Live API client with session resumption, token refresh, protobuf messages, and a demo. | [gemini-live-api](https://github.com/google/skills/blob/main/skills/cloud/gemini-live-api/SKILL.md) |
 | Plan a multimodal cloud solution, including voice. It is broader than voice agents. **Optional.** | [google-cloud-solution-agentic-ai-bidirectional-streaming](https://github.com/google/skills/blob/main/skills/cloud/google-cloud-solution-agentic-ai-bidirectional-streaming/SKILL.md) |
 | Lifecycle workflow for Google CES/CXAS agents: build from a PRD, run evals, triage failures, push with the cxas CLI. | [cxas-agent-foundry](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-agent-foundry/SKILL.md) |
-| Audit and remediate CXAS agent configs for Gemini Composite V1 voice: Director's Notes, accents, prompts, tool pacing. | [cxas-composite-voice-agent-optimizer](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-composite-voice-agent-optimizer/SKILL.md) |
+| Audit and remediate CXAS agent configs for Gemini Composite v2 voice: model upgrade, Director's Notes cleanup, audio-tag migration, prompts and tool pacing. | [cxas-composite-voice-agent-optimizer](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-composite-voice-agent-optimizer/SKILL.md) |
 | Fetch non-contained CCAI Insights conversations for a CXAS app and cluster failure patterns into a Markdown report. | [cxas-loss-analysis](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-loss-analysis/SKILL.md) |
-| Export a CES app's golden evals, convert them to SCRAPI simulation cases with Gemini, and run them with an HTML report. | [cxas-sim-eval](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-sim-eval/SKILL.md) |
+| Export a CES app's golden evals, convert them to SCRAPI simulation cases with Gemini, and run them locally with an HTML report or as platform Milestone evaluations. | [cxas-sim-eval](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-sim-eval/SKILL.md) |
 | Query Google Cloud Logging for contact center, Dialogflow CX and CX Agent Studio sessions, including Phone Gateway and SIP call logs, tool failures and Insights uploads. | [query-gecx-logs](https://github.com/GoogleCloudPlatform/ccaas-observability/blob/main/skills/query-gecx-logs/SKILL.md) |
 | Discover a project's contact center, Dialogflow CX, CX Agent Studio and Insights resources and save them for the log-query skill. | [discover-gecx-environments](https://github.com/GoogleCloudPlatform/ccaas-observability/blob/main/skills/discover-gecx-environments/SKILL.md) |
 | Build Google ADK voice agents on the Gemini Live API: Live streaming, model and region choice, voice and turn-taking settings, non-blocking tools and session limits. | [google-agents-cli-adk-code](https://github.com/google/agents-cli/blob/main/skills/google-agents-cli-adk-code/SKILL.md) |
@@ -1100,7 +1089,7 @@ Use these to move an existing agent or integration. They can change application 
 
 </details>
 
-The log-query skill reads production conversation logs, and both ccaas-observability skills call Google APIs with your gcloud token, so use an account limited to read-only access. Both need files from the repository root, so install the whole repository. The ADK skill is general ADK code guidance for Python and Go. Voice is one Python-only reference in it, and it names Live model IDs that change often, so check Google's Live API model pages before you ship.
+The log-query skill reads production conversation logs, and both ccaas-observability skills call Google APIs with your gcloud token, so use an account limited to read-only access. Both need files from the repository root, so install the whole repository. The ADK skill is general ADK code guidance for Python and Go. Voice is one Python-only reference in it, and it names Live model IDs that change often, so check Google's Live API model pages before you ship. The composite-voice optimizer's `--remediate` option rewrites app files in place with no backup, so preview it with `--dry-run`. The two Live API skills from google/skills tag the commands they run for usage attribution. See [Use with care](#use-with-care).
 
 ## Testing, evaluation and monitoring
 
@@ -1126,7 +1115,7 @@ Skills for simulated callers, test suites, scoring and call review. Runs can pla
 - [cekura-ai/cekura-skills](https://github.com/cekura-ai/cekura-skills) · **7 stars** · [MIT](https://github.com/cekura-ai/cekura-skills/blob/main/LICENSE)
 - [Skill index on docs.cekura.ai](https://docs.cekura.ai/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
 
-Six of the eight repository skills tell the agent to call the vendor tool `mcp__cekura__cekura_skill_started` before anything else. See [Use with care](#use-with-care).
+Six of the eight repository skills tell the agent to call the vendor tool `mcp__cekura__cekura_skill_started` before anything else. The infra-test-suite skill writes CI that runs Cekura's run-suite action from a release tag, not a commit, with your API key, and its optional cekura-test label deploys pull-request previews and places paid calls. See [Use with care](#use-with-care).
 
 | Task | Skill |
 | --- | --- |
@@ -1217,7 +1206,7 @@ Hookdeck is a webhook service. These are third-party skills that describe other 
 | Authenticate Vapi Server URL messages and answer the four message types that need a JSON reply during live calls. | [vapi-webhooks](https://github.com/hookdeck/webhook-skills/blob/main/skills/vapi-webhooks/SKILL.md) |
 | Verify Retell X-Retell-Signature and handle call, transcript, transfer and chat webhook events. | [retell-webhooks](https://github.com/hookdeck/webhook-skills/blob/main/skills/retell-webhooks/SKILL.md) |
 | Verify ElevenLabs webhook signatures and handle post-call transcription and voice-removal events. | [elevenlabs-webhooks](https://github.com/hookdeck/webhook-skills/blob/main/skills/elevenlabs-webhooks/SKILL.md) |
-| Receive Deepgram asynchronous transcription callbacks and check the dg-token header. The check is a plain header comparison, not a signature. | [deepgram-webhooks](https://github.com/hookdeck/webhook-skills/blob/main/skills/deepgram-webhooks/SKILL.md) |
+| Receive Deepgram asynchronous transcription callbacks, authenticated with Basic Auth credentials in the callback URL and an optional dg-token check. Neither is a signature, and the example accepts an empty Basic Auth header when its credentials are unset. | [deepgram-webhooks](https://github.com/hookdeck/webhook-skills/blob/main/skills/deepgram-webhooks/SKILL.md) |
 | Verify OpenAI Standard Webhooks signatures and route fine-tuning, batch and realtime.call.incoming events. | [openai-webhooks](https://github.com/hookdeck/webhook-skills/blob/main/skills/openai-webhooks/SKILL.md) |
 
 ### Resemble AI
@@ -1253,7 +1242,6 @@ These providers are widely used, but no official skill for building voice agents
 | Vonage | Phone and calling | [voice-call-reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md) · [voice-media-debugging](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md) · [voice-phone-compliance](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md) |
 | Bandwidth | Phone and calling | [voice-call-reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md) · [voice-media-debugging](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md) · [voice-phone-compliance](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md) |
 | LiveKit SIP (LiveKit's other skills are in the [core catalogue](catalog.md#livekit)) | Phone and calling | [voice-call-reliability](../plugins/voice-foundations/skills/voice-call-reliability/SKILL.md) · [voice-media-debugging](../plugins/voice-foundations/skills/voice-media-debugging/SKILL.md) · [voice-phone-compliance](../plugins/voice-foundations/skills/voice-phone-compliance/SKILL.md) |
-| Hume (EVI and text-to-speech) | Platform and speech | [voice-stack-selection](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md) · [voice-conversation-design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) · [voice-speech-pipeline](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md) |
 | Microsoft Copilot Studio | Platform | [voice-stack-selection](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md) · [voice-conversation-design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) |
 | Dialogflow CX (skills for its successor, CX Agent Studio, and for Dialogflow CX logs and migration are under [Google](#google)) | Platform | [voice-conversation-design](../plugins/voice-foundations/skills/voice-conversation-design/SKILL.md) · [voice-agent-evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md) |
 | Speechmatics | Speech-to-text | [voice-speech-pipeline](../plugins/voice-foundations/skills/voice-speech-pipeline/SKILL.md) · [voice-turn-taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md) |
@@ -1266,20 +1254,20 @@ These providers are widely used, but no official skill for building voice agents
 | OpenAI Agents SDK | Framework | [voice-stack-selection](../plugins/voice-foundations/skills/voice-stack-selection/SKILL.md) · [voice-turn-taking](../plugins/voice-foundations/skills/voice-turn-taking/SKILL.md) |
 | Hamming | Testing | [voice-agent-evaluation](../plugins/voice-foundations/skills/voice-agent-evaluation/SKILL.md) |
 
-Amazon Connect, Amazon Chime SDK, Amazon Lex, Amazon Polly, Amazon Transcribe and Nova Sonic have skills only in AWS sample repositories. They are listed under [AWS](#aws). TEN has a maintainer skill for its own repository, and Vonage's organization has skills only for maintaining its SDK repositories. OpenAI publishes a general [Agents SDK skill](https://github.com/openai/plugins/blob/main/plugins/openai-developers/skills/agents-sdk/SKILL.md) and Microsoft publishes [Copilot Studio authoring skills](https://github.com/microsoft/skills-for-copilot-studio), but neither covers voice. The [grok-voice plugin](https://github.com/cursor/plugins/tree/main/grok-voice) for Cursor comes from a Cursor maintainer, not xAI. None of those is a vendor's guidance for building a voice agent, so they are not linked.
+Amazon Connect, Amazon Chime SDK, Amazon Lex, Amazon Polly, Amazon Transcribe and Nova Sonic have skills only in AWS sample repositories. They are listed under [AWS](#aws). TEN has a maintainer skill for its own repository, and Vonage's organization has skills only for maintaining its SDK repositories. OpenAI publishes a general [Agents SDK skill](https://github.com/openai/plugins/blob/main/plugins/openai-developers/skills/agents-sdk/SKILL.md) and Microsoft publishes [Copilot Studio authoring skills](https://github.com/microsoft/skills-for-copilot-studio), but neither covers voice. The [grok-voice plugin](https://github.com/cursor/plugins/tree/main/grok-voice) for Cursor comes from a Cursor maintainer, not xAI. None of those is a vendor's guidance for building a voice agent, so they are not linked. Hume is no longer listed: on October 2, 2026 it [announced](https://dev.hume.ai/changelog) that its text-to-speech and EVI APIs are being shut down, with access ending on November 13, 2026.
 
 ## Use with care
 
 - **Call-home instructions.** Six Cekura skills open by telling the agent to call the vendor tool `mcp__cekura__cekura_skill_started`. The call reports the skill name, a fixed tag and the plugin version to Cekura. They are cekura-bot-test-writer, cekura-eval-design, cekura-generate-scenarios, cekura-infra-test-suite, cekura-metric-design and cekura-self-improving-agent. Several also ask the agent to tag its writes.
-- **Telemetry.** Synthflow's create-assistant, create-call and manage-actions tell the agent to send a usage event to a PostHog endpoint. It is on by default and stops when `DO_NOT_TRACK` or `DISABLE_TELEMETRY` is set. The event calls itself anonymous, but its identifier is an unsalted hash of the user name. Synthflow's create-eval and create-simulation contain telemetry commands with the same opt-outs.
-- **Other vendor behavior.** The Plivo CLI skill installs with a script piped from a mutable branch into bash, and the CLI checks GitHub for updates daily and can send optional feedback telemetry. PolyAI's workflow skill tells the agent to install uv with a script piped into a shell when the `poly` tool is missing. The Bland plugin installs hooks and Node scripts, including a credentials helper that looks for the Bland key in the environment, Claude Code settings and the macOS keychain. Zero Runtime's deploy command uploads your local `.env` file to its cloud. Resemble's detect skill can add a vendor script to every page of your site, and that script records visitor signals such as pointer, click and scroll. A SignalWire example runs `eval` on model-supplied text. Read these before you run them.
+- **Telemetry.** Synthflow's create-assistant, create-call and manage-actions tell the agent to send a usage event to a PostHog endpoint. It is on by default and stops when `DO_NOT_TRACK` or `DISABLE_TELEMETRY` is set. The event calls itself anonymous, but its identifier is an unsalted hash of the user name. Synthflow's create-eval and create-simulation contain telemetry commands with the same opt-outs. Google's gemini-live-api and google-cloud-solution-agentic-ai-bidirectional-streaming skills tell the agent to tag every gcloud, REST or MCP command it runs with a skill attribution string. It is on by default and stops only if the user asks; the skills say the tag carries no user data.
+- **Other vendor behavior.** The Plivo CLI has a telemetry setting and a feedback command, and its `plivo ask` and diagnose commands send questions and call details to Plivo's hosted assistant. Its audio-streaming and SIP-trunking skills still suggest the install.sh one-liner from Plivo's docs when the CLI is missing, although the CLI skill now says not to run an install script. Cekura's infra-test-suite skill writes CI that runs a vendor action pinned to a release tag, not a commit, with your Cekura API key. PolyAI's workflow skill tells the agent to install uv with a script piped into a shell when the `poly` tool is missing. The Bland plugin installs hooks and Node scripts, including a credentials helper that looks for the Bland key in the environment, Claude Code settings and the macOS keychain. Zero Runtime's deploy command uploads your local `.env` file to its cloud. Resemble's detect skill can add a vendor script to every page of your site, and that script records visitor signals such as pointer, click and scroll. A SignalWire example runs `eval` on model-supplied text. Read these before you run them.
 - **No license file.** These repositories have no license file at the checked commit, so they are linked only, not copied: [AssemblyAI/assemblyai-skill](https://github.com/AssemblyAI/assemblyai-skill), [VapiAI/skills](https://github.com/VapiAI/skills), [deepgram/skills](https://github.com/deepgram/skills), [SynthFlowAI/synthflow-skills](https://github.com/SynthFlowAI/synthflow-skills), [bluejay-ai-dev/bluejay-skills](https://github.com/bluejay-ai-dev/bluejay-skills), [elevenlabs/plugin](https://github.com/elevenlabs/plugin), [OpenRouterTeam/skills](https://github.com/OpenRouterTeam/skills), [smallest-inc/skills](https://github.com/smallest-inc/skills), [dograh-hq/skills](https://github.com/dograh-hq/skills). The Azure-Samples/Cognitive-Speech-TTS license says MIT applies to SDK code only. Docs-hosted skills carry no confirmed license, and the three Zero Runtime files declare a Proprietary license.
 - **Docs-hosted skills can change without notice.** They have no commit or tag. Compare a file's SHA-256 hash with the one in [linked-skills.json](../linked-skills.json) before you rely on it.
 - **Vendor status.** The [provider landscape](landscape.md) lists Millis AI with its status unverified, and notes that Aircall announced its acquisition of Vogent on May 6, 2026. Confirm that both products are current before you build on them.
-- **Skills that disagree.** PolyAI's repository skills and its documentation-site skill disagree about whether merging into main publishes to Live or only to sandbox. Bland's v1 and v2 skills describe different platform versions, and the v2 skills say not to mix them.
-- **Shared names.** Several skills use the same name: api, assemblyai, call-review, configure-metrics, create-assistant, create-call, speech-to-text, text-to-speech, voice-agent and voice-agents. Generic names such as Bland's calls, tools, knowledge and debug, Vision Agents' agent and ai-coustics' ai may also collide with skills you already have. Install each from its original source into its own folder, or rename it, so one does not replace another.
+- **Skills that disagree.** PolyAI's repository skills say that merging into main deploys only to sandbox, while its documentation-site skill says that publishing a branch merges it onto Live. Bland's v1 and v2 skills describe different platform versions, and the v2 skills say not to mix them.
+- **Shared names.** Several skills use the same name: api, assemblyai, call-review, configure-metrics, create-assistant, create-call, speech-to-text, text-to-speech, voice-agent and voice-agents. Generic names such as Bland's calls, tools, knowledge and debug, Bolna's prompt-writing, Vision Agents' agent and ai-coustics' ai may also collide with skills you already have. Install each from its original source into its own folder, or rename it, so one does not replace another.
 - **Real calls, real costs, real data.** Many skills create billable resources, place calls, or read call transcripts. Many say nothing about consent, recording or retention. The concerns for each skill are in [linked-skills.json](../linked-skills.json).
-- **Left out on purpose.** The iFlytek voice-clone skill: its script turns off TLS certificate checks and sends voice samples and auth tokens over plain http, with no consent guidance. The Dograh setup skill: its doctor script runs curl with TLS certificate checks turned off. The Vobiz skill set: its guides contradict each other about stop events and media formats. Other exclusions and their reasons are under `excluded_manifests` in [linked-skills.json](../linked-skills.json) and in the [research notes](research.md).
+- **Left out on purpose.** The iFlytek voice-clone skill: its script turns off TLS certificate checks and sends voice samples and auth tokens over plain http, with no consent guidance. The Dograh setup skill: its doctor script runs curl with TLS certificate checks turned off. The Vobiz skill set: its guides contradict each other about stop events and media formats. The ElevenLabs onboarding skill: generic account setup driven by a remote CLI, with installers piped into a shell as fallbacks. Vapi's vapi-demo: an experimental demo builder that asks for the private API key in chat and deploys endpoints with no authentication. Together AI's audio skill: merged upstream into a whole-platform skill. Other exclusions and their reasons are under `excluded_manifests` in [linked-skills.json](../linked-skills.json) and in the [research notes](research.md).
 
 ## What was checked
 
@@ -1294,7 +1282,9 @@ On September 30, 2026 (UTC) the index grew from 103 to 297 linked skills. Each o
 
 Purpose, dependencies and concerns for the new skills were written by reviewing agents that read each manifest and its script files. Supporting reference files were mostly not read. A separate pattern scan over the script files of the skills that ship scripts found no unsafe behavior that the concerns do not already record. No second-model review of these records was done, and nothing was run.
 
-A later coverage pass on the same day added 48 skills, for 345 in all: 35 from repositories (34 from 7 new source repositories and one from an existing one) and 13 on vendor documentation sites. It checked each provider on a list of phone, platform, speech-to-text, text-to-speech, speech-to-speech, framework and testing providers for an official skill. It searched GitHub code for SKILL.md files in each vendor's organization, searched repositories by vendor name, and probed vendor documentation sites for a skill index. Each new repository manifest was fetched at its repository's recorded commit, hashed with SHA-256 and compared with the Git blob hash. The 13 docs-hosted files matched the digest in each vendor's skill index. One reviewing agent read every new manifest in full and read or pattern-scanned the scripts they ship. Nothing was installed or run, and the Bland plugin's 479 KB bundled engine script was not read. The [structured index](../linked-skills.json) records each exclusion and its reason. GitHub code search returns at most 300 results per query and some documentation hosts could not be reached, so a missing skill is not proof that none exists. The GoogleCloudPlatform/cxas-scrapi repository has a newer commit than the one recorded for it. Its five indexed manifests match at the newer commit, and the recorded commit was left unchanged.
+A later coverage pass on the same day added 48 skills, for 345 in all: 35 from repositories (34 from 7 new source repositories and one from an existing one) and 13 on vendor documentation sites. It checked each provider on a list of phone, platform, speech-to-text, text-to-speech, speech-to-speech, framework and testing providers for an official skill. It searched GitHub code for SKILL.md files in each vendor's organization, searched repositories by vendor name, and probed vendor documentation sites for a skill index. Each new repository manifest was fetched at its repository's recorded commit, hashed with SHA-256 and compared with the Git blob hash. The 13 docs-hosted files matched the digest in each vendor's skill index. One reviewing agent read every new manifest in full and read or pattern-scanned the scripts they ship. Nothing was installed or run, and the Bland plugin's 479 KB bundled engine script was not read. The [structured index](../linked-skills.json) records each exclusion and its reason. GitHub code search returns at most 300 results per query and some documentation hosts could not be reached, so a missing skill is not proof that none exists.
+
+On October 30, 2026 (UTC) a refresh moved 27 repositories to newer commits and re-hashed 28 docs-hosted files. Each of the 108 changed repository manifests was compared with its previous version, each changed docs-hosted file was read in full, and purposes, dependencies and concerns were corrected where the new text differed. AssemblyAI's and Bolna's docs-hosted files changed again during that review and were re-read and re-hashed. Together AI merged its audio skill into one whole-platform skill, so that skill was removed, which leaves 344 linked skills. A recheck at 05:33 UTC fetched all 313 repository manifests from their default branches and matched every recorded hash. Scripts were not run, and reference files were read only where a manifest pointed to new behavior.
 
 No provider calls, installations, or runtime tests were performed. The index does not certify every SDK example or guarantee that an installed skill will work with a different package version. The [structured index](../linked-skills.json) records the checks and remaining limits.
 
