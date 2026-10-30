@@ -28,8 +28,40 @@ def inside(relative):
     return path
 
 
+def strip_comment(value):
+    """Drop a YAML comment from a plain scalar: '#' at its start or after a space or tab."""
+    if value.startswith('#'):
+        return ''
+    match = re.search(r'[ \t]#', value)
+    return value[:match.start()].rstrip() if match else value
+
+
+def unquote_scalar(text):
+    """Return a quoted scalar's content; whatever follows the closing quote is a comment."""
+    quote, out, index = text[0], [], 1
+    while index < len(text):
+        char = text[index]
+        if char == quote and quote == "'" and text[index + 1:index + 2] == "'":
+            out.append("'")
+            index += 2
+        elif char == '\\' and quote == '"' and text[index + 1:index + 2] == '"':
+            out.append('"')
+            index += 2
+        elif char == quote:
+            return ''.join(out)
+        else:
+            out.append(char)
+            index += 1
+    return text
+
+
 def frontmatter_text(header, key):
-    """Return a top-level frontmatter string: plain, quoted, or a | or > block."""
+    """Return a top-level frontmatter string: plain, quoted, or a | or > block.
+
+    Comments count as YAML counts them: `description: # TODO` is empty, and a
+    trailing comment is not part of a plain or quoted value. Inside a block
+    scalar, '#' is content.
+    """
     lines = header.splitlines()
     for index, line in enumerate(lines):
         match = re.match(re.escape(key) + r':(?:[ \t]+(.*))?$', line)
@@ -44,10 +76,10 @@ def frontmatter_text(header, key):
             if first[0] == '|':
                 return '\n'.join(rest).strip()
             return ' '.join(part for part in rest if part)
-        text = ' '.join(part for part in [first] + rest if part)
-        if len(text) > 1 and text[0] == text[-1] and text[0] in '\'"':
-            text = text[1:-1].replace("''", "'") if text[0] == "'" else text[1:-1].replace('\\"', '"')
-        return text
+        if first[:1] in ('"', "'"):
+            return unquote_scalar(' '.join(part for part in [first] + rest if part))
+        parts = [strip_comment(first)] + [strip_comment(part) for part in rest if not part.startswith('#')]
+        return ' '.join(part for part in parts if part)
     return ''
 
 
