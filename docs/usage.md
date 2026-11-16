@@ -7,6 +7,8 @@ A skill is a folder with a `SKILL.md` file (plus any `references/`, `assets/` or
 installed skill and loads the full instructions when a task matches. Install the
 **whole folder**, not just `SKILL.md`.
 
+![Three skill tiers — 13 original voice-foundations skills, 27 bundled vendor snapshots, and 359 linked ecosystem skills — connect to Claude Code and Codex plugin marketplaces or open skill folders in Hermes Agent, Cursor, GitHub Copilot, Windsurf and Gemini CLI.](../assets/diagrams/skill-architecture.svg)
+
 ## Claude Code: plugin marketplace
 
 This repo is a Claude Code plugin marketplace. Add it once, then install the
@@ -31,7 +33,7 @@ claude plugin install voice-foundations@voice-agent-skills
 | `voice-pipecat` | Pipecat's official skills (dated copy) |
 | `voice-elevenlabs` | ElevenLabs' official skills (dated copy) |
 | `voice-twilio` | Twilio's official voice skills (dated copy) |
-| `voice-cartesia` | Cartesia's official skills (dated copy) |
+| `voice-cartesia` | Cartesia's official speech API skill (dated copy) |
 | `voice-openai-speech` | OpenAI's file-based speech and transcription skills (dated copy) |
 
 Plugin skills are namespaced, so `voice-turn-taking` runs as
@@ -89,6 +91,11 @@ directory:
 | --- | --- | --- |
 | Claude Code | `~/.claude/skills/<name>/` | `.claude/skills/<name>/` |
 | OpenAI Codex | `~/.agents/skills/<name>/` (older Codex versions: `~/.codex/skills/`) | `.agents/skills/<name>/` ([Codex skills docs](https://learn.chatgpt.com/docs/build-skills)) |
+| Hermes Agent | `~/.hermes/skills/<name>/` | `.agents/skills/<name>/` |
+| Cursor | `~/.cursor/skills/<name>/` | `.cursor/skills/<name>/` |
+| GitHub Copilot | `~/.copilot/skills/<name>/` | `.github/skills/<name>/` |
+| Gemini CLI | `~/.gemini/skills/<name>/` | `.gemini/skills/<name>/` |
+| Windsurf | `~/.codeium/windsurf/skills/<name>/` | `.windsurf/skills/<name>/` |
 
 ```bash
 git clone https://github.com/RobStrayer/voice-agent-skills.git
@@ -109,9 +116,7 @@ MCP server. This repo supplies the instructions, not those tools, API keys or
 accounts. Skills never expand what you've authorized: live calls, phone numbers
 and paid API requests still need your go-ahead.
 
-Provider snapshots were collected on 2026-09-29. The ElevenLabs and LiveKit
-copies were refreshed on 2026-10-30 UTC, and ElevenLabs' `realtime` skill was
-added the same day from the same ElevenLabs commit. See the
+Provider snapshots were collected on 2026-09-29. The ElevenLabs, LiveKit and Cartesia copies were refreshed most recently on 2026-11-16 UTC (when upstream-removed `cartesia-line` was retired and ElevenLabs Scribe v3 / Scribe v3 Live updates landed). See the
 [documentation review](documentation-review.md) for the sources checked.
 
 ## Runtime notes
@@ -122,7 +127,7 @@ added the same day from the same ElevenLabs commit. See the
 | LiveKit | Relevant SDK/CLI and LiveKit documentation access. Some upstream instructions expect the LiveKit Docs MCP. Simulations and operations can create billable or live resources. The building skill now defaults to LiveKit Inference rather than provider plugins (plugins only on LiveKit OSS, for models Inference does not offer, or at the user's request), and the debugger's new audio mode needs LiveKit Cloud project credentials because it speaks each turn through Inference text-to-speech. Current skills replace the older `livekit-agents` and `livekit-simulations` pack. |
 | ElevenLabs | SDK/API or ElevenLabs MCP/CLI as described by the skill. Seven of the eight skills now start with a setup line telling the agent to run `npx -y @elevenlabs/cli@latest onboard init` (an unpinned vendor CLI) and follow what it prints; it signs the user in and stores an API key in a project env file. Run that step yourself or approve it explicitly, and keep the env file out of version control. The installation guides and `realtime` also point to a `setup-api-key` skill that is not bundled here. Some references show shell installers; review the current official installation method before executing them. Voice cloning/conversion and dubbing require rights to the source material. |
 | Pipecat | Python project and Pipecat CLI; hosting credentials for deploy. The pinned init/deploy skills use older `pipecat-ai-cli` installation wording. Use the current CLI instructions below. |
-| Cartesia | Cartesia API access or Line CLI. The pinned Line skill includes shell installer examples and operational commands. |
+| Cartesia | Cartesia API access (`CARTESIA_API_KEY`) for Sonic TTS, Ink Whisper STT, voices and localization. Upstream removed `cartesia-line` on November 3, 2026 ahead of its Line SDK hosted-agent sunset. |
 | Twilio | Account/API or Twilio MCP access appropriate to the workflow. Additional Twilio skills are mentioned by name but are outside this voice subset; get them from the full upstream pack if needed. Phone numbers, outbound calls, recordings, and infrastructure changes need task-specific authorization. |
 | OpenAI | Python and the OpenAI SDK for the included scripts; API access for actual speech/transcription requests. These are file-oriented workflows, not a realtime conversational runtime. Both skills default to models OpenAI has deprecated; see [OpenAI speech and transcription model deprecations](#openai-speech-and-transcription-model-deprecations). |
 
@@ -134,7 +139,7 @@ skill. Markdown format compatibility doesn't prove runtime compatibility.
 
 Eight upstream skills use the Agent Skills specification's `compatibility` field;
 Twilio's architect skill also uses a provider-specific `tier` field. The bundled
-Codex skill-creator validator rejects these extra fields, although all 41 headers
+Codex skill-creator validator rejects these extra fields, although all 40 headers
 parse as YAML and their required names/descriptions pass the collection checks.
 Upstream content is preserved. If a host requires a narrower schema, adapt a local
 installation copy and retain the original snapshot and attribution here.

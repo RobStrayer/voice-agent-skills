@@ -4,15 +4,16 @@
   <a href="https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml"><img alt="verify" src="https://github.com/RobStrayer/voice-agent-skills/actions/workflows/verify.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   <a href="https://github.com/RobStrayer/voice-agent-skills/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/RobStrayer/voice-agent-skills"></a>
+  <a href="docs/usage.md"><img alt="Clones" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/RobStrayer/voice-agent-skills/badges/clones.json"></a>
   <img alt="Visitors" src="https://visitor-badge.laobi.icu/badge?page_id=RobStrayer.voice-agent-skills">
-  <a href="docs/usage.md"><img alt="Works with Claude Code and Codex" src="https://img.shields.io/badge/works%20with-Claude%20Code%20%7C%20Codex-6e56cf"></a>
+  <a href="docs/usage.md"><img alt="Works with Claude Code, Codex, Hermes and Cursor" src="https://img.shields.io/badge/works%20with-Claude%20Code%20%7C%20Codex%20%7C%20Hermes%20%7C%20Cursor-6e56cf"></a>
   <a href="CONTRIBUTING.md"><img alt="Pull requests welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </p>
 
 A free, open collection for anyone building a voice AI agent: a phone receptionist,
 a booking line, a browser assistant, or anything else people talk to. It has plain
 guides for beginners, diagrams that show how the parts fit, and **skills** your
-coding agent (Claude Code, Codex and others) can load to do the work properly.
+coding agent (Claude Code, Codex, Hermes Agent, Cursor and others) can load to do the work properly.
 
 **13 original skills · 27 bundled provider skills · 359 linked skills from 61 providers and authors · 43 runtime resources**
 
@@ -70,8 +71,9 @@ npx skills add RobStrayer/voice-agent-skills --skill voice-turn-taking
 ```
 
 **By hand:** copy a skill folder (the whole folder, not just `SKILL.md`) into
-`~/.claude/skills/` for Claude Code or `~/.agents/skills/` for Codex (see the
-[install guide](docs/usage.md) for older versions).
+`~/.claude/skills/` (Claude Code), `~/.agents/skills/` (Codex), `~/.hermes/skills/`
+(Hermes Agent), `.cursor/skills/` (Cursor) or `.github/skills/` (GitHub Copilot);
+see the [install guide](docs/usage.md) for every supported path.
 
 Then give the agent a real task and the evidence it needs:
 

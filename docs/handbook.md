@@ -55,6 +55,15 @@ turn decisions, recognition, and playback influence one another.
 
 </details>
 
+<details>
+<summary>See how streaming chunks and barge-in cancellation fit together</summary>
+
+![Forward streaming chunks overlap across VAD/STT, LLM clause chunking, TTS synthesis and endpoint playback; when confirmed caller speech barges in, a cancel wire flushes playback, closes TTS and cancels LLM generation while keeping pending tool calls in a separate ledger.](../assets/diagrams/streaming-pipeline.svg)
+
+[Open the speech pipeline engineering guide →](../plugins/voice-foundations/skills/voice-speech-pipeline/references/speech-pipeline-guide.md)
+
+</details>
+
 **Leave with:** a trace of what happened and when, the audio format each step
 expects, and a test set with quiet speech, pauses, corrections and both sides
 talking at once.
@@ -107,6 +116,17 @@ a successful text simulation each prove only part of it.
 | What changed under load? | Comparable traffic, resource use, failure counts, and latency distributions |
 
 ![An illustrative timeline of one reply: the turn is committed at 260 ms, the first phrase is ready at 720 ms, playback starts at 1,060 ms and useful words are heard at 1,120 ms.](../assets/diagrams/latency-budget.svg)
+
+![Four verification layers before a voice release: deterministic logic in milliseconds, recorded audio replay on every PR, multi-turn simulated callers pre-merge, and live PSTN/WebRTC canaries.](../assets/diagrams/evaluation-layers.svg)
+
+<details>
+<summary>See the trust boundaries in a live voice call</summary>
+
+![Caller speech, Caller ID, SIP headers, DTMF and retrieved documents sit in the untrusted zone; the session edge mints short-lived client tokens; deterministic server code enforces verified session identity, allowlists, spend caps and explicit confirmation before running tools.](../assets/diagrams/voice-trust-boundaries.svg)
+
+[Open the voice agent security guide →](../plugins/voice-foundations/skills/voice-agent-security/references/security-guide.md)
+
+</details>
 
 **Leave with:** a release test set you can repeat, and a written list of what you
 haven't checked.
