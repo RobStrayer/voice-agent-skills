@@ -55,7 +55,7 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/cartesia/"],
-      "description": "Dated copy of Cartesia's official skills (github.com/cartesia-ai/skills): speech API and Line agents.",
+      "description": "Dated copy of Cartesia's official skill (github.com/cartesia-ai/skills): speech API.",
       "license": "MIT",
       "category": "voice"
     },

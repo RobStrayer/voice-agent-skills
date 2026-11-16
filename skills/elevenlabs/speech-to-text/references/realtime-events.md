@@ -51,7 +51,7 @@ Connection established successfully.
     "sample_rate": 16000,
     "audio_format": "pcm_16000",
     "language_code": "en",
-    "model_id": "scribe_v2_realtime",
+    "model_id": "scribe_v3_live",
     "commit_strategy": "manual",
     "enable_logging": true,
     "include_timestamps": true
@@ -74,6 +74,7 @@ Interim transcription results, updates frequently as audio is processed.
 |-------|------|-------------|
 | `message_type` | string | `"partial_transcript"` |
 | `text` | string | Current partial transcription |
+| `turn_probability` | number \| null | Probability that the speaker has finished their turn. Only sent for models that predict turns (`scribe_v3_live`). WebSocket API only: not yet exposed by the SDK realtime helpers |
 
 ### final_transcript
 
@@ -194,6 +195,24 @@ Entities detected in a committed segment when the connection includes `entity_de
 | `entities[].entity_type` | string | Detected entity type |
 | `entities[].start_char` | integer | Start character offset in `text` |
 | `entities[].end_char` | integer | End character offset in `text` |
+
+### redacted_transcript
+
+Redacted version of a committed segment. Sent when the connection includes `entity_redaction`.
+
+```json
+{
+  "message_type": "redacted_transcript",
+  "text": "My name is Alice.",
+  "redacted_text": "My name is {NAME_0}."
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `message_type` | string | `"redacted_transcript"` |
+| `text` | string | Committed transcript text that entities were redacted from |
+| `redacted_text` | string | Committed text with each redacted entity replaced by a marker |
 
 ## Error Events
 

@@ -2,7 +2,7 @@
 
 [Home](../README.md) / [Engineering handbook](handbook.md) / [Core skills](catalog.md) / More upstream skills
 
-**344 linked skills** · **313 in 68 source repositories** · **31 on vendor documentation sites** · **58 providers** · **Checked October 30, 2026 UTC**
+**359 linked skills** · **325 in 68 source repositories** · **34 on vendor documentation sites** · **61 providers** · **Checked November 16, 2026 UTC**
 
 These are skills from voice providers and other authors, linked to where they are published. Nothing here is copied into this repository. Open the original source for current instructions. [Usage notes](usage.md) cover installation and host assumptions. [linked-skills.json](../linked-skills.json) keeps exact source metadata for each skill: commit, hash, license, dependencies and concerns.
 
@@ -14,7 +14,7 @@ These are skills from voice providers and other authors, linked to where they ar
 - **Published on** marks a docs-hosted skill: a vendor serves the file from its documentation site. It has no commit to pin, so the index records a SHA-256 hash of the file instead.
 - **No license file: linked only** means the repository has no license file at the checked commit. This index links to the skill and does not copy it.
 - Some skills send telemetry or ask the agent to call the vendor. Read [Use with care](#use-with-care) first.
-- [Major providers without an official skill yet](#major-providers-without-an-official-skill-yet-checked-sep-30-2026) lists widely used providers with no official skill, and the core skills in this repository that cover the same job.
+- [Major providers without an official skill yet](#major-providers-without-an-official-skill-yet-checked-nov-16-2026) lists widely used providers with no official skill, and the core skills in this repository that cover the same job.
 
 ## Find your provider
 
@@ -188,6 +188,17 @@ These target alpha or beta features or APIs that can change. Check the current d
 | Task | Skill |
 | --- | --- |
 | Design node-based Bolna voice flows with routing edges, static nodes, silence handling and live event injection. | [bolna-graph-agents](https://github.com/bolna-ai/skills/blob/main/bolna-graph-agents/SKILL.md) |
+
+</details>
+
+<details>
+<summary>Migration (1 optional skill)</summary>
+
+Use these to move an existing agent or integration. Publishing workflows and test calls modify live Bolna settings and incur call charges.
+
+| Task | Skill |
+| --- | --- |
+| Move an existing Bolna `POST /call` integration onto a Bolna workflow for retries, routing and scheduled follow-ups. | [migrate-call-to-workflow](https://github.com/bolna-ai/skills/blob/main/migrate-call-to-workflow/SKILL.md) |
 
 </details>
 
@@ -379,7 +390,7 @@ The manifests declare MIT, but the repository has no license file, so this index
 - [SynthFlowAI/synthflow-skills](https://github.com/SynthFlowAI/synthflow-skills) · **0 stars** · **No license file: linked only**
 - [SynthFlowAI/AnthropicPlugin](https://github.com/SynthFlowAI/AnthropicPlugin) · **0 stars** · [MIT](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/LICENSE)
 
-Five skills come from the skills repository, which has no license file. Two come from the plugin repository. Three of the five (create-assistant, create-call and manage-actions) tell the agent to send a usage event to a PostHog endpoint. It is on by default and stops when `DO_NOT_TRACK` or `DISABLE_TELEMETRY` is set. create-eval and create-simulation also contain telemetry commands with the same opt-outs. See [Use with care](#use-with-care).
+Five skills come from the skills repository, which has no license file. Seven come from the plugin repository. Three of the five (create-assistant, create-call and manage-actions) tell the agent to send a usage event to a PostHog endpoint. It is on by default and stops when `DO_NOT_TRACK` or `DISABLE_TELEMETRY` is set. create-eval and create-simulation also contain telemetry commands with the same opt-outs. See [Use with care](#use-with-care).
 
 **Build and run assistants**
 
@@ -388,6 +399,8 @@ Five skills come from the skills repository, which has no license file. Two come
 | Create and configure Synthflow voice assistants through the API: model, voice, language, greeting and settings. | [create-assistant](https://github.com/SynthFlowAI/synthflow-skills/blob/main/create-assistant/SKILL.md) |
 | Start outbound Synthflow calls through the API or CLI and list or inspect call records. | [create-call](https://github.com/SynthFlowAI/synthflow-skills/blob/main/create-call/SKILL.md) |
 | Configure Synthflow assistant actions: live transfer, SMS, custom API calls, data extraction, booking and evals. | [manage-actions](https://github.com/SynthFlowAI/synthflow-skills/blob/main/manage-actions/SKILL.md) |
+| Create, test and attach Synthflow voice-agent actions over MCP: HTTP calls, transfers, SMS, extractors, booking and IVR steps. | [build-action](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/plugins/synthflow/skills/build-action/SKILL.md) |
+| Update a live Synthflow voice agent through a baseline, draft, diff, approval, publish, verify and rollback workflow. | [safe-agent-change](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/plugins/synthflow/skills/safe-agent-change/SKILL.md) |
 
 **Evaluate and review**
 
@@ -397,6 +410,9 @@ Five skills come from the skills repository, which has no license file. Two come
 | Build caller scenarios and simulation tests for Synthflow agents. | [create-simulation](https://github.com/SynthFlowAI/synthflow-skills/blob/main/create-simulation/SKILL.md) |
 | Audit recent calls for a Synthflow agent via MCP tools and report flagged problems with transcript evidence. | [call-review](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/plugins/synthflow/skills/call-review/SKILL.md) |
 | Review voice-agent prompts, mainly Synthflow Single-Prompt, for contradictions, tool gaps, and regression risk. | [prompt-review](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/plugins/synthflow/skills/prompt-review/SKILL.md) |
+| Build call-volume, duration, end-reason, extractor and transfer-outcome reports across a Synthflow agent or workspace. | [call-report](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/plugins/synthflow/skills/call-report/SKILL.md) |
+| Investigate failed transfers, silence, cutoffs or broken webhooks on specific Synthflow calls using transcripts and logs. | [diagnose-call](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/plugins/synthflow/skills/diagnose-call/SKILL.md) |
+| Create and run simulated-caller test suites against a Synthflow voice agent and report scenario pass/fail evidence. | [regression-test](https://github.com/SynthFlowAI/AnthropicPlugin/blob/main/plugins/synthflow/skills/regression-test/SKILL.md) |
 
 Inspect Synthflow's telemetry section before running its instructions. No telemetry, provider changes, or calls were performed for this index. Use its current [custom evaluations](https://docs.synthflow.ai/create-a-custom-evaluation) and [simulation documentation](https://docs.synthflow.ai/simulations) for API details.
 
@@ -502,6 +518,8 @@ Most of the skills live in the repository of the Plivo command-line tool. The do
 | Build, validate, test and publish Plivo CX agent flow graphs through the Agents API and the Plivo CLI, with a preflight check script. | [plivo-cx-agents](https://github.com/plivo/plivo-cli/blob/main/agents-skill/SKILL.md) |
 | Write and debug Plivo Voice XML for answer and action URLs: IVR, dial, record, conference, callbacks, error codes. | [plivo-voice-xml](https://github.com/plivo/plivo-cli/blob/main/voice-xml-skill/SKILL.md) |
 | Drive Plivo messaging, calls, numbers, verify and WebSocket stream testing through the plivo CLI. | [plivo-cli](https://github.com/plivo/plivo-cli/blob/main/cli-skill/SKILL.md) |
+| Synthesize and stream speech with Plivo Text-to-Speech via the Plivo CLI, including 8 kHz mu-law/A-law phone formats and lexicons. | [plivo-tts](https://github.com/plivo/plivo-cli/blob/main/tts-skill/SKILL.md) |
+| Debug inbound and outbound forwarded calls on Plivo and SIP trunks using ForwardedFrom, Diversion headers and CLI diagnostics. | [plivo-call-forwarding](https://github.com/plivo/plivo-cli/blob/main/call-forwarding-skill/SKILL.md) |
 | Route Plivo tasks to the right companion skill and state platform facts that every integration relies on. *Published on plivo.com.* | [plivo](https://plivo.com/docs/.well-known/agent-skills/plivo/skill.md) |
 
 ### SignalWire
@@ -670,6 +688,22 @@ Keep the repository skill's reference guides beside its manifest, and use a supp
 
 The October 28 upstream revision adds text-to-speech, moves its SDK examples to Python 1.8.2 and JavaScript 4.42.0, and drops its Voice Agent API section. [Universal-3.6 Pro Realtime](https://www.assemblyai.com/blog/universal-3-6-pro-realtime) (`universal-3-6-pro`) is generally available for streaming only, so use `universal-3-5-pro` for prerecorded and Sync STT. Match the streaming API and installed SDK to the example.
 
+### Boson AI
+
+[Skill index on docs.boson.ai](https://docs.boson.ai/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
+
+| Task | Skill |
+| --- | --- |
+| Build realtime speech-to-speech voice agents (Higgs Realtime), streaming TTS (Higgs TTS 3) and lip-synced avatars via Boson AI. *Published on docs.boson.ai.* | [bosonai](https://docs.boson.ai/.well-known/agent-skills/bosonai/skill.md) |
+
+### CAMB.AI
+
+[Skill index on docs.camb.ai](https://docs.camb.ai/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
+
+| Task | Skill |
+| --- | --- |
+| Synthesize low-latency streaming speech (MARS Flash/Pro), run translated TTS, transcribe audio and dub across 140+ languages with CAMB.AI. *Published on docs.camb.ai.* | [cambai](https://docs.camb.ai/.well-known/agent-skills/cambai/skill.md) |
+
 ### Deepgram
 
 #### SDK skills by language
@@ -749,6 +783,14 @@ against the [shipped browser contract](https://developers.deepgram.com/docs/brow
 | Install and configure the Gladia JS/TS and Python SDKs, and decide when raw REST is justified. | [gladia-sdk-integration](https://github.com/gladiaio/skills/blob/main/plugins/gladia/skills/gladia-sdk-integration/SKILL.md) |
 | Diagnose Gladia API errors, limits, audio-format and transcription-quality problems with a verification checklist. | [gladia-troubleshooting](https://github.com/gladiaio/skills/blob/main/plugins/gladia/skills/gladia-troubleshooting/SKILL.md) |
 | Transcribe audio with Gladia pre-recorded and live speech-to-text through its SDKs, CLI or REST API. *Published on docs.gladia.io.* | [gladia](https://docs.gladia.io/.well-known/agent-skills/gladia/skill.md) |
+
+### Gradium
+
+[Skill index on docs.gradium.ai](https://docs.gradium.ai/.well-known/agent-skills/index.json) · **Vendor documentation site, not a repository** · **No license confirmed: linked only**
+
+| Task | Skill |
+| --- | --- |
+| Integrate Gradium low-latency TTS, STT with semantic turn-taking, voice cloning and speech-to-speech over REST or WebSocket. *Published on docs.gradium.ai.* | [gradium](https://docs.gradium.ai/.well-known/agent-skills/gradium/skill.md) |
 
 ### iFlytek
 
@@ -938,7 +980,7 @@ These skills cover different account and deployment models. Resolve the current 
 
 | Source | Stars | License |
 | --- | ---: | --- |
-| [aws-samples/amazon-nova-samples](https://github.com/aws-samples/amazon-nova-samples) | 453 | [MIT-0](https://github.com/aws-samples/amazon-nova-samples/blob/main/LICENSE) |
+| [aws-samples/amazon-ai-samples](https://github.com/aws-samples/amazon-ai-samples) | 453 | [MIT-0](https://github.com/aws-samples/amazon-ai-samples/blob/main/LICENSE) |
 | [aws-samples/sample-ai-agent-skills](https://github.com/aws-samples/sample-ai-agent-skills) | 5 | [MIT-0](https://github.com/aws-samples/sample-ai-agent-skills/blob/main/LICENSE) |
 | [aws-samples/sample-aicc-builder-for-amazon-connect-ai-agent](https://github.com/aws-samples/sample-aicc-builder-for-amazon-connect-ai-agent) | 17 | [MIT-0](https://github.com/aws-samples/sample-aicc-builder-for-amazon-connect-ai-agent/blob/main/LICENSE) |
 | [aws-samples/sample-amazon-connect-speed-dial](https://github.com/aws-samples/sample-amazon-connect-speed-dial) | 2 | [MIT-0](https://github.com/aws-samples/sample-amazon-connect-speed-dial/blob/main/LICENSE) |
@@ -957,6 +999,7 @@ These come from AWS sample repositories, not from AWS service documentation. The
 | Build a Nova Sonic voice agent from scratch with a FastAPI WebSocket server, Strands BidiAgent, tools and sub-agents. | [nova-sonic-voice-agent](https://github.com/aws-samples/sample-voice-agent-on-aws/blob/main/skills/nova-sonic-voice-agent/SKILL.md) |
 | Design guidance for Nova Sonic voice agents: model choice, spoken prompts, tool results, barge-in, and confirmations. The upstream file is cut off near the end. | [nova-sonic-best-practices](https://github.com/aws-samples/sample-ramp-aidlc-mod-starter-packs/blob/main/skills-library/nova-sonic-best-practices/SKILL.md) |
 | Checklist for cutting Nova Sonic voice-agent latency and cost and adding multi-Region reliability on AWS. | [nova-sonic-optimization](https://github.com/aws-samples/sample-ramp-aidlc-mod-starter-packs/blob/main/skills-library/nova-sonic-optimization/SKILL.md) |
+| Write, review and debug system prompts and tool descriptions for Amazon Nova Sonic 2.5 speech-to-speech voice agents. | [nova-sonic25-prompt](https://github.com/aws-samples/amazon-ai-samples/blob/main/skills/nova-prompter/plugins/nova-sonic25-prompting/skills/nova-sonic25-prompt/SKILL.md) |
 
 **Deploy on Amazon Connect**
 
@@ -993,7 +1036,7 @@ Use these to move an existing agent or integration. They can change application 
 
 | Task | Skill |
 | --- | --- |
-| Convert an existing text agent into a Nova Sonic speech-to-speech agent with a WebSocket server and browser client. | [text-agent-to-nova-sonic-voice](https://github.com/aws-samples/amazon-nova-samples/blob/main/skills/text-agent-to-strands-voice-agent/SKILL.md) |
+| Convert an existing text agent into a Nova Sonic speech-to-speech agent with a WebSocket server and browser client. | [text-agent-to-nova-sonic-voice](https://github.com/aws-samples/amazon-ai-samples/blob/main/skills/text-agent-to-strands-voice-agent/SKILL.md) |
 
 </details>
 
@@ -1071,6 +1114,7 @@ Gemini Developer API credentials and Google Cloud authentication are not interch
 | Scaffold a cloud-authenticated Live API client with session resumption, token refresh, protobuf messages, and a demo. | [gemini-live-api](https://github.com/google/skills/blob/main/skills/cloud/gemini-live-api/SKILL.md) |
 | Plan a multimodal cloud solution, including voice. It is broader than voice agents. **Optional.** | [google-cloud-solution-agentic-ai-bidirectional-streaming](https://github.com/google/skills/blob/main/skills/cloud/google-cloud-solution-agentic-ai-bidirectional-streaming/SKILL.md) |
 | Lifecycle workflow for Google CES/CXAS agents: build from a PRD, run evals, triage failures, push with the cxas CLI. | [cxas-agent-foundry](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-agent-foundry/SKILL.md) |
+| Build and refactor self-steering Google CES/CXAS contact-center voice and chat agents with progressive playbook loading and handoff actions. | [cxas-self-steering-agent](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-self-steering-agent/SKILL.md) |
 | Audit and remediate CXAS agent configs for Gemini Composite v2 voice: model upgrade, Director's Notes cleanup, audio-tag migration, prompts and tool pacing. | [cxas-composite-voice-agent-optimizer](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-composite-voice-agent-optimizer/SKILL.md) |
 | Fetch non-contained CCAI Insights conversations for a CXAS app and cluster failure patterns into a Markdown report. | [cxas-loss-analysis](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-loss-analysis/SKILL.md) |
 | Export a CES app's golden evals, convert them to SCRAPI simulation cases with Gemini, and run them locally with an HTML report or as platform Milestone evaluations. | [cxas-sim-eval](https://github.com/GoogleCloudPlatform/cxas-scrapi/blob/main/.agents/skills/cxas-sim-eval/SKILL.md) |
@@ -1163,11 +1207,13 @@ Several of the repository skills rely on shared guides outside their own folders
 
 | Task | Skill |
 | --- | --- |
+| End-to-end entry workflow to register a voice agent in Roark, author personas and flows, preview billable call count, and start a simulation. | [simulate-quickstart](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/simulate-quickstart/SKILL.md) |
 | Create Roark simulated-caller personas and improv customer flows, and pick test environments, through the SDK. | [author-personas-flows](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/author-personas-flows/SKILL.md) |
 | Author Roark scripted customer flows as step graphs covering IVR menus, DTMF keypad entry, silence and voicemail. | [author-scripted-flows](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/author-scripted-flows/SKILL.md) |
 | Choose built-in Roark metrics, add pass/fail checks, and author custom LLM-judge, formula or pattern metrics. | [configure-metrics](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/configure-metrics/SKILL.md) |
 | Configure a Roark simulation run plan, preview its call count, and start the run against a voice or chat agent. | [build-run-plan](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/build-run-plan/SKILL.md) |
 | Gate a deploy or CI pipeline on a Roark simulation: start a run, wait, then assert pass/fail check metrics. | [gate-ci](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/gate-ci/SKILL.md) |
+| Stage concurrent simulated voice calls in Roark to test agent latency, drop rates and telephony concurrency limits. | [simulate-load-testing](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/simulate-load-testing/SKILL.md) |
 | Grade real production calls and chats with Roark metrics using standing policies or one-off backfill jobs. | [monitor-live-calls](https://github.com/roarkhq/mcp-roark-analytics/blob/main/plugins/roark/skills/monitor-live-calls/SKILL.md) |
 | Run simulated-caller tests on voice agents, score live calls with metrics, and manage Roark config via its CLI. *Published on docs.roark.ai.* | [roark](https://docs.roark.ai/.well-known/agent-skills/roark/skill.md) |
 
@@ -1233,7 +1279,7 @@ Use the worked prompts as drafts for audio tests. Its twenty-word sentence cap, 
 
 The collection contains ten skills; this index selects one. Its broader latency ceilings, readiness scores, and full-duplex restrictions need more evidence before they can be used as general engineering guidance.
 
-## Major providers without an official skill yet (checked Sep 30, 2026)
+## Major providers without an official skill yet (checked Nov 16, 2026)
 
 These providers are widely used, but no official skill for building voice agents turned up on September 30, 2026. The check searched GitHub code for SKILL.md files in each vendor's organization, searched repositories by vendor name, and probed vendor documentation sites for a skill index. Code search returns a limited number of results and some documentation hosts could not be reached, so this is not proof that none exists. Until a vendor publishes one, the core skills in this repository cover the job from the outside. They do not teach a provider's API, but they do cover the design, reliability and test work around it. Use the provider's own documentation for the API itself.
 

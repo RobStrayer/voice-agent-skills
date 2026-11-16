@@ -2,11 +2,11 @@
 
 [Home](../README.md) / Skill catalog
 
-**41 bundled skills** · **13 original foundations** · **28 provider skills**
+**40 bundled skills** · **13 original foundations** · **27 provider skills**
 
 Choose a foundation for the engineering problem, then a provider skill for the implementation. All provider names below open the original maintained source; **Snapshot** opens the dated copy kept here.
 
-Reviewed: **2026-10-30 UTC**. [More upstream skills](more-skills.md) cover additional providers and language-specific SDKs. [Usage notes](usage.md) explain host compatibility, tools, and runtime caveats. Install from the original source for its latest instructions; frontmatter names are preserved.
+Reviewed: **2026-11-16 UTC**. [More upstream skills](more-skills.md) cover additional providers and language-specific SDKs. [Usage notes](usage.md) explain host compatibility, tools, and runtime caveats. Install from the original source for its latest instructions; frontmatter names are preserved.
 
 ## Choose your starting point
 
@@ -65,7 +65,7 @@ Official lifecycle skills. Relevant SDK/CLI and documentation MCP may be needed.
 <details>
 <summary>Source, snapshot, license and dated stars</summary>
 
-Current source: [livekit/agent-skills](https://github.com/livekit/agent-skills/tree/main). [Recorded snapshot](https://github.com/livekit/agent-skills/tree/e1195b497388b1aecad5dd2e9a0c9bdfbaba1878). License: MIT. Source repository stars: 72 (dated snapshot; applies to the source collection).
+Current source: [livekit/agent-skills](https://github.com/livekit/agent-skills/tree/main). [Recorded snapshot](https://github.com/livekit/agent-skills/tree/3084fe8fead5c7f4fe5e4845f40c27517fc5eac3). License: MIT. Source repository stars: 75 (dated snapshot; applies to the source collection).
 
 </details>
 
@@ -81,7 +81,7 @@ Official speech and agent workflows. Requires the relevant SDK/API, CLI, or MCP.
 | [dubbing](https://github.com/elevenlabs/skills/blob/main/dubbing/SKILL.md) | Translate and dub recorded speech. | [Snapshot](../skills/elevenlabs/dubbing/SKILL.md) |
 | [realtime](https://github.com/elevenlabs/skills/blob/main/realtime/SKILL.md) | Switch an ElevenAgents agent to an Eleven Realtime model, or move a browser app from OpenAI Realtime to ElevenLabs' compatible API. | [Snapshot](../skills/elevenlabs/realtime/SKILL.md) |
 | [speech-engine](https://github.com/elevenlabs/skills/blob/main/speech-engine/SKILL.md) | Add real-time voice to an agent runtime you own: Speech Engine handles speech-to-text and text-to-speech while your server supplies the replies. | [Snapshot](../skills/elevenlabs/speech-engine/SKILL.md) |
-| [speech-to-text](https://github.com/elevenlabs/skills/blob/main/speech-to-text/SKILL.md) | File and realtime transcription, events, and commit strategies. | [Snapshot](../skills/elevenlabs/speech-to-text/SKILL.md) |
+| [speech-to-text](https://github.com/elevenlabs/skills/blob/main/speech-to-text/SKILL.md) | Scribe v3 file transcription and Scribe v3 Live streaming transcription, turn prediction, entity redaction, and commit strategies. | [Snapshot](../skills/elevenlabs/speech-to-text/SKILL.md) |
 | [text-to-speech](https://github.com/elevenlabs/skills/blob/main/text-to-speech/SKILL.md) | Speech generation, streaming, and voice settings. | [Snapshot](../skills/elevenlabs/text-to-speech/SKILL.md) |
 | [voice-changer](https://github.com/elevenlabs/skills/blob/main/voice-changer/SKILL.md) | Convert a voice while retaining speech delivery. | [Snapshot](../skills/elevenlabs/voice-changer/SKILL.md) |
 | [voice-isolator](https://github.com/elevenlabs/skills/blob/main/voice-isolator/SKILL.md) | Isolate spoken voice from noisy audio. | [Snapshot](../skills/elevenlabs/voice-isolator/SKILL.md) |
@@ -89,7 +89,7 @@ Official speech and agent workflows. Requires the relevant SDK/API, CLI, or MCP.
 <details>
 <summary>Source, snapshot, license and dated stars</summary>
 
-Current source: [elevenlabs/skills](https://github.com/elevenlabs/skills/tree/main). [Recorded snapshot](https://github.com/elevenlabs/skills/tree/503d4e9fda0190ab9357142f44e51de626f97f90). License: MIT. Source repository stars: 460 (dated snapshot; applies to the source collection).
+Current source: [elevenlabs/skills](https://github.com/elevenlabs/skills/tree/main). [Recorded snapshot](https://github.com/elevenlabs/skills/tree/64271c12b46efb7c9a0b65c8ec521683bb35fc4a). License: MIT. Source repository stars: 569 (dated snapshot; applies to the source collection).
 
 </details>
 
@@ -138,17 +138,16 @@ Current source: [pipecat-ai/skills](https://github.com/pipecat-ai/skills/tree/ma
 
 ## Cartesia
 
-Official Cartesia API and Line workflows. Requires Cartesia service access or Line CLI.
+Official Cartesia speech API workflow. Requires Cartesia service access. Cartesia removed `cartesia-line` upstream on November 3, 2026 ahead of its Line SDK hosted-agent sunset and directs hosted agents to Cartesia Managed Agents.
 
 | Skill and original source | What it helps with | Bundled copy |
 | --- | --- | --- |
-| [cartesia-api](https://github.com/cartesia-ai/skills/blob/main/skills/cartesia-api/SKILL.md) | Integrate Cartesia speech APIs, streaming, voices, and SDKs. | [Snapshot](../skills/cartesia/cartesia-api/SKILL.md) |
-| [cartesia-line](https://github.com/cartesia-ai/skills/blob/main/skills/cartesia-line/SKILL.md) | Build, test, and operate voice agents using Cartesia Line. | [Snapshot](../skills/cartesia/cartesia-line/SKILL.md) |
+| [cartesia-api](https://github.com/cartesia-ai/skills/blob/main/skills/cartesia-api/SKILL.md) | Integrate Cartesia Sonic TTS, Ink Whisper STT, streaming, voices, SDKs, and Managed Agents pointers. | [Snapshot](../skills/cartesia/cartesia-api/SKILL.md) |
 
 <details>
 <summary>Source, snapshot, license and dated stars</summary>
 
-Current source: [cartesia-ai/skills](https://github.com/cartesia-ai/skills/tree/main). [Recorded snapshot](https://github.com/cartesia-ai/skills/tree/0ee3f4a4ad8e9cf9d314962448b721cdc34fae42). License: MIT. Source repository stars: 5 (dated snapshot; applies to the source collection).
+Current source: [cartesia-ai/skills](https://github.com/cartesia-ai/skills/tree/main). [Recorded snapshot](https://github.com/cartesia-ai/skills/tree/8525a2f0878244228e20ce8aa0204913f683862a). License: MIT. Source repository stars: 6 (dated snapshot; applies to the source collection).
 
 </details>
 

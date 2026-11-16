@@ -176,7 +176,7 @@ Compare engines and checkpoints separately, including their streaming and licens
 | [Kokoro](https://github.com/hexgrad/kokoro) | Compact local TTS model and Python inference pipeline for conversational speech. | 9,079 | Apache-2.0; upstream states licensed weights |
 | [Piper](https://github.com/OHF-Voice/piper1-gpl) | Local TTS engine suited to on-device and self-hosted speech output. | 5,716 | GPL-3.0 code; voice terms vary |
 | [F5-TTS](https://github.com/SWivid/F5-TTS) | Flow-matching TTS research and inference with reference-audio conditioning. | 15,313 | MIT code; pretrained weights CC-BY-NC |
-| [MLX-Audio](https://github.com/Blaizzy/mlx-audio) | Apple Silicon speech recognition, synthesis, and speech-to-speech inference. | 7,964 | MIT library; loaded models vary |
+| [MLX-Audio](https://github.com/Neywa-Labs/mlx-audio) | Apple Silicon speech recognition, synthesis, and speech-to-speech inference. | 7,964 | MIT library; loaded models vary |
 | [Chatterbox](https://github.com/resemble-ai/chatterbox) | Local speech synthesis and voice-cloning models with multilingual variants. | 26,617 | MIT; checked model card MIT |
 | [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) | Speech synthesis and voice-cloning research with streaming-capable model design. | 13,594 | Apache-2.0; backend streaming limits |
 
