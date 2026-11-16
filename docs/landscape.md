@@ -2,9 +2,9 @@
 
 [Home](../README.md) / Provider landscape
 
-This page compares 184 voice agent products in nine categories, from managed
-platforms and speech models to phone carriers and testing tools. Rows changed on
-October 30, 2026 are as of that date; the rest are as of September 30, 2026,
+This page compares 200 voice agent products in nine categories, from managed
+platforms and speech models to phone carriers and testing tools. Rows added or
+updated on November 16 or October 30, 2026 are as of those dates; the rest are as of September 30, 2026,
 unless a row gives another date. Prices and products change often, so follow the
 links before you rely on a number.
 
@@ -36,7 +36,7 @@ guidance with pointers into the rest of this page. It is not a vendor claim.
 | --- | --- | --- |
 | You need a phone agent soon and don't want to run servers | A managed platform ([A](#a-managed-voice-agent-platforms)) | Pass-through costs, concurrency caps, prompts and flows that live in the vendor's tool, and consolidation: Aircall bought Vogent, Inworld bought Ultravox and Vocode is listed as bought by OpenEvidence |
 | You want control of turn-taking, tools, telephony or where data lives, or your volume makes per-minute platform fees matter | An open-source framework ([C](#c-orchestration-frameworks)) plus provider APIs | You run it yourself. Some frameworks add license terms: the TEN Framework has extra conditions, and self-hosting jambonz needs a paid license key after a one-month trial |
-| A natural flow from one end-to-end model matters more than choosing each piece | A speech-to-speech API ([B](#b-speech-to-speech-and-realtime-models)) | Less control over the voice, speech-to-text and language model pieces. Builders report weaker tool use, so many keep phone and tool-heavy agents on a cascade ([common problems](common-problems.md#12-speech-to-speech-or-a-cascade)). Re-billed context raises the cost of long calls. Models and APIs retire: Hume ends its EVI API on November 13, 2026, and OpenAI removes its older realtime models on January 20, 2027 |
+| A natural flow from one end-to-end model matters more than choosing each piece | A speech-to-speech API ([B](#b-speech-to-speech-and-realtime-models)) | Less control over the voice, speech-to-text and language model pieces. Builders report weaker tool use, so many keep phone and tool-heavy agents on a cascade ([common problems](common-problems.md#12-speech-to-speech-or-a-cascade)). Re-billed context raises the cost of long calls. Models and APIs retire: Hume shut down its EVI API on November 13, 2026, and OpenAI removes its older realtime models on January 20, 2027 |
 | You already have a SIP trunk or carrier | A framework with SIP support, such as LiveKit SIP, jambonz or Pipecat with Daily ([C](#c-orchestration-frameworks), [F](#f-telephony-and-transport)) | Media-streaming add-ons (Twilio Media Streams is $0.0044/min), number rental and toll-free surcharges |
 | You must self-host models | Open-weight speech-to-text, text-to-speech and language models with a framework ([D](#d-streaming-speech-to-text), [E](#e-low-latency-text-to-speech), [I](#i-language-models)) | Read each license. Some weights are non-commercial or carry conditions, such as Voxtral TTS (CC BY-NC 4.0), Fish Audio and Higgs Audio v3. Many open text-to-speech projects have had no pushes for months |
 | You are about to ship | Testing ([H](#h-testing-evals-and-observability)) and turn detection ([G](#g-turn-detection-vad-and-noise)), early | Several testing tools publish prices, for example Cekura at $0.25 per voice testing minute, Roark at $0.15/min for simulation and Future AGI from $0.08/minute. Hamming is sales only |
@@ -56,7 +56,7 @@ walks a coding agent through the same decision with you.
 ## What it costs per minute
 
 All figures are US dollars per minute of live conversation, worked out from list
-prices seen on September 30, 2026, with the changes found on October 30, 2026
+prices seen on September 30, 2026, with the changes found on October 30 and November 16, 2026
 noted below. None of them is a quote. Volume tiers,
 promotions, free allowances, regions and currency all change the result.
 
@@ -71,8 +71,8 @@ silence billing, minimum billing increments and recording are not modeled.
 
 | Approach | Typical range per minute, at list prices | What it leaves out |
 | --- | --- | --- |
-| Managed platform | $0.05 to $0.31 for the platforms tabled below (vendor-published; what each figure includes differs) | Telephony on some, the language model on some, concurrency add-ons, HIPAA and SLA tiers |
-| Assembled cascade | $0.015 to $0.132, mid stack about $0.056 (estimate) | Your engineering and operations time, language model growth as history is re-sent, recording, free tiers and volume discounts, and self-hosted compute in the low case |
+| Managed platform | $0.04 to $0.31 for the platforms tabled below (vendor-published; what each figure includes differs) | Telephony on some, the language model on some, concurrency add-ons, HIPAA and SLA tiers |
+| Assembled cascade | $0.015 to $0.132, mid stack about $0.055 (estimate) | Your engineering and operations time, language model growth as history is re-sent, recording, free tiers and volume discounts, and self-hosted compute in the low case |
 | Speech-to-speech API | $0.023 to $0.096 for the audio alone (estimate, a floor) | Telephony, backend model and tool calls, re-billed context and any platform markup |
 
 ### Managed platforms
@@ -82,6 +82,7 @@ what each one covers.
 
 | Platform | Published per-minute figure | What the figure includes |
 | --- | --- | --- |
+| [Mistral Voice Agents API](https://docs.mistral.ai/inference/pricing) | $0.04/min with Mistral Small 4; $0.08/min with larger models | Voice-agent engine and language model; telephony billed separately |
 | [Telnyx AI Assistants](https://telnyx.com/pricing/voice-ai-agents) | $0.0596/min (vendor example: voice engine $0.05 + telephony $0.0032 + language model $0.0064, local inbound US) | Voice engine (orchestration, speech-to-text, text-to-speech), telephony, and a language model on Telnyx-hosted models |
 | [Deepgram Voice Agent API](https://deepgram.com/pricing) | $0.050 (bring your own LLM and TTS) to $0.163 (Advanced tier) per minute on Pay As You Go; Standard $0.075 | Speech-to-text and orchestration, plus the language model and text-to-speech depending on tier; telephony not listed |
 | [Twilio ConversationRelay](https://www.twilio.com/en-us/products/conversational-ai/pricing) | $0.07/min + $0.0085/min inbound US local voice = $0.0785/min before your language model and hosting | Relay with speech-to-text and text-to-speech (itemization not published); voice billed separately; the language model and app hosting are yours |
@@ -91,11 +92,11 @@ what each one covers.
 | [Retell AI](https://www.retellai.com/pricing) | $0.07-$0.31/min vendor-stated range | Voice infrastructure, text-to-speech and language model; telephony $0.015/min extra on Retell numbers |
 | [Bolna](https://www.bolna.ai/pricing) | From 6.00 cents/min (standard volume-based rate); pilot packs about 4.2-4.6 cents/min | Platform rate; the recorded entry does not itemize what it includes (bring-your-own keys supported, credits billed on tokens) |
 | [Dasha](https://dasha.ai/pricing) | Growth plan from $0.08/min (the button reads Contact Us) | Platform; VoIP and language model tokens extra |
-| [AssemblyAI Voice Agent API (launched April 25, 2026)](https://www.assemblyai.com/changelog) | $4.50/hr all-in = $0.075/min (derived: $4.50 / 60) | Speech understanding, language model reasoning and voice generation on AssemblyAI's own models; telephony not stated. AssemblyAI's [model reference](https://www.assemblyai.com/llms/models.md) says this API is being retired and gives no date |
+| [AssemblyAI Voice Agent API (launched April 25, 2026)](https://www.assemblyai.com/changelog) | $4.50/hr all-in = $0.075/min (derived: $4.50 / 60) | Speech understanding, language model reasoning and voice generation on AssemblyAI's own models; telephony not stated. Deprecated October 26, 2026 and closed to new users; AssemblyAI's [model reference](https://www.assemblyai.com/llms/models.md) marks this API retired |
 
-**Range.** Among the ten platforms in this table, published figures run from
-$0.05/min (Deepgram Voice Agent API with your own language model and
-text-to-speech, so those costs are extra) to $0.31/min (the top of Retell AI's
+**Range.** Among the eleven platforms in this table, published figures run from
+$0.04/min (Mistral Voice Agents API with Mistral Small 4, before telephony) and $0.05/min (Deepgram Voice Agent API with your own language model and
+text-to-speech) to $0.31/min (the top of Retell AI's
 stated range). Some base or connectivity fees in section A are lower (Millis AI
 $0.02/min, Voximplant $0.004/min) but cover less. The lowest figure that already
 includes telephony and a language model is Telnyx's own example at $0.0596/min.
@@ -112,11 +113,11 @@ Each cell shows the per-minute cost and the product it comes from.
 | Line item | Low | Mid | High |
 | --- | --- | --- | --- |
 | Speech-to-text | $0.0025: [AssemblyAI Universal-Streaming English](https://www.assemblyai.com/pricing) | $0.0077: [Deepgram Nova-3 monolingual streaming, regular price](https://deepgram.com/pricing) | $0.01667: [Azure Speech real-time standard](https://azure.microsoft.com/en-us/pricing/details/speech/) |
-| Language model | $0.00056: [gpt-oss-120b on GroqCloud](https://console.groq.com/docs/models) | $0.00148: [OpenAI gpt-4.1-mini](https://developers.openai.com/api/docs/pricing) | $0.03875: [OpenAI gpt-6-astra](https://developers.openai.com/api/docs/pricing) |
+| Language model | $0.00056: [gpt-oss-120b on GroqCloud](https://console.groq.com/docs/models) | $0.00039: [OpenAI gpt-6-luna](https://developers.openai.com/api/docs/pricing) | $0.03875: [OpenAI gpt-6-astra](https://developers.openai.com/api/docs/pricing) |
 | Text-to-speech | $0.009: [Deepgram Aura-1 (Pay As You Go)](https://deepgram.com/pricing) | $0.024: [ElevenLabs Flash v2.5 / Turbo row](https://elevenlabs.io/pricing/api) | $0.048: [ElevenLabs Eleven v4, list price](https://elevenlabs.io/pricing/api) |
 | Telephony | $0.0032: [Telnyx SIP trunk, inbound US local](https://telnyx.com/pricing/elastic-sip) | $0.0129: [Twilio inbound US local $0.0085 + Media Streams $0.0044](https://www.twilio.com/en-us/voice/pricing/us) | $0.0184: [Twilio outbound US local $0.014 + Media Streams $0.0044](https://www.twilio.com/en-us/voice/pricing/us) |
 | Runtime | not priced (self-hosted compute is not counted) | $0.01: [LiveKit Cloud agent session, beyond included minutes](https://livekit.com/pricing) | $0.01: [LiveKit Cloud agent session](https://livekit.com/pricing) |
-| **Total per minute (estimate)** | **$0.015** | **$0.056** | **$0.132** |
+| **Total per minute (estimate)** | **$0.015** | **$0.055** | **$0.132** |
 
 Arithmetic: language model = 3,000 x input price per token + 175 x output price
 per token; text-to-speech = 600 characters x price per character; speech-to-text
@@ -130,11 +131,7 @@ is left out on purpose. The ElevenLabs v4 promotion seen on September 30 has
 ended, and the [pricing page](https://elevenlabs.io/pricing/api) now shows only
 the list price.
 
-The mid language model line still uses gpt-4.1-mini's current list price.
-OpenAI's [deprecations page](https://developers.openai.com/api/docs/deprecations)
-(notice of October 14, 2026) lists the gpt-4.1-mini snapshot
-gpt-4.1-mini-2025-04-14 for shutdown on January 14, 2027 and names gpt-6-luna as
-the replacement. Swapping the mid line is left to the next quarterly refresh.
+The mid language model line now uses OpenAI's `gpt-6-luna` ($0.10 input / $0.50 output per 1M tokens), the replacement named on OpenAI's [deprecations page](https://developers.openai.com/api/docs/deprecations) for `gpt-4.1-mini-2025-04-14` ahead of its January 14, 2027 shutdown.
 
 ### Speech-to-speech APIs
 
@@ -144,6 +141,7 @@ Audio-token or per-minute pricing.
 | --- | --- | --- |
 | [Gemini Live gemini-3.8-live (audio in + audio out)](https://ai.google.dev/gemini-api/docs/pricing) | $0.023 | Vendor-stated per-minute figures: $0.005/min in + $0.018/min out |
 | [OpenAI GPT-Live-1](https://developers.openai.com/api/docs/pricing) | $0.05 | Vendor-stated flat per-minute price, billed per second; backend model and tool usage extra |
+| [Phonic (Phonic-1)](https://phonic.ai/pricing) | $0.07 | Vendor-stated Starter rate ($0.065/min on Pro with $200/month minimum); no separate LLM token pass-through |
 | [xAI Grok Speech to Speech](https://docs.x.ai/developers/pricing) | $0.08 | Vendor-stated flat per-minute price |
 | [OpenAI gpt-realtime-2.1-mini (audio tokens only)](https://developers.openai.com/api/docs/pricing) | $0.03 | Derived lower bound: 600 user tokens per minute x $10/1M + 1,200 assistant tokens per minute x $20/1M (OpenAI states 1 token per 100 ms of user audio and per 50 ms of assistant audio in its [voice cost guide](https://developers.openai.com/api/docs/guides/voice-latency-cost)) |
 | [OpenAI gpt-realtime-2.1 (audio tokens only)](https://developers.openai.com/api/docs/pricing) | $0.096 | Derived lower bound: 600 x $32/1M + 1,200 x $64/1M |
@@ -164,7 +162,7 @@ price is published ([PolyAI pricing](https://poly.ai/pricing)).
 **Why real bills run higher.** The language model reads the conversation again
 on every turn. If the cascade above re-sent ten times as many input tokens
 (output unchanged), its three language model lines would go from $0.00056,
-$0.00148 and $0.03875 to $0.0046, $0.01228 and $0.30875 per minute (estimate).
+$0.00039 and $0.03875 to $0.0046, $0.00309 and $0.30875 per minute (estimate).
 Telephony, recording, concurrency, minimum billing increments and add-ons come
 on top. Builders report the same gap between headline price and invoice in
 [Cost: headline price versus the invoice](common-problems.md#5-cost-headline-price-versus-the-invoice).
@@ -179,10 +177,11 @@ date is a range or rests on one source, the bullet says so.
 **Shut down or closing**
 
 - **Hume EVI and Octave text-to-speech** ([B](#b-speech-to-speech-and-realtime-models),
-  [E](#e-low-latency-text-to-speech)). Hume's changelog of October 2, 2026 says
-  it is ending both APIs. Access ends November 13, 2026 at 12:01 a.m. EST, and
-  account data is deleted after that. The hume.ai pricing page now redirects to
-  the home page ([Hume changelog](https://dev.hume.ai/changelog)).
+  [E](#e-low-latency-text-to-speech)). Hume ended both APIs on November 13, 2026 at 12:01 a.m. EST per its
+  October 2, 2026 notice and deleted account data afterwards; its old GitHub MCP server repository also now returns 404.
+  On November 2, 2026 Hume launched a separate [Audio Decisions API](https://dev.hume.ai/audio-decisions/changelog)
+  ($0.47/1M input tokens) for scoring and questioning call audio rather than generating speech
+  ([Hume changelog](https://dev.hume.ai/changelog)).
 - **PlayHT / PlayAI** ([E](#e-low-latency-text-to-speech)). TechCrunch reported
   on July 13, 2025 that Meta had acquired the company and that its team would
   join Meta
@@ -236,8 +235,8 @@ date is a range or rests on one source, the bullet says so.
   Google DeepMind signed a licensing deal with Hume and hired its CEO and about
   seven engineers
   ([Wired](https://www.wired.com/story/google-hires-hume-ai-ceo-licensing-deal-gemini/)).
-  Hume continues under a new CEO and is closing its EVI and text-to-speech APIs
-  (see above).
+  Hume continues under a new CEO, shut down its EVI and text-to-speech APIs on November 13, 2026,
+  and now offers its Audio Decisions API (see above).
 - **Groq** ([D](#d-streaming-speech-to-text), [I](#i-language-models)). On
   December 24, 2025 Nvidia took a non-exclusive license to Groq's inference
   technology and hired its founder. Groq says GroqCloud continues
@@ -305,11 +304,10 @@ confirmed on a vendor page, the bullet says what was scheduled.
 
 ### Upcoming dates
 
-Dates to plan around, sorted by day. All were still ahead on October 30, 2026.
+Dates to plan around, sorted by day. All were still ahead on November 16, 2026.
 
 | Date | What changes | Source |
 | --- | --- | --- |
-| Nov 13, 2026 | Hume ends access to its EVI and text-to-speech APIs at 12:01 a.m. EST, then deletes account data. | [Hume changelog](https://dev.hume.ai/changelog) |
 | Nov 17, 2026 at the earliest | Google shuts down the Gemini API Live previews gemini-3.1-flash-live-preview and gemini-2.5-flash-native-audio-preview-12-2025 (replacement gemini-3.8-live), and the TTS previews gemini-3.1-flash-tts-preview, gemini-2.5-flash-preview-tts and gemini-2.5-pro-preview-tts (replacement 3.8 Flash TTS or 3.8 Flash-Lite TTS). Google calls listed dates the earliest possible. | [Gemini deprecations](https://ai.google.dev/gemini-api/docs/deprecations) |
 | Nov 30, 2026 | Anthropic retires Claude Sonnet 4.5 (claude-sonnet-4-5-20250929), deprecated on September 30, 2026; the listed replacement is claude-sonnet-5-5. Anthropic marks the date tentative. | [model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations) |
 | Dec 1, 2026 | Cartesia stops hosting Line SDK agents. Managed Agents are the hosted path. | [migration guide](https://docs.cartesia.ai/agents/migrate-from-line-sdk) |
@@ -332,7 +330,7 @@ Dates to plan around, sorted by day. All were still ahead on October 30, 2026.
   signal to check and not a verdict) or *status unverified* (the status could
   not be confirmed either way).
 - **Price (headline).** The price as the vendor showed it on September 30, 2026,
-  or on October 30, 2026 for rows changed then, shortened. A price with a number
+  or on October 30 or November 16, 2026 for rows added or changed then, shortened. A price with a number
   links to the page where it was read. "Sales only" means there is no public
   price. "No vendor price" means open weights
   with nothing to buy from the vendor. "Unverified" means no price was seen.
@@ -374,6 +372,7 @@ enterprise contact center suites.
 | [Dasha (Dasha BlackBox)](https://blackbox.dasha.ai/docs/) | Hosted voice agent API with a dashboard builder, SIP or Twilio phone links and call analytics. | [Sales only; Growth plan from $0.08/min](https://dasha.ai/pricing) | No | None found |
 | [Telnyx AI Assistants](https://developers.telnyx.com/docs/inference/ai-assistants/no-code-voice-assistant) | Voice and chat agents that run on Telnyx's own phone network. | [$0.05/min voice engine; language model billed per token](https://telnyx.com/pricing/voice-ai-agents) | No | [Official, hosted](https://developers.telnyx.com/docs/development/mcp/remote-mcp) |
 | [Twilio ConversationRelay](https://www.twilio.com/docs/voice/conversationrelay) | Twilio handles the call and the speech, and sends text to your server over a WebSocket. | [From $0.07/min; voice costs billed separately](https://www.twilio.com/en-us/products/conversational-ai/pricing) | No | [Docs only](https://www.twilio.com/docs/ai/mcp) |
+| [Mistral Voice Agents API](https://docs.mistral.ai/studio/audio/overview) | Managed voice-agent API built on Voxtral 3 transcription, Mistral text models and Voxtral TTS, launched Oct 20, 2026. | [$0.04/min (Mistral Small 4); $0.08/min larger models](https://docs.mistral.ai/inference/pricing) | No | [Official, hosted](https://docs.mistral.ai/resources/mcp) |
 | [Deepgram Voice Agent API](https://developers.deepgram.com/docs/voice-agent) | One WebSocket API that runs speech-to-text, a language model and text-to-speech for an agent. | [Standard $0.075/min; Advanced $0.163/min; BYO LLM and TTS $0.050/min](https://deepgram.com/pricing) | No | [Official, local](https://github.com/deepgram/mcp) |
 | [Voximplant Voice AI (VoxEngine)](https://docs.voximplant.ai/capabilities/features) | Serverless platform where JavaScript scenarios link phone, SIP and WebRTC calls to realtime voice models. | [$0.004/min Voice AI connectivity, plus telephony](https://voximplant.ai/pricing) | No | [Docs only](https://docs.voximplant.ai/_mcp/server) |
 | [Bolna](https://www.bolna.ai/docs) | Open-source Python framework for voice agents, plus a hosted platform built on it. | [Hosted from 6.00 cents/min](https://www.bolna.ai/pricing) | Partly (framework is MIT; hosted APIs are closed) | [Official, hosted](https://mcp.bolna.ai) |
@@ -388,6 +387,9 @@ enterprise contact center suites.
 | [Decagon](https://decagon.ai/product/voice) | Customer support agents for chat, email and voice, sold to enterprises. | [Sales only](https://decagon.ai/) | No | None found |
 | [PolyAI](https://polyai.github.io/adk/) | Voice agent platform for customer service, sold to large contact centers. | [Platform sales only (priced per minute); Dialog-RSN-1 API $0.02/min (section B)](https://poly.ai/pricing) | No | [Official, hosted](https://docs.poly.ai/mcp/overview) |
 | [Parloa](https://www.parloa.com/platform/) | Enterprise platform to build, test and monitor voice and chat agents for customer service. | [Sales only](https://www.parloa.com/platform/pricing/) | No | None found |
+| [Genesys Cloud Virtual Agent](https://help.genesys.cloud/articles/about-genesys-virtual-agent/) | Native voice and digital AI virtual agents inside Genesys Cloud CX, with queue routing, handoff and analytics. | [Platform $75-$240/user/mo; Virtual Agent from $0.50/interaction](https://www.genesys.com/pricing) | No | None found |
+| [NICE CXone Mpower and Cognigy.AI](https://docs.cognigy.com/) | Enterprise voice and chat AI agent suite with SIP Voice Gateway, sold standalone and inside NICE CXone (acquired Sept 2025). | [CXone $110-$249/agent/mo; standalone Cognigy sales only](https://www.nice.com/pricing) | No | None found |
+| [Cresta AI Agent (Voice)](https://cresta.com/ai-agent) | Enterprise autonomous voice and chat agents paired with real-time human-agent assist and QA scoring. | [Sales only](https://cresta.com/) | No | None found |
 
 ### Cloud provider agent builders
 
@@ -412,7 +414,7 @@ models you can run yourself.
 | [Amazon Nova 2 Sonic / Nova 2.5 Sonic](https://docs.aws.amazon.com/nova/latest/nova2-userguide/using-conversational-speech.html) | Amazon's speech-to-speech models on Bedrock, with streaming audio and tool calling. [Nova 2.5 Sonic](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-amazon-nova-2-5-sonic.html) launched Oct 5, 2026; AWS states better reasoning and tool calling (vendor claim). | [Nova 2 and 2.5 Sonic speech: $3.00 in, $12.00 out per 1M tokens (US East)](https://aws.amazon.com/bedrock/pricing/) | No | [Official, hosted](https://github.com/aws/agent-toolkit-for-aws) (vendor-wide) |
 | [Azure Voice Live API](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/voice-live) | Azure API that bundles speech recognition, a model you choose and text-to-speech in one session. It also offers Microsoft's own azure-realtime model, generally available since July 25, 2026. | [Pro native audio: $32 in, $64 out per 1M tokens](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/) | No | [Official, local](https://github.com/microsoft/mcp) (vendor-wide) |
 | [xAI Grok Speech to Speech API](https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech) | Realtime voice API from xAI that follows the OpenAI Realtime protocol. grok-voice-3.0 replaced the deprecated grok-voice-2.0 in October 2026 at the same price. | [$0.08/min ($4.80/hour)](https://docs.x.ai/developers/pricing) | No | [Docs only](https://docs.x.ai/developers/docs-mcp) |
-| [Hume EVI (EVI 3, EVI 4-mini)](https://dev.hume.ai/docs/speech-to-speech-evi/overview) *(deprecated; API access ends Nov 13, 2026)* | Hosted realtime voice API that picks up tone of voice and replies with expressive speech. | No current price page (the pricing URL redirects to the home page) | No | [Docs only](https://dev.hume.ai/docs/integrations/mcp) |
+| [Hume EVI (EVI 3, EVI 4-mini)](https://dev.hume.ai/docs/speech-to-speech-evi/overview) *(shut down Nov 13, 2026)* | Former hosted realtime voice API; Hume shut down EVI on Nov 13, 2026 and now offers its non-speaking [Audio Decisions API](https://dev.hume.ai/audio-decisions/changelog). | None (service shut down) | No | None found |
 | [Inworld Realtime API](https://docs.inworld.ai/realtime/overview) | OpenAI Realtime-compatible API that joins Inworld speech, a model of your choice and Inworld voices. | [Billed on usage; TTS-2 $25 per 1M characters](https://inworld.ai/pricing) | No | [Official, local](https://docs.inworld.ai/tts/resources/inworld-cli) |
 | [ElevenLabs Realtime (v1 Mini, v1 Max)](https://elevenlabs.io/docs/eleven-agents/customization/realtime-models) | ElevenLabs-managed voice agent models, launched Oct 19, 2026, behind an OpenAI Realtime-compatible API. ElevenLabs' FAQ says they are cascaded, not one fused model. | [$0.08/min plus model tokens](https://elevenlabs.io/pricing/api) | No | [Official, hosted](https://elevenlabs.io/mcp) (vendor-wide) |
 | [PolyAI Dialog-RSN-1 API](https://docs.poly.ai/dialog-rsn-1/overview) | PolyAI's audio-native dialog model behind a Realtime-style WebSocket API; English only. | [$0.02/min plus text tokens; voice output free until Nov 19](https://poly.ai/pricing) | No | [Official, hosted](https://docs.poly.ai/mcp/overview) (vendor-wide) |
@@ -420,7 +422,10 @@ models you can run yourself.
 | [StepFun StepAudio](https://platform.stepfun.com/docs/zh/guides/models/stepaudio-3-realtime) | Realtime voice API for Chinese-language agents, plus the open Step-Audio 2 mini model. | [stepaudio-2.5-realtime: 10 CNY in, 70 CNY out per 1M tokens](https://platform.stepfun.com/docs/zh/guides/pricing/details) | Partly (Step-Audio 2 mini weights are Apache-2.0) | None found |
 | [Zhipu AI GLM-Realtime](https://docs.bigmodel.cn/cn/guide/models/sound-and-video/glm-realtime) *(status unverified)* | Realtime audio and video call model on Zhipu's BigModel platform, priced per minute. | [Flash 0.18 CNY/min audio; Air 0.3 CNY/min audio](https://docs.bigmodel.cn/cn/guide/models/sound-and-video/glm-realtime) | Partly (GLM-4-Voice code is Apache-2.0; API is closed) | None found |
 | [Ultravox](https://docs.ultravox.ai/overview) *(acquired by Inworld, announced Sept 30, 2026)* | Open-weight speech model plus a hosted realtime platform for voice agents. | [$0.05/min after 30 free minutes](https://www.ultravox.ai/pricing) | Partly (MIT model weights) | None found |
-| [Mistral Voxtral (Realtime, Transcribe 2, Small, TTS)](https://docs.mistral.ai/studio/audio/overview) | Mistral audio models for a cascade: streaming speech-to-text, an audio-input model and text-to-speech. | [Realtime $0.006/min; TTS $16 per M characters](https://docs.mistral.ai/models/voxtral-mini-transcribe-realtime-26-02) | Partly (some weights Apache-2.0; TTS is CC BY-NC 4.0) | [Official, hosted](https://docs.mistral.ai/resources/mcp) |
+| [Mistral Voxtral (Realtime 3, Transcribe, Small, TTS 3)](https://docs.mistral.ai/studio/audio/overview) | Mistral audio models for a cascade: streaming speech-to-text, an audio-input model and text-to-speech. | [Realtime 3 $0.008/min; TTS 3 $13 per 1M characters](https://docs.mistral.ai/inference/pricing) | Partly (some weights Apache-2.0; TTS is CC BY-NC 4.0) | [Official, hosted](https://docs.mistral.ai/resources/mcp) |
+| [Phonic (Phonic-1)](https://docs.phonic.co/docs/get-started/overview) | Hosted speech-to-speech voice-agent API, launched Oct 29, 2026, with mid-utterance tool calling. | [$0.07/min Starter; $0.065/min Pro ($200/mo minimum)](https://phonic.ai/pricing) | No | None found |
+| [Rime Prism](https://docs.rime.ai) | Composable speech-to-speech model, launched Oct 28, 2026, that emits an inspectable text checkpoint milliseconds before speaking. | [Priced under Rime API plans](https://www.rime.ai/pricing) | No | [Official, hosted](https://mcp.rime.ai) |
+| [Boson AI Higgs Realtime](https://docs.boson.ai/overview) | Bidirectional WebSocket speech-to-speech API (`wss://api.boson.ai/v1/realtime`) with turn detection and tool calling. | Usage-based (console sign-in required for rate card) | No | None found |
 
 ### Open speech-to-speech models you run yourself
 
@@ -452,6 +457,7 @@ most of them open source.
 | [jambonz](https://docs.jambonz.org/welcome) | Open-source telephony gateway that connects SIP carriers and WebRTC to speech and language services. | [Cloud $8/session (5-249 sessions), monthly; self-hosted $7/session](https://jambonz.org/pricing) | Partly (MIT code; self-hosting needs a paid license key after a one-month trial) | [Docs only](https://github.com/jambonz/mcp-server) |
 | [Dograh](https://docs.dograh.com/getting-started) | Voice agent platform with a visual workflow builder; self-host it or use the hosted cloud. | [Cloud from 1 cent/min platform fee; self-host free](https://www.dograh.com/pricing) | Yes (BSD-2-Clause) | [Official, hosted](https://docs.dograh.com/integrations/mcp) |
 | [Hugging Face speech-to-speech](https://github.com/huggingface/speech-to-speech) | Open voice pipeline that serves the OpenAI Realtime protocol from your own hardware. | Free; you supply hardware | Yes (Apache-2.0) | [Official, hosted](https://huggingface.co/mcp) (vendor-wide) |
+| [Cloudflare Agents SDK (Voice)](https://developers.cloudflare.com/agents/agent-class/communication-channels/voice/) | TypeScript voice-agent framework (`withVoice`) on Cloudflare Workers and Durable Objects with WebSocket audio and state persistence. | Free SDK; Cloudflare Workers and model calls billed separately | Yes (MIT) | [Official, hosted](https://github.com/cloudflare/mcp) (vendor-wide) |
 | [Fonoster](https://docs.fonoster.com/introduction) | Open-source Twilio alternative with voice verbs and LLM-driven Autopilot apps. | [Free plan 30 min/month; self-host free](https://fonoster.com/) | Yes (MIT) | None found |
 | [Daily Bots](https://www.daily.co/products/pipecat-cloud/) *(status unverified)* | Former Daily product. Its old addresses now redirect to Pipecat Cloud; no shutdown notice was found. | None found; see Pipecat Cloud | Unverified | None found |
 
@@ -468,9 +474,9 @@ still talking.
 | [Deepgram Flux](https://developers.deepgram.com/docs/flux/quickstart) | Deepgram streaming speech-to-text that also signals when a speaker's turn starts and ends. | [Flux English $0.0065/min (promo; regular $0.0077/min)](https://deepgram.com/pricing) | No | [Official, local](https://github.com/deepgram/mcp) |
 | [AssemblyAI streaming speech-to-text](https://www.assemblyai.com/docs/streaming/select-the-speech-model) | Streaming speech-to-text over a WebSocket, with turn-based transcripts and end-of-turn detection. | [Universal-Streaming $0.15/hr; Universal-3.6 Pro $0.45/hr](https://www.assemblyai.com/pricing) | No | [Official, local](https://github.com/AssemblyAI/assemblyai-mcp) |
 | [Speechmatics real-time speech-to-text](https://docs.speechmatics.com/speech-to-text/models) | Hosted speech-to-text with a Realtime API and a separate Agent STT API for voice agents. | [Real-time Standard $0.24/hr; Enhanced $0.43/hr (Pro column)](https://www.speechmatics.com/pricing) | No | Community only |
-| [Soniox speech-to-text](https://soniox.com/docs/stt/rt/real-time-transcription) | Hosted real-time and async speech-to-text with semantic endpointing and in-call translation. | [Real-time $2.00 per 1M audio tokens (page says about $0.12/hour)](https://soniox.com/pricing) | No | Docs only |
+| [Soniox speech-to-text](https://soniox.com/docs/stt/rt/real-time-transcription) | Hosted real-time (`stt-rt-v6`, Nov 3, 2026) and async speech-to-text with semantic endpointing, translation and agent-text bleed suppression. | [Real-time $2.00 per 1M audio tokens (page says about $0.12/hour)](https://soniox.com/pricing) | No | Docs only |
 | [Gladia real-time speech-to-text (Solaria-1)](https://docs.gladia.io/chapters/introduction/models) | Hosted speech-to-text with a live WebSocket endpoint and support for 100+ languages. | [Starter $0.75/hr; Growth 'as low as $0.25/hr' with commitment](https://www.gladia.io/pricing) | No | [Official, local](https://github.com/gladiaio/gladia-mcp) |
-| [ElevenLabs Scribe v2 and Scribe v2 Realtime](https://elevenlabs.io/docs/overview/capabilities/speech-to-text) | ElevenLabs speech-to-text: Scribe v2 for files and Scribe v2 Realtime for streaming. | [Scribe v2 Realtime $0.39/hour; Scribe v2 (batch) $0.22/hour](https://elevenlabs.io/pricing/api) | No | [Official, hosted](https://elevenlabs.io/mcp) |
+| [ElevenLabs Scribe (v3, v3 Live and v2)](https://elevenlabs.io/docs/overview/capabilities/speech-to-text) | ElevenLabs speech-to-text: Scribe v3 for files and Scribe v3 Live for streaming voice agents with turn prediction and entity redaction. | [Scribe Realtime $0.39/hour; batch $0.22/hour](https://elevenlabs.io/pricing/api) | No | [Official, hosted](https://elevenlabs.io/mcp) |
 | [Cartesia Ink (Ink 2 and Ink-Whisper)](https://docs.cartesia.ai/build-with-cartesia/stt/latest) | Cartesia speech-to-text: ink-2 for streaming with turn events, and the older ink-whisper. | [ink-2: 3 credits/sec; ink-whisper: 1 credit/sec](https://cartesia.ai/pricing) | No | [Official, hosted](https://github.com/cartesia-ai/cartesia-mcp) |
 | [OpenAI transcription models](https://developers.openai.com/api/docs/guides/realtime-transcription) | OpenAI speech-to-text models, from streaming transcription to file and token-priced models. | [Streaming models $0.017/min; gpt-transcribe $0.0045/min](https://developers.openai.com/api/docs/pricing) | No | [Docs only](https://developers.openai.com/learn/docs-mcp) |
 | [Rev AI streaming speech-to-text](https://docs.rev.ai/api/streaming/) | Rev AI speech-to-text API with streaming over a WebSocket, plus the Reverb model. | [Reverb $0.20/hour (English); $0.30/hour foreign language](https://www.rev.ai/pricing) | No | Not checked |
@@ -495,6 +501,7 @@ still talking.
 | [Kyutai STT](https://github.com/kyutai-labs/delayed-streams-modeling) *(dormant; no pushes since Jan 26, 2026)* | Open streaming speech-to-text models with a built-in semantic VAD, for English and French. | No vendor price (open weights) | Partly (MIT and Apache-2.0 code; CC-BY 4.0 weights) | None found |
 | [Moonshine Voice](https://moonshine-voice.readthedocs.io/en/latest/) | On-device speech-to-text toolkit with streaming models, for phones, desktops and Raspberry Pi. | No vendor price (open weights) | Yes (MIT; a community license covers some legacy models) | None found |
 | [Mistral Voxtral open weights](https://docs.mistral.ai/studio/audio/speech_to_text) | Mistral open-weight streaming transcription model for 13 languages, to self-host or call hosted. | Unverified here; see the Mistral Voxtral row in section B | Yes (Apache-2.0 weights) | [Official, hosted](https://docs.mistral.ai/resources/mcp) |
+| [IBM Granite Speech](https://huggingface.co/ibm-granite/granite-speech-3.3-8b) | IBM open-weight speech recognition and automatic speech translation models. | No vendor price (open weights) | Yes (Apache-2.0) | None found |
 | [Qwen3-ASR](https://huggingface.co/Qwen/Qwen3-ASR-1.7B) | Open speech recognition models with language ID for 30 languages and 22 Chinese dialects. | No vendor price (open weights) | Yes (Apache-2.0) | [Official, hosted](https://api.alibabacloud.com/mcp) (vendor-wide) |
 
 ### Hosted open speech-to-text models
@@ -519,13 +526,14 @@ like conversation.
 | [Deepgram TTS (Flux TTS, Aura-2, Aura-1)](https://developers.deepgram.com/docs/tts-models-languages-overview) | Deepgram text-to-speech with three model families, billed per 1,000 input characters. | [Per 1K chars: Flux TTS $0.0450, Aura-2 $0.030, Aura-1 $0.0150](https://deepgram.com/pricing) | No | [Official, local](https://github.com/deepgram/mcp) |
 | [Inworld TTS (TTS-2, TTS-2 Flash)](https://docs.inworld.ai/tts/tts-models) | Hosted realtime text-to-speech with two models, TTS-2 and the lower-latency TTS-2 Flash. | [TTS-2 $25 per 1M characters; TTS-2 Flash $15 per 1M characters](https://inworld.ai/pricing) | No | [Official, local](https://docs.inworld.ai/tts/resources/inworld-cli) |
 | [AssemblyAI-TTS-1](https://www.assemblyai.com/products/text-to-speech) | AssemblyAI text-to-speech, launched Oct 27, 2026, with streaming (WebSocket) and HTTP modes in six languages. | [$15 per 1M characters](https://www.assemblyai.com/llms/pricing.md) | No | [Official, local](https://github.com/AssemblyAI/assemblyai-mcp) (vendor-wide) |
-| [Hume Octave](https://dev.hume.ai/docs/text-to-speech-tts/overview) *(deprecated; API access ends Nov 13, 2026)* | Text-to-speech built on Hume's Octave model, with voice design, cloning and conversion. | No current price page (the pricing URL redirects to the home page) | No | [Official, local](https://github.com/HumeAI/mcp-server-hume) |
 | [OpenAI text-to-speech](https://developers.openai.com/api/docs/guides/text-to-speech) *(deprecated; shuts down Jan 6, 2027)* | OpenAI speech endpoint with three models, all deprecated. OpenAI names gpt-realtime-2.1-mini on the Realtime API as the replacement. | [tts-1 $15.00 per 1M characters; tts-1-hd $30.00 per 1M characters](https://developers.openai.com/api/docs/pricing) | No | [Docs only](https://developers.openai.com/learn/docs-mcp) |
 | [Resemble AI](https://docs.resemble.ai/voice-generation/text-to-speech) | Hosted voice API (text-to-speech, speech-to-speech, cloning), plus the open-source Chatterbox model. | [$0.00067/second of audio (Flex); $0.0005/second (Team)](https://app.resemble.ai/billing/api/v1/plans) | Partly (Chatterbox is MIT; the hosted API is not) | [Official, hosted](https://github.com/resemble-ai/resemble-mcp) |
 | [Murf Falcon and Gen 2](https://murf.ai/api/docs/introduction/overview) | Hosted text-to-speech API with Falcon 2 for voice agents and Gen 2 for studio voiceover. | [Falcon 2 $0.01 per 1000 characters; Gen 2 $0.03 per 1000 characters](https://murf.ai/pricing) | No | [Official, local](https://github.com/murf-ai/murf-mcp) |
 | [Smallest.ai Lightning](https://docs.smallest.ai/) | Hosted streaming text-to-speech API from a vendor that also sells a voice agent platform. | [Lightning V3.1 $0.175 per 10K characters](https://smallest.ai/pricing/models) | No | [Official, local](https://github.com/smallest-inc/mcp-server) |
 | [Fish Audio API and Fish Speech](https://docs.fish.audio/developer-guide/models-pricing/pricing-and-rate-limits) | Hosted text-to-speech, speech-to-text and voice design API, plus open Fish Speech weights. | [$15.00 per million UTF-8 bytes of input text](https://docs.fish.audio/developer-guide/models-pricing/pricing-and-rate-limits) | Partly (research license; some weights CC-BY-NC-SA-4.0) | [Official, hosted](https://docs.fish.audio/overview/mcp) |
 | [SpeechifyAI API (Simba)](https://docs.speechify.ai/build/guides/welcome) | Hosted streaming text-to-speech API with voice cloning and SSML; not the Speechify reading app. | [Plans $0 to $499/month; extra characters $10 to $6 per 1M](https://speechify.ai/) | No | [Docs only](https://docs.speechify.ai/build/guides/get-started/connect-mcp) |
+| [MiniMax Speech (speech-2.8-turbo, speech-2.8-hd)](https://platform.minimax.io/docs/guides/speech-t2a-websocket) | Hosted multilingual streaming text-to-speech and voice-cloning API with emotion control across 40+ languages. | [speech-2.8-turbo $60 per 1M chars; speech-2.8-hd $100 per 1M chars](https://platform.minimax.io/docs/pricing/overview) | No | None found |
+| [CAMB.AI (MARS Flash and MARS Pro)](https://docs.camb.ai/introduction) | Streaming WebSocket text-to-speech, translated TTS and live dubbing across 140+ languages on the MARS 8 family. | [Free tier (5K credits); paid plans from $5/month](https://www.camb.ai/pricing) | No | None found |
 
 ### Cloud provider text-to-speech
 
@@ -552,6 +560,7 @@ like conversation.
 | [Higgs Audio (Boson AI)](https://github.com/boson-ai/higgs-audio/blob/main/README.md) | Boson AI text-to-speech models; the v3 weights are research and non-commercial. | Unverified (commercial and hosted prices not checked) | Partly (Apache-2.0 v2 code; v3 weights are research only) | Not checked |
 | [Coqui XTTS-v2](https://github.com/idiap/coqui-ai-TTS/blob/dev/README.md) *(deprecated; original repo unmaintained since Aug 2024)* | Multilingual voice-cloning text-to-speech model from Coqui; a community fork is the maintained route. | Free to self-host (compute not included) | Partly (MPL-2.0 code; Coqui Public Model License weights) | Not checked |
 | [Zonos-v0.1 (Zyphra)](https://github.com/Zyphra/Zonos/blob/main/README.md) *(dormant; no pushes since Mar 5, 2025)* | Open text-to-speech model for English, Japanese, Chinese, French and German. | Free to self-host (compute not included) | Yes (Apache-2.0) | Not checked |
+| [Neuphonic (NeuTTS and Hosted API)](https://github.com/neuphonic/neutts) | Small CPU-capable open text-to-speech models (NeuTTS-Air, NeuTTS-Nano in GGUF) for edge devices, plus Neuphonic's streaming API. | Free to self-host (open weights); hosted plan price unverified | Partly (Apache-2.0 NeuTTS weights; closed cloud) | None found |
 
 ### Shut down
 
@@ -559,6 +568,7 @@ like conversation.
 | --- | --- | --- | --- | --- |
 | [PlayHT / PlayAI](https://docs.play.ht/reference/api-getting-started) *(shut down; Meta acquisition reported July 13, 2025)* | Former text-to-speech API and voice agent platform. The service is shut down. | None (service shut down) | No | None found |
 | [LMNT](https://docs.lmnt.com/) *(shut down; site notice appeared between Aug 3 and Sep 1, 2026)* | Former speech generation API. Its website and docs now show only a shutdown message. | None (service shut down) | No | None found |
+| [Hume Octave](https://dev.hume.ai/docs/text-to-speech-tts/overview) *(shut down Nov 13, 2026)* | Former text-to-speech API built on Hume's Octave model; Hume ended access on November 13, 2026. | None (service shut down) | No | None found |
 
 ## F. Telephony and transport
 
@@ -577,6 +587,8 @@ agent.
 | [SignalWire AI Agents](https://signalwire.com/docs) | Hosted AI agent runtime on SignalWire's phone network: speech, model and orchestration in one price. | [$0.16/min AI agent runtime, plus voice transport](https://signalwire.com/pricing) | Partly (SDK is MIT; hosted runtime is not) | None found |
 | [Bandwidth Programmable Voice (BXML)](https://dev.bandwidth.com/docs/voice/programmable-voice/bxml/startStream) | Voice API from a US carrier, with WebSocket media streaming and OpenAI integration guides. | [US local outbound $0.0100/min, inbound $0.0055/min](https://www.bandwidth.com/pricing/) | No | [Official, local](https://github.com/Bandwidth/mcp-server) |
 | [Sinch Voice API](https://developers.sinch.com/docs/voice) | Sinch voice API with WebSocket audio streaming and a relay mode, plus Elastic SIP Trunking. | [PSTN receive $0.008/min; make calls from $0.01/min (US)](https://sinch.com/voice/pricing/) | No | [Official, local](https://github.com/sinch/sinch-mcp-server) |
+| [Azure Communication Services (Call Automation)](https://learn.microsoft.com/en-us/azure/communication-services/concepts/call-automation/audio-streaming-concept) | Azure programmable voice and SIP call control with bidirectional WebSocket audio streaming; direct PSTN/Direct Routing retires Sept 30, 2028 in favor of Teams Phone Extensibility. | Usage-based on Azure Communication Services | No | [Official, local](https://github.com/microsoft/mcp) (vendor-wide) |
+| [Asterisk (chan_websocket / AudioSocket) and FreeSWITCH](https://docs.asterisk.org/Configuration/Channel-Drivers/WebSocket/) | Open-source PBX, B2BUA and media servers that bridge existing SIP trunks directly to voice agents over WebSocket, AudioSocket or RTP. | Free (open source; self-hosted on your own SIP trunks) | Yes (GPL-2.0 Asterisk; MPL-1.1 FreeSWITCH) | None found |
 
 ### SIP trunking
 
@@ -656,6 +668,8 @@ calls.
 | [Evalion](https://evalion.ai/) *(status unverified; site now describes a clinical-trials product)* | Current site describes clinical-trial software; a Dec 2024 Braintrust cookbook described a voice agent tester. | Unverified (no public pricing found) | Unverified | Not checked |
 | [Future AGI (Simulate)](https://docs.futureagi.com/docs/simulation) | Open-source platform for tracing, evals and guardrails; its Simulate feature runs persona-driven voice tests. | [Free tier (60 voice minutes/month); then voice from $0.08/minute](https://futureagi.com/pricing) | Yes (Apache-2.0) | [Official, hosted](https://docs.futureagi.com/docs/falcon-ai/guides/use-the-mcp-server) |
 | [ServiceNow EVA (EVA-Bench)](https://servicenow.github.io/eva/) | Open-source benchmark that runs bot-to-bot spoken conversations against a voice agent and scores them. | No charge (open source); needs your own provider API keys | Yes (MIT) | None found |
+| [voicetest](https://github.com/voicetestdev/voicetest) | Open-source CLI, TUI, REST API and MCP server that imports Retell, Vapi, LiveKit, Bland or Telnyx agents and runs simulated LLM-judged evals. | No charge (open source); needs your own LLM keys | Yes (Apache-2.0) | [Official, local](https://github.com/voicetestdev/voicetest) |
+| [Superlog](https://github.com/superloglabs/skills) | OpenTelemetry instrumentation conventions and observability tooling for LiveKit Agents session spans, turn metrics and token counters. | OpenTelemetry conventions free; hosted price not published | Partly (Apache-2.0 skills) | None found |
 
 ### Testing built into a platform or framework
 
@@ -708,8 +722,8 @@ inference hosts, priced per million tokens and not per minute.
 ## Skills for these providers
 
 Many of these vendors also publish agent skills or MCP servers. The MCP column
-above shows which ones run an official MCP server: 75 of the 184 products have
-one (hosted or local), and 42 more have a server that only searches
+above shows which ones run an official MCP server: 79 of the 200 products have
+one (hosted or local), and 41 more have a server that only searches
 documentation. Many of these are vendor-wide rather than specific to one
 product. For ready-made skills by provider, see
 [More voice skills](more-skills.md) and the [skill catalog](catalog.md).
@@ -734,6 +748,7 @@ product. For ready-made skills by provider, see
   the speech and language model rows with new models or deprecations, and the
   rows named in "What changed recently". Prices and statuses it did not change
   keep their September 30 observation dates in the data files.
+- A refresh on November 16, 2026 moved Hume EVI and Octave TTS to shut down (removing the deleted `HumeAI/mcp-server-hume` link and noting Hume's Audio Decisions API), recorded AssemblyAI's October 26 Voice Agent API deprecation, swapped the mid cascade example from `gpt-4.1-mini` to `gpt-6-luna`, updated Soniox (`stt-rt-v6`), ElevenLabs (`Scribe v3` / `Scribe v3 Live`) and Mistral (`Voxtral 3`), and added 16 products across managed platforms, enterprise CCaaS, realtime speech-to-speech, orchestration, open STT, TTS, telephony bridges and evaluation.
 - 280 fields across 124 products are marked unverified. 11 products have a
   status that could not be confirmed and 13 have sales-only pricing. Re-check
   these before you rely on them.

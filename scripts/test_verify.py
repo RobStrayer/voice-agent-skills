@@ -80,6 +80,17 @@ if __name__ == '__main__':
         else:
             raise AssertionError('Stale verification count was accepted')
         index.write_bytes(original_index)
+        lsvg = copy / 'assets/diagrams/provider-landscape.svg'
+        orig_lsvg = lsvg.read_bytes()
+        lsvg.write_bytes(orig_lsvg.replace(b'covers 200 products', b'covers 999 products', 1))
+        try:
+            verify(copy)
+        except AssertionError as error:
+            assert 'provider-landscape.svg product count' in str(error), error
+            print('PASS: drifted landscape SVG product counts are rejected.')
+        else:
+            raise AssertionError('Drifted landscape SVG product count was accepted')
+        lsvg.write_bytes(orig_lsvg)
         figure = copy / 'assets/diagrams/hero.svg'
         original_figure = figure.read_bytes()
         figure.write_bytes(original_figure.replace(b'<title', b'<image href="https://example.invalid/a.png"/><title', 1))

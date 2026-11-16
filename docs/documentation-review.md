@@ -15,7 +15,8 @@ use the canonical reference for the version you are implementing.
 The [September 30 daily review](reviews/2026-09-30.md) records model releases,
 changed skills, and cases where current primary sources contradict the index.
 The [October 30 review](reviews/2026-10-30.md) records the October refresh,
-including the two corrections marked in the tables below.
+including the two corrections marked in the tables below. The [November 16 review](reviews/2026-11-16.md)
+records the November upstream sync, Hume API shutdown, `gpt-6-luna` cost-model update, California AB 1609 statute verification, and 16 added landscape products.
 
 ## Architecture and runtime sources
 
