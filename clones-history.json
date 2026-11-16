@@ -1,0 +1,63 @@
+{
+  "repository": "RobStrayer/voice-agent-skills",
+  "updated_at": "2026-11-16T04:45:00Z",
+  "total_clones": 115,
+  "daily": {
+    "2026-11-01": {
+      "count": 31,
+      "uniques": 19
+    },
+    "2026-11-02": {
+      "count": 11,
+      "uniques": 9
+    },
+    "2026-11-03": {
+      "count": 14,
+      "uniques": 11
+    },
+    "2026-11-04": {
+      "count": 7,
+      "uniques": 3
+    },
+    "2026-11-05": {
+      "count": 7,
+      "uniques": 3
+    },
+    "2026-11-06": {
+      "count": 1,
+      "uniques": 1
+    },
+    "2026-11-07": {
+      "count": 3,
+      "uniques": 2
+    },
+    "2026-11-08": {
+      "count": 2,
+      "uniques": 2
+    },
+    "2026-11-09": {
+      "count": 2,
+      "uniques": 2
+    },
+    "2026-11-10": {
+      "count": 0,
+      "uniques": 0
+    },
+    "2026-11-11": {
+      "count": 13,
+      "uniques": 6
+    },
+    "2026-11-12": {
+      "count": 9,
+      "uniques": 6
+    },
+    "2026-11-13": {
+      "count": 7,
+      "uniques": 5
+    },
+    "2026-11-14": {
+      "count": 8,
+      "uniques": 5
+    }
+  }
+}
