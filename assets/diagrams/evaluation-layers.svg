@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 516" width="1080" height="516" role="img" aria-labelledby="t d">
+<title id="t">Four verification layers before a voice release</title>
+<desc id="d">Four testing layers ordered from fastest to most realistic. Layer 1, Deterministic logic and state, runs in milliseconds on every edit with zero external calls, checking schemas, idempotency, state machines and read-backs. Layer 2, Recorded audio replay, runs on every pull request in seconds, feeding noisy, accented, quiet and barge-in audio fixtures into VAD and STT. Layer 3, Multi-turn persona simulations, runs pre-merge or nightly in minutes, testing adversarial, hesitant and correcting callers over audio. Layer 4, Live transport and PSTN canary, runs scheduled or post-deploy on real carrier trunks, codecs, DTMF and warm transfers.</desc>
+<style>
+svg{--bg:#f6f8fa;--card:#ffffff;--card2:#f0f3f6;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--listen:#0b7a53;--listen-bg:#dafbe1;--think:#4a3aa7;--think-bg:#edeaff;--speak:#b3441a;--speak-bg:#ffedd5;--net:#57606a;--danger:#cf222e;--danger-bg:#ffebe9}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--card2:#21262d;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--listen:#2fb784;--listen-bg:#0f2d22;--think:#a29af0;--think-bg:#221d42;--speak:#ec7a45;--speak-bg:#361d12;--net:#8b949e;--danger:#f85149;--danger-bg:#381417}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
+.bg{fill:var(--bg);stroke:var(--line)}
+.card{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.subcard{fill:var(--card2);stroke:var(--line);stroke-width:1}
+.h1{font-size:26px;font-weight:700}
+.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.3px}
+.title{font-size:17px;font-weight:700}
+.body{font-size:15px}
+.small{font-size:14px;fill:var(--ink2)}
+.foot{font-size:14.5px;fill:var(--ink2)}
+.c-listen{fill:var(--listen)}.c-think{fill:var(--think)}.c-speak{fill:var(--speak)}.c-danger{fill:var(--danger)}
+.b-listen{fill:var(--listen-bg);stroke:var(--listen);stroke-width:1.5}
+.b-think{fill:var(--think-bg);stroke:var(--think);stroke-width:1.5}
+.b-speak{fill:var(--speak-bg);stroke:var(--speak);stroke-width:1.5}
+.b-danger{fill:var(--danger-bg);stroke:var(--danger);stroke-width:1.5;stroke-dasharray:6 4}
+.wire{fill:none;stroke:var(--net);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wire-listen{fill:none;stroke:var(--listen);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-think{fill:none;stroke:var(--think);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-speak{fill:none;stroke:var(--speak);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-cancel{fill:none;stroke:var(--danger);stroke-width:2.2;stroke-dasharray:6 5;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="515" rx="16"/>
+<text class="h1" x="32" y="48">Four verification layers before a voice release</text>
+<text class="sub" x="32" y="76">Text unit tests catch logic bugs cheaply; audio replay, persona calls and PSTN probes catch what text hides.</text>
+
+<!-- Row 1 -->
+<rect class="card" x="32" y="102" width="1016" height="82" rx="12"/>
+<rect class="b-listen" x="48" y="116" width="226" height="54" rx="8"/>
+<text class="eyebrow c-listen" x="64" y="138">LAYER 1 · EVERY EDIT</text>
+<text class="mono" x="64" y="158">Deterministic (ms)</text>
+<text class="title" x="294" y="136">State, schemas, policy gates &amp; read-back formatting</text>
+<text class="small" x="294" y="162">Test tool idempotency, confirmation gates, digit/email normalization and fallback transitions offline.</text>
+
+<!-- Row 2 -->
+<rect class="card" x="32" y="196" width="1016" height="82" rx="12"/>
+<rect class="b-listen" x="48" y="210" width="226" height="54" rx="8"/>
+<text class="eyebrow c-listen" x="64" y="232">LAYER 2 · EVERY PR</text>
+<text class="mono" x="64" y="252">Audio fixtures (sec)</text>
+<text class="title" x="294" y="230">Recorded audio replay through real VAD, frontend &amp; STT</text>
+<text class="small" x="294" y="256">Replay quiet speech, accents, background noise, echo and barge-in clips; assert critical entities &amp; EOT.</text>
+
+<!-- Row 3 -->
+<rect class="card" x="32" y="290" width="1016" height="82" rx="12"/>
+<rect class="b-think" x="48" y="304" width="226" height="54" rx="8"/>
+<text class="eyebrow c-think" x="64" y="326">LAYER 3 · PRE-MERGE</text>
+<text class="mono" x="64" y="346">Simulated calls (min)</text>
+<text class="title" x="294" y="324">Multi-turn spoken persona &amp; adversarial simulations</text>
+<text class="small" x="294" y="350">Run hesitant, interrupting and red-team callers end to end; check tool ledger, repair quality &amp; p95 latency.</text>
+
+<!-- Row 4 -->
+<rect class="card" x="32" y="384" width="1016" height="82" rx="12"/>
+<rect class="b-speak" x="48" y="398" width="226" height="54" rx="8"/>
+<text class="eyebrow c-speak" x="64" y="420">LAYER 4 · CANARY / LIVE</text>
+<text class="mono" x="64" y="440">Real PSTN &amp; WebRTC</text>
+<text class="title" x="294" y="418">Carrier trunks, G.711/Opus codecs, DTMF &amp; warm transfers</text>
+<text class="small" x="294" y="444">Verify real phone numbers, SIP headers, one-way audio, human handoff recovery and human listening samples.</text>
+
+<text class="foot" x="32" y="494">Keep a cohort breakdown (accent, noise level, transport), not a single average score: averages hide broken caller groups.</text>
+</svg>

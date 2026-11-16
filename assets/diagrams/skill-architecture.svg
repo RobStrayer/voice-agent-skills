@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 516" width="1080" height="516" role="img" aria-labelledby="t d">
+<title id="t">How the three skill layers reach your coding agent</title>
+<desc id="d">Three skill tiers feed coding agents. Left: 13 original provider-neutral voice-foundations skills written in this repo, 27 bundled vendor snapshot skills pinned to upstream commits in sources.json, and 359 linked skills across 61 providers in docs/more-skills.md. Right: plugin marketplaces load bundles into Claude Code and OpenAI Codex, while npx skills or copying whole skill folders loads them into Hermes Agent, Cursor, GitHub Copilot, Windsurf and Gemini CLI.</desc>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9Z" fill="var(--net)"/>
+  </marker>
+</defs>
+<style>
+svg{--bg:#f6f8fa;--card:#ffffff;--card2:#f0f3f6;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--listen:#0b7a53;--listen-bg:#dafbe1;--think:#4a3aa7;--think-bg:#edeaff;--speak:#b3441a;--speak-bg:#ffedd5;--net:#57606a;--danger:#cf222e;--danger-bg:#ffebe9}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--card2:#21262d;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--listen:#2fb784;--listen-bg:#0f2d22;--think:#a29af0;--think-bg:#221d42;--speak:#ec7a45;--speak-bg:#361d12;--net:#8b949e;--danger:#f85149;--danger-bg:#381417}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
+.bg{fill:var(--bg);stroke:var(--line)}
+.card{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.subcard{fill:var(--card2);stroke:var(--line);stroke-width:1}
+.h1{font-size:26px;font-weight:700}
+.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.3px}
+.title{font-size:17px;font-weight:700}
+.body{font-size:15px}
+.small{font-size:14px;fill:var(--ink2)}
+.foot{font-size:14.5px;fill:var(--ink2)}
+.c-listen{fill:var(--listen)}.c-think{fill:var(--think)}.c-speak{fill:var(--speak)}.c-danger{fill:var(--danger)}
+.b-listen{fill:var(--listen-bg);stroke:var(--listen);stroke-width:1.5}
+.b-think{fill:var(--think-bg);stroke:var(--think);stroke-width:1.5}
+.b-speak{fill:var(--speak-bg);stroke:var(--speak);stroke-width:1.5}
+.b-danger{fill:var(--danger-bg);stroke:var(--danger);stroke-width:1.5;stroke-dasharray:6 4}
+.wire{fill:none;stroke:var(--net);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wire-listen{fill:none;stroke:var(--listen);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-think{fill:none;stroke:var(--think);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-speak{fill:none;stroke:var(--speak);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-cancel{fill:none;stroke:var(--danger);stroke-width:2.2;stroke-dasharray:6 5;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="515" rx="16"/>
+<text class="h1" x="32" y="48">How the three skill layers reach your coding agent</text>
+<text class="sub" x="32" y="76">Start with provider-neutral foundations, add vendor bundles you use, and pull extra provider skills by hash.</text>
+
+<!-- Left column: 3 skill tiers -->
+<rect class="card" x="32" y="102" width="492" height="106" rx="12"/>
+<rect class="b-listen" x="48" y="118" width="6" height="74" rx="3"/>
+<text class="eyebrow c-listen" x="68" y="134">1 · ORIGINAL FOUNDATIONS · 13 SKILLS (MIT)</text>
+<text class="title" x="68" y="158">plugins/voice-foundations/skills/</text>
+<text class="small" x="68" y="180">Architecture, turn-taking, latency, audio, telephony, evals, security.</text>
+<text class="mono c-listen" x="68" y="198">Provider-neutral · Maintained here</text>
+
+<rect class="card" x="32" y="222" width="492" height="106" rx="12"/>
+<rect class="b-think" x="48" y="238" width="6" height="74" rx="3"/>
+<text class="eyebrow c-think" x="68" y="254">2 · BUNDLED VENDOR SNAPSHOTS · 27 SKILLS</text>
+<text class="title" x="68" y="278">skills/ (LiveKit, ElevenLabs, Twilio, Pipecat, Cartesia)</text>
+<text class="small" x="68" y="300">Dated copies pinned to exact upstream commits and SHA-256 hashes.</text>
+<text class="mono c-think" x="68" y="318">Verified by sources.json + scripts/verify.py</text>
+
+<rect class="card" x="32" y="342" width="492" height="106" rx="12"/>
+<rect class="b-speak" x="48" y="358" width="6" height="74" rx="3"/>
+<text class="eyebrow c-speak" x="68" y="374">3 · LINKED INDEX · 359 SKILLS · 61 PROVIDERS</text>
+<text class="title" x="68" y="398">docs/more-skills.md + linked-skills.json</text>
+<text class="small" x="68" y="420">325 GitHub repo skills + 34 vendor docs skills, reviewed with caveats.</text>
+<text class="mono c-speak" x="68" y="438">Install from original upstream repo after checking pin</text>
+
+<!-- Connectors -->
+<path class="wire" d="M524 155H556V174H574" marker-end="url(#arr)"/>
+<path class="wire" d="M524 155H544V346H574" marker-end="url(#arr)"/>
+<path class="wire" d="M524 275H556V194H574" marker-end="url(#arr)"/>
+<path class="wire" d="M524 275H544V366H574" marker-end="url(#arr)"/>
+<path class="wire" d="M524 395H574" marker-end="url(#arr)"/>
+
+<!-- Right column: Agent installation paths -->
+<rect class="card" x="580" y="102" width="468" height="156" rx="12"/>
+<text class="eyebrow c-think" x="602" y="132">PLUGIN MARKETPLACES</text>
+<text class="title" x="602" y="156">Claude Code &amp; OpenAI Codex</text>
+<rect class="subcard" x="602" y="170" width="424" height="34" rx="8"/>
+<text class="mono" x="614" y="192">/plugin marketplace add RobStrayer/voice-agent-skills</text>
+<rect class="subcard" x="602" y="210" width="424" height="34" rx="8"/>
+<text class="mono" x="614" y="232">codex plugin add voice-foundations@voice-agent-skills</text>
+
+<rect class="card" x="580" y="274" width="468" height="174" rx="12"/>
+<text class="eyebrow c-listen" x="602" y="304">OPEN SKILL FOLDERS &amp; CLI</text>
+<text class="title" x="602" y="328">Hermes, Cursor, Copilot, Gemini CLI, Windsurf</text>
+<rect class="subcard" x="602" y="340" width="424" height="34" rx="8"/>
+<text class="mono" x="614" y="362">npx skills add RobStrayer/voice-agent-skills --list</text>
+<text class="small" x="602" y="396">Or copy a whole skill folder (with references/ and scripts/) to:</text>
+<text class="mono" x="602" y="418">~/.hermes/skills/ · .cursor/skills/ · .github/skills/</text>
+<text class="mono" x="602" y="438">~/.claude/skills/ · ~/.agents/skills/ · .gemini/</text>
+
+<text class="foot" x="32" y="486">Your coding agent scans short skill descriptions at startup and loads the full SKILL.md + references only when your task matches.</text>
+</svg>

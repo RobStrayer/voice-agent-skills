@@ -1,0 +1,102 @@
+name: clones-badge
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 6 * * *'
+
+permissions: {}
+
+concurrency:
+  group: clones-badge
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Check whether GH_TRAFFIC_TOKEN is configured
+        id: gate
+        env:
+          HAS_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN != '' }}
+        run: |
+          if [ "$HAS_TOKEN" != "true" ]; then
+            echo "::notice::GH_TRAFFIC_TOKEN secret is not set; skipping daily clone-count sync."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check out badges branch
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: badges
+          persist-credentials: true
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        if: steps.gate.outputs.run == 'true'
+        with:
+          python-version: '3.12'
+      - name: Merge 14-day GitHub clone window into cumulative history
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GH_TRAFFIC_TOKEN: ${{ secrets.GH_TRAFFIC_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import datetime, json, os, pathlib, urllib.request
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          token = os.environ["GH_TRAFFIC_TOKEN"]
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/traffic/clones",
+              headers={
+                  "Accept": "application/vnd.github+json",
+                  "Authorization": f"Bearer {token}",
+                  "User-Agent": "voice-agent-skills-clones-badge",
+              },
+          )
+          with urllib.request.urlopen(req, timeout=20) as resp:
+              payload = json.loads(resp.read().decode("utf-8"))
+
+          hist_path = pathlib.Path("clones-history.json")
+          history = json.loads(hist_path.read_text(encoding="utf-8")) if hist_path.exists() else {"daily": {}}
+          daily = history.get("daily", {})
+          for row in payload.get("clones", []):
+              day = row["timestamp"][:10]
+              prev = daily.get(day, {"count": 0, "uniques": 0})
+              daily[day] = {
+                  "count": max(prev.get("count", 0), int(row["count"])),
+                  "uniques": max(prev.get("uniques", 0), int(row["uniques"])),
+              }
+          total = sum(v["count"] for v in daily.values())
+          now_str = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+          new_history = {
+              "repository": repo,
+              "updated_at": now_str,
+              "total_clones": total,
+              "daily": dict(sorted(daily.items())),
+          }
+          badge = {
+              "schemaVersion": 1,
+              "label": "clones",
+              "message": f"{total:,}",
+              "color": "0b7a53",
+          }
+          hist_path.write_text(json.dumps(new_history, indent=2) + "\n", encoding="utf-8", newline="\n")
+          pathlib.Path("clones.json").write_text(json.dumps(badge, indent=2) + "\n", encoding="utf-8", newline="\n")
+          PY
+      - name: Commit and push updated badge data
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          if git diff --quiet -- clones.json clones-history.json; then
+            echo "No clone count changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add clones.json clones-history.json
+          git commit -m "Update cumulative clone count"
+          git push origin HEAD:badges

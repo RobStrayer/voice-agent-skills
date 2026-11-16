@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 832" width="1080" height="832" role="img" aria-labelledby="t d">
 <title id="t">Who does what in a voice agent</title>
-<desc id="d">The voice agent stack by provider type. Managed platforms (category A: Vapi, Retell, Bland, ElevenAgents, Mistral, Genesys, NICE/Cognigy) bundle everything behind a dashboard or API, billed per minute. Orchestration frameworks (category C: LiveKit Agents, Pipecat, TEN Framework, Cloudflare Agents, jambonz) are open-source code that wires the pieces together. In the middle, turn detection and audio cleanup (category G, turn-taking and audio: Silero VAD, LiveKit turn detector, Pipecat Smart Turn, Krisp, ai-coustics) feeds either a cascade of streaming speech-to-text (D: Deepgram, AssemblyAI, Speechmatics, Soniox), a large language model (I: OpenAI, Anthropic, Google, Groq, Cerebras) and text-to-speech (E: ElevenLabs, Cartesia, Rime, MiniMax, CAMB.AI), or one speech-to-speech model (B: OpenAI Realtime, Gemini Live, Nova 2.5 Sonic, Azure Voice Live, Phonic, Grok). Underneath, phone and transport providers (F: Twilio, Telnyx, Vonage, Plivo, SignalWire, Sinch, and WebRTC from LiveKit, Daily and Agora) carry the call. Alongside, testing and monitoring tools (H: Coval, Hamming, Cekura, Roark, Langfuse, plus framework test tools) cover the whole stack. Names are examples, not rankings; checked November 16, 2026.</desc>
+<desc id="d">The voice agent stack by provider type. Managed platforms (category A: Vapi, Retell, Bland, ElevenAgents, Mistral, Genesys) bundle everything behind a dashboard or API, billed per minute. Orchestration frameworks (category C: LiveKit Agents, Pipecat, TEN, Cloudflare Agents, jambonz) are open-source code that wires the pieces together. In the middle, turn detection and audio cleanup (category G, turn-taking and audio: Silero VAD, LiveKit turn detector, Pipecat Smart Turn, Krisp, ai-coustics) feeds either a cascade of streaming speech-to-text (D: Deepgram, AssemblyAI, Speechmatics, Soniox), a large language model (I: OpenAI, Anthropic, Google, Groq, Cerebras) and text-to-speech (E: ElevenLabs, Cartesia, Rime, MiniMax), or one speech-to-speech model (B: OpenAI Realtime, Gemini Live, Nova Sonic, Phonic, Grok). Underneath, phone and transport providers (F: Twilio, Telnyx, Vonage, Plivo, SignalWire, Sinch, and WebRTC from LiveKit, Daily and Agora) carry the call. Alongside, testing and monitoring tools (H: Coval, Hamming, Cekura, Roark, Langfuse, plus framework test tools) cover the whole stack. Names are examples, not rankings; checked November 16, 2026.</desc>
 <!-- Edit freely. Bands (A, C, F, H) are neutral; pipeline cards take their stage colour. Letters match the categories in docs/landscape.md. -->
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
 <style>
@@ -22,11 +22,11 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <rect class="band" x="32" y="104" width="816" height="96" rx="14"/>
 <text class="eyebrow ink" x="52" y="134">A · MANAGED PLATFORMS</text>
 <text class="desc" x="52" y="160">Bundle everything below behind a dashboard or an API, billed per minute.</text>
-<text class="names" x="52" y="183">Vapi, Retell, Bland, ElevenAgents, Mistral, Genesys, NICE/Cognigy</text>
+<text class="names" x="52" y="183">Vapi, Retell, Bland, ElevenAgents, Mistral, Genesys</text>
 <rect class="band" x="32" y="214" width="816" height="96" rx="14"/>
 <text class="eyebrow ink" x="52" y="244">C · ORCHESTRATION FRAMEWORKS</text>
 <text class="desc" x="52" y="270">Open-source code that wires the pieces together. You run it, or use their cloud.</text>
-<text class="names" x="52" y="293">LiveKit Agents, Pipecat, TEN Framework, Cloudflare Agents, jambonz</text>
+<text class="names" x="52" y="293">LiveKit Agents, Pipecat, TEN, Cloudflare Agents, jambonz</text>
 <clipPath id="clip-g"><rect x="32" y="334" width="189.0" height="316" rx="14"/></clipPath>
 <rect class="card" x="32" y="334" width="189.0" height="316" rx="14"/>
 <rect class="bar-listen" x="32" y="334" width="189.0" height="5" clip-path="url(#clip-g)"/>
@@ -61,7 +61,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <rect class="bar-speak" x="645.6666666666667" y="546" width="202.33333333333334" height="5" clip-path="url(#clip-b)"/>
 <text class="eyebrow e-ink" x="259.0" y="578">B · SPEECH-TO-SPEECH</text>
 <text class="desc" x="259.0" y="603"><tspan x="259.0" dy="0">Or one model hears, thinks and speaks, with no text in between.</tspan></text>
-<text class="names" x="259.0" y="634"><tspan x="259.0" dy="0">OpenAI Realtime, Gemini Live, Nova 2.5 Sonic, Azure Voice Live, Phonic, Grok</tspan></text>
+<text class="names" x="259.0" y="634"><tspan x="259.0" dy="0">OpenAI Realtime, Gemini Live, Nova Sonic, Phonic, Grok</tspan></text>
 <path class="arrow" d="M223.0 598.0H237.0" marker-end="url(#ah)"/>
 <text class="desc small" x="50" y="590"><tspan x="50" dy="0">Often built into</tspan><tspan x="50" dy="21">frameworks and</tspan><tspan x="50" dy="21">realtime models.</tspan></text>
 <rect class="pill" x="522.5" y="513.0" width="44" height="26" rx="13"/>
@@ -69,7 +69,7 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helveti
 <rect class="band" x="32" y="674" width="816" height="96" rx="14"/>
 <text class="eyebrow ink" x="52" y="704">F · PHONE AND TRANSPORT</text>
 <text class="desc" x="52" y="730">Carries the call: phone numbers and SIP trunks, or WebRTC for browsers and apps.</text>
-<text class="names" x="52" y="753">Twilio, Telnyx, Plivo, Azure ACS, Asterisk/FreeSWITCH · WebRTC: LiveKit, Daily</text>
+<text class="names" x="52" y="753">Twilio, Telnyx, Plivo, Azure ACS, Asterisk · WebRTC: LiveKit, Daily</text>
 <rect class="band" x="868" y="104" width="180" height="666" rx="14"/>
 <text class="eyebrow ink" x="886" y="134"><tspan x="886" dy="0">H · TESTING AND</tspan><tspan x="886" dy="20">MONITORING</tspan></text>
 <text class="desc" x="886" y="194"><tspan x="886" dy="0">Simulates callers,</tspan><tspan x="886" dy="21">scores calls and</tspan><tspan x="886" dy="21">traces what went</tspan><tspan x="886" dy="21">wrong, across the</tspan><tspan x="886" dy="21">whole stack.</tspan></text>

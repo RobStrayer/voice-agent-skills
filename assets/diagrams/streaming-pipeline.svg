@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 528" width="1080" height="528" role="img" aria-labelledby="t d">
+<title id="t">Streaming speech pipeline and the barge-in cancel wire</title>
+<desc id="d">Forward path from left to right: caller 10 to 20 ms audio frames enter VAD and streaming STT, which emits interim partials and committed finals. Streaming LLM tokens pass through a clause chunker so streaming TTS synthesizes the first sentence while later tokens generate, feeding playback and the endpoint echo reference. Below, when the caller barges in, a red dashed cancel wire flushes queued playback, closes the active TTS stream, and cancels in-flight LLM generation while preserving the separate pending-action ledger.</desc>
+<defs>
+  <marker id="arr-l" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M1 1L9 5L1 9Z" fill="var(--listen)"/>
+  </marker>
+  <marker id="arr-t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M1 1L9 5L1 9Z" fill="var(--think)"/>
+  </marker>
+  <marker id="arr-s" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M1 1L9 5L1 9Z" fill="var(--speak)"/>
+  </marker>
+  <marker id="arr-c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M1 1L9 5L1 9Z" fill="var(--danger)"/>
+  </marker>
+</defs>
+<style>
+svg{--bg:#f6f8fa;--card:#ffffff;--card2:#f0f3f6;--line:#d0d7de;--ink:#1f2328;--ink2:#59636e;--listen:#0b7a53;--listen-bg:#dafbe1;--think:#4a3aa7;--think-bg:#edeaff;--speak:#b3441a;--speak-bg:#ffedd5;--net:#57606a;--danger:#cf222e;--danger-bg:#ffebe9}
+@media (prefers-color-scheme:dark){svg{--bg:#0d1117;--card:#161b22;--card2:#21262d;--line:#30363d;--ink:#e6edf3;--ink2:#9198a1;--listen:#2fb784;--listen-bg:#0f2d22;--think:#a29af0;--think-bg:#221d42;--speak:#ec7a45;--speak-bg:#361d12;--net:#8b949e;--danger:#f85149;--danger-bg:#381417}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;fill:var(--ink)}
+.mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:14px}
+.bg{fill:var(--bg);stroke:var(--line)}
+.card{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.subcard{fill:var(--card2);stroke:var(--line);stroke-width:1}
+.h1{font-size:26px;font-weight:700}
+.sub{font-size:16px;fill:var(--ink2)}
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:1.3px}
+.title{font-size:17px;font-weight:700}
+.body{font-size:15px}
+.small{font-size:14px;fill:var(--ink2)}
+.foot{font-size:14.5px;fill:var(--ink2)}
+.c-listen{fill:var(--listen)}.c-think{fill:var(--think)}.c-speak{fill:var(--speak)}.c-danger{fill:var(--danger)}
+.b-listen{fill:var(--listen-bg);stroke:var(--listen);stroke-width:1.5}
+.b-think{fill:var(--think-bg);stroke:var(--think);stroke-width:1.5}
+.b-speak{fill:var(--speak-bg);stroke:var(--speak);stroke-width:1.5}
+.b-danger{fill:var(--danger-bg);stroke:var(--danger);stroke-width:1.5;stroke-dasharray:6 4}
+.wire{fill:none;stroke:var(--net);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wire-listen{fill:none;stroke:var(--listen);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-think{fill:none;stroke:var(--think);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-speak{fill:none;stroke:var(--speak);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wire-cancel{fill:none;stroke:var(--danger);stroke-width:2.2;stroke-dasharray:6 5;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<rect class="bg" x="0.5" y="0.5" width="1079" height="527" rx="16"/>
+<text class="h1" x="32" y="48">Streaming speech pipeline and the barge-in cancel wire</text>
+<text class="sub" x="32" y="76">Overlap small chunks going forward; when the caller interrupts, cancel generation and queued audio together.</text>
+
+<!-- Stage 1: Capture + VAD + Streaming STT -->
+<rect class="card" x="32" y="106" width="232" height="192" rx="12"/>
+<text class="eyebrow c-listen" x="50" y="134">1 · LISTEN</text>
+<text class="title" x="50" y="158">VAD &amp; Streaming STT</text>
+<text class="small" x="50" y="182">10-20 ms PCM frames in</text>
+<rect class="subcard" x="50" y="196" width="196" height="40" rx="8"/>
+<text class="mono" x="62" y="221">partials -&gt; EOT hint</text>
+<rect class="b-listen" x="50" y="244" width="196" height="40" rx="8"/>
+<text class="mono" x="62" y="269">final -&gt; commit turn</text>
+
+<!-- Stage 2: LLM + Clause Chunker -->
+<rect class="card" x="304" y="106" width="248" height="192" rx="12"/>
+<text class="eyebrow c-think" x="322" y="134">2 · THINK</text>
+<text class="title" x="322" y="158">LLM + Clause Chunker</text>
+<text class="small" x="322" y="182">Streams tokens immediately</text>
+<rect class="subcard" x="322" y="196" width="212" height="40" rx="8"/>
+<text class="mono" x="334" y="221">split on clause / .,?!</text>
+<rect class="b-think" x="322" y="244" width="212" height="40" rx="8"/>
+<text class="mono" x="334" y="269">normalize numbers &amp; IDs</text>
+
+<!-- Stage 3: Streaming TTS -->
+<rect class="card" x="592" y="106" width="216" height="192" rx="12"/>
+<text class="eyebrow c-speak" x="610" y="134">3 · SPEAK</text>
+<text class="title" x="610" y="158">Streaming TTS</text>
+<text class="small" x="610" y="182">Synthesizes clause 1 first</text>
+<rect class="subcard" x="610" y="196" width="180" height="40" rx="8"/>
+<text class="mono" x="622" y="221">keep context_id</text>
+<rect class="b-speak" x="610" y="244" width="180" height="40" rx="8"/>
+<text class="mono" x="622" y="269">PCM / mu-law chunks</text>
+
+<!-- Stage 4: Playout & Echo Reference -->
+<rect class="card" x="848" y="106" width="200" height="192" rx="12"/>
+<text class="eyebrow" x="866" y="134">4 · ENDPOINT</text>
+<text class="title" x="866" y="158">Buffer &amp; Playout</text>
+<text class="small" x="866" y="182">Jitter buffer to speaker</text>
+<rect class="subcard" x="866" y="196" width="164" height="40" rx="8"/>
+<text class="mono" x="878" y="221">render -&gt; AEC ref</text>
+<rect class="subcard" x="866" y="244" width="164" height="40" rx="8"/>
+<text class="mono" x="878" y="269">track spoken words</text>
+
+<!-- Forward arrows -->
+<path class="wire-listen" d="M264 264H298" marker-end="url(#arr-l)"/>
+<path class="wire-think" d="M552 264H586" marker-end="url(#arr-t)"/>
+<path class="wire-speak" d="M808 264H842" marker-end="url(#arr-s)"/>
+
+<!-- Barge-in cancel bar -->
+<rect class="b-danger" x="32" y="330" width="1016" height="136" rx="12"/>
+<text class="eyebrow c-danger" x="52" y="358">BARGE-IN CANCEL WIRE (WHEN CONFIRMED CALLER SPEECH INTERRUPTS PLAYBACK)</text>
+
+<path class="wire-cancel" d="M248 392H928"/>
+<path class="wire-cancel" d="M928 392V304" marker-end="url(#arr-c)"/>
+<path class="wire-cancel" d="M700 392V304" marker-end="url(#arr-c)"/>
+<path class="wire-cancel" d="M428 392V304" marker-end="url(#arr-c)"/>
+
+<text class="body" x="52" y="396">Caller speaks</text>
+<text class="small" x="52" y="418">VAD + turn filter</text>
+<text class="small" x="52" y="438">ignores echo/coughs</text>
+
+<text class="mono c-danger" x="342" y="422">3. Cancel LLM stream</text>
+<text class="small" x="342" y="442">Keep uncommitted tools separate</text>
+
+<text class="mono c-danger" x="614" y="422">2. Close TTS context</text>
+<text class="small" x="614" y="442">Stop billing &amp; stale chunks</text>
+
+<text class="mono c-danger" x="840" y="422">1. Flush audio buffer</text>
+<text class="small" x="840" y="442">Clear Twilio / WebRTC queue</text>
+
+<text class="foot" x="32" y="498">Never assume stopping TTS undid an in-flight tool call: reconcile pending business actions in a separate state ledger.</text>
+</svg>
