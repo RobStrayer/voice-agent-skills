@@ -83,6 +83,34 @@ def frontmatter_text(header, key):
     return ''
 
 
+def check_published_counts(root: Path, skill_total: int, repo_linked: int, docs_linked: int, resource_total: int) -> int:
+    landscape = json.loads((root / 'data/landscape.json').read_text(encoding='utf-8'))
+    assert isinstance(landscape, list) and landscape, 'data/landscape.json must be a non-empty list'
+    product_total = len(landscape)
+    landscape_doc = (root / 'docs/landscape.md').read_text(encoding='utf-8')
+    assert f'compares {product_total} voice agent products' in landscape_doc, (
+        f'docs/landscape.md headline count does not match data/landscape.json ({product_total})'
+    )
+    landscape_svg = (root / 'assets/diagrams/provider-landscape.svg').read_text(encoding='utf-8')
+    assert f'covers {product_total} products' in landscape_svg, (
+        f'assets/diagrams/provider-landscape.svg product count does not match data/landscape.json ({product_total})'
+    )
+    catalog_doc = (root / 'docs/catalog.md').read_text(encoding='utf-8')
+    assert f'**{skill_total} bundled skills**' in catalog_doc, (
+        f'docs/catalog.md bundled skill count does not match sources.json ({skill_total})'
+    )
+    more_doc = (root / 'docs/more-skills.md').read_text(encoding='utf-8')
+    linked_total = repo_linked + docs_linked
+    assert f'**{linked_total} linked skills**' in more_doc, (
+        f'docs/more-skills.md linked skill count does not match linked-skills.json ({linked_total})'
+    )
+    readme_doc = (root / 'README.md').read_text(encoding='utf-8')
+    assert f'{linked_total} linked skills' in readme_doc and f'{resource_total} runtime resources' in readme_doc, (
+        'README.md headline counts do not match linked-skills.json / resources.json'
+    )
+    return product_total
+
+
 def verify(root=ROOT):
     # root is injected only for the isolated negative checks below.
     global ROOT
@@ -236,10 +264,11 @@ def verify(root=ROOT):
                     continue
                 local = (path.parent / unquote(url.path)).resolve()
                 assert local.is_relative_to(ROOT) and local.exists(), f'{path}: {target}'
+        product_count = check_published_counts(ROOT, len(skills), len(entries), len(docs), len(resources))
         print(f'PASS: {len(skills)} skills, {len(tracked)} upstream files, '
-              f'{len(entries)} linked skills, {len(docs)} docs-hosted skills, {len(resources)} resources; '
-              'names, descriptions, provenance, licenses, syntax, figures, '
-              'local paths, and bounded credential patterns checked.')
+              f'{len(entries)} linked skills, {len(docs)} docs-hosted skills, {len(resources)} resources, '
+              f'{product_count} landscape products; names, descriptions, provenance, licenses, syntax, '
+              'figures, published counts, local paths, and bounded credential patterns checked.')
     finally:
         ROOT = previous
 
