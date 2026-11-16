@@ -3,18 +3,18 @@
   "snapshot_date": "2026-09-29",
   "snapshot_timezone": "America/New_York",
   "link_policy": "Original upstream default-branch URLs are primary; bundled files are dated snapshots.",
-  "checked_at": "2026-10-30T03:20:20.705949+00:00",
-  "skill_count": 41,
-  "copied_file_count": 107,
+  "checked_at": "2026-11-16T03:43:16Z",
+  "skill_count": 40,
+  "copied_file_count": 101,
   "verification": "Every copied file was read back and compared byte-for-byte with its exact commit-pinned archive entry. Full upstream skill folder trees retained, including nested licenses and optional metadata/assets.",
   "collections": [
     {
       "repo": "elevenlabs/skills",
       "url": "https://github.com/elevenlabs/skills",
-      "stars": 460,
+      "stars": 569,
       "stars_source": "https://api.github.com/repos/elevenlabs/skills",
-      "sha": "503d4e9fda0190ab9357142f44e51de626f97f90",
-      "retrieved_at": "2026-10-30T06:16:01+00:00",
+      "sha": "64271c12b46efb7c9a0b65c8ec521683bb35fc4a",
+      "retrieved_at": "2026-11-16T03:43:16Z",
       "decision": "vendored",
       "provider": "elevenlabs",
       "license": "MIT",
@@ -36,14 +36,14 @@
         {
           "upstream_path": "agents/SKILL.md",
           "copied_path": "skills/elevenlabs/agents/SKILL.md",
-          "sha256": "9678ac31b1ed88eefede93e0752b6fed3acdac8829462bb994749f642514e5be",
-          "bytes": 27056
+          "sha256": "b13f539669c4231cf1c991e1ceccadc8cf47984c487e0d661070bbc8831226a0",
+          "bytes": 31026
         },
         {
           "upstream_path": "agents/references/agent-configuration.md",
           "copied_path": "skills/elevenlabs/agents/references/agent-configuration.md",
-          "sha256": "6e94e668af89afe68cbdb9237e78896e31b542e75408b9e4068c538d18ac7d99",
-          "bytes": 35519
+          "sha256": "cf50a53be4f590322faa158ed4b2d4ce2b4543396f1e09f818c41af5dd284ae3",
+          "bytes": 35796
         },
         {
           "upstream_path": "agents/references/client-tools.md",
@@ -54,8 +54,8 @@
         {
           "upstream_path": "agents/references/installation.md",
           "copied_path": "skills/elevenlabs/agents/references/installation.md",
-          "sha256": "b351af007571b9923065e8d0fd994e6c49a21dd72eb9b0a89d8203d8452fa412",
-          "bytes": 4309
+          "sha256": "7d821023abf0d1033ca7e38ee918c733d93aa652d1636f269804a6d7ebf61871",
+          "bytes": 4381
         },
         {
           "upstream_path": "agents/references/outbound-calls.md",
@@ -66,26 +66,26 @@
         {
           "upstream_path": "agents/references/using-procedure-api.md",
           "copied_path": "skills/elevenlabs/agents/references/using-procedure-api.md",
-          "sha256": "34668dbb83dcc2e16aa748785764404a410a999c46b5dab85f0e30e4653b4d70",
-          "bytes": 17272
+          "sha256": "8ffc7ed568beadb664eef7603130a38aa5bbdddd4dfe66e32e1ac312b368e7ad",
+          "bytes": 17559
         },
         {
           "upstream_path": "agents/references/widget-embedding.md",
           "copied_path": "skills/elevenlabs/agents/references/widget-embedding.md",
-          "sha256": "0a60577597c1f07fc4d98dc36450e18201744d990892462d5507c5db745c0269",
-          "bytes": 8516
+          "sha256": "fd12ea4304a0e76dc51a3c78677af7d8e26dfeb1642735fe4d029e2a57e4c4bd",
+          "bytes": 8740
         },
         {
           "upstream_path": "agents/references/writing-procedures.md",
           "copied_path": "skills/elevenlabs/agents/references/writing-procedures.md",
-          "sha256": "8c724eb9eea3432788852332738142dbe87e652e3a8e0d69c4ea65926b92dd3d",
-          "bytes": 11189
+          "sha256": "a96d15bf80017f4cde97f8e5c1e6e2e1761f42ea3c5137b96f15fc5e6bd60365",
+          "bytes": 11487
         },
         {
           "upstream_path": "speech-engine/SKILL.md",
           "copied_path": "skills/elevenlabs/speech-engine/SKILL.md",
-          "sha256": "531737834dc992b7241295dc7bd6d89da4d72186296510e44a4e5dd19324693b",
-          "bytes": 10317
+          "sha256": "b113dc554268a6493dfd85f06e16f11f73036bceae614b6fe22ef00d39bfadff",
+          "bytes": 10630
         },
         {
           "upstream_path": "speech-engine/references/installation.md",
@@ -108,50 +108,50 @@
         {
           "upstream_path": "speech-to-text/SKILL.md",
           "copied_path": "skills/elevenlabs/speech-to-text/SKILL.md",
-          "sha256": "79744163f4ef2f804c75440b4d53954c93b9a93508c110fca3d847fc75683eea",
-          "bytes": 10850
+          "sha256": "e35f7188c0a2ecd34327b68cff46ef6c58f45712f728ac3b3fadb93aa750e476",
+          "bytes": 12007
         },
         {
           "upstream_path": "speech-to-text/references/installation.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/installation.md",
-          "sha256": "a2a6cab545a5cc6a4f113b17efdd7fa60276bda13c2dfe29d20ede843d9b6bed",
+          "sha256": "4009e3126c941507e848faa8ab760afeacf47582be19af2a10c2a487771e8fa3",
           "bytes": 2984
         },
         {
           "upstream_path": "speech-to-text/references/realtime-client-side.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-client-side.md",
-          "sha256": "3a0fb4f39e004fbe45f7b61e883103f912e45a129241e2f9ea7b81582221721f",
-          "bytes": 7033
+          "sha256": "5813725326ae1a80dbd65a2cfe6c32085512bba0b4adc56efe6ede8b918e15f5",
+          "bytes": 7435
         },
         {
           "upstream_path": "speech-to-text/references/realtime-commit-strategies.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-commit-strategies.md",
-          "sha256": "456b60434c71080290c3135635e746b7cc5535a0ecca64777a2222d56edbb264",
-          "bytes": 4707
+          "sha256": "8d5040558208446abc970d4b501f8a5f1eebc55883afc473d417321a18bd93e2",
+          "bytes": 6017
         },
         {
           "upstream_path": "speech-to-text/references/realtime-events.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-events.md",
-          "sha256": "40034de82ee8bb36ff72048c3871813017e6fcbe65c1733c9279975c374b0be5",
-          "bytes": 8679
+          "sha256": "ba230ca94de4b69deee53ed91800266907a2570741374d392b8f0da22d079594",
+          "bytes": 9438
         },
         {
           "upstream_path": "speech-to-text/references/realtime-server-side.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/realtime-server-side.md",
-          "sha256": "b00079dac4e5210a073cc0ce5b1470558f1cb3eab075dde3b0e484cb2d68d39b",
-          "bytes": 10971
+          "sha256": "12daddfc1d1b8252aef45f52f9914e412dfec164a83d78b3238c44be8e5cef2b",
+          "bytes": 12266
         },
         {
           "upstream_path": "speech-to-text/references/transcription-options.md",
           "copied_path": "skills/elevenlabs/speech-to-text/references/transcription-options.md",
-          "sha256": "f5fe1b976813b97753afff6e1fbcac3708366188db0dd360667c1168ecacb766",
-          "bytes": 10920
+          "sha256": "4dbf444473fd3e2b76ad92b1fed271d3a73fd1cd67277176f1d8755a853e4d5e",
+          "bytes": 11318
         },
         {
           "upstream_path": "text-to-speech/SKILL.md",
           "copied_path": "skills/elevenlabs/text-to-speech/SKILL.md",
-          "sha256": "fcc105566df403f5f77c25e73b63d9eef170f7326aaea6a8bbb977386ff56abe",
-          "bytes": 10727
+          "sha256": "416fac1344b8d6c833cf339c5353fd421a34cf1d01bb3c0ff1a8bc7fc53cb03c",
+          "bytes": 11155
         },
         {
           "upstream_path": "text-to-speech/references/installation.md",
@@ -186,8 +186,8 @@
         {
           "upstream_path": "voice-changer/SKILL.md",
           "copied_path": "skills/elevenlabs/voice-changer/SKILL.md",
-          "sha256": "18438b05074d1a0ae3b8aeb864c0e7f335ca8d340e60703e3edbfd52b3e37b93",
-          "bytes": 12284
+          "sha256": "8dafae08f904cbde5cc0a7ee637245d9b9c71be4a1246b86a4fbfeb83841a8d1",
+          "bytes": 12448
         },
         {
           "upstream_path": "voice-changer/references/installation.md",
@@ -239,15 +239,16 @@
         }
       ],
       "default_branch": "main",
-      "live_url": "https://github.com/elevenlabs/skills/tree/main"
+      "live_url": "https://github.com/elevenlabs/skills/tree/main",
+      "snapshot_url": "https://github.com/elevenlabs/skills/tree/64271c12b46efb7c9a0b65c8ec521683bb35fc4a"
     },
     {
       "repo": "livekit/agent-skills",
       "url": "https://github.com/livekit/agent-skills",
-      "stars": 72,
+      "stars": 75,
       "stars_source": "https://api.github.com/repos/livekit/agent-skills",
-      "sha": "e1195b497388b1aecad5dd2e9a0c9bdfbaba1878",
-      "retrieved_at": "2026-10-30T03:20:20.705949+00:00",
+      "sha": "3084fe8fead5c7f4fe5e4845f40c27517fc5eac3",
+      "retrieved_at": "2026-11-16T03:43:16Z",
       "decision": "vendored",
       "provider": "livekit",
       "license": "MIT",
@@ -274,8 +275,8 @@
         {
           "upstream_path": "skills/building-livekit-agents/SKILL.md",
           "copied_path": "skills/livekit/building-livekit-agents/SKILL.md",
-          "sha256": "5dc9e9d325422bf03feae7730858ae57affd1b3c5b8749699380d55ac7c3cac6",
-          "bytes": 11016
+          "sha256": "ba87f128b0d1118c1f28105ff2bddc59b43c3372696afd160339000270483cad",
+          "bytes": 13335
         },
         {
           "upstream_path": "skills/building-livekit-agents/references/state-and-effects.md",
@@ -322,14 +323,14 @@
         {
           "upstream_path": "skills/running-livekit-simulations/SKILL.md",
           "copied_path": "skills/livekit/running-livekit-simulations/SKILL.md",
-          "sha256": "e373c9dc38f309995ec0c20eccf3d3644e65ac46533040496ffcba81462c3d47",
-          "bytes": 6617
+          "sha256": "964481d018e5c8f41c1235cdfb219d570f784f7452ba19e151ba71160a2a36d3",
+          "bytes": 7204
         },
         {
           "upstream_path": "skills/operating-livekit-agents/SKILL.md",
           "copied_path": "skills/livekit/operating-livekit-agents/SKILL.md",
-          "sha256": "4583f731a9ed393e650d04272fc33dbe1abbe3960a7973d6d90c1f0877c81a75",
-          "bytes": 9736
+          "sha256": "c569e8c4686943d56539cb8211a49d22913b34168409b602f77bcfb99597d3a9",
+          "bytes": 13011
         },
         {
           "upstream_path": "LICENSE",
@@ -339,7 +340,8 @@
         }
       ],
       "default_branch": "main",
-      "live_url": "https://github.com/livekit/agent-skills/tree/main"
+      "live_url": "https://github.com/livekit/agent-skills/tree/main",
+      "snapshot_url": "https://github.com/livekit/agent-skills/tree/3084fe8fead5c7f4fe5e4845f40c27517fc5eac3"
     },
     {
       "repo": "pipecat-ai/skills",
@@ -410,10 +412,10 @@
     {
       "repo": "cartesia-ai/skills",
       "url": "https://github.com/cartesia-ai/skills",
-      "stars": 5,
+      "stars": 6,
       "stars_source": "https://api.github.com/repos/cartesia-ai/skills",
-      "sha": "0ee3f4a4ad8e9cf9d314962448b721cdc34fae42",
-      "retrieved_at": "2026-09-30T02:37:57.766069+00:00",
+      "sha": "8525a2f0878244228e20ce8aa0204913f683862a",
+      "retrieved_at": "2026-11-16T03:43:16Z",
       "decision": "vendored",
       "provider": "cartesia",
       "license": "MIT",
@@ -429,50 +431,14 @@
         {
           "upstream_path": "skills/cartesia-api/SKILL.md",
           "copied_path": "skills/cartesia/cartesia-api/SKILL.md",
-          "sha256": "2703928441734b90c533c0539a9a4c1628fc3eacb6f471ba80b7572b23b13e22",
-          "bytes": 11961
+          "sha256": "e842706b062fc665654143eebe10cd0786e8e5afa46aaddc1cc322c894361aa1",
+          "bytes": 12128
         },
         {
           "upstream_path": "skills/cartesia-api/references/resources.md",
           "copied_path": "skills/cartesia/cartesia-api/references/resources.md",
           "sha256": "0510496749e9dad45d9e01be9abd6e8233e9727584ea6c731f328e1e829e45f2",
           "bytes": 2571
-        },
-        {
-          "upstream_path": "skills/cartesia-line/SKILL.md",
-          "copied_path": "skills/cartesia/cartesia-line/SKILL.md",
-          "sha256": "b340d979ddfde6c7e10baceb5d80661e90055b8a9f190e159ed32a8116a82748",
-          "bytes": 25055
-        },
-        {
-          "upstream_path": "skills/cartesia-line/references/advanced-patterns.md",
-          "copied_path": "skills/cartesia/cartesia-line/references/advanced-patterns.md",
-          "sha256": "68414b178bfa7e04530f13965bd2d502b5d4fc1f3a798abd8ee20cc88cefe533",
-          "bytes": 14053
-        },
-        {
-          "upstream_path": "skills/cartesia-line/references/calls-api.md",
-          "copied_path": "skills/cartesia/cartesia-line/references/calls-api.md",
-          "sha256": "e59ec0270978e5ddbc839aa7df1da4c34f3a36e9c888a97017f8b9ccb1a96623",
-          "bytes": 9078
-        },
-        {
-          "upstream_path": "skills/cartesia-line/references/multi-agent-workflows.md",
-          "copied_path": "skills/cartesia/cartesia-line/references/multi-agent-workflows.md",
-          "sha256": "28f462d1f728e6aa06a87c023d76ee0e1d6dd924fd3af631f834467baa7e5851",
-          "bytes": 9386
-        },
-        {
-          "upstream_path": "skills/cartesia-line/references/tool-patterns.md",
-          "copied_path": "skills/cartesia/cartesia-line/references/tool-patterns.md",
-          "sha256": "4efed652421638a4780fb7e80a5fbe09b7fccffd2a6e6f2b7c1cd631b5e68dd2",
-          "bytes": 7884
-        },
-        {
-          "upstream_path": "skills/cartesia-line/references/troubleshooting.md",
-          "copied_path": "skills/cartesia/cartesia-line/references/troubleshooting.md",
-          "sha256": "c819f3328d0cc423fafe6014cee5034c6e9dc25035705dc01311905d12caa782",
-          "bytes": 8889
         },
         {
           "upstream_path": "LICENSE",
@@ -482,7 +448,9 @@
         }
       ],
       "default_branch": "main",
-      "live_url": "https://github.com/cartesia-ai/skills/tree/main"
+      "live_url": "https://github.com/cartesia-ai/skills/tree/main",
+      "snapshot_url": "https://github.com/cartesia-ai/skills/tree/8525a2f0878244228e20ce8aa0204913f683862a",
+      "committed_at": "2026-11-03T03:06:58Z"
     },
     {
       "repo": "twilio/ai",
@@ -899,5 +867,6 @@
     "plugins/voice-foundations/skills/voice-speech-pipeline",
     "plugins/voice-foundations/skills/voice-stack-selection",
     "plugins/voice-foundations/skills/voice-turn-taking"
-  ]
+  ],
+  "generated_at_utc": "2026-11-16T03:43:16Z"
 }

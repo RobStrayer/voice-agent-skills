@@ -613,16 +613,16 @@
   {
     "requested": "Blaizzy/mlx-audio",
     "api_error": "GitHub unauthenticated API quota exhausted (HTTP 403)",
-    "name": "Blaizzy/mlx-audio",
-    "url": "https://github.com/Blaizzy/mlx-audio",
-    "stars": 7964,
+    "name": "Neywa-Labs/mlx-audio",
+    "url": "https://github.com/Neywa-Labs/mlx-audio",
+    "stars": 8273,
     "archived": false,
     "default_branch": "main",
-    "commit": "94c7716212b2228f178d2f9c7619a591fd1b0b78",
+    "commit": "b5fcbe964b9e4cad4b06782f97d3e51fe74a8702",
     "commit_source": "https://github.com/Blaizzy/mlx-audio",
-    "metadata_source": "https://github.com/Blaizzy/mlx-audio",
+    "metadata_source": "https://api.github.com/repos/Neywa-Labs/mlx-audio",
     "metadata_method": "github_html_embedded_json",
-    "retrieved_at": "2026-09-30T02:35:59.086Z",
+    "retrieved_at": "2026-11-16T03:43:16Z",
     "license_source": "https://raw.githubusercontent.com/Blaizzy/mlx-audio/94c7716212b2228f178d2f9c7619a591fd1b0b78/LICENSE",
     "license": "MIT",
     "readme_source": "https://raw.githubusercontent.com/Blaizzy/mlx-audio/94c7716212b2228f178d2f9c7619a591fd1b0b78/README.md",
@@ -641,7 +641,8 @@
       "unavailable_reported_github_source_count": 0,
       "finding": "STT, TTS and STS model-loading paths on Apple Silicon support the catalog; loaded model cards still determine model terms.",
       "source_publication_date": null
-    }
+    },
+    "committed_at": "2026-11-14T20:45:55Z"
   },
   {
     "requested": "TEN-framework/ten-framework",
