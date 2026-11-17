@@ -1,9 +1,12 @@
 """Offline check of the upstream drift logic: fake responses, no network."""
 import copy
+import io
 import json
 import tempfile
+from contextlib import redirect_stderr
 from datetime import date
 from pathlib import Path
+from unittest.mock import patch
 
 import check_upstream as cu
 
@@ -15,7 +18,9 @@ FAKE_TODAY = date(2026, 9, 30)
 def fixture():
     return {
         'sources': {'checked_at': 'x', 'collections': [{
-            'repo': 'acme/vendored', 'decision': 'vendored', 'sha': OLD, 'license': 'MIT',
+            'repo': 'acme/vendored', 'url': 'https://github.com/acme/vendored',
+            'snapshot_url': 'https://github.com/acme/vendored/tree/' + OLD,
+            'decision': 'vendored', 'sha': OLD, 'license': 'MIT',
             'default_branch': 'main', 'retrieved_at': 'x',
             'copied_files': [{'upstream_path': 'demo/SKILL.md', 'copied_path': 'skills/acme/demo/SKILL.md',
                               'sha256': cu.sha256(BODY), 'bytes': len(BODY)}]}]},
@@ -72,6 +77,39 @@ def test_moved_head_with_unchanged_content_is_not_drift():
     assert 'clean' not in cu.report(findings, FAKE_TODAY).split('\n')[0]  # stale pages still count
     findings['stale'] = []
     assert cu.report(findings, FAKE_TODAY).startswith('<!-- upstream-drift: clean -->')
+
+
+def response(body):
+    stream = io.BytesIO(body)
+    stream.status = 200
+    return stream
+
+
+def test_large_tree_is_checked_but_file_downloads_stay_bounded():
+    # Hookdeck's recursive listing exceeds the file limit. A skill near its
+    # end must still be discoverable, without allowing larger file downloads.
+    body = json.dumps({'tree': [
+        {'type': 'blob', 'path': 'x' * cu.MAX_BYTES},
+        {'type': 'blob', 'path': 'new-voice-skill/SKILL.md'}],
+        'truncated': False}).encode()
+    client = cu.Client('test-token')
+    with patch.object(cu.urllib.request, 'urlopen', side_effect=lambda *a, **k: response(body)):
+        assert client.skill_paths('acme/large', NEW) == (['new-voice-skill/SKILL.md'], False)
+        with redirect_stderr(io.StringIO()):
+            assert client.get('https://example.com/too-large.md') == (None, b'')
+
+
+def test_tree_downloads_still_have_a_limit():
+    with patch.object(cu, 'MAX_TREE_BYTES', 100), \
+            patch.object(cu.urllib.request, 'urlopen', side_effect=lambda *a, **k: response(b'x' * 101)), \
+            redirect_stderr(io.StringIO()):
+        assert cu.Client('test-token').skill_paths('acme/large', NEW) is None
+
+
+def test_truncated_tree_keeps_its_incomplete_marker():
+    body = json.dumps({'tree': [{'type': 'blob', 'path': 'one/SKILL.md'}], 'truncated': True}).encode()
+    with patch.object(cu.urllib.request, 'urlopen', side_effect=lambda *a, **k: response(body)):
+        assert cu.Client('test-token').skill_paths('acme/large', NEW) == (['one/SKILL.md'], True)
 
 
 def test_changed_hash_is_detected():
@@ -187,6 +225,7 @@ def test_apply_refreshes_records_and_keeps_format():
         assert raw.endswith(b'}\n') and b'\r' not in raw
     item = data['sources']['collections'][0]
     assert item['sha'] == NEW and item['copied_files'][0]['sha256'] == cu.sha256(BODY + b'new')
+    assert item['snapshot_url'] == 'https://github.com/acme/vendored/tree/' + NEW
     assert item['copied_files'][0]['bytes'] == len(BODY) + 3
     linked = data['linked']
     assert linked['sources'][0]['head'] == linked['skills'][0]['pinned_commit'] == NEW

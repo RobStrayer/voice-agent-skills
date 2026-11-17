@@ -33,7 +33,8 @@ FILES = ('sources.json', 'linked-skills.json', 'resources.json')
 STALE_DAYS = {'landscape.md': 90}
 STALE_DEFAULT = 180
 LIST_CAP = 40
-MAX_BYTES = 5_000_000  # largest response read; a bigger one is reported as unreachable
+MAX_BYTES = 5_000_000  # default response limit; a bigger one is reported as unreachable
+MAX_TREE_BYTES = 20_000_000  # repository listings can outgrow individual skill files
 REPORT_CAP = 45000  # the issue body limit is 65,536 characters; link-checker text is added later
 
 
@@ -66,7 +67,7 @@ class Client:
     def __init__(self, token):
         self.token = token
 
-    def _open(self, url, body=None, auth=False):
+    def _open(self, url, body=None, auth=False, max_bytes=MAX_BYTES):
         headers = {'User-Agent': 'voice-agent-skills-upkeep'}
         if auth:
             headers['Authorization'] = 'Bearer ' + self.token
@@ -77,9 +78,9 @@ class Client:
             try:
                 request = urllib.request.Request(url, data=body, headers=headers)
                 with urllib.request.urlopen(request, timeout=30) as response:
-                    data = response.read(MAX_BYTES + 1)
-                    if len(data) > MAX_BYTES:
-                        print(f'Response from {url} is larger than {MAX_BYTES} bytes; skipped', file=sys.stderr)
+                    data = response.read(max_bytes + 1)
+                    if len(data) > max_bytes:
+                        print(f'Response from {url} is larger than {max_bytes} bytes; skipped', file=sys.stderr)
                         return None, b''
                     return response.status, data
             except urllib.error.HTTPError as error:
@@ -131,7 +132,8 @@ class Client:
 
     def skill_paths(self, repo, ref):
         """(SKILL.md paths in the tree at ref, truncated flag), or None on failure."""
-        status, raw = self._open(f'{API}/repos/{repo}/git/trees/{ref}?recursive=1', auth=True)
+        status, raw = self._open(f'{API}/repos/{repo}/git/trees/{ref}?recursive=1',
+                                 auth=True, max_bytes=MAX_TREE_BYTES)
         if status != 200:
             return None
         tree = json.loads(raw)
@@ -416,6 +418,7 @@ def apply(data, findings, root, now):
             change['item']['sha256'], change['item']['bytes'] = change['sha256'], len(change['body'])
             printed.append(f"vendored {result['repo']}: {change['item']['copied_path']}")
         collection['sha'], collection['retrieved_at'] = result['new'], now
+        collection['snapshot_url'] = collection['url'] + '/tree/' + result['new']
         sources['checked_at'] = now
     for result in findings['_linked_all']:
         if not result['changed'] or result['removed'] or result['errors']:

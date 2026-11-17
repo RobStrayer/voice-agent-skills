@@ -15,7 +15,7 @@ a booking line, a browser assistant, or anything else people talk to. It has pla
 guides for beginners, diagrams that show how the parts fit, and **skills** your
 coding agent (Claude Code, Codex, Hermes Agent, Cursor and others) can load to do the work properly.
 
-**13 original skills · 27 bundled provider skills · 359 linked skills from 61 providers and authors · 43 runtime resources**
+**13 original skills · 27 bundled provider skills · 363 linked skills from 61 providers and authors · 43 runtime resources**
 
 ## Start here
 
@@ -128,7 +128,7 @@ maintained original:
 | [Cartesia](https://github.com/cartesia-ai/skills) | Sonic speech synthesis, Ink Whisper STT, voice cloning and localization |
 | [OpenAI](https://github.com/openai/skills) | Speech generation and transcription from files (not a realtime agent runtime) |
 
-The [linked skills index](docs/more-skills.md) points to 359 more skills from
+The [linked skills index](docs/more-skills.md) points to 363 more skills from
 61 providers and other authors. Most come from the provider itself; community and
 third-party ones are marked. Every entry is pinned to a commit or file hash and
 was checked against it. The [resource library](docs/resources.md) lists
@@ -146,7 +146,7 @@ here. Smaller providers are in the index's [A to Z list](docs/more-skills.md#fin
 - **Text-to-speech:** [Inworld](docs/more-skills.md#inworld) 3 · [**Cartesia**](docs/catalog.md#cartesia) 1 · [Rime](docs/more-skills.md#rime) 1 · [Boson AI](docs/more-skills.md#boson-ai) 1 · [CAMB.AI](docs/more-skills.md#cambai) 1 · [Gradium](docs/more-skills.md#gradium) 1
 - **Frameworks and media:** [**LiveKit Agents**](docs/catalog.md#livekit) 7 · [**Pipecat**](docs/more-skills.md#pipecat) 4 · [jambonz](docs/more-skills.md#jambonz) 3 · [Zero Runtime](docs/more-skills.md#zero-runtime) 3 · [Vision Agents](docs/more-skills.md#vision-agents) 1 · [Agora](docs/more-skills.md#agora) 1 · [Daily](docs/more-skills.md#daily) 1
 - **Testing:** [Coval](docs/more-skills.md#coval) 13 · [Cekura](docs/more-skills.md#cekura) 9 · [Roark](docs/more-skills.md#roark) 9 · [Bluejay](docs/more-skills.md#bluejay) 7
-- **Cloud:** [AWS](docs/more-skills.md#aws) 16 · [Google](docs/more-skills.md#google) 12 · [Azure](docs/more-skills.md#azure) 10
+- **Cloud:** [AWS](docs/more-skills.md#aws) 20 · [Google](docs/more-skills.md#google) 12 · [Azure](docs/more-skills.md#azure) 10
 
 Cloud includes the speech-to-speech models Nova Sonic, Gemini Live and Azure Voice Live.
 **No official voice-agent skill yet** (checked November 16, 2026): Vonage,
