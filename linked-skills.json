@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-11-16T05:01:56Z",
+  "checked_at_utc": "2026-11-17T02:05:56.162371+00:00",
   "scope": "Additional voice skills linked to their original maintained repositories or, for vendors that publish only on their documentation sites, to the published skill file. Counts include language variants and explicitly marked optional workflows. No third-party content is copied by this index.",
-  "selected_skill_count": 325,
+  "selected_skill_count": 329,
   "docs_hosted_skill_count": 34,
   "source_repository_count": 68,
   "counts_by_repository": {
@@ -28,7 +28,7 @@
     "shinyorg/skills": 1,
     "mahimailabs/voice-ai-skills": 1,
     "AgoraIO/skills": 1,
-    "aws-samples/amazon-ai-samples": 2,
+    "aws-samples/amazon-ai-samples": 6,
     "aws-samples/sample-ai-agent-skills": 6,
     "aws-samples/sample-aicc-builder-for-amazon-connect-ai-agent": 1,
     "aws-samples/sample-amazon-connect-speed-dial": 1,
@@ -79,13 +79,13 @@
     "recommended": 136,
     "optional-migration": 12,
     "optional-client-sdk": 2,
-    "optional-provider-workflow": 65,
+    "optional-provider-workflow": 67,
     "optional-reference": 27,
     "optional-deployment": 1,
     "optional-evaluation": 44,
     "optional-prerelease": 7,
     "optional-security": 4,
-    "optional-speech-api": 20,
+    "optional-speech-api": 22,
     "optional-webhooks": 7
   },
   "docs_hosted_counts_by_selection": {
@@ -361,10 +361,10 @@
     {
       "repo": "coval-ai/coval-external-skills",
       "default_branch": "main",
-      "head": "6725bdfee29948ee041536941b0eab2163f85b61",
-      "repository_head_committed_at": "2026-11-03T21:15:24+00:00",
+      "head": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
+      "repository_head_committed_at": "2026-11-16T16:59:05+00:00",
       "stars": 2,
-      "retrieved_at": "2026-11-16T03:43:16Z",
+      "retrieved_at": "2026-11-17T02:01:30.304889+00:00",
       "metadata_source": "https://github.com/coval-ai/coval-external-skills",
       "license": "MIT",
       "license_url": "https://github.com/coval-ai/coval-external-skills/blob/main/LICENSE",
@@ -465,8 +465,8 @@
     {
       "repo": "aws-samples/amazon-ai-samples",
       "default_branch": "main",
-      "head": "62bfe44f2888b211dd02e34abbece1ca0dc378ce",
-      "repository_head_committed_at": "2026-11-14T07:39:27+00:00",
+      "head": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
+      "repository_head_committed_at": "2026-11-16T06:51:42Z",
       "stars": 453,
       "stars_source": "GitHub public repository API stargazers_count",
       "observed_at": "2026-09-30T18:29:25.519206+00:00",
@@ -474,11 +474,11 @@
         "LICENSE",
         "nova-act/usecases/adaptive-ui-testing-with-nova-act/LICENSE"
       ],
-      "total_skill_files": 6,
+      "total_skill_files": 13,
       "license": "MIT-0",
       "license_status": "Root MIT-0 license found; selected skill folders have no nested overrides.",
       "license_url": "https://github.com/aws-samples/amazon-ai-samples/blob/main/LICENSE",
-      "retrieved_at": "2026-11-16T03:43:16Z",
+      "retrieved_at": "2026-11-17T02:05:56.162371+00:00",
       "license_path": "LICENSE",
       "publisher_relation": "provider-samples-org",
       "url": "https://github.com/aws-samples/amazon-ai-samples"
@@ -1210,8 +1210,8 @@
     {
       "repo": "polyai/adk",
       "default_branch": "main",
-      "head": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
-      "repository_head_committed_at": "2026-11-13T15:41:41+00:00",
+      "head": "1944f2104a8200934da58653046a2a41b3622e10",
+      "repository_head_committed_at": "2026-11-16T17:39:31+00:00",
       "stars": 83,
       "stars_source": "GitHub public repository API stargazers_count",
       "observed_at": "2026-09-30T23:22:09.402188+00:00",
@@ -1222,7 +1222,7 @@
       "license": "Apache-2.0",
       "license_status": "Root Apache-2.0 license found; selected skill folders have no nested overrides.",
       "license_url": "https://github.com/polyai/adk/blob/main/LICENSE",
-      "retrieved_at": "2026-11-16T03:43:16Z",
+      "retrieved_at": "2026-11-17T02:01:30.304889+00:00",
       "license_path": "LICENSE",
       "publisher_relation": "provider-org"
     },
@@ -5053,7 +5053,7 @@
       "path": "skills/evaluation/coval-eval-start/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/evaluation/coval-eval-start/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "161de63194d462044b3b159c7cab96ed9bfd777025dd8a4ce0dd6e1c4c38c5e3",
       "language": "Provider workflow",
       "purpose": "Choose the next useful step for evaluating a voice or chat agent with Coval. Use for getting started or deciding what to do next; use a specific skill directly when the task is already clear.",
@@ -5079,7 +5079,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "coval-discover-failures",
@@ -5088,7 +5088,7 @@
       "path": "skills/evaluation/coval-discover-failures/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/evaluation/coval-discover-failures/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "faa4447f62ce1d69ebc40653ef57df08b619042c9896ca2043b74238b17a238e",
       "language": "Provider workflow",
       "purpose": "Discover failure modes in Coval runs, uploaded conversations or local conversation exports using scoped sampling and transcript, audio and trace evidence. Prepare human review without inventing ground truth or launching new runs.",
@@ -5114,7 +5114,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "coval-calibrate-metric",
@@ -5123,7 +5123,7 @@
       "path": "skills/evaluation/coval-calibrate-metric/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/evaluation/coval-calibrate-metric/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "c8c99fe0f00a683311a3293bdf99ab0e3f46f9386d64aeab382208b9cfe3e155",
       "language": "Provider workflow",
       "purpose": "Validate one Coval judge against independent human labels, with grouped development/test separation, class-specific errors and uncertainty. Use for trust claims or calibration; without real labels, prepare review rather than inventing ground truth.",
@@ -5152,7 +5152,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "coval-compare-runs",
@@ -5161,7 +5161,7 @@
       "path": "skills/evaluation/coval-compare-runs/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/evaluation/coval-compare-runs/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "72baa0a625926ed75b4ab8b528662d14555bf9336a32e1a2737f62208c9410d6",
       "language": "Provider workflow",
       "purpose": "Compare before/after Coval runs using matched cases, stable metric versions and inspected conversation evidence. Use to assess a regression or proposed improvement; does not automatically launch or tune anything.",
@@ -5187,7 +5187,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "coval-eval-audit",
@@ -5196,7 +5196,7 @@
       "path": "skills/evaluation/coval-eval-audit/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/evaluation/coval-eval-audit/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "87b5f7dbf46fd40d7da8e998514fea0ce02ec97d8ad6ad29feb753b5945d3a19",
       "language": "Provider workflow",
       "purpose": "Audit an existing Coval evaluation setup for coverage, misleading scores, missing evidence, judge validation and execution risk. Read-only; use when inheriting an eval or deciding whether its results support a release decision.",
@@ -5222,7 +5222,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "quick-eval",
@@ -5231,7 +5231,7 @@
       "path": "skills/runs/quick-eval/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/quick-eval/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "9f3d8c9bf03266c47a933c290760a71f747918cf6f68a508f8f7577cb7eb3cf9",
       "language": "Provider workflow",
       "purpose": "Execute a bounded Coval evaluation on explicit test cases, then audit conversation, recording and metric evidence. Use when the user requests a run; does not automatically rerun, tune an agent or schedule evaluations.",
@@ -5260,7 +5260,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "build-test-suite",
@@ -5269,7 +5269,7 @@
       "path": "skills/test-cases/build-test-suite/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/test-cases/build-test-suite/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "116c4bc9efa450928cdda7c5ff68e4cafd82b3b91a9720674f0adf7b96c549a2",
       "language": "Provider workflow",
       "purpose": "Build a compact Coval test set from product requirements, observed conversation failures or a coverage gap. Design realistic scenarios with separate expected behaviors, provenance and controlled voice/persona variation.",
@@ -5298,7 +5298,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "configure-metrics",
@@ -5307,7 +5307,7 @@
       "path": "skills/metrics/configure-metrics/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/metrics/configure-metrics/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "094023ad5b7dd9a6a1a1aa39ef465d9f96b2dd8d76013ee631e1f37ddb54bd93",
       "language": "Provider workflow",
       "purpose": "Select and configure a Coval metric for a concrete product criterion, choosing transcript, audio, trace or deterministic evidence and testing the result. Use for metric creation or scoring design, not for final human calibration.",
@@ -5336,7 +5336,7 @@
           "https://docs.coval.ai/api-reference/v1/introduction"
         ]
       },
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00"
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00"
     },
     {
       "name": "design-persona",
@@ -5345,7 +5345,7 @@
       "path": "skills/personas/design-persona/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/personas/design-persona/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "065a9e7b3a7605234d9323db50e80031640c3e7139b060924b23d309788d9884",
       "language": "Bash (Coval CLI)",
       "purpose": "Interactively design and create a Coval simulation persona for testing a voice or chat agent.",
@@ -5354,7 +5354,7 @@
       "manifest_license": null,
       "repository_stars": 2,
       "stars_observed_at": "2026-09-30T17:44:30.471172+00:00",
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00",
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00",
       "supporting_file_count": 2,
       "supporting_files": [
         "skills/personas/design-persona/references/persona-templates.md",
@@ -5382,7 +5382,7 @@
       "path": "skills/runs/run-accent-testing/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-accent-testing/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "7c2a8da79227e50f4c01f1d945be8acf112702aa51b20f8e89e05186781b65c9",
       "language": "Bash (Coval CLI)",
       "purpose": "Create accent personas and run a per-accent Coval simulation sweep with a comparison table and saved report.",
@@ -5391,7 +5391,7 @@
       "manifest_license": null,
       "repository_stars": 2,
       "stars_observed_at": "2026-09-30T17:44:30.471172+00:00",
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00",
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [],
@@ -5416,16 +5416,16 @@
       "path": "skills/runs/run-adversarial-testing/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-adversarial-testing/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
-      "verified_manifest_sha256": "936cf411ef69462b8ffc6ea574ffa4b330fabf501b6236719d4350d4da0716f0",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
+      "verified_manifest_sha256": "9ddee330040a9b9e488ee3ad43f2f4c9cd67430a224234c12a2e288398a1711e",
       "language": "Bash (Coval CLI)",
-      "purpose": "Build an adversarial test set, persona and metric in Coval, run red-team simulations, and score each scenario.",
+      "purpose": "Build adversarial simulations in Coval and distinguish observed speech failures from independently verified backend actions.",
       "selection": "optional-evaluation",
       "license": "MIT",
       "manifest_license": null,
       "repository_stars": 2,
       "stars_observed_at": "2026-09-30T17:44:30.471172+00:00",
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00",
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00",
       "supporting_file_count": 3,
       "supporting_files": [
         "skills/runs/run-adversarial-testing/references/attack-library.md",
@@ -5449,7 +5449,7 @@
       "concerns": [
         "Creates a test set, test cases, a persona, a composite metric, a run and a saved report in the Coval org via the CLI and direct API calls; the optional PUBLIC report permission also marks the run public.",
         "Runs 19 scenarios x 3 or more iterations; voice simulations can reach a cap of about 10 minutes each and a sweep about an hour, burning telephony minutes.",
-        "Directs prompt-injection, PII-extraction, social-engineering and harmful-content scenarios at the selected agent; the file does not say to use a non-production agent or how to prevent real backend actions.",
+        "Runs adversarial scenarios against the selected agent. The revised guidance requires authorized test tools, provider-side tool traces and resulting-state evidence before claiming a save, search or other backend action completed; spoken confirmations and low scores alone do not prove it.",
         "Needs a long-lived COVAL_API_KEY in the shell environment.",
         "Relies on Coval CLI limits (single-valued --expected, dropped composite-metric flags) and on `coval simulations` command names that the file itself says are version-dependent; not verifiable from the file."
       ]
@@ -5461,7 +5461,7 @@
       "path": "skills/runs/run-audio-quality-testing/SKILL.md",
       "url": "https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-audio-quality-testing/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "6725bdfee29948ee041536941b0eab2163f85b61",
+      "pinned_commit": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
       "verified_manifest_sha256": "1b94e421ebea9d54ed855dd596f61133335a3d8cd144efeb16fac9db99f5bebd",
       "language": "Bash (Coval CLI)",
       "purpose": "Launch one Coval simulation run per audio-condition persona and build the multi-run report link.",
@@ -5470,7 +5470,7 @@
       "manifest_license": null,
       "repository_stars": 2,
       "stars_observed_at": "2026-09-30T17:44:30.471172+00:00",
-      "source_repository_commit_at": "2026-11-03T21:15:24+00:00",
+      "source_repository_commit_at": "2026-11-16T16:59:05+00:00",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [],
@@ -5924,7 +5924,7 @@
       "path": "skills/text-agent-to-strands-voice-agent/SKILL.md",
       "url": "https://github.com/aws-samples/amazon-ai-samples/blob/main/skills/text-agent-to-strands-voice-agent/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "62bfe44f2888b211dd02e34abbece1ca0dc378ce",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
       "verified_manifest_sha256": "6e77b2deb42a37d46d0d96150c8552e50886141a5858dc903ed9e18ed1a0c0fe",
       "language": "Python",
       "purpose": "Convert an existing text agent into a Nova Sonic speech-to-speech agent with a WebSocket server and browser client.",
@@ -5933,7 +5933,7 @@
       "manifest_license": null,
       "repository_stars": 453,
       "stars_observed_at": "2026-09-30T18:29:25.519206+00:00",
-      "source_repository_commit_at": "2026-11-14T07:39:27+00:00",
+      "source_repository_commit_at": "2026-11-16T06:51:42Z",
       "supporting_file_count": 18,
       "supporting_files": [
         "skills/text-agent-to-strands-voice-agent/README.md",
@@ -12735,8 +12735,8 @@
       "path": "skills/poly-adk-workflow/SKILL.md",
       "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-workflow/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
-      "verified_manifest_sha256": "37d2b6876ed15292a90f6afaef506d7b41dccd87c7a51691f33e0c917cc8d70c",
+      "pinned_commit": "1944f2104a8200934da58653046a2a41b3622e10",
+      "verified_manifest_sha256": "5021c15f084c62208f3f78f9406a407a276dcd83268470917da05758e14fb8f3",
       "language": "PolyAI ADK CLI",
       "purpose": "Build, validate, push, test and merge PolyAI Agent Studio voice agents from the command line with the ADK, and route to the testing, branching, conversations and RTC skills.",
       "selection": "recommended",
@@ -12744,7 +12744,7 @@
       "manifest_license": "Apache-2.0",
       "repository_stars": 83,
       "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
-      "source_repository_commit_at": "2026-11-13T15:41:41+00:00",
+      "source_repository_commit_at": "2026-11-16T17:39:31+00:00",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [
@@ -12760,7 +12760,7 @@
         "poly push, poly chat --push and poly branch merge write to the remote Agent Studio project, and merging into main deploys to sandbox automatically. The skill says never to promote to pre-release or live unless the user asks, and to use --dry-run first.",
         "Disagrees with the docs-hosted PolyAI skill: this skill says merging into main deploys to sandbox and promotion is a separate step, while the docs skill says publishing a Branch merges it onto Live. Their project layouts also differ (agent_settings/ and config/ here, poly.yaml with top-level entities/ and variants/ there). Check poly docs for the installed version.",
         "Edits prompts, rules and Python functions that run on live calls; functions the model can call need @func_description and @func_parameter decorators or the platform creates them without parameters.",
-        "Declares version 0.80.1 and defers to poly docs for exact schemas, so it is tied to the installed CLI version."
+        "Declares version 0.84.0 and defers to poly docs for exact schemas, so it is tied to the installed CLI version."
       ]
     },
     {
@@ -12770,8 +12770,8 @@
       "path": "skills/poly-adk-testing/SKILL.md",
       "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-testing/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
-      "verified_manifest_sha256": "36e648f280ee2ec3734465efd22e7b080d7d879b15b7032c9ec11114f79c0c56",
+      "pinned_commit": "1944f2104a8200934da58653046a2a41b3622e10",
+      "verified_manifest_sha256": "5f4e3d5f4bd0f4677457d060c20b1a7fed24c0525fda4056a0122fa99df41b46",
       "language": "PolyAI ADK CLI",
       "purpose": "Test a PolyAI agent with poly validate, scripted poly chat, the test_suite simulated conversation tests and isolated function execution.",
       "selection": "optional-evaluation",
@@ -12779,7 +12779,7 @@
       "manifest_license": "Apache-2.0",
       "repository_stars": 83,
       "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
-      "source_repository_commit_at": "2026-11-13T15:41:41+00:00",
+      "source_repository_commit_at": "2026-11-16T17:39:31+00:00",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [
@@ -12804,8 +12804,8 @@
       "path": "skills/poly-adk-branching/SKILL.md",
       "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-branching/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
-      "verified_manifest_sha256": "4690504b44370382e247066c897486d8ddd13347b764762a3bc25c2377a15f0b",
+      "pinned_commit": "1944f2104a8200934da58653046a2a41b3622e10",
+      "verified_manifest_sha256": "62b5944e0e6da93b77d3d545e3241108b80113fe553f62cde966449a9746429c",
       "language": "PolyAI ADK CLI",
       "purpose": "Manage PolyAI ADK branches, resolve three-way merge conflicts without prompts, create hotfix branches from a deployed environment and share review gists.",
       "selection": "optional-provider-workflow",
@@ -12813,7 +12813,7 @@
       "manifest_license": "Apache-2.0",
       "repository_stars": 83,
       "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
-      "source_repository_commit_at": "2026-11-13T15:41:41+00:00",
+      "source_repository_commit_at": "2026-11-16T17:39:31+00:00",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [],
@@ -12837,8 +12837,8 @@
       "path": "skills/poly-adk-conversations/SKILL.md",
       "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-conversations/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
-      "verified_manifest_sha256": "437f9e143689da092c9f78655d185534cb414cce374c450521bd81b7687f19cb",
+      "pinned_commit": "1944f2104a8200934da58653046a2a41b3622e10",
+      "verified_manifest_sha256": "90ea39928acaa1039e5a2d844fd815797505bfca20d1061b05e6a15338cac41a",
       "language": "PolyAI ADK CLI",
       "purpose": "Review real PolyAI conversations from the command line (transcripts, recordings, summaries) and instrument functions with logs and metrics.",
       "selection": "optional-evaluation",
@@ -12846,7 +12846,7 @@
       "manifest_license": "Apache-2.0",
       "repository_stars": 83,
       "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
-      "source_repository_commit_at": "2026-11-13T15:41:41+00:00",
+      "source_repository_commit_at": "2026-11-16T17:39:31+00:00",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [],
@@ -12867,8 +12867,8 @@
       "path": "skills/poly-adk-rtc/SKILL.md",
       "url": "https://github.com/polyai/adk/blob/main/skills/poly-adk-rtc/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
-      "verified_manifest_sha256": "205871e87365ec5ca1cc0b1127c6cb4bb1ed482865affa2ad79c9b6b30c445f7",
+      "pinned_commit": "1944f2104a8200934da58653046a2a41b3622e10",
+      "verified_manifest_sha256": "af50ea4785e225ee61e9ff5610b24950a297b0b3a2111c82e4336b7f996af933",
       "language": "PolyAI ADK CLI",
       "purpose": "Pull, edit, validate and push PolyAI per-environment real-time configuration with drift protection.",
       "selection": "optional-provider-workflow",
@@ -12876,7 +12876,7 @@
       "manifest_license": "Apache-2.0",
       "repository_stars": 83,
       "stars_observed_at": "2026-09-30T23:22:09.402188+00:00",
-      "source_repository_commit_at": "2026-11-13T15:41:41+00:00",
+      "source_repository_commit_at": "2026-11-16T17:39:31+00:00",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [],
@@ -14062,7 +14062,7 @@
       "path": "skills/nova-prompter/plugins/nova-sonic25-prompting/skills/nova-sonic25-prompt/SKILL.md",
       "url": "https://github.com/aws-samples/amazon-ai-samples/blob/main/skills/nova-prompter/plugins/nova-sonic25-prompting/skills/nova-sonic25-prompt/SKILL.md",
       "default_branch": "main",
-      "pinned_commit": "62bfe44f2888b211dd02e34abbece1ca0dc378ce",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
       "verified_manifest_sha256": "575d2ac6abd586abc20c0dc92432e98de41d3d164e24085688f58c61e55102bb",
       "language": "General",
       "purpose": "Write, review and debug system prompts and tool descriptions for Amazon Nova Sonic 2.5 speech-to-speech voice agents.",
@@ -14071,7 +14071,7 @@
       "manifest_license": null,
       "repository_stars": 453,
       "stars_observed_at": "2026-11-16T03:43:16Z",
-      "source_repository_commit_at": "2026-11-16T03:43:16Z",
+      "source_repository_commit_at": "2026-11-16T06:51:42Z",
       "supporting_file_count": 0,
       "supporting_files": [],
       "referenced_repository_paths": [],
@@ -14080,6 +14080,146 @@
       ],
       "concerns": [
         "Sample-repository prompt guidance rather than official AWS service documentation; prompt rules do not replace code-enforced tool authorization or caller consent."
+      ]
+    },
+    {
+      "name": "amazon-polly",
+      "provider": "AWS",
+      "repository": "aws-samples/amazon-ai-samples",
+      "path": "text-to-speech/skills/amazon-polly/SKILL.md",
+      "url": "https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/amazon-polly/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
+      "verified_manifest_sha256": "ed9fa7d79dd663cf374198e4a2cb648a4552f37249af52e9f3cc73aa18eb18b7",
+      "language": "Cross-language (Python examples)",
+      "purpose": "Choose Amazon Polly synthesis APIs, voices, engines, SSML, lexicons and speech marks for a speech pipeline.",
+      "selection": "optional-speech-api",
+      "license": "MIT-0",
+      "manifest_license": null,
+      "repository_stars": 453,
+      "stars_observed_at": "2026-09-30T18:29:25.519206+00:00",
+      "source_repository_commit_at": "2026-11-16T06:51:42Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "text-to-speech/getting-started/polly_quickstart.py",
+        "text-to-speech/features/"
+      ],
+      "dependencies": [
+        "AWS credentials and Region from the SDK default chain, with IAM permissions for the selected Polly operations",
+        "Python and boto3 for the examples; bidirectional streaming needs a compatible SDK (the skill describes the experimental Python v4 client)",
+        "A checkout of text-to-speech/ for the referenced examples, which are outside the skill folder"
+      ],
+      "concerns": [
+        "Synthesis and speech-mark calls are billed; async tasks write audio to S3, and PutLexicon overwrites an existing lexicon with the same name.",
+        "Engine, voice, SSML and SDK support varies; use DescribeVoices in the target Region and the current service API reference.",
+        "The output-format table is a subset: the current SynthesizeSpeech reference also lists ogg_opus, mulaw and alaw. Its PCM sample rates remain 8000 and 16000 Hz.",
+        "Source inspection only; no AWS calls or sample programs were run during this review."
+      ]
+    },
+    {
+      "name": "cascading-voice-agent",
+      "provider": "AWS",
+      "repository": "aws-samples/amazon-ai-samples",
+      "path": "text-to-speech/skills/cascading-voice-agent/SKILL.md",
+      "url": "https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/cascading-voice-agent/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
+      "verified_manifest_sha256": "ed8cd1bb44ac0e5ffdd97e44ee8415e70084566b914882e49014c6c128c60a25",
+      "language": "Python",
+      "purpose": "Choose and operate Transcribe-to-Bedrock-to-Polly voice-agent samples using Pipecat, LangChain or LiveKit, locally or on AgentCore.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT-0",
+      "manifest_license": null,
+      "repository_stars": 453,
+      "stars_observed_at": "2026-09-30T18:29:25.519206+00:00",
+      "source_repository_commit_at": "2026-11-16T06:51:42Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "text-to-speech/use-cases/cascading-voice-agent/"
+      ],
+      "dependencies": [
+        "The full selected sample under text-to-speech/use-cases/cascading-voice-agent/, including its README, requirements and any deployment files",
+        "Python 3.11+ for local Pipecat or 3.12 for the AgentCore examples; AWS credentials, Region and Bedrock model access",
+        "Transcribe, Bedrock and Polly IAM permissions; hosting also needs IAM, ECR, CodeBuild and AgentCore permissions",
+        "Daily API key for Daily transport, or LiveKit URL and project credentials for the LiveKit variant"
+      ],
+      "concerns": [
+        "Live sessions send microphone audio and text to AWS and consume Transcribe, Bedrock and Polly usage. Banking tools return placeholder data.",
+        "Deployment creates cloud resources, and cleanup scripts delete them without their own prompt; the skill requires explicit confirmation of account, Region and resources.",
+        "The LangChain variant has no barge-in and mutes the microphone during playback. Sample IAM policies and client configuration need review before production use.",
+        "The skill suggests 16 or 24 kHz Polly PCM. The current SynthesizeSpeech API accepts only 8 or 16 kHz PCM; resample explicitly if a transport needs 24 kHz.",
+        "The runnable applications are outside the skill folder. This review checked source guidance, not end-to-end AWS operation."
+      ]
+    },
+    {
+      "name": "live-speech-translator",
+      "provider": "AWS",
+      "repository": "aws-samples/amazon-ai-samples",
+      "path": "text-to-speech/skills/live-speech-translator/SKILL.md",
+      "url": "https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/live-speech-translator/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
+      "verified_manifest_sha256": "087bbb80eae000411068257834d1bcc103220171e092eb386f098d63628f4f1b",
+      "language": "Python",
+      "purpose": "Run a local Transcribe-to-Translate-to-Polly speech translation sample with audio-device selection and feedback-loop checks.",
+      "selection": "optional-speech-api",
+      "license": "MIT-0",
+      "manifest_license": null,
+      "repository_stars": 453,
+      "stars_observed_at": "2026-09-30T18:29:25.519206+00:00",
+      "source_repository_commit_at": "2026-11-16T06:51:42Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "text-to-speech/use-cases/live-speech-translator/"
+      ],
+      "dependencies": [
+        "The complete text-to-speech/use-cases/live-speech-translator/ sample, Python 3.10+, its requirements and PortAudio",
+        "Microphone and speaker access, plus AWS credentials and permissions for Transcribe Streaming, Translate and Polly",
+        "DescribeVoices permission for preflight and Comprehend permission when using fallback automatic language detection"
+      ],
+      "concerns": [
+        "A speech translation component, with no LLM, dialogue state or tools; it is not a conversational agent.",
+        "Microphone audio and text go to AWS and incur metered usage while the session runs; stop the stream when finished.",
+        "The default simultaneous mode can feed speaker output back into the microphone. Use headphones or half-duplex mode, and match the target language to its Polly voice.",
+        "The app and configuration live outside the skill folder; no microphone, AWS or runtime tests were performed for this index."
+      ]
+    },
+    {
+      "name": "reachy-voice-assistant",
+      "provider": "AWS",
+      "repository": "aws-samples/amazon-ai-samples",
+      "path": "text-to-speech/skills/reachy-voice-assistant/SKILL.md",
+      "url": "https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/reachy-voice-assistant/SKILL.md",
+      "default_branch": "main",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
+      "verified_manifest_sha256": "bd004be35a5f45cc9ea2436345bd0bcb12a47ce1dc7e117fcf64fdb48b8d102b",
+      "language": "Python",
+      "purpose": "Configure and debug a Pipecat voice assistant using Transcribe, Bedrock and Polly with a fake, simulated or physical Reachy Mini robot.",
+      "selection": "optional-provider-workflow",
+      "license": "MIT-0",
+      "manifest_license": null,
+      "repository_stars": 453,
+      "stars_observed_at": "2026-09-30T18:29:25.519206+00:00",
+      "source_repository_commit_at": "2026-11-16T06:51:42Z",
+      "supporting_file_count": 0,
+      "supporting_files": [],
+      "referenced_repository_paths": [
+        "text-to-speech/use-cases/reachy-voice-assistant/"
+      ],
+      "dependencies": [
+        "The complete text-to-speech/use-cases/reachy-voice-assistant/ sample and its requirements/configuration files",
+        "Python 3.11 or 3.12 in a pip venv, Pipecat >=1.7,<2 with AWS/Silero extras, PyAudio and PortAudio",
+        "AWS credentials, Transcribe/Polly permissions and access to the configured Bedrock model",
+        "Local audio devices; Reachy Mini SDK and a daemon for the physical robot or MuJoCo simulator (a fake backend is available)"
+      ],
+      "concerns": [
+        "The English-only sample streams microphone audio continuously and uses metered AWS APIs, although it creates no AWS infrastructure.",
+        "Connecting a physical Reachy Mini can reflash motor firmware; use the fake backend first and treat real robot motion as a separate action.",
+        "The robot driver swallows robot errors, and the microphone is muted during playback. Successful audio does not prove robot motion or full-duplex interruption handling.",
+        "macOS simulator use requires a framework Python build; the skill warns against uv-managed interpreters. The application is outside the skill folder and was not run during this review."
       ]
     },
     {
@@ -14985,15 +15125,15 @@
       "host": "docs.retellai.com",
       "index_url": "https://docs.retellai.com/.well-known/agent-skills/index.json",
       "url": "https://docs.retellai.com/.well-known/agent-skills/retellai/skill.md",
-      "sha256": "3372ef8f62354189ce61fdbcb574bc12f97ab7ac0632aa33dfcfbfa7f6b9a1ef",
-      "bytes": 13137,
-      "retrieved_at": "2026-11-16T03:43:16Z",
+      "sha256": "88221abd4c2cb376e4e6698e189e7e554d063d61ba14ab839ed17f430a450e2c",
+      "bytes": 13984,
+      "retrieved_at": "2026-11-17T02:01:30.304889+00:00",
       "selection": "recommended",
       "language": "Cross-language",
       "purpose": "Build, test, publish and monitor Retell AI phone and chat agents using the dashboard and REST API.",
       "license": null,
       "license_status": "No license is stated in the file; link-only.",
-      "http_last_modified": "Wed, 30 Sep 2026 18:37:07 GMT",
+      "http_last_modified": "Tue, 17 Nov 2026 01:59:41 GMT",
       "dependencies": [
         "Retell AI account and API key created in the dashboard (env var name not stated)",
         "Phone number for phone calls: Retell-managed US/Canada number or imported SIP trunk (Twilio, Telnyx, Vonage)",
@@ -15007,7 +15147,8 @@
         "Creates, publishes and binds agents, flows, phone numbers and SIP trunks, so live call handling can change.",
         "Covers outbound campaigns, SMS, recordings and transcripts without stating consent, TCPA or recording-consent duties.",
         "Served from the vendor documentation site, not a git repository: there is no commit or tag to pin, so the content can change without notice; compare against the recorded sha256.",
-        "No license is stated in the file or by a repository; link-only."
+        "No license is stated in the file or by a repository; link-only.",
+        "The endpoint summary is not an authoritative API reference: it lists POST /v2/publish-agent, while the current publish-agent reference uses POST /publish-agent-version/{agent_id}. Resolve exact methods and paths from the API reference or current SDK before calling them."
       ]
     },
     {
@@ -15516,13 +15657,30 @@
         "https://dev.hume.ai/changelog"
       ],
       "result": "No official agent skill found on 2026-09-30 for: Vonage (its organization has only skills for maintaining its Go and .NET SDK repositories), Bandwidth, LiveKit SIP (LiveKit's agent skills are bundled here, but none covers SIP), Google Cloud Speech-to-Text and Text-to-Speech (the only matches were Gemini TTS skills for media voiceover, which are not voice-agent skills), Hume (EVI and text-to-speech), Microsoft Copilot Studio (its skill repository authors agents as YAML and has no voice skill), Dialogflow CX (skills exist for CX Agent Studio and for migrating from Dialogflow CX), Speechmatics, Soniox, Murf, xAI voice, OpenAI Realtime (the bundled OpenAI skills cover speech and transcription only), TEN (a maintainer review skill only), the OpenAI Agents SDK (maintainer skills only) and Hamming. Amazon Connect, Amazon Chime SDK, Amazon Lex, Amazon Polly, Amazon Transcribe and Nova Sonic have skills only in AWS sample repositories, which are linked under AWS. Not finding a skill is not proof that none exists: GitHub code search is capped and some documentation hosts could not be reached. Later, on 2026-10-02, Hume announced that its text-to-speech and EVI APIs are being shut down, with access ending on 2026-11-13, so docs/more-skills.md no longer lists Hume."
+    },
+    {
+      "topic": "November upstream drift and AWS candidate review",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "evidence": [
+        "https://github.com/RobStrayer/voice-agent-skills/issues/13",
+        "https://github.com/livekit/agent-skills/compare/3084fe8fead5c7f4fe5e4845f40c27517fc5eac3...bc555be582a09017fd77cd9179f380c58b37090f",
+        "https://github.com/coval-ai/coval-external-skills/compare/6725bdfee29948ee041536941b0eab2163f85b61...82428a5c3d661b850d1ee65f0881b0ab214a7392",
+        "https://github.com/polyai/adk/compare/5917eb15b03f07a961cf4238b7b0b1e5208b99a2...1944f2104a8200934da58653046a2a41b3622e10",
+        "https://github.com/aws-samples/amazon-ai-samples/tree/f4da7ca870b8118d83ef8af990ac79f9d9101ebe/text-to-speech/skills",
+        "https://github.com/aws-samples/amazon-ai-samples/blob/f4da7ca870b8118d83ef8af990ac79f9d9101ebe/text-to-speech/use-cases/polly-avatar/infra/README.md",
+        "https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html",
+        "https://docs.aws.amazon.com/polly/latest/APIReference/API_StartSpeechSynthesisStream.html",
+        "https://docs.retellai.com/.well-known/agent-skills/retellai/skill.md",
+        "https://docs.retellai.com/api-references/publish-agent"
+      ],
+      "result": "Reviewed all changed LiveKit instructions and retained MIT license; documented command attribution without running it. Coval now separates speech evidence from verified actions. PolyAI manifests change only their version to 0.84.0. Read the current Retell manifest and qualified its publish endpoint. Added four AWS sample skills, verified manifest Git blob/SHA-256 hashes and live URLs, and recorded nine candidate exclusions. Context7 did not locate relevant Polly docs or the new LiveKit attribution setting, so canonical AWS API pages and the upstream LiveKit diff were used. Reviewed AWS manifests, the selected sample guidance and dependency files; no installers, paid calls, deployment scripts or robot actions were run. Hookdeck old/new complete trees each contain 816 manifests with no additions."
     }
   ],
   "verification": {
     "method": "Pinned public HTTPS archives and current default-branch raw manifests, compared by SHA256. Source code was read selectively as data; no downloaded code or live voice-provider API calls were executed. The 2026-09-30 expansion fetched every new manifest at its pinned commit, rechecked that each source repository was still at that commit, re-hashed the manifests of the indexed repositories whose HEAD had moved (see head_updates), and confirmed that the other indexed repositories were still at their recorded commits. Star counts were refreshed for every indexed repository whose count had changed. The provider coverage pass (2026-09-30, later the same day) fetched each of its 35 new repository manifests at the pinned commit, hashed it with SHA-256 and compared it with the Git blob hash from the repository tree, and fetched each of its 13 docs-hosted files from the vendor site and compared its SHA-256 with the digest in the vendor's skill index. The counters below include those entries; the manifests indexed earlier were not fetched again in that pass. On 2026-10-30 a mechanical refresh re-pinned 27 repositories and re-hashed 28 docs-hosted files (see head_updates). A recheck at 05:33 UTC fetched all 313 indexed manifests at their default branches and matched every recorded hash; the two docs-hosted files that had changed again by then were re-read and re-hashed.",
-    "current_branch_manifest_count": 325,
-    "current_branch_manifest_http_200": 325,
-    "current_branch_manifest_hash_matches": 325,
+    "current_branch_manifest_count": 329,
+    "current_branch_manifest_http_200": 329,
+    "current_branch_manifest_hash_matches": 329,
     "sdk_repository_reference_count_checked": 228,
     "sdk_missing_references": [
       {
@@ -15537,7 +15695,7 @@
         ]
       }
     ],
-    "current_branch_manifest_checked_at_utc": "2026-11-16T03:43:16Z",
+    "current_branch_manifest_checked_at_utc": "2026-11-17T02:05:56.162371+00:00",
     "docs_hosted_count": 34,
     "docs_hosted_http_200": 34,
     "docs_hosted_digest_matches": 34,
@@ -15703,14 +15861,6 @@
         "manifests_unchanged": 0
       },
       {
-        "repository": "coval-ai/coval-external-skills",
-        "from": "dc83cb154737ee942ddfcdebdea73dd04e5a4419",
-        "to": "6725bdfee29948ee041536941b0eab2163f85b61",
-        "to_committed_at": "2026-11-03T21:15:24+00:00",
-        "manifests_rehashed": 12,
-        "manifests_unchanged": 11
-      },
-      {
         "repository": "bolna-ai/skills",
         "from": "45d061ce8a982062e232f8519779e32efce80a3a",
         "to": "c3771ba5e6591b6ba367a509af51538e61821dda",
@@ -15767,14 +15917,6 @@
         "manifests_unchanged": 0
       },
       {
-        "repository": "polyai/adk",
-        "from": "1ad450d1e3fdeb9f69c7b5dd09dbb29c3561dc63",
-        "to": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
-        "to_committed_at": "2026-11-13T15:41:41+00:00",
-        "manifests_rehashed": 5,
-        "manifests_unchanged": 0
-      },
-      {
         "repository": "CINTELLILABS/bland-plugins",
         "from": "474b9e52c92784fc23d9e3ec2f1846a3c30531d1",
         "to": "0e05bec59a2ba07b693ae1c19799abf7f406abc8",
@@ -15797,6 +15939,31 @@
         "to_committed_at": "2026-11-12T14:58:35+00:00",
         "manifests_rehashed": 1,
         "manifests_unchanged": 0
+      },
+      {
+        "repository": "coval-ai/coval-external-skills",
+        "from": "6725bdfee29948ee041536941b0eab2163f85b61",
+        "to": "82428a5c3d661b850d1ee65f0881b0ab214a7392",
+        "to_committed_at": "2026-11-16T16:59:05+00:00",
+        "manifests_rehashed": 12,
+        "manifests_unchanged": 11
+      },
+      {
+        "repository": "polyai/adk",
+        "from": "5917eb15b03f07a961cf4238b7b0b1e5208b99a2",
+        "to": "1944f2104a8200934da58653046a2a41b3622e10",
+        "to_committed_at": "2026-11-16T17:39:31+00:00",
+        "manifests_rehashed": 5,
+        "manifests_unchanged": 0
+      },
+      {
+        "repository": "aws-samples/amazon-ai-samples",
+        "from": "62bfe44f2888b211dd02e34abbece1ca0dc378ce",
+        "to": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe",
+        "to_committed_at": "2026-11-16T06:51:42Z",
+        "manifests_rehashed": 6,
+        "manifests_unchanged": 2,
+        "manifests_added": 4
       }
     ]
   },
@@ -16452,6 +16619,78 @@
       "path": "skills/sandboxes/SKILL.md",
       "repository": "zavudev/zavu-skills",
       "reason": "General omnichannel messaging API or Linux code sandbox skill, not voice-agent specific."
+    },
+    {
+      "name": "compute-host-events-troubleshooting",
+      "path": "skills/cloud/compute-host-events-troubleshooting/SKILL.md",
+      "repository": "google/skills",
+      "reason": "General Compute Engine/GKE infrastructure or Google Cloud release tracking; no voice-agent-specific workflow.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "56fba3e82a6b6914ad7028f9fd8a1c594479e899"
+    },
+    {
+      "name": "compute-mig-autoscaling-troubleshooting",
+      "path": "skills/cloud/compute-mig-autoscaling-troubleshooting/SKILL.md",
+      "repository": "google/skills",
+      "reason": "General Compute Engine/GKE infrastructure or Google Cloud release tracking; no voice-agent-specific workflow.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "56fba3e82a6b6914ad7028f9fd8a1c594479e899"
+    },
+    {
+      "name": "gke-capacity-triage",
+      "path": "skills/cloud/gke-capacity-triage/SKILL.md",
+      "repository": "google/skills",
+      "reason": "General Compute Engine/GKE infrastructure or Google Cloud release tracking; no voice-agent-specific workflow.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "56fba3e82a6b6914ad7028f9fd8a1c594479e899"
+    },
+    {
+      "name": "gke-statefulset-without-probes",
+      "path": "skills/cloud/gke-statefulset-without-probes/SKILL.md",
+      "repository": "google/skills",
+      "reason": "General Compute Engine/GKE infrastructure or Google Cloud release tracking; no voice-agent-specific workflow.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "56fba3e82a6b6914ad7028f9fd8a1c594479e899"
+    },
+    {
+      "name": "gke-unprotected-statefulset",
+      "path": "skills/cloud/gke-unprotected-statefulset/SKILL.md",
+      "repository": "google/skills",
+      "reason": "General Compute Engine/GKE infrastructure or Google Cloud release tracking; no voice-agent-specific workflow.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "56fba3e82a6b6914ad7028f9fd8a1c594479e899"
+    },
+    {
+      "name": "google-cloud-release-radar",
+      "path": "skills/cloud/google-cloud-release-radar/SKILL.md",
+      "repository": "google/skills",
+      "reason": "General Compute Engine/GKE infrastructure or Google Cloud release tracking; no voice-agent-specific workflow.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "56fba3e82a6b6914ad7028f9fd8a1c594479e899"
+    },
+    {
+      "name": "nsight-port-cpu-to-gpu",
+      "path": "skills/nsight-port-cpu-to-gpu/SKILL.md",
+      "repository": "NVIDIA/skills",
+      "reason": "General Fortran/C++ HPC porting and GPU profiling, not voice-agent engineering.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "2371df31af392071effa2bd82f39aa98b130e428"
+    },
+    {
+      "name": "content-to-audio",
+      "path": "text-to-speech/skills/content-to-audio/SKILL.md",
+      "repository": "aws-samples/amazon-ai-samples",
+      "reason": "Podcast and narration production rather than conversational voice agents; the general Polly API skill covers the reusable speech component.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe"
+    },
+    {
+      "name": "polly-avatar",
+      "path": "text-to-speech/skills/polly-avatar/SKILL.md",
+      "repository": "aws-samples/amazon-ai-samples",
+      "reason": "Deployment guidance is stale at the checked commit: infra/deploy.sh and infra/destroy.sh are absent, and infra/README.md describes one stack and no automatically created users rather than four stacks and a seeded demo password. Reconsider when the skill matches the sample. Character assets also have separate CC-BY-SA-4.0 terms.",
+      "reviewed_at": "2026-11-17T02:05:56.162371+00:00",
+      "pinned_commit": "f4da7ca870b8118d83ef8af990ac79f9d9101ebe"
     }
   ],
   "research_exclusions": [

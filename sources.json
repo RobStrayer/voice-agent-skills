@@ -3,7 +3,7 @@
   "snapshot_date": "2026-09-29",
   "snapshot_timezone": "America/New_York",
   "link_policy": "Original upstream default-branch URLs are primary; bundled files are dated snapshots.",
-  "checked_at": "2026-11-16T03:43:16Z",
+  "checked_at": "2026-11-17T02:01:30.304889+00:00",
   "skill_count": 40,
   "copied_file_count": 101,
   "verification": "Every copied file was read back and compared byte-for-byte with its exact commit-pinned archive entry. Full upstream skill folder trees retained, including nested licenses and optional metadata/assets.",
@@ -247,8 +247,8 @@
       "url": "https://github.com/livekit/agent-skills",
       "stars": 75,
       "stars_source": "https://api.github.com/repos/livekit/agent-skills",
-      "sha": "3084fe8fead5c7f4fe5e4845f40c27517fc5eac3",
-      "retrieved_at": "2026-11-16T03:43:16Z",
+      "sha": "bc555be582a09017fd77cd9179f380c58b37090f",
+      "retrieved_at": "2026-11-17T02:01:30.304889+00:00",
       "decision": "vendored",
       "provider": "livekit",
       "license": "MIT",
@@ -269,14 +269,14 @@
         {
           "upstream_path": "skills/reading-livekit-docs/SKILL.md",
           "copied_path": "skills/livekit/reading-livekit-docs/SKILL.md",
-          "sha256": "83bef0fb1d3eb173235b2cfcdf2ae8c28c03fae256b89a0eea0cb41fdb406469",
-          "bytes": 4199
+          "sha256": "961872469a9d888877dec96fb67cfce343fcb13e66b089ee23f1d9b1e89acdc5",
+          "bytes": 4924
         },
         {
           "upstream_path": "skills/building-livekit-agents/SKILL.md",
           "copied_path": "skills/livekit/building-livekit-agents/SKILL.md",
-          "sha256": "ba87f128b0d1118c1f28105ff2bddc59b43c3372696afd160339000270483cad",
-          "bytes": 13335
+          "sha256": "2e737ca5e0cb44afa009b941929f9578a068864c1317037d7f470f8f2c28513f",
+          "bytes": 13439
         },
         {
           "upstream_path": "skills/building-livekit-agents/references/state-and-effects.md",
@@ -323,14 +323,14 @@
         {
           "upstream_path": "skills/running-livekit-simulations/SKILL.md",
           "copied_path": "skills/livekit/running-livekit-simulations/SKILL.md",
-          "sha256": "964481d018e5c8f41c1235cdfb219d570f784f7452ba19e151ba71160a2a36d3",
-          "bytes": 7204
+          "sha256": "70b0b1aef44bb02f9c42422aed8eb2cedc23e2dbcadbf6d0b06249cd559bdb96",
+          "bytes": 7280
         },
         {
           "upstream_path": "skills/operating-livekit-agents/SKILL.md",
           "copied_path": "skills/livekit/operating-livekit-agents/SKILL.md",
-          "sha256": "c569e8c4686943d56539cb8211a49d22913b34168409b602f77bcfb99597d3a9",
-          "bytes": 13011
+          "sha256": "ede121c2667697c8307a5c1d9f4cdeb2e3106160ea98919c477148137670d80c",
+          "bytes": 13083
         },
         {
           "upstream_path": "LICENSE",
@@ -341,7 +341,7 @@
       ],
       "default_branch": "main",
       "live_url": "https://github.com/livekit/agent-skills/tree/main",
-      "snapshot_url": "https://github.com/livekit/agent-skills/tree/3084fe8fead5c7f4fe5e4845f40c27517fc5eac3"
+      "snapshot_url": "https://github.com/livekit/agent-skills/tree/bc555be582a09017fd77cd9179f380c58b37090f"
     },
     {
       "repo": "pipecat-ai/skills",

@@ -2,7 +2,7 @@
 
 [Home](../README.md) / [Engineering handbook](handbook.md) / [Core skills](catalog.md) / More upstream skills
 
-**359 linked skills** · **325 in 68 source repositories** · **34 on vendor documentation sites** · **61 providers** · **Checked November 16, 2026 UTC**
+**363 linked skills** · **329 in 68 source repositories** · **34 on vendor documentation sites** · **61 providers** · **Checked November 17, 2026 UTC**
 
 These are skills from voice providers and other authors, linked to where they are published. Nothing here is copied into this repository. Open the original source for current instructions. [Usage notes](usage.md) cover installation and host assumptions. [linked-skills.json](../linked-skills.json) keeps exact source metadata for each skill: commit, hash, license, dependencies and concerns.
 
@@ -23,7 +23,7 @@ These are skills from voice providers and other authors, linked to where they ar
 | [Agora](#agora) | [Phone and calling platforms](#phone-and-calling-platforms) | 1 |
 | [ai-coustics](#ai-coustics) | [Speech-to-text and text-to-speech APIs](#speech-to-text-and-text-to-speech-apis) | 4 |
 | [AssemblyAI](#assemblyai) | [Speech-to-text and text-to-speech APIs](#speech-to-text-and-text-to-speech-apis) | 3 |
-| [AWS](#aws) | [Cloud providers](#cloud-providers) | 15 |
+| [AWS](#aws) | [Cloud providers](#cloud-providers) | 20 |
 | [Azure](#azure) | [Cloud providers](#cloud-providers) | 10 |
 | [Bland AI](#bland-ai) | [Managed voice-agent platforms](#managed-voice-agent-platforms) | 22 |
 | [Bluejay](#bluejay) | [Testing, evaluation and monitoring](#testing-evaluation-and-monitoring) | 7 |
@@ -37,7 +37,7 @@ These are skills from voice providers and other authors, linked to where they ar
 | [ElevenLabs](#elevenlabs) | [Managed voice-agent platforms](#managed-voice-agent-platforms) | 22 |
 | [Fish Audio](#fish-audio) | [Speech-to-text and text-to-speech APIs](#speech-to-text-and-text-to-speech-apis) | 2 |
 | [Gladia](#gladia) | [Speech-to-text and text-to-speech APIs](#speech-to-text-and-text-to-speech-apis) | 6 |
-| [Google](#google) | [Cloud providers](#cloud-providers) | 11 |
+| [Google](#google) | [Cloud providers](#cloud-providers) | 12 |
 | [Hookdeck](#hookdeck) | [Webhooks and security](#webhooks-and-security) | 7 |
 | [iFlytek](#iflytek) | [Speech-to-text and text-to-speech APIs](#speech-to-text-and-text-to-speech-apis) | 2 |
 | [Inworld](#inworld) | [Speech-to-text and text-to-speech APIs](#speech-to-text-and-text-to-speech-apis) | 3 |
@@ -87,7 +87,7 @@ These are skills from voice providers and other authors, linked to where they ar
 | Connect phone numbers, SIP trunks, or call control | [Agora](#agora) · [jambonz](#jambonz) · [Plivo](#plivo) · [SignalWire](#signalwire) · [Sinch](#sinch) · [Telnyx](#telnyx) · [Twilio](#twilio) · [Zavu](#zavu) | 73 |
 | Add speech recognition, speech synthesis or audio cleanup | [ai-coustics](#ai-coustics) · [AssemblyAI](#assemblyai) · [Deepgram](#deepgram) · [Fish Audio](#fish-audio) · [Gladia](#gladia) · [iFlytek](#iflytek) · [Inworld](#inworld) · [Jellypod](#jellypod) · [Moonshine](#moonshine) · [OpenRouter](#openrouter) · [pyannoteAI](#pyannoteai) · [Rime](#rime) · [Sarvam AI](#sarvam-ai) · [Shiny](#shiny) · [StepFun](#stepfun) · [Venice AI](#venice-ai) | 76 |
 | Build on a framework, SDK or real-time media stack | [Daily](#daily) · [NVIDIA](#nvidia) · [Pipecat](#pipecat) · [Vision Agents](#vision-agents) · [Zero Runtime](#zero-runtime) | 9 |
-| Use a cloud provider's voice and speech services | [AWS](#aws) · [Azure](#azure) · [Google](#google) | 36 |
+| Use a cloud provider's voice and speech services | [AWS](#aws) · [Azure](#azure) · [Google](#google) | 42 |
 | Test, simulate, or monitor an agent | [Bluejay](#bluejay) · [Cekura](#cekura) · [Coval](#coval) · [Roark](#roark) · [Superlog](#superlog) · [voicetest](#voicetest) | 38 |
 | Verify webhooks or detect synthetic voices | [Hookdeck](#hookdeck) · [Resemble AI](#resemble-ai) | 8 |
 | Draft a spoken prompt with worked examples | [Mahimai Labs](#mahimai-labs) | 1 |
@@ -336,6 +336,8 @@ Retell publishes its skill on its documentation site. The second skill comes fro
 | --- | --- |
 | Build, test, publish and monitor Retell AI phone and chat agents using the dashboard and REST API. *Published on docs.retellai.com.* | [retellai](https://docs.retellai.com/.well-known/agent-skills/retellai/skill.md) |
 | Create, inspect, update and publish Retell agents, LLMs and conversation flows via curl, using per-client API keys. | [retell](https://github.com/Target-Dial/voice-agent-skills/blob/main/retell/SKILL.md) |
+
+The docs-hosted skill’s endpoint table includes outdated paths. For example, the [current publish API](https://docs.retellai.com/api-references/publish-agent) is `POST /publish-agent-version/{agent_id}`, not the skill’s `/v2/publish-agent`. Use the API reference or current SDK for exact requests.
 
 ### SLNG
 
@@ -1001,6 +1003,19 @@ These come from AWS sample repositories, not from AWS service documentation. The
 | Checklist for cutting Nova Sonic voice-agent latency and cost and adding multi-Region reliability on AWS. | [nova-sonic-optimization](https://github.com/aws-samples/sample-ramp-aidlc-mod-starter-packs/blob/main/skills-library/nova-sonic-optimization/SKILL.md) |
 | Write, review and debug system prompts and tool descriptions for Amazon Nova Sonic 2.5 speech-to-speech voice agents. | [nova-sonic25-prompt](https://github.com/aws-samples/amazon-ai-samples/blob/main/skills/nova-prompter/plugins/nova-sonic25-prompting/skills/nova-sonic25-prompt/SKILL.md) |
 
+**Build with Transcribe, Bedrock and Polly**
+
+| Task | Skill |
+| --- | --- |
+| Choose Amazon Polly synthesis APIs, voices, engines, SSML, lexicons and speech marks for a speech pipeline. | [amazon-polly](https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/amazon-polly/SKILL.md) |
+| Choose and operate Transcribe-to-Bedrock-to-Polly voice-agent samples using Pipecat, LangChain or LiveKit, locally or on AgentCore. | [cascading-voice-agent](https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/cascading-voice-agent/SKILL.md) |
+| Run a local Transcribe-to-Translate-to-Polly speech translation sample with audio-device selection and feedback-loop checks. | [live-speech-translator](https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/live-speech-translator/SKILL.md) |
+| Configure and debug a Pipecat voice assistant using Transcribe, Bedrock and Polly with a fake, simulated or physical Reachy Mini robot. | [reachy-voice-assistant](https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/skills/reachy-voice-assistant/SKILL.md) |
+
+The application files live outside these skill folders; keep the selected `text-to-speech/` sample checkout available. Live sessions send audio and text to AWS and incur usage charges. Start with local or fake-robot modes. Hosted AgentCore variants create cloud resources; Reachy hardware can move and may update firmware. The translator is a speech component with no dialogue state or tools.
+
+The cascading skill mentions 24 kHz Polly PCM, but the [current synthesis API](https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html) accepts PCM at 8 or 16 kHz; resample for other transport rates. The new Polly Avatar skill is excluded because it references missing deployment scripts and disagrees with its [infrastructure README](https://github.com/aws-samples/amazon-ai-samples/blob/main/text-to-speech/use-cases/polly-avatar/infra/README.md). Podcast generation is outside this collection’s conversational scope.
+
 **Deploy on Amazon Connect**
 
 | Task | Skill |
@@ -1192,9 +1207,11 @@ Coval's selected workflows cover evidence review, test suites, evaluator calibra
 | Define task-specific evaluation metrics and scoring criteria. | [configure-metrics](https://github.com/coval-ai/coval-external-skills/blob/main/skills/metrics/configure-metrics/SKILL.md) |
 | Interactively design and create a Coval simulation persona for testing a voice or chat agent. | [design-persona](https://github.com/coval-ai/coval-external-skills/blob/main/skills/personas/design-persona/SKILL.md) |
 | Create accent personas and run a per-accent Coval simulation sweep with a comparison table and saved report. | [run-accent-testing](https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-accent-testing/SKILL.md) |
-| Build an adversarial test set, persona and metric in Coval, run red-team simulations, and score each scenario. | [run-adversarial-testing](https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-adversarial-testing/SKILL.md) |
+| Build adversarial simulations in Coval and distinguish observed speech failures from independently verified backend actions. | [run-adversarial-testing](https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-adversarial-testing/SKILL.md) |
 | Launch one Coval simulation run per audio-condition persona and build the multi-run report link. | [run-audio-quality-testing](https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-audio-quality-testing/SKILL.md) |
 | Simulate conversations against voice and chat agents, score them with metrics, and track regressions in Coval. *Published on docs.coval.ai.* | [coval](https://docs.coval.ai/.well-known/agent-skills/coval/skill.md) |
+
+A low adversarial score or a spoken “done” is a review signal. Require agent-owned tool traces and independent resulting-state evidence before reporting that a protected action completed; the [revised adversarial workflow](https://github.com/coval-ai/coval-external-skills/blob/main/skills/runs/run-adversarial-testing/SKILL.md) makes this distinction explicit.
 
 Coval's source files are MIT licensed. Older specialist launch recipes have whole-set defaults and less bounded retry/watch behavior; this selection favors the newer evaluation workflows. Three skills added later (the accent, adversarial and audio-quality runs) launch several simulation runs each and use metered usage. Their optional report sharing can make runs public or publish a link that needs no login.
 

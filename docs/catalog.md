@@ -6,7 +6,7 @@
 
 Choose a foundation for the engineering problem, then a provider skill for the implementation. All provider names below open the original maintained source; **Snapshot** opens the dated copy kept here.
 
-Reviewed: **2026-11-16 UTC**. [More upstream skills](more-skills.md) cover additional providers and language-specific SDKs. [Usage notes](usage.md) explain host compatibility, tools, and runtime caveats. Install from the original source for its latest instructions; frontmatter names are preserved.
+Reviewed: **2026-11-17 UTC**. [More upstream skills](more-skills.md) cover additional providers and language-specific SDKs. [Usage notes](usage.md) explain host compatibility, tools, and runtime caveats. Install from the original source for its latest instructions; frontmatter names are preserved.
 
 ## Choose your starting point
 
@@ -50,7 +50,7 @@ Source: original Voice Agent Skills material. License: [MIT](../LICENSE).
 
 ## LiveKit
 
-Official lifecycle skills. Relevant SDK/CLI and documentation MCP may be needed.
+Official lifecycle skills. Relevant SDK/CLI and documentation MCP may be needed. The refreshed instructions set `LK_SOURCE=skills` on agent-run CLI commands, or `X-LiveKit-Source: skills` on direct Cloud API calls, to report skill attribution to LiveKit. They say not to add that attribution to user scripts, CI or documentation. See the [upstream explanation](https://github.com/livekit/agent-skills/blob/main/skills/reading-livekit-docs/SKILL.md#running-lk-commands).
 
 | Skill and original source | What it helps with | Bundled copy |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ Official lifecycle skills. Relevant SDK/CLI and documentation MCP may be needed.
 <details>
 <summary>Source, snapshot, license and dated stars</summary>
 
-Current source: [livekit/agent-skills](https://github.com/livekit/agent-skills/tree/main). [Recorded snapshot](https://github.com/livekit/agent-skills/tree/3084fe8fead5c7f4fe5e4845f40c27517fc5eac3). License: MIT. Source repository stars: 75 (dated snapshot; applies to the source collection).
+Current source: [livekit/agent-skills](https://github.com/livekit/agent-skills/tree/main). [Recorded snapshot](https://github.com/livekit/agent-skills/tree/bc555be582a09017fd77cd9179f380c58b37090f). License: MIT. Source repository stars: 75 (dated snapshot; applies to the source collection).
 
 </details>
 
